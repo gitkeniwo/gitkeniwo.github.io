@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"gitkeniwo.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":20,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="java basic knowledge review.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java review">
+<meta property="og:url" content="https://gitkeniwo.github.io/2020-06-08-Java-review/index.html">
+<meta property="og:site_name" content="The Last Day of Summer">
+<meta property="og:description" content="java basic knowledge review.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-08T03:37:19.000Z">
+<meta property="article:modified_time" content="2020-11-20T16:50:52.579Z">
+<meta property="article:author" content="ケニヲ">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://gitkeniwo.github.io/2020-06-08-Java-review/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Java review | The Last Day of Summer</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="The Last Day of Summer" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">The Last Day of Summer</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">2020s retrospected.</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://gitkeniwo.github.io/2020-06-08-Java-review/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ケニヲ">
+      <meta itemprop="description" content="Nothing I am,  Nothing I dream,  Nothing is new.  Nothing I think,  or believe in or say,  Nothing is true.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Last Day of Summer">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Java review
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-06-08 11:37:19" itemprop="dateCreated datePublished" datetime="2020-06-08T11:37:19+08:00">2020-06-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-11-21 00:50:52" itemprop="dateModified" datetime="2020-11-21T00:50:52+08:00">2020-11-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>java basic knowledge review.</p>
+<a id="more"></a>
+
+
+<h1 id="Primitive-Data-Types"><a href="#Primitive-Data-Types" class="headerlink" title="Primitive Data Types"></a>Primitive Data Types</h1><p>byte, short, int, long, float, double, char, boolean</p>
+<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><p>Actually a class.</p>
+<p>String a = “ “</p>
+<h3 id="String-Operation"><a href="#String-Operation" class="headerlink" title="String Operation"></a>String Operation</h3><p>String + String = StringString</p>
+<p>String + Int = (String) StringInt // Int converted into String automatically</p>
+<h3 id="String-Method"><a href="#String-Method" class="headerlink" title="String Method"></a>String Method</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">randomString.equals( <span class="string">" "</span>);</span><br><span class="line"></span><br><span class="line">randomString.toLowerCase();</span><br><span class="line">randomString.toUpperCase();</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Ternary-Operator"><a href="#Ternary-Operator" class="headerlink" title="Ternary Operator"></a>Ternary Operator</h2><p><code>isTrue ? resultTrue : resultFalse</code></p>
+<h1 id="方法-method"><a href="#方法-method" class="headerlink" title="方法 method"></a>方法 method</h1><h2 id="DiffMerge-Tool"><a href="#DiffMerge-Tool" class="headerlink" title="DiffMerge Tool"></a>DiffMerge Tool</h2><h2 id="Parse-values-from-Strings"><a href="#Parse-values-from-Strings" class="headerlink" title="Parse values from Strings"></a>Parse values from Strings</h2><p><code>Interger.parseInt( )</code> 将字符串解析成int</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">String numberAsString = <span class="string">"2018"</span>;</span><br><span class="line"><span class="keyword">int</span> number = Interger.parseInt(numberAsString);</span><br><span class="line"></span><br><span class="line">numberAsString += <span class="number">1</span>; ()</span><br><span class="line"><span class="comment">// automatically convert int 1 to String "1";</span></span><br><span class="line"><span class="comment">// 20181</span></span><br><span class="line">number += <span class="number">1</span>;</span><br><span class="line"><span class="comment">// 2019</span></span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>You could say that <em>parsing a string of characters</em> is <em>analyzing this string to find tokens, or items and then create a structure from the result</em>.</p>
+<p>In your example, calling <code>Integer.parseInt</code> on a string is <em>parsing this string to find an integer</em>.</p>
+<p>So, if you have:</p>
+<p><code>String someString = &quot;123&quot;;</code></p>
+<p>And then you invoke:</p>
+<p><code>int i = Integer.parseInt( someString );</code></p>
+<p>You’re telling java to analyze the <code>&quot;123&quot;</code> string and find an integer there.</p>
+<p><strong>Other example:</strong> One of the actions the java compiler does, when it compiles your source code is to “parse” your .java file and create tokens that match the java grammar.</p>
+<p>When you fail to write the source code properly ( for instance forget to add a <code>;</code> at the end of a statement ), it is the parser who identifies the error.</p>
+<p>Here’s more information: <a href="http://en.wikipedia.org/wiki/Parse" target="_blank" rel="noopener">http://en.wikipedia.org/wiki/Parse</a></p>
+</blockquote>
+<h1 id="OOP"><a href="#OOP" class="headerlink" title="OOP"></a>OOP</h1><h2 id="Classes-Constructors"><a href="#Classes-Constructors" class="headerlink" title="Classes, Constructors"></a>Classes, Constructors</h2><h3 id="Inheritage"><a href="#Inheritage" class="headerlink" title="Inheritage"></a>Inheritage</h3><h4 id="keyword-this-super"><a href="#keyword-this-super" class="headerlink" title="keyword this/ super"></a>keyword this/ super</h4><p>The <code>this</code> keyword refers to the <strong>current object</strong> in a method or constructor.</p>
+<p>e.g. <code>this.model = model; // where model is both the name for the class attribute and the parameter</code></p>
+<p>while <code>super</code> is used to call parental fields.</p>
+<h4 id="this-call-super-call"><a href="#this-call-super-call" class="headerlink" title="this() call / super() call"></a>this() call / super() call</h4><p>this() calls the current constructor，多个构造方法时，减少代码重复。</p>
+<p>super() calls the parental constructor.</p>
+<h2 id="Static-Instance-methods-variables"><a href="#Static-Instance-methods-variables" class="headerlink" title="Static / Instance methods / variables"></a>Static / Instance methods / variables</h2><h3 id="static-methods"><a href="#static-methods" class="headerlink" title="static methods"></a>static methods</h3><p>static methods are declared using <code>static</code> modifier.</p>
+<p>Cannot access instance methods / variables directly.</p>
+<p><em>Used for operations that do not require any data from an instance of the class.</em> </p>
+<p>–&gt; Methods that do not use instance variables should be declared as static methods.</p>
+<p>In static method we cannot use <code>this</code> keyword.</p>
+<h3 id="Calling"><a href="#Calling" class="headerlink" title="Calling"></a>Calling</h3><p>Two patterns: <code>ClassName.methodName();</code> or <code>methodName() // only if in the same class</code></p>
+<h3 id="Declaration"><a href="#Declaration" class="headerlink" title="Declaration"></a>Declaration</h3><p>Does the method use any fields?</p>
+<p>Yes–&gt; Instance method || N0–&gt; Static methods.</p>
+<h3 id="static-variables"><a href="#static-variables" class="headerlink" title="static variables"></a>static variables</h3><p> e.g. when using <code>Scanner</code> will declare scanner as a static variable</p>
+<p><em>static methods can access directly.</em></p>
+<h2 id="Class-Features"><a href="#Class-Features" class="headerlink" title="Class Features"></a>Class Features</h2><h3 id="Compositions"><a href="#Compositions" class="headerlink" title="Compositions"></a>Compositions</h3><h3 id="Encapsulation"><a href="#Encapsulation" class="headerlink" title="Encapsulation"></a>Encapsulation</h3><ul>
+<li><p>when we dont want unathorized external access.</p>
+</li>
+<li><p>when we change a name of a method or a field, we dont want to change it in every class that the exact name has appeared.  </p>
+</li>
+</ul>
+<h3 id="Polymorphism"><a href="#Polymorphism" class="headerlink" title="Polymorphism"></a>Polymorphism</h3><p>Actions being performed differently on different object. </p>
+<h2 id="Inner-and-Abstract-Classes"><a href="#Inner-and-Abstract-Classes" class="headerlink" title="Inner and Abstract Classes"></a>Inner and Abstract Classes</h2><h2 id="Interfaces"><a href="#Interfaces" class="headerlink" title="Interfaces"></a>Interfaces</h2><h1 id="Array-Lists-Autoboxing-and-Unboxing"><a href="#Array-Lists-Autoboxing-and-Unboxing" class="headerlink" title="Array, Lists, Autoboxing and Unboxing"></a>Array, Lists, Autoboxing and Unboxing</h1><h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><h3 id="Array-methods"><a href="#Array-methods" class="headerlink" title="Array methods"></a>Array methods</h3><h2 id="List-and-ArrayList"><a href="#List-and-ArrayList" class="headerlink" title="List and ArrayList"></a>List and ArrayList</h2><p>list is a public interface</p>
+<p>while ArrayList inherits from it.</p>
+<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Class ArrayList&lt;E&gt;</span><br><span class="line"></span><br><span class="line">java.lang.Object</span><br><span class="line">    java.util.AbstractCollection&lt;E&gt;</span><br><span class="line">       java.util.AbstractList&lt;E&gt;</span><br><span class="line">        java.util.ArrayList&lt;E&gt;</span><br><span class="line">        </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayList</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class"><span class="keyword">extends</span> <span class="title">AbstractList</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class"><span class="keyword">implements</span> <span class="title">List</span>&lt;<span class="title">E</span>&gt;, <span class="title">RandomAccess</span>, <span class="title">Cloneable</span>, <span class="title">Serializable</span></span></span><br></pre></td></tr></table></figure>
+
+<p>链表，用来存放String类型的对象，那么你可以像下面这样做：</p>
+<p>ArrayList<String> list = new ArrayList<String>();</p>
+<p>如果你需要创建一个指定初始容量的数组链表，你可以像下面这样做：</p>
+<p>ArrayList<Integer> list = new ArrayList<Integer>(7);</p>
+<p>注意：ArrayList类只支持对象类型，不支持 基础数据类型。就是说ArrayList对象只能存放对象，不能存放基础数据类型的数据。</p>
+<h3 id="ArrayList常用方法"><a href="#ArrayList常用方法" class="headerlink" title="ArrayList常用方法"></a>ArrayList常用方法</h3><p>下面是总结了一些比较常用的ArrayList类成员方法：</p>
+<ul>
+<li><p>增加元素到链表中</p>
+<ul>
+<li><p><code>boolean add(Element e)</code><br>增加指定元素到链表尾部.</p>
+</li>
+<li><p><code>void add(int index, Element e)</code><br>增加指定元素到链表指定位置.</p>
+</li>
+</ul>
+</li>
+<li><p>从链表中删除元素</p>
+<ul>
+<li><p><code>void clear()</code><br>从链表中删除所有元素.</p>
+</li>
+<li><p><code>E remove(int index)</code><br>删除链表中指定位置的元素.</p>
+</li>
+<li><p><code>protected void removeRange(int start, int end)</code><br>删除链表中从某一个位置开始到某一个位置结束的元素。</p>
+</li>
+</ul>
+</li>
+<li><p>获取链表中的元素</p>
+<ul>
+<li><p><code>E get(int index)</code><br>获取链表中指定位置处的元素.</p>
+</li>
+<li><p><code>Object[] toArray()</code><br>获取一个数组，数组中所有元素是链表中的元素.（即将链表转换为一个数组）</p>
+</li>
+</ul>
+</li>
+<li><p>修改某个元素</p>
+<ul>
+<li><code>E set(int index, E element)</code><br>将链表中指定位置上的元素替换成新元素。</li>
+</ul>
+</li>
+<li><p>搜索元素</p>
+<ul>
+<li><p><code>boolean contains(Object o)</code><br>如果链表包含指定元素，返回true.</p>
+</li>
+<li><p><code>int indexOf(Object o)</code><br>返回元素在链表中第一次出现的位置，如果返回-1，表示链表中没有这个元素。</p>
+</li>
+<li><p><code>int lastIndexOf(Object o)</code><br>返回元素在链表中最后一次出现的位置，如果返回-1，表示链表中没有这个元素。</p>
+</li>
+</ul>
+</li>
+<li><p>检查链表是否为空</p>
+<ul>
+<li><code>boolean isEmpty()</code><br>返回true表示链表中没有任何元素.</li>
+</ul>
+</li>
+<li><p>获取链表大小</p>
+<ul>
+<li><code>int size()</code><br>返回链表长度（链表包含元素的个数）.</li>
+</ul>
+</li>
+</ul>
+<p><strong><em>Attention</em></strong></p>
+<ul>
+<li><p>向Arraylist里面传递对象时，不是新建一个对象存在Arraylist里面，而是引用它。（OOP作业 消费券）</p>
+</li>
+<li><p><code>//remember to use wrapper classes in ArrayList Type.</code> </p>
+</li>
+<li><pre><code class="java">Error (someLine, someByte):
+ java: unexpected type   
+   required: reference   
+   found:    <span class="keyword">int</span>   <span class="comment">// You have to appoint wrapper class</span>
+                   <span class="comment">// which is the capital-written version </span>
+                   <span class="comment">// of the primitive types. //Interger, Boolean, etc.</span>
+&lt;!--￼<span class="number">3</span>--&gt;
+
+
+</code></pre>
+</li>
+</ul>
+<h1 id="Packages-and-Naming-Conventions"><a href="#Packages-and-Naming-Conventions" class="headerlink" title="Packages and Naming  Conventions"></a>Packages and Naming  Conventions</h1><h1 id="Java-Collections"><a href="#Java-Collections" class="headerlink" title="Java Collections"></a>Java Collections</h1><h1 id="Java-FX"><a href="#Java-FX" class="headerlink" title="Java FX"></a>Java FX</h1><h1 id="Networking-Programming"><a href="#Networking-Programming" class="headerlink" title="Networking Programming"></a>Networking Programming</h1><h1 id="Databases"><a href="#Databases" class="headerlink" title="Databases"></a>Databases</h1><h1 id="Debugging"><a href="#Debugging" class="headerlink" title="Debugging"></a>Debugging</h1>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/java/" rel="tag"># java</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020-06-09-Francais-Renconte/" rel="prev" title="Francais Renconté">
+      <i class="fa fa-chevron-left"></i> Francais Renconté
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020-06-05-NexT%E3%83%86%E3%83%BC%E3%83%9E%E3%82%92DIY%E3%81%97%E3%82%88%E3%81%86/" rel="next" title="NexTテーマをDIYしよう">
+      NexTテーマをDIYしよう <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Primitive-Data-Types"><span class="nav-number">1.</span> <span class="nav-text">Primitive Data Types</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#String"><span class="nav-number">1.1.</span> <span class="nav-text">String</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#String-Operation"><span class="nav-number">1.1.1.</span> <span class="nav-text">String Operation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String-Method"><span class="nav-number">1.1.2.</span> <span class="nav-text">String Method</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ternary-Operator"><span class="nav-number">1.2.</span> <span class="nav-text">Ternary Operator</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法-method"><span class="nav-number">2.</span> <span class="nav-text">方法 method</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DiffMerge-Tool"><span class="nav-number">2.1.</span> <span class="nav-text">DiffMerge Tool</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Parse-values-from-Strings"><span class="nav-number">2.2.</span> <span class="nav-text">Parse values from Strings</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OOP"><span class="nav-number">3.</span> <span class="nav-text">OOP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Classes-Constructors"><span class="nav-number">3.1.</span> <span class="nav-text">Classes, Constructors</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Inheritage"><span class="nav-number">3.1.1.</span> <span class="nav-text">Inheritage</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#keyword-this-super"><span class="nav-number">3.1.1.1.</span> <span class="nav-text">keyword this&#x2F; super</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#this-call-super-call"><span class="nav-number">3.1.1.2.</span> <span class="nav-text">this() call &#x2F; super() call</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Static-Instance-methods-variables"><span class="nav-number">3.2.</span> <span class="nav-text">Static &#x2F; Instance methods &#x2F; variables</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#static-methods"><span class="nav-number">3.2.1.</span> <span class="nav-text">static methods</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Calling"><span class="nav-number">3.2.2.</span> <span class="nav-text">Calling</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Declaration"><span class="nav-number">3.2.3.</span> <span class="nav-text">Declaration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static-variables"><span class="nav-number">3.2.4.</span> <span class="nav-text">static variables</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Class-Features"><span class="nav-number">3.3.</span> <span class="nav-text">Class Features</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Compositions"><span class="nav-number">3.3.1.</span> <span class="nav-text">Compositions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Encapsulation"><span class="nav-number">3.3.2.</span> <span class="nav-text">Encapsulation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Polymorphism"><span class="nav-number">3.3.3.</span> <span class="nav-text">Polymorphism</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inner-and-Abstract-Classes"><span class="nav-number">3.4.</span> <span class="nav-text">Inner and Abstract Classes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interfaces"><span class="nav-number">3.5.</span> <span class="nav-text">Interfaces</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Array-Lists-Autoboxing-and-Unboxing"><span class="nav-number">4.</span> <span class="nav-text">Array, Lists, Autoboxing and Unboxing</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Array"><span class="nav-number">4.1.</span> <span class="nav-text">Array</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Array-methods"><span class="nav-number">4.1.1.</span> <span class="nav-text">Array methods</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#List-and-ArrayList"><span class="nav-number">4.2.</span> <span class="nav-text">List and ArrayList</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ArrayList"><span class="nav-number">4.3.</span> <span class="nav-text">ArrayList</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList常用方法"><span class="nav-number">4.3.1.</span> <span class="nav-text">ArrayList常用方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Packages-and-Naming-Conventions"><span class="nav-number">5.</span> <span class="nav-text">Packages and Naming  Conventions</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-Collections"><span class="nav-number">6.</span> <span class="nav-text">Java Collections</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-FX"><span class="nav-number">7.</span> <span class="nav-text">Java FX</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Networking-Programming"><span class="nav-number">8.</span> <span class="nav-text">Networking Programming</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Databases"><span class="nav-number">9.</span> <span class="nav-text">Databases</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Debugging"><span class="nav-number">10.</span> <span class="nav-text">Debugging</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ケニヲ</p>
+  <div class="site-description" itemprop="description">Nothing I am,  Nothing I dream,  Nothing is new.  Nothing I think,  or believe in or say,  Nothing is true.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/gitkeniwo" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;gitkeniwo" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/yggdrasillo" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yggdrasillo" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-hamburger"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ケニヲ</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

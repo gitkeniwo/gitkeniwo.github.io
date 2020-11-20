@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"gitkeniwo.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":20,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="本文分为两个部分，第一部分基本配置展示直接可以在themes&#x2F;next &gt; _config.yml中配置的元素，第二部分展示CSS等魔改。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NexTテーマをDIYしよう">
+<meta property="og:url" content="https://gitkeniwo.github.io/2020-06-05-NexT%E3%83%86%E3%83%BC%E3%83%9E%E3%82%92DIY%E3%81%97%E3%82%88%E3%81%86/index.html">
+<meta property="og:site_name" content="The Last Day of Summer">
+<meta property="og:description" content="本文分为两个部分，第一部分基本配置展示直接可以在themes&#x2F;next &gt; _config.yml中配置的元素，第二部分展示CSS等魔改。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/20-06-06-darkmode.jpg">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/20-6-5-tags.png">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/20-06-06-tag3.png">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/20-06-06-tag1.png">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/20-06-06-tag2.png">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/20-06-06-tag.png">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/20-06-06-pic.png">
+<meta property="article:published_time" content="2020-06-05T14:07:36.000Z">
+<meta property="article:modified_time" content="2020-11-20T16:50:52.579Z">
+<meta property="article:author" content="ケニヲ">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitkeniwo.github.io/img/20-06-06-darkmode.jpg">
+
+<link rel="canonical" href="https://gitkeniwo.github.io/2020-06-05-NexT%E3%83%86%E3%83%BC%E3%83%9E%E3%82%92DIY%E3%81%97%E3%82%88%E3%81%86/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>NexTテーマをDIYしよう | The Last Day of Summer</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="The Last Day of Summer" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">The Last Day of Summer</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">2020s retrospected.</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://gitkeniwo.github.io/2020-06-05-NexT%E3%83%86%E3%83%BC%E3%83%9E%E3%82%92DIY%E3%81%97%E3%82%88%E3%81%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ケニヲ">
+      <meta itemprop="description" content="Nothing I am,  Nothing I dream,  Nothing is new.  Nothing I think,  or believe in or say,  Nothing is true.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Last Day of Summer">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          NexTテーマをDIYしよう
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-06-05 22:07:36" itemprop="dateCreated datePublished" datetime="2020-06-05T22:07:36+08:00">2020-06-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-11-21 00:50:52" itemprop="dateModified" datetime="2020-11-21T00:50:52+08:00">2020-11-21</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>本文分为两个部分，第一部分基本配置展示直接可以在<code>themes/next &gt; _config.yml</code>中配置的元素，第二部分展示CSS等魔改。</p>
+<a id="more"></a>
+<h1 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h1><h2 id="设置语言"><a href="#设置语言" class="headerlink" title="设置语言"></a>设置语言</h2><p>位置：<code>_config.yml &gt; language</code></p>
+<h2 id="主题的Scheme"><a href="#主题的Scheme" class="headerlink" title="主题的Scheme"></a>主题的Scheme</h2><p><code>/themes/next &gt;  _config.yml &gt; scheme</code><br>主题默认有几个样式，可以自己更改。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#scheme: Muse</span><br><span class="line">scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br><span class="line">#scheme: Gemini</span><br></pre></td></tr></table></figure>
+<h3 id="Dark-Mode"><a href="#Dark-Mode" class="headerlink" title="Dark Mode"></a>Dark Mode</h3><p>Dark Mode居然是依据设备的配置来的！！也就是说可怜的win10会一直遭受刺眼的强光，能不能改一改呢。<br><img src="/img/20-06-06-darkmode.jpg" alt=""></p>
+<h2 id="菜单"><a href="#菜单" class="headerlink" title="菜单"></a>菜单</h2><p>开启了Tags 之后依然是 <code>Cannot GET /tags/</code><br>需要在<code>/source/</code>里面创建一个tags文件夹来render tag页面<br><code>$hexo new page &quot;tags&quot;</code></p>
+<p>然后在<code>source/tags/index.md</code>中修改内容为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &quot;Tags・タッグ・標籤&quot; </span><br><span class="line">type: tags</span><br><span class="line">layout: &quot;tags&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>这样就可以正常显示了。<br><img src="/img/20-6-5-tags.png" alt=""></p>
+<p><em>200812补充</em><br>Categories的设置同理：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Categories</span><br><span class="line">date: 2020-08-12 14:21:08</span><br><span class="line">type: categories</span><br><span class="line">layout: &quot;categories&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h2 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h2><h3 id="RSS"><a href="#RSS" class="headerlink" title="RSS"></a>RSS</h3><p>需要先安装插件 <code>npm install --save hexo-generator-feed</code><br>在hexo root dir 的<code>_config.yml</code>配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: http:&#x2F;&#x2F;hexo.io&#x2F;plugins&#x2F;</span><br><span class="line">#RSS订阅</span><br><span class="line">plugin:</span><br><span class="line">- hexo-generator-feed</span><br><span class="line">#Feed Atom</span><br><span class="line">feed:</span><br><span class="line">type: atom</span><br><span class="line">path: atom.xml</span><br><span class="line">limit: 20</span><br></pre></td></tr></table></figure>
+<p>去掉RSS的注释 <code>RSS: /atom.xml || fa fa-rss</code> 就可以显示了。<br>也可以自己烧制feed，这时就要更改链接了。</p>
+<h2 id="HomePage"><a href="#HomePage" class="headerlink" title="HomePage"></a>HomePage</h2><h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>首先确保 <code>excerpt_description: true</code>处于开启状态，然后在自己的博文里面要断句的地方添加<code>&lt;!-- more --&gt;</code>就可以显示了。</p>
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><p>字体窝佬卡了好半天，网上的说法大都是要去改CSS，然而不知道那个<code>.swig</code>文件的语法究竟如何，窝佬最后发现可以直接在主题配置文件里面引用google fonts，并且英文字体都<del>很巧妙的支持了中文（就很有意思）</del><strong>更正：</strong> 后来发现在MAC上显示了中文显示了是因为窝佬配置了<code>base.styl</code>: <code>// Font families.
+$font-family-chinese      = &quot;YuppySC-Regular&quot; ,&quot;PingFang SC&quot;, &quot;STYuanti-SC-Regular&quot;, &quot;Microsoft YaHei&quot;;</code>。<em>BTW中文web font太过麻烦+龟速，窝佬目前Literally放弃。</em> 这样来看，想要添加日文字体也只用仿照中文的写法增加<code>font-family-japanese</code> 再在global merge的时候优先级读入 即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">font:</span><br><span class="line">  enable: true</span><br><span class="line"></span><br><span class="line">  # Uri of fonts host, e.g. https:&#x2F;&#x2F;fonts.googleapis.com (Default).</span><br><span class="line">  host: https:&#x2F;&#x2F;fonts.googleapis.com&#x2F;css2?family&#x3D;Nunito:wght@600&amp;display&#x3D;swap</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  # Font options:</span><br><span class="line">  # &#96;external: true&#96; will load this font family from &#96;host&#96; above.</span><br><span class="line">  # &#96;family: Times New Roman&#96;. Without any quotes.</span><br><span class="line">  # &#96;size: x.x&#96;. Use &#96;em&#96; as unit. Default: 1 (16px)</span><br><span class="line"></span><br><span class="line">  # Global font settings used for all elements inside &lt;body&gt;.</span><br><span class="line">  global:</span><br><span class="line">    external: true</span><br><span class="line">    family: Nunito</span><br><span class="line">    size:</span><br></pre></td></tr></table></figure>
+<p>要注意的就是千万别用默认的api（那个就很迷，很多字体都不支持），而是用Google fonts选定字体后生成的特定CDN链接。</p>
+<h2 id="Post"><a href="#Post" class="headerlink" title="Post"></a>Post</h2><h3 id="tag颜色问题"><a href="#tag颜色问题" class="headerlink" title="tag颜色问题"></a>tag颜色问题</h3><p>看到Dark Mode下post底部的tag颜色对比度很低，无法辨别。<br><img src="/img/20-06-06-tag3.png" alt=""><br>可以直接F12看CSS设置<br><img src="/img/20-06-06-tag1.png" alt=""><br>发现是给颜色指定了名称的，那么就好找了，最后<code>_variables &gt; base.styl</code>中找到了相关设置。<br><img src="/img/20-06-06-tag2.png" alt=""><br>把dark mode下的颜色从<code>grey-dim</code>改到<code>grey-dark</code>应该就可以了，看颜色定义发现grey-dark用的是<code>#999</code>。要是还差点意思的话可以加深点，<code>#888</code>之类的。<br><img src="/img/20-06-06-tag.png" alt=""><br>最后效果。</p>
+<h3 id="图片上传问题"><a href="#图片上传问题" class="headerlink" title="图片上传问题"></a>图片上传问题</h3><p>经历了一次短暂的图片未显示的问题，是相对路径出了问题。<br>图片上传基本上是用md语法的<code>![](&lt;your pic path&gt;)</code>，可以为每一个post自动建立一个资料文件夹，也可以统一自定路径放置。<br>窝遇到的问题是Home可以显示图片，但post单独的页面显示不了，后来发现<code>/img/picture.jpg</code> 是需要在最前面加上<code>/</code>的。 而<code>~/</code>是表示系统用户的根目录。<br>这一点，在hexo生成的页面文件目录中也可以看到。<br><img src="/img/20-06-06-pic.png" alt=""><br>如果忘掉了<code>/</code>，post页面就会在自己的文件夹里面找img，也就无法显示了。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"># hexo</a>
+              <a href="/tags/blog/" rel="tag"># blog</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020-06-08-Java-review/" rel="prev" title="Java review">
+      <i class="fa fa-chevron-left"></i> Java review
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020-06-05-%E5%BC%80%E5%8D%9A%E7%A2%8E%E7%A2%8E%E5%BF%B5/" rel="next" title="开博碎碎念">
+      开博碎碎念 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本配置"><span class="nav-number">1.</span> <span class="nav-text">基本配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#设置语言"><span class="nav-number">1.1.</span> <span class="nav-text">设置语言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题的Scheme"><span class="nav-number">1.2.</span> <span class="nav-text">主题的Scheme</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Dark-Mode"><span class="nav-number">1.2.1.</span> <span class="nav-text">Dark Mode</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#菜单"><span class="nav-number">1.3.</span> <span class="nav-text">菜单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图标"><span class="nav-number">1.4.</span> <span class="nav-text">图标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#RSS"><span class="nav-number">1.4.1.</span> <span class="nav-text">RSS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HomePage"><span class="nav-number">1.5.</span> <span class="nav-text">HomePage</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#摘要"><span class="nav-number">1.5.1.</span> <span class="nav-text">摘要</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字体"><span class="nav-number">1.6.</span> <span class="nav-text">字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Post"><span class="nav-number">1.7.</span> <span class="nav-text">Post</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tag颜色问题"><span class="nav-number">1.7.1.</span> <span class="nav-text">tag颜色问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片上传问题"><span class="nav-number">1.7.2.</span> <span class="nav-text">图片上传问题</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ケニヲ</p>
+  <div class="site-description" itemprop="description">Nothing I am,  Nothing I dream,  Nothing is new.  Nothing I think,  or believe in or say,  Nothing is true.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/gitkeniwo" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;gitkeniwo" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/yggdrasillo" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;yggdrasillo" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-hamburger"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ケニヲ</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

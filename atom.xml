@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>The Last Day of Summer</title>
+  
+  <subtitle>2020s retrospected.</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://gitkeniwo.github.io/"/>
+  <updated>2020-11-20T16:50:52.582Z</updated>
+  <id>https://gitkeniwo.github.io/</id>
+  
+  <author>
+    <name>ケニヲ</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Github大文件上传办法</title>
+    <link href="https://gitkeniwo.github.io/2020-11-10-git/"/>
+    <id>https://gitkeniwo.github.io/2020-11-10-git/</id>
+    <published>2020-11-10T10:58:02.000Z</published>
+    <updated>2020-11-20T16:50:52.582Z</updated>
+    
+    <content type="html"><![CDATA[<p>总之，最近我也开始做毕设了，然后需要阅读大量的文献，并做好标注。首选当然是notion，但是notion有个问题就是免费版本的文件上传是有5MB限制的，这就注定了大部分稍微有些图片的论文pdf都越过了notion的限制，所以我需要一个host在web上的网页来展示对应的pdf文件，在notion那边只需要放URL就可以了。Google Drive很不错，但是我目前依旧使用的乞丐版，容量也许不够，所以我想到了github，也不需要翻墙，对导师和其他人来说都还算比较方便。<br>但是Github有个问题是它也对文件大小做了限制，貌似是单个文件不能超过100MB，再加上墙国的网络因素，我放了一个27MB的pdf做试验第一次提交就没push上去。报错是<code>error: RPC failed; curl 55 SSL_write() returned SYSCALL, errno = 32</code>，之后就hang在这里了27MB的文件上传到24.5MB就戛然而止。然后上<a href="https://stackoverflow.com/questions/2702731/git-fails-when-pushing-commit-to-github" target="_blank" rel="noopener">stackoverflow查了下</a>，改了git本地的文件限制<code>git config http.postBuffer 524288000</code>，依旧问题复现。<br>最后想到是不是有什么办法能够破除其大文件限制，毕竟以前看到那么多分享电子书的repo。最后果然找到了，是一个项目叫做<a href="https://git-lfs.github.com/" target="_blank" rel="noopener"><strong>git-lfs*</strong> (large file system)*。</a>，总之安装方便，使用简便，就两行命令，十分省心。<br>使用git-lfs之后立马就push成功了。<br><img src="/img/20-11-10.png" alt=""><br>虽然不清楚git-lfs最大能够支持多大的文件，但是一般的电子书和文献备份应该也是够用了，推荐给各位。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;总之，最近我也开始做毕设了，然后需要阅读大量的文献，并做好标注。首选当然是notion，但是notion有个问题就是免费版本的文件上传是有5MB限制的，这就注定了大部分稍微有些图片的论文pdf都越过了notion的限制，所以我需要一个host在web上的网页来展示对应的pd
+      
+    
+    </summary>
+    
+    
+      <category term="Github" scheme="https://gitkeniwo.github.io/categories/Github/"/>
+    
+    
+      <category term="git" scheme="https://gitkeniwo.github.io/tags/git/"/>
+    
+      <category term="github" scheme="https://gitkeniwo.github.io/tags/github/"/>
+    
+      <category term="git-lfs" scheme="https://gitkeniwo.github.io/tags/git-lfs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>国土安全S06, I literally cried like a shit</title>
+    <link href="https://gitkeniwo.github.io/2020-11-02-Untitled-17/"/>
+    <id>https://gitkeniwo.github.io/2020-11-02-Untitled-17/</id>
+    <published>2020-11-02T01:53:45.000Z</published>
+    <updated>2020-11-20T16:50:52.581Z</updated>
+    
+    <content type="html"><![CDATA[<p>虽然我这周一直在对自己说，只要我不看完S6，Peter就不会离开我们。但是我还是在昨晚十一点过看完了finale。前半部分都很平静，我心里很清楚马上就会发生什么事，所以情绪稳定。当Peter义无反顾的开着那辆车冲出重围，当几个特写镜头清晰的记录下了他中弹的过程，我心里也只是有点波澜。我想，Peter 已经受过太多的折磨和苦难了, at least now his suffering is over and he doesn’t have to deal with another piece of CIA shit. 当carrie回答madam president-elect “Peter Quinn. His name is Peter Quinn” 的时候，我也只是有点想哭而已，眼泪在眼睛里不停的打转。我以为这就是结束了。平気、平気。<br>但是我没有想到杀手锏还在后面，在那一叠照片里面，在哀婉的钢琴声里，Carrie一张一张的翻看Peter的遗物，那应该是他最珍贵的东西了吧，照片。Max说he doubt he is such an internet guy. 他甚至不用email。那一叠照片，就是他留下来的所有东西了。他的旧衣服会被Carrie收进垃圾袋，然后被运到landfill。他的名字会从CIA的名录上抹去。只有这一叠照片，装在一个白色信封里，夹在那本dog-earred的Charles Dickens的 <em>Great Expectation</em> 里面。伴随着Carrie标志性的chin quiver，i started crying so intensely. I never thought it would be so sorrowful and it was just like a tear gas. 当最后那一张Carrie的照片出现的时候，i think everyone at this point would completely lost it. 我开始哭得像个傻逼。我想到了Quinn在前几记孤单的身影。想到了他站在沙林毒气室里坚毅又无助的眼神。Jesus Christ, man. I bursted out. Poor guy, Quinn. 甚至连Quinn这个名字都只是CIA内部的cover，照片的背面写着Johnny something，that should be his real name, or the remains of the past Quinn.<br>Frankly speaking我不知道Carrie为什么会得到这么多男人的爱。reddit上有条评论很形象的写道carrie’s got dicks throwing at her. 但是她真的deserve it吗？The answer is apparantly no. Matter-of-factly most people in r/homeland don’t think so. Sergeant Brody 应该是Carrie最爱的人了，brody的下场，我们也都有目共睹了。我不敢说是Carrie一步一步将Brody推向了歇斯底里和死亡，因为在前三季的剧情里面，Brody的命运仿佛是早就注定了的，是编剧们对这个人物最大的恶意，是这复杂的世界对普通人的嘲弄。但是Quinn不一样，Quinn他只是一颗缺爱的孤独心灵，被Dar Adar挑选、训练，甚至也许还遇见过一些pedophilia的下流勾当（参见S5E12的reddit讨论区），他内心深处只是想要一丝光明，只是想要a real life and a real love而已，但又被CIA的事情无限的拉回到Darkness之中。</p><blockquote><p>Carrie - I guess I’m done and we never happened. I’m not one for words but they are coming now.<br>I don’t believe in fate, or destiny or horoscopes but I can’t say I’m not surprised things turned out this way. I always felt there was something kinda pulling me back to darkness, does that make sense?, but I wasn’t allowed a real life or a real love - that was for normal people.<br>With you I thought, ah maybe, just maybe but I know now that was a false glimmer. I’m used to those, they happen all the time in the desert but this one got to me and here’s the thing, this death, this end of me is exactly what should’ve happened. I wanted the darkness, I fuckin’ asked for it.<br>It has me now so don’t put a star on the wall for me, don’t say some dumb speech just think of me as a light on the headlands, a beacon steering you clear of the rocks.<br>I loved you.<br>Yours for always now - Quinn</p></blockquote><p>也许，Carrie也有自己的难处，正如每一季的开头，当她正听着爵士乐准备投身全新的生活之时，周围的Terrorist attack又唤醒了她内心深处那个勇敢和正义的灵魂。<br>也许，Carrie的使命就是拯救世界，保护国家的安全，保护正义和保护大家。那么，Quinn的使命就是爱Carrie和保护Carrie。After all, the weirdest part of love is its predisposition of being unrequitted, and yet being alluring.<br>坦率来讲，我这一段时间都一直沉迷整个国土安全剧集，从第一季Sergeant Brody可怕的伊斯兰倾向，再到Quinn在S2末尾那一段要保护B和C的帅气的台词，再到Tehran、Paskistan、Berlin、NYC。我多么希望自己也能像Max那样在CIA做一个无所不能的特工啊.直到S5S6 我最喜欢的Peter literally被编剧们fucked up，直到peter的故事线和backstory被展开，我又沉浸在了悲伤里面。最开始，我始终不能接受what they did to peter with the sarin gas, 然后第六季开场，peter被小混混一拳打晕在床边，他不修边幅的头发和胡须，他结巴的语言和一瘸一拐的姿态。I d rather they killed him.<br>然后我看到了他即便是这样拧巴的活着，也是为了carrie，我就很生气。但是直到昨天S6完结，我现在的看法又改变了。Peter大概只是想跟自己和解吧。经历过了这么多的shit之后，他也许就和第三季的sergeant brody一样，只是在平淡的接受和等待自己的死亡。Death isn’t that bad thing after all you’ve been through.<br>为什么我絮絮叨叨了这么多，明明国土安全12年就拿了Emmy Awards，而我，只是一个在后疫情时代才想到要补追这一部神剧的无姓网民。最近我也一直在写，在微博，在pawoo，在豆瓣，在备忘录里，记录着看剧时的心境变迁。在油管上看了所有Rupert Friend的视频，在reddit上翻看了好多陈年旧帖。<br>可能是因为Peter确实是我的真爱吧。</p><p>– 2020.11.1 <em>Homeland</em>  S6 Finale</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;虽然我这周一直在对自己说，只要我不看完S6，Peter就不会离开我们。但是我还是在昨晚十一点过看完了finale。前半部分都很平静，我心里很清楚马上就会发生什么事，所以情绪稳定。当Peter义无反顾的开着那辆车冲出重围，当几个特写镜头清晰的记录下了他中弹的过程，我心里也只是
+      
+    
+    </summary>
+    
+    
+      <category term="Tweets" scheme="https://gitkeniwo.github.io/categories/Tweets/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Untitled</title>
+    <link href="https://gitkeniwo.github.io/2020-10-10-Untitled-16/"/>
+    <id>https://gitkeniwo.github.io/2020-10-10-Untitled-16/</id>
+    <published>2020-10-09T16:01:47.000Z</published>
+    <updated>2020-11-20T16:50:52.580Z</updated>
+    
+    <content type="html"><![CDATA[<p>长假之后，对于没课的我而言，依旧是长假–GRE、前端、算法，然后是无聊的到处刷刷的日常。好像最近生活里唯一的期待就是UTC+08:00十四日凌晨发布的iPhone 12了，直角边的机身回归了我最中意的Steve Jobs时代的iPhone设计，简直就是一种Post-Old-Fashion（自己随便造的词）。朋友说，我现在的状态叫做假后综合症，可能是因为他还在大三，无法理解这种长假之后依旧是长假的感受。今晚继续做了NRC的_Next Run_，说老实话这个跨越有点大，Coach Bennette直接就让人连续跑20分钟了，我不禁「阿这」。跑完之后在看台上歇了一会，后座坐了一对情侣，尴尬的是当我要起身下去的时候，他们刚好也亲热完了准备下楼回到地面，就刚好撞上了。H市的初秋（不下雨的日子）是我的最爱，晚十点，穿着一件防风衣，里面一件短T，再配一条短裤，惬意十足，走在街边，在路中间骑车，耳机里面是Radiohead和Blur，阿，美妙的日子。</p><p>全家最近也欺负单身汪，排队排到的时候，我给小哥说要一个冰淇淋，他说冰淇淋买一送一，一个不卖，我不知道他是不是mean it，因为经常看到有人分享跟全家小哥之间的趣事，但是当时他的表情真的好严肃，直接把我给唬住了……但是我还是向他表达了我不要送的那个，一个就够了的意思，最后也成功吃上了一个香草与海盐的双拼——全家一般会offer两个口味及其双拼，香草口味是常驻的，另一个口味是随着季节流转的——海盐这个味道我真的不敢恭维，除了我喝过有一款饮料叫做海之言之外，我以为海盐是一种很清爽的，结果上次去点了个全海盐的冰淇淋，感觉就像真的是在吃盐巴一样，好在这次的双拼把咸味中和得刚刚好。不过在我吃完冰淇淋不到五分钟，走上楼之前就后悔了，感觉胃里一阵极寒，是铁板上钉钉的拉肚子的前奏，于是赶紧回宿舍喝了一整杯的热水，幻想着靠那份近乎滚烫的真气中和一下冰淇淋的冰霜，然而到现在小腹正中还是凉凉的感觉。</p><p>还有，今天我一个高中同学发飙了，跟别人争执起父母有关的问题，他认为原生家庭给他带来的负担太大了，而跟他纠缠不清的人认为应该「体谅父母的难处」「骂你也是为你好」。对于这种言论我表示非常震惊了，我不敢相信自己的同辈人，（特别是那人还广泛的阅览了很多欧美文学和影视作品），也能发表出这样不利于自我中心的言论。我以为，自由的土壤，随着浪潮的奔涌，会逐渐展露在空气之中，现在看来，或许对这片土地持有更加悲观的态度，才能避免自己的期许落得一场空了。我对高中同学说我早就看透这一切了，发生在这里无数鲜活的生命的逝去，卢浦大桥上纵身一跃的身影，江夏一中的教学楼上用鲜血表示抗议的不羁的灵魂，与此对比的固步自封的传统势力与可笑荒唐的家国情怀。我说，脱脂吧，向自由的灯塔走去吧，虽然我们可能会跌倒，但绝不会迷失。</p><p>最后，还有今天看到的一条微博，很喜欢。<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlly1gjjjw1lruuj30ku6l44qq.jpg" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;长假之后，对于没课的我而言，依旧是长假–GRE、前端、算法，然后是无聊的到处刷刷的日常。好像最近生活里唯一的期待就是UTC+08:00十四日凌晨发布的iPhone 12了，直角边的机身回归了我最中意的Steve Jobs时代的iPhone设计，简直就是一种Post-Old-
+      
+    
+    </summary>
+    
+    
+      <category term="Tweets" scheme="https://gitkeniwo.github.io/categories/Tweets/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Untitled</title>
+    <link href="https://gitkeniwo.github.io/2020-10-07-Untitled-15/"/>
+    <id>https://gitkeniwo.github.io/2020-10-07-Untitled-15/</id>
+    <published>2020-10-07T11:36:02.000Z</published>
+    <updated>2020-11-20T16:50:52.580Z</updated>
+    
+    <content type="html"><![CDATA[<p>东操和西操——不熟悉的，可能还以为一个在学校东面，一个在学校西面。事实上，这两个操场基本上是相连的：它们中间只隔了一条人行道。昨天晚上去东操跑步了，虽然说还在国庆节的尾声，9pm的东操还是熙熙攘攘的，巨大的照明灯无言的伫立在橡胶跑道的四个角落，中间部分是黄绿色的草坪。骑车来的路上虽然穿了防风衣，初秋的夜里寒风还是让人不禁开始打哆嗦，走进两个操场的夹缝，在寄物柜刷卡存放好了随身携带的物品之后，迈入东操的那一刻，又感觉之前的寒意顿时消失了。空空旷旷的操场四周只有一些低矮的铁丝网，甚至连景观树都矮小而看似弱不禁风，整个操场内部却仿佛有某种结界一般抵挡了外界的空气流动，让人在运动之前就已经feel strong了。昨晚先是尝试了著名的runkeeper，后来觉得它的功能实在是过于简陋，又更新了NRC，试着完成了一次First Run，这应该是Nike为初学者中的初学者准备的，整个教程耗时27分钟，开始做了Track Preparation，然后正式的训练分成了8-9个interval，每个part之间会有一分钟的recover，只要有耐心非常轻松的就完成了，当然最惊喜的还是那个Male Coach的迷人的声音, I mean, How can someone be so charming while give you all the strength and encouragement and at the same time showing sense of humour. OH he’s absolutely great!!! 这简直是激发了人想要跑步的信念和欲望，总之，以后的run我还会继续用NRC的。（一些小并感 </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;东操和西操——不熟悉的，可能还以为一个在学校东面，一个在学校西面。事实上，这两个操场基本上是相连的：它们中间只隔了一条人行道。昨天晚上去东操跑步了，虽然说还在国庆节的尾声，9pm的东操还是熙熙攘攘的，巨大的照明灯无言的伫立在橡胶跑道的四个角落，中间部分是黄绿色的草坪。骑车来
+      
+    
+    </summary>
+    
+    
+      <category term="Tweets" scheme="https://gitkeniwo.github.io/categories/Tweets/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>我決定不再慶祝國慶</title>
+    <link href="https://gitkeniwo.github.io/2020-10-01-a/"/>
+    <id>https://gitkeniwo.github.io/2020-10-01-a/</id>
+    <published>2020-10-01T09:51:01.000Z</published>
+    <updated>2020-11-20T16:50:52.582Z</updated>
+    
+    <content type="html"><![CDATA[<p>之所以用「慶祝」這個詞，而不用其他表達，諸如「過國慶」一類的，是因為我覺得時間是單方向流逝的，是不在乎你的個人意志的，所以，無論如何，「國慶」這個概念在PRC治下廣袤的國土上是將繼續並且長久地存在的。</p><p>「國慶」從大一開始對我而言，就單單只意味著長達七日的假期了，這穿插在初秋的小長假還會讓妳付出一定的代價，比如說，鋪天蓋地的政治宣傳，節日期間醜惡的市容變化（紅色污染），無孔不入的關於國族認同價值取向的洗腦。</p><p>坦率的來講，我更願意view this whole thing as the mark of the commencement of the sufferings and plight in the pan-sinitic area. 這不像是說當人們慶祝自己生日的時候，同時也應當感謝母親懷胎十月所遭受的苦難；這是明明白白的苦難，它沒有給這裏的人民帶來Marx所許諾的那些美好——反而是無知、愚昧、毀壞、膽怯與獨裁統治。</p><p>總而言之，為了紀錄這種從無感到抵制之間的轉變，我把今日的想法寫下來。以後，若是還在牆內生活，那麼十一對我來說就是調休的日子，它跟普通的雙休日別無兩樣，我閒適、休憩、觀影、壓馬路，都與這個日子所代表的其他含義無關，也不會做出「因為今天是那個日子所以我要XXX」的事情來，不管是反對還是嘲諷還是紀念一種過半世紀的國族淪陷。最大的輕蔑是無視。昨天，中国高速鐵路, which PRC apparently has been boasting for a long time, 因此而大面積延誤兩小時以上。坐在高速鐵路動車組上的人，有多少是為了「慶祝」國慶的呢。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;之所以用「慶祝」這個詞，而不用其他表達，諸如「過國慶」一類的，是因為我覺得時間是單方向流逝的，是不在乎你的個人意志的，所以，無論如何，「國慶」這個概念在PRC治下廣袤的國土上是將繼續並且長久地存在的。&lt;/p&gt;
+&lt;p&gt;「國慶」從大一開始對我而言，就單單只意味著長達七日的假期了
+      
+    
+    </summary>
+    
+    
+      <category term="Tweets" scheme="https://gitkeniwo.github.io/categories/Tweets/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>怎样打印/解密一份限制打印（need password when print）的pdf</title>
+    <link href="https://gitkeniwo.github.io/2020-09-27-tech/"/>
+    <id>https://gitkeniwo.github.io/2020-09-27-tech/</id>
+    <published>2020-09-27T13:55:53.000Z</published>
+    <updated>2020-11-20T16:50:52.583Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天在网上找GRE OG的pdf，下载到本地准备传到Goodnotes里面的时候，Goodnotes提示该PDF需要密码，excusez moi？明明我可以直接用Skim打开看的。后来才搞明白了原来只是print的时候需要密码，上传到goodnotes里面浏览应该也是认为把权限完全交给了goodnotes，所以同样需要密码，原来还有这种操作。</p><p>解决办法：上传到Google Drive，然后用Google Drive的web preview打开，直接cmd+P，GD会帮你生成一个新的pdf preview，该pdf就可以直接打印了。</p><p>所以这个密码最后还是形同虚设了……不知道adobe会不会起诉谷歌娘(0_0)</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今天在网上找GRE OG的pdf，下载到本地准备传到Goodnotes里面的时候，Goodnotes提示该PDF需要密码，excusez moi？明明我可以直接用Skim打开看的。后来才搞明白了原来只是print的时候需要密码，上传到goodnotes里面浏览应该也是认为把
+      
+    
+    </summary>
+    
+    
+      <category term="Tips" scheme="https://gitkeniwo.github.io/categories/Tips/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Untitled</title>
+    <link href="https://gitkeniwo.github.io/2020-09-27-Untitled-14/"/>
+    <id>https://gitkeniwo.github.io/2020-09-27-Untitled-14/</id>
+    <published>2020-09-26T16:19:38.000Z</published>
+    <updated>2020-11-20T16:50:52.580Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天去看了《菊次郎の夏》，我对于公路题材的作品一向不是很感冒，该片的出彩之处也就是北野武本人了，短短的旅途中充斥着大把的夸张与荒诞，成年人的反叛，也遇见了很多有意思的大人，就我本人而言从这部经典的好片中更多地是看见了那个年代日本社会的风貌，看到了人们囿于现实与理想之间的缝隙之中无奈而自嘲式的狂欢，夏日祭，乡间海边绵延不绝的电线杆，周游全国的驴客与无所事事的机车族，还有很多90-00年代的特征元素，后波普主义的饰品和剪辑。这场夏天单单是围绕着菊次郎小朋友的祭典吗？我想不是的，每个人在夏天里面都得到了或多或少的欢愉，人们去思考，去观察，伸出手去触摸到夏天的温度，去野炊，去乡间小路开车，坐在草坪上，坐在年久失修的公交站台里，坐在酒店的独木船陈设中，躺在游泳池边的塑胶椅上，躺在前鸟神社的青石台阶地下，人们爱过，恨过，难受过，为了短暂的交情伤感过。当贴满标签纸的面包车驶过鹤见川大桥的时候，夏天就好像结束了。看着江边的砖瓦桥上飞奔的小男孩的影子，北野武饰演的o ji san依然还是那副面瘫的表情，但是眼神里却带着温柔与怀想。爱知，横滨，故事发生的地点在哪里我不太确定，当那个小小的孤独的身影又消失在賑やかな街並み中，这短短的旅程也就风流云散了。这样的夏天，菊次郎君今后还会度过很多次。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今天去看了《菊次郎の夏》，我对于公路题材的作品一向不是很感冒，该片的出彩之处也就是北野武本人了，短短的旅途中充斥着大把的夸张与荒诞，成年人的反叛，也遇见了很多有意思的大人，就我本人而言从这部经典的好片中更多地是看见了那个年代日本社会的风貌，看到了人们囿于现实与理想之间的缝隙
+      
+    
+    </summary>
+    
+    
+      <category term="Tweets" scheme="https://gitkeniwo.github.io/categories/Tweets/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Untitled</title>
+    <link href="https://gitkeniwo.github.io/2020-09-21-Untitled-13/"/>
+    <id>https://gitkeniwo.github.io/2020-09-21-Untitled-13/</id>
+    <published>2020-09-21T02:51:06.000Z</published>
+    <updated>2020-11-20T16:50:52.580Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天是秋分，昨天，钱塘江的大潮涌上了西湖南线的之江路，煞白的浪花越过了矮矮的提拔，把路口等候的车辆撞了个七零八落，九溪公交站，应该就是之江校区门口公交站的上一站。一年前，我也喜欢在之江路靠江的一侧漫步，一面是宽广无际的钱江江面，一面是西湖群山葱葱郁郁的崖壁和植被，江水的味道弥漫在空气里面，混杂着奔跑在之江路上忙碌的机车汽油味道，若是遇见周日，4路和308路公交车常常好几趟也挤不上去，只好沿着马路边缘走着走着，走到下一个公交站牌会发现还是簇拥着一大群人，一直走到六和塔走到白塔，最后走到水澄桥地铁站。我不知道在古代，或者说，几百年，几千年之前，住杭州的人们会不会来观潮。毕竟那时候还没有人知晓万有引力定律，江水奔腾，华丽的倒转，就像是时间流逝的方向天翻地覆了一般。总而言之，在今日的大都市之中，这种难得一见的自然现象也触手可及，至少坐一小时以内的公车或者地铁就能看见，我觉得杭州也是很不寻常的地方，当然如果让我搬到之江校区去的话那我是一百个不情愿，这又是另话了。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今天是秋分，昨天，钱塘江的大潮涌上了西湖南线的之江路，煞白的浪花越过了矮矮的提拔，把路口等候的车辆撞了个七零八落，九溪公交站，应该就是之江校区门口公交站的上一站。一年前，我也喜欢在之江路靠江的一侧漫步，一面是宽广无际的钱江江面，一面是西湖群山葱葱郁郁的崖壁和植被，江水的味道
+      
+    
+    </summary>
+    
+    
+      <category term="Tweets" scheme="https://gitkeniwo.github.io/categories/Tweets/"/>
+    
+    
+      <category term="nature" scheme="https://gitkeniwo.github.io/tags/nature/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Untitled</title>
+    <link href="https://gitkeniwo.github.io/2020-09-15-Untitled-12/"/>
+    <id>https://gitkeniwo.github.io/2020-09-15-Untitled-12/</id>
+    <published>2020-09-15T01:16:45.000Z</published>
+    <updated>2020-11-20T16:50:52.580Z</updated>
+    
+    <content type="html"><![CDATA[<p>連日の雨が降ると、杭州はすでに秋になるような感じ。杭州是最擅长下这种阴间雨的。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;連日の雨が降ると、杭州はすでに秋になるような感じ。杭州是最擅长下这种阴间雨的。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="Tweets" scheme="https://gitkeniwo.github.io/categories/Tweets/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Untitled</title>
+    <link href="https://gitkeniwo.github.io/2020-09-12-Untitled-11/"/>
+    <id>https://gitkeniwo.github.io/2020-09-12-Untitled-11/</id>
+    <published>2020-09-12T11:48:10.000Z</published>
+    <updated>2020-11-20T16:50:52.580Z</updated>
+    
+    <content type="html"><![CDATA[<p>忧郁情绪来得快，去得不一定快。有时陷进去了头脑就不能思考，只能不断地复现各种令人愤懑的往事。这时候要想快速驱散这片忧愁的阴霾，只需要投身进入另一件事情，当下未完成的作业、对未来的规划、提升自己多个方面技能的备考，也可以是非常具体的事情，比如整理自己的notion、打开终端更新本博客等等。只要自己开始做事情了，内心一方面会暂时将恼人的情绪抛到脑后，另一方面潜意识里也会觉得自己是还有点价值的，这价值来源于当下手头的工作，不管它价值几分，总之是有个东西将本属于self-esteem的空缺给填上了。</p><p>最大的忌讳，同时也是最大的陷阱，就是人处于抑郁状态的时候，甚至连「找点什么事情做做吧」这种想法都难以涌上心头，只能一再地生闷气，越想越气，越想越无助。</p><p>当然，这里的「事情」也是有一些不能触碰的，对于我来说，就是不能「打游戏」，因为我的潜意识里把「打游戏」与「浪费生命」联系起来了，所以如果用打游戏来抵御或者说是逃避现实的话，我也是会越陷越深的。所以第一件事是关掉游戏，卸载，放进柜子，不管当天游戏里的任务还有多少没有做完。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;忧郁情绪来得快，去得不一定快。有时陷进去了头脑就不能思考，只能不断地复现各种令人愤懑的往事。这时候要想快速驱散这片忧愁的阴霾，只需要投身进入另一件事情，当下未完成的作业、对未来的规划、提升自己多个方面技能的备考，也可以是非常具体的事情，比如整理自己的notion、打开终端更
+      
+    
+    </summary>
+    
+    
+      <category term="Tweets" scheme="https://gitkeniwo.github.io/categories/Tweets/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Untitled</title>
+    <link href="https://gitkeniwo.github.io/2020-08-30-Untitled-10/"/>
+    <id>https://gitkeniwo.github.io/2020-08-30-Untitled-10/</id>
+    <published>2020-08-30T11:32:39.000Z</published>
+    <updated>2020-11-20T16:50:52.580Z</updated>
+    
+    <content type="html"><![CDATA[<p>本次考前经历了复杂了心态变迁，从一再拖延，到幡然醒悟开始疯狂焦虑，到现在心态平和看淡一切。</p><p>也就是今天一天的变化。在今日之前都是处于拖延状态的。 </p><p>考完了，可以简单给自己放个假，可以去看诺兰新上的电影，可以去魔都找朋友玩，也可以在宿舍自闭打游戏。</p><p>再然后，又情非己愿地陷入学习压力的日常，语言考试，专业技能，实习，科研，留学，移民，林林总总的日常。</p><p>我也实在没有太多话可说，抱怨也好，鸡血也好。我没有太多可以言说的态度可以对人发表，甚至对自己也没有什么想法，就这样随波逐流，顺着不可逆转的时间线一路向前推进就好。</p><p>还能怎么样呢。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;本次考前经历了复杂了心态变迁，从一再拖延，到幡然醒悟开始疯狂焦虑，到现在心态平和看淡一切。&lt;/p&gt;
+&lt;p&gt;也就是今天一天的变化。在今日之前都是处于拖延状态的。 &lt;/p&gt;
+&lt;p&gt;考完了，可以简单给自己放个假，可以去看诺兰新上的电影，可以去魔都找朋友玩，也可以在宿舍自闭打游戏。
+      
+    
+    </summary>
+    
+    
+      <category term="Tweets" scheme="https://gitkeniwo.github.io/categories/Tweets/"/>
+    
+    
+      <category term="daily" scheme="https://gitkeniwo.github.io/tags/daily/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo文章模版设置</title>
+    <link href="https://gitkeniwo.github.io/2020-08-22-hexo-templates/"/>
+    <id>https://gitkeniwo.github.io/2020-08-22-hexo-templates/</id>
+    <published>2020-08-21T16:50:22.000Z</published>
+    <updated>2020-11-20T16:50:52.583Z</updated>
+    
+    <content type="html"><![CDATA[<p>参见：<a href="https://shmilybaozi.github.io/2018/11/05/hexo%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF%E8%AE%BE%E7%BD%AE/" target="_blank" rel="noopener">https://shmilybaozi.github.io/2018/11/05/hexo%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF%E8%AE%BE%E7%BD%AE/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;参见：&lt;a href=&quot;https://shmilybaozi.github.io/2018/11/05/hexo%E6%96%87%E7%AB%A0%E6%A8%A1%E6%9D%BF%E8%AE%BE%E7%BD%AE/&quot; target=&quot;_blank&quot; rel=&quot;no
+      
+    
+    </summary>
+    
+    
+      <category term="Blog" scheme="https://gitkeniwo.github.io/categories/Blog/"/>
+    
+    
+      <category term="hexo" scheme="https://gitkeniwo.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mac vim中有时delete键在insert模式下无法向左删除</title>
+    <link href="https://gitkeniwo.github.io/2020-08-22-vim-delete-problem/"/>
+    <id>https://gitkeniwo.github.io/2020-08-22-vim-delete-problem/</id>
+    <published>2020-08-21T16:41:26.000Z</published>
+    <updated>2020-11-20T16:50:52.583Z</updated>
+    
+    <content type="html"><![CDATA[<p>mac vim中启动了某种compatible模式，为了与vi兼容，而无法删去某些特定字符。</p><p>只需在<code>~/.vimrc</code> 中加入一行 <code>set backspace=2</code> 即可</p><p>实测完美解决，目前没出问题。</p><p>参考：<a herf="https://www.smslit.top/2016/11/27/vim-backspace-invalid/">https://www.smslit.top/2016/11/27/vim-backspace-invalid/</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;mac vim中启动了某种compatible模式，为了与vi兼容，而无法删去某些特定字符。&lt;/p&gt;
+&lt;p&gt;只需在&lt;code&gt;~/.vimrc&lt;/code&gt; 中加入一行 &lt;code&gt;set backspace=2&lt;/code&gt; 即可&lt;/p&gt;
+&lt;p&gt;实测完美解决，目前没出问题
+      
+    
+    </summary>
+    
+    
+      <category term="Config" scheme="https://gitkeniwo.github.io/categories/Config/"/>
+    
+    
+      <category term="vim" scheme="https://gitkeniwo.github.io/tags/vim/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Untitled</title>
+    <link href="https://gitkeniwo.github.io/2020-08-22-Untitled-9/"/>
+    <id>https://gitkeniwo.github.io/2020-08-22-Untitled-9/</id>
+    <published>2020-08-21T16:32:50.000Z</published>
+    <updated>2020-11-20T16:50:52.582Z</updated>
+    
+    <content type="html"><![CDATA[<p>可乐气泡，褪黑素，加多宝凉茶</p><p>盘子里的红提</p><p>充电中的ipad，六神花露水</p><p>电扇，转动的叶片，桌面上的票据，失去Joycon的switch手柄</p><p>夏，凉爽的暴雨之后停水</p><p>提拉米苏泡芙的香气</p><p>被这么多可爱的事物包围着</p><p>也好想抱紧你</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;可乐气泡，褪黑素，加多宝凉茶&lt;/p&gt;
+&lt;p&gt;盘子里的红提&lt;/p&gt;
+&lt;p&gt;充电中的ipad，六神花露水&lt;/p&gt;
+&lt;p&gt;电扇，转动的叶片，桌面上的票据，失去Joycon的switch手柄&lt;/p&gt;
+&lt;p&gt;夏，凉爽的暴雨之后停水&lt;/p&gt;
+&lt;p&gt;提拉米苏泡芙的香气&lt;/p&gt;
+&lt;p&gt;被这
+      
+    
+    </summary>
+    
+    
+      <category term="Tweets" scheme="https://gitkeniwo.github.io/categories/Tweets/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Untitled</title>
+    <link href="https://gitkeniwo.github.io/2020-08-18-Untitled-8/"/>
+    <id>https://gitkeniwo.github.io/2020-08-18-Untitled-8/</id>
+    <published>2020-08-18T10:29:23.000Z</published>
+    <updated>2020-11-20T16:50:52.582Z</updated>
+    
+    <content type="html"><![CDATA[<p>一到开学的前一周就很烦躁。从小学开始，年年如此，夏天的尾巴是在无限的焦虑与忧愁中度过的。</p><p>惜墨如金</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;一到开学的前一周就很烦躁。从小学开始，年年如此，夏天的尾巴是在无限的焦虑与忧愁中度过的。&lt;/p&gt;
+&lt;p&gt;惜墨如金&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="Tweets" scheme="https://gitkeniwo.github.io/categories/Tweets/"/>
+    
+    
+      <category term="daily" scheme="https://gitkeniwo.github.io/tags/daily/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>curl的使用</title>
+    <link href="https://gitkeniwo.github.io/2020-08-16-curl/"/>
+    <id>https://gitkeniwo.github.io/2020-08-16-curl/</id>
+    <published>2020-08-15T19:12:10.000Z</published>
+    <updated>2020-11-20T16:50:52.582Z</updated>
+    
+    <content type="html"><![CDATA[<p>Curl的使用</p><h1 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h1><p>在你国上网的第一步首先肯定是设置代理了。</p><p>curl在macos里面直接走终端代理，修改rc文件即可，根据终端类型bash or zsh修改 <code>~/.bashrc</code> 或者 <code>~/.zshrc</code></p><p>添加以下两行</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=<span class="string">"http://localhost:port"</span></span><br><span class="line"><span class="built_in">export</span> https_proxy=<span class="string">"http://localhost:port"</span></span><br></pre></td></tr></table></figure><p><img src="/img/image-20200816030644800.png" alt="image-20200816030644800"></p><p>之后再source一下就OK了</p><p>设置好之后curl一下Google</p><p><img src="/img/image-20200816030530557.png" alt="image-20200816030530557"></p><p>由于非CS科班出身，计网仅处于熟记各大通信协议缩写阶段，看不懂这个返回的报头，验证的话只能把返回的东西写到一个html文件里面打开看一下= =</p><p><img src="/img/image-20200816031049244.png" alt="image-20200816031049244"></p><p>由于用的韩国代理，返回的是韩文版，应该是没问题的。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Curl的使用&lt;/p&gt;
+&lt;h1 id=&quot;设置代理&quot;&gt;&lt;a href=&quot;#设置代理&quot; class=&quot;headerlink&quot; title=&quot;设置代理&quot;&gt;&lt;/a&gt;设置代理&lt;/h1&gt;&lt;p&gt;在你国上网的第一步首先肯定是设置代理了。&lt;/p&gt;
+&lt;p&gt;curl在macos里面直接走终端代理
+      
+    
+    </summary>
+    
+    
+    
+      <category term="curl" scheme="https://gitkeniwo.github.io/tags/curl/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Untitled</title>
+    <link href="https://gitkeniwo.github.io/2020-08-16-Untitled-7/"/>
+    <id>https://gitkeniwo.github.io/2020-08-16-Untitled-7/</id>
+    <published>2020-08-15T17:38:00.000Z</published>
+    <updated>2020-11-20T16:50:52.582Z</updated>
+    
+    <content type="html"><![CDATA[<p>做梦</p><p>做梦总是伤感的，不断重复的意象，内心深处涌动着的渴求，在梦里你是满足又害怕失去的。</p><p>类似的思考太多的话，就有点像是村上春树笔下的主角，把自己和周围的事情都想得太透彻，太清晰，像是哲学家，或是自然科学建立之前的各种理学家，在未知的虚无面前企图做某种总结与归纳。</p><p>长长的一场梦，实际上是很累的。与所念之人在梦中重逢难免按耐不住的内心的喜悦，大脑飞速转动，想要把这些年来欠下的相聚时光以其他方式弥补回来。醒来之后，更加精疲力竭了，还有一种伤感。常常有人说下午睡醒的时候已近黄昏，看着窗外西斜的落日，下班的邻人，偶有狗叫声与楼梯脚步声，再过一会儿路灯就要亮起来了，而自己的房间是这么地安静与孤单，有种像是末世之后的心灵的空虚感</p><p>这样醒来之后，有点像是前面说的下午睡醒之后的感觉，明明睡了十几个小时，但要重拾之前的记忆还需费点功夫，所以有时候居然不知道这是清晨、傍晚还是夜初。特别在这样短暂的时光里又经历过了一次别离，这样的别离有可能是多年以前，给自己的心灵造成了很大创伤的一次事件，所以这样的梦绝对是消耗人的精力的。</p><p>我总是隔三差五地在梦中与N相见，但即便是在梦里，N也不会让我好受。有时候醒来我想，太狡猾了，这可是我自己的梦啊，能不能让我跟N亲密一点。常常这样想着，N在梦里依然是跟我隔着一段难以捉摸的距离。后来我明白了，这就是最后的那段时间，我跟N之间的一个缩影，我们的关系，发生的事，我的想法，我看在眼里的那段时间的全貌。</p><p>所以，我不停地感到懊恼，六艺楼前老树的年轮增加了一圈又一圈，这么多年以后，跟N发生的那些事还是不停地萦绕在我的梦境，haunting me，torturing me. 有时也会感到后悔，如果没有遇见N，那么就不会有这些事的发生，说不定，我会迎来一个更加完整与美好的人生，我会一帆风顺，会积极地拥抱生活与尚未到来的任何可能性。</p><p>可是生命里没有如果。每当我冒出这样的念头，又会不停地把它按下去，我知道它的出现只会给我的世界带来更多的负面影响。</p><p>像是强迫着自己往流血的伤口上涂抹酒精，虽然这会更疼，但是不这样做的话伤口就会感染、发炎和化脓。</p><p>想到了无数次在医院里等待检验结果的下午和夜晚。我自己也很不容易。</p><p>多年以来，我不停地在遗忘，遗忘高中的校园，遗忘家乡的路口，遗忘受过的教育，遗忘那些人。最开始，我想，大学一定还要跟N呆在一起，我觉得我可以抛弃一切跟N在一起，就像孙燕姿的歌里唱的，”我遇见让我奋不顾身的那个人”。后来毕业的时候，我只想忘记N，那时我想铭记这一路走来的日子，想铭记生命中重要的年岁和人们，跟过去做个了结，想把N从我的生命中剔除，想挖个坑把它埋进去，然后背向它不回头看跑的越远越好。</p><p>但是，这么多年了，我忘掉了所有人，唯独没有忘记N，我甚至能记得跟N在一起的每个瞬间，N的穿着，N的气息，N的每个动作。我的梦，也是以此为基础，构建起来的，就好像是播放器里曲目的循环再生。</p><p>以后，也会带着这些难缠的梦魇走下去的吧。</p><p>真希望快点遇到生命中下一个比N<br>更重要的人和事。</p><p>もう一度言うだけで、ずるいね、N君。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;做梦&lt;/p&gt;
+&lt;p&gt;做梦总是伤感的，不断重复的意象，内心深处涌动着的渴求，在梦里你是满足又害怕失去的。&lt;/p&gt;
+&lt;p&gt;类似的思考太多的话，就有点像是村上春树笔下的主角，把自己和周围的事情都想得太透彻，太清晰，像是哲学家，或是自然科学建立之前的各种理学家，在未知的虚无面前企图
+      
+    
+    </summary>
+    
+    
+      <category term="Tweets" scheme="https://gitkeniwo.github.io/categories/Tweets/"/>
+    
+    
+      <category term="daily" scheme="https://gitkeniwo.github.io/tags/daily/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Termius下远程连接mac终端中文乱码解决</title>
+    <link href="https://gitkeniwo.github.io/2020-08-16-Untitled-6/"/>
+    <id>https://gitkeniwo.github.io/2020-08-16-Untitled-6/</id>
+    <published>2020-08-15T17:18:05.000Z</published>
+    <updated>2020-11-20T16:50:52.581Z</updated>
+    
+    <content type="html"><![CDATA[<p>想用ipad上的termius连接mac做一些基本的任务，于是火速用ssh连接到了mac terminal</p><p>打开hexo 和vim，运行一下node，都一切正常，就是有点输入延迟会有一定卡顿。</p><p>但是当我准备新建一个post，打开vim准备写字的时候，ipad优美的输入法选中了词语，最后落到vim里面居然是乱码的???</p><p>解决方法很简单</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim ~&#x2F;.zshrc &#x2F;&#x2F;如果是用zsh的话</span><br></pre></td></tr></table></figure><p>然后找到<code>#export LANG=en_US.UTF-8</code> </p><p>把前面注释去掉就OK</p><p><code>$ source ~/.zshrc</code> 就行了。</p><p>中文输入正常了!!!!</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;想用ipad上的termius连接mac做一些基本的任务，于是火速用ssh连接到了mac terminal&lt;/p&gt;
+&lt;p&gt;打开hexo 和vim，运行一下node，都一切正常，就是有点输入延迟会有一定卡顿。&lt;/p&gt;
+&lt;p&gt;但是当我准备新建一个post，打开vim准备写字的时
+      
+    
+    </summary>
+    
+    
+    
+      <category term="hexo" scheme="https://gitkeniwo.github.io/tags/hexo/"/>
+    
+      <category term="termius" scheme="https://gitkeniwo.github.io/tags/termius/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nihongo</title>
+    <link href="https://gitkeniwo.github.io/2020-08-13-nihongo/"/>
+    <id>https://gitkeniwo.github.io/2020-08-13-nihongo/</id>
+    <published>2020-08-13T09:59:28.000Z</published>
+    <updated>2020-11-20T16:50:52.583Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Untitled</title>
+    <link href="https://gitkeniwo.github.io/2020-08-13-Untitled-5/"/>
+    <id>https://gitkeniwo.github.io/2020-08-13-Untitled-5/</id>
+    <published>2020-08-12T16:28:18.000Z</published>
+    <updated>2020-11-20T16:50:52.581Z</updated>
+    
+    <content type="html"><![CDATA[<p>四川豪雨（しせんごうう）だ。</p><p>從下午四點開始就像是已經黑天了一樣，家裡停水，具體停多久未知，晚飯過後我媽就一直在樓下提水上來，看來她對於事態的預想不太樂觀 &gt; &lt;|||</p><p>在微博上，看到成都某地鐵站都被淹水了，大概是北門上那邊，泥土色的雨水夾雜著路面的塵屑和盛夏的哀怨嘩啦啦地從地鐵入口奔瀉而下。</p><p>天津還是遼寧還是某地，又有張獻忠事件發生，這次提刀的是67歲的老翁，他無差別地襲擊過路的人群，殺死了一位女性，重傷了一位女性。我個人很難想像是怎麼樣複雜的情緒，讓他在如此花甲之年不顧麻煩對陌路的女性產生這樣的敵意，不惜剝奪對方的生命，我的關注點有可能在“女性”身上，有可能在“67歲”這個刻板印象身上。但不管怎樣，根據朋友圈的動態來看，微博已經完全屏蔽了這次案情相關的posts。那我雖然不敢出聲，但心裡還是把責任推到了那個企圖關掉房間裡唯一光亮的傢伙身上。</p><p>窗外還是偶爾會有閃電。前日，東方明珠也被閃電擊中了，有人評價說這是異象、凶兆一類的神諭，我個人是不太接受的，但是2020的確在直感上讓人覺得它是越來越壞了。這其中可能會有一些其他的因素，比如說，網路日益四通八達讓一些壞事更迅速地被家喻戶曉；又比如說，COVID19的lockdown讓人們心中評判事物的尺度大大縮緊，對可能發生的不確定性的接受程度和敏感程度都顯著降低，比如在19年以前沒人關心的小事放到當下甚至有機會短暫地登上地區趨勢排行榜；當然，這就像是很多裝神弄鬼的神預言，假設說有人在當下對未來十年可能發生的事做出10000種預測，並發佈在社交網路上，那麼等到真的十年之後這10000條預言總有一定的可能性會實現一部分，當事人再翻舊帳而悄然刪去其他無效的條目，這樣就可以憑藉總會撞上的幾條言論而被尚不知情的大眾捧成大預言家了。</p><p>這樣說，好像跟當下的情況也不是很相符，總而言之，我個人認為，2020並沒有糟糕到一種無法忍受的地步。畢竟人類歷史上河清海晏的太平年間也不過半個多世紀，這還是對於極少數的民主和工業化國家而言，在一些極權國家、社會主義國家和middle-Eastern國家，安定的日子可以說是剛剛開始，甚至從未到來。在這樣一個較為全面的歷史認知之下，很難假定所謂的“和平與發展”是今後年間的趨勢。1900ers從未預想到以智能設備為基礎的信息社會年代（除開George Orwelle，他預想到了世界上最邪惡之一的政權採取了怎樣最低的手段來奴役它的國民），2000ers一定也會對10年、20年、50年後的世界感受到天翻地覆。</p><p>想到kfk說人類已經解決了死亡的奧秘，意識上的福祉將成為今後的主流。這些我是不太關心的，因為，社會秩序和科技總是漸變發展的，極少可能強迫世界上大部分人在一夜之間改頭換面，接受一門新的宗教、預言、主義和生活方式。</p><p>我更關心kfk說東京將遷都Okayama（岡山），這我不太喜歡，因為東京就是東京，是我心中最美的那個江戶，是日本其他地方所不能替代的。如果很殘念，這樣的災難真的會發生的話，我大概要重新考慮一下今後的發展方向了，比如說，澳洲。</p><p>最近還發現了自己的褪黑素依賴性，比方說，昨晚，忘記服用褪黑素，直接晾到了凌晨四點。</p><p>Kiss me, melatonin. </p><p>Do not ever leave.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;四川豪雨（しせんごうう）だ。&lt;/p&gt;
+&lt;p&gt;從下午四點開始就像是已經黑天了一樣，家裡停水，具體停多久未知，晚飯過後我媽就一直在樓下提水上來，看來她對於事態的預想不太樂觀 &amp;gt; &amp;lt;|||&lt;/p&gt;
+&lt;p&gt;在微博上，看到成都某地鐵站都被淹水了，大概是北門上那邊，泥土色的
+      
+    
+    </summary>
+    
+    
+      <category term="Tweets" scheme="https://gitkeniwo.github.io/categories/Tweets/"/>
+    
+    
+      <category term="daily" scheme="https://gitkeniwo.github.io/tags/daily/"/>
+    
+  </entry>
+  
+</feed>
