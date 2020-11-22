@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://gitkeniwo.github.io/"/>
-  <updated>2020-11-21T05:26:55.655Z</updated>
+  <updated>2020-11-22T11:49:21.025Z</updated>
   <id>https://gitkeniwo.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ss PAC模式wikipedia不加载latex公式</title>
+    <link href="https://gitkeniwo.github.io/2020-11-22-ss/"/>
+    <id>https://gitkeniwo.github.io/2020-11-22-ss/</id>
+    <published>2020-11-22T11:48:02.000Z</published>
+    <updated>2020-11-22T11:49:21.025Z</updated>
+    
+    <content type="html"><![CDATA[<p>只用加上 <code>||wikimedia.org^</code> 即可。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;只用加上 &lt;code&gt;||wikimedia.org^&lt;/code&gt; 即可。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="GFW" scheme="https://gitkeniwo.github.io/categories/GFW/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Untitled</title>
@@ -508,21 +533,6 @@
       <category term="hexo" scheme="https://gitkeniwo.github.io/tags/hexo/"/>
     
       <category term="termius" scheme="https://gitkeniwo.github.io/tags/termius/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>nihongo</title>
-    <link href="https://gitkeniwo.github.io/2020-08-13-nihongo/"/>
-    <id>https://gitkeniwo.github.io/2020-08-13-nihongo/</id>
-    <published>2020-08-13T09:59:28.000Z</published>
-    <updated>2020-11-20T16:50:52.583Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
     
   </entry>
   
