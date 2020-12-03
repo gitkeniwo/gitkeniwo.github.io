@@ -13,7 +13,7 @@
       
       <categories>
           
-          <category> film </category>
+          <category> Film </category>
           
       </categories>
       
@@ -21,6 +21,8 @@
         <tags>
             
             <tag> film </tag>
+            
+            <tag> film-Romance </tag>
             
         </tags>
       
@@ -259,7 +261,7 @@
     
     
     <entry>
-      <title>Untitled</title>
+      <title>霓虹田园公路数日游</title>
       <link href="2020-09-27-Untitled-14/"/>
       <url>2020-09-27-Untitled-14/</url>
       
@@ -268,7 +270,7 @@
       
       <categories>
           
-          <category> Tweets </category>
+          <category> Film </category>
           
       </categories>
       
@@ -276,6 +278,8 @@
         <tags>
             
             <tag> film </tag>
+            
+            <tag> film-Road_Movie </tag>
             
         </tags>
       
