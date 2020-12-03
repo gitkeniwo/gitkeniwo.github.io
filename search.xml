@@ -4,11 +4,38 @@
   
     
     <entry>
+      <title>Untitled</title>
+      <link href="2020-12-03-Untitled-19/"/>
+      <url>2020-12-03-Untitled-19/</url>
+      
+        <content type="html"><![CDATA[<h1 id="简短总结下今天几则移民广告。"><a href="#简短总结下今天几则移民广告。" class="headerlink" title="简短总结下今天几则移民广告。"></a>简短总结下今天几则移民广告。</h1><h2 id="fem"><a href="#fem" class="headerlink" title="fem"></a>fem</h2><p>第一则是弦子起诉朱军性侵案、平时叫嚷嚷的你国媒体鸦雀无声，就只有端传媒做了法院门口人群聚集的报道，一个小时之内国宝两次告诫现场人群不能举标语，两名外媒被强制带走。事后相关微博和博主被炸，朱军成为豆瓣敏感词，还有很多恶臭发言截图等。</p><h2 id="hk"><a href="#hk" class="headerlink" title="hk"></a>hk</h2><p>第二则是黄之锋“认罪”被判13个月半，跟他一起接受判决的还有周庭等人，最经典的照片是hker用手机电筒照亮黄的囚车。</p><h2 id="AU"><a href="#AU" class="headerlink" title="AU"></a>AU</h2><p>中澳争议继续发酵，澳洲微信公众号发布的几则澄清声明被删掉，这让人想到前段时间英国使馆发布的”「关于hk问题的声明」被删的声明“被删掉，毕竟删国掩疫传统艺能了。</p><p>##此外</p><p>每天还有好多好多事在发生，原神当选apple年度游戏，weeknd公开diss格莱美，ellen page(elliot page)公开自己的trans身份，蛋壳公寓遍地暴雷和相关的粉红被锤截图。时代的一粒灰，落在大家的头上。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> News Comments </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hk </tag>
+            
+            <tag> politics </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>本次hexo项目从老mac迁移到新mac上遇到的问题种种</title>
       <link href="2020-11-24-blog/"/>
       <url>2020-11-24-blog/</url>
       
-        <content type="html"><![CDATA[<h1 id="git子模块的相关问题"><a href="#git子模块的相关问题" class="headerlink" title="git子模块的相关问题"></a>git子模块的相关问题</h1><p>主要是<code>/hexo/themes/</code>下的主题dir的git提交问题。由于我最开始是直接从主题的github repo页面上拉下来的，当时对git的理解还不够深入， </p><p><a href="https://www.hozen.site/archives/23/" target="_blank" rel="noopener">https://www.hozen.site/archives/23/</a></p><p>我的做法：<br>· 重新fork了一下 hexo-theme-next<br>· 把它添加到了我的子模块<br>· 直接mv -d 了原有的next模块<br>· 从mbp2015上拷贝了config.yml，并更改主题名为hexo-theme-next<br>（此处复习一下vim前后段尾是<code>{</code> , <code>}</code>两个键  ）</p><p>但在我做完以上步骤之后，git submodule</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="git子模块的相关问题"><a href="#git子模块的相关问题" class="headerlink" title="git子模块的相关问题"></a>git子模块的相关问题</h1><p>主要是<code>/hexo/themes/</code>下的主题dir的git提交问题。由于我最开始是直接从主题的github repo页面上拉下来的，当时对git的理解还不够深入， </p><p><a href="https://www.hozen.site/archives/23/" target="_blank" rel="noopener">https://www.hozen.site/archives/23/</a></p><p>我的做法：<br>· 重新fork了一下 hexo-theme-next<br>· 把它添加到了我的子模块<br>· 直接mv -d 了原有的next模块<br>· 从mbp2015上拷贝了config.yml，并更改主题名为hexo-theme-next<br>（此处复习一下vim前后段尾是<code>{</code> , <code>}</code>两个键  ）</p><p>但在我做完以上步骤之后，git submodule</p><p><img src="../img/image-20201203145349582.png" alt="image-20201203145349582"></p><p>这应该是原来旧版本里面还留着上个next主题的submodule配置信息。</p><p>查询csdn，<strong>删除子模块的步骤</strong></p><blockquote><p> 有时子模块的项目维护地址发生了变化，或者需要替换子模块，就需要删除原有的子模块。</p><p>删除子模块较复杂，步骤如下：</p><p>· rm -rf 子模块目录 删除子模块目录及源码</p><p>· vi .gitmodules 删除项目目录下.gitmodules文件中子模块相关条目</p><p>· vi .git/config 删除配置项中子模块相关条目</p><p>· rm .git/module/* 删除模块下的子模块目录，每个子模块对应一个目录，注意只删除对应的子模块目录即可</p></blockquote><p>此时我再执行以上步骤之前，重新add, commit了一次，再查看以上配置文件，均没有老next的记录了。</p><p>再运行一次<code>git submodule</code></p><p><img src="../img/image-20201203145611504.png" alt="image-20201203145611504"></p><p>恢复。</p><h1 id="2-node-v14弹warning"><a href="#2-node-v14弹warning" class="headerlink" title="2.node v14弹warning"></a>2.node v14弹warning</h1><p>这个很无解，好像是stylus的问题，我难得再去debug了，选择直接回滚到v12。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo n 12.18.2</span><br></pre></td></tr></table></figure><p>要注意的是好像也会node_module里面的hexo依赖包也会在node版本回滚之后出现问题，要重新装一遍，这里我记得似乎是终端会自动弹出一个warning和建议重装的命令，直接复制了执行之后就ok了。</p><h1 id="3-关于git-log"><a href="#3-关于git-log" class="headerlink" title="3.关于git log"></a>3.关于git log</h1><p>这个就太好笑了，我把上面的破事处理完之后直接部署到github pages然后发现我的博文只更新到了今年7月份，后面的新文章都🈚️了，最后发现是我用git log回滚了版本，然后git log返回的提交记录在终端显示的时间顺序居然是从下往上，最上面是最新的提交<em>（因为命令行返回信息之后，等待输入的新行肯定是跟*</em>最下面的一行*<em>最接近，理所应当的应该让最下面的一条记录显示最新版本才对吧）</em>。就这样我的所有博文直接回到了7月。</p><h1 id="4-one-more-thing-post的最后编辑时间。"><a href="#4-one-more-thing-post的最后编辑时间。" class="headerlink" title="4.one more thing: post的最后编辑时间。"></a>4.one more thing: post的最后编辑时间。</h1><p>还有一个很让人头疼的事，每次迁移hexo项目之后，所有博文的最后编辑时间都会变成迁移的时间，尽管你并未做任何修改，这就又让人迷惑，又让真实的最后编辑时间消失了。这个问题我还没去解决，大概搜索了一下，<a href="https://blog.vanxnf.top/2018/09/03/Hexo-博客-Hiker-主题增加文章最后编辑时间，并按照最后编辑时间排序/" target="_blank" rel="noopener">贴个链接 </a>。</p><p>ps. 目前（2020.12.3）使用的主题cactus好像并没有贴出博文的最后编辑时间，所以可以先不用管这个问题……</p>]]></content>
       
       
       <categories>

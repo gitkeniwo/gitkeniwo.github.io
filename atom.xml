@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://gitkeniwo.github.io/"/>
-  <updated>2020-11-24T09:49:59.672Z</updated>
+  <updated>2020-12-03T07:22:54.513Z</updated>
   <id>https://gitkeniwo.github.io/</id>
   
   <author>
@@ -17,13 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Untitled</title>
+    <link href="https://gitkeniwo.github.io/2020-12-03-Untitled-19/"/>
+    <id>https://gitkeniwo.github.io/2020-12-03-Untitled-19/</id>
+    <published>2020-12-03T07:09:56.000Z</published>
+    <updated>2020-12-03T07:22:54.513Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="简短总结下今天几则移民广告。"><a href="#简短总结下今天几则移民广告。" class="headerlink" title="简短总结下今天几则移民广告。"></a>简短总结下今天几则移民广告。</h1><h2 id="fem"><a href="#fem" class="headerlink" title="fem"></a>fem</h2><p>第一则是弦子起诉朱军性侵案、平时叫嚷嚷的你国媒体鸦雀无声，就只有端传媒做了法院门口人群聚集的报道，一个小时之内国宝两次告诫现场人群不能举标语，两名外媒被强制带走。事后相关微博和博主被炸，朱军成为豆瓣敏感词，还有很多恶臭发言截图等。</p><h2 id="hk"><a href="#hk" class="headerlink" title="hk"></a>hk</h2><p>第二则是黄之锋“认罪”被判13个月半，跟他一起接受判决的还有周庭等人，最经典的照片是hker用手机电筒照亮黄的囚车。</p><h2 id="AU"><a href="#AU" class="headerlink" title="AU"></a>AU</h2><p>中澳争议继续发酵，澳洲微信公众号发布的几则澄清声明被删掉，这让人想到前段时间英国使馆发布的”「关于hk问题的声明」被删的声明“被删掉，毕竟删国掩疫传统艺能了。</p><p>##此外</p><p>每天还有好多好多事在发生，原神当选apple年度游戏，weeknd公开diss格莱美，ellen page(elliot page)公开自己的trans身份，蛋壳公寓遍地暴雷和相关的粉红被锤截图。时代的一粒灰，落在大家的头上。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;简短总结下今天几则移民广告。&quot;&gt;&lt;a href=&quot;#简短总结下今天几则移民广告。&quot; class=&quot;headerlink&quot; title=&quot;简短总结下今天几则移民广告。&quot;&gt;&lt;/a&gt;简短总结下今天几则移民广告。&lt;/h1&gt;&lt;h2 id=&quot;fem&quot;&gt;&lt;a href=&quot;#fe
+      
+    
+    </summary>
+    
+    
+      <category term="News Comments" scheme="https://gitkeniwo.github.io/categories/News-Comments/"/>
+    
+    
+      <category term="hk" scheme="https://gitkeniwo.github.io/tags/hk/"/>
+    
+      <category term="politics" scheme="https://gitkeniwo.github.io/tags/politics/"/>
+    
+  </entry>
+  
+  <entry>
     <title>本次hexo项目从老mac迁移到新mac上遇到的问题种种</title>
     <link href="https://gitkeniwo.github.io/2020-11-24-blog/"/>
     <id>https://gitkeniwo.github.io/2020-11-24-blog/</id>
     <published>2020-11-24T08:56:06.000Z</published>
-    <updated>2020-11-24T09:49:59.672Z</updated>
+    <updated>2020-12-03T07:09:34.307Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="git子模块的相关问题"><a href="#git子模块的相关问题" class="headerlink" title="git子模块的相关问题"></a>git子模块的相关问题</h1><p>主要是<code>/hexo/themes/</code>下的主题dir的git提交问题。由于我最开始是直接从主题的github repo页面上拉下来的，当时对git的理解还不够深入， </p><p><a href="https://www.hozen.site/archives/23/" target="_blank" rel="noopener">https://www.hozen.site/archives/23/</a></p><p>我的做法：<br>· 重新fork了一下 hexo-theme-next<br>· 把它添加到了我的子模块<br>· 直接mv -d 了原有的next模块<br>· 从mbp2015上拷贝了config.yml，并更改主题名为hexo-theme-next<br>（此处复习一下vim前后段尾是<code>{</code> , <code>}</code>两个键  ）</p><p>但在我做完以上步骤之后，git submodule</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="git子模块的相关问题"><a href="#git子模块的相关问题" class="headerlink" title="git子模块的相关问题"></a>git子模块的相关问题</h1><p>主要是<code>/hexo/themes/</code>下的主题dir的git提交问题。由于我最开始是直接从主题的github repo页面上拉下来的，当时对git的理解还不够深入， </p><p><a href="https://www.hozen.site/archives/23/" target="_blank" rel="noopener">https://www.hozen.site/archives/23/</a></p><p>我的做法：<br>· 重新fork了一下 hexo-theme-next<br>· 把它添加到了我的子模块<br>· 直接mv -d 了原有的next模块<br>· 从mbp2015上拷贝了config.yml，并更改主题名为hexo-theme-next<br>（此处复习一下vim前后段尾是<code>{</code> , <code>}</code>两个键  ）</p><p>但在我做完以上步骤之后，git submodule</p><p><img src="../img/image-20201203145349582.png" alt="image-20201203145349582"></p><p>这应该是原来旧版本里面还留着上个next主题的submodule配置信息。</p><p>查询csdn，<strong>删除子模块的步骤</strong></p><blockquote><p> 有时子模块的项目维护地址发生了变化，或者需要替换子模块，就需要删除原有的子模块。</p><p>删除子模块较复杂，步骤如下：</p><p>· rm -rf 子模块目录 删除子模块目录及源码</p><p>· vi .gitmodules 删除项目目录下.gitmodules文件中子模块相关条目</p><p>· vi .git/config 删除配置项中子模块相关条目</p><p>· rm .git/module/* 删除模块下的子模块目录，每个子模块对应一个目录，注意只删除对应的子模块目录即可</p></blockquote><p>此时我再执行以上步骤之前，重新add, commit了一次，再查看以上配置文件，均没有老next的记录了。</p><p>再运行一次<code>git submodule</code></p><p><img src="../img/image-20201203145611504.png" alt="image-20201203145611504"></p><p>恢复。</p><h1 id="2-node-v14弹warning"><a href="#2-node-v14弹warning" class="headerlink" title="2.node v14弹warning"></a>2.node v14弹warning</h1><p>这个很无解，好像是stylus的问题，我难得再去debug了，选择直接回滚到v12。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo n 12.18.2</span><br></pre></td></tr></table></figure><p>要注意的是好像也会node_module里面的hexo依赖包也会在node版本回滚之后出现问题，要重新装一遍，这里我记得似乎是终端会自动弹出一个warning和建议重装的命令，直接复制了执行之后就ok了。</p><h1 id="3-关于git-log"><a href="#3-关于git-log" class="headerlink" title="3.关于git log"></a>3.关于git log</h1><p>这个就太好笑了，我把上面的破事处理完之后直接部署到github pages然后发现我的博文只更新到了今年7月份，后面的新文章都🈚️了，最后发现是我用git log回滚了版本，然后git log返回的提交记录在终端显示的时间顺序居然是从下往上，最上面是最新的提交<em>（因为命令行返回信息之后，等待输入的新行肯定是跟*</em>最下面的一行*<em>最接近，理所应当的应该让最下面的一条记录显示最新版本才对吧）</em>。就这样我的所有博文直接回到了7月。</p><h1 id="4-one-more-thing-post的最后编辑时间。"><a href="#4-one-more-thing-post的最后编辑时间。" class="headerlink" title="4.one more thing: post的最后编辑时间。"></a>4.one more thing: post的最后编辑时间。</h1><p>还有一个很让人头疼的事，每次迁移hexo项目之后，所有博文的最后编辑时间都会变成迁移的时间，尽管你并未做任何修改，这就又让人迷惑，又让真实的最后编辑时间消失了。这个问题我还没去解决，大概搜索了一下，<a href="https://blog.vanxnf.top/2018/09/03/Hexo-博客-Hiker-主题增加文章最后编辑时间，并按照最后编辑时间排序/" target="_blank" rel="noopener">贴个链接 </a>。</p><p>ps. 目前（2020.12.3）使用的主题cactus好像并没有贴出博文的最后编辑时间，所以可以先不用管这个问题……</p>]]></content>
     
     <summary type="html">
     
@@ -505,34 +533,6 @@
     
     
       <category term="curl" scheme="https://gitkeniwo.github.io/tags/curl/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Untitled</title>
-    <link href="https://gitkeniwo.github.io/2020-08-16-Untitled-7/"/>
-    <id>https://gitkeniwo.github.io/2020-08-16-Untitled-7/</id>
-    <published>2020-08-15T17:38:00.000Z</published>
-    <updated>2020-11-20T16:50:52.582Z</updated>
-    
-    <content type="html"><![CDATA[<p>做梦</p><p>做梦总是伤感的，不断重复的意象，内心深处涌动着的渴求，在梦里你是满足又害怕失去的。</p><p>类似的思考太多的话，就有点像是村上春树笔下的主角，把自己和周围的事情都想得太透彻，太清晰，像是哲学家，或是自然科学建立之前的各种理学家，在未知的虚无面前企图做某种总结与归纳。</p><p>长长的一场梦，实际上是很累的。与所念之人在梦中重逢难免按耐不住的内心的喜悦，大脑飞速转动，想要把这些年来欠下的相聚时光以其他方式弥补回来。醒来之后，更加精疲力竭了，还有一种伤感。常常有人说下午睡醒的时候已近黄昏，看着窗外西斜的落日，下班的邻人，偶有狗叫声与楼梯脚步声，再过一会儿路灯就要亮起来了，而自己的房间是这么地安静与孤单，有种像是末世之后的心灵的空虚感</p><p>这样醒来之后，有点像是前面说的下午睡醒之后的感觉，明明睡了十几个小时，但要重拾之前的记忆还需费点功夫，所以有时候居然不知道这是清晨、傍晚还是夜初。特别在这样短暂的时光里又经历过了一次别离，这样的别离有可能是多年以前，给自己的心灵造成了很大创伤的一次事件，所以这样的梦绝对是消耗人的精力的。</p><p>我总是隔三差五地在梦中与N相见，但即便是在梦里，N也不会让我好受。有时候醒来我想，太狡猾了，这可是我自己的梦啊，能不能让我跟N亲密一点。常常这样想着，N在梦里依然是跟我隔着一段难以捉摸的距离。后来我明白了，这就是最后的那段时间，我跟N之间的一个缩影，我们的关系，发生的事，我的想法，我看在眼里的那段时间的全貌。</p><p>所以，我不停地感到懊恼，六艺楼前老树的年轮增加了一圈又一圈，这么多年以后，跟N发生的那些事还是不停地萦绕在我的梦境，haunting me，torturing me. 有时也会感到后悔，如果没有遇见N，那么就不会有这些事的发生，说不定，我会迎来一个更加完整与美好的人生，我会一帆风顺，会积极地拥抱生活与尚未到来的任何可能性。</p><p>可是生命里没有如果。每当我冒出这样的念头，又会不停地把它按下去，我知道它的出现只会给我的世界带来更多的负面影响。</p><p>像是强迫着自己往流血的伤口上涂抹酒精，虽然这会更疼，但是不这样做的话伤口就会感染、发炎和化脓。</p><p>想到了无数次在医院里等待检验结果的下午和夜晚。我自己也很不容易。</p><p>多年以来，我不停地在遗忘，遗忘高中的校园，遗忘家乡的路口，遗忘受过的教育，遗忘那些人。最开始，我想，大学一定还要跟N呆在一起，我觉得我可以抛弃一切跟N在一起，就像孙燕姿的歌里唱的，”我遇见让我奋不顾身的那个人”。后来毕业的时候，我只想忘记N，那时我想铭记这一路走来的日子，想铭记生命中重要的年岁和人们，跟过去做个了结，想把N从我的生命中剔除，想挖个坑把它埋进去，然后背向它不回头看跑的越远越好。</p><p>但是，这么多年了，我忘掉了所有人，唯独没有忘记N，我甚至能记得跟N在一起的每个瞬间，N的穿着，N的气息，N的每个动作。我的梦，也是以此为基础，构建起来的，就好像是播放器里曲目的循环再生。</p><p>以后，也会带着这些难缠的梦魇走下去的吧。</p><p>真希望快点遇到生命中下一个比N<br>更重要的人和事。</p><p>もう一度言うだけで、ずるいね、N君。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;做梦&lt;/p&gt;
-&lt;p&gt;做梦总是伤感的，不断重复的意象，内心深处涌动着的渴求，在梦里你是满足又害怕失去的。&lt;/p&gt;
-&lt;p&gt;类似的思考太多的话，就有点像是村上春树笔下的主角，把自己和周围的事情都想得太透彻，太清晰，像是哲学家，或是自然科学建立之前的各种理学家，在未知的虚无面前企图
-      
-    
-    </summary>
-    
-    
-      <category term="Tweets" scheme="https://gitkeniwo.github.io/categories/Tweets/"/>
-    
-    
-      <category term="daily" scheme="https://gitkeniwo.github.io/tags/daily/"/>
     
   </entry>
   
