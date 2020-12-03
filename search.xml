@@ -133,6 +133,12 @@
       </categories>
       
       
+        <tags>
+            
+            <tag> series </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -152,6 +158,14 @@
       </categories>
       
       
+        <tags>
+            
+            <tag> daily </tag>
+            
+            <tag> news </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -170,6 +184,12 @@
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> zju </tag>
+            
+        </tags>
       
     </entry>
     
@@ -228,6 +248,12 @@
       </categories>
       
       
+        <tags>
+            
+            <tag> films </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -251,6 +277,8 @@
             
             <tag> nature </tag>
             
+            <tag> hangzhou </tag>
+            
         </tags>
       
     </entry>
@@ -272,6 +300,12 @@
       </categories>
       
       
+        <tags>
+            
+            <tag> hangzhou </tag>
+            
+        </tags>
+      
     </entry>
     
     
@@ -290,6 +324,12 @@
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> daily </tag>
+            
+        </tags>
       
     </entry>
     
