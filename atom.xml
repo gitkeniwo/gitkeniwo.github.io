@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://gitkeniwo.github.io/"/>
-  <updated>2020-11-22T11:49:21.025Z</updated>
+  <updated>2020-11-24T09:49:59.672Z</updated>
   <id>https://gitkeniwo.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>本次hexo项目从老mac迁移到新mac上遇到的问题种种</title>
+    <link href="https://gitkeniwo.github.io/2020-11-24-blog/"/>
+    <id>https://gitkeniwo.github.io/2020-11-24-blog/</id>
+    <published>2020-11-24T08:56:06.000Z</published>
+    <updated>2020-11-24T09:49:59.672Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="git子模块的相关问题"><a href="#git子模块的相关问题" class="headerlink" title="git子模块的相关问题"></a>git子模块的相关问题</h1><p>主要是<code>/hexo/themes/</code>下的主题dir的git提交问题。由于我最开始是直接从主题的github repo页面上拉下来的，当时对git的理解还不够深入， </p><p><a href="https://www.hozen.site/archives/23/" target="_blank" rel="noopener">https://www.hozen.site/archives/23/</a></p><p>我的做法：<br>· 重新fork了一下 hexo-theme-next<br>· 把它添加到了我的子模块<br>· 直接mv -d 了原有的next模块<br>· 从mbp2015上拷贝了config.yml，并更改主题名为hexo-theme-next<br>（此处复习一下vim前后段尾是<code>{</code> , <code>}</code>两个键  ）</p><p>但在我做完以上步骤之后，git submodule</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;git子模块的相关问题&quot;&gt;&lt;a href=&quot;#git子模块的相关问题&quot; class=&quot;headerlink&quot; title=&quot;git子模块的相关问题&quot;&gt;&lt;/a&gt;git子模块的相关问题&lt;/h1&gt;&lt;p&gt;主要是&lt;code&gt;/hexo/themes/&lt;/code&gt;下的主题d
+      
+    
+    </summary>
+    
+    
+      <category term="Blog" scheme="https://gitkeniwo.github.io/categories/Blog/"/>
+    
+    
+      <category term="hexo" scheme="https://gitkeniwo.github.io/tags/hexo/"/>
+    
+      <category term="git" scheme="https://gitkeniwo.github.io/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>ss PAC模式wikipedia不加载latex公式</title>
@@ -86,9 +114,9 @@
       <category term="Github" scheme="https://gitkeniwo.github.io/categories/Github/"/>
     
     
-      <category term="github" scheme="https://gitkeniwo.github.io/tags/github/"/>
-    
       <category term="git" scheme="https://gitkeniwo.github.io/tags/git/"/>
+    
+      <category term="github" scheme="https://gitkeniwo.github.io/tags/github/"/>
     
       <category term="git-lfs" scheme="https://gitkeniwo.github.io/tags/git-lfs/"/>
     
@@ -505,34 +533,6 @@
     
     
       <category term="daily" scheme="https://gitkeniwo.github.io/tags/daily/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Termius下远程连接mac终端中文乱码解决</title>
-    <link href="https://gitkeniwo.github.io/2020-08-16-Untitled-6/"/>
-    <id>https://gitkeniwo.github.io/2020-08-16-Untitled-6/</id>
-    <published>2020-08-15T17:18:05.000Z</published>
-    <updated>2020-11-20T16:50:52.581Z</updated>
-    
-    <content type="html"><![CDATA[<p>想用ipad上的termius连接mac做一些基本的任务，于是火速用ssh连接到了mac terminal</p><p>打开hexo 和vim，运行一下node，都一切正常，就是有点输入延迟会有一定卡顿。</p><p>但是当我准备新建一个post，打开vim准备写字的时候，ipad优美的输入法选中了词语，最后落到vim里面居然是乱码的???</p><p>解决方法很简单</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim ~&#x2F;.zshrc &#x2F;&#x2F;如果是用zsh的话</span><br></pre></td></tr></table></figure><p>然后找到<code>#export LANG=en_US.UTF-8</code> </p><p>把前面注释去掉就OK</p><p><code>$ source ~/.zshrc</code> 就行了。</p><p>中文输入正常了!!!!</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;想用ipad上的termius连接mac做一些基本的任务，于是火速用ssh连接到了mac terminal&lt;/p&gt;
-&lt;p&gt;打开hexo 和vim，运行一下node，都一切正常，就是有点输入延迟会有一定卡顿。&lt;/p&gt;
-&lt;p&gt;但是当我准备新建一个post，打开vim准备写字的时
-      
-    
-    </summary>
-    
-    
-    
-      <category term="hexo" scheme="https://gitkeniwo.github.io/tags/hexo/"/>
-    
-      <category term="termius" scheme="https://gitkeniwo.github.io/tags/termius/"/>
     
   </entry>
   
