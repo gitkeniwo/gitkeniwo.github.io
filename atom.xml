@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://gitkeniwo.github.io/"/>
-  <updated>2020-12-04T08:51:29.015Z</updated>
+  <updated>2020-12-04T16:32:55.193Z</updated>
   <id>https://gitkeniwo.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Untitled</title>
+    <link href="https://gitkeniwo.github.io/2020-12-05-Untitled-20/"/>
+    <id>https://gitkeniwo.github.io/2020-12-05-Untitled-20/</id>
+    <published>2020-12-04T16:30:23.000Z</published>
+    <updated>2020-12-04T16:32:55.193Z</updated>
+    
+    <content type="html"><![CDATA[<p>贵校总是能各种添堵，花重金购置小电驴之后，每周的充电成为头号焦虑。</p><p>不过也有好处，促进作息规律，明早早起去抢充电桩。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;贵校总是能各种添堵，花重金购置小电驴之后，每周的充电成为头号焦虑。&lt;/p&gt;
+&lt;p&gt;不过也有好处，促进作息规律，明早早起去抢充电桩。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="Tweets" scheme="https://gitkeniwo.github.io/categories/Tweets/"/>
+    
+    
+      <category term="zju" scheme="https://gitkeniwo.github.io/tags/zju/"/>
+    
+  </entry>
   
   <entry>
     <title>破裂与腾飞</title>
@@ -530,38 +558,6 @@
       <category term="vim" scheme="https://gitkeniwo.github.io/tags/vim/"/>
     
       <category term="shell" scheme="https://gitkeniwo.github.io/tags/shell/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Untitled</title>
-    <link href="https://gitkeniwo.github.io/2020-08-22-Untitled-9/"/>
-    <id>https://gitkeniwo.github.io/2020-08-22-Untitled-9/</id>
-    <published>2020-08-21T16:32:50.000Z</published>
-    <updated>2020-12-04T08:14:50.003Z</updated>
-    
-    <content type="html"><![CDATA[<p>可乐气泡，褪黑素，加多宝凉茶</p><p>盘子里的红提</p><p>充电中的ipad，六神花露水</p><p>电扇，转动的叶片，桌面上的票据，失去Joycon的switch手柄</p><p>夏，凉爽的暴雨之后停水</p><p>提拉米苏泡芙的香气</p><p>被这么多可爱的事物包围着</p><p>也好想抱紧你</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;可乐气泡，褪黑素，加多宝凉茶&lt;/p&gt;
-&lt;p&gt;盘子里的红提&lt;/p&gt;
-&lt;p&gt;充电中的ipad，六神花露水&lt;/p&gt;
-&lt;p&gt;电扇，转动的叶片，桌面上的票据，失去Joycon的switch手柄&lt;/p&gt;
-&lt;p&gt;夏，凉爽的暴雨之后停水&lt;/p&gt;
-&lt;p&gt;提拉米苏泡芙的香气&lt;/p&gt;
-&lt;p&gt;被这
-      
-    
-    </summary>
-    
-    
-      <category term="Tweets" scheme="https://gitkeniwo.github.io/categories/Tweets/"/>
-    
-    
-      <category term="thoughts" scheme="https://gitkeniwo.github.io/tags/thoughts/"/>
     
   </entry>
   
