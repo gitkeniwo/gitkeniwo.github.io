@@ -105,7 +105,7 @@
     <link href="https://gitkeniwo.github.io/2020-11-22-ss/"/>
     <id>https://gitkeniwo.github.io/2020-11-22-ss/</id>
     <published>2020-11-22T11:48:02.000Z</published>
-    <updated>2020-11-22T11:49:21.025Z</updated>
+    <updated>2020-12-04T08:16:00.588Z</updated>
     
     <content type="html"><![CDATA[<p>只用加上 <code>||wikimedia.org^</code> 即可。</p>]]></content>
     
@@ -120,7 +120,7 @@
     </summary>
     
     
-      <category term="GFW" scheme="https://gitkeniwo.github.io/categories/GFW/"/>
+      <category term="Network" scheme="https://gitkeniwo.github.io/categories/Network/"/>
     
     
   </entry>
@@ -130,7 +130,7 @@
     <link href="https://gitkeniwo.github.io/2020-11-21-Untitled-18/"/>
     <id>https://gitkeniwo.github.io/2020-11-21-Untitled-18/</id>
     <published>2020-11-21T05:18:25.000Z</published>
-    <updated>2020-11-21T05:26:55.655Z</updated>
+    <updated>2020-12-04T08:13:28.373Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>El 4 de octubre de 1921, el Patna, que me conducía a Bombay, tuvo que fondear en un puerto de la costa eritrea. Bajé; recordé otras mañanas muy antiguas, también frente al mar Rojo; cuando yo era tribuno de Roma y la fiebre y la magia y la inacción consumían a los soldados. </p></blockquote><blockquote><p>1921年10月4日，我乘坐的驶往孟买的帕特那号轮船在红海一个港口停泊。我下了船;想起了悠久岁月前也在红海之滨的早上的情景;当时我是罗马的执政官，热病、巫术和闲散耗损了士兵们。</p></blockquote><p>看博尔赫斯，就是一个逐渐寻宝的过程，就像喝酒，越来越上头。</p>]]></content>
     
@@ -145,6 +145,10 @@
     </summary>
     
     
+      <category term="Books" scheme="https://gitkeniwo.github.io/categories/Books/"/>
+    
+    
+      <category term="borges" scheme="https://gitkeniwo.github.io/tags/borges/"/>
     
   </entry>
   
@@ -153,7 +157,7 @@
     <link href="https://gitkeniwo.github.io/2020-11-10-git/"/>
     <id>https://gitkeniwo.github.io/2020-11-10-git/</id>
     <published>2020-11-10T10:58:02.000Z</published>
-    <updated>2020-11-20T16:50:52.582Z</updated>
+    <updated>2020-12-04T08:09:12.479Z</updated>
     
     <content type="html"><![CDATA[<p>总之，最近我也开始做毕设了，然后需要阅读大量的文献，并做好标注。首选当然是notion，但是notion有个问题就是免费版本的文件上传是有5MB限制的，这就注定了大部分稍微有些图片的论文pdf都越过了notion的限制，所以我需要一个host在web上的网页来展示对应的pdf文件，在notion那边只需要放URL就可以了。Google Drive很不错，但是我目前依旧使用的乞丐版，容量也许不够，所以我想到了github，也不需要翻墙，对导师和其他人来说都还算比较方便。<br>但是Github有个问题是它也对文件大小做了限制，貌似是单个文件不能超过100MB，再加上墙国的网络因素，我放了一个27MB的pdf做试验第一次提交就没push上去。报错是<code>error: RPC failed; curl 55 SSL_write() returned SYSCALL, errno = 32</code>，之后就hang在这里了27MB的文件上传到24.5MB就戛然而止。然后上<a href="https://stackoverflow.com/questions/2702731/git-fails-when-pushing-commit-to-github" target="_blank" rel="noopener">stackoverflow查了下</a>，改了git本地的文件限制<code>git config http.postBuffer 524288000</code>，依旧问题复现。<br>最后想到是不是有什么办法能够破除其大文件限制，毕竟以前看到那么多分享电子书的repo。最后果然找到了，是一个项目叫做<a href="https://git-lfs.github.com/" target="_blank" rel="noopener"><strong>git-lfs*</strong> (large file system)*。</a>，总之安装方便，使用简便，就两行命令，十分省心。<br>使用git-lfs之后立马就push成功了。<br><img src="/img/20-11-10.png" alt=""><br>虽然不清楚git-lfs最大能够支持多大的文件，但是一般的电子书和文献备份应该也是够用了，推荐给各位。</p>]]></content>
     
@@ -167,7 +171,7 @@
     </summary>
     
     
-      <category term="Github" scheme="https://gitkeniwo.github.io/categories/Github/"/>
+      <category term="Git" scheme="https://gitkeniwo.github.io/categories/Git/"/>
     
     
       <category term="git" scheme="https://gitkeniwo.github.io/tags/git/"/>
@@ -288,7 +292,7 @@
     <link href="https://gitkeniwo.github.io/2020-09-27-tech/"/>
     <id>https://gitkeniwo.github.io/2020-09-27-tech/</id>
     <published>2020-09-27T13:55:53.000Z</published>
-    <updated>2020-11-20T16:50:52.583Z</updated>
+    <updated>2020-12-04T08:11:43.740Z</updated>
     
     <content type="html"><![CDATA[<p>今天在网上找GRE OG的pdf，下载到本地准备传到Goodnotes里面的时候，Goodnotes提示该PDF需要密码，excusez moi？明明我可以直接用Skim打开看的。后来才搞明白了原来只是print的时候需要密码，上传到goodnotes里面浏览应该也是认为把权限完全交给了goodnotes，所以同样需要密码，原来还有这种操作。</p><p>解决办法：上传到Google Drive，然后用Google Drive的web preview打开，直接cmd+P，GD会帮你生成一个新的pdf preview，该pdf就可以直接打印了。</p><p>所以这个密码最后还是形同虚设了……不知道adobe会不会起诉谷歌娘(0_0)</p>]]></content>
     
@@ -302,7 +306,7 @@
     </summary>
     
     
-      <category term="Tips" scheme="https://gitkeniwo.github.io/categories/Tips/"/>
+      <category term="Academical" scheme="https://gitkeniwo.github.io/categories/Academical/"/>
     
     
   </entry>
@@ -357,9 +361,9 @@
       <category term="Tweets" scheme="https://gitkeniwo.github.io/categories/Tweets/"/>
     
     
-      <category term="nature" scheme="https://gitkeniwo.github.io/tags/nature/"/>
-    
       <category term="hangzhou" scheme="https://gitkeniwo.github.io/tags/hangzhou/"/>
+    
+      <category term="nature" scheme="https://gitkeniwo.github.io/tags/nature/"/>
     
   </entry>
   
@@ -475,7 +479,7 @@
     <link href="https://gitkeniwo.github.io/2020-08-22-vim-delete-problem/"/>
     <id>https://gitkeniwo.github.io/2020-08-22-vim-delete-problem/</id>
     <published>2020-08-21T16:41:26.000Z</published>
-    <updated>2020-11-20T16:50:52.583Z</updated>
+    <updated>2020-12-04T08:15:08.839Z</updated>
     
     <content type="html"><![CDATA[<p>mac vim中启动了某种compatible模式，为了与vi兼容，而无法删去某些特定字符。</p><p>只需在<code>~/.vimrc</code> 中加入一行 <code>set backspace=2</code> 即可</p><p>实测完美解决，目前没出问题。</p><p>参考：<a herf="https://www.smslit.top/2016/11/27/vim-backspace-invalid/">https://www.smslit.top/2016/11/27/vim-backspace-invalid/</a></p>]]></content>
     
@@ -491,10 +495,12 @@
     </summary>
     
     
-      <category term="Config" scheme="https://gitkeniwo.github.io/categories/Config/"/>
+      <category term="Devs" scheme="https://gitkeniwo.github.io/categories/Devs/"/>
     
     
       <category term="vim" scheme="https://gitkeniwo.github.io/tags/vim/"/>
+    
+      <category term="shell" scheme="https://gitkeniwo.github.io/tags/shell/"/>
     
   </entry>
   
@@ -503,7 +509,7 @@
     <link href="https://gitkeniwo.github.io/2020-08-22-Untitled-9/"/>
     <id>https://gitkeniwo.github.io/2020-08-22-Untitled-9/</id>
     <published>2020-08-21T16:32:50.000Z</published>
-    <updated>2020-11-20T16:50:52.582Z</updated>
+    <updated>2020-12-04T08:14:50.003Z</updated>
     
     <content type="html"><![CDATA[<p>可乐气泡，褪黑素，加多宝凉茶</p><p>盘子里的红提</p><p>充电中的ipad，六神花露水</p><p>电扇，转动的叶片，桌面上的票据，失去Joycon的switch手柄</p><p>夏，凉爽的暴雨之后停水</p><p>提拉米苏泡芙的香气</p><p>被这么多可爱的事物包围着</p><p>也好想抱紧你</p>]]></content>
     
@@ -525,6 +531,8 @@
     
       <category term="Tweets" scheme="https://gitkeniwo.github.io/categories/Tweets/"/>
     
+    
+      <category term="thoughts" scheme="https://gitkeniwo.github.io/tags/thoughts/"/>
     
   </entry>
   
