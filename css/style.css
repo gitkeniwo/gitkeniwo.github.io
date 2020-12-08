@@ -1590,7 +1590,7 @@ pre code {
   border: none;
 }
 code {
-  padding: 0.1rem 1px;
+  padding: 0.1rem 0;
   margin: 0 0.5rem;
   border: 0.08rem solid #474747;
   border-radius: 2px;
@@ -1602,7 +1602,7 @@ code {
 code:before {
   position: relative;
   left: -0.7rem;
-  color: #ccc olor-accent-4;
+/*color: $color-accent-5*/
   content: "`";
   font-weight: bold;
   font-size: 1rem;
@@ -1610,10 +1610,73 @@ code:before {
 code:after {
   position: relative;
   right: -0.7rem;
-  color: #ccc olor-accent-4;
+/*color: $color-accent-5*/
   content: "`";
   font-weight: bold;
   font-size: 1rem;
+}
+strong {
+  color: #d1deaf;
+}
+strong:before {
+  position: relative;
+  left: 0rem;
+/*color: $color-accent-5*/
+  content: "**";
+  font-weight: bold;
+  font-size: 0.6rem;
+}
+strong:after {
+  position: relative;
+  right: 0rem;
+/*color: $color-accent-5*/
+  content: "**";
+  font-weight: bold;
+  font-size: 0.6rem;
+}
+em {
+  color: #fff;
+  margin: 0 0.1rem;
+}
+em:before {
+  position: relative;
+  left: -0.1rem;
+/*color: $color-accent-5*/
+  content: "*";
+  font-weight: bold;
+  font-size: 0.6rem;
+}
+em:after {
+  position: relative;
+  right: -0.1rem;
+/*color: $color-accent-5*/
+  content: "*";
+  font-weight: bold;
+  font-size: 0.6rem;
+}
+del {
+  color: #888;
+}
+del:before {
+  position: relative;
+  left: 0rem;
+/*color: $color-accent-5*/
+  content: "~~";
+  text-decoration: none;
+  display: inline-block;
+/*注意下上面两行, 要加那个inline block一起才能取消掉外面～～的删除线*/
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+del:after {
+  position: relative;
+  right: 0rem;
+/*color: $color-accent-5*/
+  content: "~~";
+  text-decoration: none;
+  display: inline-block;
+  font-weight: bold;
+  font-size: 0.9rem;
 }
 .highlight {
   overflow-x: auto;
