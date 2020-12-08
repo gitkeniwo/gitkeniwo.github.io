@@ -448,7 +448,6 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
-/*border-top: 0.4rem double $color-accent-1*/
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
