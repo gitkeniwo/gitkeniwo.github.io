@@ -448,7 +448,7 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
-  border-top: 0.2rem dashed #2bbc8a;
+/*border-top: 0.4rem double $color-accent-1*/
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
@@ -755,7 +755,7 @@ body .gallery-column {
 }
 #header-post #menu {
   visibility: visible;
-  margin-right: 2rem;
+  margin-right: 1rem;
 }
 #header-post #nav {
   color: #2bbc8a;
@@ -1100,7 +1100,7 @@ article .content h1:before {
   color: #060;
   content: "H1";
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 article .content h2:before {
   position: absolute;
@@ -1116,7 +1116,7 @@ article .content h3:before {
   color: #060;
   content: "H3";
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 article .content img,
 article .content video {
@@ -1254,7 +1254,7 @@ article .content .caption {
   }
 }
 .blog-post-comments {
-  margin-top: 4rem;
+  margin-top: 7rem;
 }
 #footer {
   position: absolute;
@@ -1503,7 +1503,7 @@ article .content .caption {
   color: #666;
 }
 #categories .category-list .category-list-item .category-list-count {
-  color: #666;
+  color: #060;
 }
 #categories .category-list .category-list-item .category-list-count:before {
   content: " (";
@@ -1591,10 +1591,30 @@ pre code {
   border: none;
 }
 code {
-  padding: 0 5px;
-  border: 1px dotted #666;
+  padding: 0.1rem 1px;
+  margin: 0 0.5rem;
+  border: 0.08rem solid #474747;
   border-radius: 2px;
   -webkit-border-radius: 2px;
+  color: #82db04;
+  font-weight: bold;
+  background-color: #161616;
+}
+code:before {
+  position: relative;
+  left: -0.7rem;
+  color: #ccc olor-accent-4;
+  content: "`";
+  font-weight: bold;
+  font-size: 1rem;
+}
+code:after {
+  position: relative;
+  right: -0.7rem;
+  color: #ccc olor-accent-4;
+  content: "`";
+  font-weight: bold;
+  font-size: 1rem;
 }
 .highlight {
   overflow-x: auto;
