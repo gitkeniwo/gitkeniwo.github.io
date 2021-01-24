@@ -484,6 +484,8 @@ body .gallery-column {
   overflow-wrap: break-word;
 }
 .content p {
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
   hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
@@ -824,19 +826,43 @@ body .gallery-column {
   color: #d480aa;
 }
 #header-post #toc .toc-level-1 > .toc-link {
-  display: none;
+  color: #2bbc8a;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+#header-post #toc .toc-level-1 > .toc-link:before {
+  position: relative;
+  left: -0.5rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #060;
+  content: " H1";
 }
 #header-post #toc .toc-level-2 {
-  color: #c9cacc;
+  color: #efefef;
   font-size: 0.8rem;
 }
 #header-post #toc .toc-level-2:before {
-  color: #2bbc8a;
-  content: "#";
+  position: relative;
+  left: -0.3rem;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #060;
+  content: " H2";
 }
 #header-post #toc .toc-level-3 {
-  color: #666;
+  color: #999;
   font-size: 0.7rem;
+  font-style: italic;
+}
+#header-post #toc .toc-level-3:before {
+  position: relative;
+  left: -0.2rem;
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: #060;
+  font-style: normal;
+  content: " H3";
 }
 #header-post #toc .toc-level-4 {
   color: #525252;
