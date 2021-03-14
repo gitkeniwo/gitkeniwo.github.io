@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://gitkeniwo.github.io/"/>
-  <updated>2021-02-20T17:04:43.462Z</updated>
+  <updated>2021-03-14T05:58:50.334Z</updated>
   <id>https://gitkeniwo.github.io/</id>
   
   <author>
@@ -17,13 +17,96 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>draft</title>
+    <link href="https://gitkeniwo.github.io/2021-03-14-draft-1/"/>
+    <id>https://gitkeniwo.github.io/2021-03-14-draft-1/</id>
+    <published>2021-03-14T05:58:50.000Z</published>
+    <updated>2021-03-14T05:58:50.334Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>draft</title>
+    <link href="https://gitkeniwo.github.io/2021-03-14-draft/"/>
+    <id>https://gitkeniwo.github.io/2021-03-14-draft/</id>
+    <published>2021-03-14T05:57:54.000Z</published>
+    <updated>2021-03-14T06:03:34.801Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Untitled</title>
+    <link href="https://gitkeniwo.github.io/2021-03-14-Untitled-29/"/>
+    <id>https://gitkeniwo.github.io/2021-03-14-Untitled-29/</id>
+    <published>2021-03-14T05:56:43.000Z</published>
+    <updated>2021-03-14T06:09:43.045Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近 ——</p><p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1gojedv2qtaj20u60k4jyo.jpg" alt=""></p><p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1gojedvltbbj20k40u67f0.jpg" alt=""></p><p><img src="https://tva1.sinaimg.cn/large/e6c9d24ely1gojedyoj28j20u60k4jxz.jpg" alt=""></p><p>一門課（離散）和一門畢設。</p><p>春天來了，</p><p>我們在絕望的平原上矗立著，</p><p>呼嘯的寒風不減凜冬的威嚴。</p><p>上帝為什麼要讓人類身處遼遠的曠野，</p><p>內心卻彌留在永不與外界相連的孤島上。</p><p>『それが、</p><p>心の間に存在してるATフィルドなんや』って</p><p>もう迷う、</p><p>もうわからん。</p><p>hexo的md不支持數學公式，</p><p>糟心的一切。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近 ——&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.cn/large/e6c9d24ely1gojedv2qtaj20u60k4jyo.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://tva1.sinaimg.
+      
+    
+    </summary>
+    
+    
+      <category term="Tweets" scheme="https://gitkeniwo.github.io/categories/Tweets/"/>
+    
+    
+      <category term="photo" scheme="https://gitkeniwo.github.io/tags/photo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Discrete Mathematics.</title>
+    <link href="https://gitkeniwo.github.io/2021-03-07-Untitled-28/"/>
+    <id>https://gitkeniwo.github.io/2021-03-07-Untitled-28/</id>
+    <published>2021-03-07T11:18:39.000Z</published>
+    <updated>2021-03-09T15:14:36.861Z</updated>
+    
+    <content type="html"><![CDATA[<p>Discrete Mathematics.</p><h1 id="Appendix-LaTeX-Expressions-that-the-Course-Could-Use"><a href="#Appendix-LaTeX-Expressions-that-the-Course-Could-Use" class="headerlink" title="# Appendix: LaTeX Expressions that the Course Could Use"></a># Appendix: LaTeX Expressions that the Course Could Use</h1><h3 id="Quantifiers"><a href="#Quantifiers" class="headerlink" title="Quantifiers"></a>Quantifiers</h3><p>$\forall$: \forall</p><p>$\exists$:  \exists </p><p>example latex template,  see: <a href="https://www.zhihu.com/collection/296441755https://www.zhihu.com/collection/296441755" target="_blank" rel="noopener">https://www.zhihu.com/collection/296441755https://www.zhihu.com/collection/296441755</a></p><h1 id="1-Logic-and-Proofs"><a href="#1-Logic-and-Proofs" class="headerlink" title="1. Logic and Proofs"></a>1. Logic and Proofs</h1><h2 id="1-1-Propositional-Logic"><a href="#1-1-Propositional-Logic" class="headerlink" title="1.1 Propositional Logic"></a>1.1 Propositional Logic</h2><blockquote><p> <strong>Definition 1.1: Propositions</strong></p><p>A proposition is a declarative sentence (that is, a sentence that declares a fact) that is either true or false, but not both.</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Discrete Mathematics.&lt;/p&gt;
+&lt;h1 id=&quot;Appendix-LaTeX-Expressions-that-the-Course-Could-Use&quot;&gt;&lt;a href=&quot;#Appendix-LaTeX-Expressions-that-the-Cou
+      
+    
+    </summary>
+    
+    
+      <category term="Maths" scheme="https://gitkeniwo.github.io/categories/Maths/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>Existential Dilemma</title>
     <link href="https://gitkeniwo.github.io/2021-02-20-untitled-0/"/>
     <id>https://gitkeniwo.github.io/2021-02-20-untitled-0/</id>
     <published>2021-02-20T15:44:40.000Z</published>
-    <updated>2021-02-20T17:04:43.462Z</updated>
+    <updated>2021-02-20T17:12:29.213Z</updated>
     
-    <content type="html"><![CDATA[<p><em>À Bout de Souffle</em>, 戈達爾的《筋疲力盡》，向我們展示了這樣一個存在主義的困境。女主人公Patricia不清楚自己到底是因為自己不自由而不開心，還是因為自己不開心而不自由。她忽而激烈的抵觸追求她的Michel，又忽而對他投懷送抱，到最後甚至把縈繞在自己身上的哲學問題拋給了這個男人。Michel，如果以傳統的眼光來看的話，他是一個不折不扣的流氓，他若無其事的殺掉一個警察，又若無其事的在巴黎的大街上閒逛，與女孩打情罵俏。第一次看完整部影片，我心裡面是有一個大大的問號的，作為「新浪潮」的開山之石，在鼻音濃厚的法語對話和單調乏味的黑白色彩里，很難不感到昏昏欲睡，全片也似乎沒有一個明確的情節，或者說沒有一條顯著的故事線，以至於我回倒了好幾遍，找到一個個自認為關鍵的情節點開始梳理，卻也覺得不知其所。就是這樣的一部影片，在電影史上具有舉足輕重的地位。那時的我還不瞭解電影歷史，雖然早早的瀏覽過一遍<a href="https://www.amazon.com/认识电影-（全彩插图第12版）-美-路易斯·贾内梯（Louis-Giannetti）/dp/B01MG7F8M0" target="_blank" rel="noopener">《認識電影》</a>，書裡面講述過的剪輯手法也好啦、場面調度也好啦，全都拋之腦後了；也不瞭解60年代的法國和西方世界的左傾運動；更是不懂哲學啦，什麼存在主義、荒誕主義之類的，加繆？聽說過，也看過《局外人》，但也僅僅是局限於豆瓣讀書TPO100的程度，還在貴國牆裡面念高中的我哪裡有機會去瞭解《局外人》的創作背景和加繆本人的故事——完全是當作一個獵奇而乏味的、翻譯腔明顯的小故事來讀的。</p><p>所以，當這個世界一點一點向我撕開它的偽裝，讓我得以將之前所見的斷片拼湊起來，就像殘缺不全而尚未完成的拼圖的那樣，我也時常感嘆這背後複雜的玄機，人文，自然科學，工學，藝術，他們之間的聯繫是那麼的緊密，與我正在積極探索的領域相對應的，我的愛好也在不斷的變化之中。自高中開始，我就一直有種奇妙的「未充分準備好」的感受，其形成之初因，大抵是對於高考這場容錯率極低的試驗的自適應。直到高中畢業後第四年的今日，我也常常夢到高考迫在眉睫但我語文/數學/…還完全沒有復習這樣的場景，這樣的情景對於我的潛意識來說是個非常糟糕的狀態，以至於每每夢到類似的場景我都會感到全身緊繃，絕望和無助。到現在，我也為這種「匆匆準備」的心理預期而累，倒也不是我每日都被自己內心壓迫著去工作、去學習，而是我在大部分休憩的時間也感到一種稍縱即逝的不安感。日復一日的假定自己沒有「準備好」，沒有做足夠的工作去應付專業課的考試，沒有準備好托福、日本語能力測試，不單是各種測驗，這樣的「應試思維」誠然已經延展到了我生活中的每個部分，我的愛好，我的人際關係，我的職業規劃。我會因為這周沒有看完某幾部特定的電影而自責，會因為不自知的玩了一下午遊戲而沒有按照計劃學習法語/德語而深深懊悔，甚至會由於最近兩三天沒有攝入足夠的膳食纖維坐立不安。焦慮就是這樣overwhelming。最近一段時間，則是因為畢業設計的問題，每天都寢食難安，下午夕陽西沈的時間，孤獨、恐懼、荒誕，令人毛骨悚然的情緒盤旋在我的房間裡面，我感到一切都是沒有意義的。</p><p>那麼是沒有意義的嗎？所以我最近開始探索哲學這一方面了。老實說，哲學的著作是非常乏味的。ZJU有一門《希臘羅馬哲學》的通識課，我試著去讀過亞里士多德的《尼各馬可倫理學》。無果。太令人感到無趣了。我想有很大一部分的原因是翻譯的問題，歐洲語言按字翻譯成中文的時候總是繁瑣冗長的，formidable and daunting. 我們的思緒就在繞來繞去的中文表達里迷失，然後飛到書本之外去了。我不清楚是不是只有我一個人有這樣的經歷。正好今日在家中做一些清掃，我翻到了學生時代曾購買過的「村味」封面和排版的文學名著們，如《愛的教育》《巨人傳》等，總之，感謝貴國義務教育階段的「世界文學名著」，那些拗口而難記的人名，深深的勸退了我，有點不好意思的承認，我幾乎從未完整的讀完過任意一本翻譯過來的「文學名著」，現在個人對中文譯本的抵觸和排斥、至於看書一定要找到對應的英文、日文原版來翻看，大概由此起吧。希臘羅馬時代哲學讓人昏昏欲睡，但二十世紀的哲學又是那麼有意思，譬如存在主義，它講到是我們每個人在生命中不斷作出的選擇塑造了我們的本質，我們不是生來就是善或惡的，這是多麼有趣啊，我最近這段時間一直在思考這些問題，以前就根本沒有這樣的想法，現在——經歷了「這麼多事」之後，我也算是切身實地的體會到了世界的「Absurdity」，從而想要更加清楚的理解我們的生命。認識到哲學的趣味，還是因為去瞭解了大量的影視作品背後的創作思想。好的作品，它結合了藝術、音樂、歷史、哲學，把創作者吃過的無數偉大的作品提煉、發酵，再澆築成新的摩天大樓。伍迪艾倫把大文豪們的風流軼事都拍進了《午夜巴黎》，荒木sen sei用自己喜歡的搖滾樂隊及其作品名來為自己漫畫里的人物和招數命名，《猜火車》的背後是貫穿整個90s頹廢而輝煌的Britpop，Rick &amp; Morty 整整四季的無釐頭的平行宇宙歷險都是為了探討存在和荒誕的無數種可能性，甚至你可以說《Magica☆Madoka》和《Steins:gate》就是宅文化寄居在宅文化之上像珊瑚蟲形成環礁一樣最後開出的絢爛的花。類似的例子太多太多。</p><p>所以，我目前繼續活下去的理由，是為了「瞭解更多」。我想瞭解這個世界，這個宇宙。想看到意識形態和政權的交替，想聽到美妙的音樂、讀到更抓緊人心的故事，我想見證人類這樣的有機生命體創造出Cyborg硅基「生命體」的時代。我的選擇，造就了我本身，那我本身就更像是一個觀光客吧，我也希望自己是一個觀光客。這是到今天為止的我的想法，隨著我學到更多的東西，它還在飛速的改變之中。</p>]]></content>
+    <content type="html"><![CDATA[<p><em>À Bout de Souffle</em>, 戈達爾的《筋疲力盡》，向我們展示了這樣一個存在主義的困境。女主人公Patricia不清楚自己到底是因為自己不自由而不開心，還是因為自己不開心而不自由。她忽而激烈的抵觸追求她的Michel，又忽而對他投懷送抱，到最後甚至把縈繞在自己身上的哲學問題拋給了這個男人。Michel，如果以傳統的眼光來看的話，他是一個不折不扣的流氓，他若無其事的殺掉一個警察，又若無其事的在巴黎的大街上閒逛，與女孩打情罵俏。第一次看完整部影片，我心裡面是有一個大大的問號的，作為「新浪潮」的開山之石，在鼻音濃厚的法語對話和單調乏味的黑白色彩里，很難不感到昏昏欲睡，全片也似乎沒有一個明確的情節，或者說沒有一條顯著的故事線，以至於我回倒了好幾遍，找到一個個自認為關鍵的情節點開始梳理，卻也覺得不知其所。就是這樣的一部影片，在電影史上具有舉足輕重的地位。那時的我還不瞭解電影歷史，雖然早早的瀏覽過一遍<a href="https://www.amazon.com/认识电影-（全彩插图第12版）-美-路易斯·贾内梯（Louis-Giannetti）/dp/B01MG7F8M0" target="_blank" rel="noopener">《認識電影》</a>，書裡面講述過的剪輯手法也好啦、場面調度也好啦，全都拋之腦後了；也不瞭解60年代的法國和西方世界的左傾運動；更是不懂哲學啦，什麼存在主義、荒誕主義之類的，加繆？聽說過，也看過《局外人》，但也僅僅是局限於豆瓣讀書TPO100的程度，還在貴國牆裡面念高中的我哪裡有機會去瞭解《局外人》的創作背景和加繆本人的故事——完全是當作一個獵奇而乏味的、翻譯腔明顯的小故事來讀的。</p><p>所以，當這個世界一點一點向我撕開它的偽裝，讓我得以將之前所見的斷片拼湊起來，就像殘缺不全而尚未完成的拼圖的那樣，我也時常感嘆這背後複雜的玄機，人文，自然科學，工學，藝術，他們之間的聯繫是那麼的緊密，與我正在積極探索的領域相對應的，我的愛好也在不斷的變化之中。自高中開始，我就一直有種奇妙的「未充分準備好」的感受，其形成之初因，大抵是對於高考這場容錯率極低的試驗的自適應。直到高中畢業後第四年的今日，我也常常夢到高考迫在眉睫但我語文/數學/…還完全沒有復習這樣的場景，這樣的情景對於我的潛意識來說是個非常糟糕的狀態，以至於每每夢到類似的場景我都會感到全身緊繃，絕望和無助。到現在，我也為這種「匆匆準備」的心理預期而累，倒也不是我每日都被自己內心壓迫著去工作、去學習，而是我在大部分休憩的時間也感到一種稍縱即逝的不安感。日復一日的假定自己沒有「準備好」，沒有做足夠的工作去應付專業課的考試，沒有準備好托福、日本語能力測試，不單是各種測驗，這樣的「應試思維」誠然已經延展到了我生活中的每個部分，我的愛好，我的人際關係，我的職業規劃。我會因為這周沒有看完某幾部特定的電影而自責，會因為不自知的玩了一下午遊戲而沒有按照計劃學習法語/德語而深深懊悔，甚至會由於最近兩三天沒有攝入足夠的膳食纖維坐立不安。焦慮就是這樣overwhelming。最近一段時間，則是因為畢業設計的問題，每天都寢食難安，下午夕陽西沈的時間，孤獨、恐懼、荒誕，令人毛骨悚然的情緒盤旋在我的房間裡面，我感到一切都是沒有意義的。</p><p>那麼是沒有意義的嗎？所以我最近開始探索哲學這一方面了。老實說，哲學的著作是非常乏味的。ZJU有一門《希臘羅馬哲學》的通識課，我試著去讀過亞里士多德的《尼各馬可倫理學》。無果。太令人感到無趣了。我想有很大一部分的原因是翻譯的問題，歐洲語言按字翻譯成中文的時候總是繁瑣冗長的，formidable and daunting. 我們的思緒就在繞來繞去的中文表達里迷失，然後飛到書本之外去了。我不清楚是不是只有我一個人有這樣的經歷。正好今日在家中做一些清掃，我翻到了學生時代曾購買過的「村味」封面和排版的文學名著們，如《愛的教育》《巨人傳》等，總之，感謝貴國義務教育階段的「世界文學名著」，那些拗口而難記的人名，深深的勸退了我，有點不好意思的承認，我幾乎從未完整的讀完過任意一本翻譯過來的「文學名著」，現在個人對中文譯本的抵觸和排斥、至於看書一定要找到對應的英文、日文原版來翻看，大概由此起吧。希臘羅馬時代哲學讓人昏昏欲睡，但二十世紀的哲學又是那麼有意思，譬如存在主義，它講到是我們每個人在生命中不斷作出的選擇塑造了我們的本質，我們不是生來就是善或惡的，這是多麼有趣啊，我最近這段時間一直在思考這些問題，以前就根本沒有這樣的想法，現在——經歷了「這麼多事」之後，我也算是切身實地的體會到了世界的「Absurdity」，從而想要更加清楚的理解我們的生命。認識到哲學的趣味，還是因為去瞭解了大量的影視作品背後的創作思想。好的作品，它結合了藝術、音樂、歷史、哲學，把創作者吃過的無數偉大的作品提煉、發酵，再澆築成新的摩天大樓。伍迪艾倫把大文豪們的風流軼事都拍進了《午夜巴黎》，荒木sen sei用自己喜歡的搖滾樂隊及其作品名來為自己漫畫里的人物和招數命名，《猜火車》的背後是貫穿整個90s頹廢而輝煌的Britpop，Rick &amp; Morty 整整四季的無釐頭的平行宇宙歷險都是為了探討存在和荒誕的無數種可能性，甚至你可以說《Magica☆Madoka》和《Steins:gate》就是宅文化寄居在宅文化之上像珊瑚蟲形成環礁一樣最後開出的絢爛的花。類似的例子太多太多。</p><p>所以，我目前繼續活下去的理由，是為了「瞭解更多」。我想瞭解這個世界，這個宇宙。想看到意識形態和政權的交替，想聽到美妙的音樂、讀到更抓緊人心的故事，我想見證人類這樣的有機生命體創造出Cyborg硅基「生命體」的時代。我的選擇，造就了我本身，那我本身就更像是一個觀光客吧，我也希望自己是一個觀光客。這是到今天為止的我的想法，隨著我學到更多的東西，它還在飛速的改變之中。</p><p>附：</p><p><a href="https://telegra.ph/What-Jean-Luc-Godard-Taught-Me-About-My-Current-Existential-Crisis--by-Caroline-Alice-Guerin-02-20" target="_blank" rel="noopener">https://telegra.ph/What-Jean-Luc-Godard-Taught-Me-About-My-Current-Existential-Crisis--by-Caroline-Alice-Guerin-02-20</a></p>]]></content>
     
     <summary type="html">
     
@@ -452,119 +535,6 @@
     
     
       <category term="zju" scheme="https://gitkeniwo.github.io/tags/zju/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>破裂与腾飞</title>
-    <link href="https://gitkeniwo.github.io/2020-12-04-film-balloon/"/>
-    <id>https://gitkeniwo.github.io/2020-12-04-film-balloon/</id>
-    <published>2020-12-04T08:24:01.000Z</published>
-    <updated>2020-12-04T08:51:29.015Z</updated>
-    
-    <content type="html"><![CDATA[<p>红色的气球，在冷色调的镜头中尤为显眼，藏区朴素的颜色，一望无际的牧场，带刺铁栅栏上飘扬的塑料纸片，羊群与摩托车，青海或者西藏。</p><p>惨淡而凋敝的背景里面，一个家庭里的人各怀心事，妹妹做了尼姑，到头来却看不到那本试图讲明她的过去的「气球」，姐姐的安全套被孩童当作气球偷去，自己陷入了生育的道德陷阱里。藏地的信仰与女性权利的冲突重重，她们是男人发泄的对象，是灵魂转世投胎的母体，是计划生育的作用人群。父亲在县城说着蹩脚汉语给孩子们买了两只气球，最后一只破裂，另一只飞走了，红色的精子在天空中无拘无束的翻腾，吸引了所有人的注目，我想那应该就是人们囿于传统礼教之下内心深处的向往吧。</p><p><img src="../img/b674-iufmpmp1256471.png" alt="万玛才旦导演新作《气球》将于台北电影节作者视角单元进行展映……"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;红色的气球，在冷色调的镜头中尤为显眼，藏区朴素的颜色，一望无际的牧场，带刺铁栅栏上飘扬的塑料纸片，羊群与摩托车，青海或者西藏。&lt;/p&gt;
-&lt;p&gt;惨淡而凋敝的背景里面，一个家庭里的人各怀心事，妹妹做了尼姑，到头来却看不到那本试图讲明她的过去的「气球」，姐姐的安全套被孩童当作气球
-      
-    
-    </summary>
-    
-    
-      <category term="Films" scheme="https://gitkeniwo.github.io/categories/Films/"/>
-    
-    
-      <category term="film" scheme="https://gitkeniwo.github.io/tags/film/"/>
-    
-      <category term="film_drama" scheme="https://gitkeniwo.github.io/tags/film-drama/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>La Boum, L&#39;Amour.</title>
-    <link href="https://gitkeniwo.github.io/2020-12-03-film-laboum/"/>
-    <id>https://gitkeniwo.github.io/2020-12-03-film-laboum/</id>
-    <published>2020-12-03T14:33:01.000Z</published>
-    <updated>2020-12-04T08:51:30.816Z</updated>
-    
-    <content type="html"><![CDATA[<p>Sophie Marceau, 第一次认识她是在安东尼奥尼的「云上的日子」，当时我不懂法语，不知道苏菲玛索是谁，也看不懂云上的日子，只是觉得这样的影片絮絮叨叨，镜头切过来切过去，people roaming without knowing exactly what to do, 这样的日子很惬意。</p><p>La Boum，在法语中有两种意思，一是表示砰地一声，二是舞会。bilibili上可以直接播放，我又在nhd上下载到了一个很高清的版本，又费了好大劲找到了法语和广东话的字幕，这才不容易的看上了。故事很简单，青春期的少男少女，彼此交接着碰撞着，la boum，砰的一声，爱情在心中发芽。中年危机的老爹和伤心的老妈，成年人也痛苦地追求着爱情。</p><p>对我这个literally奔三的old man来说，最大的暴击大概就是主角们年龄了吧，Vic本人只有十三十四岁，所以在凌晨的海滩小屋里她迷茫和暴躁。她觉得自己付出了很多，但是她又勇敢的去追寻。家长们对孩子之间的romantic relationship并没有表现出应有的诧异——或者说，我不知道是不是可以说「应有」的诧异。也许在另一个世界里面，没有那一套繁文缛节的道德规范来阻止少年少女们相爱。</p><p>短短的一百零七分钟里，大量的人物涌现着活跃着，衣着时尚的奶奶、戴牙套和眼镜但很可爱的男生、认为爸爸很sexy的女主朋友的妹妹，还有最后的舞会上，跟Vic一见钟情接吻共舞的陌生人，世界上其他地区的人看了都会这样感叹吧，巴黎真是一个充满爱的城市。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Sophie Marceau, 第一次认识她是在安东尼奥尼的「云上的日子」，当时我不懂法语，不知道苏菲玛索是谁，也看不懂云上的日子，只是觉得这样的影片絮絮叨叨，镜头切过来切过去，people roaming without knowing exactly what to d
-      
-    
-    </summary>
-    
-    
-      <category term="Films" scheme="https://gitkeniwo.github.io/categories/Films/"/>
-    
-    
-      <category term="film" scheme="https://gitkeniwo.github.io/tags/film/"/>
-    
-      <category term="film-Romance" scheme="https://gitkeniwo.github.io/tags/film-Romance/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Untitled</title>
-    <link href="https://gitkeniwo.github.io/2020-12-03-Untitled-19/"/>
-    <id>https://gitkeniwo.github.io/2020-12-03-Untitled-19/</id>
-    <published>2020-12-03T07:09:56.000Z</published>
-    <updated>2020-12-03T07:26:08.666Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="简短总结下今天几则移民广告。"><a href="#简短总结下今天几则移民广告。" class="headerlink" title="简短总结下今天几则移民广告。"></a>简短总结下今天几则移民广告。</h1><h2 id="fem"><a href="#fem" class="headerlink" title="fem"></a>fem</h2><p>第一则是弦子起诉朱军性侵案、平时叫嚷嚷的你国媒体鸦雀无声，就只有端传媒做了法院门口人群聚集的报道，一个小时之内国宝两次告诫现场人群不能举标语，两名外媒被强制带走。事后相关微博和博主被炸，朱军成为豆瓣敏感词，还有很多恶臭发言截图等。</p><h2 id="hk"><a href="#hk" class="headerlink" title="hk"></a>hk</h2><p>第二则是黄之锋“认罪”被判13个月半，跟他一起接受判决的还有周庭等人，最经典的照片是hker用手机电筒照亮黄的囚车。</p><h2 id="AU"><a href="#AU" class="headerlink" title="AU"></a>AU</h2><p>中澳争议继续发酵，澳洲微信公众号发布的几则澄清声明被删掉，这让人想到前段时间英国使馆发布的”「关于hk问题的声明」被删的声明“被删掉，毕竟删国掩疫传统艺能了。</p><h2 id="此外"><a href="#此外" class="headerlink" title="此外"></a>此外</h2><p>每天还有好多好多事在发生，原神当选apple年度游戏，weeknd公开diss格莱美，ellen page(elliot page)公开自己的trans身份，蛋壳公寓遍地暴雷和相关的粉红被锤截图。时代的一粒灰，落在大家的头上。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;简短总结下今天几则移民广告。&quot;&gt;&lt;a href=&quot;#简短总结下今天几则移民广告。&quot; class=&quot;headerlink&quot; title=&quot;简短总结下今天几则移民广告。&quot;&gt;&lt;/a&gt;简短总结下今天几则移民广告。&lt;/h1&gt;&lt;h2 id=&quot;fem&quot;&gt;&lt;a href=&quot;#fe
-      
-    
-    </summary>
-    
-    
-      <category term="News Comments" scheme="https://gitkeniwo.github.io/categories/News-Comments/"/>
-    
-    
-      <category term="hk" scheme="https://gitkeniwo.github.io/tags/hk/"/>
-    
-      <category term="politics" scheme="https://gitkeniwo.github.io/tags/politics/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>本次hexo项目从老mac迁移到新mac上遇到的问题种种</title>
-    <link href="https://gitkeniwo.github.io/2020-11-24-blog/"/>
-    <id>https://gitkeniwo.github.io/2020-11-24-blog/</id>
-    <published>2020-11-24T08:56:06.000Z</published>
-    <updated>2020-12-03T07:09:34.307Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="git子模块的相关问题"><a href="#git子模块的相关问题" class="headerlink" title="git子模块的相关问题"></a>git子模块的相关问题</h1><p>主要是<code>/hexo/themes/</code>下的主题dir的git提交问题。由于我最开始是直接从主题的github repo页面上拉下来的，当时对git的理解还不够深入， </p><p><a href="https://www.hozen.site/archives/23/" target="_blank" rel="noopener">https://www.hozen.site/archives/23/</a></p><p>我的做法：<br>· 重新fork了一下 hexo-theme-next<br>· 把它添加到了我的子模块<br>· 直接mv -d 了原有的next模块<br>· 从mbp2015上拷贝了config.yml，并更改主题名为hexo-theme-next<br>（此处复习一下vim前后段尾是<code>{</code> , <code>}</code>两个键  ）</p><p>但在我做完以上步骤之后，git submodule</p><p><img src="../img/image-20201203145349582.png" alt="image-20201203145349582"></p><p>这应该是原来旧版本里面还留着上个next主题的submodule配置信息。</p><p>查询csdn，<strong>删除子模块的步骤</strong></p><blockquote><p> 有时子模块的项目维护地址发生了变化，或者需要替换子模块，就需要删除原有的子模块。</p><p>删除子模块较复杂，步骤如下：</p><p>· rm -rf 子模块目录 删除子模块目录及源码</p><p>· vi .gitmodules 删除项目目录下.gitmodules文件中子模块相关条目</p><p>· vi .git/config 删除配置项中子模块相关条目</p><p>· rm .git/module/* 删除模块下的子模块目录，每个子模块对应一个目录，注意只删除对应的子模块目录即可</p></blockquote><p>此时我再执行以上步骤之前，重新add, commit了一次，再查看以上配置文件，均没有老next的记录了。</p><p>再运行一次<code>git submodule</code></p><p><img src="../img/image-20201203145611504.png" alt="image-20201203145611504"></p><p>恢复。</p><h1 id="2-node-v14弹warning"><a href="#2-node-v14弹warning" class="headerlink" title="2.node v14弹warning"></a>2.node v14弹warning</h1><p>这个很无解，好像是stylus的问题，我难得再去debug了，选择直接回滚到v12。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo n 12.18.2</span><br></pre></td></tr></table></figure><p>要注意的是好像也会node_module里面的hexo依赖包也会在node版本回滚之后出现问题，要重新装一遍，这里我记得似乎是终端会自动弹出一个warning和建议重装的命令，直接复制了执行之后就ok了。</p><h1 id="3-关于git-log"><a href="#3-关于git-log" class="headerlink" title="3.关于git log"></a>3.关于git log</h1><p>这个就太好笑了，我把上面的破事处理完之后直接部署到github pages然后发现我的博文只更新到了今年7月份，后面的新文章都🈚️了，最后发现是我用git log回滚了版本，然后git log返回的提交记录在终端显示的时间顺序居然是从下往上，最上面是最新的提交<em>（因为命令行返回信息之后，等待输入的新行肯定是跟*</em>最下面的一行*<em>最接近，理所应当的应该让最下面的一条记录显示最新版本才对吧）</em>。就这样我的所有博文直接回到了7月。</p><h1 id="4-one-more-thing-post的最后编辑时间。"><a href="#4-one-more-thing-post的最后编辑时间。" class="headerlink" title="4.one more thing: post的最后编辑时间。"></a>4.one more thing: post的最后编辑时间。</h1><p>还有一个很让人头疼的事，每次迁移hexo项目之后，所有博文的最后编辑时间都会变成迁移的时间，尽管你并未做任何修改，这就又让人迷惑，又让真实的最后编辑时间消失了。这个问题我还没去解决，大概搜索了一下，<a href="https://blog.vanxnf.top/2018/09/03/Hexo-博客-Hiker-主题增加文章最后编辑时间，并按照最后编辑时间排序/" target="_blank" rel="noopener">贴个链接 </a>。</p><p>ps. 目前（2020.12.3）使用的主题cactus好像并没有贴出博文的最后编辑时间，所以可以先不用管这个问题……</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;git子模块的相关问题&quot;&gt;&lt;a href=&quot;#git子模块的相关问题&quot; class=&quot;headerlink&quot; title=&quot;git子模块的相关问题&quot;&gt;&lt;/a&gt;git子模块的相关问题&lt;/h1&gt;&lt;p&gt;主要是&lt;code&gt;/hexo/themes/&lt;/code&gt;下的主题d
-      
-    
-    </summary>
-    
-    
-      <category term="Blog" scheme="https://gitkeniwo.github.io/categories/Blog/"/>
-    
-    
-      <category term="hexo" scheme="https://gitkeniwo.github.io/tags/hexo/"/>
-    
-      <category term="git" scheme="https://gitkeniwo.github.io/tags/git/"/>
     
   </entry>
   
