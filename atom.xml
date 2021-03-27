@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://gitkeniwo.github.io/"/>
-  <updated>2021-03-27T16:33:47.034Z</updated>
+  <updated>2021-03-27T16:55:40.336Z</updated>
   <id>https://gitkeniwo.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>picgo - 折腾一下新图床</title>
+    <link href="https://gitkeniwo.github.io/2021-03-28-picgo/"/>
+    <id>https://gitkeniwo.github.io/2021-03-28-picgo/</id>
+    <published>2021-03-27T16:34:09.000Z</published>
+    <updated>2021-03-27T16:55:40.336Z</updated>
+    
+    <content type="html"><![CDATA[<p>寫博客的時候總是很擔心圖片的問題：存在本地不方便，直接用圖床md鏈接省事且現代化。但隨之而來的又一個問題是：放在外面的cdn上的東西，怎麼保證他不會跑路？舉例來說就是現在ipic免費版支持的微博圖床，匿名上傳，接受範圍內的壓縮，但，萬一微博垮了怎麼辦？且不說夾總還維護著CCP的內容審查，就算微博自己鋪天蓋地的放廣告、壓榨用戶體驗，死亡也是早晚的事情。微博如果垮掉了，我博客里的圖片都會可憐的被清光，只會在原處剩下html找不到資源的破碎畫板小圖標——現在去看12年以前的百度貼吧的古董貼，所有的圖片都隨風而逝了，僅留下一道賽博疤痕。所以，現在就得考慮一個圖床時效性的問題，因為大多數圖片是沒有備份的，倘若圖床跑路，圖片是無論如何也無法輓回了。雖然這樣與時間、歷史、歲月對抗的行為總體上來說是徒勞無功的——我們無法預知我們死後的變化，誇張點說甚至無法預知我們下一秒的變化，指不定ISIS明天恐襲Twitter總部，億萬條推文都毀於一旦，而背後的理由僅僅是因為Twitter對阿拉伯世界宣稱支持<strong>La liberté d’expression</strong>——但我還是盡可能的希望延續這種存在。那麼通覽全球，我覺得能活的最久的service provider，一個是Apple/Goole，另一個就是Github了。所以，我也盡可能希望自己的一切網絡遊戲都能依靠在GitHub周圍——比方說我的Blog。Github是最不可能垮掉的服務商了，所以，GitHub如果提供Image Hosting Service的話我付費支持，但很可惜沒有。</p><p>於是我又找啊找，發現了一個叫<a href="https://github.com/Molunerfinn/PicGo" target="_blank" rel="noopener">PicGo</a>的東西。</p><p><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20210328004813.png" alt=""></p><p>可以看到它一個是支持的雲服務多，另一個是它支持把你自建的Repo當成圖床來用。</p><p>這是我的配置。其中Token的生成可以去查閱它的官方手冊。</p><p><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20210328004938.png" alt=""></p><p>最開始的時候一直上傳不成功，我懷疑可能是我的SS 1087端口這個HTTP代理有問題（終端也有同樣的情況）於是我現在是不加代理的在使用，體驗就是特別慢，和ipic的微博圖床秒傳無法比……</p><p><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20210328005226.png" alt=""></p><p>但好在還是可以用的。<del>希望ipic作者也能提供一下GitHub的圖床，我一定給錢</del></p><p>此外還要繼續考察一下這個repo有沒有容量的問題……<del>又想到了git-lfs把github帶寬撐爆直接給我寄bill那件事</del>……</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;寫博客的時候總是很擔心圖片的問題：存在本地不方便，直接用圖床md鏈接省事且現代化。但隨之而來的又一個問題是：放在外面的cdn上的東西，怎麼保證他不會跑路？舉例來說就是現在ipic免費版支持的微博圖床，匿名上傳，接受範圍內的壓縮，但，萬一微博垮了怎麼辦？且不說夾總還維護著CC
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>scrapy的学习笔记</title>
@@ -534,35 +556,6 @@
     
     
       <category term="zju" scheme="https://gitkeniwo.github.io/tags/zju/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>破裂与腾飞</title>
-    <link href="https://gitkeniwo.github.io/2020-12-04-film-balloon/"/>
-    <id>https://gitkeniwo.github.io/2020-12-04-film-balloon/</id>
-    <published>2020-12-04T08:24:01.000Z</published>
-    <updated>2020-12-04T08:51:29.015Z</updated>
-    
-    <content type="html"><![CDATA[<p>红色的气球，在冷色调的镜头中尤为显眼，藏区朴素的颜色，一望无际的牧场，带刺铁栅栏上飘扬的塑料纸片，羊群与摩托车，青海或者西藏。</p><p>惨淡而凋敝的背景里面，一个家庭里的人各怀心事，妹妹做了尼姑，到头来却看不到那本试图讲明她的过去的「气球」，姐姐的安全套被孩童当作气球偷去，自己陷入了生育的道德陷阱里。藏地的信仰与女性权利的冲突重重，她们是男人发泄的对象，是灵魂转世投胎的母体，是计划生育的作用人群。父亲在县城说着蹩脚汉语给孩子们买了两只气球，最后一只破裂，另一只飞走了，红色的精子在天空中无拘无束的翻腾，吸引了所有人的注目，我想那应该就是人们囿于传统礼教之下内心深处的向往吧。</p><p><img src="../img/b674-iufmpmp1256471.png" alt="万玛才旦导演新作《气球》将于台北电影节作者视角单元进行展映……"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;红色的气球，在冷色调的镜头中尤为显眼，藏区朴素的颜色，一望无际的牧场，带刺铁栅栏上飘扬的塑料纸片，羊群与摩托车，青海或者西藏。&lt;/p&gt;
-&lt;p&gt;惨淡而凋敝的背景里面，一个家庭里的人各怀心事，妹妹做了尼姑，到头来却看不到那本试图讲明她的过去的「气球」，姐姐的安全套被孩童当作气球
-      
-    
-    </summary>
-    
-    
-      <category term="Films" scheme="https://gitkeniwo.github.io/categories/Films/"/>
-    
-    
-      <category term="film" scheme="https://gitkeniwo.github.io/tags/film/"/>
-    
-      <category term="film_drama" scheme="https://gitkeniwo.github.io/tags/film-drama/"/>
     
   </entry>
   
