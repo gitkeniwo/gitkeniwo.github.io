@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://gitkeniwo.github.io/"/>
-  <updated>2021-03-28T05:35:52.220Z</updated>
+  <updated>2021-04-19T13:30:23.876Z</updated>
   <id>https://gitkeniwo.github.io/</id>
   
   <author>
@@ -15,6 +15,53 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test</title>
+    <link href="https://gitkeniwo.github.io/2021-04-19-test-1/"/>
+    <id>https://gitkeniwo.github.io/2021-04-19-test-1/</id>
+    <published>2021-04-19T13:27:53.000Z</published>
+    <updated>2021-04-19T13:30:23.876Z</updated>
+    
+    <content type="html"><![CDATA[<p>剛發現Pawoo有一個「埋め込み」的功能，來實驗一下。</p><iframe src="https://pawoo.net/@Keniwo/106084885593966614/embed" class="mastodon-embed" style="max-width: 100%; border: 0" height="330" width="400" allowfullscreen="allowfullscreen"></iframe><script src="https://pawoo.net/embed.js" async="async"></script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;剛發現Pawoo有一個「埋め込み」的功能，來實驗一下。&lt;/p&gt;
+&lt;iframe src=&quot;https://pawoo.net/@Keniwo/106084885593966614/embed&quot; class=&quot;mastodon-embed&quot; style=&quot;max-width:
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>PT</title>
+    <link href="https://gitkeniwo.github.io/2021-03-30-pt/"/>
+    <id>https://gitkeniwo.github.io/2021-03-30-pt/</id>
+    <published>2021-03-30T08:23:26.000Z</published>
+    <updated>2021-03-30T14:46:20.011Z</updated>
+    
+    <content type="html"><![CDATA[<p>这里总结一下PT有关的知识</p><p>具体将分为以下几个部分介绍(先挖坑有空写)</p><h1 id="什么是PT-Private-Tracker-？"><a href="#什么是PT-Private-Tracker-？" class="headerlink" title="什么是PT(Private Tracker)？"></a>什么是PT(Private Tracker)？</h1><h1 id="PT站点简介"><a href="#PT站点简介" class="headerlink" title="PT站点简介"></a>PT站点简介</h1><p>从来自中国大陆的使用者角度，PT可以分为</p><h2 id="PT规则"><a href="#PT规则" class="headerlink" title="PT规则"></a>PT规则</h2><p>HR</p><p>Ratioless</p><p>Seed/Leech</p><h3 id="PT架构"><a href="#PT架构" class="headerlink" title="PT架构"></a>PT架构</h3><h2 id="内站"><a href="#内站" class="headerlink" title="内站"></a>内站</h2><p>M-Team</p><p>春</p><p>岛</p><p>空</p><p>瓷</p><p>猫</p><p>U2</p><p>OpenCD</p><p>海豚</p><p>柠檬</p><h3 id="校园网PT站"><a href="#校园网PT站" class="headerlink" title="校园网PT站"></a>校园网PT站</h3><h4 id="V6"><a href="#V6" class="headerlink" title="V6"></a>V6</h4><p>BYR (北京邮电大学)<br>六维空间 （东北大学）</p><h4 id="V4-V6"><a href="#V4-V6" class="headerlink" title="V4+V6"></a>V4+V6</h4><p>葡萄</p><p>北洋园</p><h4 id="校园局域网"><a href="#校园局域网" class="headerlink" title="校园局域网"></a>校园局域网</h4><p>NexusHD</p><h2 id="外站"><a href="#外站" class="headerlink" title="外站"></a>外站</h2><p>PTP (==P==ass==T==he==P==opcorn)</p><p>BTN</p><p>RED</p><p>GGN</p><p>Jpopsuki</p><p>TL (TorrentLeech)</p><p>IPT (IPTorrent)</p><h1 id="PT站内资源篇"><a href="#PT站内资源篇" class="headerlink" title="PT站内资源篇"></a>PT站内资源篇</h1><h2 id="视频格式-编码"><a href="#视频格式-编码" class="headerlink" title="视频格式/编码"></a>视频格式/编码</h2><h2 id="压制组"><a href="#压制组" class="headerlink" title="压制组"></a>压制组</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;这里总结一下PT有关的知识&lt;/p&gt;
+&lt;p&gt;具体将分为以下几个部分介绍(先挖坑有空写)&lt;/p&gt;
+&lt;h1 id=&quot;什么是PT-Private-Tracker-？&quot;&gt;&lt;a href=&quot;#什么是PT-Private-Tracker-？&quot; class=&quot;headerlink&quot; tit
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Untitled</title>
@@ -508,60 +555,6 @@
     
       <category term="Tweets" scheme="https://gitkeniwo.github.io/categories/Tweets/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>关于繁体字</title>
-    <link href="https://gitkeniwo.github.io/2020-12-10-tweet/"/>
-    <id>https://gitkeniwo.github.io/2020-12-10-tweet/</id>
-    <published>2020-12-10T14:40:33.000Z</published>
-    <updated>2020-12-10T16:10:40.872Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天浏览98的时候意外的发现了一位华裔留学生写的自己在ZJU的经历，絮絮叨叨了好几页，以美本和国外的经历来吐槽贵校种种非人道的设计和制度，看下来还算有趣，但是他本人由于在加拿大呆了很久，学中文的时候就是学的繁体字，所以整篇文章也都是繁体字。不出我的意料，下面的回复里也充满了对繁体字的偏见。有人评论因为繁体字再加上这篇文章太长，他的阅读速度降低到了龟速，看到1/3的时候就想吐血，还有人直接就从动机和意识形态的角度质疑文章的作者，毕竟这篇回忆录里也没说几句浙大的好话，可能戳痛了他们内心里面的某种价值。在豆瓣八组看到因为使用了繁体字而被炎上的现象我大概不会诧异——毕竟Ta们代表了真实的贵国人文化水平。但是在<del>你</del>我校也看到这样的现象足够让我灰心了——即便我在大一的时候就不断的提醒自己降低对贵校的期望值，每当这样残酷的现实向我袭来，我心中也还是有种说不出来的滋味。</p><p>其实我心里面是清楚的，每次看到留学生/海归/台湾HK人/外籍华裔人士在中文论坛分享自己的经历，帖子后面的纯种<strong>中国人</strong>的评论总是绕不开这几个话题：繁体字，意识形态，洋大人。</p><p>也会有通情达理的人，视野开阔的人，但只要人气一上去，或者小众论坛里的内容被拎到一个含中国人浓度更大的地方等待路过的吃瓜群众来品头论足，这些让人感到恶心回帖总是会出现。他们好像非常精明，但对我来说有点过于精明了，他们似乎能够瞬间定位到文章里面可能引起某个群体不适的地方，然后以市侩而老练的句式指出，以求获得更多同伴的支持。</p><p>所以，繁体字，在这样的文化环境下，已经与「台独」「民主自由」这样的字眼绑定起来了。只要不用简体字，你就是不尊重我们的阅读习惯，你就是居心叵测，台湾间谍——我已经倦于看到这些缺乏逻辑感的话术了。It’s deranged and repulsive. 经历了十二年的衡水、毛坦厂式教育，再gone through所谓的思修、毛概这些洗脑课程，圈养在封闭的国门和局域网里面，从统计学的角度上讲，很难不诞生这样仇外的文化现象。「警惕」、「别被公知、恨国党带了节奏」……OK, I hate repeating these shit words, and this is the last time. 所以活在红色高压之下的人们，高中生、大学生、职业技术学院的学生、打工人，他们总是在留意着某些看不见摸不着的事物，就像是病毒，或者恶魔。他们活在这样的语境中，活在一段「屈辱」的历史之下——虽然我不知到底有什么正当性可以让我们直接继承「大清」的「灾难」。他们的一举一动都是被嵌进潜意识里的集体叙事所影响着的，this disproposition to protect this intangible group,  the nation. 可是最讽刺的是在这里面又有多少人能够说得清自己为何与这个集体是息息相关的呢？少的可怜。或者说，意识到应该去探索这种link的人，也都意识到了原来一直以来都是这个「集体」do them the most harm. 所以，人们为什么不能产生这样的意识呢？意识，要么得靠自己figure out，要么是从别人那里获得的。今天看到北师大的统计说中国有9亿人月收入在2k CNY以下。Surely  appalling number. 是生活的压力阿，是overpopulation，家庭的供养，无论如何也要抚养的子嗣，房屋与教育的费用，是户籍制度，是多变的政策，是城管，是法律——这要细说的话就是一部当代“共产”中国史了。生活的压力让人们没有时间去思考，家庭和传统礼教让人们疲于奔命、疲于应付一种虚幻的人际关系。最近<strong>蛋壳公寓</strong>暴雷的话题下，一边被扫地出门，一边支持HK Police的pinky们就是一个特别好的例子。这可还不够，通往世界的网络出口被掐断，知识分子的大声疾呼被删除，网络警察一丝不苟的清除掉人们的记忆，受过高等教育的程序员、研究者，他们当然有能力探索更广阔的网络空间，所以在程序员群体中，「不爱国」的人的比例也大大提升了，但是一般人呢？那9亿月收入不足2k的中国人呢？所以，这种意识，在自己身上很难开花结果，也没有渠道从别人那里获得，其结果就是，可以任由他人来糊弄。于是教科书可以篡改，思想可以被植入，人人都是vigilante，想到台湾人拍了一部电影来揭露当年戒严时期的检举匪谍的口号，并在全国上映了，海峡对岸却一直检举到了2020年，甚至还会继续。</p><p>所以啊，跳出自己的舒适圈来看，我们身边的环境已经这么坏了，那个说因为是繁体字所以阅读困难的评论也就不足为奇了。我们国家花了20年简化了汉字，又花了20年简化了人心。繁体字消逝的年代，我还没有出生，但是在很多80年代的照片里面看到过，电影票据，市场商店招牌，街头的口号，早年的麦当劳门店……人心消逝的年代，我亲身感受到了，就发生在我的身边，我的同龄人，同学，朋友，同一个城市的大学生，在知乎上豪言壮语的青年。中共用教育抹杀掉了一代人，五六十年前，它用无教育抹杀掉了另一代人，虽然两者本质上是一样的。它不停的制造对立，所以才会有“洋大人”，“台蛙”和“废青”。所以才会有“蝈蝻”和“女拳”。这些话题都涉及了太多的东西，今晚是没办法写下去了。一方面，我理解为什么贵校同学对留学生有如此大的恶意，但问题的核心在于这并不是留学生他们主动造成的，they don’t mean it, EITHER. 就像98上这篇文章的作者自己也说了，他们也要承担3倍于local中国学生的学费，这还不包含其他生活费用，再加上人家大学以后都是自己cover学费开销的，这就更困难了。另一方面，就像我之前说的，他们太过“精明”了，这也是在如此「内卷」的环境中自然进化出的生存之道吧，结合别人的背景来看，贵校的条件的确是一坨shit了，相关的抱怨还会有国外的举证对比来印证，但有的人就是能从这里面读出condescending的语气给予反驳，气急败坏的，还会加上传统艺能请别人去国外发帖。所谓的包容与多元在当前的政治环境下已经是一个大家心知肚明的笑话了，直接说我们不欢迎外国人，玻璃心护校，虽然小气了点，不浪费大家时间岂不是更好。</p><p>因此，我可以在这直言我讨厌中国人，I hate Chinese. 但是要加限定条件，我讨厌<strong>上述</strong>的中国人，讨厌<strong>那些</strong>人。有人会说，这也不是他们的错，他们也是一个个活生生的个体，也饱受tg的洗脑与荼毒。Sigh，我真的不是<em>圣人</em>，我也是个暂时在桂枝国内浮沉的普通人，我没有博爱的精神，我从小就跟他们一起长大，活在他们的掌控之下，<strong>so sick</strong> of all the shit. TLDR管不了那么多了。我只希望余生永远不要再跟他们有交集。 </p><h2 id="Love-amp-Peace"><a href="#Love-amp-Peace" class="headerlink" title="Love &amp; Peace."></a>Love &amp; Peace.</h2>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;今天浏览98的时候意外的发现了一位华裔留学生写的自己在ZJU的经历，絮絮叨叨了好几页，以美本和国外的经历来吐槽贵校种种非人道的设计和制度，看下来还算有趣，但是他本人由于在加拿大呆了很久，学中文的时候就是学的繁体字，所以整篇文章也都是繁体字。不出我的意料，下面的回复里也充满了
-      
-    
-    </summary>
-    
-    
-      <category term="Tweets" scheme="https://gitkeniwo.github.io/categories/Tweets/"/>
-    
-    
-      <category term="chinese" scheme="https://gitkeniwo.github.io/tags/chinese/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>时时刻刻</title>
-    <link href="https://gitkeniwo.github.io/2020-12-09-film-thehours/"/>
-    <id>https://gitkeniwo.github.io/2020-12-09-film-thehours/</id>
-    <published>2020-12-09T13:32:26.000Z</published>
-    <updated>2020-12-09T16:59:43.370Z</updated>
-    
-    <content type="html"><![CDATA[<p><em>Virginia Woolf</em>, 她的语言，她的文字，闪烁，飘忽，飞快的变幻，急剧的更替。她是一位女性作家，意识流(Stream of Consciousness)派的代表人物。她跟「尤利西斯」的作者<em>James Joyce</em>同年出生，又同年离世。她在自己的口袋里装满了石头之后，投入了她家附近的河中。</p><p>影片中三个女人，她们都痛苦着，迷失着。闭上眼是虚幻的希望，睁开眼是庸俗的生活。Virginia有一个爱她的Leonard，愿意为她放弃一切搬到small town里过平静的日子，这却并不能让她快乐。她觉得自己没办法从这令人泄气的困境中逃脱，她觉得自己不会再恢复神志了，the voices，躲在她背后，她耳边的voices，不停地叨嚷着折磨着她，但她确信那是她自己的心声，所以她奋不顾身地冲向即将发车的站台，像要失控一般对着Leonard怒吼着：”it’s my voice.” 可是，在Woolf的年代，她别无选择，男性在社会中占据很高的地位，为了不成为Leonard的负担，她结束了自己的生命。</p><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gli3fsok7aj31ev0u0qv8.jpg" alt="image-20201210004831589"></p><p>50年代LA的中年主妇Lora，她的生活完全被丈夫和孩子占据，她作为女性丧失了存在的价值，甚至说只能在男人过生日的时候为他做一个蛋糕来让他体会到爱，这个蛋糕甚至也被扔进了垃圾堆。在酒店的床上半醒半睡地哭过之后，她做出了一个比死亡更勇敢地决定，她放弃了既有的生活框架，在社会中的地位，母亲的身份，无论如何也要探寻自己的独特的生存方式。</p><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gli3fv02p6j31gy0u0e83.jpg" alt="image-20201210005035351"></p><p>Lora的小男孩，长大之后就变成了第三个故事中的残疾作家Richard，Richard对Lora的不辞而别感到愤怒和不解，还在书中把他妈给写死了。从人物的对话中我们也可以推测出，他早年与梅姨饰演的Clarissa和另一个同性伴侣之间有着非常微妙和亲密的关系（梅姨说毕竟at least她拥有那个summer）。Clarissa说，在那个美好的早上，Richard在门廊上对她讲“good morning, Mrs Dallowey”, 从那以后她就been stuck了，她就陷入了stuck with richard的生活，所以她独自nursing Richard for years，尽管男伴侣选择了离开。可是真的是她被Richard困在爱慕与责任之中了吗？在NYC Harlem的老旧公寓里，漆黑污秽的楼道之间，richard躺在轮椅上哀求Clarissa放过她，“I’ve stayed alive for you, but now you have to let me go.”花店的老板娘说，这是一本非常难懂的书。她是书中的主人公，却又不停地否认这一现实，就像她说她热爱每天到richard的公寓里面打扫打扫的日子一样，她的生活也是很脆弱的，如果richard这根弦绷了，就只能面对剩下的平庸和单调了，这也是为什么她在throw这个party的一方面心事重重，另一方面又”have this presentiment”，充满了不详的预感，直至richard挣扎着从窗边坠落下去。这十年里其实是Richard为她而活的。</p><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gli3fy5dt7j31c00u0e85.jpg" alt="Screen Shot 2020-12-10 at 12.26.38 AM"></p><p>影片中还有三个女主人公和女性伴侣的亲吻，这也体现了不同时代的特征，是对于一种更加开放的人际关系的讨论。同性之间的接吻不一定代表romantic的亲密关系，在本片压抑的社会氛围之下显得尤甚，20年代的London，50年代的LA，对应的是女性主义的萌芽和发展阶段，女人承担的社会角色和逼仄的生存空间，在事业上难以成就，被家庭琐事烦累。女性之间的接吻更多的象征的是她们对不公正待遇的控诉以及相互之间的依靠和帮助。</p><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gli3fmxwlij31gk0u0qv8.jpg" alt="image-20201210004524680"></p><p>本片的叙事和转场也是很巧妙的，不同时空的衔接总是以同类型的事件来过渡，比如梅姨刚刚准备去开烤箱，下个镜头就转到了Lora的蛋糕，等等。看到<a href="https://movie.douban.com/subject/1305666/" target="_blank" rel="noopener">有人说</a>原著<em>(The Hours)</em>本身就是非常精彩的，这个帖子还讲了故事的很多细节与《达洛维夫人》中情节的关系， 而且The Hours这个名字似乎就是伍尔芙为达洛维夫人最开始拟定的书名。此外，我还看到了一篇<a href="https://movie.douban.com/review/1027936/" target="_blank" rel="noopener">豆瓣影评</a>梳理了本片中的一些象征符号，包括三个女主人公的孩子的年龄（怀胎、孩童、成年人）代表了女性主义在西方从萌芽到成熟的一套过程，可以作为参考。<del>BTW 国土安全的主演Clare Danes在这里面也太美了吧！！她的脸嫩的可以流水！！再回过头来看国土安全S8不得不让人感叹岁月呀</del></p><p>最后，</p><blockquote><p>Leaonard: In your book, you say someone has to die. why?</p><p>Virginia: Someone has to die in order the rest of us should value life more. It’s contrast.</p><p>L: And who will die?</p><p>V: The poet will die.</p></blockquote><p>诗人是会逝去的，诗人在这个庸俗的世界里用死亡来警示世人。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;em&gt;Virginia Woolf&lt;/em&gt;, 她的语言，她的文字，闪烁，飘忽，飞快的变幻，急剧的更替。她是一位女性作家，意识流(Stream of Consciousness)派的代表人物。她跟「尤利西斯」的作者&lt;em&gt;James Joyce&lt;/em&gt;同年出生，又同年离
-      
-    
-    </summary>
-    
-    
-      <category term="Films" scheme="https://gitkeniwo.github.io/categories/Films/"/>
-    
-    
-      <category term="film-drama" scheme="https://gitkeniwo.github.io/tags/film-drama/"/>
-    
-      <category term="fem" scheme="https://gitkeniwo.github.io/tags/fem/"/>
     
   </entry>
   
