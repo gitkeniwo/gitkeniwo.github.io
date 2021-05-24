@@ -562,7 +562,7 @@ body .gallery-column {
   }
 }
 .max-width {
-  max-width: 54rem;
+  max-width: 48rem;
 }
 @media (max-width: 480px) {
   .px3 {
