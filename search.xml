@@ -457,10 +457,16 @@
       
       <categories>
           
-          <category> Nihongo </category>
+          <category> Languages </category>
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> japanese </tag>
+            
+        </tags>
       
     </entry>
     
@@ -476,12 +482,14 @@
       
       <categories>
           
-          <category> Nihongo </category>
+          <category> Languages </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> japanese </tag>
             
             <tag> yofukashi </tag>
             
@@ -632,7 +640,7 @@
       
       <categories>
           
-          <category> Photos </category>
+          <category> Tweets </category>
           
       </categories>
       
@@ -642,6 +650,8 @@
             <tag> daily </tag>
             
             <tag> hangzhou </tag>
+            
+            <tag> photo </tag>
             
         </tags>
       
@@ -923,7 +933,7 @@
     
     
     <entry>
-      <title>Untitled</title>
+      <title>El Immortal</title>
       <link href="2020-11-21-Untitled-18/"/>
       <url>2020-11-21-Untitled-18/</url>
       
@@ -1332,7 +1342,7 @@
       
       <categories>
           
-          <category> Linux </category>
+          <category> Tech </category>
           
       </categories>
       
@@ -1340,6 +1350,8 @@
         <tags>
             
             <tag> curl </tag>
+            
+            <tag> linux </tag>
             
         </tags>
       
@@ -1716,7 +1728,7 @@
       
       <categories>
           
-          <category> Web </category>
+          <category> Tech </category>
           
       </categories>
       
@@ -1818,7 +1830,7 @@
       
       <categories>
           
-          <category> Hardware </category>
+          <category> Tech </category>
           
       </categories>
       
@@ -1828,6 +1840,8 @@
             <tag> drive </tag>
             
             <tag> iCloud </tag>
+            
+            <tag> hardware </tag>
             
         </tags>
       
@@ -1872,7 +1886,7 @@
       
       <categories>
           
-          <category> French </category>
+          <category> Languages </category>
           
       </categories>
       
@@ -1897,7 +1911,7 @@
       
       <categories>
           
-          <category> Java </category>
+          <category> Tech </category>
           
       </categories>
       
