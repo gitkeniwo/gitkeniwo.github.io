@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>wild-pear-tree</title>
+      <link href="2022-08-20-wild-pear-tree/"/>
+      <url>2022-08-20-wild-pear-tree/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>将Hexo从2020 Intel MBP迁移到2021 MBP 14inch Apple Silicon</title>
       <link href="2022-08-05-applesilicon-hexo-migration/"/>
       <url>2022-08-05-applesilicon-hexo-migration/</url>
@@ -289,9 +302,9 @@
       
         <tags>
             
-            <tag> thoughts </tag>
-            
             <tag> film </tag>
+            
+            <tag> thoughts </tag>
             
             <tag> tweets </tag>
             
@@ -469,6 +482,35 @@
         <tags>
             
             <tag> politics </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hexo 提示 Accessing non-existent property &#39;lineno&#39;</title>
+      <link href="2021-04-19-Accessing-non-existent-property-lineno/"/>
+      <url>2021-04-19-Accessing-non-existent-property-lineno/</url>
+      
+        <content type="html"><![CDATA[<ul><li>起因： Hexo一直弹如下警告</li></ul><p><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20220820012034.png" alt=""></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(node:26384) Warning: Accessing non-existent property &#39;lineno&#39; of module exports inside circular dependency</span><br><span class="line">(Use &#96;node --trace-warnings ...&#96; to show where the warning was created)</span><br><span class="line">(node:26384) Warning: Accessing non-existent property &#39;column&#39; of module exports inside circular dependency</span><br><span class="line">(node:26384) Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency</span><br><span class="line">(node:26384) Warning: Accessing non-existent property &#39;lineno&#39; of module exports inside circular dependency</span><br><span class="line">(node:26384) Warning: Accessing non-existent property &#39;column&#39; of module exports inside circular dependency</span><br><span class="line">(node:26384) Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency</span><br></pre></td></tr></table></figure><ul><li>解决： <ul><li>见Hexo的<a href="https://github.com/hexojs/hexo/issues/4257" target="_blank" rel="noopener">Issue #4257</a>，是stylus在报错，可追溯至stylus的<a href="https://github.com/stylus/stylus/issues/2534" target="_blank" rel="noopener">Issue #2534</a>，已在stylus 0.54.8 之后版本修复。</li><li>利用 <code>npm ls --depth 2</code> 追杀看看哪些依赖还在用老版本的stylus（tmd这是2020年的issue了）</li><li><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20220820012625.png" alt=""> </li><li>发现这位还留在<code>@0.54.7</code></li><li>算了，直接<code>npm update stylus</code> 把所有stylus都更新一下。</li><li>更新之后就不报错了。</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Blog </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> npm </tag>
+            
+            <tag> nodejs </tag>
             
         </tags>
       
@@ -1593,9 +1635,9 @@
       
         <tags>
             
-            <tag> thoughts </tag>
-            
             <tag> daily </tag>
+            
+            <tag> thoughts </tag>
             
         </tags>
       

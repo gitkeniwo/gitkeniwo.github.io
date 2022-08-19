@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://gitkeniwo.github.io/"/>
-  <updated>2022-08-04T17:39:56.702Z</updated>
+  <updated>2022-08-19T17:00:58.282Z</updated>
   <id>https://gitkeniwo.github.io/</id>
   
   <author>
@@ -15,6 +15,21 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>wild-pear-tree</title>
+    <link href="https://gitkeniwo.github.io/2022-08-20-wild-pear-tree/"/>
+    <id>https://gitkeniwo.github.io/2022-08-20-wild-pear-tree/</id>
+    <published>2022-08-19T17:00:58.000Z</published>
+    <updated>2022-08-19T17:00:58.282Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>将Hexo从2020 Intel MBP迁移到2021 MBP 14inch Apple Silicon</title>
@@ -330,9 +345,9 @@
       <category term="Tweets" scheme="https://gitkeniwo.github.io/categories/Tweets/"/>
     
     
-      <category term="thoughts" scheme="https://gitkeniwo.github.io/tags/thoughts/"/>
-    
       <category term="film" scheme="https://gitkeniwo.github.io/tags/film/"/>
+    
+      <category term="thoughts" scheme="https://gitkeniwo.github.io/tags/thoughts/"/>
     
       <category term="tweets" scheme="https://gitkeniwo.github.io/tags/tweets/"/>
     
@@ -533,29 +548,6 @@
     
     
       <category term="politics" scheme="https://gitkeniwo.github.io/tags/politics/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>test</title>
-    <link href="https://gitkeniwo.github.io/2021-04-19-test-1/"/>
-    <id>https://gitkeniwo.github.io/2021-04-19-test-1/</id>
-    <published>2021-04-19T13:27:53.000Z</published>
-    <updated>2022-08-04T16:01:33.502Z</updated>
-    
-    <content type="html"><![CDATA[<p>剛發現Pawoo有一個「埋め込み」的功能，來實驗一下。</p><p><iframe src="https://pawoo.net/@Keniwo/106084885593966614/embed" class="mastodon-embed" style="max-width: 100%; border: 0" height="330" width="400" allowfullscreen="allowfullscreen"></iframe><script src="https://pawoo.net/embed.js" async="async"></script></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;剛發現Pawoo有一個「埋め込み」的功能，來實驗一下。&lt;/p&gt;
-&lt;p&gt;&lt;iframe src=&quot;https://pawoo.net/@Keniwo/106084885593966614/embed&quot; class=&quot;mastodon-embed&quot; style=&quot;max-wid
-      
-    
-    </summary>
-    
-    
     
   </entry>
   
