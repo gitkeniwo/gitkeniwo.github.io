@@ -6,19 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="有必要重学一遍python，故开此坑。《流畅的Python》这本书也是经典必读了，就从第一章开始写笔记。这章是一个引言，主要介绍了python的special methods。  Special Method是形如__methodName__的一类方法（也叫做”dunder method”，dunder是双下划线的略称），通过实现这类方法可以使得class以一些python通用的语法来调用一些特殊">
+    <meta name="description" content="最近时常感觉有必要重学一遍python，故开此坑。《流畅的python》这本书也是经典必读了，就从第一章开始写笔记。这章是一个引言，主要介绍了python的special methods。 Special Methods Special Method是形如__methodName__的一类方法（也叫做”dunder method”，dunder是双下划线的略称），通过实现这类方法可以使得class">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python Data Model @ 流畅的Python 01">
 <meta property="og:url" content="https://gitkeniwo.github.io/2022-10-15-fluent-python-1/index.html">
 <meta property="og:site_name" content="The Last Day of Summer">
-<meta property="og:description" content="有必要重学一遍python，故开此坑。《流畅的Python》这本书也是经典必读了，就从第一章开始写笔记。这章是一个引言，主要介绍了python的special methods。  Special Method是形如__methodName__的一类方法（也叫做”dunder method”，dunder是双下划线的略称），通过实现这类方法可以使得class以一些python通用的语法来调用一些特殊">
+<meta property="og:description" content="最近时常感觉有必要重学一遍python，故开此坑。《流畅的python》这本书也是经典必读了，就从第一章开始写笔记。这章是一个引言，主要介绍了python的special methods。 Special Methods Special Method是形如__methodName__的一类方法（也叫做”dunder method”，dunder是双下划线的略称），通过实现这类方法可以使得class">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://files.mastodon.online/media_attachments/files/109/172/982/234/570/581/original/bbe8405151265044.png">
 <meta property="article:published_time" content="2022-10-15T08:44:06.000Z">
-<meta property="article:modified_time" content="2022-10-15T14:46:15.700Z">
+<meta property="article:modified_time" content="2022-10-15T15:25:50.407Z">
 <meta property="article:author" content="ケニヲ">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="fluent-python">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://files.mastodon.online/media_attachments/files/109/172/982/234/570/581/original/bbe8405151265044.png">
     
     
       
@@ -56,8 +58,7 @@
     
 <meta name="generator" content="Hexo 4.2.1"></head>
 
-<body class="max-width mx-auto px3 ltr">
-    
+<body class="max-width mx-auto px3 ltr">    
       <div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
@@ -85,7 +86,7 @@
       <ul>
         
         
-        <li><a class="icon" href="/2022-10-02-generative-ai-models/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/2022-09-27-gamma-distribution/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -113,7 +114,7 @@
 
     </div>
     <div id="toc">
-      
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Special-Methods"><span class="toc-number">1.</span> <span class="toc-text">Special Methods</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Collection-API"><span class="toc-number">2.</span> <span class="toc-text">Collection API</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其它"><span class="toc-number">3.</span> <span class="toc-text">其它</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -162,22 +163,51 @@
   
 
   <div class="content" itemprop="articleBody">
-    <p>有必要重学一遍python，故开此坑。<br>《流畅的Python》这本书也是经典必读了，就从第一章开始写笔记。这章是一个引言，主要介绍了python的special methods。</p>
-<ul>
-<li>Special Method是形如<code>__methodName__</code>的一类方法（也叫做”dunder method”，dunder是双下划线的略称），通过实现这类方法可以使得class以一些python通用的语法来调用一些特殊函数，使得代码语法更连贯，避免在用户编写的类里同样功能的函数有多种不同名称的情况。<ul>
-<li><strong>e.g.</strong> 通过实现 <code>__getitem__()</code>方法，可以直接通过 <code>className[0], className[1]</code>这样类名加方括号的形式来获取类中按照某种顺序的第N个元素。<ul>
+    <p>最近时常感觉有必要重学一遍python，故开此坑。<br>《流畅的python》这本书也是经典必读了，就从第一章开始写笔记。这章是一个引言，主要介绍了python的special methods。</p>
+<h1 id="Special-Methods"><a href="#Special-Methods" class="headerlink" title="Special Methods"></a>Special Methods</h1><ul>
+<li>Special Method是形如<code>__methodName__</code>的一类方法（也叫做”dunder method”，dunder是双下划线的略称），通过实现这类方法可以使得class以一些python通用的语法来调用一些特殊函数，使得代码语法更连贯，避免在用户编写的类里同样功能的函数有多种不同名称的情况。(Meant to be called by the python interpreter, not user (the only exception being <code>__init__()</code> which is for invoking the initializer for user superclass))<ul>
+<li><strong>e.g.</strong> 通过实现 <code>__getitem__()</code>方法，可以直接通过 <code>className[0], className[1]</code>这样类名加方括号的形式来获取类中按照某种顺序的第N个元素(get item by index)</li>
 <li>✴️ <code>__getitem__()</code>还能让我们的类变得<strong>iterable</strong>。<ul>
 <li>可以用 <code>in</code> 看某个元素是否在里面</li>
 <li>可以用 <code>for</code> 遍历</li>
+<li>需要sorting的话，可以创建一个函数<code>sort_value()</code>用以得到某种具有顺序的值，最后用<code>for card in sorted(deck, key=sort_value):</code>即可按照这个函数输出的值来排序。</li>
+</ul>
+</li>
+<li><strong>e.g.</strong> 实现<code>__len__()</code>方法就可用<code>len(class)</code>来获取事先定义好的某种length。  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"></span><br><span class="line">Card = collections.namedtuple(<span class="string">'card'</span>, [<span class="string">'rank'</span>, <span class="string">'suit'</span>])</span><br><span class="line"><span class="comment">#name 对应console里面的这个tuple的名字</span></span><br><span class="line"><span class="comment">#&gt;&gt;&gt;Card('2', 'diamonds')</span></span><br><span class="line"><span class="comment">#output: card(rank='2', suit='diamonds')</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FrenchDeck</span>:</span></span><br><span class="line"></span><br><span class="line">	ranks = [str(n) <span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">2</span>, <span class="number">11</span>)] + list(<span class="string">'JQKA'</span>) </span><br><span class="line">	suits = <span class="string">'spades diamonds clubs hearts'</span>.split()</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line"></span><br><span class="line">		self._cards = [Card(rank, suit) </span><br><span class="line">						<span class="keyword">for</span> suit <span class="keyword">in</span> self.suits </span><br><span class="line">						<span class="keyword">for</span> rank <span class="keyword">in</span> self.ranks]</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__len__</span><span class="params">(self)</span>:</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> len(self._cards)</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self, position)</span>:</span></span><br><span class="line">		<span class="keyword">return</span> self._cards[position]</span><br><span class="line"></span><br><span class="line"><span class="comment">#iterable</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> card <span class="keyword">in</span> deck:</span><br><span class="line">		print(card)</span><br><span class="line">		</span><br><span class="line"><span class="comment">#Card(rank='2', suit='spades')</span></span><br><span class="line"><span class="comment">#Card(rank='3', suit='spades')</span></span><br><span class="line"><span class="comment">#Card(rank='4', suit='spades')</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><strong>e.g.</strong> 模拟数值类 Emulating Numeric Types <ul>
+<li>To build a vector type <code>Vector(a,b)</code>, you’ll have to implement  <code>__repr__()</code>, <code>__abs__()</code>, <code>__add__()</code> and <code>__mul__()</code></li>
+</ul>
+</li>
+<li>书中继续介绍了<code>__repr__()</code>和 <code>__str__()</code>两个special methods, 一个是展示在console，一个是展示在print里的。<ul>
+<li><code>__repr__()</code> is called by the repr builtin to display the string representation of the object in the <strong>console</strong>.</li>
+<li>With repr, the console displays:  <code>Vector(9, 12)</code>, instead of <code>&lt;Vector object at 0x10e100070&gt;</code></li>
+<li><code>__str__</code> is called by the <code>str()</code> built-in and implicitly used by the print function. It should return a string suitable for display to <strong>end users</strong>.</li>
 </ul>
 </li>
 </ul>
-</li>
-<li><strong>e.g.</strong> 实现<code>__len__()</code>方法就可用<code>len(class)</code>来获取事先定义好的某种length。  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"></span><br><span class="line">Card = collections.namedtuple(<span class="string">'Card'</span>, [<span class="string">'rank'</span>, <span class="string">'suit'</span>])</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">FrenchDeck</span>:</span></span><br><span class="line"></span><br><span class="line">	ranks = [str(n) <span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">2</span>, <span class="number">11</span>)] + list(<span class="string">'JQKA'</span>) </span><br><span class="line">	suits = <span class="string">'spades diamonds clubs hearts'</span>.split()</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line"></span><br><span class="line">		self._cards = [Card(rank, suit) </span><br><span class="line">						<span class="keyword">for</span> suit <span class="keyword">in</span> self.suits </span><br><span class="line">						<span class="keyword">for</span> rank <span class="keyword">in</span> self.ranks]</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__len__</span><span class="params">(self)</span>:</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> len(self._cards)</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self, position)</span>:</span></span><br><span class="line">		<span class="keyword">return</span> self._cards[position]</span><br><span class="line"></span><br><span class="line"><span class="comment">#iterable</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> card <span class="keyword">in</span> deck:</span><br><span class="line">		print(card)</span><br><span class="line">		</span><br><span class="line"><span class="comment">#Card(rank='2', suit='spades')</span></span><br><span class="line"><span class="comment">#Card(rank='3', suit='spades')</span></span><br><span class="line"><span class="comment">#Card(rank='4', suit='spades')</span></span><br></pre></td></tr></table></figure></li>
+<h1 id="Collection-API"><a href="#Collection-API" class="headerlink" title="Collection API"></a>Collection API</h1><p>接下来简单介绍了Python的Collection API。所有的类都是ABC(abstract base classes)。</p>
+<ul>
+<li>我们有top ABC，这些ABC都只有一个special method，如Iterable的<code>__iter__</code>, Sized的<code>__len__</code>. <ul>
+<li>Interable要求支持unpacking和iteration</li>
+<li>Sized要求实现len</li>
+<li>Container要求支持<code>in</code>操作符</li>
 </ul>
 </li>
-<li></li>
+<li>Collection ABC (即 <code>collections.abc</code> module)合并了Iterable, Sized和Container三个接口。</li>
+<li>Python不要求每个具体的类都要实现<code>__len__</code>，但如果他实现了，那么他就satisfy 了Sized Interface。<ul>
+<li>具体关系为 <img src="https://files.mastodon.online/media_attachments/files/109/172/982/234/570/581/original/bbe8405151265044.png" alt=""></li>
 </ul>
+</li>
+<li>其中，三个重要的Collections是<ul>
+<li>Sequence, 规范了list, str 这些重要的built-in；只有sequence是reversible的，因为它支持arbituary ordering，其他两个不行。dict是假order，只保留key insertion order。</li>
+<li>Mapping, 有<code>dict</code>, <code>collections.defaultdict</code>等实现</li>
+<li>Set, 有<code>set</code>和<code>frozenset</code>等</li>
+</ul>
+</li>
+</ul>
+<h1 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h1><p>BTW,  在CPython里，builtin types的<code>len()</code>其实不是一个method，它只是从C struct里面读取了一个field的值，所以len()效率很高；因为builtin需要高效的实现。现在，用户可以通过实现<code>__len__</code>使得len()同样能用在自己的类上。</p>
 
   </div>
 </article>
@@ -214,7 +244,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Special-Methods"><span class="toc-number">1.</span> <span class="toc-text">Special Methods</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Collection-API"><span class="toc-number">2.</span> <span class="toc-text">Collection API</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其它"><span class="toc-number">3.</span> <span class="toc-text">其它</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
@@ -339,6 +369,24 @@
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         }());
     </script>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
 
 
 </body>
