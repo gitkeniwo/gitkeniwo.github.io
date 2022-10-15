@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="本篇博文作为TU&#x2F;e的Generative AI Models(2AMU20)课程笔记。 课程涵盖三个模块  Probability Theory (weeks 1-2) Probabilistic Graphical Models (weeks 2-5) Deep Generative Models (weeks 5-8)  第一部分回顾了概率论中与PGM相关的部分，主要是概率空间, $\sig">
+<meta property="og:type" content="article">
+<meta property="og:title" content="generative-ai-models">
+<meta property="og:url" content="https://gitkeniwo.github.io/2022-10-02-generative-ai-models/index.html">
+<meta property="og:site_name" content="The Last Day of Summer">
+<meta property="og:description" content="本篇博文作为TU&#x2F;e的Generative AI Models(2AMU20)课程笔记。 课程涵盖三个模块  Probability Theory (weeks 1-2) Probabilistic Graphical Models (weeks 2-5) Deep Generative Models (weeks 5-8)  第一部分回顾了概率论中与PGM相关的部分，主要是概率空间, $\sig">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-10-02T16:33:36.000Z">
+<meta property="article:modified_time" content="2022-10-02T22:40:42.154Z">
+<meta property="article:author" content="ケニヲ">
+<meta property="article:tag" content="statistics">
+<meta property="article:tag" content="generative-model">
+<meta property="article:tag" content="bayesian-network">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon2.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/yoda-pixel.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/yoda-pixel.png">
+        
+      
+    
+    <!-- title -->
+    <title>generative-ai-models</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/true" title="The Last Day of Summer" type="application/atom+xml" />
+    
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/work/">Whereabouts</a></li>
+         
+          <li><a href="/gallery/">Gallery</a></li>
+         
+          <li><a href="/bfm/">B.F.M.</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2022-10-15-fluent-python-1/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2022-09-27-gamma-distribution/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://gitkeniwo.github.io/2022-10-02-generative-ai-models/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2022-10-02-generative-ai-models/&text=generative-ai-models" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2022-10-02-generative-ai-models/&title=generative-ai-models" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2022-10-02-generative-ai-models/&is_video=false&description=generative-ai-models" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=generative-ai-models&body=Check out this article: https://gitkeniwo.github.io/2022-10-02-generative-ai-models/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2022-10-02-generative-ai-models/&title=generative-ai-models" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2022-10-02-generative-ai-models/&title=generative-ai-models" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2022-10-02-generative-ai-models/&title=generative-ai-models" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2022-10-02-generative-ai-models/&title=generative-ai-models" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2022-10-02-generative-ai-models/&name=generative-ai-models&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2022-10-02-generative-ai-models/&t=generative-ai-models" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#概率部分"><span class="toc-number">1.</span> <span class="toc-text">概率部分</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#概率图模型-PGM"><span class="toc-number">2.</span> <span class="toc-text">概率图模型 (PGM)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Chou-Liu-Tree"><span class="toc-number">2.1.</span> <span class="toc-text">Chou-Liu Tree</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">2.2.</span> <span class="toc-text">Reference</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        generative-ai-models
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">ケニヲ</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2022-10-02T16:33:36.000Z" itemprop="datePublished">2022-10-03</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Courses/">Courses</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/bayesian-network/" rel="tag">bayesian-network</a>, <a class="tag-link" href="/tags/generative-model/" rel="tag">generative-model</a>, <a class="tag-link" href="/tags/statistics/" rel="tag">statistics</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>本篇博文作为TU/e的Generative AI Models(2AMU20)课程笔记。</p>
+<p>课程涵盖三个模块</p>
+<ul>
+<li>Probability Theory (weeks 1-2)</li>
+<li>Probabilistic Graphical Models (weeks 2-5)</li>
+<li>Deep Generative Models (weeks 5-8)</li>
+</ul>
+<p>第一部分回顾了概率论中与PGM相关的部分，主要是概率空间, $\sigma$-algebra, Monte Carlo模拟期望与条件独立性。</p>
+<h1 id="概率部分"><a href="#概率部分" class="headerlink" title="概率部分"></a>概率部分</h1><ul>
+<li><p>贝叶斯公式</p>
+<ul>
+<li>$p(y|x)=\frac{p(x|y)p(y)}{\int p(x|y)p(y)dy}$</li>
+<li>即 $\textbf{posterior} = \frac{\textbf{likelyhood} \times \textbf{prior}}{\textbf{evidence}}$ , 告诉了我们如何从先验和似然得到后验。</li>
+</ul>
+</li>
+<li><p>Bayesian Inference 统计推断包含</p>
+<ul>
+<li>Marginalization(求边际分布, 即==product rule==): $p(x,y,z) = p(x|y,z)p(y|z)p(z)$. 所有的联合分布可以表示为1-dimensional条件概率的链式乘积。</li>
+<li>Conditioning(求条件分布, 即==sum rule==): $p(y)=\int p(x,y)dx$. 边际分布可由integrating out other variables得到。</li>
+<li>Marginalization能够帮助我们无视掉unobserved variable的影响，表现为在联合分布中对这些无关变量积分，从而消去它们；而conditioning引入了推断的证据(evidence)。</li>
+</ul>
+</li>
+</ul>
+<h1 id="概率图模型-PGM"><a href="#概率图模型-PGM" class="headerlink" title="概率图模型 (PGM)"></a>概率图模型 (PGM)</h1><p>引入概率图模型的动机是想要处理高维度联合分布(如$\mathbf{x}_1,\mathbf{x}_2, …,\mathbf{x}_{20}$)。</p>
+<p>概率图模型中，着重讲了贝叶斯网络(Bayesian Network, BN)。</p>
+<p>贝叶斯网络是一种DAG(有向无环图)</p>
+<h2 id="Chou-Liu-Tree"><a href="#Chou-Liu-Tree" class="headerlink" title="Chou-Liu Tree"></a>Chou-Liu Tree</h2><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>推荐的教程有:</p>
+<ul>
+<li>An Introduction to Conditional Random Fields: <a href="https://arxiv.org/abs/1011.4088" target="_blank" rel="noopener">https://arxiv.org/abs/1011.4088</a>.</li>
+</ul>
+
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/work/">Whereabouts</a></li>
+         
+          <li><a href="/gallery/">Gallery</a></li>
+         
+          <li><a href="/bfm/">B.F.M.</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#概率部分"><span class="toc-number">1.</span> <span class="toc-text">概率部分</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#概率图模型-PGM"><span class="toc-number">2.</span> <span class="toc-text">概率图模型 (PGM)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Chou-Liu-Tree"><span class="toc-number">2.1.</span> <span class="toc-text">Chou-Liu Tree</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">2.2.</span> <span class="toc-text">Reference</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://gitkeniwo.github.io/2022-10-02-generative-ai-models/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2022-10-02-generative-ai-models/&text=generative-ai-models" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2022-10-02-generative-ai-models/&title=generative-ai-models" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2022-10-02-generative-ai-models/&is_video=false&description=generative-ai-models" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=generative-ai-models&body=Check out this article: https://gitkeniwo.github.io/2022-10-02-generative-ai-models/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2022-10-02-generative-ai-models/&title=generative-ai-models" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2022-10-02-generative-ai-models/&title=generative-ai-models" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2022-10-02-generative-ai-models/&title=generative-ai-models" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2022-10-02-generative-ai-models/&title=generative-ai-models" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2022-10-02-generative-ai-models/&name=generative-ai-models&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2022-10-02-generative-ai-models/&t=generative-ai-models" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2019-2022
+    ケニヲ
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/work/">Whereabouts</a></li>
+         
+          <li><a href="/gallery/">Gallery</a></li>
+         
+          <li><a href="/bfm/">B.F.M.</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'gitkeniwo';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>
