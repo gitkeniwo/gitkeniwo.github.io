@@ -13,16 +13,16 @@
       
       <categories>
           
-          <category> Tweet </category>
+          <category> News Comments </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> china </tag>
-            
             <tag> ccp </tag>
+            
+            <tag> china </tag>
             
             <tag> historical </tag>
             
@@ -562,11 +562,11 @@
       
         <tags>
             
+            <tag> modernity </tag>
+            
             <tag> antonioni </tag>
             
             <tag> art-cinema </tag>
-            
-            <tag> modernity </tag>
             
         </tags>
       
@@ -591,13 +591,13 @@
       
         <tags>
             
-            <tag> modernity </tag>
-            
             <tag> film-fantasy </tag>
             
             <tag> lotr </tag>
             
             <tag> peterjackson </tag>
+            
+            <tag> modernity </tag>
             
         </tags>
       
@@ -2394,6 +2394,8 @@
             <tag> daily </tag>
             
             <tag> hk </tag>
+            
+            <tag> ccp </tag>
             
             <tag> memoir </tag>
             
