@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://gitkeniwo.github.io/"/>
-  <updated>2022-10-22T22:30:51.774Z</updated>
+  <updated>2022-10-22T22:41:17.814Z</updated>
   <id>https://gitkeniwo.github.io/</id>
   
   <author>
@@ -17,11 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>估计量的抽样分布 @ P &amp; S Chapter 8</title>
+    <link href="https://gitkeniwo.github.io/2022-10-22-p-and-s-08/"/>
+    <id>https://gitkeniwo.github.io/2022-10-22-p-and-s-08/</id>
+    <published>2022-10-22T16:39:01.000Z</published>
+    <updated>2022-10-22T22:41:17.814Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是 <a href="https://lib.hpu.edu.vn/handle/123456789/28621" target="_blank" rel="noopener">DeGroot, M. H., &amp; Schervish, M. J. (2012). _Probability and statistics_. Pearson Education.</a> 一书的笔记。 </p><p>8.1 小节讲了抽样分布(sample distribution)。抽样分布能作为中间量协助计算Bayes估计量，或者用以衡量有多大信心认为估计量$\hat{\theta}$接近真实参数$\theta$。<br>8.2 是卡方分布。卡方分布实际上是一种特殊的$\Gamma$分布($\alpha=\frac{m}{2}, \beta=\frac{1}{2}$).<br>8.3 继续探索了正态分布样本均值和样本方差的关系</p><ul><li>样本均值和方差是独立的。</li><li>样本方差与自由度为n-1的卡方分布差一个常数项系数，即$\sum^n_{i=1}\frac{(X_i-\bar{X_n})^2}{\sigma ^2} \sim \chi^2_{n-1}$，而$\mu$已知情况下，标准化后的方差是服从卡方1的，$\frac{(X_i - \mu)^2}{\sigma ^2} \sim \chi_{1}^2$ ，其加和服从自由度为n的卡方分布。换言之，将$\mu$替换为样本均值后，自由度减少了1.</li><li>因此，样本方差常以$\sigma’^2=\frac{S_n^2}{n-1}=\frac{\sum_{i=1}^n(X_i-\bar{X_i})^2}{n-1}$ 代替，因为此式为方差的无偏估计(unbiasedness)。<ul><li>关于自由度的理解：根据Wikipedia: “In statistics, the number of degrees of freedom is the number of values in the final calculation of a statistic that are free to vary.” 自由度衡量了统计量中能自由变换的样本数。</li><li>因为样本中残差和为0 $\sum^n_{i=1} (X_i - \bar{X_i})=0$，每一项 $X_i - \bar{X_i}$ 其实是样本关于样本均值的残差(residual)。在这n项的残差中，若知晓其中n-1项，必然通过零和知晓第n项，所以这n项是线性相关的，实际只有n-1项的信息是独立的，它们只能张成n-1维的线性空间。<br>8.4 t分布</li></ul></li><li>t分布的严格定义是 $X=\frac{Z}{(\frac{Y}{m})^{\frac{1}{2}}}$ , 其中Z为标准正态，Y为自由度为m的卡方。</li><li>构造$Z= \frac{\sqrt{n}(\hat{X_n}-\mu)}{\sigma}$  ，由于样本均值服从$N(\mu,\frac{\sigma^2}{n})$  (n个 $\frac{x_i}{n} \sim N(\frac{\mu}{n},(\frac{\sigma}{n})^2)$的加和)。</li><li>构造$Y = \frac{S^2_n}{\sigma^2}$，由8.3节知 $Y \sim \chi^2_{n-1}$</li><li>故$U = \frac{Z}{({\frac{Y}{n-1}})^{\frac{1}{2}}} \sim t_{n-1}$ , 化简U得到 <script type="math/tex">U= \frac{\frac{\sqrt{n}(\hat{X_n}-\mu)}{\sigma}}{(\frac{S^2_n}{\sigma^2 (n-1)})^ {\frac{1}{2}}}= \frac{\sqrt{n}(\hat{X_n}-\mu)}{(\frac{S^2_n}{ n-1})^ {\frac{1}{2}}}=\frac{\sqrt{n}(\hat{X_n}-\mu)}{\sigma'} \sim t_{n-1}</script><ul><li>样本方差$\sigma’$与方差的MLE估计$\hat{\sigma}$差了一个常数项</li><li>在sigma unknown和已经得到一组样本的情况下，由于$\mu$与$t_{n-1}$无关，在给定的置信系数下，我们可以通过寻找U在t分布下的置信区间$Pr(|U|&lt;t_{n-1}(\alpha /2))=1-\alpha$，通过Pr括号内的不等式变形得到$\mu$关于t分位数和样本方差的不等式，进而得到$\mu$的置信区间 $\bar{X_i} \pm t_{n-1}(\alpha/2)\frac{\sigma ‘}{\sqrt{n}}$ 。<br>最后，标准柯西分布（p.d.f. $f(x;0,1)= \frac{1}{\pi (1+x^2)}$）是自由度为1的t分布，标准正态分布是自由度为$\infty$的t分布。</li></ul></li></ul><p>8.5 讲了置信区间(Confidence Interval, CI)<br>8.6 讲了正态分布的贝叶斯推断<br>8.7 特地讲了无偏估计<br>8.8 提到了费歇尔信息量（Fisher Information)，它是C-R不等式的一个组成部分，可以判断UMVUE。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;这是 &lt;a href=&quot;https://lib.hpu.edu.vn/handle/123456789/28621&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;DeGroot, M. H., &amp;amp; Schervish, M. J. (2012). 
+      
+    
+    </summary>
+    
+    
+      <category term="Study" scheme="https://gitkeniwo.github.io/categories/Study/"/>
+    
+    
+      <category term="statistics" scheme="https://gitkeniwo.github.io/tags/statistics/"/>
+    
+      <category term="undergraduate-course" scheme="https://gitkeniwo.github.io/tags/undergraduate-course/"/>
+    
+      <category term="sample-distribution" scheme="https://gitkeniwo.github.io/tags/sample-distribution/"/>
+    
+  </entry>
+  
+  <entry>
     <title>改革开放的落幕（1978-2022）</title>
     <link href="https://gitkeniwo.github.io/2022-10-22-end-of-the-reform/"/>
     <id>https://gitkeniwo.github.io/2022-10-22-end-of-the-reform/</id>
     <published>2022-10-22T16:04:51.000Z</published>
-    <updated>2022-10-22T22:30:51.774Z</updated>
+    <updated>2022-10-22T22:32:20.732Z</updated>
     
     <content type="html"><![CDATA[<p>我想，今日的新闻出来后，中国40年来飞速发展的黄金时代也就落幕了。</p><p>健康即孱弱。<br>发展即停滞。<br>稳定即动荡。</p><p>自由世界的人需要认识到，他们面临的是一种史无前例的制度结构，能够完全控制人心为其所用的利维坦，毋庸置疑地说，其恐怖程度已经超越了冷战时期的USSR。自由世界的人不熟谙厚黑学，透过局域网捕捉到的象形文字只能解读出一团模糊不清的魅影，他们一定会在这方面吃到苦头。</p><p>阿姨预言的大洪水最终没有出现，可它却又真真实实早就来了，化作一团汹涌的暗流，从天津港、杭州湾、南中国海……从3万公里的海岸线发散而出，最终会搅动整个蔚蓝星球。</p>]]></content>
     
@@ -44,14 +74,14 @@
     
       <category term="china" scheme="https://gitkeniwo.github.io/tags/china/"/>
     
-      <category term="historical" scheme="https://gitkeniwo.github.io/tags/historical/"/>
+      <category term="historic" scheme="https://gitkeniwo.github.io/tags/historic/"/>
     
   </entry>
   
   <entry>
     <title>统计推断 @ Probability &amp; Statistics Chapter 7</title>
-    <link href="https://gitkeniwo.github.io/2022-10-16-p-and-s-7/"/>
-    <id>https://gitkeniwo.github.io/2022-10-16-p-and-s-7/</id>
+    <link href="https://gitkeniwo.github.io/2022-10-16-p-and-s-07/"/>
+    <id>https://gitkeniwo.github.io/2022-10-16-p-and-s-07/</id>
     <published>2022-10-16T15:45:14.000Z</published>
     <updated>2022-10-16T21:46:01.650Z</updated>
     
@@ -526,37 +556,6 @@
       <category term="film" scheme="https://gitkeniwo.github.io/tags/film/"/>
     
       <category term="tweets" scheme="https://gitkeniwo.github.io/tags/tweets/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Untitled</title>
-    <link href="https://gitkeniwo.github.io/2021-05-20-Untitled-33/"/>
-    <id>https://gitkeniwo.github.io/2021-05-20-Untitled-33/</id>
-    <published>2021-05-20T16:31:27.000Z</published>
-    <updated>2022-08-04T16:01:33.498Z</updated>
-    
-    <content type="html"><![CDATA[<p>在油管上看了Israel和Gaza之間的武力衝突，然後哭了。</p><p>人類是多麼的專橫，又是多麼的脆弱阿。</p><p>我們還有什麼理由對二十一世紀的後4/5抱有樂觀的信心呢？</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;在油管上看了Israel和Gaza之間的武力衝突，然後哭了。&lt;/p&gt;
-&lt;p&gt;人類是多麼的專橫，又是多麼的脆弱阿。&lt;/p&gt;
-&lt;p&gt;我們還有什麼理由對二十一世紀的後4/5抱有樂觀的信心呢？&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-      <category term="Tweets" scheme="https://gitkeniwo.github.io/categories/Tweets/"/>
-    
-    
-      <category term="news" scheme="https://gitkeniwo.github.io/tags/news/"/>
-    
-      <category term="emotions" scheme="https://gitkeniwo.github.io/tags/emotions/"/>
     
   </entry>
   

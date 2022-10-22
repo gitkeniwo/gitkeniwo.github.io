@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>估计量的抽样分布 @ P &amp; S Chapter 8</title>
+      <link href="2022-10-22-p-and-s-08/"/>
+      <url>2022-10-22-p-and-s-08/</url>
+      
+        <content type="html"><![CDATA[<p>这是 <a href="https://lib.hpu.edu.vn/handle/123456789/28621" target="_blank" rel="noopener">DeGroot, M. H., &amp; Schervish, M. J. (2012). _Probability and statistics_. Pearson Education.</a> 一书的笔记。 </p><p>8.1 小节讲了抽样分布(sample distribution)。抽样分布能作为中间量协助计算Bayes估计量，或者用以衡量有多大信心认为估计量$\hat{\theta}$接近真实参数$\theta$。<br>8.2 是卡方分布。卡方分布实际上是一种特殊的$\Gamma$分布($\alpha=\frac{m}{2}, \beta=\frac{1}{2}$).<br>8.3 继续探索了正态分布样本均值和样本方差的关系</p><ul><li>样本均值和方差是独立的。</li><li>样本方差与自由度为n-1的卡方分布差一个常数项系数，即$\sum^n_{i=1}\frac{(X_i-\bar{X_n})^2}{\sigma ^2} \sim \chi^2_{n-1}$，而$\mu$已知情况下，标准化后的方差是服从卡方1的，$\frac{(X_i - \mu)^2}{\sigma ^2} \sim \chi_{1}^2$ ，其加和服从自由度为n的卡方分布。换言之，将$\mu$替换为样本均值后，自由度减少了1.</li><li>因此，样本方差常以$\sigma’^2=\frac{S_n^2}{n-1}=\frac{\sum_{i=1}^n(X_i-\bar{X_i})^2}{n-1}$ 代替，因为此式为方差的无偏估计(unbiasedness)。<ul><li>关于自由度的理解：根据Wikipedia: “In statistics, the number of degrees of freedom is the number of values in the final calculation of a statistic that are free to vary.” 自由度衡量了统计量中能自由变换的样本数。</li><li>因为样本中残差和为0 $\sum^n_{i=1} (X_i - \bar{X_i})=0$，每一项 $X_i - \bar{X_i}$ 其实是样本关于样本均值的残差(residual)。在这n项的残差中，若知晓其中n-1项，必然通过零和知晓第n项，所以这n项是线性相关的，实际只有n-1项的信息是独立的，它们只能张成n-1维的线性空间。<br>8.4 t分布</li></ul></li><li>t分布的严格定义是 $X=\frac{Z}{(\frac{Y}{m})^{\frac{1}{2}}}$ , 其中Z为标准正态，Y为自由度为m的卡方。</li><li>构造$Z= \frac{\sqrt{n}(\hat{X_n}-\mu)}{\sigma}$  ，由于样本均值服从$N(\mu,\frac{\sigma^2}{n})$  (n个 $\frac{x_i}{n} \sim N(\frac{\mu}{n},(\frac{\sigma}{n})^2)$的加和)。</li><li>构造$Y = \frac{S^2_n}{\sigma^2}$，由8.3节知 $Y \sim \chi^2_{n-1}$</li><li>故$U = \frac{Z}{({\frac{Y}{n-1}})^{\frac{1}{2}}} \sim t_{n-1}$ , 化简U得到 <script type="math/tex">U= \frac{\frac{\sqrt{n}(\hat{X_n}-\mu)}{\sigma}}{(\frac{S^2_n}{\sigma^2 (n-1)})^ {\frac{1}{2}}}= \frac{\sqrt{n}(\hat{X_n}-\mu)}{(\frac{S^2_n}{ n-1})^ {\frac{1}{2}}}=\frac{\sqrt{n}(\hat{X_n}-\mu)}{\sigma'} \sim t_{n-1}</script><ul><li>样本方差$\sigma’$与方差的MLE估计$\hat{\sigma}$差了一个常数项</li><li>在sigma unknown和已经得到一组样本的情况下，由于$\mu$与$t_{n-1}$无关，在给定的置信系数下，我们可以通过寻找U在t分布下的置信区间$Pr(|U|&lt;t_{n-1}(\alpha /2))=1-\alpha$，通过Pr括号内的不等式变形得到$\mu$关于t分位数和样本方差的不等式，进而得到$\mu$的置信区间 $\bar{X_i} \pm t_{n-1}(\alpha/2)\frac{\sigma ‘}{\sqrt{n}}$ 。<br>最后，标准柯西分布（p.d.f. $f(x;0,1)= \frac{1}{\pi (1+x^2)}$）是自由度为1的t分布，标准正态分布是自由度为$\infty$的t分布。</li></ul></li></ul><p>8.5 讲了置信区间(Confidence Interval, CI)<br>8.6 讲了正态分布的贝叶斯推断<br>8.7 特地讲了无偏估计<br>8.8 提到了费歇尔信息量（Fisher Information)，它是C-R不等式的一个组成部分，可以判断UMVUE。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Study </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> statistics </tag>
+            
+            <tag> undergraduate-course </tag>
+            
+            <tag> sample-distribution </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>改革开放的落幕（1978-2022）</title>
       <link href="2022-10-22-end-of-the-reform/"/>
       <url>2022-10-22-end-of-the-reform/</url>
@@ -24,7 +53,7 @@
             
             <tag> china </tag>
             
-            <tag> historical </tag>
+            <tag> historic </tag>
             
         </tags>
       
@@ -34,8 +63,8 @@
     
     <entry>
       <title>统计推断 @ Probability &amp; Statistics Chapter 7</title>
-      <link href="2022-10-16-p-and-s-7/"/>
-      <url>2022-10-16-p-and-s-7/</url>
+      <link href="2022-10-16-p-and-s-07/"/>
+      <url>2022-10-16-p-and-s-07/</url>
       
         <content type="html"><![CDATA[<p>这是 <a href="https://lib.hpu.edu.vn/handle/123456789/28621" target="_blank" rel="noopener">DeGroot, M. H., &amp; Schervish, M. J. (2012). _Probability and statistics_. Pearson Education.</a> 一书的笔记。 </p><h1 id="7-1-Statistical-Inference-统计推断"><a href="#7-1-Statistical-Inference-统计推断" class="headerlink" title="7.1 Statistical Inference 统计推断"></a>7.1 Statistical Inference 统计推断</h1><p>这一章首首先介绍了灯泡寿命问题。公司想要估计电子元件的failure rate，用未知的参数$\theta$表示，它服从指数分布（gamma分布）。根据大数定律6.2 我们知道独立同分布的样本均值 $\bar{X_i} \xrightarrow{p} \frac{1}{\theta}$   (依概率收敛)。根据Theorem 6.2.5 我们知道给这个式子套一层连续函数也是成立的，即 $1/ \bar{X_i} \xrightarrow{p} \theta$. 所以，我们可以用样本均值的倒数来近似failure rate。<br>因为我们不可能测量所有元件的寿命，参数$\theta$只能是hypothetically observable的。<br>接下来定义了统计模型和统计推断(statistical inference)。统计推断的例子：</p><ul><li>构造一个随机变量$\mathbf{Y}$  使得 $\text{Pr}(\mathbf{Y} \ge \theta | \theta)=0.9$。 这个RV $\mathbf{Y}$ 可以是观测到的一系列样本$X_1,…,X_m$的函数。</li><li>在观测到一系列样本$X_1,…,X_m$后，我们有多大把握认为$\theta \le 0.4$。</li></ul><p>后面提了下模型参数和参数空间。接着定义了统计量（statistic)：是样本$X_1,…,X_n$的实值函数$T=r(X_1,…,X_n)$，例如样本均值$\bar{X_i}$和样本最大值$\max (X_1,…,X_n)$.</p><h1 id="7-2-先验-amp-后验"><a href="#7-2-先验-amp-后验" class="headerlink" title="7.2 先验 &amp; 后验"></a>7.2 先验 &amp; 后验</h1><p>先验分布就是在做出观测之前，我们已知或假定参数$\theta$在参数空间$\Omega$上的可能分布。<br><em>e.g.</em> 灯泡寿命为指数分布，其损坏率$\theta$假定其先验分布为Gamma分布。<br>灯泡的损坏率$\theta$服从Gamma分布，它的概率密度为 <script type="math/tex">\xi(\theta)=\frac{(20,000)^4}{3!}\theta^3e^{-20,000\theta}</script><br>注意这里会被绕晕：先验概率分布是theta的函数，刻画了theta取各个值的可能性的密度。一般好像RV会用大写$X$，而p.d.f.会用小写$f(x)$?</p><p>然后介绍了后文model样本分布的一个notation，即$f_m(\mathbf{x}|\theta)=f(x_1|\theta)…f(x_m|\theta)$。这里，它反过来model了给定$\theta$条件下$X_1,…,X_m$的分布，每个观察值$X_i$都是在给定theta时<em>条件独立同分布(conditional i.i.d.)</em> 的，这时我们可以说$X_1,…,X_m$构成了概率密度函数$f(x|\theta)$的一组随机样本(form a random sample)。</p><p>Sensitivity Analysis是分析不同的Prior产生的Posterior有多大程度的不同。这里有一个fun fact是如果实验观测数据足够大，那么不同的先验对试验结果的影响是微乎其微的。这提示我们不必过于纠结怎么挑选先验 (experimenters might be less inclined to spend time specifying a prior distribution if it is not going to matter much)，但如果不选择先验的话，就没法计算后验概率了。</p><p>后验分布是给定一组样本下的条件概率。The conditional distribution of θ given $X_1, . . . , X_n$ is called the posterior distribution of θ, typically denoted as $\xi(\theta|x_1,…,x_n)$.<br>与后验分布相关的最重要的东西就是贝叶斯定理了，在随机样本的形势下，贝叶斯定义可以表述为</p><script type="math/tex; mode=display">\xi(\theta|\mathbf{x})= \frac{f(x_1|\theta)...f(x_n|\theta)\xi(\theta)}{g_n(\mathbf{x})}</script><p>其中$g_n(\mathbf{x})$为样本的联合概率分布(可由分数线上面部分对$\theta$积分，求得样本$\mathbf{x}$的边际分布得到)，整个式子即后验=先验x似然 / 证据 （$\text{Posterior} = \frac{\text{Likelihood}\times \text{Prior}}{\text{Evidence}}$，似然刻画了由先验到后验结果的可能性，证据则是各种结果的出现的可能性）<br>$e.g.$ 这节例子为对之前先验分布为Gamma的灯泡损坏率求后验。</p><ul><li>似然$f(x|\theta)$为给定theta下每个样本$x_i$的条件概率密度，由于灯泡寿命为指数分布，$f(x|\theta)=\theta e^{-\theta x}$</li><li>evidence是样本的联合概率分布，$g_n(\mathbf{x})=\int^{\infty}_0 f_n(\mathbf{x}|\theta)\xi (\theta) \text{d}x$ </li><li>最后的后验概率为 $\xi(\theta|\mathbf{x})=\frac{(\sum^n_{i=1} x_i+20000)^{n+4}}{\Gamma (n+4)}e^{-(\sum^n_{i=1} x_i+20000)\theta}$ ，是一个关于$\theta$的函数，其中样本$x_i$通过观察得到，视为已知的量。</li><li>图像上的改变： <img src="https://files.mastodon.online/media_attachments/files/109/180/095/693/192/069/original/a9a3331e21cd70e3.png" alt=""></li><li></li></ul>]]></content>
       
@@ -562,11 +591,11 @@
       
         <tags>
             
-            <tag> modernity </tag>
-            
             <tag> antonioni </tag>
             
             <tag> art-cinema </tag>
+            
+            <tag> modernity </tag>
             
         </tags>
       
@@ -591,13 +620,13 @@
       
         <tags>
             
+            <tag> modernity </tag>
+            
             <tag> film-fantasy </tag>
             
             <tag> lotr </tag>
             
             <tag> peterjackson </tag>
-            
-            <tag> modernity </tag>
             
         </tags>
       
