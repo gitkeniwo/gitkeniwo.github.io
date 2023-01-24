@@ -436,8 +436,16 @@ body td {
 }
 @font-face {
   font-style: normal;
-  font-family: "Ubuntu";
-  src: local("Ubuntu"), url("../lib/ubuntu-font-family-0.83/Ubuntu-R.ttf") format("truetype");
+  font-family: "NexusSans-Regular";
+  src: url("../lib/nexussans-regular/NexusSans-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "Glow Sans TC";
+  src: url("../lib/GlowSansTC/GlowSansTC-Normal-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "Glow Sans SC";
+  src: url("../lib/GlowSansTC/GlowSansSC-Normal-Regular.otf") format("opentype");
 }
 *,
 *:before,
@@ -459,7 +467,7 @@ body {
   font-display: swap;
   font-weight: 400;
   font-size: 14px;
-  font-family: "Ubuntu", "Menlo", "Meslo LG", monospace;
+  font-family: "NexusSans-Regular", "Glow Sans SC", "Menlo", "Meslo LG", monospace;
   line-height: 1.725;
   text-rendering: geometricPrecision;
   flex: 1;
@@ -500,19 +508,20 @@ body .gallery-column {
 .content a {
   color: #c9cacc;
   text-decoration: none;
-  background-image: linear-gradient(transparent, transparent 5px, #c9cacc 5px, #c9cacc);
+  background-image: linear-gradient(transparent, transparent 6px, #c9cacc 6px, #c9cacc);
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
 }
 .content a:hover {
-  background-image: linear-gradient(transparent, transparent 4px, #d480aa 4px, #d480aa);
+  color: #2bbc8a;
+  background-image: linear-gradient(transparent, transparent 4px, #2bbc8a 4px, #2bbc8a);
 }
 .content a.icon {
   background: none;
 }
 .content a.icon:hover {
-  color: #d480aa;
+  color: #2bbc8a;
 }
 .content h1 a,
 .content .h1 a,
@@ -532,7 +541,7 @@ body .gallery-column {
 .content h4 a:hover,
 .content h5 a:hover,
 .content h6 a:hover {
-  background-image: linear-gradient(transparent, transparent 6px, #d480aa 6px, #d480aa);
+  background-image: linear-gradient(transparent, transparent 6px, #2bbc8a 6px, #2bbc8a);
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
@@ -543,7 +552,7 @@ body .gallery-column {
   text-decoration: none;
 }
 .content h6 a:hover {
-  background-image: linear-gradient(transparent, transparent 6px, #d480aa 6px, #d480aa);
+  background-image: linear-gradient(transparent, transparent 6px, #2bbc8a 6px, #2bbc8a);
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
@@ -706,7 +715,7 @@ body .gallery-column {
   background: none;
 }
 #header-post a.icon:hover {
-  color: #d480aa;
+  color: #2bbc8a;
 }
 #header-post ol {
   list-style-type: none;
@@ -823,7 +832,7 @@ body .gallery-column {
   text-align: right;
 }
 #header-post #toc a:hover {
-  color: #d480aa;
+  color: #2bbc8a;
 }
 #header-post #toc .toc-level-1 > .toc-link {
   color: #2bbc8a;
@@ -946,7 +955,7 @@ body .gallery-column {
   background: none;
 }
 #footer-post a.icon:hover {
-  color: #d480aa;
+  color: #2bbc8a;
 }
 #footer-post #nav-footer {
   padding-right: 1rem;
@@ -1027,7 +1036,7 @@ body .gallery-column {
   line-height: 30px;
 }
 #footer-post #toc-footer a:hover {
-  color: #d480aa;
+  color: #2bbc8a;
 }
 #footer-post #toc-footer .toc-level-1 > .toc-link {
   display: none;
@@ -1229,7 +1238,7 @@ article .content .caption {
   line-height: 1.25;
 }
 .article-tag .tag-link {
-  background-image: linear-gradient(transparent, transparent 10px, #d480aa 10px, #d480aa);
+  background-image: linear-gradient(transparent, transparent 10px, #2bbc8a 10px, #2bbc8a);
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
@@ -1238,7 +1247,7 @@ article .content .caption {
   content: "#";
 }
 .article-category .category-link {
-  background-image: linear-gradient(transparent, transparent 10px, #d480aa 10px, #d480aa);
+  background-image: linear-gradient(transparent, transparent 10px, #2bbc8a 10px, #2bbc8a);
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
@@ -1403,8 +1412,8 @@ article .content .caption {
   font-size: 0.8em;
 }
 #search-result em.search-keyword {
-  border-bottom: 1px dashed #d480aa;
-  color: #d480aa;
+  border-bottom: 1px dashed #2bbc8a;
+  color: #2bbc8a;
   font-weight: bold;
 }
 .search-no-result {
@@ -1436,7 +1445,7 @@ article .content .caption {
   font-display: swap;
   font-weight: 400;
   font-size: 11.200000000000001px;
-  font-family: "Ubuntu", "Menlo", "Meslo LG", monospace;
+  font-family: "NexusSans-Regular", "Glow Sans SC", "Menlo", "Meslo LG", monospace;
   line-height: 1.725;
   text-rendering: geometricPrecision;
   text-align: center;
@@ -1724,7 +1733,7 @@ del:after {
   color: #666;
   font-style: italic;
   font-size: 0.8em;
-  background-image: linear-gradient(transparent, transparent 10px, #d480aa 10px, #d480aa);
+  background-image: linear-gradient(transparent, transparent 2px, #2bbc8a 2px, #2bbc8a);
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
