@@ -849,45 +849,45 @@ body .gallery-column {
 #header-post #toc .toc-level-1 > .toc-link {
   color: #2bbc8a;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 0.7rem;
 }
 #header-post #toc .toc-level-1 > .toc-link:before {
   position: relative;
-  left: -0.5rem;
+  left: -0.1rem;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 0.7rem;
   color: #060;
   content: " H1";
 }
 #header-post #toc .toc-level-2 {
   color: #efefef;
-  font-size: 0.8rem;
+  font-size: 0.5rem;
 }
 #header-post #toc .toc-level-2:before {
   position: relative;
-  left: -0.3rem;
+  left: -0.1rem;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 0.5rem;
   color: #060;
   content: " H2";
 }
 #header-post #toc .toc-level-3 {
   color: #999;
-  font-size: 0.7rem;
+  font-size: 0.4rem;
   font-style: italic;
 }
 #header-post #toc .toc-level-3:before {
   position: relative;
   left: -0.2rem;
   font-weight: bold;
-  font-size: 0.8rem;
+  font-size: 0.4rem;
   color: #060;
   font-style: normal;
   content: " H3";
 }
 #header-post #toc .toc-level-4 {
   color: #525252;
-  font-size: 0.4rem;
+  font-size: 0.3rem;
 }
 #header-post #toc .toc-level-5 {
   display: none;
