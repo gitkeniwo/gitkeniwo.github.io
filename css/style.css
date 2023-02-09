@@ -419,7 +419,7 @@ body table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
-  font-size: 12px;
+  font-size: -1em;
   overflow: auto;
   display: block;
 }
@@ -428,7 +428,7 @@ body th {
   border-bottom: 1px dashed #666;
   color: #eee;
   font-weight: bold;
-  font-size: 13px;
+  font-size: 0em;
 }
 body td {
   padding: 0 8px;
@@ -478,7 +478,7 @@ body {
   color: #c9cacc;
   font-display: swap;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 1em;
   font-family: "CMU Sans Serif", "Glow Sans SC", "Menlo", "Meslo LG", monospace;
   line-height: 1.725;
   text-rendering: geometricPrecision;
@@ -511,6 +511,9 @@ body .gallery-column {
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
 }
+.content p a {
+  color: #2bbc8a;
+}
 .content code {
   hyphens: manual;
   -moz-hyphens: manual;
@@ -519,14 +522,12 @@ body .gallery-column {
 }
 .content a {
   color: #c9cacc;
-  background-image: linear-gradient(transparent, transparent 1rem, #c9cacc 1rem, #c9cacc);
-  background-position: bottom;
-  background-size: 100% 6px;
-  background-repeat: repeat-x;
+  text-decoration: none;
 }
 .content a:hover {
   color: #2bbc8a;
-  background-image: linear-gradient(transparent, transparent 1rem, #2bbc8a 1rem, #2bbc8a);
+  text-decoration: none;
+  background-image: linear-gradient(transparent, transparent 90%, #2bbc8a 90%, #2bbc8a);
 }
 .content a.icon {
   background: none;
@@ -638,7 +639,7 @@ body .gallery-column {
   letter-spacing: 0.01em;
   font-weight: 200;
   font-style: normal;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 #header #nav ul {
   margin: 0;
@@ -1455,7 +1456,7 @@ article .content .caption {
   color: #1d1f21;
   font-display: swap;
   font-weight: 400;
-  font-size: 11.200000000000001px;
+  font-size: 0.8em;
   font-family: "CMU Sans Serif", "Glow Sans SC", "Menlo", "Meslo LG", monospace;
   line-height: 1.725;
   text-rendering: geometricPrecision;
@@ -1637,29 +1638,14 @@ pre code {
 }
 code {
   padding: 0.1rem 0;
-  margin: 0 0.5rem;
-  border: 0.08rem solid #474747;
-  border-radius: 2px;
+  margin: 0 0.2rem;
+  border: 0.08rem hidden #122e24;
+  border-radius: 0;
   -webkit-border-radius: 2px;
-  color: #2bbc8a;
-  font-weight: bold;
-  background-color: #161616;
-}
-code:before {
-  position: relative;
-  left: -0.7rem;
-/*color: $color-accent-5*/
-  content: "`";
-  font-weight: bold;
-  font-size: 1rem;
-}
-code:after {
-  position: relative;
-  right: -0.7rem;
-/*color: $color-accent-5*/
-  content: "`";
-  font-weight: bold;
-  font-size: 1rem;
+  color: #177b4b;
+  background-color: #212a28;
+  font-size: 0.9rem;
+  font-family: 'Syne Mono', Menlo;
 }
 strong {
   color: #d1deaf;

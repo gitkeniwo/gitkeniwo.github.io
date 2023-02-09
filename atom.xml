@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://gitkeniwo.github.io/"/>
-  <updated>2023-01-25T14:07:44.493Z</updated>
+  <updated>2023-02-09T01:28:23.628Z</updated>
   <id>https://gitkeniwo.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>fly.io 的使用体验</title>
+    <link href="https://gitkeniwo.github.io/2023-02-08-fly-io-tutorial/"/>
+    <id>https://gitkeniwo.github.io/2023-02-08-fly-io-tutorial/</id>
+    <published>2023-02-08T14:27:59.000Z</published>
+    <updated>2023-02-09T01:28:23.628Z</updated>
+    
+    <content type="html"><![CDATA[<p>fly.io 类似于heroku，能帮忙托管运行App，是一种<a href="https://zh.wikipedia.org/wiki/平台即服务" target="_blank" rel="noopener">PaaS</a>服务。昨天我在尝试自搭(<a href="https://yunohost.org/oc/selfhosting" target="_blank" rel="noopener">self host</a>) 一款名为<a href="https://github.com/usememos/memos" target="_blank" rel="noopener">memos</a>的基于web的<a href="https://youtu.be/rOSZOCoqOo8" target="_blank" rel="noopener">zettelkasten</a>笔记应用时，在<a href="https://github.com/hu3rror/memos-on-fly" target="_blank" rel="noopener">官方推荐的部署方式</a>中发现了这个平台。</p><p>简单来说，fly.io能帮你快速部署一款app。部署时，你需要安装它的cli工具<code>flyctl</code>，然后利用它生成(<code>flyctl launch</code>)一份部署的配置文件<code>fly.toml</code>。在这份文件中，你只需填入docker image的地址(一般在<a href="https://hub.docker.com/" target="_blank" rel="noopener">docker hub</a>里)、litestream备份信息和fly volume的信息(storage，可以理解为划分储存空间？类似amazon S3)，就可以直接通过这份config指定的信息，将你的app从docker hub部署到fly.io上。</p><p>按照我的理解，其中 docker image是你的app的代码，fly volume是你的硬盘/储存空间，<a href="https://github.com/benbjohnson/litestream" target="_blank" rel="noopener">litestream</a>会按秒级间隔同步拷贝memos的sqlite数据库的WAL数据流到<a href="https://www.backblaze.com/b2/docs/" target="_blank" rel="noopener">Backblaze B2</a>以实现数据备份。有了数据备份，就算memos的上游发布新版本，或是fly.io机房着火，你也能从B2获取当前最新的闪照(snapshot)，这应该也是为什么<a href="https://github.com/hu3rror/memos-on-fly#:~:text=Verify%20the%20installation" target="_blank" rel="noopener">memos部署指南</a>提到可以通过swap到一个新的fly volume来检验是否成功备份。</p><p>因为memos算是高强度使用的应用了，后期数据量会暴涨，难免会有scalability和数据迁移的问题，所以我会常常想要把数据库拉到本地来手动备份。因为fly的app本质就是一个docker容器，这时候就需要使用fly的ssh工具<code>flyctl ssh</code>。查阅help手册后知道应该用sftp来拷贝vm上的文件。</p><p>根据<a href="https://github.com/pocketbase/pocketbase/discussions/537#discussioncomment-3914729" target="_blank" rel="noopener">这则回复</a>，可以用<code>fly ssh sftp shell</code>进入sftp的shell，然后用get命令来下载特定文件。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;fly.io 类似于heroku，能帮忙托管运行App，是一种&lt;a href=&quot;https://zh.wikipedia.org/wiki/平台即服务&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;PaaS&lt;/a&gt;服务。昨天我在尝试自搭(&lt;a href=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="Tech" scheme="https://gitkeniwo.github.io/categories/Tech/"/>
+    
+    
+      <category term="cloud-computing" scheme="https://gitkeniwo.github.io/tags/cloud-computing/"/>
+    
+  </entry>
   
   <entry>
     <title>放在微博图床的图片全挂了。</title>
@@ -550,33 +576,6 @@
     
     
       <category term="director-theodoros-angelopoulos" scheme="https://gitkeniwo.github.io/tags/director-theodoros-angelopoulos/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Untitled</title>
-    <link href="https://gitkeniwo.github.io/2021-05-26-Untitled-35/"/>
-    <id>https://gitkeniwo.github.io/2021-05-26-Untitled-35/</id>
-    <published>2021-05-26T13:03:05.000Z</published>
-    <updated>2022-08-04T16:01:33.499Z</updated>
-    
-    <content type="html"><![CDATA[<p>一個雨夜、一些顏色</p><p><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/C090AEA5-EAF5-43D7-B38A-0D6EC0C7383C_1_105_c.jpeg" alt=""></p><p><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/3F1E23EF-6FB8-4E18-BBD5-80634AF0CF3A.jpeg" alt=""></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqw4w9z1ozj31900u0b0r.jpg" alt="E3ED9A17-5F37-4222-89C1-0F43E63C8342"></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqw51k7nqhj31900u0hdt.jpg" alt="47D12907-4D45-484A-936A-3DFE4EF494B1_1_201_a"></p><p><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/C330D616-A789-4145-9F02-FAAD5E392100.jpeg" alt=""></p><p><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/D2B99FB7-51ED-4771-80B2-7109FD8AE0D5_1_201_a.jpeg" alt=""></p><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gqw51z18s2j30u60k4wkl.jpg" alt="89738740-F38F-4E42-9B26-CE0C68976139_1_105_c"></p><p>杭州，幾乎是水簾洞了。</p><p><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/E5FB39E5-82A7-4A94-B043-96342EE82004_1_105_c.jpeg" alt=""></p><p>阿莫多瓦也總是這樣鮮豔</p><p>iPhone 12 mini, NOMO 135 Ti 直出</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;一個雨夜、一些顏色&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/C090AEA5-EAF5-43D7-B38A-0D6EC0C7383C_1_105_
-      
-    
-    </summary>
-    
-    
-      <category term="Tweets" scheme="https://gitkeniwo.github.io/categories/Tweets/"/>
-    
-    
-      <category term="photo" scheme="https://gitkeniwo.github.io/tags/photo/"/>
     
   </entry>
   
