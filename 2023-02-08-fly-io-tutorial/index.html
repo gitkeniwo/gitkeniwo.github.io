@@ -30,7 +30,7 @@
 <meta property="og:description" content="fly.io 类似于heroku，能帮忙托管运行App，是一种PaaS服务。昨天我在尝试自搭(self host) 一款名为memos的基于web的zettelkasten笔记应用时，在官方推荐的部署方式中发现了这个平台。 简单来说，fly.io能帮你快速部署一款app。部署时，你需要安装它的cli工具flyctl，然后利用它生成(flyctl launch)一份部署的配置文件fly.toml。在">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-02-08T14:27:59.000Z">
-<meta property="article:modified_time" content="2023-02-09T01:28:23.628Z">
+<meta property="article:modified_time" content="2023-02-09T12:39:52.836Z">
 <meta property="article:author" content="ケニヲ">
 <meta property="article:tag" content="cloud-computing">
 <meta name="twitter:card" content="summary">
@@ -73,8 +73,7 @@
     
 <meta name="generator" content="Hexo 4.2.1"></head>
 
-<body class="max-width mx-auto px3 ltr">
-    
+<body class="max-width mx-auto px3 ltr">    
       <div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
@@ -345,6 +344,24 @@
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         }());
     </script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+
 
 
 </body>

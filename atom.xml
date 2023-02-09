@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://gitkeniwo.github.io/"/>
-  <updated>2023-02-09T01:28:23.628Z</updated>
+  <updated>2023-02-09T12:39:52.836Z</updated>
   <id>https://gitkeniwo.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://gitkeniwo.github.io/2023-02-08-fly-io-tutorial/"/>
     <id>https://gitkeniwo.github.io/2023-02-08-fly-io-tutorial/</id>
     <published>2023-02-08T14:27:59.000Z</published>
-    <updated>2023-02-09T01:28:23.628Z</updated>
+    <updated>2023-02-09T12:39:52.836Z</updated>
     
     <content type="html"><![CDATA[<p>fly.io 类似于heroku，能帮忙托管运行App，是一种<a href="https://zh.wikipedia.org/wiki/平台即服务" target="_blank" rel="noopener">PaaS</a>服务。昨天我在尝试自搭(<a href="https://yunohost.org/oc/selfhosting" target="_blank" rel="noopener">self host</a>) 一款名为<a href="https://github.com/usememos/memos" target="_blank" rel="noopener">memos</a>的基于web的<a href="https://youtu.be/rOSZOCoqOo8" target="_blank" rel="noopener">zettelkasten</a>笔记应用时，在<a href="https://github.com/hu3rror/memos-on-fly" target="_blank" rel="noopener">官方推荐的部署方式</a>中发现了这个平台。</p><p>简单来说，fly.io能帮你快速部署一款app。部署时，你需要安装它的cli工具<code>flyctl</code>，然后利用它生成(<code>flyctl launch</code>)一份部署的配置文件<code>fly.toml</code>。在这份文件中，你只需填入docker image的地址(一般在<a href="https://hub.docker.com/" target="_blank" rel="noopener">docker hub</a>里)、litestream备份信息和fly volume的信息(storage，可以理解为划分储存空间？类似amazon S3)，就可以直接通过这份config指定的信息，将你的app从docker hub部署到fly.io上。</p><p>按照我的理解，其中 docker image是你的app的代码，fly volume是你的硬盘/储存空间，<a href="https://github.com/benbjohnson/litestream" target="_blank" rel="noopener">litestream</a>会按秒级间隔同步拷贝memos的sqlite数据库的WAL数据流到<a href="https://www.backblaze.com/b2/docs/" target="_blank" rel="noopener">Backblaze B2</a>以实现数据备份。有了数据备份，就算memos的上游发布新版本，或是fly.io机房着火，你也能从B2获取当前最新的闪照(snapshot)，这应该也是为什么<a href="https://github.com/hu3rror/memos-on-fly#:~:text=Verify%20the%20installation" target="_blank" rel="noopener">memos部署指南</a>提到可以通过swap到一个新的fly volume来检验是否成功备份。</p><p>因为memos算是高强度使用的应用了，后期数据量会暴涨，难免会有scalability和数据迁移的问题，所以我会常常想要把数据库拉到本地来手动备份。因为fly的app本质就是一个docker容器，这时候就需要使用fly的ssh工具<code>flyctl ssh</code>。查阅help手册后知道应该用sftp来拷贝vm上的文件。</p><p>根据<a href="https://github.com/pocketbase/pocketbase/discussions/537#discussioncomment-3914729" target="_blank" rel="noopener">这则回复</a>，可以用<code>fly ssh sftp shell</code>进入sftp的shell，然后用get命令来下载特定文件。</p>]]></content>
     
@@ -127,9 +127,9 @@
     
       <category term="statistics" scheme="https://gitkeniwo.github.io/tags/statistics/"/>
     
-      <category term="sample-distribution" scheme="https://gitkeniwo.github.io/tags/sample-distribution/"/>
-    
       <category term="undergraduate-course" scheme="https://gitkeniwo.github.io/tags/undergraduate-course/"/>
+    
+      <category term="sample-distribution" scheme="https://gitkeniwo.github.io/tags/sample-distribution/"/>
     
   </entry>
   
@@ -191,9 +191,9 @@
     
       <category term="statistics" scheme="https://gitkeniwo.github.io/tags/statistics/"/>
     
-      <category term="undergraduate-course" scheme="https://gitkeniwo.github.io/tags/undergraduate-course/"/>
-    
       <category term="inference" scheme="https://gitkeniwo.github.io/tags/inference/"/>
+    
+      <category term="undergraduate-course" scheme="https://gitkeniwo.github.io/tags/undergraduate-course/"/>
     
   </entry>
   

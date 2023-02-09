@@ -70,8 +70,7 @@
     
 <meta name="generator" content="Hexo 4.2.1"></head>
 
-<body class="max-width mx-auto px3 ltr">
-    
+<body class="max-width mx-auto px3 ltr">    
     <div class="content index py4">
         
           <header id="header">
@@ -119,54 +118,65 @@
     <audio controls id="myaudio" loop="true" autobuffer>
       <source src="/img/the-last-day-of-summer.mp3" type="audio/mpeg">
     </audio>
+    <style> 
+    audio::-webkit-media-controls-panel {
+      background-color: #7b7f81;
+      text-colo
+    }
+    /* audio::-webkit-media-controls-time-remaining-display {
+      color: #9a9a9a;  
+    } */
+    </style>
     <script>
       var audio = document.getElementById("myaudio");
       audio.volume = 0.2;
 
-      function setCookie(c_name,value,exdays)
-      {
-          var exdate=new Date();
-          exdate.setDate(exdate.getDate() + exdays);
-          var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
-          document.cookie=c_name + "=" + c_value;
-      }
+      // 设置不同页面同步播放进度
+      // function setCookie(c_name,value,exdays)
+      // {
+      //     var exdate=new Date();
+      //     exdate.setDate(exdate.getDate() + exdays);
+      //     var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+      //     document.cookie=c_name + "=" + c_value;
+      // }
       
-      function getCookie(c_name)
-      {
-          var i,x,y,ARRcookies=document.cookie.split(";");
-          for (i=0;i<ARRcookies.length;i++)
-          {
-            x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
-            y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
-            x=x.replace(/^\s+|\s+$/g,"");
-            if (x==c_name)
-              {
-              return unescape(y);
-              }
-            }
-      }
+      // function getCookie(c_name)
+      // {
+      //     var i,x,y,ARRcookies=document.cookie.split(";");
+      //     for (i=0;i<ARRcookies.length;i++)
+      //     {
+      //       x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+      //       y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+      //       x=x.replace(/^\s+|\s+$/g,"");
+      //       if (x==c_name)
+      //         {
+      //         return unescape(y);
+      //         }
+      //       }
+      // }
       
-      var song = document.getElementsByTagName('audio')[0];
-      var played = false;
-      var tillPlayed = getCookie('timePlayed');
-      function update()
-      {
-          if(!played){
-              if(tillPlayed){
-              song.currentTime = tillPlayed;
-              song.play();
-              played = true;
-              }
-              else {
-                      song.play();
-                      played = true;
-              }
-          }
-          else {
-          setCookie('timePlayed', song.currentTime);
-          }
-      }
-      setInterval(update,1000);
+      // var song = document.getElementsByTagName('audio')[0];
+      // var played = false;
+      // var tillPlayed = getCookie('timePlayed');
+      // function update()
+      // {
+      //     if(!played){
+      //         if(tillPlayed){
+      //         song.currentTime = tillPlayed;
+      //         song.play();
+      //         played = true;
+      //         }
+      //         else {
+      //                 song.play();
+      //                 played = true;
+      //         }
+      //     }
+      //     else {
+      //     setCookie('timePlayed', song.currentTime);
+      //     }
+      // }
+      // setInterval(update,1000);
+
       </script>
       
   
@@ -559,7 +569,7 @@
 <script type="text/javascript">
   var memos = {
       host: 'https://rikima-memos.fly.dev/',  //修改为自己部署 Memos 的网址，末尾有 / 斜杠
-      limit: '5',  //默认每次显示 10条
+      limit: '15',  //默认每次显示 10条
       creatorId: '1',  //默认为 101用户 https://demo.usememos.com/u/101
       domId: '#memos',  //默认为 #memos
       username: 'keniwo',  //发布者 ID 自定义
@@ -619,16 +629,16 @@
 
 body {
   --color-main: #adbac7;
-  --color-background: #1c2128;
-  --color-text-bg: #22272e;
-  --color-text-hover: #272c32;
+  --color-background: #1c2526;
+  --color-text-bg: #212526;
+  --color-text-hover: #273132;
   --color-memos-id: #71767b;
-  --color-img-border: #292a2d;
+  --color-img-border: #292d2c;
   --color-tag: #42a65b;;
   --color-link: #42a65b;;
-  --color-border-muted: #2d333b;
-  --color-post-preview: #4a4b50;
-  --color-memos-pre-bg: #2d333b;
+  --color-border-muted: #2d3b3b;
+  --color-post-preview: #4a5050;
+  --color-memos-pre-bg: #2e3a39;
 }
 
 #main {
@@ -1140,6 +1150,24 @@ body {
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         }());
     </script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+
 
 
 </body>

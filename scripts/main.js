@@ -199,7 +199,7 @@ function updateHTMl(data) {
     memoDom.insertAdjacentHTML('beforeend', resultAll);
     //取消这行注释解析豆瓣电影和豆瓣阅读
     // fetchDB()
-    document.querySelector('button.button-load').textContent = '加载更多';
+    document.querySelector('button.button-load').textContent = 'See More Murmurs';
 }
 // Memos End
 
