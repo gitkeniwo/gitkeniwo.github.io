@@ -55,11 +55,17 @@ $(document).ready(function() {
      * Add a scroll listener to the menu to hide/show the navigation links.
      */
     if (menu.length) {
+
+      /// 隐藏导航栏 hide nav when have toc
+      if ($(".toc-item").length) {
+        nav.hide();
+      } else {
+
       $(window).on("scroll", function() {
         var topDistance = menu.offset().top;
 
         // hide only the navigation links on desktop
-        if (!nav.is(":visible") && topDistance < 110) {
+        if (!nav.is(":visible") && topDistance < 150) {
           nav.show();
         } else if (nav.is(":visible") && topDistance > 50) {
           nav.hide();
@@ -74,8 +80,12 @@ $(document).ready(function() {
           $("#menu-icon-tablet").hide();
           $("#top-icon-tablet").show();
         }
-      });
+        }); 
+      } 
     }
+
+    
+    
 
     /**
      * Show mobile navigation menu after scrolling upwards,

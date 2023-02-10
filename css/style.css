@@ -464,6 +464,11 @@ body td {
 *:after {
   box-sizing: border-box;
 }
+#post-author:hover {
+  color: #2bbc8a;
+  text-decoration: solid;
+  background-image: none;
+}
 html {
   margin: 0;
   padding: 0;
@@ -716,7 +721,7 @@ body .gallery-column {
   right: 0;
   display: inline-block;
   float: right;
-  z-index: auto;
+  z-index: 10;
 }
 #header-post a {
   background: none;
@@ -778,6 +783,8 @@ body .gallery-column {
 #header-post #menu {
   visibility: visible;
   margin-right: 1rem;
+  position: relative;
+  z-index: 100;
 }
 #header-post #nav {
   color: #2bbc8a;
@@ -1310,7 +1317,7 @@ article .content .caption {
   color: #666;
   vertical-align: top;
   text-align: center;
-  font-size: 11px;
+  font-size: 0.9rem;
 }
 #footer ul {
   margin: 0;
@@ -1336,11 +1343,12 @@ article .content .caption {
 }
 #footer a {
   color: #666;
-  text-decoration: underline;
+  font-size: 0.9rem;
+  text-decoration: none;
   background-image: none;
 }
 #footer a:hover {
-  color: #858585;
+  color: #b3b3b3;
 }
 #footer .footer-left {
   height: 20px;

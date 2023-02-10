@@ -24,15 +24,17 @@
 
     <meta name="description" content="突然发现有篇博文中的一个链接无法点击，inspect之后发现是被一个id为header-post的div挡住了。参见下图中「弗拉芒大区」右侧的「Vlaams Gewest」，因为被挡住了点不到。header-post应该是存放导航栏nav和目录toc的容器，在页面顶端nav自动出现时适应为nav的宽和目录的高，挡住一大片东西。 去原主题的repo搜索了一圈issue关键词，没看到有人提。然后去原作">
 <meta property="og:type" content="article">
-<meta property="og:title" content="&lt;div&gt; 挡住链接的处理方式，z-index属性">
+<meta property="og:title" content="div 挡住链接的处理方式，z-index属性">
 <meta property="og:url" content="https://gitkeniwo.github.io/2023-02-09-div-blocks-links/index.html">
 <meta property="og:site_name" content="The Last Day of Summer">
 <meta property="og:description" content="突然发现有篇博文中的一个链接无法点击，inspect之后发现是被一个id为header-post的div挡住了。参见下图中「弗拉芒大区」右侧的「Vlaams Gewest」，因为被挡住了点不到。header-post应该是存放导航栏nav和目录toc的容器，在页面顶端nav自动出现时适应为nav的宽和目录的高，挡住一大片东西。 去原主题的repo搜索了一圈issue关键词，没看到有人提。然后去原作">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/Xnip2023-02-10_00-49-30.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/Xnip2023-02-10_01-07-59.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/2023-02-10%2015.50.02.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/Xnip2023-02-10_01-28-11.jpg">
 <meta property="article:published_time" content="2023-02-09T16:48:03.000Z">
-<meta property="article:modified_time" content="2023-02-10T00:14:52.873Z">
+<meta property="article:modified_time" content="2023-02-10T16:51:24.033Z">
 <meta property="article:author" content="ケニヲ">
 <meta property="article:tag" content="blogging">
 <meta property="article:tag" content="css">
@@ -57,7 +59,7 @@
       
     
     <!-- title -->
-    <title>&lt;div&gt; 挡住链接的处理方式，z-index属性</title>
+    <title>div 挡住链接的处理方式，z-index属性</title>
     <!-- styles -->
     
 <link rel="stylesheet" href="/css/style.css">
@@ -119,16 +121,16 @@
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&text=&lt;div&gt; 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&title=&lt;div&gt; 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&is_video=false&description=&lt;div&gt; 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=&lt;div&gt; 挡住链接的处理方式，z-index属性&body=Check out this article: https://gitkeniwo.github.io/2023-02-09-div-blocks-links/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&title=&lt;div&gt; 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&title=&lt;div&gt; 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&title=&lt;div&gt; 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&title=&lt;div&gt; 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&name=&lt;div&gt; 挡住链接的处理方式，z-index属性&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&t=&lt;div&gt; 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&text=div 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&title=div 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&is_video=false&description=div 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=div 挡住链接的处理方式，z-index属性&body=Check out this article: https://gitkeniwo.github.io/2023-02-09-div-blocks-links/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&title=div 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&title=div 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&title=div 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&title=div 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&name=div 挡住链接的处理方式，z-index属性&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&t=div 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -145,14 +147,16 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        &lt;div&gt; 挡住链接的处理方式，z-index属性
+        div 挡住链接的处理方式，z-index属性
     </h1>
 
 
 
     <div class="meta">
       <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a id='post-author' href="/">
         <span itemprop="name">ケニヲ</span>
+        </a>
       </span>
       
     <div class="postdate">
@@ -186,6 +190,17 @@
 <p>去原主题的repo搜索了一圈issue关键词，没看到有人提。然后去原作者的<a href="https://probberechts.github.io/hexo-theme-cactus/cactus-dark/public/2016/11/01/An-overview-of-all-Markdown-elements/" target="_blank" rel="noopener">demo网页</a>发现他的这个网页也有同样的问题+_+||, 只是因为他要么因为nav放的链接少，要么nav与目录不共存，所以这个问题不明显。<del>这个主题毛病真的好多</del><br><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/Xnip2023-02-10_01-07-59.jpg" alt=""></p>
 <p>最后自己在<code>#header-post</code>这个selector下探索出来的解决方式是将<code>action_desktop.styl</code>中对应id<code>#header-post</code>的<code>z-index</code>改为<code>auto</code>。关于<code>z-index</code>属性，可参见<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/z-index" target="_blank" rel="noopener">mdn官网的展示小组件</a>，大概类似于置于顶层/底层，直观来说，这样改了后那个div就缩到底层去了，你自然就能点得到位于文章主干的link了。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#header-post</span></span><br><span class="line">  <span class="selector-tag">position</span>: <span class="selector-tag">fixed</span></span><br><span class="line">  <span class="selector-tag">top</span>: 2<span class="selector-tag">rem</span></span><br><span class="line">  <span class="selector-tag">right</span>: 0</span><br><span class="line">  <span class="selector-tag">display</span>: <span class="selector-tag">inline-block</span></span><br><span class="line">  <span class="selector-tag">float</span>: <span class="selector-tag">right</span></span><br><span class="line">  <span class="selector-tag">z-index</span>: <span class="selector-tag">auto</span></span><br></pre></td></tr></table></figure>
+<p><strong>UPDATE</strong> 坏消息是这样做了后，你没法点到nav伸到主干里的那几个link了。。</p>
+<ul>
+<li>改进思路1：放弃顶部nav，nav回归底部；</li>
+<li>改进思路2: 试试能不能把nav的div z-index到顶部。</li>
+</ul>
+<p><strong>思路2</strong> 将 <code>nav</code> 对应的 <code>#menu</code> 的z-index设为100<br>想要将 文章content上方的box放到后面，即 <code>style.styl</code>中 <code>*, *:before, *:after</code> 的z-index设为-1<br><img src='https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/2023-02-10%2015.50.02.jpg' width='500'></img><br>最后发现行不通，因为z-index是子代继承父代。nav为 div的子代，它的z index被锚定在div附近，你不可能在div和nav之间插入div家系里以外的元素。</p>
+<p><strong>最后解决方案：思路1</strong>  将作者名设置为回到主页的超链接，并且当目录toc有子元素<code>#toc-item</code>时隐藏nav。将<code>main.js</code>中对应代码改为</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Add a scroll listener to the menu to hide/show the navigation links.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">if</span> (menu.length) &#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/// 隐藏导航栏 hide nav when have toc</span></span><br><span class="line">  <span class="keyword">if</span> ($(<span class="string">".toc-item"</span>).length) &#123;</span><br><span class="line">    nav.hide();</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">  $(<span class="built_in">window</span>).on(<span class="string">"scroll"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> topDistance = menu.offset().top;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// hide only the navigation links on desktop</span></span><br><span class="line">    <span class="keyword">if</span> (!nav.is(<span class="string">":visible"</span>) &amp;&amp; topDistance &lt; <span class="number">150</span>) &#123;</span><br><span class="line">      nav.show();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nav.is(<span class="string">":visible"</span>) &amp;&amp; topDistance &gt; <span class="number">50</span>) &#123;</span><br><span class="line">      nav.hide();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// on tablet, hide the navigation icon as well and show a "scroll to top</span></span><br><span class="line">    <span class="comment">// icon" instead</span></span><br><span class="line">    <span class="keyword">if</span> ( ! $( <span class="string">"#menu-icon"</span> ).is(<span class="string">":visible"</span>) &amp;&amp; topDistance &lt; <span class="number">50</span> ) &#123;</span><br><span class="line">      $(<span class="string">"#menu-icon-tablet"</span>).show();</span><br><span class="line">      $(<span class="string">"#top-icon-tablet"</span>).hide();</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (! $( <span class="string">"#menu-icon"</span> ).is(<span class="string">":visible"</span>) &amp;&amp; topDistance &gt; <span class="number">100</span>) &#123;</span><br><span class="line">      $(<span class="string">"#menu-icon-tablet"</span>).hide();</span><br><span class="line">      $(<span class="string">"#top-icon-tablet"</span>).show();</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;); </span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>P.S.</strong> 注意这个cactus主题也别在标题用<code>&lt;&gt;</code>和撇号等特殊符号，会导致category页面解析错误出现混乱。</p>
+<p><img src='https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/Xnip2023-02-10_01-28-11.jpg' width='300'></img></p>
+
   </div>
 </article>
 
@@ -227,16 +242,16 @@
     <div id="share-footer" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&text=&lt;div&gt; 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&title=&lt;div&gt; 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&is_video=false&description=&lt;div&gt; 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=&lt;div&gt; 挡住链接的处理方式，z-index属性&body=Check out this article: https://gitkeniwo.github.io/2023-02-09-div-blocks-links/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&title=&lt;div&gt; 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&title=&lt;div&gt; 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&title=&lt;div&gt; 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&title=&lt;div&gt; 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&name=&lt;div&gt; 挡住链接的处理方式，z-index属性&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&t=&lt;div&gt; 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&text=div 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&title=div 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&is_video=false&description=div 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=div 挡住链接的处理方式，z-index属性&body=Check out this article: https://gitkeniwo.github.io/2023-02-09-div-blocks-links/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&title=div 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&title=div 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&title=div 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&title=div 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&name=div 挡住链接的处理方式，z-index属性&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2023-02-09-div-blocks-links/&t=div 挡住链接的处理方式，z-index属性" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
