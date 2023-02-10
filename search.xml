@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>&lt;div&gt; 挡住链接的处理方式，z-index属性</title>
+      <link href="2023-02-09-div-blocks-links/"/>
+      <url>2023-02-09-div-blocks-links/</url>
+      
+        <content type="html"><![CDATA[<p>突然发现<a href="http://gitkeniwo.github.io/2022-06-21-dutch-grammar/">有篇博文</a>中的一个链接无法点击，inspect之后发现是被一个id为<code>header-post</code>的div挡住了。参见下图中「弗拉芒大区」右侧的「Vlaams Gewest」，因为被挡住了点不到。<code>header-post</code>应该是存放导航栏nav和目录toc的容器，在页面顶端nav自动出现时<br><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/Xnip2023-02-10_00-49-30.jpg" alt=""></p><p>去原主题的repo搜索了一圈issue关键词，没看到有人提。然后去原作者的<a href="https://probberechts.github.io/hexo-theme-cactus/cactus-dark/public/2016/11/01/An-overview-of-all-Markdown-elements/" target="_blank" rel="noopener">demo网页</a>发现他的这个网页也有同样的问题+_+||, 只是因为他要么因为nav放的链接少，要么nav与目录不共存，所以这个问题不明显。<del>这个主题毛病真的好多</del><br><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/Xnip2023-02-10_01-07-59.jpg" alt=""></p><p>最后自己在<code>#header-post</code>这个selector下探索出来的解决方式是将<code>action_desktop.styl</code>中对应id<code>#header-post</code>的<code>z-index</code>改为<code>auto</code>。关于<code>z-index</code>属性，可参见<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/z-index" target="_blank" rel="noopener">mdn官网的展示小组件</a>，大概类似于置于顶层/底层。</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#header-post</span></span><br><span class="line">  <span class="selector-tag">position</span>: <span class="selector-tag">fixed</span></span><br><span class="line">  <span class="selector-tag">top</span>: 2<span class="selector-tag">rem</span></span><br><span class="line">  <span class="selector-tag">right</span>: 0</span><br><span class="line">  <span class="selector-tag">display</span>: <span class="selector-tag">inline-block</span></span><br><span class="line">  <span class="selector-tag">float</span>: <span class="selector-tag">right</span></span><br><span class="line">  <span class="selector-tag">z-index</span>: <span class="selector-tag">auto</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Blogging </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> blogging </tag>
+            
+            <tag> css </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>fly.io 的使用体验</title>
       <link href="2023-02-08-fly-io-tutorial/"/>
       <url>2023-02-08-fly-io-tutorial/</url>

@@ -716,7 +716,7 @@ body .gallery-column {
   right: 0;
   display: inline-block;
   float: right;
-  z-index: 100;
+  z-index: auto;
 }
 #header-post a {
   background: none;
