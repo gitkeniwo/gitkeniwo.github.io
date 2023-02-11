@@ -488,6 +488,7 @@ body {
   line-height: 1.725;
   text-rendering: geometricPrecision;
   flex: 1;
+  letter-spacing: 0.01rem;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
@@ -846,7 +847,7 @@ body .gallery-column {
   overflow: auto;
   margin-top: 1rem;
   padding-right: 2rem;
-  max-width: 20em;
+  max-width: 16em;
   max-height: calc(95vh - 7rem);
   text-align: right;
 }
@@ -1128,7 +1129,7 @@ article header .posttitle {
   margin-top: 0;
   margin-bottom: 0;
   text-transform: none;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   line-height: 1.25;
 }
 article header .meta {
@@ -1195,12 +1196,12 @@ article .content .video-container embed {
   height: 100%;
 }
 article .content blockquote {
-  margin: 1rem 10px;
+  margin: 0.5rem 10px;
   padding: 0.5em 10px;
   background: inherit;
   color: #ccffb6;
   quotes: "\201C" "\201D" "\2018" "\2019";
-  font-weight: bold;
+  font-weight: 600;
 }
 article .content blockquote p {
   margin: 0;
