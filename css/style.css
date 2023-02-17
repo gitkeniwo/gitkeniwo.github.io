@@ -484,7 +484,7 @@ body {
   font-display: swap;
   font-weight: 400;
   font-size: 1em;
-  font-family: "CMU Sans Serif", "Glow Sans SC", "Menlo", "Meslo LG", monospace;
+  font-family: "CMU Sans Serif", 'Noto Sans TC', 'Noto Sans SC', "Menlo", "Meslo LG", monospace;
   line-height: 1.725;
   text-rendering: geometricPrecision;
   flex: 1;
@@ -1466,7 +1466,7 @@ article .content .caption {
   font-display: swap;
   font-weight: 400;
   font-size: 0.8em;
-  font-family: "CMU Sans Serif", "Glow Sans SC", "Menlo", "Meslo LG", monospace;
+  font-family: "CMU Sans Serif", 'Noto Sans TC', 'Noto Sans SC', "Menlo", "Meslo LG", monospace;
   line-height: 1.725;
   text-rendering: geometricPrecision;
   text-align: center;
@@ -1636,7 +1636,7 @@ pre {
   border: 1px dotted #666;
   border-radius: 4px;
   font-size: 13px;
-  font-family: "Menlo", "Meslo LG", monospace;
+  font-family: "Syne Mono", "Menlo", "Meslo LG", monospace;
   line-height: 22px;
   -webkit-border-radius: 4px;
 }
@@ -1651,10 +1651,10 @@ code {
   border: 0.08rem hidden #122e24;
   border-radius: 0;
   -webkit-border-radius: 2px;
-  color: #177b4b;
+  color: #31895f;
   background-color: #212a28;
   font-size: 0.9rem;
-  font-family: 'Syne Mono', Menlo;
+  font-family: "Syne Mono", "Menlo", "Meslo LG", monospace;
 }
 strong {
   color: #d1deaf;
@@ -1726,7 +1726,7 @@ del:after {
   padding: 10px 15px;
   border-radius: 4px;
   background: #212326;
-  font-family: "Menlo", "Meslo LG", monospace;
+  font-family: "Syne Mono", "Menlo", "Meslo LG", monospace;
   -webkit-border-radius: 4px;
 }
 .highlight figcaption {
