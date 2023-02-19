@@ -155,9 +155,9 @@
     
       <category term="statistics" scheme="https://gitkeniwo.github.io/tags/statistics/"/>
     
-      <category term="undergraduate-course" scheme="https://gitkeniwo.github.io/tags/undergraduate-course/"/>
-    
       <category term="sample-distribution" scheme="https://gitkeniwo.github.io/tags/sample-distribution/"/>
+    
+      <category term="undergraduate-course" scheme="https://gitkeniwo.github.io/tags/undergraduate-course/"/>
     
   </entry>
   
@@ -219,9 +219,9 @@
     
       <category term="statistics" scheme="https://gitkeniwo.github.io/tags/statistics/"/>
     
-      <category term="inference" scheme="https://gitkeniwo.github.io/tags/inference/"/>
-    
       <category term="undergraduate-course" scheme="https://gitkeniwo.github.io/tags/undergraduate-course/"/>
+    
+      <category term="inference" scheme="https://gitkeniwo.github.io/tags/inference/"/>
     
   </entry>
   
