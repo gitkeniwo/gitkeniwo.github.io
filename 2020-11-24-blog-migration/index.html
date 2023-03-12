@@ -26,7 +26,7 @@
     <meta name="description" content="git子模块的相关问题主要是&#x2F;hexo&#x2F;themes&#x2F;下的主题dir的git提交问题。由于我最开始是直接从主题的github repo页面上拉下来的，当时对git的理解还不够深入，  https:&#x2F;&#x2F;www.hozen.site&#x2F;archives&#x2F;23&#x2F; 我的做法：· 重新fork了一下 hexo-theme-next· 把它添加到了我的子模块· 直接mv -d 了原有的next模块· 从mbp2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="本次hexo项目从老mac迁移到新mac上遇到的问题种种">
-<meta property="og:url" content="https://gitkeniwo.github.io/2020-11-24-blog/index.html">
+<meta property="og:url" content="https://gitkeniwo.github.io/2020-11-24-blog-migration/index.html">
 <meta property="og:site_name" content="The Last Day of Summer">
 <meta property="og:description" content="git子模块的相关问题主要是&#x2F;hexo&#x2F;themes&#x2F;下的主题dir的git提交问题。由于我最开始是直接从主题的github repo页面上拉下来的，当时对git的理解还不够深入，  https:&#x2F;&#x2F;www.hozen.site&#x2F;archives&#x2F;23&#x2F; 我的做法：· 重新fork了一下 hexo-theme-next· 把它添加到了我的子模块· 直接mv -d 了原有的next模块· 从mbp2">
 <meta property="og:locale" content="en_US">
@@ -78,7 +78,8 @@
     
 <meta name="generator" content="Hexo 4.2.1"></head>
 
-<body class="max-width mx-auto px3 ltr">    
+<body class="max-width mx-auto px3 ltr">
+    
       <div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
@@ -121,17 +122,17 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://gitkeniwo.github.io/2020-11-24-blog/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2020-11-24-blog/&text=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2020-11-24-blog/&title=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2020-11-24-blog/&is_video=false&description=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=本次hexo项目从老mac迁移到新mac上遇到的问题种种&body=Check out this article: https://gitkeniwo.github.io/2020-11-24-blog/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2020-11-24-blog/&title=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2020-11-24-blog/&title=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2020-11-24-blog/&title=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2020-11-24-blog/&title=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2020-11-24-blog/&name=本次hexo项目从老mac迁移到新mac上遇到的问题种种&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2020-11-24-blog/&t=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://gitkeniwo.github.io/2020-11-24-blog-migration/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2020-11-24-blog-migration/&text=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2020-11-24-blog-migration/&title=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2020-11-24-blog-migration/&is_video=false&description=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=本次hexo项目从老mac迁移到新mac上遇到的问题种种&body=Check out this article: https://gitkeniwo.github.io/2020-11-24-blog-migration/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2020-11-24-blog-migration/&title=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2020-11-24-blog-migration/&title=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2020-11-24-blog-migration/&title=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2020-11-24-blog-migration/&title=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2020-11-24-blog-migration/&name=本次hexo项目从老mac迁移到新mac上遇到的问题种种&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2020-11-24-blog-migration/&t=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -253,17 +254,17 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://gitkeniwo.github.io/2020-11-24-blog/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2020-11-24-blog/&text=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2020-11-24-blog/&title=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2020-11-24-blog/&is_video=false&description=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=本次hexo项目从老mac迁移到新mac上遇到的问题种种&body=Check out this article: https://gitkeniwo.github.io/2020-11-24-blog/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2020-11-24-blog/&title=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2020-11-24-blog/&title=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2020-11-24-blog/&title=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2020-11-24-blog/&title=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2020-11-24-blog/&name=本次hexo项目从老mac迁移到新mac上遇到的问题种种&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2020-11-24-blog/&t=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://gitkeniwo.github.io/2020-11-24-blog-migration/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2020-11-24-blog-migration/&text=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2020-11-24-blog-migration/&title=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2020-11-24-blog-migration/&is_video=false&description=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=本次hexo项目从老mac迁移到新mac上遇到的问题种种&body=Check out this article: https://gitkeniwo.github.io/2020-11-24-blog-migration/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2020-11-24-blog-migration/&title=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2020-11-24-blog-migration/&title=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2020-11-24-blog-migration/&title=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2020-11-24-blog-migration/&title=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2020-11-24-blog-migration/&name=本次hexo项目从老mac迁移到新mac上遇到的问题种种&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2020-11-24-blog-migration/&t=本次hexo项目从老mac迁移到新mac上遇到的问题种种" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -373,24 +374,6 @@
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         }());
     </script>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-
 
 
 </body>

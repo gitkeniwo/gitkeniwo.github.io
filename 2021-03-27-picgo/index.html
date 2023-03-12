@@ -26,7 +26,7 @@
     <meta name="description" content="寫博客的時候總是很擔心圖片的問題：存在本地不方便，直接用圖床md鏈接省事且現代化。但隨之而來的又一個問題是：放在外面的cdn上的東西，怎麼保證他不會跑路？舉例來說就是現在ipic免費版支持的微博圖床，匿名上傳，接受範圍內的壓縮，但，萬一微博垮了怎麼辦？且不說夾總還維護著CCP的內容審查，就算微博自己鋪天蓋地的放廣告、壓榨用戶體驗，死亡也是早晚的事情。微博如果垮掉了，我博客里的圖片都會可憐的被清光，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="picgo - 折腾一下新图床">
-<meta property="og:url" content="https://gitkeniwo.github.io/2021-03-27-20210328/index.html">
+<meta property="og:url" content="https://gitkeniwo.github.io/2021-03-27-picgo/index.html">
 <meta property="og:site_name" content="The Last Day of Summer">
 <meta property="og:description" content="寫博客的時候總是很擔心圖片的問題：存在本地不方便，直接用圖床md鏈接省事且現代化。但隨之而來的又一個問題是：放在外面的cdn上的東西，怎麼保證他不會跑路？舉例來說就是現在ipic免費版支持的微博圖床，匿名上傳，接受範圍內的壓縮，但，萬一微博垮了怎麼辦？且不說夾總還維護著CCP的內容審查，就算微博自己鋪天蓋地的放廣告、壓榨用戶體驗，死亡也是早晚的事情。微博如果垮掉了，我博客里的圖片都會可憐的被清光，">
 <meta property="og:locale" content="en_US">
@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20210328004938.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20210328005226.png">
 <meta property="article:published_time" content="2021-03-27T16:34:09.000Z">
-<meta property="article:modified_time" content="2023-01-25T13:39:36.768Z">
+<meta property="article:modified_time" content="2023-03-12T01:09:10.676Z">
 <meta property="article:author" content="ケニヲ">
 <meta property="article:tag" content="image-hosting">
 <meta name="twitter:card" content="summary">
@@ -78,7 +78,8 @@
     
 <meta name="generator" content="Hexo 4.2.1"></head>
 
-<body class="max-width mx-auto px3 ltr">    
+<body class="max-width mx-auto px3 ltr">
+    
       <div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
@@ -121,17 +122,17 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://gitkeniwo.github.io/2021-03-27-20210328/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2021-03-27-20210328/&text=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2021-03-27-20210328/&title=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2021-03-27-20210328/&is_video=false&description=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=picgo - 折腾一下新图床&body=Check out this article: https://gitkeniwo.github.io/2021-03-27-20210328/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2021-03-27-20210328/&title=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2021-03-27-20210328/&title=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2021-03-27-20210328/&title=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2021-03-27-20210328/&title=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2021-03-27-20210328/&name=picgo - 折腾一下新图床&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2021-03-27-20210328/&t=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://gitkeniwo.github.io/2021-03-27-picgo/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2021-03-27-picgo/&text=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2021-03-27-picgo/&title=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2021-03-27-picgo/&is_video=false&description=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=picgo - 折腾一下新图床&body=Check out this article: https://gitkeniwo.github.io/2021-03-27-picgo/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2021-03-27-picgo/&title=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2021-03-27-picgo/&title=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2021-03-27-picgo/&title=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2021-03-27-picgo/&title=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2021-03-27-picgo/&name=picgo - 折腾一下新图床&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2021-03-27-picgo/&t=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -240,17 +241,17 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://gitkeniwo.github.io/2021-03-27-20210328/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2021-03-27-20210328/&text=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2021-03-27-20210328/&title=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2021-03-27-20210328/&is_video=false&description=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=picgo - 折腾一下新图床&body=Check out this article: https://gitkeniwo.github.io/2021-03-27-20210328/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2021-03-27-20210328/&title=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2021-03-27-20210328/&title=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2021-03-27-20210328/&title=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2021-03-27-20210328/&title=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2021-03-27-20210328/&name=picgo - 折腾一下新图床&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2021-03-27-20210328/&t=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://gitkeniwo.github.io/2021-03-27-picgo/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2021-03-27-picgo/&text=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2021-03-27-picgo/&title=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2021-03-27-picgo/&is_video=false&description=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=picgo - 折腾一下新图床&body=Check out this article: https://gitkeniwo.github.io/2021-03-27-picgo/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2021-03-27-picgo/&title=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2021-03-27-picgo/&title=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2021-03-27-picgo/&title=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2021-03-27-picgo/&title=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2021-03-27-picgo/&name=picgo - 折腾一下新图床&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2021-03-27-picgo/&t=picgo - 折腾一下新图床" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -360,24 +361,6 @@
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         }());
     </script>
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-
 
 
 </body>

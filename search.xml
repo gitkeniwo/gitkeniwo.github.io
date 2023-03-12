@@ -50,7 +50,7 @@
       <link href="2023-03-10-2012-5x/"/>
       <url>2023-03-10-2012-5x/</url>
       
-        <content type="html"><![CDATA[<p>今天这件<a href="https://www.bbc.com/news/world-asia-china-64911512" target="_blank" rel="noopener">能写进史册的事</a>，墙内虽少不了铺天盖地的宣传，但要么都是控评（机器人写新话赞美大洋国），要么都是想尽办法阉割自己指桑骂槐。</p><p>这其中看到的一个比较有创意的是某高校论坛每日一题栏目当天出了个题目是 <script type="math/tex">\lim\limits_{n \rightarrow \infty} (2012 + 5x)</script></p><p>大洋国的建立了史上前所未有的<a href="https://en.wikipedia.org/wiki/Panopticon" target="_blank" rel="noopener">全景监狱</a>，在什么学科都可能被「批倒批臭」的预期内，最好提前用尽一切办法来解构它。</p><p>不过是挣扎罢了。</p>]]></content>
+        <content type="html"><![CDATA[<p>今天这件<a href="https://www.bbc.com/news/world-asia-china-64911512" target="_blank" rel="noopener">能写进史册的事</a>，墙内虽少不了铺天盖地的宣传，但要么都是控评（机器人写新话赞美大洋国），要么都是想尽办法阉割自己指桑骂槐。</p><p>这其中看到的一个比较有创意的是某高校论坛每日一题栏目当天出了个题目是 <script type="math/tex">\lim\limits_{n \rightarrow \infty} (2012 + 5x)</script></p><p>大洋国建立了史上前所未有的<a href="https://en.wikipedia.org/wiki/Panopticon" target="_blank" rel="noopener">全景监狱</a>，在什么学科都可能被「批倒批臭」的预期内，最好提前用尽一切办法来解构它。</p><p>不过是挣扎罢了。</p>]]></content>
       
       
       <categories>
@@ -184,10 +184,10 @@
     
     <entry>
       <title>放在微博图床的图片全挂了。</title>
-      <link href="2023-01-25-20230125weibo-image-hosting/"/>
-      <url>2023-01-25-20230125weibo-image-hosting/</url>
+      <link href="2023-01-25-weibo-image-hosting/"/>
+      <url>2023-01-25-weibo-image-hosting/</url>
       
-        <content type="html"><![CDATA[<p>微博图床，爷真是当初信了iPic的邪了。<br><em>注：ipic是少数几个支持无token上传微博图床的图床工具</em><br><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20230125150344.png" alt=""><br>想到之前看到有人说web2.0系的平台，因为是freemium模式，平台的用户本身就是他们的盈利点。用户的digital property自然也不由用户自己掌控。<br>现在即便是想补图，也无从知晓这里究竟放的是什么图片了。以后图片要么放可以信赖的渠道(Github)，要么还是放在本地吧。不氪金的东西不可能长久。</p>]]></content>
+        <content type="html"><![CDATA[<p>微博图床，爷真是当初信了iPic的邪了。<br><em>注：ipic是少数几个支持无token上传微博图床的图床工具</em></p><p><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20230125150344.png" alt=""></p><p>想到之前看到有人说web2.0系的平台，因为是freemium模式，平台的用户本身就是他们的盈利点。用户的digital property自然也不由用户自己掌控。<br>现在即便是想补图，也无从知晓这里究竟放的是什么图片了。以后图片要么放可以信赖的渠道(Github)，要么还是放在本地吧。不氪金的东西不可能长久。</p><p><em>Update (Mar 12 2023)</em> </p><p>似乎在原链前加入一个 cdn.cdnjson.com/ 就能通过这个cdn访问到原图. 原图没有被删掉, 而是做了防盗链, 然后赶紧都换成别的源吧。。。</p><p>根据<a href="https://juejin.cn/post/7189651446306963514" target="_blank" rel="noopener">这篇文章</a>，这tva1～4挂掉不只是我一个，是大规模事件. 这个人还写了如何全部替换图链的操作，具体可以去他文章里看。重点他说不推荐用github作为图床，因为官方建议仓库维持在1G内，然后他推荐了<a href="https://www.qiniu.com/" target="_blank" rel="noopener">七牛云</a>免费10G空间，不过我对墙内公司的freemium商业模式深表怀疑(Heroku的免费档都做不下去，🀄️人一来不得把它薅空？)，另外就是你不能存维尼熊不爱看的图。我去下载了一下GitHub图床的repo，现在都121M了，还是非常担心这个repo被GitHub官方橄榄掉的。</p>]]></content>
       
       
       <categories>
@@ -217,20 +217,20 @@
       
       <categories>
           
-          <category> News Comments </category>
+          <category> Milestones </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> china </tag>
-            
             <tag> hk </tag>
+            
+            <tag> ccp </tag>
             
             <tag> 毒力撕烤 </tag>
             
-            <tag> ccp </tag>
+            <tag> china </tag>
             
             <tag> shanghai </tag>
             
@@ -271,28 +271,28 @@
     
     <entry>
       <title>改革开放的落幕（1978-2022）</title>
-      <link href="2022-10-22-20221023end-of-the-reform/"/>
-      <url>2022-10-22-20221023end-of-the-reform/</url>
+      <link href="2022-10-22-end-of-reform-and-opening-up/"/>
+      <url>2022-10-22-end-of-reform-and-opening-up/</url>
       
         <content type="html"><![CDATA[<p>我想，今日的新闻出来后，中国40年来飞速发展的黄金时代也就落幕了。</p><p>健康即孱弱。<br>发展即停滞。<br>稳定即动荡。</p><p>自由世界的人需要认识到，他们面临的是一种史无前例的制度结构，能够完全控制人心为其所用的利维坦，毋庸置疑地说，其恐怖程度已经超越了冷战时期的USSR。自由世界的人不熟谙厚黑学，透过局域网捕捉到的象形文字只能解读出一团模糊不清的魅影，他们一定会在这方面吃到苦头。</p><p>阿姨预言的大洪水最终没有出现，可它却又真真实实早就来了，化作一团汹涌的暗流，从天津港、杭州湾、南中国海……从3万公里的海岸线发散而出，最终会搅动整个蔚蓝星球。</p>]]></content>
       
       
       <categories>
           
-          <category> News Comments </category>
+          <category> Milestones </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> china </tag>
-            
             <tag> ccp </tag>
             
-            <tag> historic </tag>
-            
             <tag> memoir </tag>
+            
+            <tag> china </tag>
+            
+            <tag> historic </tag>
             
         </tags>
       
@@ -808,11 +808,11 @@
       
         <tags>
             
-            <tag> modernity </tag>
-            
             <tag> director-antonioni </tag>
             
             <tag> art-cinema </tag>
+            
+            <tag> modernity </tag>
             
         </tags>
       
@@ -837,13 +837,13 @@
       
         <tags>
             
+            <tag> modernity </tag>
+            
             <tag> film-fantasy </tag>
             
             <tag> lotr </tag>
             
             <tag> director-peterjackson </tag>
-            
-            <tag> modernity </tag>
             
         </tags>
       
@@ -986,8 +986,8 @@
     
     <entry>
       <title>picgo - 折腾一下新图床</title>
-      <link href="2021-03-27-20210328/"/>
-      <url>2021-03-27-20210328/</url>
+      <link href="2021-03-27-picgo/"/>
+      <url>2021-03-27-picgo/</url>
       
         <content type="html"><![CDATA[<p>寫博客的時候總是很擔心圖片的問題：存在本地不方便，直接用圖床md鏈接省事且現代化。但隨之而來的又一個問題是：放在外面的cdn上的東西，怎麼保證他不會跑路？舉例來說就是現在ipic免費版支持的微博圖床，匿名上傳，接受範圍內的壓縮，但，萬一微博垮了怎麼辦？且不說夾總還維護著CCP的內容審查，就算微博自己鋪天蓋地的放廣告、壓榨用戶體驗，死亡也是早晚的事情。微博如果垮掉了，我博客里的圖片都會可憐的被清光，只會在原處剩下html找不到資源的破碎畫板小圖標——現在去看12年以前的百度貼吧的古董貼，所有的圖片都隨風而逝了，僅留下一道賽博疤痕。所以，現在就得考慮一個圖床時效性的問題，因為大多數圖片是沒有備份的，倘若圖床跑路，圖片是無論如何也無法輓回了。雖然這樣與時間、歷史、歲月對抗的行為總體上來說是徒勞無功的——我們無法預知我們死後的變化，誇張點說甚至無法預知我們下一秒的變化，指不定ISIS明天恐襲Twitter總部，億萬條推文都毀於一旦，而背後的理由僅僅是因為Twitter對阿拉伯世界宣稱支持<strong>La liberté d’expression</strong>——但我還是盡可能的希望延續這種存在。那麼通覽全球，我覺得能活的最久的service provider，一個是Apple/Goole，另一個就是Github了。所以，我也盡可能希望自己的一切網絡遊戲都能依靠在GitHub周圍——比方說我的Blog。Github是最不可能垮掉的服務商了，所以，GitHub如果提供Image Hosting Service的話我付費支持，但很可惜沒有。</p><p>於是我又找啊找，發現了一個叫<a href="https://github.com/Molunerfinn/PicGo" target="_blank" rel="noopener">PicGo</a>的東西。</p><p><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20210328004813.png" alt=""></p><p>可以看到它一個是支持的雲服務多，另一個是它支持把你自建的Repo當成圖床來用。</p><p>這是我的配置。其中Token的生成可以去查閱它的官方手冊。</p><p><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20210328004938.png" alt=""></p><p>最開始的時候一直上傳不成功，我懷疑可能是我的SS 1087端口這個HTTP代理有問題（終端也有同樣的情況）於是我現在是不加代理的在使用，體驗就是特別慢，和ipic的微博圖床秒傳無法比……</p><p><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20210328005226.png" style="zoom:50%;" /></p><p>但好在還是可以用的。<del>希望ipic作者也能提供一下GitHub的圖床，我一定給錢</del></p><p>此外還要繼續考察一下這個repo有沒有容量的問題……<del>又想到了git-lfs把github帶寬撐爆直接給我寄bill那件事</del>……</p><p>好像墙内加载<code>raw.githubusercontent.com</code>域名的图片也很慢，直接把该域名添加到ss user PAC里面。</p><p>另外，在typora或者Mark text里面引用md链接的加载速度也差不多，这俩编辑器本质还是html，查找链接引用的资源还是走https，所以需要一直挂着ss。</p>]]></content>
       
@@ -1088,8 +1088,8 @@
     
     <entry>
       <title>Existential Dilemma</title>
-      <link href="2021-02-20-20210220untitled-0/"/>
-      <url>2021-02-20-20210220untitled-0/</url>
+      <link href="2021-02-20-Existential-Dilemma/"/>
+      <url>2021-02-20-Existential-Dilemma/</url>
       
         <content type="html"><![CDATA[<p><em>À Bout de Souffle</em>, 戈達爾的《筋疲力盡》，向我們展示了這樣一個存在主義的困境。女主人公Patricia不清楚自己到底是因為自己不自由而不開心，還是因為自己不開心而不自由。她忽而激烈的抵觸追求她的Michel，又忽而對他投懷送抱，到最後甚至把縈繞在自己身上的哲學問題拋給了這個男人。Michel，如果以傳統的眼光來看的話，他是一個不折不扣的流氓，他若無其事的殺掉一個警察，又若無其事的在巴黎的大街上閒逛，與女孩打情罵俏。第一次看完整部影片，我心裡面是有一個大大的問號的，作為「新浪潮」的開山之石，在鼻音濃厚的法語對話和單調乏味的黑白色彩里，很難不感到昏昏欲睡，全片也似乎沒有一個明確的情節，或者說沒有一條顯著的故事線，以至於我回倒了好幾遍，找到一個個自認為關鍵的情節點開始梳理，卻也覺得不知其所。就是這樣的一部影片，在電影史上具有舉足輕重的地位。那時的我還不瞭解電影歷史，雖然早早的瀏覽過一遍<a href="https://www.amazon.com/认识电影-（全彩插图第12版）-美-路易斯·贾内梯（Louis-Giannetti）/dp/B01MG7F8M0" target="_blank" rel="noopener">《認識電影》</a>，書裡面講述過的剪輯手法也好啦、場面調度也好啦，全都拋之腦後了；也不瞭解60年代的法國和西方世界的左傾運動；更是不懂哲學啦，什麼存在主義、荒誕主義之類的，加繆？聽說過，也看過《局外人》，但也僅僅是局限於豆瓣讀書TPO100的程度，還在貴國牆裡面念高中的我哪裡有機會去瞭解《局外人》的創作背景和加繆本人的故事——完全是當作一個獵奇而乏味的、翻譯腔明顯的小故事來讀的。</p><p>所以，當這個世界一點一點向我撕開它的偽裝，讓我得以將之前所見的斷片拼湊起來，就像殘缺不全而尚未完成的拼圖的那樣，我也時常感嘆這背後複雜的玄機，人文，自然科學，工學，藝術，他們之間的聯繫是那麼的緊密，與我正在積極探索的領域相對應的，我的愛好也在不斷的變化之中。自高中開始，我就一直有種奇妙的「未充分準備好」的感受，其形成之初因，大抵是對於高考這場容錯率極低的試驗的自適應。直到高中畢業後第四年的今日，我也常常夢到高考迫在眉睫但我語文/數學/…還完全沒有復習這樣的場景，這樣的情景對於我的潛意識來說是個非常糟糕的狀態，以至於每每夢到類似的場景我都會感到全身緊繃，絕望和無助。到現在，我也為這種「匆匆準備」的心理預期而累，倒也不是我每日都被自己內心壓迫著去工作、去學習，而是我在大部分休憩的時間也感到一種稍縱即逝的不安感。日復一日的假定自己沒有「準備好」，沒有做足夠的工作去應付專業課的考試，沒有準備好托福、日本語能力測試，不單是各種測驗，這樣的「應試思維」誠然已經延展到了我生活中的每個部分，我的愛好，我的人際關係，我的職業規劃。我會因為這周沒有看完某幾部特定的電影而自責，會因為不自知的玩了一下午遊戲而沒有按照計劃學習法語/德語而深深懊悔，甚至會由於最近兩三天沒有攝入足夠的膳食纖維坐立不安。焦慮就是這樣overwhelming。最近一段時間，則是因為畢業設計的問題，每天都寢食難安，下午夕陽西沈的時間，孤獨、恐懼、荒誕，令人毛骨悚然的情緒盤旋在我的房間裡面，我感到一切都是沒有意義的。</p><p>那麼是沒有意義的嗎？所以我最近開始探索哲學這一方面了。老實說，哲學的著作是非常乏味的。ZJU有一門《希臘羅馬哲學》的通識課，我試著去讀過亞里士多德的《尼各馬可倫理學》。無果。太令人感到無趣了。我想有很大一部分的原因是翻譯的問題，歐洲語言按字翻譯成中文的時候總是繁瑣冗長的，formidable and daunting. 我們的思緒就在繞來繞去的中文表達里迷失，然後飛到書本之外去了。我不清楚是不是只有我一個人有這樣的經歷。正好今日在家中做一些清掃，我翻到了學生時代曾購買過的「村味」封面和排版的文學名著們，如《愛的教育》《巨人傳》等，總之，感謝貴國義務教育階段的「世界文學名著」，那些拗口而難記的人名，深深的勸退了我，有點不好意思的承認，我幾乎從未完整的讀完過任意一本翻譯過來的「文學名著」，現在個人對中文譯本的抵觸和排斥、至於看書一定要找到對應的英文、日文原版來翻看，大概由此起吧。希臘羅馬時代哲學讓人昏昏欲睡，但二十世紀的哲學又是那麼有意思，譬如存在主義，它講到是我們每個人在生命中不斷作出的選擇塑造了我們的本質，我們不是生來就是善或惡的，這是多麼有趣啊，我最近這段時間一直在思考這些問題，以前就根本沒有這樣的想法，現在——經歷了「這麼多事」之後，我也算是切身實地的體會到了世界的「Absurdity」，從而想要更加清楚的理解我們的生命。認識到哲學的趣味，還是因為去瞭解了大量的影視作品背後的創作思想。好的作品，它結合了藝術、音樂、歷史、哲學，把創作者吃過的無數偉大的作品提煉、發酵，再澆築成新的摩天大樓。伍迪艾倫把大文豪們的風流軼事都拍進了《午夜巴黎》，荒木sen sei用自己喜歡的搖滾樂隊及其作品名來為自己漫畫里的人物和招數命名，《猜火車》的背後是貫穿整個90s頹廢而輝煌的Britpop，Rick &amp; Morty 整整四季的無釐頭的平行宇宙歷險都是為了探討存在和荒誕的無數種可能性，甚至你可以說《Magica☆Madoka》和《Steins:gate》就是宅文化寄居在宅文化之上像珊瑚蟲形成環礁一樣最後開出的絢爛的花。類似的例子太多太多。</p><p>所以，我目前繼續活下去的理由，是為了「瞭解更多」。我想瞭解這個世界，這個宇宙。想看到意識形態和政權的交替，想聽到美妙的音樂、讀到更抓緊人心的故事，我想見證人類這樣的有機生命體創造出Cyborg硅基「生命體」的時代。我的選擇，造就了我本身，那我本身就更像是一個觀光客吧，我也希望自己是一個觀光客。這是到今天為止的我的想法，隨著我學到更多的東西，它還在飛速的改變之中。</p><p>附：</p><p><a href="https://telegra.ph/What-Jean-Luc-Godard-Taught-Me-About-My-Current-Existential-Crisis--by-Caroline-Alice-Guerin-02-20" target="_blank" rel="noopener">https://telegra.ph/What-Jean-Luc-Godard-Taught-Me-About-My-Current-Existential-Crisis--by-Caroline-Alice-Guerin-02-20</a></p>]]></content>
       
@@ -1182,9 +1182,9 @@
       
         <tags>
             
-            <tag> japanese </tag>
-            
             <tag> yofukashi </tag>
+            
+            <tag> japanese </tag>
             
         </tags>
       
@@ -1303,12 +1303,12 @@
       <link href="2020-12-31-Untitled-25/"/>
       <url>2020-12-31-Untitled-25/</url>
       
-        <content type="html"><![CDATA[<p>我一直在思考，怎麼度過糟糕的2020年的最後一天。這簡直太讓人心煩了。我應該出去看一場電影？我應該去西湖、去西溪濕地閒逛一天？我應該找幾個朋友出去大搓一頓？還是應該上Coursera好好學習，以表示接下來的時間我將努力準備跑路？</p><p>這種無謂的尋求紀念的想法本身就讓這一天變得很糟糕了。我焦灼不安，有一股巨大的美好事物將要逝去的感傷和無可奈何，儘管2020不能稱得上叫人懷念，但對於我來說這意味著我20歲的開端。我一定要做點什麼。事實上，我並沒有那種可以在12月31日做出什麼讓人大跌眼鏡的事情的能力。我是那麼的普通和平庸。從睜開眼起就伴隨著我的那股惴惴不安的焦慮其實是我內心對自身的mediocrity的震怒。</p><p>回過頭來看自己的人生，又何嘗不是充滿了這種刻意的紀念符號呢？坦率來講，我是個非常乏味的人。我缺少一些能讓我像打了雞血一樣主動去狂熱擁抱的愛好。從小到大我最擅長做的事就是fitting-in，強迫著自己去融入與周圍的環境，不停的洗刷心目中自己的形象，讓他顯得不那麼weird，不那麼在別人眼前抬不起頭。《進擊的巨人》裡面的ライナー和ベルトルト不也是這樣才潛伏進調查兵團的嗎？不斷的給自己的靈魂灌輸虛假的幻想，直到誕生多個人格，分不清自己到底是へいし還是せんし。所以，我這樣ダメな人間，也就是依賴於如此的紀念符號而存活至今的。它們是我的假面，是我人格的支柱，就像程式設計裡面一個類的屬性和方法一樣。</p><p>說了這麼多，我現在，只是有點厭倦這種無謂的假裝了。劉瑜說，她並不是在交友方面有什麼障礙，大多數時候她只是懶，懶得去經營一段關係。我現在也不是得了什麼抑鬱症才對周圍缺乏興趣，只是懶得去發現那些可做可不做的事情，懶得去打卡，去花費功夫去消耗機體的能量，去搜羅一筐標籤貼在自己身上，然後靠他人的目光來定義自己。</p><p>2021，我懶得做這些事了。</p><p>杭州的嚴冬，手腳都凍得無法屈伸，日程表上，畢業設計、期末考試⋯⋯我累了。2020的最後一天，我不想出門看電影，不想逛街不想跟人類聚餐，不想高談闊論許下一堆實現不了的resolution，不想參與ZJU學生節的狂歡，也不想裝作我熱愛學習。我只想躺在床上，開著空調，慵懶的度過一下午而已。打開窗戶走到陽台，零攝氏度的冷空氣瞬間包圍了我，對面宿舍的樓上西斜的陽光，樓下電動車的鳴叫，難得的空氣質量優秀，遠處能望見申花地區層層疊疊的高層住宅。</p><p>假裝今天不是2020的最後一天。2020不值得紀念。</p><p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gm75wxvi64j312i0u0e81.jpg" alt=""><br><em>by iPhone 12 mini, NOMO 135Ti</em></p>]]></content>
+        <content type="html"><![CDATA[<p>我一直在思考，怎麼度過糟糕的2020年的最後一天。這簡直太讓人心煩了。我應該出去看一場電影？我應該去西湖、去西溪濕地閒逛一天？我應該找幾個朋友出去大搓一頓？還是應該上Coursera好好學習，以表示接下來的時間我將努力準備跑路？</p><p>這種無謂的尋求紀念的想法本身就讓這一天變得很糟糕了。我焦灼不安，有一股巨大的美好事物將要逝去的感傷和無可奈何，儘管2020不能稱得上叫人懷念，但對於我來說這意味著我20歲的開端。我一定要做點什麼。事實上，我並沒有那種可以在12月31日做出什麼讓人大跌眼鏡的事情的能力。我是那麼的普通和平庸。從睜開眼起就伴隨著我的那股惴惴不安的焦慮其實是我內心對自身的mediocrity的震怒。</p><p>回過頭來看自己的人生，又何嘗不是充滿了這種刻意的紀念符號呢？坦率來講，我是個非常乏味的人。我缺少一些能讓我像打了雞血一樣主動去狂熱擁抱的愛好。從小到大我最擅長做的事就是fitting-in，強迫著自己去融入與周圍的環境，不停的洗刷心目中自己的形象，讓他顯得不那麼weird，不那麼在別人眼前抬不起頭。《進擊的巨人》裡面的ライナー和ベルトルト不也是這樣才潛伏進調查兵團的嗎？不斷的給自己的靈魂灌輸虛假的幻想，直到誕生多個人格，分不清自己到底是へいし還是せんし。所以，我這樣ダメな人間，也就是依賴於如此的紀念符號而存活至今的。它們是我的假面，是我人格的支柱，就像程式設計裡面一個類的屬性和方法一樣。</p><p>說了這麼多，我現在，只是有點厭倦這種無謂的假裝了。劉瑜說，她並不是在交友方面有什麼障礙，大多數時候她只是懶，懶得去經營一段關係。我現在也不是得了什麼抑鬱症才對周圍缺乏興趣，只是懶得去發現那些可做可不做的事情，懶得去打卡，去花費功夫去消耗機體的能量，去搜羅一筐標籤貼在自己身上，然後靠他人的目光來定義自己。</p><p>2021，我懶得做這些事了。</p><p>杭州的嚴冬，手腳都凍得無法屈伸，日程表上，畢業設計、期末考試⋯⋯我累了。2020的最後一天，我不想出門看電影，不想逛街不想跟人類聚餐，不想高談闊論許下一堆實現不了的resolution，不想參與ZJU學生節的狂歡，也不想裝作我熱愛學習。我只想躺在床上，開著空調，慵懶的度過一下午而已。打開窗戶走到陽台，零攝氏度的冷空氣瞬間包圍了我，對面宿舍的樓上西斜的陽光，樓下電動車的鳴叫，難得的空氣質量優秀，遠處能望見申花地區層層疊疊的高層住宅。</p><p>假裝今天不是2020的最後一天。2020不值得紀念。</p><p><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20230312021422.png" alt=""></p><p><em>by iPhone 12 mini, NOMO 135Ti</em></p>]]></content>
       
       
       <categories>
           
-          <category> Tweets </category>
+          <category> Milestones </category>
           
       </categories>
       
@@ -1575,9 +1575,9 @@
       
         <tags>
             
-            <tag> feminism </tag>
-            
             <tag> hk </tag>
+            
+            <tag> feminism </tag>
             
             <tag> politics </tag>
             
@@ -1589,8 +1589,8 @@
     
     <entry>
       <title>本次hexo项目从老mac迁移到新mac上遇到的问题种种</title>
-      <link href="2020-11-24-blog/"/>
-      <url>2020-11-24-blog/</url>
+      <link href="2020-11-24-blog-migration/"/>
+      <url>2020-11-24-blog-migration/</url>
       
         <content type="html"><![CDATA[<h1 id="git子模块的相关问题"><a href="#git子模块的相关问题" class="headerlink" title="git子模块的相关问题"></a>git子模块的相关问题</h1><p>主要是<code>/hexo/themes/</code>下的主题dir的git提交问题。由于我最开始是直接从主题的github repo页面上拉下来的，当时对git的理解还不够深入， </p><p><a href="https://www.hozen.site/archives/23/" target="_blank" rel="noopener">https://www.hozen.site/archives/23/</a></p><p>我的做法：<br>· 重新fork了一下 hexo-theme-next<br>· 把它添加到了我的子模块<br>· 直接mv -d 了原有的next模块<br>· 从mbp2015上拷贝了config.yml，并更改主题名为hexo-theme-next<br>（此处复习一下vim前后段尾是<code>{</code> , <code>}</code>两个键  ）</p><p>但在我做完以上步骤之后，git submodule</p><p><img src="../img/image-20201203145349582.png" alt="image-20201203145349582"></p><p>这应该是原来旧版本里面还留着上个next主题的submodule配置信息。</p><p>查询csdn，<strong>删除子模块的步骤</strong></p><blockquote><p> 有时子模块的项目维护地址发生了变化，或者需要替换子模块，就需要删除原有的子模块。</p><p>删除子模块较复杂，步骤如下：</p><p>· rm -rf 子模块目录 删除子模块目录及源码</p><p>· vi .gitmodules 删除项目目录下.gitmodules文件中子模块相关条目</p><p>· vi .git/config 删除配置项中子模块相关条目</p><p>· rm .git/module/* 删除模块下的子模块目录，每个子模块对应一个目录，注意只删除对应的子模块目录即可</p></blockquote><p>此时我再执行以上步骤之前，重新add, commit了一次，再查看以上配置文件，均没有老next的记录了。</p><p>再运行一次<code>git submodule</code></p><p><img src="../img/image-20201203145611504.png" alt="image-20201203145611504"></p><p>恢复。</p><h1 id="2-node-v14弹warning"><a href="#2-node-v14弹warning" class="headerlink" title="2.node v14弹warning"></a>2.node v14弹warning</h1><p>这个很无解，好像是stylus的问题，我难得再去debug了，选择直接回滚到v12。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo n 12.18.2</span><br></pre></td></tr></table></figure><p>要注意的是好像也会node_module里面的hexo依赖包也会在node版本回滚之后出现问题，要重新装一遍，这里我记得似乎是终端会自动弹出一个warning和建议重装的命令，直接复制了执行之后就ok了。</p><h1 id="3-关于git-log"><a href="#3-关于git-log" class="headerlink" title="3.关于git log"></a>3.关于git log</h1><p>这个就太好笑了，我把上面的破事处理完之后直接部署到github pages然后发现我的博文只更新到了今年7月份，后面的新文章都🈚️了，最后发现是我用git log回滚了版本，然后git log返回的提交记录在终端显示的时间顺序居然是从下往上，最上面是最新的提交<em>（因为命令行返回信息之后，等待输入的新行肯定是跟<strong>最下面的一行</strong>最接近，理所应当的应该让最下面的一条记录显示最新版本才对吧）</em>。就这样我的所有博文直接回到了7月。</p><h1 id="4-one-more-thing-post的最后编辑时间。"><a href="#4-one-more-thing-post的最后编辑时间。" class="headerlink" title="4.one more thing: post的最后编辑时间。"></a>4.one more thing: post的最后编辑时间。</h1><p>还有一个很让人头疼的事，每次迁移hexo项目之后，所有博文的最后编辑时间都会变成迁移的时间，尽管你并未做任何修改，这就又让人迷惑，又让真实的最后编辑时间消失了。这个问题我还没去解决，大概搜索了一下，<a href="https://blog.vanxnf.top/2018/09/03/Hexo-博客-Hiker-主题增加文章最后编辑时间，并按照最后编辑时间排序/" target="_blank" rel="noopener">贴个链接 </a>。</p><p>ps. 目前（2020.12.3）使用的主题cactus好像并没有贴出博文的最后编辑时间，所以可以先不用管这个问题……</p>]]></content>
       
@@ -1675,9 +1675,9 @@
       
         <tags>
             
-            <tag> github </tag>
-            
             <tag> git </tag>
+            
+            <tag> github </tag>
             
         </tags>
       
@@ -1747,7 +1747,7 @@
       
       <categories>
           
-          <category> Tweets </category>
+          <category> Milestones </category>
           
       </categories>
       
@@ -1964,9 +1964,9 @@
       
         <tags>
             
-            <tag> shell </tag>
-            
             <tag> vim </tag>
+            
+            <tag> shell </tag>
             
         </tags>
       
@@ -2099,11 +2099,11 @@
       
         <tags>
             
-            <tag> shell </tag>
-            
             <tag> termius </tag>
             
             <tag> vim </tag>
+            
+            <tag> shell </tag>
             
         </tags>
       
@@ -2184,9 +2184,9 @@
       
         <tags>
             
-            <tag> china </tag>
-            
             <tag> hk </tag>
+            
+            <tag> china </tag>
             
         </tags>
       
@@ -2257,9 +2257,9 @@
       
         <tags>
             
-            <tag> tweets </tag>
-            
             <tag> daily </tag>
+            
+            <tag> tweets </tag>
             
         </tags>
       
@@ -2338,9 +2338,9 @@
             
             <tag> hexo </tag>
             
-            <tag> github </tag>
-            
             <tag> git </tag>
+            
+            <tag> github </tag>
             
         </tags>
       
@@ -2365,9 +2365,9 @@
       
         <tags>
             
-            <tag> ohmyzsh </tag>
-            
             <tag> shell </tag>
+            
+            <tag> ohmyzsh </tag>
             
         </tags>
       
@@ -2648,8 +2648,8 @@
     
     <entry>
       <title>开博碎碎念</title>
-      <link href="2020-06-05-20200605%E5%BC%80%E5%8D%9A%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
-      <url>2020-06-05-20200605%E5%BC%80%E5%8D%9A%E7%A2%8E%E7%A2%8E%E5%BF%B5/</url>
+      <link href="2020-06-05-%E5%BC%80%E5%8D%9A%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+      <url>2020-06-05-%E5%BC%80%E5%8D%9A%E7%A2%8E%E7%A2%8E%E5%BF%B5/</url>
       
         <content type="html"><![CDATA[<h1 id="终于开博了"><a href="#终于开博了" class="headerlink" title="终于开博了"></a>终于开博了</h1><p>写博客这件事早就在窝佬todolist上躺了很久，但是一直没能将其实现，一是前端知识学习进展缓慢，天花乱坠的配置砸过来已经够让人头晕了，更别说自己在看不懂的框架语言里面改css，把博客做成自己看得顺眼的样子，二就是懒癌了。当然，毕竟已经2020，生命的意义和时代精神就是四处搬轮子，可谓destinationism，也不是不可以理解。<br><a id="more"></a><br>TBH，用Hexo是因为仅仅花了点时间看了hexo的文档，再加上操作简便，GithubPages自动配置深得人心，还有一些广为人知的热门theme，就干脆先用着比较好。虽然<code>&lt;usrname&gt;.github.io</code>这个repo的page只能强制部署到<code>master</code> branch，而hexo框架本身生成的网页在github上的<code>Gh-page</code>，关于这一点<a href="https://github.com/fastai/fastpages/issues/119#issuecomment-591025246" target="_blank" rel="noopener">开发团队自己都还没有解决方案</a>，所以窝佬自己的<code>github.io</code>repo上<strong>仅有hexo生成的网页，没有hexo项目源文件</strong>&lt;/u&gt;。<del>考虑到本MacBook年寿已高，随时用时光机备份也不太现实，暂时定期考虑把本博客源码在iCloud上留个备份。</del></p><blockquote><p>@chekos fastpages currently doesn’t support user pages, only project pages. So you must name your repo something other than paco-el-chato.github.io, for example name your repo blog.</p><p>— hamelsmu commented on 26 Feb</p></blockquote><p>另外，Temporarily本博客是部署在GP上的，自由世界访问是没问题的，但是墙国直连问题就多多，即便如此，窝佬也没有部署到coding上的打算，毕竟如果连正确上网的姿势都不会的人，也没有向他们分享<del>沙雕新闻</del>生活的意愿惹。</p><h1 id="有什么可写的"><a href="#有什么可写的" class="headerlink" title="有什么可写的"></a>有什么可写的</h1><p>嗯，一直就想用Blog来取缔<a href="www.yinxiang.com">印象笔记</a>，虽然编辑什么的是麻烦一点，但是它客户端再不<em>轻量</em>和<em>支持md</em>的话，我今年双十一是不会再给它续费了。经过一个月的尝试之后，在窝这Notion和本地的Typora都可以取代它，更别说国区还有死妈审查，这都让人对写笔记丧失了热情。<em>Sublime</em>的md功能大概只能显示一些特别基础的样式，窝猜应该还有更好用的md插件，等会研究一下。</p><p>[ ] sumlime markdown<br>[ ] blog decoration</p><h1 id="建站过程与心得"><a href="#建站过程与心得" class="headerlink" title="建站过程与心得"></a>建站过程与心得</h1><p>嗯，本站的建站经历，在之后也会一一分享到本博客上，主要是hexo的傻瓜式配置和<code>hexo-theme-next</code>主题的DIY。最近要期末了，所以不会更新地太频繁。</p><h3 id="就酱，本站于今日开博，虽然现在啥都没有。"><a href="#就酱，本站于今日开博，虽然现在啥都没有。" class="headerlink" title="就酱，本站于今日开博，虽然现在啥都没有。"></a>就酱，本站于今日开博，虽然现在啥都没有。</h3>]]></content>
       
@@ -2683,7 +2683,7 @@
       
       <categories>
           
-          <category> News Comments </category>
+          <category> Milestones </category>
           
       </categories>
       
