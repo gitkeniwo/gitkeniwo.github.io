@@ -32,7 +32,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20230125150344.png">
 <meta property="article:published_time" content="2023-01-25T06:25:55.000Z">
-<meta property="article:modified_time" content="2023-03-12T01:28:02.079Z">
+<meta property="article:modified_time" content="2023-03-12T01:28:47.153Z">
 <meta property="article:author" content="ケニヲ">
 <meta property="article:tag" content="image-hosting">
 <meta name="twitter:card" content="summary">
@@ -76,8 +76,7 @@
     
 <meta name="generator" content="Hexo 4.2.1"></head>
 
-<body class="max-width mx-auto px3 ltr">
-    
+<body class="max-width mx-auto px3 ltr">    
       <div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
@@ -190,7 +189,7 @@
 <p><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20230125150344.png" alt=""></p>
 <p>想到之前看到有人说web2.0系的平台，因为是freemium模式，平台的用户本身就是他们的盈利点。用户的digital property自然也不由用户自己掌控。<br>现在即便是想补图，也无从知晓这里究竟放的是什么图片了。以后图片要么放可以信赖的渠道(Github)，要么还是放在本地吧。不氪金的东西不可能长久。</p>
 <p><em>Update (Mar 12 2023)</em> </p>
-<p>似乎在原链前加入一个 cdn.cdnjson.com/ 就能通过这个cdn访问到原图. 原图没有被删掉, 而是做了防盗链, 然后赶紧都换成别的源吧。。。</p>
+<p>似乎在原链前加入一个 <code>cdn.cdnjson.com/</code> 就能通过这个cdn访问到原图. 原图没有被删掉, 而是做了防盗链, 然后赶紧都换成别的源吧。。。</p>
 <p>根据<a href="https://juejin.cn/post/7189651446306963514" target="_blank" rel="noopener">这篇文章</a>，这tva1～4挂掉不只是我一个，是大规模事件. 这个人还写了如何全部替换图链的操作，具体可以去他文章里看。重点他说不推荐用github作为图床，因为官方建议仓库维持在1G内，然后他推荐了<a href="https://www.qiniu.com/" target="_blank" rel="noopener">七牛云</a>免费10G空间，不过我对墙内公司的freemium商业模式深表怀疑(Heroku的免费档都做不下去，🀄️人一来不得把它薅空？)，另外就是你不能存维尼熊不爱看的图。我去下载了一下GitHub图床的repo，现在都121M了，还是非常担心这个repo被GitHub官方橄榄掉的。</p>
 
   </div>
@@ -353,6 +352,24 @@
             (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
         }());
     </script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+
 
 
 </body>
