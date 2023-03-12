@@ -8,7 +8,7 @@
       <link href="2023-03-11-Internets-Richest-Fitness-Resource/"/>
       <url>2023-03-11-Internets-Richest-Fitness-Resource/</url>
       
-        <content type="html"><![CDATA[<p>逛HN时偶然看见了这篇<a href="https://news.ycombinator.com/item?id=35080836" target="_blank" rel="noopener">The Internet’s Richest Fitness Resource Is a Site from 1999</a>，讲<a href="https://www.newyorker.com/culture/rabbit-holes/the-internets-richest-fitness-resource-is-a-site-from-1999" target="_blank" rel="noopener">New Yorker 推荐了</a>一个fitness网站: <a href="exrx.net">exrx.net</a><br>神奇的是，这网站不仅从1999年建站后就没怎么变过，而且拥有巨量的fitness信息——new yorker文章里用的是”physiological compendium”一词.</p><p>ExRx网站是没有javascript的。文章作者大赞了其简洁而不失内容排布的风格. </p><blockquote><p>ExRx makes its organizational logic plain. Its pages adopt the structure of unordered lists—uniform and sturdy…unlike elsewhere on the modern Internet, on ExRx you are never lost.<br>the site’s plain face lends it a certain authority. In a fitness ecosystem dominated by new- and old-school flash, from personal trainers on the hard sell to influencers with soft power, exrx.net treats me like an adult. If Instagram Reels and TikTok videos are the solicitous pusher on commission, ExRx is a librarian—or, better yet, the library itself.</p></blockquote><p>这种unordered list的布局，让我想到了两个python作图库matplotlib和plotly的gallery</p><ul><li><a href="https://plotly.com/python/" target="_blank" rel="noopener">https://plotly.com/python/</a></li><li><a href="https://matplotlib.org/stable/gallery/index.html" target="_blank" rel="noopener">https://matplotlib.org/stable/gallery/index.html</a></li></ul><p>甚至sklearn 的doc也有种类似的美感. 尽管它们的nav肯定是javascript写的</p><ul><li><a href="https://scikit-learn.org/stable/" target="_blank" rel="noopener">https://scikit-learn.org/stable/</a></li></ul><p>With that being said, <a href="http://nil.csail.mit.edu/6.824/2022/schedule.html" target="_blank" rel="noopener">MIT 6.824 (Distributed System)</a>的课程主页也是纯html的样子. 记得以前 <a href="https://www.cs.cmu.edu/~213/" target="_blank" rel="noopener">CMU 15-213 (CSAPP)</a>和 <a href="https://cs61a.org/" target="_blank" rel="noopener">Berkeley CS 61A</a>的主页也都是纯html，出于好奇去翻了下，发现现在都改版了很多，不过一眼看上去还是保留了很多prejavascript时代的设计风格. CS和AI领域很多大牛的主页都是没有css的，有时候最简洁的才是最令人震撼的.</p><p>像<a href="https://terrytao.wordpress.com/" target="_blank" rel="noopener">Terence Tao这种</a>接近复古 (但实际是wordpress，应该是伪复古) 的主页也是一看就很学术，没话说了.</p><p>窝这种抖机灵 + horribly buggy 的 Node.js blog想必位于鄙视链最底端……</p>]]></content>
+        <content type="html"><![CDATA[<p>逛HN时偶然看见了这篇<a href="https://news.ycombinator.com/item?id=35080836" target="_blank" rel="noopener">The Internet’s Richest Fitness Resource Is a Site from 1999</a>，讲<a href="https://www.newyorker.com/culture/rabbit-holes/the-internets-richest-fitness-resource-is-a-site-from-1999" target="_blank" rel="noopener">New Yorker 推荐了</a>一个fitness网站: <a href="exrx.net">exrx.net</a></p><p>这网站神奇的是，它不仅从1999年建站后就没怎么变过，而且拥有巨量的fitness信息——new yorker文章里用的是”physiological compendium”一词.</p><p>ExRx网站是没有javascript的。文章作者大赞了其简洁而不失内容排布的风格. </p><blockquote><p>ExRx makes its organizational logic plain. Its pages adopt the structure of unordered lists—uniform and sturdy…unlike elsewhere on the modern Internet, on ExRx you are never lost.<br>the site’s plain face lends it a certain authority. In a fitness ecosystem dominated by new- and old-school flash, from personal trainers on the hard sell to influencers with soft power, exrx.net treats me like an adult. If Instagram Reels and TikTok videos are the solicitous pusher on commission, ExRx is a librarian—or, better yet, the library itself.</p></blockquote><p>这种unordered list的布局，让我想到了两个python作图库matplotlib和plotly的gallery</p><ul><li><a href="https://plotly.com/python/" target="_blank" rel="noopener">https://plotly.com/python/</a></li><li><a href="https://matplotlib.org/stable/gallery/index.html" target="_blank" rel="noopener">https://matplotlib.org/stable/gallery/index.html</a></li></ul><p>甚至sklearn 的doc也有种类似的美感. 尽管它们的nav肯定是javascript写的</p><ul><li><a href="https://scikit-learn.org/stable/" target="_blank" rel="noopener">https://scikit-learn.org/stable/</a></li></ul><p>With that being said, <a href="http://nil.csail.mit.edu/6.824/2022/schedule.html" target="_blank" rel="noopener">MIT 6.824 (Distributed System)</a>的课程主页也是纯html的样子. 记得以前 <a href="https://www.cs.cmu.edu/~213/" target="_blank" rel="noopener">CMU 15-213 (CSAPP)</a>和 <a href="https://cs61a.org/" target="_blank" rel="noopener">Berkeley CS 61A</a>的主页也都是纯html，出于好奇去翻了下，发现现在都改版了很多，不过一眼看上去还是保留了很多prejavascript时代的设计风格. CS和AI领域很多大牛的主页都是没有css的，有时候最简洁的才是最令人震撼的.</p><p>像<a href="https://terrytao.wordpress.com/" target="_blank" rel="noopener">Terence Tao这种</a>接近复古 (但实际是wordpress，应该是伪复古) 的主页也是一看就很学术，没话说了.</p><p>窝这种抖机灵 + horribly buggy 的 Node.js blog想必位于鄙视链最底端……</p>]]></content>
       
       
       <categories>
@@ -40,6 +40,31 @@
         <content type="html"><![CDATA[]]></content>
       
       
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>2012 + 5x, where x = 3,4,5...</title>
+      <link href="2023-03-10-2012-5x/"/>
+      <url>2023-03-10-2012-5x/</url>
+      
+        <content type="html"><![CDATA[<p>今天墙内铺天盖地的宣传，但要么都是控评（机器人写新话赞美大洋国），要么都是想尽办法阉割自己指桑骂槐。</p><p>这其中看到的一个比较有创意的是某高校论坛每日一题栏目当天出了个题目是 <script type="math/tex">\lim\limits_{n \rightarrow \infty} (2012 + 5x)</script></p><p>大洋国的建立了史上前所未有的<a href="https://en.wikipedia.org/wiki/Panopticon" target="_blank" rel="noopener">全景监狱</a>，在什么学科都可能被「批倒批臭」的预期内，最好提前用尽一切办法来解构它。</p><p>不过是挣扎罢了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Milestones </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> china </tag>
+            
+        </tags>
       
     </entry>
     
@@ -199,11 +224,11 @@
       
         <tags>
             
-            <tag> 毒力撕烤 </tag>
-            
             <tag> china </tag>
             
             <tag> hk </tag>
+            
+            <tag> 毒力撕烤 </tag>
             
             <tag> ccp </tag>
             
@@ -897,9 +922,9 @@
             
             <tag> daily </tag>
             
-            <tag> 小并感 </tag>
-            
             <tag> zju </tag>
+            
+            <tag> 小并感 </tag>
             
         </tags>
       
@@ -1939,9 +1964,9 @@
       
         <tags>
             
-            <tag> vim </tag>
-            
             <tag> shell </tag>
+            
+            <tag> vim </tag>
             
         </tags>
       
@@ -2074,11 +2099,11 @@
       
         <tags>
             
+            <tag> shell </tag>
+            
             <tag> termius </tag>
             
             <tag> vim </tag>
-            
-            <tag> shell </tag>
             
         </tags>
       
@@ -2340,9 +2365,9 @@
       
         <tags>
             
-            <tag> shell </tag>
-            
             <tag> ohmyzsh </tag>
+            
+            <tag> shell </tag>
             
         </tags>
       

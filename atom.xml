@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://gitkeniwo.github.io/"/>
-  <updated>2023-03-12T00:38:20.280Z</updated>
+  <updated>2023-03-12T00:39:12.268Z</updated>
   <id>https://gitkeniwo.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://gitkeniwo.github.io/2023-03-11-Internets-Richest-Fitness-Resource/"/>
     <id>https://gitkeniwo.github.io/2023-03-11-Internets-Richest-Fitness-Resource/</id>
     <published>2023-03-11T17:29:08.000Z</published>
-    <updated>2023-03-12T00:38:20.280Z</updated>
+    <updated>2023-03-12T00:39:12.268Z</updated>
     
-    <content type="html"><![CDATA[<p>逛HN时偶然看见了这篇<a href="https://news.ycombinator.com/item?id=35080836" target="_blank" rel="noopener">The Internet’s Richest Fitness Resource Is a Site from 1999</a>，讲<a href="https://www.newyorker.com/culture/rabbit-holes/the-internets-richest-fitness-resource-is-a-site-from-1999" target="_blank" rel="noopener">New Yorker 推荐了</a>一个fitness网站: <a href="exrx.net">exrx.net</a><br>神奇的是，这网站不仅从1999年建站后就没怎么变过，而且拥有巨量的fitness信息——new yorker文章里用的是”physiological compendium”一词.</p><p>ExRx网站是没有javascript的。文章作者大赞了其简洁而不失内容排布的风格. </p><blockquote><p>ExRx makes its organizational logic plain. Its pages adopt the structure of unordered lists—uniform and sturdy…unlike elsewhere on the modern Internet, on ExRx you are never lost.<br>the site’s plain face lends it a certain authority. In a fitness ecosystem dominated by new- and old-school flash, from personal trainers on the hard sell to influencers with soft power, exrx.net treats me like an adult. If Instagram Reels and TikTok videos are the solicitous pusher on commission, ExRx is a librarian—or, better yet, the library itself.</p></blockquote><p>这种unordered list的布局，让我想到了两个python作图库matplotlib和plotly的gallery</p><ul><li><a href="https://plotly.com/python/" target="_blank" rel="noopener">https://plotly.com/python/</a></li><li><a href="https://matplotlib.org/stable/gallery/index.html" target="_blank" rel="noopener">https://matplotlib.org/stable/gallery/index.html</a></li></ul><p>甚至sklearn 的doc也有种类似的美感. 尽管它们的nav肯定是javascript写的</p><ul><li><a href="https://scikit-learn.org/stable/" target="_blank" rel="noopener">https://scikit-learn.org/stable/</a></li></ul><p>With that being said, <a href="http://nil.csail.mit.edu/6.824/2022/schedule.html" target="_blank" rel="noopener">MIT 6.824 (Distributed System)</a>的课程主页也是纯html的样子. 记得以前 <a href="https://www.cs.cmu.edu/~213/" target="_blank" rel="noopener">CMU 15-213 (CSAPP)</a>和 <a href="https://cs61a.org/" target="_blank" rel="noopener">Berkeley CS 61A</a>的主页也都是纯html，出于好奇去翻了下，发现现在都改版了很多，不过一眼看上去还是保留了很多prejavascript时代的设计风格. CS和AI领域很多大牛的主页都是没有css的，有时候最简洁的才是最令人震撼的.</p><p>像<a href="https://terrytao.wordpress.com/" target="_blank" rel="noopener">Terence Tao这种</a>接近复古 (但实际是wordpress，应该是伪复古) 的主页也是一看就很学术，没话说了.</p><p>窝这种抖机灵 + horribly buggy 的 Node.js blog想必位于鄙视链最底端……</p>]]></content>
+    <content type="html"><![CDATA[<p>逛HN时偶然看见了这篇<a href="https://news.ycombinator.com/item?id=35080836" target="_blank" rel="noopener">The Internet’s Richest Fitness Resource Is a Site from 1999</a>，讲<a href="https://www.newyorker.com/culture/rabbit-holes/the-internets-richest-fitness-resource-is-a-site-from-1999" target="_blank" rel="noopener">New Yorker 推荐了</a>一个fitness网站: <a href="exrx.net">exrx.net</a></p><p>这网站神奇的是，它不仅从1999年建站后就没怎么变过，而且拥有巨量的fitness信息——new yorker文章里用的是”physiological compendium”一词.</p><p>ExRx网站是没有javascript的。文章作者大赞了其简洁而不失内容排布的风格. </p><blockquote><p>ExRx makes its organizational logic plain. Its pages adopt the structure of unordered lists—uniform and sturdy…unlike elsewhere on the modern Internet, on ExRx you are never lost.<br>the site’s plain face lends it a certain authority. In a fitness ecosystem dominated by new- and old-school flash, from personal trainers on the hard sell to influencers with soft power, exrx.net treats me like an adult. If Instagram Reels and TikTok videos are the solicitous pusher on commission, ExRx is a librarian—or, better yet, the library itself.</p></blockquote><p>这种unordered list的布局，让我想到了两个python作图库matplotlib和plotly的gallery</p><ul><li><a href="https://plotly.com/python/" target="_blank" rel="noopener">https://plotly.com/python/</a></li><li><a href="https://matplotlib.org/stable/gallery/index.html" target="_blank" rel="noopener">https://matplotlib.org/stable/gallery/index.html</a></li></ul><p>甚至sklearn 的doc也有种类似的美感. 尽管它们的nav肯定是javascript写的</p><ul><li><a href="https://scikit-learn.org/stable/" target="_blank" rel="noopener">https://scikit-learn.org/stable/</a></li></ul><p>With that being said, <a href="http://nil.csail.mit.edu/6.824/2022/schedule.html" target="_blank" rel="noopener">MIT 6.824 (Distributed System)</a>的课程主页也是纯html的样子. 记得以前 <a href="https://www.cs.cmu.edu/~213/" target="_blank" rel="noopener">CMU 15-213 (CSAPP)</a>和 <a href="https://cs61a.org/" target="_blank" rel="noopener">Berkeley CS 61A</a>的主页也都是纯html，出于好奇去翻了下，发现现在都改版了很多，不过一眼看上去还是保留了很多prejavascript时代的设计风格. CS和AI领域很多大牛的主页都是没有css的，有时候最简洁的才是最令人震撼的.</p><p>像<a href="https://terrytao.wordpress.com/" target="_blank" rel="noopener">Terence Tao这种</a>接近复古 (但实际是wordpress，应该是伪复古) 的主页也是一看就很学术，没话说了.</p><p>窝这种抖机灵 + horribly buggy 的 Node.js blog想必位于鄙视链最底端……</p>]]></content>
     
     <summary type="html">
     
@@ -58,6 +58,33 @@
     </summary>
     
     
+    
+  </entry>
+  
+  <entry>
+    <title>2012 + 5x, where x = 3,4,5...</title>
+    <link href="https://gitkeniwo.github.io/2023-03-10-2012-5x/"/>
+    <id>https://gitkeniwo.github.io/2023-03-10-2012-5x/</id>
+    <published>2023-03-10T04:46:10.000Z</published>
+    <updated>2023-03-12T00:56:50.055Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天墙内铺天盖地的宣传，但要么都是控评（机器人写新话赞美大洋国），要么都是想尽办法阉割自己指桑骂槐。</p><p>这其中看到的一个比较有创意的是某高校论坛每日一题栏目当天出了个题目是 <script type="math/tex">\lim\limits_{n \rightarrow \infty} (2012 + 5x)</script></p><p>大洋国的建立了史上前所未有的<a href="https://en.wikipedia.org/wiki/Panopticon" target="_blank" rel="noopener">全景监狱</a>，在什么学科都可能被「批倒批臭」的预期内，最好提前用尽一切办法来解构它。</p><p>不过是挣扎罢了。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今天墙内铺天盖地的宣传，但要么都是控评（机器人写新话赞美大洋国），要么都是想尽办法阉割自己指桑骂槐。&lt;/p&gt;
+&lt;p&gt;这其中看到的一个比较有创意的是某高校论坛每日一题栏目当天出了个题目是 &lt;script type=&quot;math/tex&quot;&gt;\lim\limits_{n \righ
+      
+    
+    </summary>
+    
+    
+      <category term="Milestones" scheme="https://gitkeniwo.github.io/categories/Milestones/"/>
+    
+    
+      <category term="china" scheme="https://gitkeniwo.github.io/tags/china/"/>
     
   </entry>
   
@@ -227,11 +254,11 @@
       <category term="News Comments" scheme="https://gitkeniwo.github.io/categories/News-Comments/"/>
     
     
-      <category term="毒力撕烤" scheme="https://gitkeniwo.github.io/tags/%E6%AF%92%E5%8A%9B%E6%92%95%E7%83%A4/"/>
-    
       <category term="china" scheme="https://gitkeniwo.github.io/tags/china/"/>
     
       <category term="hk" scheme="https://gitkeniwo.github.io/tags/hk/"/>
+    
+      <category term="毒力撕烤" scheme="https://gitkeniwo.github.io/tags/%E6%AF%92%E5%8A%9B%E6%92%95%E7%83%A4/"/>
     
       <category term="ccp" scheme="https://gitkeniwo.github.io/tags/ccp/"/>
     
@@ -548,33 +575,6 @@
       <category term="daily" scheme="https://gitkeniwo.github.io/tags/daily/"/>
     
       <category term="毒力撕烤" scheme="https://gitkeniwo.github.io/tags/%E6%AF%92%E5%8A%9B%E6%92%95%E7%83%A4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>无需主题支持 在hexo博客开启Inline Math</title>
-    <link href="https://gitkeniwo.github.io/2022-02-23-inline-math/"/>
-    <id>https://gitkeniwo.github.io/2022-02-23-inline-math/</id>
-    <published>2022-02-23T12:07:23.000Z</published>
-    <updated>2023-01-25T13:28:05.849Z</updated>
-    
-    <content type="html"><![CDATA[<p>Let’s have a look at inline math. <script type="math/tex">2^6=64</script><br>还以为hexo用别人的主题就没办法支持Mathjax，都准备换到jekyll叻……</p><p>参考 <a href="https://www.jianshu.com/p/e8d433a2c5b7" target="_blank" rel="noopener"> 这篇post</a>.</p><p>下面原文复制过来：</p><p> <br></p><p>在 hexo 中，你会发现我们不能用 Latex 语法来书写数学公式，这对于书写学术博客来说是很大的不便，因为我们会经常碰到很多的数学公式推导，但是我们可以通过安装第三方库来解决这一问题。</p><p><strong>第一步： 使用Kramed代替 Marked</strong><br>hexo 默认的渲染引擎是 <code>marked</code>，但是 <code>marked</code> 不支持 mathjax。 <code>kramed</code> 是在 marked 的基础上进行修改。我们在工程目录下执行以下命令来安装 <code>kramed</code>.</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure><p>然后，更改<code>&lt;your-project-dir&gt;/node_modules/hexo-renderer-kramed/lib/renderer.js</code>，更改：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; Change inline math rule</span><br><span class="line">function formatText(text) &#123;</span><br><span class="line">&#x2F;&#x2F; Fit kramed&#39;s rule: $$ + \1 + $$</span><br><span class="line">return text.replace(&#x2F;&#96;\$(.*?)\$&#96;&#x2F;g, &#39;$$$$$1$$$$&#39;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; Change inline math rule</span><br><span class="line">function formatText(text) &#123;</span><br><span class="line">return text;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p><strong>第二步: 停止使用<code>hexo-math</code>.</strong></p><p>首先，如果你已经安装 <code>hexo-math</code>, </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-math --save</span><br></pre></td></tr></table></figure><p>然后安装 <code>hexo-renderer-mathjax</code> 包：<code>npm install hexo-renderer-mathjax --save</code></p><p><strong>第三步: 更新 Mathjax 的 CDN 链接</strong></p><p>首先，打开<code>&lt;path-to-your-project&gt;/node_modules/hexo-renderer-mathjax/mathjax.html</code></p><p>然后，把<code>&lt;script&gt;</code>更改为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src&#x3D;&quot;https:&#x2F;&#x2F;cdnjs.cloudflare.com&#x2F;ajax&#x2F;libs&#x2F;mathjax&#x2F;2.7.1&#x2F;MathJax.js?config&#x3D;TeX-MML-AM_CHTML&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure></p><p><strong>第四步: 更改默认转义规则</strong></p><p>因为 hexo 默认的转义规则会将一些字符进行转义，比如 <code>_</code> 转为 <code>&lt;em&gt;</code>, 所以我们需要对默认的规则进行修改.<br>首先， 打开<code>&lt;path-to-your-project&gt;/node_modules/kramed/lib/rules、inline.js</code>,</p><p>然后，把:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">escape: &#x2F;^\\([\\&#96;*&#123;&#125;\[\]()#$+\-.!_&gt;])&#x2F;,</span><br></pre></td></tr></table></figure><br>更改为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">escape: &#x2F;^\\([&#96;*\[\]()# +\-.!_&gt;])&#x2F;,</span><br></pre></td></tr></table></figure><br>把<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">em: &#x2F;^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)&#x2F;,</span><br></pre></td></tr></table></figure><br>更改为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">em: &#x2F;^\*((?:\*\*|[\s\S])+?)\*(?!\*)&#x2F;,</span><br></pre></td></tr></table></figure></p><p><strong>第五步: 开启<code>mathjax</code></strong></p><p>在主题 <code>_config.yml</code> 中开启 <code>Mathjax</code>， 找到 <code>mathjax</code> 字段添加如下代码：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mathjax:</span><br><span class="line">enable: true</span><br></pre></td></tr></table></figure><p>这一步可选，在博客中开启 Mathjax， 添加以下内容：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Testing Mathjax with Hexo</span><br><span class="line">category: Uncategorized</span><br><span class="line">date: 2017&#x2F;05&#x2F;03</span><br><span class="line">mathjax: true</span><br><span class="line">---</span><br></pre></td></tr></table></figure><p>通过以上步骤，我们就可以在 hexo 中使用 <code>Mathjax</code> 来书写数学公式。</p><p>作者：MaosongRan<br>链接：<a href="https://www.jianshu.com/p/e8d433a2c5b7" target="_blank" rel="noopener">https://www.jianshu.com/p/e8d433a2c5b7</a><br>来源：简书</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Let’s have a look at inline math. &lt;script type=&quot;math/tex&quot;&gt;2^6=64&lt;/script&gt;&lt;br&gt;还以为hexo用别人的主题就没办法支持Mathjax，都准备换到jekyll叻……&lt;/p&gt;
-&lt;p&gt;参考 &lt;a href=
-      
-    
-    </summary>
-    
-    
-      <category term="Blogging" scheme="https://gitkeniwo.github.io/categories/Blogging/"/>
-    
-    
-      <category term="hexo" scheme="https://gitkeniwo.github.io/tags/hexo/"/>
     
   </entry>
   
