@@ -1199,7 +1199,7 @@ article .content blockquote {
   margin: 0.5rem 10px;
   padding: 0.5em 10px;
   background: inherit;
-  color: #ccffb6;
+  color: #74897f;
   quotes: "\201C" "\201D" "\2018" "\2019";
   font-weight: 600;
 }
@@ -1208,7 +1208,7 @@ article .content blockquote p {
 }
 article .content blockquote:before {
   margin-right: 0.25em;
-  color: #ccffb6;
+  color: #74897f;
   content: "\201C";
   vertical-align: -0.4em;
   font-size: 2em;
