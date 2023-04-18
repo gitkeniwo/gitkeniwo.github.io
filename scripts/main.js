@@ -70,17 +70,22 @@ var page = 1,
     offset = 0,
     nextLength = 0,
     nextDom = '';
+var tag='';
+var btnRemove = 0
 var memoDom = document.querySelector(memo.domId);
 var load = '<button class="load-btn button-load">努力加载中……</button>'
 if (memoDom) {
     memoDom.insertAdjacentHTML('afterend', load);
     getFirstList() // 首次加载数据
+	// 添加 button 事件监听器
+	btnRemove = 0;
     var btn = document.querySelector("button.button-load");
     btn.addEventListener("click", function () {
         btn.textContent = '努力加载中……';
         updateHTMl(nextDom)
         if (nextLength < limit) { // 返回数据条数小于限制条数，隐藏
             document.querySelector("button.button-load").remove()
+			btnRemove = 1
             return
         }
         getNextList()
@@ -94,6 +99,7 @@ function getFirstList() {
         var nowLength = resdata.data.length
         if (nowLength < limit) { // 返回数据条数小于 limit 则直接移除“加载更多”按钮，中断预加载
             document.querySelector("button.button-load").remove()
+			btnRemove = 1
             return
         }
         page++
@@ -103,7 +109,11 @@ function getFirstList() {
 }
 // 预加载下一页数据
 function getNextList() {
-    var memoUrl_next = memoUrl + "&limit=" + limit + "&offset=" + offset;
+	if (tag){
+		var memoUrl_next = memoUrl + "&limit=" + limit + "&offset=" + offset + "&tag=" + tag;
+	} else {
+		var memoUrl_next = memoUrl + "&limit=" + limit + "&offset=" + offset;
+	}
     fetch(memoUrl_next).then(res => res.json()).then(resdata => {
         nextDom = resdata.data
         nextLength = nextDom.length
@@ -111,10 +121,69 @@ function getNextList() {
         offset = limit * (page - 1)
         if (nextLength < 1) { // 返回数据条数为 0 ，隐藏
             document.querySelector("button.button-load").remove()
+			btnRemove = 1
             return
         }
     })
 }
+
+// 标签选择
+
+document.addEventListener('click', function (event) {
+	var target = event.target;
+	if (target.tagName.toLowerCase() === 'a' && target.getAttribute('href').startsWith('#')) {	
+		event.preventDefault();
+		tag = target.getAttribute('href').substring(1); // 获取标签名
+		if (btnRemove) {	// 如果 botton 被 remove
+			btnRemove = 0;
+			memoDom.insertAdjacentHTML('afterend', load);
+			// 添加 button 事件监听器
+			var btn = document.querySelector("button.button-load");
+			btn.addEventListener("click", function () {
+				btn.textContent = '努力加载中……';
+				updateHTMl(nextDom)
+				if (nextLength < limit) { // 返回数据条数小于限制条数，隐藏
+					document.querySelector("button.button-load").remove()
+					btnRemove = 1
+					return
+				}
+				getNextList()
+			});
+			
+		}		
+		getTagFirstList();
+		var filterElem = document.getElementById('tag-filter');
+		filterElem.style.display = 'block';	// 显示过滤器
+		var tags = document.getElementById('tags');
+		var tagresult = `Filter: <span class='tag-span'><a rel='noopener noreferrer' href=''>#${tag}</a></span>`
+		tags.innerHTML = tagresult;
+		scrollTo(0,0);	// 回到顶部
+	}
+});
+
+function getTagFirstList() {
+	page = 1;
+    offset = 0;
+    nextLength = 0;
+    nextDom = '';
+	memoDom.innerHTML = "";
+    var memoUrl_tag = memoUrl + "&limit=" + limit + "&tag=" + tag;
+    fetch(memoUrl_tag).then(res => res.json()).then(resdata => {
+        updateHTMl(resdata.data);
+		var nowLength = resdata.data.length
+        if (nowLength < limit) { // 返回数据条数小于 limit 则直接移除“加载更多”按钮，中断预加载
+            document.querySelector("button.button-load").remove()
+			btnRemove = 1
+            return
+        }
+        page++
+        offset = limit * (page - 1)
+        getNextList()
+    });
+}
+
+// 标签选择 end
+
 // 插入 html
 function updateHTMl(data) {
     var memoResult = "", resultAll = "";
@@ -151,7 +220,7 @@ function updateHTMl(data) {
     // Memos Content
     for (var i = 0; i < data.length; i++) {
         var memoContREG = data[i].content
-            .replace(TAG_REG, "<span class='tag-span'><a rel='noopener noreferrer' href='#'>#$1</a></span> ")
+            .replace(TAG_REG, "<span class='tag-span'><a rel='noopener noreferrer' href='#$1'>#$1</a></span>")
 
         // For CJK language users
         // 用 PanguJS 自动处理中英文混合排版
@@ -168,7 +237,7 @@ function updateHTMl(data) {
             .replace(YOUKU_REG, "<div class='video-wrapper'><iframe src='https://player.youku.com/embed/$1' frameborder=0 'allowfullscreen'></iframe></div>")
             .replace(YOUTUBE_REG, "<div class='video-wrapper'><iframe src='https://www.youtube.com/embed/$1' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen title='YouTube Video'></iframe></div>")
 
-        // 解析内置资源文件 
+        // 解析内置资源文件
         if (data[i].resourceList && data[i].resourceList.length > 0) {
             var resourceList = data[i].resourceList;
             var imgUrl = '', resUrl = '', resImgLength = 0;
@@ -179,7 +248,8 @@ function updateHTMl(data) {
                 if (resexlink) {
                     resLink = resexlink
                 } else {
-                    resLink = memos + 'o/r/' + resourceList[j].id + '/' + resourceList[j].filename
+                    fileId = resourceList[j].publicId || resourceList[j].filename
+                    resLink = memos+'o/r/'+resourceList[j].id+'/'+fileId
                 }
                 if (resType == 'image') {
                     imgUrl += '<div class="resimg"><img loading="lazy" src="' + resLink + '"/></div>'
@@ -198,7 +268,7 @@ function updateHTMl(data) {
                 memoContREG += '<div class="resource-wrapper "><p class="datasource">' + resUrl + '</p></div>'
             }
         }
-        memoResult += '<li class="timeline"><div class="memos__content"><div class="memos__text"><div class="memos__userinfo"><div>' + memo.name + '</div><div><svg viewBox="0 0 24 24" aria-label="认证账号" class="memos__verify"><g><path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.44.696.21 1.04z"></path></g></svg></div><div class="memos__id">@' + memo.username + '</div></div><p>' + memoContREG + '</p></div><div class="memos__meta"><small class="memos__date">' + moment(data[i].createdTs * 1000).twitter() + ' • 来自「<a href="' + memo.host + 'm/' + data[i].id + '" target="_blank">Memos</a>」</small></div></div></li>'
+        memoResult += '<li class="timeline"><div class="memos__content"><div class="memos__text"><div class="memos__userinfo"><div>' + memo.name + '</div><div><svg viewBox="0 0 24 24" aria-label="认证账号" class="memos__verify"><g><path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.44.696.21 1.04z"></path></g></svg></div><div class="memos__id">@' + memo.username + '</div></div><p>' + memoContREG + '</p></div><div class="memos__meta"><small class="memos__date">' + moment(data[i].createdTs * 1000).twitter() + ' • From 「<a href="' + memo.host + 'm/' + data[i].id + '" target="_blank">Memos</a>」</small></div></div></li>'
     }
     var memoBefore = '<ul class="">'
     var memoAfter = '</ul>'
@@ -206,7 +276,7 @@ function updateHTMl(data) {
     memoDom.insertAdjacentHTML('beforeend', resultAll);
     //取消这行注释解析豆瓣电影和豆瓣阅读
     // fetchDB()
-    document.querySelector('button.button-load').textContent = '加载更多';
+    document.querySelector('button.button-load').textContent = 'Click to load more';
 }
 // Memos End
 
