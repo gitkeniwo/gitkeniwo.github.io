@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Noto+Sans+TC&family=Syne+Mono&display=swap" rel="stylesheet">
+
+    <!--memos-->
+    <!--
+    <meta name="referrer" content="no-referrer">
+    <link rel="icon" href="/assets/img/logo.webp" type="image/*" />
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/APlayer.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/highlight.github.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css">
+    <title>Memos Top</title><meta name="robots" content="noindex"> 
+    -->
+    <!--end memos-->
+
+
+    <meta name="description" content="M1 IntroWeek 1 is basically some very simple statistics recap. Stat Recap:Consider i.i.d random sample $X_1, …, X_n$ with mean $\mu$ and var $\sigma^2$  Explanatory analysis Compute estimators: sample">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Note for 2DD23 Time Series Analysis">
+<meta property="og:url" content="https://gitkeniwo.github.io/2023-05-17-time-series-analysis/index.html">
+<meta property="og:site_name" content="The Last Day of Summer">
+<meta property="og:description" content="M1 IntroWeek 1 is basically some very simple statistics recap. Stat Recap:Consider i.i.d random sample $X_1, …, X_n$ with mean $\mu$ and var $\sigma^2$  Explanatory analysis Compute estimators: sample">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://otexts.com/fpp3/fpp_files/figure-html/beer-1.png">
+<meta property="og:image" content="https://i.imgur.com/jlRPFCn.jpg">
+<meta property="og:image" content="https://i.imgur.com/10TEaeZ.jpg">
+<meta property="og:image" content="https://otexts.com/fpp3/fpp_files/figure-html/acfguess-1.png">
+<meta property="og:image" content="https://i.imgur.com/HMkySp8.png">
+<meta property="og:image" content="https://i.imgur.com/qysaLro.png">
+<meta property="og:image" content="https://i.imgur.com/CfahjaQ.png">
+<meta property="article:published_time" content="2023-05-17T09:55:21.000Z">
+<meta property="article:modified_time" content="2024-07-13T15:13:32.390Z">
+<meta property="article:author" content="ケニヲ">
+<meta property="article:tag" content="timeseries">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://otexts.com/fpp3/fpp_files/figure-html/beer-1.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon2.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/yoda-pixel.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/yoda-pixel.png">
+        
+      
+    
+    <!-- title -->
+    <title>Note for 2DD23 Time Series Analysis</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/true" title="The Last Day of Summer" type="application/atom+xml" />
+    
+
+    
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body class="max-width mx-auto px3 ltr">    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/whereabouts/">Whereabouts</a></li>
+         
+          <li><a href="/gallery/">Gallery</a></li>
+         
+          <li><a href="/bfm/">B.F.M.</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://gitkeniwo.github.io/2023-05-17-time-series-analysis/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2023-05-17-time-series-analysis/&text=Note for 2DD23 Time Series Analysis"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2023-05-17-time-series-analysis/&title=Note for 2DD23 Time Series Analysis"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2023-05-17-time-series-analysis/&is_video=false&description=Note for 2DD23 Time Series Analysis"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Note for 2DD23 Time Series Analysis&body=Check out this article: https://gitkeniwo.github.io/2023-05-17-time-series-analysis/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2023-05-17-time-series-analysis/&title=Note for 2DD23 Time Series Analysis"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2023-05-17-time-series-analysis/&title=Note for 2DD23 Time Series Analysis"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2023-05-17-time-series-analysis/&title=Note for 2DD23 Time Series Analysis"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2023-05-17-time-series-analysis/&title=Note for 2DD23 Time Series Analysis"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2023-05-17-time-series-analysis/&name=Note for 2DD23 Time Series Analysis&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2023-05-17-time-series-analysis/&t=Note for 2DD23 Time Series Analysis"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#M1-Intro"><span class="toc-number">1.</span> <span class="toc-text">M1 Intro</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Forecasting"><span class="toc-number">1.1.</span> <span class="toc-text">Forecasting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Use-of-R"><span class="toc-number">1.2.</span> <span class="toc-text">The Use of R</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#M2-Exploratory-Data-Analysis"><span class="toc-number">2.</span> <span class="toc-text">M2 Exploratory Data Analysis</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Stationarity"><span class="toc-number">2.1.</span> <span class="toc-text">Stationarity</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Estimating-Trends"><span class="toc-number">2.2.</span> <span class="toc-text">Estimating Trends</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Seasonality"><span class="toc-number">2.3.</span> <span class="toc-text">Seasonality</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#M3-Forecasting"><span class="toc-number">3.</span> <span class="toc-text">M3 Forecasting</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Forcasting-Methods"><span class="toc-number">3.1.</span> <span class="toc-text">Simple Forcasting Methods</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Residual-Analysis"><span class="toc-number">3.2.</span> <span class="toc-text">Residual Analysis</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#M4-Exponential-smoothing"><span class="toc-number">4.</span> <span class="toc-text">M4 Exponential smoothing</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Note for 2DD23 Time Series Analysis
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a id='post-author' href="/">
+        <span itemprop="name">ケニヲ</span>
+        </a>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-05-17T09:55:21.000Z" itemprop="datePublished">2023-05-17</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Academical-Hack/">Academical Hack</a> › <a class="category-link" href="/categories/Academical-Hack/Maths/">Maths</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="M1-Intro"><a href="#M1-Intro" class="headerlink" title="M1 Intro"></a>M1 Intro</h1><p>Week 1 is basically some very simple statistics recap.</p>
+<p><strong>Stat Recap:</strong><br>Consider i.i.d random sample $X_1, …, X_n$ with mean $\mu$ and var $\sigma^2$</p>
+<ul>
+<li>Explanatory analysis</li>
+<li>Compute estimators: sample mean $\hat{\mu}$, sample variance $\hat{\sigma}^2$.<ul>
+<li>above are unbiased estimators $\mathbb{E}[\hat{\mu}] =\mu,  \mathbb{E}[\hat{\sigma}^2] =\sigma^2$. </li>
+</ul>
+</li>
+<li>Confidence Intervals (CI)<ul>
+<li>Suppose $X_n \sim N(\mu, \sigma^2)$ </li>
+<li>100(1-a)% CI for $\mu$ is $\hat{\mu} \pm t_{n-1, \alpha/2} \frac{\hat{\sigma}}{\sqrt{n}}$ .<ul>
+<li>$P[T \ge t_{n-1, \frac{\alpha}{2}}]= \frac{\alpha}{2}$ </li>
+<li>if $\alpha =0.05$, we get a $95\%$ CI.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Hypothesis Testing<ul>
+<li>Null and alternative hypothesis.</li>
+<li>Level of signification $\alpha$ </li>
+<li>Test statistic $T = \frac{\hat{\mu}-\mu_0}{\sigma /\sqrt{n}}$, reject $H_0$ if $|T|\ge t_{n-1, \frac{\alpha}{2}}$, which means mu is significantly different from $H_0$. ![[Drawing 2023-04-24 10.15.27.excalidraw|100]]</li>
+</ul>
+</li>
+<li>Linear Regression<ul>
+<li>Model: $Y_i = \beta_0+\beta_1 x_i+Z_i$, where $Z_i \overset{i.i.d} \sim N(0,\sigma^2)$.</li>
+<li>Least squares estimation, minimizing $\sum\limits (y_i-(\beta+\beta_1x_i))^2$ , getting $\hat{\beta}_0, \hat{\beta}_1$. </li>
+<li>Prediction: $\hat{y}_{n+1} = \hat{\beta}_0 + \hat{\beta}_1 x_{n+1}$.</li>
+<li>Is predictor value significant?</li>
+</ul>
+</li>
+</ul>
+<h2 id="Forecasting"><a href="#Forecasting" class="headerlink" title="Forecasting"></a>Forecasting</h2><ul>
+<li>What can be forecasted<ul>
+<li>short-term forecast of residential electricity demand 🆗</li>
+<li>currency exchange rates 🚫 </li>
+<li>The predictability of an event or a quantity depends on several factors including:<ol>
+<li>how well we understand the factors that contribute to it;</li>
+<li>how much data is available;</li>
+<li>how similar the future is to the past;</li>
+<li>whether the forecasts can affect the thing we are trying to forecast.</li>
+</ol>
+</li>
+<li>In this book, we will learn how to tell the difference between a <strong>random fluctuation</strong> in the past data that should be ignored and <strong>a genuine pattern that should be modelled and extrapolated</strong>.</li>
+</ul>
+</li>
+<li>Forecasting vs. goals vs. planning</li>
+<li>Forecasting methods<ul>
+<li><strong>Qualitative forecasting</strong></li>
+<li><strong>Quantitative forecasting</strong>: numerical information + assume that some aspects of the past patterns will continue into the future.</li>
+<li>Time series forecasting <ul>
+<li>Anything that is <strong>observed sequentially over time</strong></li>
+<li>本书 cover regular interval</li>
+<li>forecast captures the seasonal pattern <img src="https://otexts.com/fpp3/fpp_files/figure-html/beer-1.png" alt="|200"></li>
+<li><strong>Predictor variables</strong>, types of models<ul>
+<li>e.g. Forecasting the hourly electricity demand (ED)</li>
+<li>predictor variable can be constructed as $ED =f(\text{current temperature, poplulation, time of day, error})$, which is also called an <strong>explanatory model</strong></li>
+<li><strong>time series model</strong>: $ED_{t+1}=f(ED_{t},ED_{t-1}, …)$</li>
+<li><strong>mixed mode</strong>l: $ED_{t+1}=f(ED_t,\text{current temperature, time of day, day of week, error})$<ul>
+<li>also known as <code>dynamic regression models, panel data models, longitudinal models, transfer function models, and linear system models</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="The-Use-of-R"><a href="#The-Use-of-R" class="headerlink" title="The Use of R"></a>The Use of R</h2><p><a target="_blank" rel="noopener" href="https://tue.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ecb0b273-1337-4db3-9733-afeb01001479&amp;start=0">video</a></p>
+<h1 id="M2-Exploratory-Data-Analysis"><a href="#M2-Exploratory-Data-Analysis" class="headerlink" title="M2 Exploratory Data Analysis"></a>M2 Exploratory Data Analysis</h1><p>EDA - Autocorrelation</p>
+<ul>
+<li><strong>Lag Plot</strong><ul>
+<li><img src="https://i.imgur.com/jlRPFCn.jpg" alt="|250"></li>
+</ul>
+</li>
+<li>Covariance and correlation<ul>
+<li>$\text{cov}(X,Y)$<ul>
+<li>estimation of cov: $\hat{\text{cov}}(X,Y)= \frac{1}{n-1}\sum\limits(x_i - \bar{x})(y_i-\bar{y})$</li>
+</ul>
+</li>
+<li>correlation $\rho(X,Y)= \frac{\text{cov}(X,Y)}{\sigma_X \sigma_Y}$     <ul>
+<li>estimation of $\rho$: $a$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Autocorrelation function</strong>: the correlation between time series $y_t$ with $y_{t-k}$, i.e., at lag $k$.<ul>
+<li>$r_k \approx$</li>
+<li>e.g. $r_2$ measures the relationship between $y_t$ and $y_{t−2}$, and so on.</li>
+<li>ACF plot: using <code>ACF()</code> function in R.<ul>
+<li><img src="https://i.imgur.com/10TEaeZ.jpg" alt="|250"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">recent_production <span class="operator">|&gt;</span> ACF<span class="punctuation">(</span>Beer<span class="punctuation">,</span> lag_max <span class="operator">=</span> <span class="number">9</span><span class="punctuation">)</span></span><br><span class="line"><span class="comment">#&gt; # A tsibble: 9 x 2 [1Q]</span></span><br><span class="line"><span class="comment">#&gt;        lag      acf</span></span><br><span class="line"><span class="comment">#&gt;   &lt;cf_lag&gt;    &lt;dbl&gt;</span></span><br><span class="line"><span class="comment">#&gt; 1       1Q -0.0530 </span></span><br><span class="line"><span class="comment">#&gt; 2       2Q -0.758  </span></span><br><span class="line"><span class="comment">#&gt; 3       3Q -0.0262 </span></span><br><span class="line"><span class="comment">#&gt; 4       4Q  0.802  </span></span><br><span class="line"><span class="comment">#&gt; 5       5Q -0.0775 </span></span><br><span class="line"><span class="comment">#&gt; 6       6Q -0.657  </span></span><br><span class="line"><span class="comment">#&gt; 7       7Q  0.00119</span></span><br><span class="line"><span class="comment">#&gt; 8       8Q  0.707  </span></span><br><span class="line"><span class="comment">#&gt; 9       9Q -0.0888</span></span><br></pre></td></tr></table></figure>
+<p><strong>exer.2.9</strong> Match the time series with the ACF plots<br><img src="https://otexts.com/fpp3/fpp_files/figure-html/acfguess-1.png" alt="|400"></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>TS</th>
+<th>trend</th>
+<th>seanality</th>
+<th>ACF</th>
+<th>comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>weak or no</td>
+<td>no</td>
+<td>B</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>no</td>
+<td>yearly seasonal period at 12</td>
+<td>A</td>
+<td>peak at 12</td>
+</tr>
+<tr>
+<td>3</td>
+<td>increasing</td>
+<td>yearly, every 12</td>
+<td>D</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>no</td>
+<td>cyclical</td>
+<td>C</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>ACF</th>
+<th>trend</th>
+<th>seasonality</th>
+<th>comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>not really</td>
+<td>yes, period 12</td>
+<td>peak at 12</td>
+</tr>
+<tr>
+<td>B</td>
+<td>no or weak</td>
+<td>no?</td>
+<td></td>
+</tr>
+<tr>
+<td>C</td>
+<td>no</td>
+<td>yes, period 10</td>
+<td>peak at 10</td>
+</tr>
+<tr>
+<td>D</td>
+<td>yes, strong</td>
+<td>yes, period 12</td>
+<td>peak at 12?</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>![[Drawing 2023-05-01 10.07.27.excalidraw]]<br>(*) how to tell seasonality? -&gt; find where ACF peaks at<br>(*) <strong>cyclical vs. seasonal</strong>: cyclical pattern occurs at <em>approximately</em> a time interval, but sometimes can be longer or shorter.<br>![[Drawing 2023-05-01 10.03.38.excalidraw]]</p>
+<h2 id="Stationarity"><a href="#Stationarity" class="headerlink" title="Stationarity"></a>Stationarity</h2><ul>
+<li>Stationary Time Series<ul>
+<li>no trends, no seasonality, no variance change</li>
+</ul>
+</li>
+<li>you can also remove trends:<br>![[Drawing 2023-05-01 10.28.22.excalidraw]]</li>
+<li>Log transformation<ul>
+<li>variance proportional to the mean</li>
+</ul>
+</li>
+</ul>
+<h2 id="Estimating-Trends"><a href="#Estimating-Trends" class="headerlink" title="Estimating Trends"></a>Estimating Trends</h2><ul>
+<li>Drift</li>
+<li><strong>Moving Average</strong><ul>
+<li>an MA of order $m$, grabbing the average of k values ahead and behind, with $m=2k+1$.</li>
+<li>MA for seasonal data<ul>
+<li>2x4 MA, choosing 4 for quarterly data</li>
+</ul>
+</li>
+<li>3x3 MA</li>
+</ul>
+</li>
+</ul>
+<h2 id="Seasonality"><a href="#Seasonality" class="headerlink" title="Seasonality"></a>Seasonality</h2><ul>
+<li>additive seasonality $y_t=T_t+S_t+R_t$<ul>
+<li>estimate $T_t$ using m-MA</li>
+<li>estimate $S_t$ by averaging detrended values over each season</li>
+<li>remainder is what remains after these procedures</li>
+<li><img src="https://i.imgur.com/HMkySp8.png" alt="|300"></li>
+</ul>
+</li>
+<li>multiplicative seaonsality $y_t=T_t \times S_t \times R_t$<ul>
+<li>Log transformation $\log y_t = \log (T_t)+\log(S_t)+\log(R_t)$ </li>
+</ul>
+</li>
+</ul>
+<h1 id="M3-Forecasting"><a href="#M3-Forecasting" class="headerlink" title="M3 Forecasting"></a>M3 Forecasting</h1><p><a target="_blank" rel="noopener" href="https://otexts.com/fpp3/toolbox.html">Chapter 5 The forecaster’s toolbox | Forecasting: Principles and Practice (3rd ed) (otexts.com)</a></p>
+<ul>
+<li>Forecasting Goals</li>
+</ul>
+<h2 id="Simple-Forcasting-Methods"><a href="#Simple-Forcasting-Methods" class="headerlink" title="Simple Forcasting Methods"></a>Simple Forcasting Methods</h2><p>M3 first introduces some very basic forecasting methods, like:</p>
+<ul>
+<li>Mean Method</li>
+<li>Naive Method: <strong>random walk</strong><ul>
+<li>$y_{t+1} = y_{t}+Z_t$, where $Z_t \sim N(0, \sigma^2)$</li>
+</ul>
+</li>
+<li>Seasonal Naive Method: <ul>
+<li>$y_{t} = y_{t-m}+Z_t$, where $Z_t \sim N(0, \sigma^2)$</li>
+<li>Forecast: $\hat{y}_{T+h|T}=y_{T+h-m([\frac{h-1}{m}+1])}$ </li>
+</ul>
+</li>
+<li>Drift Method: random walk with drift<ul>
+<li>随机游走加上一个drift 漂移量</li>
+</ul>
+</li>
+<li>Forecast Distribution</li>
+<li>Using decomposition (e.g. STL)</li>
+</ul>
+<h2 id="Residual-Analysis"><a href="#Residual-Analysis" class="headerlink" title="Residual Analysis"></a>Residual Analysis</h2><p>这一节定义了fitted value和residual</p>
+<ul>
+<li><strong>Fitted Value</strong>: $\hat{y}_t$ <ul>
+<li>用estimated parameter来拟合==<strong>t之前</strong>==已有观察值的y值，而非预报，所以是fit</li>
+<li>e.g. in drifted model, the fitted value is  $\hat{y}_t = y_{t-1}+\hat{c}$ </li>
+<li>fitted value is <strong>not</strong> a forecast</li>
+</ul>
+</li>
+<li><strong>Residual:</strong> difference between observed values and fitted value  $e_t= y_t-\hat{y}_t$<ul>
+<li>in R, also called <strong>response residuals</strong> </li>
+<li><strong>Innovation Residual</strong>: the residual of the transformed data, (e.g. log trans), because we only care about the errors in the transformed models.<ul>
+<li><strong>e.g.</strong> In seasonal naive forecasts, the red line denotes the fitted values derived from the model. The difference between the two sets of lines is the residual, as is shown in the second pictures.</li>
+<li><img src="https://i.imgur.com/qysaLro.png" alt="|200"></li>
+<li><img src="https://i.imgur.com/CfahjaQ.png" alt="|200"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Residual Analysis: <ul>
+<li>e.g. </li>
+</ul>
+</li>
+</ul>
+<p><strong>Exer 3.7.7</strong></p>
+<h1 id="M4-Exponential-smoothing"><a href="#M4-Exponential-smoothing" class="headerlink" title="M4 Exponential smoothing"></a>M4 Exponential smoothing</h1><p>Refer to <a target="_blank" rel="noopener" href="https://otexts.com/fpp3/expsmooth.html">Chapter 8 Exponential smoothing | Forecasting: Principles and Practice (3rd ed) (otexts.com)</a></p>
+<!-- flag of hidden posts -->
+  </div>
+</article>
+
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/whereabouts/">Whereabouts</a></li>
+         
+          <li><a href="/gallery/">Gallery</a></li>
+         
+          <li><a href="/bfm/">B.F.M.</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#M1-Intro"><span class="toc-number">1.</span> <span class="toc-text">M1 Intro</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Forecasting"><span class="toc-number">1.1.</span> <span class="toc-text">Forecasting</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Use-of-R"><span class="toc-number">1.2.</span> <span class="toc-text">The Use of R</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#M2-Exploratory-Data-Analysis"><span class="toc-number">2.</span> <span class="toc-text">M2 Exploratory Data Analysis</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Stationarity"><span class="toc-number">2.1.</span> <span class="toc-text">Stationarity</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Estimating-Trends"><span class="toc-number">2.2.</span> <span class="toc-text">Estimating Trends</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Seasonality"><span class="toc-number">2.3.</span> <span class="toc-text">Seasonality</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#M3-Forecasting"><span class="toc-number">3.</span> <span class="toc-text">M3 Forecasting</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Simple-Forcasting-Methods"><span class="toc-number">3.1.</span> <span class="toc-text">Simple Forcasting Methods</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Residual-Analysis"><span class="toc-number">3.2.</span> <span class="toc-text">Residual Analysis</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#M4-Exponential-smoothing"><span class="toc-number">4.</span> <span class="toc-text">M4 Exponential smoothing</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://gitkeniwo.github.io/2023-05-17-time-series-analysis/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2023-05-17-time-series-analysis/&text=Note for 2DD23 Time Series Analysis"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2023-05-17-time-series-analysis/&title=Note for 2DD23 Time Series Analysis"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2023-05-17-time-series-analysis/&is_video=false&description=Note for 2DD23 Time Series Analysis"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Note for 2DD23 Time Series Analysis&body=Check out this article: https://gitkeniwo.github.io/2023-05-17-time-series-analysis/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2023-05-17-time-series-analysis/&title=Note for 2DD23 Time Series Analysis"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2023-05-17-time-series-analysis/&title=Note for 2DD23 Time Series Analysis"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2023-05-17-time-series-analysis/&title=Note for 2DD23 Time Series Analysis"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2023-05-17-time-series-analysis/&title=Note for 2DD23 Time Series Analysis"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2023-05-17-time-series-analysis/&name=Note for 2DD23 Time Series Analysis&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2023-05-17-time-series-analysis/&t=Note for 2DD23 Time Series Analysis"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+
+  <!-- <div class="footer-top">
+    <div class="footer-left">
+      Copyright &copy;
+      
+      
+      2019-2024
+      ケニヲ
+    </div>
+  
+    <div class="footer-right">
+      <img src="/img/Written-By-Human-Not-By-AI-Badge-black.svg" /> 
+    </div>
+  </div> -->
+
+  <div class="footer-top">
+    Copyright &copy;
+    
+    
+    2019-2024
+    ケニヲ
+  </div>
+
+  
+  <div class="footer-bottom">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/whereabouts/">Whereabouts</a></li>
+         
+          <li><a href="/gallery/">Gallery</a></li>
+         
+          <li><a href="/bfm/">B.F.M.</a></li>
+         
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+
+  <div class="footer-bottom">
+    <img src="/img/Written-By-Human-Not-By-AI-Badge-black.svg" /> 
+  </div>
+
+</footer>
+
+
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'gitkeniwo';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+
+
+
+</body>
+</html>

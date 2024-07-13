@@ -508,6 +508,7 @@ body .gallery-column {
   flex-direction: column;
   min-height: 100%;
   overflow-wrap: break-word;
+  justify-content: space-between;
 }
 .content p {
   margin-block-start: 0.5em;
@@ -1311,14 +1312,22 @@ article .content .caption {
   margin-top: 7rem;
 }
 #footer {
-  position: absolute;
+  padding: 40px 0 0 0;
   bottom: 0;
-  margin-bottom: 10px;
   width: 100%;
   color: #666;
   vertical-align: top;
-  text-align: center;
   font-size: 0.9rem;
+}
+#footer div {
+  width: 100%;
+  margin-bottom: 1em;
+}
+#footer div .footer-left {
+  height: 1em;
+  vertical-align: middle;
+  line-height: 20px;
+  text-align: right;
 }
 #footer ul {
   margin: 0;
@@ -1350,11 +1359,6 @@ article .content .caption {
 }
 #footer a:hover {
   color: #b3b3b3;
-}
-#footer .footer-left {
-  height: 20px;
-  vertical-align: middle;
-  line-height: 20px;
 }
 @media (min-width: 39rem) {
   #footer {
