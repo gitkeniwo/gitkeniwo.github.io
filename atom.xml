@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://gitkeniwo.github.io/"/>
-  <updated>2024-07-14T14:04:53.169Z</updated>
+  <updated>2024-09-01T16:01:25.904Z</updated>
   <id>https://gitkeniwo.github.io/</id>
   
   <author>
@@ -17,9 +17,55 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>回国 SSH 代理设置 / SSH Proxy Settings</title>
+    <link href="https://gitkeniwo.github.io/2024-09-01-ssh-proxy-settings/"/>
+    <id>https://gitkeniwo.github.io/2024-09-01-ssh-proxy-settings/</id>
+    <published>2024-09-01T13:59:04.000Z</published>
+    <updated>2024-09-01T16:01:25.904Z</updated>
+    
+    <content type="html"><![CDATA[<p>本次回🀄️发现虽然挂机场代理后外部访问问题不大，但GCP机器的ssh connection卡成翔，此贴记录一下macOS上ssh代理设置相关问题。</p><h1 id="Command-Interpretation"><a href="#Command-Interpretation" class="headerlink" title="Command Interpretation"></a>Command Interpretation</h1><p>为ssh命令设置代理的通用模版是</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh -o ProxyCommand=<span class="string">&quot;nc -X 5 -x 127.0.0.1:1080 %h %p&quot;</span> \</span><br><span class="line">    root@server</span><br></pre></td></tr></table></figure><p>其中<code>-o</code> flag代表option, 用以唤起<code>ProxyCommand</code>这个选项，具体man page里描述为：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-o option</span><br><span class="line">        Can be used to give options in the format used in the configuration file.  This is useful for specifying</span><br><span class="line">        options for which there is no separate command-line flag.  For full details of the options listed below,</span><br><span class="line">        and their possible values, see ssh_config(5).</span><br></pre></td></tr></table></figure><p>这里面，<code>man ssh_config</code>中<code>ProxyCommand</code>的描述为：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ProxyCommand</span><br><span class="line">        Specifies the command to use to connect to the server.  The command string extends to the end of the</span><br><span class="line">        line, and is executed using the user&#x27;s shell ‘exec’ directive to avoid a lingering shell process.</span><br><span class="line"></span><br><span class="line">        Arguments to ProxyCommand accept the tokens described in the TOKENS section.  The command can be</span><br><span class="line">        basically anything, and should read from its standard input and write to its standard output.  It should</span><br><span class="line">        eventually connect an sshd(8) server running on some machine, or execute sshd -i somewhere.  Host key</span><br><span class="line">        management will be done using the Hostname of the host being connected (defaulting to the name typed by</span><br><span class="line">        the user).  Setting the command to none disables this option entirely.  Note that CheckHostIP is not</span><br><span class="line">        available for connects with a proxy command.</span><br><span class="line"></span><br><span class="line">        This directive is useful in conjunction with nc(1) and its proxy support.  For example, the following</span><br><span class="line">        directive would connect via an HTTP proxy at 192.0.2.0:</span><br><span class="line"></span><br><span class="line">        ProxyCommand /usr/bin/nc -X connect -x 192.0.2.0:8080 %h %p</span><br></pre></td></tr></table></figure><p><code>nc</code>命令即TCP/UDP监听, <code>-X</code> flag 默认值<code>5</code>指定socks5协议, <code>-x</code> 指定了代理的地址：端口。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">NAME</span><br><span class="line">     nc – arbitrary TCP and UDP connections and listens</span><br><span class="line">SYNOPSIS</span><br><span class="line">     nc [-46AcDCdhklnrtUuvz] [-b boundif] [-i interval] [-p source_port] [-s source_ip_address] [-w timeout]</span><br><span class="line">        [-X proxy_protocol] [-x proxy_address[:port]] [--apple-delegate-pid pid] [--apple-delegate-uuid uuid]</span><br><span class="line">        [--apple-ext-bk-idle] [--apple-nowakefromsleep n] [--apple-ecn mode] [hostname] [port[s]]</span><br><span class="line"></span><br><span class="line">-X proxy_version</span><br><span class="line">        Requests that nc should use the specified protocol when talking to the proxy server.  Supported protocols</span><br><span class="line">        are “4” (SOCKS v.4), “5” (SOCKS v.5) and “connect” (HTTPS proxy).  If the protocol is not specified,</span><br><span class="line">        SOCKS version 5 is used.</span><br></pre></td></tr></table></figure><p>我的梯子一般使用 clash 系的代理工具，<a href="https://en.clashx.org">clash X</a> 或 <a href="https://apps.apple.com/us/app/stash-rule-based-proxy/id1596063349">stash</a>。<br>stash app store版用的是系统级VPN接口，理论上不需要另外为ssh设置代理。<br>局域网内设备运行的stash需要在 <code>Settings &gt; Network Settings</code> 中turn on <code>Allow LAN Devices</code> 选项，以开启LAN访问。<br>clash 系工具的混合代理监听端口 (mixed proxy port) 一般是7980，将ProxyCommand的端口修改一下即可。</p><h1 id="ssh-config"><a href="#ssh-config" class="headerlink" title="~/.ssh/config"></a><code>~/.ssh/config</code></h1><p>本人是<code>~/.ssh/config</code>党，如果你还不会配置ssh config，推荐你稍微学习一下。</p><p>如果你要为特定的Host设置代理，只需给你的Host加入<code>ProxyCommand</code>相关行即可<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Host de-zoomcamp-proxy</span><br><span class="line">  ProxyCommand nc -X 5 -x 127.0.0.1:7980 %h %p</span><br><span class="line">  HostName yourhostip</span><br><span class="line">  User yourname</span><br><span class="line">  IdentityFile ~/.ssh/gcp</span><br></pre></td></tr></table></figure></p><p>因为我在墙外也需要连接同样的Host，一般就另外设置一个<code>xxx-proxy</code> Host专供墙内代理使用。<br>但比较令人无语的是，使用代理后ssh到GCP谷歌云依然有输入延迟。</p><h1 id="SSH-over-HTTP-Proxy"><a href="#SSH-over-HTTP-Proxy" class="headerlink" title="SSH over HTTP Proxy"></a>SSH over HTTP Proxy</h1><p>如果你没有sock5，仅有HTTP，也可以通过<a href="https://formulae.brew.sh/formula/corkscrew"><code>corkscrew</code></a>给你的HTTP代理建立socks5隧道.</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$brew</span> install corkscrew</span><br></pre></td></tr></table></figure><p>找到corkscrew的路径</p><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$which</span> corkscrew</span><br><span class="line">/opt/homebrew/bin/corkscrew</span><br></pre></td></tr></table></figure><p>再向<code>~/.ssh/config</code>写入<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ProxyCommand /opt/homebrew/bin/corkscrew 127.0.0.1 7890 %h %p</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;本次回🀄️发现虽然挂机场代理后外部访问问题不大，但GCP机器的ssh connection卡成翔，此贴记录一下macOS上ssh代理设置相关问题。&lt;/p&gt;
+&lt;h1 id=&quot;Command-Interpretation&quot;&gt;&lt;a href=&quot;#Command-Interpre
+      
+    
+    </summary>
+    
+    
+      <category term="Zen and the Art of Computer Maintenance" scheme="https://gitkeniwo.github.io/categories/Zen-and-the-Art-of-Computer-Maintenance/"/>
+    
+      <category term="Anti-Censorship" scheme="https://gitkeniwo.github.io/categories/Zen-and-the-Art-of-Computer-Maintenance/Anti-Censorship/"/>
+    
+    
+      <category term="gfw" scheme="https://gitkeniwo.github.io/tags/gfw/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>海德堡圣地巡礼</title>
+    <link href="https://gitkeniwo.github.io/2024-07-31-heidelberg-city-pilgrimage/"/>
+    <id>https://gitkeniwo.github.io/2024-07-31-heidelberg-city-pilgrimage/</id>
+    <published>2024-07-30T17:06:37.000Z</published>
+    <updated>2024-09-01T14:15:10.014Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+      <category term="de" scheme="https://gitkeniwo.github.io/tags/de/"/>
+    
+  </entry>
+  
+  <entry>
     <title>窝小思考Transformer的推理能力</title>
-    <link href="https://gitkeniwo.github.io/2024-06-21-transformer-agi/"/>
-    <id>https://gitkeniwo.github.io/2024-06-21-transformer-agi/</id>
+    <link href="https://gitkeniwo.github.io/2024-06-22-transformer-agi/"/>
+    <id>https://gitkeniwo.github.io/2024-06-22-transformer-agi/</id>
     <published>2024-06-21T16:19:42.000Z</published>
     <updated>2024-07-14T14:04:53.169Z</updated>
     
@@ -79,8 +125,8 @@
   
   <entry>
     <title>星际穿越的基督教意味</title>
-    <link href="https://gitkeniwo.github.io/2024-05-30-interstellar/"/>
-    <id>https://gitkeniwo.github.io/2024-05-30-interstellar/</id>
+    <link href="https://gitkeniwo.github.io/2024-05-31-interstellar/"/>
+    <id>https://gitkeniwo.github.io/2024-05-31-interstellar/</id>
     <published>2024-05-30T17:40:20.000Z</published>
     <updated>2024-07-14T02:26:19.265Z</updated>
     
@@ -114,8 +160,8 @@
   
   <entry>
     <title>The Zen of Python by Tim Peters</title>
-    <link href="https://gitkeniwo.github.io/2023-12-23-the-zen-of-python/"/>
-    <id>https://gitkeniwo.github.io/2023-12-23-the-zen-of-python/</id>
+    <link href="https://gitkeniwo.github.io/2023-12-24-the-zen-of-python/"/>
+    <id>https://gitkeniwo.github.io/2023-12-24-the-zen-of-python/</id>
     <published>2023-12-23T18:49:33.000Z</published>
     <updated>2024-07-14T00:55:08.636Z</updated>
     
@@ -177,8 +223,8 @@
   
   <entry>
     <title>The Internet’s Richest Fitness Resource Is a Site from 1999</title>
-    <link href="https://gitkeniwo.github.io/2023-03-11-Internets-Richest-Fitness-Resource/"/>
-    <id>https://gitkeniwo.github.io/2023-03-11-Internets-Richest-Fitness-Resource/</id>
+    <link href="https://gitkeniwo.github.io/2023-03-12-Internets-Richest-Fitness-Resource/"/>
+    <id>https://gitkeniwo.github.io/2023-03-12-Internets-Richest-Fitness-Resource/</id>
     <published>2023-03-11T17:29:08.000Z</published>
     <updated>2023-03-12T00:39:12.268Z</updated>
     
@@ -327,8 +373,8 @@
   
   <entry>
     <title>&lt;div&gt; 挡住链接的处理方式，z-index属性</title>
-    <link href="https://gitkeniwo.github.io/2023-02-09-div-blocks-links/"/>
-    <id>https://gitkeniwo.github.io/2023-02-09-div-blocks-links/</id>
+    <link href="https://gitkeniwo.github.io/2023-02-10-div-blocks-links/"/>
+    <id>https://gitkeniwo.github.io/2023-02-10-div-blocks-links/</id>
     <published>2023-02-09T16:48:03.000Z</published>
     <updated>2023-02-14T12:15:10.844Z</updated>
     
@@ -416,8 +462,8 @@
   
   <entry>
     <title>N. Xiangyang Rd., Shanghai; Hennessy Rd., HK</title>
-    <link href="https://gitkeniwo.github.io/2022-10-23-shanghai-hongkong/"/>
-    <id>https://gitkeniwo.github.io/2022-10-23-shanghai-hongkong/</id>
+    <link href="https://gitkeniwo.github.io/2022-10-24-shanghai-hongkong/"/>
+    <id>https://gitkeniwo.github.io/2022-10-24-shanghai-hongkong/</id>
     <published>2022-10-23T17:06:40.000Z</published>
     <updated>2023-03-25T14:28:15.222Z</updated>
     
@@ -453,8 +499,8 @@
   
   <entry>
     <title>改革开放的落幕（1978-2022）</title>
-    <link href="https://gitkeniwo.github.io/2022-10-22-end-of-reform-and-opening-up/"/>
-    <id>https://gitkeniwo.github.io/2022-10-22-end-of-reform-and-opening-up/</id>
+    <link href="https://gitkeniwo.github.io/2022-10-23-end-of-reform-and-opening-up/"/>
+    <id>https://gitkeniwo.github.io/2022-10-23-end-of-reform-and-opening-up/</id>
     <published>2022-10-22T16:04:51.000Z</published>
     <updated>2023-03-25T14:16:07.857Z</updated>
     
@@ -576,69 +622,6 @@
     
     
       <category term="nederland" scheme="https://gitkeniwo.github.io/tags/nederland/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hexo 提示 Accessing non-existent property &#39;lineno&#39;</title>
-    <link href="https://gitkeniwo.github.io/2022-08-19-Accessing-non-existent-property-lineno/"/>
-    <id>https://gitkeniwo.github.io/2022-08-19-Accessing-non-existent-property-lineno/</id>
-    <published>2022-08-19T17:20:53.000Z</published>
-    <updated>2023-01-25T13:27:32.333Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>起因</strong>： Hexo一直弹如下警告</p><p><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20220820012034.png" alt=""></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(node:26384) Warning: Accessing non-existent property &#x27;lineno&#x27; of module exports inside circular dependency</span><br><span class="line">(Use `node --trace-warnings ...` to show where the warning was created)</span><br><span class="line">(node:26384) Warning: Accessing non-existent property &#x27;column&#x27; of module exports inside circular dependency</span><br><span class="line">(node:26384) Warning: Accessing non-existent property &#x27;filename&#x27; of module exports inside circular dependency</span><br><span class="line">(node:26384) Warning: Accessing non-existent property &#x27;lineno&#x27; of module exports inside circular dependency</span><br><span class="line">(node:26384) Warning: Accessing non-existent property &#x27;column&#x27; of module exports inside circular dependency</span><br><span class="line">(node:26384) Warning: Accessing non-existent property &#x27;filename&#x27; of module exports inside circular dependency</span><br></pre></td></tr></table></figure><p><strong>解决</strong>：</p><ul><li>见Hexo的<a href="https://github.com/hexojs/hexo/issues/4257">Issue #4257</a>，是stylus在报错，可追溯至stylus的<a href="https://github.com/stylus/stylus/issues/2534">Issue #2534</a>，已在stylus <code>@0.54.8</code> 之后版本修复。</li><li>利用 <code>npm ls --depth 2</code> 追杀看看哪些依赖还在用老版本的stylus（tmd这是2020年的issue了）</li><li><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20220820012625.png" alt=""> </li><li>发现这位还留在<code>@0.54.5</code></li><li>算了，直接<code>npm update stylus</code> 把所有stylus都更新一下。</li><li>更新之后就不报错了。</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;strong&gt;起因&lt;/strong&gt;： Hexo一直弹如下警告&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20220820012034.png&quot; 
-      
-    
-    </summary>
-    
-    
-      <category term="Blogging" scheme="https://gitkeniwo.github.io/categories/Blogging/"/>
-    
-    
-      <category term="hexo" scheme="https://gitkeniwo.github.io/tags/hexo/"/>
-    
-      <category term="npm" scheme="https://gitkeniwo.github.io/tags/npm/"/>
-    
-      <category term="nodejs" scheme="https://gitkeniwo.github.io/tags/nodejs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>将Hexo从2020 Intel MBP迁移到2021 MBP 14inch Apple Silicon</title>
-    <link href="https://gitkeniwo.github.io/2022-08-04-applesilicon-hexo-migration/"/>
-    <id>https://gitkeniwo.github.io/2022-08-04-applesilicon-hexo-migration/</id>
-    <published>2022-08-04T17:02:04.000Z</published>
-    <updated>2023-01-25T13:27:39.328Z</updated>
-    
-    <content type="html"><![CDATA[<p>昨天14寸mbp(m1 pro)到了之后，欢天喜地的用time machine备份再还原了一下午，谁知道time machine连同intel上的环境一起给还原到了apple silicon这边来，光是要怎么卸载intel的<a href="https://brew.sh">brew</a>我都搞了半小时，（brew官网提供的<a href="https://docs.brew.sh/FAQ#how-do-i-uninstall-homebrew">uninstall .sh脚本</a> 狠起来连自己都报错！)，最后我就开机狂按<code>cmd</code>+<code>R</code> 抹盘重装了。</p><p>BTW，淘宝在激活的当天可以买AppleCare+，我是花了¥1385直接在杭州朗朗数码买的，Care就是可以保3年，然后全球联保（去🇳🇱就几乎不用担心了），所以毫不犹豫的就买了，毕竟贵MBP换主板换屏幕都是5000+软妹币吧……Apple Silicon一路下来体验就是：爽！！！作为16-20年mbp模具和intel的受害者，我的2020 intel mbp 13inch 今年在进入4月份以来只能用mac fan control调到all time满速才可使用，更别说16G的内存在最近连看个Safari都会闪退。与此同时，mbp 14寸开了满满一dock的app都安静如鸡，流畅丝滑，内存一路绿灯，这才叫<strong>优雅</strong>啊！！！</p><p>进入正题，由于我在intel mbp 上的hexo是跑在node 12.x版本下的，今天去nodejs主页一看，稳定版都更新到16.x了（贵前端生态真的奇葩）。我依稀记得之前还专门写过因为兼容性问题从node 14.x版本<a href="https://gitkeniwo.github.io/2020-11-24-blog/">回滚的经历</a>（贵nodejs圈用什么管理环境？<a href="https://github.com/nvm-sh/nvm">nvm</a>？）。怀着忐忑的心情，从GitHub上拉下来了hexo项目的最新提交，在新mac上配置好<a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">github token</a>。先安装<code>hexo-cli</code>:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure><p>全局安装package时(<code>-g</code> flag)遇到了permission denied的问题（EACCES)，主要是<code>mkdir &#39;/usr/local/lib/node_modules/hexo-cli&#39; \ mkdir: /usr/local/lib/node_modules/hexo-cli: Permission denied</code>命令权限不够，参照<a href="https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally">npm的官方文档</a>在 <code>～</code>目录下自建一个npm全局包目录解决。</p><p>进入hexo folder，这时要根据你当时的package.json重新安装各种包<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure><br>装好后，npm会让你audit，可以看看，不过没什么用。这时就可以<code>hexo server</code>了，然后居然直接跑起来了，虽然还是会有一些warning，但都是一些dependency不支持了之类的。<br><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/Screen%20Shot%202022-08-05%20at%2001.33.22.png" alt=""></p><p>最后，再根据以前写的<a href="https://gitkeniwo.github.io/2022-02-23-inline-math/">一些博文</a>，开启数学公式一类的插件就可以了($try \space some \space math \space here \space 89^{64}$)，由于包都是重装的，所以这些细枝末节的修改最好也重新走一遍。这样来看，hexo基本上可以很好地迁移到 #apple silicon 这边来。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;昨天14寸mbp(m1 pro)到了之后，欢天喜地的用time machine备份再还原了一下午，谁知道time machine连同intel上的环境一起给还原到了apple silicon这边来，光是要怎么卸载intel的&lt;a href=&quot;https://brew.sh&quot;
-      
-    
-    </summary>
-    
-    
-      <category term="Blogging" scheme="https://gitkeniwo.github.io/categories/Blogging/"/>
-    
-    
-      <category term="hexo" scheme="https://gitkeniwo.github.io/tags/hexo/"/>
-    
-      <category term="apple-silicon" scheme="https://gitkeniwo.github.io/tags/apple-silicon/"/>
-    
-      <category term="mbp" scheme="https://gitkeniwo.github.io/tags/mbp/"/>
-    
-      <category term="apple" scheme="https://gitkeniwo.github.io/tags/apple/"/>
     
   </entry>
   
