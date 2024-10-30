@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>follow-feed-claim</title>
+      <link href="2024-10-30-follow-feed-claim/"/>
+      <url>2024-10-30-follow-feed-claim/</url>
+      
+        <content type="html"><![CDATA[<p>This message is used to verify that this feed (feedId:74578853898691584) belongs to me (userId:67424337005270016). Join me in enjoying the next generation information browser <a href="https://follow.is">https://follow.is</a>.</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Saigon, I&#39;m still only in Saigon</title>
       <link href="2024-10-01-saigon/"/>
       <url>2024-10-01-saigon/</url>
@@ -1431,9 +1444,9 @@
       
         <tags>
             
-            <tag> japanese </tag>
-            
             <tag> yofukashi </tag>
+            
+            <tag> japanese </tag>
             
         </tags>
       
@@ -2098,9 +2111,9 @@
       
         <tags>
             
-            <tag> nature </tag>
-            
             <tag> hangzhou </tag>
+            
+            <tag> nature </tag>
             
         </tags>
       
