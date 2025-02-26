@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://gitkeniwo.github.io/"/>
-  <updated>2024-10-30T22:36:26.632Z</updated>
+  <updated>2025-02-26T22:39:41.748Z</updated>
   <id>https://gitkeniwo.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>whats-up</title>
+    <link href="https://gitkeniwo.github.io/2025-02-26-whats-up/"/>
+    <id>https://gitkeniwo.github.io/2025-02-26-whats-up/</id>
+    <published>2025-02-26T05:37:40.000Z</published>
+    <updated>2025-02-26T22:39:41.748Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>25 years and my life is still<br>trying to get up that<br>great big hill of hope<br>for a destination</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;25 years and my life is still&lt;br&gt;trying to get up that&lt;br&gt;great big hill of hope&lt;br&gt;for a destination&lt;/p&gt;
+&lt;/blockquote&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="Tweets" scheme="https://gitkeniwo.github.io/categories/Tweets/"/>
+    
+    
+      <category term="karma" scheme="https://gitkeniwo.github.io/tags/karma/"/>
+    
+  </entry>
   
   <entry>
     <title>follow-feed-claim</title>
@@ -567,34 +596,6 @@
       <category term="paas" scheme="https://gitkeniwo.github.io/tags/paas/"/>
     
       <category term="sftp" scheme="https://gitkeniwo.github.io/tags/sftp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>放在微博图床的图片全挂了。</title>
-    <link href="https://gitkeniwo.github.io/2023-01-25-weibo-image-hosting/"/>
-    <id>https://gitkeniwo.github.io/2023-01-25-weibo-image-hosting/</id>
-    <published>2023-01-25T06:25:55.000Z</published>
-    <updated>2024-09-22T22:33:38.213Z</updated>
-    
-    <content type="html"><![CDATA[<p>微博图床，爷真是当初信了iPic的邪了。</p><p><em>注：ipic是少数几个支持无token上传微博图床的图床工具</em></p><p><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20230125150344.png" alt=""></p><p>想到之前看到有人说web2.0系的平台，因为是freemium模式，平台的用户本身就是他们的盈利点。用户的digital property自然也不由用户自己掌控。<br>现在即便是想补图，也无从知晓这里究竟放的是什么图片了。以后图片要么放可以信赖的渠道(Github)，要么还是放在本地吧。不氪金的东西不可能长久。</p><p><em>Update (Mar 12 2023)</em> </p><p>似乎在原链前加入一个 <code>cdn.cdnjson.com/</code> 就能通过这个cdn访问到原图. 原图没有被删掉, 而是做了防盗链, 然后赶紧都换成别的源吧。。。</p><p>根据<a href="https://juejin.cn/post/7189651446306963514">这篇文章</a>，这tva1～4挂掉不只是我一个，是大规模事件. 这个人还写了如何全部替换图链的操作，具体可以去他文章里看。重点他说不推荐用github作为图床，因为官方建议仓库维持在1G内，然后他推荐了<a href="https://www.qiniu.com/">七牛云</a>免费10G空间，不过我对墙内公司的freemium商业模式深表怀疑(Heroku的免费档都做不下去，🀄️人一来不得把它薅空？)，另外就是你不能存维尼熊不爱看的图。我去下载了一下GitHub图床的repo，现在都121M了，还是非常担心这个repo被GitHub官方橄榄掉的。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;微博图床，爷真是当初信了iPic的邪了。&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;注：ipic是少数几个支持无token上传微博图床的图床工具&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/gitkeniwo/image_ho
-      
-    
-    </summary>
-    
-    
-      <category term="Blogging" scheme="https://gitkeniwo.github.io/categories/Blogging/"/>
-    
-    
-      <category term="image-hosting" scheme="https://gitkeniwo.github.io/tags/image-hosting/"/>
     
   </entry>
   
