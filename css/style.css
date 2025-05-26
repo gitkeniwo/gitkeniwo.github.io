@@ -667,7 +667,7 @@ body .gallery-column {
 #header #nav ul li {
   display: inline-block;
   margin-right: 15px;
-  border-right: 1px dotted;
+  border-right: 1px;
   border-color: #2bbc8a;
   vertical-align: middle;
 }
@@ -1373,7 +1373,7 @@ article .content .caption {
 #footer li {
   display: inline-block;
   margin-right: 15px;
-  border-right: 1px solid;
+  border-right: 1px;
   border-color: #666;
   vertical-align: middle;
 }
