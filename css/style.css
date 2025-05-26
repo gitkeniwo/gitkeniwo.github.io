@@ -809,7 +809,7 @@ body .gallery-column {
   background-repeat: repeat-x;
 }
 #header-post #nav ul li {
-  border-right: 1px dotted #2bbc8a;
+  border-right: 0;
 }
 #header-post #nav ul li:last-child {
   margin-right: 0;
