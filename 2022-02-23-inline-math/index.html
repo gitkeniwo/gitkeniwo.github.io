@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Noto+Sans+TC&family=Syne+Mono&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/957afab140.js" crossorigin="anonymous"></script>
+    
+    <!--memos-->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <!-- <meta name="referrer" content="no-referrer">
+    <link rel="icon" href="/assets/img/logo.webp" type="image/*" />
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/APlayer.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/highlight.github.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css"> -->
+    <!--end memos-->
+
+
+    <meta name="description" content="Let’s have a look at inline math. 2^6&#x3D;64还以为hexo用别人的主题就没办法支持Mathjax，都准备换到jekyll叻…… 参考  这篇post. 下面原文复制过来：   在 hexo 中，你会发现我们不能用 Latex 语法来书写数学公式，这对于书写学术博客来说是很大的不便，因为我们会经常碰到很多的数学公式推导，但是我们可以通过安装第三方库来解决这一问题。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="无需主题支持 在hexo博客开启Inline Math">
+<meta property="og:url" content="https://gitkeniwo.github.io/2022-02-23-inline-math/index.html">
+<meta property="og:site_name" content="사미즈다트">
+<meta property="og:description" content="Let’s have a look at inline math. 2^6&#x3D;64还以为hexo用别人的主题就没办法支持Mathjax，都准备换到jekyll叻…… 参考  这篇post. 下面原文复制过来：   在 hexo 中，你会发现我们不能用 Latex 语法来书写数学公式，这对于书写学术博客来说是很大的不便，因为我们会经常碰到很多的数学公式推导，但是我们可以通过安装第三方库来解决这一问题。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-02-23T19:07:23.000Z">
+<meta property="article:modified_time" content="2025-11-03T02:33:27.127Z">
+<meta property="article:author" content="ケニヲ">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/comedian-logo-100.png">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/comedian-logo-100.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/comedian-logo-100.png">
+        
+      
+    
+    <!-- title -->
+    <title>无需主题支持 在hexo博客开启Inline Math</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/true" title="사미즈다트" type="application/atom+xml" />
+    
+
+    
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body class="max-width mx-auto px3 ltr">    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">index/</a></li>
+         
+          <li><a href="/archives/">dossiers/</a></li>
+         
+          <li><a href="/categories/">taxonomy/</a></li>
+         
+          <li><a href="/murmur/">murmurs/</a></li>
+         
+          <li><a href="/search/">retrieval/</a></li>
+         
+          <li><a href="/about/">about/</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2022-06-21-dutch-grammar/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2021-12-22-info-overload/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://gitkeniwo.github.io/2022-02-23-inline-math/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2022-02-23-inline-math/&text=无需主题支持 在hexo博客开启Inline Math"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2022-02-23-inline-math/&title=无需主题支持 在hexo博客开启Inline Math"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2022-02-23-inline-math/&is_video=false&description=无需主题支持 在hexo博客开启Inline Math"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=无需主题支持 在hexo博客开启Inline Math&body=Check out this article: https://gitkeniwo.github.io/2022-02-23-inline-math/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2022-02-23-inline-math/&title=无需主题支持 在hexo博客开启Inline Math"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2022-02-23-inline-math/&title=无需主题支持 在hexo博客开启Inline Math"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2022-02-23-inline-math/&title=无需主题支持 在hexo博客开启Inline Math"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2022-02-23-inline-math/&title=无需主题支持 在hexo博客开启Inline Math"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2022-02-23-inline-math/&name=无需主题支持 在hexo博客开启Inline Math&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2022-02-23-inline-math/&t=无需主题支持 在hexo博客开启Inline Math"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index pt4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        无需主题支持 在hexo博客开启Inline Math
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a id='post-author' href="/">
+        <span itemprop="name">ケニヲ</span>
+        </a>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2022-02-23T19:07:23.000Z" itemprop="datePublished">2022-02-23</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Blogging/">Blogging</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/hexo/" rel="tag">hexo</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>Let’s have a look at inline math. <script type="math/tex">2^6=64</script><br>还以为hexo用别人的主题就没办法支持Mathjax，都准备换到jekyll叻……</p>
+<p>参考 <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/e8d433a2c5b7"> 这篇post</a>.</p>
+<p>下面原文复制过来：</p>
+<p> <br></p>
+<p>在 hexo 中，你会发现我们不能用 Latex 语法来书写数学公式，这对于书写学术博客来说是很大的不便，因为我们会经常碰到很多的数学公式推导，但是我们可以通过安装第三方库来解决这一问题。</p>
+<p><strong>第一步： 使用Kramed代替 Marked</strong><br>hexo 默认的渲染引擎是 <code>marked</code>，但是 <code>marked</code> 不支持 mathjax。 <code>kramed</code> 是在 marked 的基础上进行修改。我们在工程目录下执行以下命令来安装 <code>kramed</code>.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure>
+<p>然后，更改<code>&lt;your-project-dir&gt;/node_modules/hexo-renderer-kramed/lib/renderer.js</code>，更改：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// Change inline math rule</span><br><span class="line">function formatText(text) &#123;</span><br><span class="line">// Fit kramed&#x27;s rule: $$ + \1 + $$</span><br><span class="line">return text.replace(/`\$(.*?)\$`/g, &#x27;$$$$$1$$$$&#x27;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>为：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// Change inline math rule</span><br><span class="line">function formatText(text) &#123;</span><br><span class="line">return text;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>第二步: 停止使用<code>hexo-math</code>.</strong></p>
+<p>首先，如果你已经安装 <code>hexo-math</code>, </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-math --save</span><br></pre></td></tr></table></figure>
+<p>然后安装 <code>hexo-renderer-mathjax</code> 包：<code>npm install hexo-renderer-mathjax --save</code></p>
+<p><strong>第三步: 更新 Mathjax 的 CDN 链接</strong></p>
+<p>首先，打开<code>&lt;path-to-your-project&gt;/node_modules/hexo-renderer-mathjax/mathjax.html</code></p>
+<p>然后，把<code>&lt;script&gt;</code>更改为：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>第四步: 更改默认转义规则</strong></p>
+<p>因为 hexo 默认的转义规则会将一些字符进行转义，比如 <code>_</code> 转为 <code>&lt;em&gt;</code>, 所以我们需要对默认的规则进行修改.<br>首先， 打开<code>&lt;path-to-your-project&gt;/node_modules/kramed/lib/rules、inline.js</code>,</p>
+<p>然后，把:<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">escape: /^\\([\\`*&#123;&#125;\[\]()#$+\-.!_&gt;])/,</span><br></pre></td></tr></table></figure><br>更改为:<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">escape: /^\\([`*\[\]()# +\-.!_&gt;])/,</span><br></pre></td></tr></table></figure><br>把<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></table></figure><br>更改为:<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></table></figure></p>
+<p><strong>第五步: 开启<code>mathjax</code></strong></p>
+<p>在主题 <code>_config.yml</code> 中开启 <code>Mathjax</code>， 找到 <code>mathjax</code> 字段添加如下代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mathjax:</span><br><span class="line">enable: true</span><br></pre></td></tr></table></figure>
+<p>这一步可选，在博客中开启 Mathjax， 添加以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Testing Mathjax with Hexo</span><br><span class="line">category: Uncategorized</span><br><span class="line">date: 2017/05/03</span><br><span class="line">mathjax: true</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>通过以上步骤，我们就可以在 hexo 中使用 <code>Mathjax</code> 来书写数学公式。</p>
+<p>作者：MaosongRan<br>链接：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/e8d433a2c5b7">https://www.jianshu.com/p/e8d433a2c5b7</a><br>来源：简书</p>
+
+  </div>
+</article>
+<!--  -->
+
+<br>
+<br>
+
+<script src="https://giscus.app/client.js"
+        data-repo="gitkeniwo/gitkeniwo.github.io"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkyNjk1NTA0ODE="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOEBEDkc4CgyF8"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="transparent_dark"   
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<div class="blog-post-comments">
+    <div id="giscus">
+
+    </div>
+</div>
+
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">index/</a></li>
+         
+          <li><a href="/archives/">dossiers/</a></li>
+         
+          <li><a href="/categories/">taxonomy/</a></li>
+         
+          <li><a href="/murmur/">murmurs/</a></li>
+         
+          <li><a href="/search/">retrieval/</a></li>
+         
+          <li><a href="/about/">about/</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://gitkeniwo.github.io/2022-02-23-inline-math/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2022-02-23-inline-math/&text=无需主题支持 在hexo博客开启Inline Math"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2022-02-23-inline-math/&title=无需主题支持 在hexo博客开启Inline Math"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2022-02-23-inline-math/&is_video=false&description=无需主题支持 在hexo博客开启Inline Math"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=无需主题支持 在hexo博客开启Inline Math&body=Check out this article: https://gitkeniwo.github.io/2022-02-23-inline-math/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2022-02-23-inline-math/&title=无需主题支持 在hexo博客开启Inline Math"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2022-02-23-inline-math/&title=无需主题支持 在hexo博客开启Inline Math"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2022-02-23-inline-math/&title=无需主题支持 在hexo博客开启Inline Math"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2022-02-23-inline-math/&title=无需主题支持 在hexo博客开启Inline Math"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2022-02-23-inline-math/&name=无需主题支持 在hexo博客开启Inline Math&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2022-02-23-inline-math/&t=无需主题支持 在hexo博客开启Inline Math"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+
+  <!-- <div class="footer-top">
+    <div class="footer-left">
+      Copyright &copy;
+      
+      
+      2019-2025
+      ケニヲ
+    </div>
+  
+    <div class="footer-right">
+      <img src="/img/Written-By-Human-Not-By-AI-Badge-black.svg" /> 
+    </div>
+  </div> -->
+
+  <div class="footer-top">
+    <span class="footer-copyright">
+      Copyright &copy;
+      
+      
+      2019-2025
+      ケニヲ
+    </span>
+    <a target="_blank" rel="noopener" href="https://notbyai.fyi/hi/not-by-ai/" class="footer-badge">
+      <img src="/img/Written-By-Human-Not-By-AI-Badge-black.svg" alt="Written by Human, Not by AI" />
+    </a>
+  </div>
+
+
+  <div class="footer-bottom">
+    <nav>
+      <ul>
+        
+          <li><a href="/">index/</a></li>
+        
+          <li><a href="/archives/">dossiers/</a></li>
+        
+          <li><a href="/categories/">taxonomy/</a></li>
+        
+          <li><a href="/murmur/">murmurs/</a></li>
+        
+          <li><a href="/search/">retrieval/</a></li>
+        
+          <li><a href="/about/">about/</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+
+</footer>
+
+
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

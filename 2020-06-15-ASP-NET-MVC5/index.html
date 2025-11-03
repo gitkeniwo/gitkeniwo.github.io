@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Noto+Sans+TC&family=Syne+Mono&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/957afab140.js" crossorigin="anonymous"></script>
+    
+    <!--memos-->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <!-- <meta name="referrer" content="no-referrer">
+    <link rel="icon" href="/assets/img/logo.webp" type="image/*" />
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/APlayer.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/highlight.github.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css"> -->
+    <!--end memos-->
+
+
+    <meta name="description" content="本学期Web开发使用的MVC5框架，这是课程作业之课程知识点回顾，顺便拷贝一份在我的GP上。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ASP.NET MVC5 课程小结">
+<meta property="og:url" content="https://gitkeniwo.github.io/2020-06-15-ASP-NET-MVC5/index.html">
+<meta property="og:site_name" content="사미즈다트">
+<meta property="og:description" content="本学期Web开发使用的MVC5框架，这是课程作业之课程知识点回顾，顺便拷贝一份在我的GP上。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitkeniwo.github.io/2020-06-15-ASP-NET-MVC5/image1.gif">
+<meta property="og:image" content="https://gitkeniwo.github.io/2020-06-15-ASP-NET-MVC5/PATH">
+<meta property="article:published_time" content="2020-06-14T23:18:39.000Z">
+<meta property="article:modified_time" content="2025-11-03T02:33:27.122Z">
+<meta property="article:author" content="ケニヲ">
+<meta property="article:tag" content=".NET">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitkeniwo.github.io/2020-06-15-ASP-NET-MVC5/image1.gif">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/comedian-logo-100.png">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/comedian-logo-100.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/comedian-logo-100.png">
+        
+      
+    
+    <!-- title -->
+    <title>ASP.NET MVC5 课程小结</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/true" title="사미즈다트" type="application/atom+xml" />
+    
+
+    
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body class="max-width mx-auto px3 ltr">    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">index/</a></li>
+         
+          <li><a href="/archives/">dossiers/</a></li>
+         
+          <li><a href="/categories/">taxonomy/</a></li>
+         
+          <li><a href="/murmur/">murmurs/</a></li>
+         
+          <li><a href="/search/">retrieval/</a></li>
+         
+          <li><a href="/about/">about/</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2020-07-02-docker-01/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2020-06-11-The-Notebook-of-CS61B/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://gitkeniwo.github.io/2020-06-15-ASP-NET-MVC5/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2020-06-15-ASP-NET-MVC5/&text=ASP.NET MVC5 课程小结"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2020-06-15-ASP-NET-MVC5/&title=ASP.NET MVC5 课程小结"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2020-06-15-ASP-NET-MVC5/&is_video=false&description=ASP.NET MVC5 课程小结"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=ASP.NET MVC5 课程小结&body=Check out this article: https://gitkeniwo.github.io/2020-06-15-ASP-NET-MVC5/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2020-06-15-ASP-NET-MVC5/&title=ASP.NET MVC5 课程小结"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2020-06-15-ASP-NET-MVC5/&title=ASP.NET MVC5 课程小结"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2020-06-15-ASP-NET-MVC5/&title=ASP.NET MVC5 课程小结"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2020-06-15-ASP-NET-MVC5/&title=ASP.NET MVC5 课程小结"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2020-06-15-ASP-NET-MVC5/&name=ASP.NET MVC5 课程小结&description=&lt;p&gt;本学期Web开发使用的MVC5框架，这是课程作业之课程知识点回顾，顺便拷贝一份在我的GP上。&lt;br&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2020-06-15-ASP-NET-MVC5/&t=ASP.NET MVC5 课程小结"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC1%E5%91%A8%E8%AF%BE%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">第1周课程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="toc-number">1.1.</span> <span class="toc-text">名词解释</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Web"><span class="toc-number">1.1.1.</span> <span class="toc-text">Web</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">1.1.2.</span> <span class="toc-text">Web服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8"><span class="toc-number">1.1.3.</span> <span class="toc-text">浏览器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E9%A1%B5"><span class="toc-number">1.1.4.</span> <span class="toc-text">网页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#URL"><span class="toc-number">1.1.5.</span> <span class="toc-text">URL</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%E8%AE%BA%E8%BF%B0"><span class="toc-number">1.2.</span> <span class="toc-text">概念论述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Web%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.1.</span> <span class="toc-text">Web工作原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">静态网页工作原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E7%BD%91%E9%A1%B5%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">动态网页工作原理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#URL%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.2.</span> <span class="toc-text">URL的工作原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web%E8%AF%B7%E6%B1%82%E4%B8%8E%E5%93%8D%E5%BA%94"><span class="toc-number">1.2.3.</span> <span class="toc-text">Web请求与响应</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC2%E5%91%A8%E8%AF%BE%E7%A8%8B-MVC"><span class="toc-number">2.</span> <span class="toc-text">第2周课程 MVC</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A-1"><span class="toc-number">2.1.</span> <span class="toc-text">名词解释</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MVC"><span class="toc-number">2.1.1.</span> <span class="toc-text">MVC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Model-%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.1.2.</span> <span class="toc-text">Model 模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#View-%E8%A7%86%E5%9B%BE"><span class="toc-number">2.1.3.</span> <span class="toc-text">View 视图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Controller-%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-number">2.1.4.</span> <span class="toc-text">Controller 控制器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E5%9D%80%E8%B7%AF%E7%94%B1"><span class="toc-number">2.1.5.</span> <span class="toc-text">网址路由</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%E8%AE%BA%E8%BF%B0-1"><span class="toc-number">2.2.</span> <span class="toc-text">概念论述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MVC%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%A4%84%E7%90%86%E8%BF%87%E7%A8%8B"><span class="toc-number">2.2.1.</span> <span class="toc-text">MVC模型的处理过程</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC3%E5%91%A8%E8%AF%BE%E7%A8%8B-HTML"><span class="toc-number">3.</span> <span class="toc-text">第3周课程 HTML</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A-2"><span class="toc-number">3.1.</span> <span class="toc-text">名词解释</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML"><span class="toc-number">3.1.1.</span> <span class="toc-text">HTML</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XML-eXtensible-Markup-Language"><span class="toc-number">3.1.2.</span> <span class="toc-text">XML (eXtensible Markup Language)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XHTML"><span class="toc-number">3.1.3.</span> <span class="toc-text">XHTML</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DHTML"><span class="toc-number">3.1.4.</span> <span class="toc-text">DHTML</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%83%E7%B4%A0-Elements"><span class="toc-number">3.1.5.</span> <span class="toc-text">元素 Elements</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7"><span class="toc-number">3.1.5.1.</span> <span class="toc-text">属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#XHTML%E8%A7%84%E8%8C%83"><span class="toc-number">3.1.5.2.</span> <span class="toc-text">XHTML规范</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%E8%AE%BA%E8%BF%B0-2"><span class="toc-number">3.2.</span> <span class="toc-text">概念论述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E8%A7%A3%E6%9E%90HTML"><span class="toc-number">3.2.1.</span> <span class="toc-text">浏览器解析HTML</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">3.2.2.</span> <span class="toc-text">HTML的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E5%A4%B4%E4%B8%8E%E6%96%87%E6%A1%A3%E4%BD%93"><span class="toc-number">3.2.2.1.</span> <span class="toc-text">文档头与文档体</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index pt4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        ASP.NET MVC5 课程小结
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a id='post-author' href="/">
+        <span itemprop="name">ケニヲ</span>
+        </a>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-06-14T23:18:39.000Z" itemprop="datePublished">2020-06-15</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Tech/">Tech</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/NET/" rel="tag">.NET</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>本学期Web开发使用的MVC5框架，这是课程作业之课程知识点回顾，顺便拷贝一份在我的GP上。<br><a id="more"></a><br><strong>Web程序设计课程知识点总结</strong></p>
+<h1 id="第1周课程"><a href="#第1周课程" class="headerlink" title="第1周课程"></a>第1周课程</h1><h2 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="Web"><a href="#Web" class="headerlink" title="Web"></a>Web</h3><p><strong>Web服务</strong>是一种通过标准的Web协议提供服务的技术，目的是保证不同平台的应用服务可以互操作。</p>
+<h3 id="Web服务器"><a href="#Web服务器" class="headerlink" title="Web服务器"></a>Web服务器</h3><p>一般指网站服务器，服务器本身指计算机主机硬件，而web服务器本质上是一段运行在服务提供方主机上的计算机程序，可以处理浏览器等Web客户端的请求并返回相应响应。</p>
+<h3 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h3><p>网页浏览器是一种从 web 获取和显示页面的程序，这些页面包括这些资讯资源可为网页、图片、影音或其他内容，并且可以让用户通过超链接访问更多页面。<br>主流网页浏览器有Mozilla Firefox、Internet Explorer、Microsoft Edge、Google Chrome、Opera及Safari。</p>
+<h3 id="网页"><a href="#网页" class="headerlink" title="网页"></a>网页</h3><p>是一个适用于万维网和网页浏览器的文件，存放在世界某个角落的某一部或一组计算机中，可以经由网址（URL）来识别与访问，用户一般通过网页浏览器来阅读。</p>
+<h3 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h3><p><strong>统一资源定位符（*</strong>Uniform Resource Locator<strong>*）</strong>，表示一个给定的独特资源在Web上的地址。这个资源可以是一个HTML页面，一个CSS文档，一幅图像，等等。</p>
+<h2 id="概念论述"><a href="#概念论述" class="headerlink" title="概念论述"></a>概念论述</h2><h3 id="Web工作原理"><a href="#Web工作原理" class="headerlink" title="Web工作原理"></a>Web工作原理</h3><h4 id="静态网页工作原理"><a href="#静态网页工作原理" class="headerlink" title="静态网页工作原理"></a>静态网页工作原理</h4><p>(img)</p>
+<h4 id="动态网页工作原理"><a href="#动态网页工作原理" class="headerlink" title="动态网页工作原理"></a>动态网页工作原理</h4><p>(img)</p>
+<h3 id="URL的工作原理"><a href="#URL的工作原理" class="headerlink" title="URL的工作原理"></a>URL的工作原理</h3><p>(img)<br>1网络协议部分：最常见的如HTTP/HTTPS协议，此外还有ftp，bt下载等其他协议。<br>2Web服务器域名(即网址)<br>3端口号（可不加，根据协议有默认的端口）<br>4服务器的路径。根据url类型的不同，可以分为两个类型<br>真实路径：URL可以指向静态的html网页，也可以是图床上的jpg图片，或者任意文件的下载链接，此时url需要指向该文件的名称+后缀名。<br>虚拟路径：一般不带文件后缀名，采用路由映射的方式，由一段服务端程序（路由）解析并映射到指定的位置。</p>
+<h3 id="Web请求与响应"><a href="#Web请求与响应" class="headerlink" title="Web请求与响应"></a>Web请求与响应</h3><p>(img)<br>用户首先通过浏览器发出Web Request，这其中可能经过了很多网络协议，如常见的HTTP，或者代理服务器SOCKS5协议。服务器端的网络端口监听程序接收到Web请求之后，进入服务器端的路由映射，唤醒对应的控制器等处理请求，处理完毕后返回生成的视图或者html或其他类型的文件，再次经过网络协议返回给用户端，这就是Web Response。<br>当数据返回浏览器时，浏览器有可能解析数据发现还有一些静态资源（如：css，jquery或者图片）时又会发起另外的请求，而这些请求可能会在CDN上，那么CDN服务器又会处理这个用户的请求。<br>最后，客户端与服务器断开，由客户端解释HTML文档，在客户端屏幕上渲染图形结果呈现给用户。</p>
+<h1 id="第2周课程-MVC"><a href="#第2周课程-MVC" class="headerlink" title="第2周课程 MVC"></a>第2周课程 MVC</h1><h2 id="名词解释-1"><a href="#名词解释-1" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h3><p>即<strong>模型（Model）、视图（View）、 控制器（Controller）</strong>。MVC是软件开发时所使用的一种架构，是一种开发观念，是一种设计模式。它把应用切割成三个主要单元，强调关注点分离(Separation of Concerns , SoC)、 面向方面（侧面）的程序设计(Aspect-Oriented Programming , AOP)、简 化了复杂度、提高了可维护性、易于测试、易于分工。</p>
+<ul>
+<li>Model（模型）表示应用程序核心（比如数据库记录列表）。</li>
+<li>View（视图）显示数据（数据库记录）。</li>
+<li>Controller（控制器）处理输入（写入数据库记录）。<h3 id="Model-模型"><a href="#Model-模型" class="headerlink" title="Model 模型"></a>Model 模型</h3><h3 id="View-视图"><a href="#View-视图" class="headerlink" title="View 视图"></a>View 视图</h3><h3 id="Controller-控制器"><a href="#Controller-控制器" class="headerlink" title="Controller 控制器"></a>Controller 控制器</h3><strong>（*这三个概念分别放在第5，6，7周详细叙述）</strong><h3 id="网址路由"><a href="#网址路由" class="headerlink" title="网址路由"></a>网址路由</h3>路由（Route）是指映射URL到处理程序的模式。在ASP.NET MVC中，所有用户请求都要先经过ASP.NET路由系统，才能找到控制器中对应的操作方法（Action Method）。</li>
+</ul>
+<h2 id="概念论述-1"><a href="#概念论述-1" class="headerlink" title="概念论述"></a>概念论述</h2><h3 id="MVC模型的处理过程"><a href="#MVC模型的处理过程" class="headerlink" title="MVC模型的处理过程"></a>MVC模型的处理过程</h3><p>(img)<br>在MVC模式中，客户端首先通过URL（Universal Resource Locators， 统一资源定位符）向服务器发出请求（Request），服务器解析URL， 然后转到相应的控制器（Controller）进行处理，控制器处理后，再将 结果通过视图（View）返回到客户端，作为对客户端请求的响应 （Response）。</p>
+<p>例：使用 <em>StudentController</em> 来演示 MVC 模式的用法<br>(img)<br>其中经历了以下的过程。<br><strong>public</strong> <strong>class</strong> MVCPatternDemo {    <strong>public</strong> <strong>static</strong> void main(String[] args) {        <em>//从数据库获取学生记录</em>       Student model  = retrieveStudentFromDatabase();        <em>//创建一个视图：把学生详细信息输出到控制台</em>       StudentView view = <strong>new</strong> StudentView();        StudentController controller = <strong>new</strong> StudentController(model, view);        controller.updateView();        <em>//更新模型数据</em>       controller.setStudentName(“John”);        controller.updateView();    }     <strong>private</strong> <strong>static</strong> Student retrieveStudentFromDatabase(){       Student student = <strong>new</strong> Student();       student.setName(“Robert”);       student.setRollNo(“10”);       <strong>return</strong> student;    } }</p>
+<h1 id="第3周课程-HTML"><a href="#第3周课程-HTML" class="headerlink" title="第3周课程 HTML"></a>第3周课程 HTML</h1><h2 id="名词解释-2"><a href="#名词解释-2" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><p>超文本标记语言（HyperText Markup Language）定义了网页内容的含义和逻辑结构，常被用来构建和设计网页，是一种方便浏览器识别的标记语言。<br>“超文本”（hypertext）是指连接单个网站内或多个网站间的网页的链接。<br>“标记”（markup）注明了文本、图片和其他内容，以便于在 Web 浏览器中显示，如<head>, <body> 等。</p>
+<h3 id="XML-eXtensible-Markup-Language"><a href="#XML-eXtensible-Markup-Language" class="headerlink" title="XML (eXtensible Markup Language)"></a>XML (eXtensible Markup Language)</h3><p>一种类似于HTML的标记语言，但不用预先定义tags，用户可以根据自己需要构建和扩充标记符号，用于表达、存储和传递数据与信息。XML已经是互联网上传输数据的事实标准，很多著名的语言如 RSS，SVG，XHTML都是以XML为基础的，例如，如果你用非RSS阅读器打开RSS链接就会看到类似XML的源码文件。</p>
+<h3 id="XHTML"><a href="#XHTML" class="headerlink" title="XHTML"></a>XHTML</h3><p>是W3C制定的“遵循XML规范”的 HTML严格规范，使用DOCTYPE元素指定所遵循的标准，一般来说，XHTML = HTML + XML。</p>
+<h3 id="DHTML"><a href="#DHTML" class="headerlink" title="DHTML"></a>DHTML</h3><p>指动态(Dynamic)的HTML，DHTML＝HTML + CSS + JavaScript。<br>CSS确定了信息的外在表现形式，JavaScript则用于编程动态操控CSS和HTML。</p>
+<h3 id="元素-Elements"><a href="#元素-Elements" class="headerlink" title="元素 Elements"></a>元素 Elements</h3><p>HTML文档由元素(element)构成，元素由一对标签表示，遵循一定的格式，例如：<p>白日依山尽，黄河入海流。</p></p>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><p>元素可以拥有一个或多个属性， 例如<img src="image1.gif" width="200" height="300" /></p>
+<h4 id="XHTML规范"><a href="#XHTML规范" class="headerlink" title="XHTML规范"></a>XHTML规范</h4><p>标签名称必须小写<br>属性名称必须小写，属性值用双引号括起来<br>标签必须严格嵌套<br>标记必须严格配对，即使是空元素也得封闭<br>XHTML区分“内容标签”与“结构标签” ，结构标签不要嵌入到内容标签内</p>
+<h2 id="概念论述-2"><a href="#概念论述-2" class="headerlink" title="概念论述"></a>概念论述</h2><h3 id="浏览器解析HTML"><a href="#浏览器解析HTML" class="headerlink" title="浏览器解析HTML"></a>浏览器解析HTML</h3><p>浏览器是一个HTML的显示器，它阅读HTML 网页，并解释其含义，然后将解释结果显示在屏幕上。</p>
+<h3 id="HTML的使用"><a href="#HTML的使用" class="headerlink" title="HTML的使用"></a>HTML的使用</h3><h4 id="文档头与文档体"><a href="#文档头与文档体" class="headerlink" title="文档头与文档体"></a>文档头与文档体</h4><p>&lt;!DOCTYPE html&gt; <strong>&lt;html</strong> xmlns=”<a target="_blank" rel="noopener" href="http://www.w3.org/1999/xhtml&quot;**&gt;**">http://www.w3.org/1999/xhtml&quot;**&gt;**</a> <strong><head></strong>    <strong>&lt;meta</strong> content=”text/html; charset=utf-8”<strong>/&gt;</strong>    <strong><title></strong>My First HTML5 Page<strong>&lt;/title&gt;</strong> <strong>&lt;</strong>!– 导入css样式表与JavaScript程序 —&gt;   <strong>&lt;/head&gt;</strong>  <strong><body></strong>   <strong><p></strong> My First HTML5 Page !<strong>&lt;/p&gt;</strong>   <strong>&lt;/body&gt;</strong> <strong>&lt;/html&gt;</strong></p>
+<h4 id="标题与段落"><a href="#标题与段落" class="headerlink" title="标题与段落"></a>标题与段落</h4><ul>
+<li><h1></h1> ~ <h6></h6>表示标题</li>
+<li><p></p>表示自然段。</li>
+<li>换行<br/></li>
+<li>分隔线<hr/></li>
+<li>注释<!--注解内容--></li>
+<li>转义字符(&amp;nbsp ……)<h4 id="图像"><a href="#图像" class="headerlink" title="图像"></a>图像</h4><img src="PATH"><br>虽然图像的格式也可以在img标签中指定，但是使用CSS仍是最佳途径。<h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4>使用<a>标签指向另一网页的链接。<br><a href="PATH">LINK DENOTION TEXT</a><br><strong>锚：</strong>本页面某个特定位置的定位超链接<br><strong>&lt;h3</strong> id=”intro”<strong>&gt;</strong>Introduction<strong>&lt;/h3&gt;</strong> <strong>&lt;a</strong> href=”#intro”<strong>&gt;</strong>Introduction<strong>&lt;/a&gt;</strong><h4 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h4>无序列表 <ul> <-->有序列表 <ol>
+列表项标签<li>, 列表与列表之间有包含关系的，还可以嵌套使用，例如：
+**<ul>**   **<li>**first item**</li>**   **<li>**second item           **<ul>**       **<li>**second item first subitem**</li>**       **<li>**second item second subitem     unordered list! -->         **<ul>**           **<li>**second item second subitem first sub-subitem**</li>**           **<li>**second item second subitem second sub-subitem**</li>**           **<li>**second item second subitem third sub-subitem**</li>**         **</ul><strong>       </strong>&lt;/li&gt;<strong>                  </strong><li>**second item third subitem**</li><strong>     </strong>&lt;/ul&gt;<strong>   </strong>&lt;/li&gt;<strong>                 </strong><li>**third item**</li><strong> </strong>&lt;/ul&gt;**<br>浏览器输出如下所示：<br>···</li>
+<li>first item</li>
+<li>second item<ul>
+<li>second item first subitem</li>
+<li>second item second subitem<ul>
+<li>second item second subitem first sub-subitem</li>
+<li>second item second subitem second sub-subitem</li>
+<li>second item second subitem third sub-subitem</li>
+</ul>
+</li>
+<li>second item third subitem</li>
+</ul>
+</li>
+<li>third item<br>···<h4 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h4><table></li>
+<li>表格标签<table></li>
+<li>表格标题标签<caption></li>
+<li>表格头部标签<thead></li>
+<li>表格主体标签<tbody></li>
+<li>表格尾部标签<tfoot></li>
+<li>表格行标签<tr></li>
+<li>表格单元格标签<td></li>
+<li>让单元格跨越多列或多行：使用单元格属性colspan、rowspan</li>
+<li>展示：</li>
+<li><strong><p></strong>添加了 thead, tfoot, 和 tbody的表格<strong>&lt;/p&gt;</strong> <strong><table></strong>   <strong><thead></strong>     <strong><tr></strong>       <strong><th></strong>Header content 1<strong>&lt;/th&gt;</strong>       <strong><th></strong>Header content 2<strong>&lt;/th&gt;</strong>     <strong>&lt;/tr&gt;</strong>   <strong>&lt;/thead&gt;</strong>   <strong><tfoot></strong>     <strong><tr></strong>       <strong><td></strong>Footer content 1<strong>&lt;/td&gt;</strong>       <strong><td></strong>Footer content 2<strong>&lt;/td&gt;</strong>     <strong>&lt;/tr&gt;</strong>   <strong>&lt;/tfoot&gt;</strong>   <strong><tbody></strong>     <strong><tr></strong>       <strong><td></strong>Body content 1<strong>&lt;/td&gt;</strong>       <strong><td></strong>Body content 2<strong>&lt;/td&gt;</strong>     <strong>&lt;/tr&gt;</strong>   <strong>&lt;/tbody&gt;</strong> <strong>&lt;/table&gt;</strong></li>
+<li>输出如下：</li>
+<li>···</li>
+<li>添加了 thead, tfoot, 和 tbody的表格</li>
+<li>Header content 1</li>
+<li>Header content 2</li>
+<li>Footer content 1</li>
+<li>Footer content 2</li>
+<li>Body content 1</li>
+<li>Body content 2</li>
+<li>···</li>
+<li>关于表格的更多参数，请见：<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/table">https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/table</a><h4 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h4></li>
+<li><form> </form></li>
+<li>表单提交: method=”post|get”</li>
+<li>提交目标: action=”……”</li>
+<li>数据输入框：<input type="text" name="username" /></li>
+<li>表单的基本用例展示：</li>
+<li><strong>&lt;form</strong> action=”” method=”get” class=”form-example”<strong>&gt;</strong>   <strong>&lt;div</strong> class=”form-example”<strong>&gt;</strong>     <strong>&lt;label</strong> for=”name”<strong>&gt;</strong>Enter your name: <strong>&lt;/label&gt;</strong>     <strong>&lt;input</strong> type=”text” name=”name” id=”name” required<strong>&gt;</strong>   <strong>&lt;/div&gt;</strong>   <strong>&lt;div</strong> class=”form-example”<strong>&gt;</strong>     <strong>&lt;label</strong> for=”email”<strong>&gt;</strong>Enter your email: <strong>&lt;/label&gt;</strong>     <strong>&lt;input</strong> type=”email” name=”email” id=”email” required<strong>&gt;</strong>   <strong>&lt;/div&gt;</strong>   <strong>&lt;div</strong> class=”form-example”<strong>&gt;</strong>     <strong>&lt;input</strong> type=”submit” value=”Subscribe!”<strong>&gt;</strong>   <strong>&lt;/div&gt;</strong> <strong>&lt;/form&gt;</strong></li>
+<li>(img)<h4 id="子页面"><a href="#子页面" class="headerlink" title="子页面"></a>子页面</h4><iframe src="URL" /><br>子页面已经不太使用，在现在的前端开发里面还有更多便捷的框架，故此处略去。<h4 id="多媒体"><a href="#多媒体" class="headerlink" title="多媒体"></a>多媒体</h4></li>
+<li>插入视频，如<video src="video1.webm"></video></li>
+<li>插入音频，如<audio src="audio1.mp3"></audio></li>
+<li>内嵌<source src="……" />播放多个媒体</li>
+<li><strong>&lt;audio</strong> controls=”controls”<strong>&gt;</strong> <strong>&lt;source</strong> src=”audio1.mp3” type=”audio/mp3” <strong>/&gt;</strong> <strong>&lt;source</strong> src=”audio2.mp4” type=”audio/mp4” <strong>/&gt;</strong> <strong>&lt;source</strong> src=”audio3.ogg” type=”audio/ogg” <strong>/&gt;</strong> <strong>&lt;/audio&gt;</strong></li>
+</ul>
+<h1 id="第4周课程-CSS"><a href="#第4周课程-CSS" class="headerlink" title="第4周课程 CSS"></a>第4周课程 CSS</h1><h2 id="名词解释-3"><a href="#名词解释-3" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h3><p><strong>CSS（Cascading Style Sheet，层叠样式表）</strong>是一种指定HTML文档视觉表现的标准。一般来说，CSS可单独作为一个引用文件或者插入html代码之中，目的是用统一规范的格式对某一类的HTML元素属性进行限定和修改。<br>HTML定义了文档的结构和内容，CSS则决定了<strong>浏览器以何种样式显示文档</strong>，这样，对于同样的HTML的原文档，使用不同的CSS进行渲染就可以得到风格各异的网页页面，体现了“信息结构与表现形式相分离”的基本原则。</p>
+<h4 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h4><ol>
+<li>代码重用提升开发效率；</li>
+<li>选择器功能强大；</li>
+<li>灵活轻便；</li>
+<li>浏览器与开发工具广泛支持。<h3 id="CSS盒子模型"><a href="#CSS盒子模型" class="headerlink" title="CSS盒子模型"></a>CSS盒子模型</h3>是一种便于使用者理解CSS布局的模型。具体来说，当对一个文档进行布局（lay out）的时候，浏览器的渲染引擎会根据标准之一的 <strong>CSS 盒子模型</strong>（<strong>CSS basic box model</strong>），将所有元素表示为一个个矩形的盒子（box）。CSS 决定这些盒子的大小、位置以及属性（例如颜色、背景、边框尺寸）。</li>
+</ol>
+<h2 id="概念论述-3"><a href="#概念论述-3" class="headerlink" title="概念论述"></a>概念论述</h2><h3 id="CSS盒子模型的结构"><a href="#CSS盒子模型的结构" class="headerlink" title="CSS盒子模型的结构"></a>CSS盒子模型的结构</h3><p>(img)<br>每个盒子由四个部分组成，其效用由它们各自的边界（Edge）所定义。如图，与盒子的四个组成区域相对应，每个盒子有四个边界：<em>内容边界</em> <em>Content edge</em>、<em>内边距边界</em> <em>Padding Edge</em>、<em>边框边界</em> <em>Border Edge</em>、<em>外边框边界</em> <em>Margin Edge</em>。</p>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><ul>
+<li>行内式：在HTML标签的style属性中编写CSS代码 n嵌入式：在<head></head>中编写CSS代码。</li>
+<li>导入式：使用@import指令——很少用</li>
+<li><strong>&lt;style</strong> type=”text/css”<strong>&gt;</strong> div { <strong>background-color</strong>: whitesmoke; }  @import “mystyle.css”;  <strong>&lt;/style&gt;</strong></li>
+<li>链接式：使用<link>链接外部CSS文件: <link type="text/css" rel="stylesheet" href="mycss.css" /><h3 id="CSS样式规则"><a href="#CSS样式规则" class="headerlink" title="CSS样式规则"></a>CSS样式规则</h3>p { attribute: value; }<br>p代表选择器，大括号里面是一条条属性与值的声明。<h3 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h3><h4 id="基本选择器"><a href="#基本选择器" class="headerlink" title="基本选择器"></a>基本选择器</h4></li>
+<li>通用选择器 * { }</li>
+<li>Tag选择器 p { }</li>
+<li>Class选择题 .className { }</li>
+<li>ID选择器 #idName { }</li>
+<li>属性选择器 [attributeName=”value”] { } 例如 div[class=”light”] { … } <h4 id="分组选择器（Grouping-selectors）"><a href="#分组选择器（Grouping-selectors）" class="headerlink" title="分组选择器（Grouping selectors）"></a>分组选择器（Grouping selectors）</h4>交集 p.special { … } p#footer { … }<br>并集：A, B ，例如div, .special, #footer { … }<h4 id="组合器-关系选择器-（Combinators）"><a href="#组合器-关系选择器-（Combinators）" class="headerlink" title="组合器(关系选择器)（Combinators）"></a>组合器(关系选择器)（Combinators）</h4></li>
+<li>后代组合器（Descendant combinator）</li>
+<li>（空格）组合器选择前一个元素的后代节点。 <strong>语法：</strong>A B <strong>例子：</strong>div span 匹配所有位于任意 [``] 元素之内的 [``] 元素。</li>
+<li>直接子代组合器（Child combinator）</li>
+<li>> 组合器选择前一个元素的直接子代的节点。 <strong>语法</strong>：A &gt; B <strong>例子</strong>：ul &gt; li 匹配直接嵌套在 [``] 元素内的所有 [``] 元素。</li>
+<li>一般兄弟组合器（General sibling combinator）</li>
+<li>~ 组合器选择兄弟元素，也就是说，后一个节点在前一个节点后面的任意位置，并且共享同一个父节点。 <strong>语法</strong>：A ~ B <strong>例子</strong>：p ~ span 匹配同一父元素下，[``] 元素后的所有 [``] 元素。</li>
+<li>紧邻兄弟组合器（Adjacent sibling combinator）</li>
+<li>+ 组合器选择相邻元素，即后一个元素紧跟在前一个之后，并且共享同一个父节点。 <strong>语法：</strong>A + B <strong>例子：</strong>h2 + p 会匹配所有紧邻在 [``] 元素后的 [``] 元素。</li>
+<li>列组合器（Column combinator）</li>
+<li>|| 组合器选择属于某个表格行的节点。 <strong>语法：</strong> A || B <strong>例子：</strong> col || td 会匹配所有 作用域内的 [`] 元素。<h4 id="伪选择器（Pseudo）"><a href="#伪选择器（Pseudo）" class="headerlink" title="伪选择器（Pseudo）"></a>伪选择器（Pseudo）</h4>伪类 : 伪选择器支持按照未被包含在文档树中的状态信息来选择元素。 <strong>例子：</strong>a:visited 匹配所有曾被访问过的 [``] 元素。<br>伪元素 \:: 伪选择器用于表示无法用 HTML 语义表达的实体。 <strong>例子：</strong>p\::first-line 匹配所有 [``] 元素的第一行。<h3 id="CSS属性与值"><a href="#CSS属性与值" class="headerlink" title="CSS属性与值"></a>CSS属性与值</h3><h4 id="值的继承"><a href="#值的继承" class="headerlink" title="值的继承"></a>值的继承</h4>大部分会自动从父元素继承<h4 id="大小单位"><a href="#大小单位" class="headerlink" title="大小单位"></a>大小单位</h4>px 表示像素； em 是一个相对单位，表示跟标准值的相对比例。<br>另外，还可以以百分比的形式来定义长宽。<h4 id="CSS颜色"><a href="#CSS颜色" class="headerlink" title="CSS颜色"></a>CSS颜色</h4>以十六进制数（#fff、#ffffff）表示，每一位或两位表示红、绿、蓝三原色的色值，#ffffff表示纯黑，#000000表示纯白。</li>
+</ul>
+<h1 id="第5周课程-MVC-V"><a href="#第5周课程-MVC-V" class="headerlink" title="第5周课程 MVC-V"></a>第5周课程 MVC-V</h1><h2 id="名词解释-4"><a href="#名词解释-4" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="View视图"><a href="#View视图" class="headerlink" title="View视图"></a>View视图</h3><p>View（视图）是MVC中的V，是经过控制器结合模型数据之后，呈现给用户的界面，可以显示数据或数据库记录。</p>
+<h3 id="Views-文件夹"><a href="#Views-文件夹" class="headerlink" title="Views 文件夹"></a>Views 文件夹</h3><p>Views 文件夹用于存储与应用程序的显示相关的 HTML 文件（用户界面）。Views 文件夹中包含每个控制器对应的一个文件夹。</p>
+<ul>
+<li>Account 文件夹包含用于用户账号注册和登录的页面。</li>
+<li>Home 文件夹用于存储诸如 home 页和 about 页之类的应用程序页面。</li>
+<li>Shared 文件夹用于存储控制器间分享的视图（母版页和布局页）。<h3 id="View与HTML，CSS的关系"><a href="#View与HTML，CSS的关系" class="headerlink" title="View与HTML，CSS的关系"></a>View与HTML，CSS的关系</h3>View主体是由HTML书写<h3 id="View的类型"><a href="#View的类型" class="headerlink" title="View的类型"></a>View的类型</h3><h4 id="常规视图"><a href="#常规视图" class="headerlink" title="常规视图"></a>常规视图</h4><h4 id="部分视图"><a href="#部分视图" class="headerlink" title="部分视图"></a>部分视图</h4>一般是小块的代码，与布局视图相反。一般作为附加成分嵌入其他视图。有两种类型，一种是跟控制器对应的，另一种是不与控制器对应的。<h4 id="布局视图"><a href="#布局视图" class="headerlink" title="布局视图"></a>布局视图</h4>与部分视图相反，作为布局被广泛的引用和插入进大部分的页面。<h3 id="Razor"><a href="#Razor" class="headerlink" title="Razor"></a>Razor</h3>Razor是服务器端的标记语言，可以将基于服务器的代码（Visual Basic 和 C#）嵌入到网页中。<br>基于服务器的代码可以在网页传送给浏览器时，创建动态 Web 内容。当一个网页被请求时，服务器在返回页面给浏览器之前先执行页面中的基于服务器的代码。通过服务器的运行，代码能执行复杂的任务，比如进入数据库。<h3 id="强类型"><a href="#强类型" class="headerlink" title="强类型"></a>强类型</h3>强类型的html帮助器，即带for的如Html.TextBoxFor()，其使用 <strong>lambda 表达式</strong>来引用传到视图模板中的模型或视图模型。</li>
+</ul>
+<h2 id="概念论述-4"><a href="#概念论述-4" class="headerlink" title="概念论述"></a>概念论述</h2><h3 id="Razor-C-语法规则"><a href="#Razor-C-语法规则" class="headerlink" title="Razor C# 语法规则"></a>Razor C# 语法规则</h3><p>Razor 代码块包含在@{ … } 中，内联表达式（变量和函数）以 @ 开头，代码语句用;结束，变量使用 var 关键字声明，字符串用引号括起来，C# 代码区分大小写，扩展名是 .cshtml, 例如：<br><!-- Single statement block --> @{ var myMessage = “Hello World”; }  <!-- Inline expression or variable --> <p>The value of myMessage **is**: @myMessage</p>  <!-- Multi-statement block --> @{ var greeting = “Welcome to our site!”; var weekDay = DateTime.Now.DayOfWeek; var greetingMessage = greeting + “ Here in Huston it is: “ + weekDay; } <p>The greeting **is**: @greetingMessage</p></p>
+<h4 id="Razor语句块"><a href="#Razor语句块" class="headerlink" title="Razor语句块"></a>Razor语句块</h4><p>一系列的语句，用大括号组成组。例如：<br>@{ Layout = <strong>null</strong>;  string temp = “var test———“; }</p>
+<h4 id="Razor语句"><a href="#Razor语句" class="headerlink" title="Razor语句"></a>Razor语句</h4><p>单独的语句，例如@model LoginViewModel</p>
+<h4 id="Razor表达式"><a href="#Razor表达式" class="headerlink" title="Razor表达式"></a>Razor表达式</h4><p>放在html tag里面，呈现内容。例如：<br>&lt;h3&gt;@(ViewBag.Message)&lt;/h3&gt; //注意，插入文字中间的时候加括号。</p>
+<input type="text" name="UName" value="@Model.UName"></input>
+
+<h3 id="数据获取"><a href="#数据获取" class="headerlink" title="数据获取"></a>数据获取</h3><ul>
+<li>方法一：从控制器获得<h4 id="强类型Model-Object"><a href="#强类型Model-Object" class="headerlink" title="强类型Model Object"></a>强类型Model Object</h4>例如：@model Razor.Models.Product<br>由控制器从模型中提取数据库的数据，再作相应的处理如类型转换后传递给视图。例如return View(db.ASPnetUser.toList())<h4 id="ViewBag对象"><a href="#ViewBag对象" class="headerlink" title="ViewBag对象"></a>ViewBag对象</h4>ViewBag是动态对象，其属性可以由用户自定义，如 .Message<br>ViewBag没有错误检验，在Debugging的时候不易发现。<br>例如ViewBag.Message =”your message” //写在controller的某个Result里面<br>然后在对应的View页面中直接在tag 例如&lt;h3&gt;@ViewBag.Message &lt;/h3&gt;中利用razor引用即可。 </li>
+<li>方法二：自己操作模型（略）<h3 id="HTML-帮助器"><a href="#HTML-帮助器" class="headerlink" title="HTML 帮助器"></a>HTML 帮助器</h3>由Html类（对象）衍生出来的一系列方法，实际上是html类的static method（静态方法）。<br>Html.actionLink()// 产生一个超链接<br>Html.actionLink(“Create new User”, “Create”)=<a href="\\ASPNetUser\\Create">Create new User </a><br>其他的帮助器例如： @using(Html.BeginForm()) { …… } @Html.CheckBox() @Html.RadioButton() @Html.Hidden() @Html.Password() @Html.TextArea() @Html.TextBox() @Html.DropDownList() @Html.ListBox() @Html.ActionLink() @Html.RouteLink()，<br>强类型的后面加for，如Html.TextBoxFor()，其各自的功能可以去官方文档查看。<h4 id="强类型的说明"><a href="#强类型的说明" class="headerlink" title="强类型的说明"></a>强类型的说明</h4>强类型的html帮助器，即带for的如Html.TextBoxFor()，其使用 <strong>lambda 表达式</strong>来引用传到视图模板中的模型或视图模型。<br><em>注：Lambda表达式参见C#文档。</em><br>这样做有一些好处：<br>促成更好的编译时视图检查（可以在编译时发现缺陷，而不是在运行时），还可以促成视图模板中更好的代码intellisense支持。<br>比如 之前的写法是直接传入模型里的值<br>Html.TextBox(“Product Name”, Model.ProductName)<br>它会生成如下的HTML代码<br><input id="productName" name="productName" type="text" value="Model.ProductName"><br>使用Html.TextBoxFor()之后，只需写入<br>Html.TextBoxFor(Model =&gt; Model.ProductName)//也不需要指定“ProductName”的id了<h3 id="Url帮助器"><a href="#Url帮助器" class="headerlink" title="Url帮助器"></a>Url帮助器</h3>由Url对象衍生出来的一系列方法。如<br>@Url.Content(“~/Content/Site.css”)<br>@Url.Action()<br>@Url.RouteUrl()<br>具体的使用方法详见ASP.NET MVC的官方文档。</li>
+</ul>
+<h1 id="第6周课程-MVC-C"><a href="#第6周课程-MVC-C" class="headerlink" title="第6周课程 MVC-C"></a>第6周课程 MVC-C</h1><h2 id="名词解释-5"><a href="#名词解释-5" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="控制器-Controller"><a href="#控制器-Controller" class="headerlink" title="控制器 Controller"></a>控制器 Controller</h3><p><strong>Controller（控制器）</strong>是应用程序中处理用户交互的部分。 通常控制器负责从视图读取数据，控制用户输入，并向模型发送数据，或者与之相反，从模型中抽取数据，传递给视图，再生成网页发送给用户。</p>
+<h3 id="Controllers-文件夹"><a href="#Controllers-文件夹" class="headerlink" title="Controllers 文件夹"></a>Controllers 文件夹</h3><p>Controllers 文件夹包含负责处理用户输入和响应的控制器类。<br>MVC 要求所有控制器文件的名称以 “Controller” 结尾。</p>
+<h3 id="ActionResult类：Action的返回值"><a href="#ActionResult类：Action的返回值" class="headerlink" title="ActionResult类：Action的返回值"></a>ActionResult类：Action的返回值</h3><p>ActionResult是控制器返回值类型的基类，其余的常见返回值都是继承于ActtionResult类（*详见Microsoft文档）。<br>如Public ActionResult Index() { return View()}<br>实际上，视图的返回类型是ViewResultBase，它返回HTML内容。</p>
+<ul>
+<li><strong>注意：View()函数默认返回与方法名相同的视图。</strong><br>又如Content() 与ContentResult对应，返回一个字符串或其他文字内容。</li>
+<li><strong>注意：controller返回的内容不一定是网页。</strong><h3 id="查询字符串"><a href="#查询字符串" class="headerlink" title="查询字符串"></a>查询字符串</h3>附属在url后方的一串代码，用于向http服务器传递参数，在控制器中可以使用。<br>如：…/endOfPath?a=5&amp;b=4<h3 id="状态管理"><a href="#状态管理" class="headerlink" title="状态管理"></a>状态管理</h3>由于HTTP协议的无状态特性，导致在ASP.NET编程中，每个请求都会在服务端从头到执行一次管线过程， 对于ASP.NET页面来说，Page对象都会重新创建，所有控件以及内容都会重新生成， 因此，如果希望上一次的页面状态能够在后续页面中保留，则必需引入状态管理功能。<h3 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h3>Cookie 是一小段文本信息，它的工作方式就是伴随着用户请求和页面在 Web 服务器和浏览器之间传递。Cookie 包含每次用户访问站点时 Web 应用程序都可以读取的信息，应用广泛，如保持用户的登录状态。<br>（计算机网络课程讲过，<strong>HTTP协议是无状态的</strong>，缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大）<br>为了支持客户端与服务器之间的交互，我们就需要通过不同的技术为交互存储状态，所以Cookie使得基于无状态的HTTP协议<strong>记录稳定的状态信息</strong>成为了可能。<h3 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h3>Session称为“会话控制”。Session对象存储特定用户会话所需的属性及配置信息。这样，当用户在应用程序的Web页之间跳转时，存储在Session对象中的变量将不会丢失，而是在整个用户会话中一直存在下去。当用户请求来自应用程序的 Web页时，如果该用户还没有会话，则Web服务器将自动创建一个 Session对象。当会话过期或被放弃后，服务器将终止该会话。<br>Session 对象最常见的一个用法就是存储用户的首选项。例如，如果用户指明不喜欢查看图形，就可以将该信息存储在Session对象中。<h4 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h4>采用HttpApplication State实现的状态维持方式。<br>Application.Lock(); Application[“PageRequestCount”] = ((int)Application[“PageRequestCount”]) + 1; Application.UnLock();<h2 id="概念论述-5"><a href="#概念论述-5" class="headerlink" title="概念论述"></a>概念论述</h2><h3 id="从请求获取数据——常用属性与对象"><a href="#从请求获取数据——常用属性与对象" class="headerlink" title="从请求获取数据——常用属性与对象"></a>从请求获取数据——常用属性与对象</h3>Controller是可以从请求获取数据来传递给视图的。这一过程使用到了很多对象。<h4 id="Request对象"><a href="#Request对象" class="headerlink" title="Request对象"></a>Request对象</h4>request对象有这些作用：读取浏览器信息、表单数据、查询字符串、Cookie。<br>request对象可以从URL上获得数据。<br>Request.Form[“name”]<br>Request.QueryString[“name”]// URL的查询字符串储存在这里。<h4 id="Response对象"><a href="#Response对象" class="headerlink" title="Response对象"></a>Response对象</h4>response对象可以：下载文件、页面跳转、创建Cookie。<h4 id="Server对象"><a href="#Server对象" class="headerlink" title="Server对象"></a>Server对象</h4></li>
+<li>可以掌管url逻辑路径到服务器实际路径的路由映射。<br>MapPath、Transfer、HtmlEncode/Decode、UrlEncode/Decode（编码解码）<br>如：<br>String temp = Server.MapPath(“~/Images”)<br>//此处temp的返回值即该Images文件在本机上的实际路径。</li>
+<li>也可用于：URL重定向<br>URL重定向本身可以用response跳转，即ActionResult中的RedirectResult类。<br>该过程是<strong>将重定向的请求返回到客户端，由客户端重新发起一个重定向的请求</strong>。<br>而Server的重定向过程可以<strong>直接在服务器端跳转</strong>，客户端程序不知晓中间是否发生了重定向。<br>！注意两者的区别<h4 id="HttpContext对象"><a href="#HttpContext对象" class="headerlink" title="HttpContext对象"></a>HttpContext对象</h4><h4 id="ViewData-ViewBage-TempData对象"><a href="#ViewData-ViewBage-TempData对象" class="headerlink" title="ViewData/ViewBage/TempData对象"></a>ViewData/ViewBage/TempData对象</h4><h3 id="状态管理-1"><a href="#状态管理-1" class="headerlink" title="状态管理"></a>状态管理</h3><h4 id="Cookie-1"><a href="#Cookie-1" class="headerlink" title="Cookie"></a>Cookie</h4>保存数据到Cookie中<br>HttpCookie c = <strong>new</strong> HttpCookie(“LastVisit”);   c.Value = DateTime.Now.ToString();   Response.Cookies.Add(c);  Response.Cookies[“键名”] = 键值<br>从Cookie中取出值<br>变量 = Request.Cookies[“键名”]<br>Cookie过期<br>c.Expires = DateTime.Now.AddDays(7);<h4 id="Application-1"><a href="#Application-1" class="headerlink" title="Application"></a>Application</h4>保存到Application对象中<br>HttpContext.Application.Lock();  HttpContext.Application[“Name”] = Value HttpContext.Application.UnLock();<br>从Application对象中取出值<br>变量 = HttpContext.Application[“Name”]<br>去除Cookie<br>HttpContext.Application.Remove(“键名”)<h4 id="Session-1"><a href="#Session-1" class="headerlink" title="Session"></a>Session</h4>保存到Session对象中<br>Session[“Name”] = “Value”<br>从Session对象中取出值<br>变量 = Session[“Name”]<h1 id="第7周课程-MVC-M"><a href="#第7周课程-MVC-M" class="headerlink" title="第7周课程 MVC-M"></a>第7周课程 MVC-M</h1><h2 id="名词解释-6"><a href="#名词解释-6" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="Model-模型-1"><a href="#Model-模型-1" class="headerlink" title="Model 模型"></a>Model 模型</h3>Model是MVC中的M。模型代表一个存取数据的对象。它也可以带有逻辑，在数据变化时更新控制器。<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><h4 id="与数据库的表相对应的模型"><a href="#与数据库的表相对应的模型" class="headerlink" title="与数据库的表相对应的模型"></a>与数据库的表相对应的模型</h4>模型中的变量与其关联的数据库的字段一一对应，可以用来操作对应的数据库。<br>例如：User(Id, LoginName, Password, RealName, Gender, Birthday, Address, Zipcode, Email, Mobile, CreateAt)<h4 id="与视图对应的模型"><a href="#与视图对应的模型" class="headerlink" title="与视图对应的模型"></a>与视图对应的模型</h4>模型中的变量与生成的视图中的<br>在视图的首行插入<br>@using WebApplications1.Models<br>来使用对应的模型。<br>又如：login页面的login操作<br>Task<ActionResult> login(LoginViewModel model, string returnurl)<br>也用到了LoginViewModel模型作为其参数来验证用户输入。<br>这样的模型例如：LoginModel(UserName, Password,<br>RememberMe)、RegisteModel(UserName, RealName, Email, Password, ConfirmPassword)<h3 id="CSharp语言的特性"><a href="#CSharp语言的特性" class="headerlink" title="CSharp语言的特性"></a>CSharp语言的特性</h3><strong>特性（Attribute）</strong>是用于在运行时传递程序中各种元素（比如类、方法、结构、枚举、组件等）的行为信息的声明性标签。<br>通过使用特性可以向程序添加声明性信息。一个声明性标签是通过放置在它所应用的元素前面的方括号（[ ]）来描述的。<br>例如：<br><strong>public</strong> <strong>class</strong> LoginViewModel{   [Required]   [Display(Name=”Email”)]   [EmailAddress]   <strong>public</strong> string Email { <strong>get</strong>; <strong>set</strong>;} }<br>关于特性的其他信息，详见<a target="_blank" rel="noopener" href="https://www.runoob.com/csharp/csharp-attribute.html">https://www.runoob.com/csharp/csharp-attribute.html</a><h3 id="LINQ"><a href="#LINQ" class="headerlink" title="LINQ"></a>LINQ</h3>Language Integrate Query，即语言集成查询。<br>LINQ是一组语言特性和API，使得你可以使用统一的方式编写各种查询。用于保存和检索来自不同数据源的数据，从而消除了编程语言和数据库之间的不匹配，以及为不同类型的数据源提供单个查询接口。<br>LINQ总是使用对象，因此你可以使用相同的查询语法来查询和转换XML、对象集合、SQL数据库、ADO.NET数据集以及任何其他可用的LINQ提供程序格式的数据。<h2 id="概念论述-6"><a href="#概念论述-6" class="headerlink" title="概念论述"></a>概念论述</h2><h3 id="访问数据库"><a href="#访问数据库" class="headerlink" title="访问数据库"></a>访问数据库</h3>使用SQL server。详细操作过程叙述不易，可以见回放视频。<h4 id=""><a href="#" class="headerlink" title=" "></a> </h4><h1 id="第8周课程-MVC联合"><a href="#第8周课程-MVC联合" class="headerlink" title="第8周课程 MVC联合"></a>第8周课程 MVC联合</h1>（本周应用类课程，相应的知识点总结在了前面几周，故此处略过）<h1 id="第9周课程-JS"><a href="#第9周课程-JS" class="headerlink" title="第9周课程 JS"></a>第9周课程 JS</h1><h2 id="名词解释-7"><a href="#名词解释-7" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3>JS是一种高级的、解释型的编程语言，也是浏览器端的编程语言，大部分现代的 HTML 页面都使用 JavaScript。总的来说，JS是可插入* HTML 页面的编程代码，插入 HTML 页面后，可由所有的现代浏览器执行，其目的是利用代码操控html页面上的元素及其样式，对事件作出响应，让网页产生更多的功能。<br><strong>JavaScript = ECMAScript(核心)+DOM+BOM</strong><br>一般来说，JS运行在浏览器上，但目前JS<strong>已经可以被即时编译执行</strong>，还可用于游戏、桌面和移动应用程序的开发和在服务器端网络环境运行，最大的例子就是我们常用的npm包管理器的编写语言<strong>Node.js</strong>。<h3 id="JavaScript代码解析过程"><a href="#JavaScript代码解析过程" class="headerlink" title="JavaScript代码解析过程"></a>JavaScript代码解析过程</h3><h4 id="流式解析"><a href="#流式解析" class="headerlink" title="流式解析"></a>流式解析</h4>可定义函数<br>函数体外的语句直接执行（执行时可调用函数）<h4 id="事件驱动"><a href="#事件驱动" class="headerlink" title="事件驱动"></a>事件驱动</h4>当发生某些事件时执行<h3 id="弱类型编程语言"><a href="#弱类型编程语言" class="headerlink" title="弱类型编程语言"></a>弱类型编程语言</h3>指不需要变量声明，可以给变量赋予不同类型的值的编程语言。如JS就是弱类型的语言，如下的书写方式不会被编译器报错。<br><strong>var</strong> Name = “Bill Gates”; Name = 123; Name = <strong>true</strong>;<br>这是因为Javascript<br>对应的还有强类型的语言，如C#，在使用变量之前不需要变量声明<h3 id="执行环境与作用域Scope"><a href="#执行环境与作用域Scope" class="headerlink" title="执行环境与作用域Scope"></a>执行环境与作用域Scope</h3>即变量的作用范围。JS没有块级作用域（Block Scope）<h3 id="HTML使用JavaScript的方式"><a href="#HTML使用JavaScript的方式" class="headerlink" title="HTML使用JavaScript的方式"></a>HTML使用JavaScript的方式</h3></li>
+<li>利用 tag<script type="text/javascript"> /\*jscode\*/ </script></li>
+<li>放在外部文件，在html中引用。<script type="text/javascript" src="a.js"></script></li>
+<li>在HTML元素的事件上调用函数执行<form onsubmit="return checkData(this);" method="post" action="register.html"></li>
+</ul>
+<h2 id="概念论述-7"><a href="#概念论述-7" class="headerlink" title="概念论述"></a>概念论述</h2><h3 id="Javascipt语法规则"><a href="#Javascipt语法规则" class="headerlink" title="Javascipt语法规则"></a>Javascipt语法规则</h3><h3 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h3><ul>
+<li>算术操作符(+,-,*,/,%,++,—)</li>
+<li>位操作符(~,&amp;,|,^(XOR),&lt;&lt;,&gt;&gt;,&gt;&gt;&gt;)</li>
+<li>布尔操作符(!,&amp;&amp;,||)</li>
+<li>关系操作符(&lt;,&gt;,&lt;=,&gt;=,==,!=,===)</li>
+<li>赋值操作符(+,-,,/,%,&lt;&lt;,&gt;&gt;,&gt;&gt;&gt;与等号结合)</li>
+<li>三元运算符(x = x&gt;0 ? x : -x ; //绝对值)<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><h4 id="typeof与instanceof"><a href="#typeof与instanceof" class="headerlink" title="typeof与instanceof"></a>typeof与instanceof</h4>typeof(): 返回变量的类型，可以是primitive types, 也可以是object或者function。<br>instanceof(): 判断一个变量是不是某一个构造方法的实例，返回值是布尔类型。<h4 id="数字类型"><a href="#数字类型" class="headerlink" title="数字类型"></a>数字类型</h4>int，float等基本数据类型与其他语言大体相同。<br>被零除时返回Infinity或-Infinity<br>非数字显示NaN<br>数字类型对应的Wrapper类型是Number<h4 id="文本类型"><a href="#文本类型" class="headerlink" title="文本类型"></a>文本类型</h4>字符串：用’’或””引用起来的序列，其中，转义序列用\()表示。<br>str.length 储存了字符串的长度；<br>str1 + str2，str1.concat(str2) 可以将两个字符串连接起来；<br>str.CharAt(0) 可以选定指定位置的字符；<br>str.IndexOf(“abc”)，lastIndexOf 可以查找子字符串；<br>str.substring(SttP,EndP) 相应地可以根据index提取子串。<br>模式匹配, 可以采用正则表达式，具体与Java相仿。<h4 id="数据类型的转换"><a href="#数据类型的转换" class="headerlink" title="数据类型的转换"></a>数据类型的转换</h4></li>
+<li>转换为字符串<br>var num = 123; var str = num.toString();</li>
+<li>转换为数字，主要是以parse函数来解析字符串。<br>var i = parseInt(“123”); var f = parseFloat(“123.45”);</li>
+<li>强制类型转换，利用括号内的指定来转换。<br>Boolean(value)，Number(value)，String(value)</li>
+<li>隐式类型转换，即可以自动转换。<br>（”123” + 456）<h4 id="日期类型"><a href="#日期类型" class="headerlink" title="日期类型"></a>日期类型</h4><strong>UTC（Coordinated Universal Time）</strong><br>指1970/1/1 0:0:0 之前可或之后经过的毫秒数（精度约285616年）<br><strong>var</strong> now = <strong>new</strong> Date(); <em>//自动获得当前日期与时间 </em> <strong>var</strong> date1 = <strong>new</strong> Date(“5/25/2004 12:28:48”);  <strong>var</strong> date1 = <strong>new</strong> Date(“May 25, 2004”);  <strong>var</strong> date1 = <strong>new</strong> Date(Date.parse(“May 25, 2004”));  <strong>var</strong> date1 = <strong>new</strong> Date(Date.UTC(2015, 4, 5, 3, 2,55));<h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4>数组可按照如下方式定义<br><strong>var</strong> a = <strong>new</strong> Array();  <strong>var</strong> primes = [2, 3, 5, 7, 11];  <strong>var</strong> a = <strong>new</strong> Array(10);  <strong>var</strong> misc = [1.1, <strong>true</strong>, “str”];  <strong>var</strong> a = <strong>new</strong> Array(5, 4, 3, “str1”, “str2”);  <strong>var</strong> empty = [];<br>数组元素的访问: a[i]// 第一个的下标是0<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><h4 id="定义与调用"><a href="#定义与调用" class="headerlink" title="定义与调用"></a>定义与调用</h4></li>
+<li>函数声明，例如function sum(num1, num2) { return num1 + num2 ; }，可以先使用后声明。</li>
+<li>函数表达式，例如var sum = function(num1, num2) { return num1 + num2 ; };, 只能先声明后使用。</li>
+<li>函数对象，例如var sum = new Function(“num1”, “num2”, “return num1 + num2”);, 只能先声明后使用。<br>注意：</li>
+</ul>
+<ol>
+<li>函数必须先定义后使用（一般在<head>中）。</li>
+<li>函数定义好之后，并不会自动执行，必须有一个明确 的调用语句。</li>
+<li>对于被调用的函数，其定义必须放在调用语句前面。<h4 id="return语句"><a href="#return语句" class="headerlink" title="return语句"></a>return语句</h4>对于带有类型的函数，函数的运行必须要必须以return相应的类型来结束；<br>void类型的函数不带有return。<h4 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h4></li>
+</ol>
+<ul>
+<li>形参的命名与实参不必完全一致。</li>
+<li>由于参数的灵活性，JavaScript函数没有重载（overload）。</li>
+<li>JS参数的传递是“<strong>pass by value</strong>”，是值传递，即拷贝相应变量所占位址上的所有bits作为参数传递到函数里面。因此，在函数中改变primitive类型的参数，被传入的函数外的变量值不会改变，而改变对象的属性的话，由于函数中也是调用的该对象同样的地址，所以对象的属性会发生变化。</li>
+<li><strong>arguments对象</strong>：传递的参数列表本身也是一个JS对象，具有对象的特征。</li>
+<li>• 当成一个数组来使用(arguments.length、arguments[i])</li>
+<li>• callee属性——指向拥有arguments对象的函数<h4 id="函数的属性与方法"><a href="#函数的属性与方法" class="headerlink" title="函数的属性与方法"></a>函数的属性与方法</h4></li>
+<li>this属性： 函数以执行的对象（执行时所处的作用域） </li>
+<li>windows.color = “red”;  <strong>var</strong> o = { color : “blue” }  <strong>function</strong> sayColor() { alert(<strong>this</strong>.color); } sayColor(); o.sayColor = sayColor; o.sayColor(); <em>//red</em> <em>//blue</em></li>
+<li>length属性： 希望接收的命名参数的个数 </li>
+<li><strong>function</strong> sayName(name) {    alert(name);  }  <strong>function</strong> sayHi() {   alert(“hi”);  } <strong>function</strong> sum(num1, num2) {   <strong>return</strong> num1 + num2;;  }  alert(sayName.length); <em>//1</em> alert(sayHi.length); <em>//0</em> alert(sum.length);<em>//2</em></li>
+<li>apply()方法： 在特定的对象上调用函数</li>
+<li>第一个：运行函数的对象；第二个：参数数组(或arguments对象)</li>
+<li>windows.color = “red”;  <strong>var</strong> o = { color : “blue” }  <strong>function</strong> sayColor() { alert(<strong>this</strong>.color); } sayColor();<em>//red</em> o.sayColor = sayColor;  o.sayColor();<em>//blue</em> sayColor.apply(<strong>this</strong>);<em>//red </em> sayColor.apply(windows);<em>//red</em> sayColor.apply(o); <em>//blue</em></li>
+<li></li>
+<li>call()方法： 在特定的对象上调用函数</li>
+<li>第一个：运行函数的对象；其余参数：直接一个个列出传入</li>
+<li>windows.color = “red”;  <strong>var</strong> o = { color : “blue” }  <strong>function</strong> sayColor() { alert(<strong>this</strong>.color); } sayColor();<em>//red</em> sayColor.call(<strong>this</strong>);<em>//red</em> sayColor.call(windows); <em>//red</em> sayColor.call(o);<em>//blue</em></li>
+<li></li>
+<li>prototype属性： 保存其所有实例方法的真正所在</li>
+<li>函数的嵌套：内部与外部函数<h4 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h4></li>
+<li>内部函数在定义它的作用域的外部被引用时，创建该内部函数的一个闭包。</li>
+<li>闭包会携带包含它的函数的作用域（但只是每个变量的最后一个值），因此会比其它函数占用更多的内存。</li>
+<li>闭包中的this总是指全局对象(window)，可通过call或apply改变。<h3 id="OOP（面向对象程序设计）"><a href="#OOP（面向对象程序设计）" class="headerlink" title="OOP（面向对象程序设计）"></a>OOP（面向对象程序设计）</h3><h4 id="对象类型"><a href="#对象类型" class="headerlink" title="对象类型"></a>对象类型</h4>对象：实质上Name-Value对的集合，可以拥有自己的类的实例方法，与java对象类似。<h5 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h5>如：<br><strong>var</strong> point = { x : 0 , y : 0 } ; point.x = 100 ;  <strong>var</strong> book = { } ;  <strong>var</strong> book = <strong>new</strong> Object() ;  Var book = <strong>null</strong> ;  book.name = “JavaScript编程” ;<h5 id="对象的使用"><a href="#对象的使用" class="headerlink" title="对象的使用"></a>对象的使用</h5>o.p, o[“p”] // 后一种为引用对象的属性名。<h5 id="属性的检测"><a href="#属性的检测" class="headerlink" title="属性的检测"></a>属性的检测</h5>o.hasOwnProperty(“p”)<h5 id="预定义方法"><a href="#预定义方法" class="headerlink" title="预定义方法"></a>预定义方法</h5>所有的JS对象类型都拥有以下两种方法。<br>toString() 转换为字符串类型，返回对象的字符串表示。<br>valueOf()) 返回指定对象的原始值，如Array类型的对象，数组的元素被转换为字符串，这些字符串由逗号分隔，连接在一起。其操作与 <strong>Array.toString</strong> 和 <strong>Array.join</strong>方法相同。<h4 id="构造方法-Constructor"><a href="#构造方法-Constructor" class="headerlink" title="构造方法 Constructor"></a>构造方法 Constructor</h4><strong>constructor</strong>是一种用于创建和初始化创建的对象的特殊方法。<br>语法为function ([arguments]) { … }<h4 id="动态原型模式"><a href="#动态原型模式" class="headerlink" title="动态原型模式"></a>动态原型模式</h4>动态原型模式是由构造函数和原型模式组合而成的.<br>JS的构造函数如下：<br><strong>function</strong> Box(){     <strong>this</strong>.name:’bigBox’;     <strong>this</strong>.boxs = [“box1”, “box2”, “box3”]; };<br><em>//JS的 原型模式如下</em> <strong>function</strong> Bar(){}; Bar.prototype = {         constructor:Box,         age:100,         call:<strong>function</strong>(){             alert(‘your age is’ + <strong>this</strong>.age)         }     }<br><em>// 将构造函数与原型模式写到一起之后</em> <strong>function</strong> Box(){      <strong>this</strong>.name:’bigBox’,      <strong>this</strong>.boxs = [“box1”, “box2”, “box3”];     <strong>if</strong>(<strong>typeof</strong> <strong>this</strong>.run != ‘function’){         Box.prototype.num = <strong>function</strong>(){              console.log(<strong>this</strong>.boxs.length);         }     }  }<br>构造函数执行时，里面的代码都会执行一遍，而原型有一个就行，不用每次都重复，所以仅在第一执行时生成一个原型，后面执行就不必在生成，所以就不会执行if包裹的函数，使用构造函数其实是把new出来的对象作用域绑定在构造函数上，而字面量的写法，会重新生成一个新对象，就切断了两者的联系，因此不能使用字面量。<br>动态原型模式就是把共享的对象的使用原型，不共享对象的使用构造函数。<h4 id="Global对象"><a href="#Global对象" class="headerlink" title="Global对象"></a>Global对象</h4>Global对象是终极兜底的对象，实际上，所有的全局函数(isNaN, isFinite, parseInt, parseFloat)和全局属性都是属于该对象的，在浏览器中是作为window对象的一部份实现的。下面是一些例子：</li>
+<li>eval()方法</li>
+<li>特殊值(undefined, NaN, Infinity)</li>
+<li>所有的引用类型实际上都是构造函数（一种特殊的函数），例如：Object, Array, Date, RegExp,, Function, Boolean, String, Number, Error, EvalError, RangeError, ReferenceError, SyntaxError, TypeError, URIError</li>
+</ul>
+<h1 id="第10周课程-BOM-DOM"><a href="#第10周课程-BOM-DOM" class="headerlink" title="第10周课程 BOM/DOM"></a>第10周课程 BOM/DOM</h1><h2 id="名词解释-8"><a href="#名词解释-8" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h3><p><strong>浏览器对象模型</strong>（Browser Object Model）提供了独立于内容而与浏览器窗口进行交互的对象，其核心对象是window（窗口）。<br>BOM最初是Netscape浏览器标准的一部分，但缺乏标准，没有 specification。如JavaScript语法的标准化组织是ECMA，DOM的标准化组织是W3C。</p>
+<h3 id="Window对象"><a href="#Window对象" class="headerlink" title="Window对象"></a>Window对象</h3><p>所有浏览器都支持 window 对象。它表示浏览器窗口。所有 JavaScript 全局对象、函数以及变量均自动成为 window 对象的成员。全局变量是 window 对象的属性，全局函数是 window 对象的方法，甚至 HTML DOM 的 document 也是 window 对象的属性之一。</p>
+<h3 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h3><p><strong>文档对象模型</strong>(Document Object Model) 是HTML和XML文档的编程接口。DOM 用一个逻辑树来表示一个文档，树的每个分支的终点都是一个节点(node)，每个节点都包含着对象(objects)，这样，将 web 页面与到脚本或编程语言连接起来。</p>
+<h3 id="DOM选择器-（-Selector）"><a href="#DOM选择器-（-Selector）" class="headerlink" title="DOM选择器 （ Selector）"></a>DOM选择器 （ Selector）</h3><ul>
+<li>ID: var div1 = document.getElementById(“div1”);</li>
+<li>Name: var radios = document.getElementsByName(“fColor”);</li>
+<li>Tag/ Class Name: var spans = document.getElementsByTagName(“span”);</li>
+<li>快捷属性，例如images<img>、forms<form>、links<a>: var form = document.forms[0];</li>
+<li>CSS选择器： document.querySelector(“ “) , var elementList = document.querySelectorAll(“……”);</li>
+<li>document.all对象</li>
+</ul>
+<h2 id="概念论述-8"><a href="#概念论述-8" class="headerlink" title="概念论述"></a>概念论述</h2><h3 id="Window对象及其使用"><a href="#Window对象及其使用" class="headerlink" title="Window对象及其使用"></a>Window对象及其使用</h3><p>window 对象表示浏览器窗口。所有 JavaScript 全局对象、函数以及变量均自动成为 window 对象的成员。全局变量是 window 对象的属性，全局函数是 window 对象的方法，甚至 HTML DOM 的 document 也是 window 对象的属性之一。</p>
+<h4 id="窗口大小与位置"><a href="#窗口大小与位置" class="headerlink" title="窗口大小与位置"></a>窗口大小与位置</h4><ol>
+<li>moveBy(dx,dy),</li>
+<li>moveTo(x,y),</li>
+<li>resizeBy(dw,dh),</li>
+<li>resizeTo(x, y)</li>
+<li>screenLeft, screenTop</li>
+<li>innerWidth, innerHeight<h4 id="窗口的打开关闭"><a href="#窗口的打开关闭" class="headerlink" title="窗口的打开关闭"></a>窗口的打开关闭</h4></li>
+</ol>
+<ul>
+<li>open(URL, name, features, replace)// 打开;用例如下<br><strong>var</strong> win = open(“<a target="_blank" rel="noopener" href="http://www.zju.edu.cn">http://www.zju.edu.cn</a>“, “pop”, “height=300,width=400”); alert(win.operner == window); <em>//true;</em></li>
+<li>close();关闭 用例如下<br>win.close();  alert(win.closed); <em>//true</em><h4 id="计时器"><a href="#计时器" class="headerlink" title="计时器"></a>计时器</h4></li>
+</ul>
+<ol>
+<li>超时调用<br><strong>function</strong> f() {……}  <strong>var</strong> timeoutID = setTimeOut(f, 100)  clearTimeOut(timeoutID)</li>
+<li>间歇调用<br><strong>function</strong> f() {……}  <strong>var</strong> intervalID = setInterval(f, 100)  clearInterval (intervalID)</li>
+<li>可使用超时调用来模拟间歇调用<h4 id="系统对话框"><a href="#系统对话框" class="headerlink" title="系统对话框"></a>系统对话框</h4>alert(“…………”) //最常使用<br>confirm(“…………”)//弹出对话框并<br><strong>if</strong> (confirm(“Are you sure?”)) {  alert(“I’m so glad you’re sure!”);  } <strong>else</strong> { alert(“I’m sorry to hear you’re not sure!”);  }<br>prompt() //弹出对话框并收集用户输入。<br><strong>var</strong> result = prompt(“What is you name?”, “John’);  <strong>if</strong>(result != <strong>null</strong>) {  alert(“Welcom, “ + result); }<h4 id="window属性"><a href="#window属性" class="headerlink" title="window属性"></a>window属性</h4></li>
+</ol>
+<ul>
+<li>location属性<ul>
+<li>href—— 完整的URL</li>
+<li>host——服务器名和端口号</li>
+<li>hostname——服务器名</li>
+<li>port——端口号</li>
+<li>protocol——协议</li>
+<li>pathname——目录与文件名</li>
+<li>search——查询字符串</li>
+<li>assign(URL)等价于直接给href赋值</li>
+<li>reload()——刷新页面</li>
+</ul>
+</li>
+<li>navigator属性：识别客户端浏览器的实际标准</li>
+<li>screen属性</li>
+<li>history属性<h3 id="DOM模型与节点模型"><a href="#DOM模型与节点模型" class="headerlink" title="DOM模型与节点模型"></a>DOM模型与节点模型</h3>(img)<br>DOM之中，整个文档是一个文档节点，每个HTML元素都是元素节点，每个HTML属性是属性节点，树中的每一个节点都可以通过Javascript访问。<br>节点之间还存在着关系，如父子节点，同级节点等。顶端节点被称为根（root），每个节点都有父节点、除了根（它没有父节点），同胞是拥有相同父节点的节点。<h3 id="节点遍历"><a href="#节点遍历" class="headerlink" title="节点遍历"></a>节点遍历</h3>(img)<h4 id="作为节点树的文档"><a href="#作为节点树的文档" class="headerlink" title="作为节点树的文档"></a>作为节点树的文档</h4>（使用Node的属性）<br>parentNode、childNodes、firstChild、 lastChild nextSibling、previoursSibling： nodeType：节点类型：1Element、3Text、9Document nodeValue：只是Text和Comment节点，表示文本内容 nodeName：元素的标签名，以大写形式表示 hasChildNodes()：只要有一个子节点，就返回true ownerDocument：指向表示整个文档的文档结点<br>使用方式：<br>aNode.childNodes[0]<br>aNode.childNodes.item(1)<br>aNode.childNodes.length<br>document.firstChild. firstChild.nextSibling<h4 id="作为元素树的文档"><a href="#作为元素树的文档" class="headerlink" title="作为元素树的文档"></a>作为元素树的文档</h4>（不包括Text和Comment节点）（使用Element属性）<br>parentElement、children、childElementCount： firstElementChild、 lastElementChild： nextElementSibling、previoursElementSibling： tagName：等于nodeName innerHTML ：元素内容 outerHTML ：元素及内容<h3 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h3><h4 id="操作属性"><a href="#操作属性" class="headerlink" title="操作属性"></a>操作属性</h4><h5 id="HTML属性作为Element属性"><a href="#HTML属性作为Element属性" class="headerlink" title="HTML属性作为Element属性"></a>HTML属性作为Element属性</h5><strong>var</strong> f = document.forms[0];  f.action = “<a target="_blank" rel="noopener" href="http://www.baidu.com">http://www.baidu.com</a>“;  f.method = “POST”;<br>命名规则：一般用小写，多个单字后面的单字首字母大写； 与保留字冲突加前缀html(如htmlFor)；class =&gt; className 属性的值是有类型的（字符串、布尔值、数值、对象）<h5 id="非标准HTML属性"><a href="#非标准HTML属性" class="headerlink" title="非标准HTML属性"></a>非标准HTML属性</h5><strong>var</strong> image = document.images[0];  <strong>var</strong> imgwidth = parseInt(image.getAttribute(“WIDTH”)); image.setAttribute(“class”, “thumbnail”); <em>//HTML元素的属性名不区分大小写</em>  <em>//这两个方法的返回值与参数都是字符串</em><br>其他的方法举例：hasAttribute()、 hasAttribute(“value”)、 removeAttribute(“AttributeName”)。<h5 id="数据集属性"><a href="#数据集属性" class="headerlink" title="数据集属性"></a>数据集属性</h5>任何以data-为前缀的小写的属性名字都是合法的。<br>Element对象上定义了dataset属性，带连字符的HTML 属性，去掉data-前缀，形成以驼峰法命名的元素属性。<br>如：data-x =&gt; dataset.x<br>data-jquery-test =&gt; dataset.jqueryTest<h5 id="只读实时的attributes属性（每个Attr对象）"><a href="#只读实时的attributes属性（每个Attr对象）" class="headerlink" title="只读实时的attributes属性（每个Attr对象）"></a>只读实时的attributes属性（每个Attr对象）</h5>Attr对象的 name和value属性返回该属性的名字与值 document.body.attributes[0] <em>//body元素的第一个属性 </em> document.body.attributes.bgcolor <em>//body元素的bgcolor属性 </em> document.body.attributes[“onload”] <em>//body元素的onload属性</em><h4 id="操作元素的内容"><a href="#操作元素的内容" class="headerlink" title="操作元素的内容"></a>操作元素的内容</h4><strong>内容的界定</strong>:（开始标记与结束标记之间的东西）</li>
+</ul>
+<ol>
+<li>innerHTML属性</li>
+<li>outerHTML属性（包含敢开始与结束标记） 当设置outerHTML属性时，元素本身也被替换</li>
+<li>Node的textContent属性 针对纯文本的元素（如）</li>
+<li>Node的nodeValue属性<br><em>针对Text节点的元素内</em></li>
+<li>insertAdjacentHTML(“内容”, “位置”)方法<br><em>位置值：beforebegin/afterbegin/beforend/afterend</em><h4 id="操作CSS"><a href="#操作CSS" class="headerlink" title="操作CSS"></a>操作CSS</h4></li>
+<li>style元素属性是CSSStyleDeclaration对象<br><em>与数据集属性一样：带连字符的CSS属性，要改写成以驼 峰法命名的style属性，属性的值是字符串。如属性名是 关键字，则加css前缀。例如元素e的操作如下：</em><br>*e.style.fontSize = “24pt” ; //font-size *<br><em>e.style.fontWeight = “blod” ; //font-weight</em><br>* e.style.color = “blue” ; //color e.cssFloat = “right” ;*</li>
+<li>整个样式作为字符串操作<br>e.setAttribute(“style”, s);<br>S = e.getAttribute(“style”);<br>e.style.cssText = s; s = e.style.cssText;</li>
+<li>计算样式<br>window.getComputedStyle(e, null)</li>
+<li>操作元素的className属性<br><em>HTML的class属性的值是用空格隔开的类名</em></li>
+<li>操作元素的classList属性<br><em>classList属性的值是DOMTokenList对象，我们只能用它 定义的方法来操作：add()、remove()、toggle()（如果 不存在类名就添加；否则，就删除它）、contains()（检 测是否包含指定的类名）</em><h4 id="文档和元素的几何操作"><a href="#文档和元素的几何操作" class="headerlink" title="文档和元素的几何操作"></a>文档和元素的几何操作</h4></li>
+<li>从抽象的节点树到渲染文档时的视觉表现层</li>
+<li>文档坐标与视口坐标（相差滚动的偏移量）<br>window.pageXOffset和window.pageYOffset属性 document.documentElement.scrollLeft/scrollTop属性</li>
+<li>查询元素的几何尺寸（视口的）<br>var box = e.getBoundingClientRect();<br>var w = box.width || (box.right – box.left);<br>var h = box.height || (box.bottom – box.top);<br>内联元素可用getClientRects()方法（返回多个box）</li>
+<li>获得在某点(视口)的元素(最里面最上面)<br>var e = document.elementFromPoint(x, y)</li>
+<li>滚动(scrollTo()、scrollBy()、scrollIntoView())<h4 id="操作表格"><a href="#操作表格" class="headerlink" title="操作表格"></a>操作表格</h4></li>
+<li>核心DOM方法操作表格的复杂性</li>
+<li>table元素的属性与方法<br>caption、tBodies、tFoot、tHead、rows createTHead、createTFoot、createCaption deleteTHead、deleteTFoot、deleteCaption deleteRow(pos)、insertRow(pos)、moveRow(m, n)</li>
+<li>tbody元素的属性与方法 rows、deleteRow(pos)、insertRow(pos)、moveRow(m, n)</li>
+<li>tr元素的属性与方法<br>cells、deleteCell(pos)、insertCell(pos)、moveCell(m, n)<h4 id="动态修改网页"><a href="#动态修改网页" class="headerlink" title="动态修改网页"></a>动态修改网页</h4></li>
+<li>创建<br>document.createElement(“div”)//返回一个div元素<br>文档的createTextNode()、节点的cloneNode()</li>
+<li>插入（ Node方法）<br>parentEle.appendChild(childEle)<br>parentEle.insertBefore(childEle, otherChildEle/null)</li>
+<li>删除和替换<br>parentNode.removeChild(n)<br>parentNode.replaceChild(newElement, n) //用innerHTML属性</li>
+</ol>
+<h1 id="第11周课程-事件驱动编程"><a href="#第11周课程-事件驱动编程" class="headerlink" title="第11周课程 事件驱动编程"></a>第11周课程 事件驱动编程</h1><h2 id="名词解释-9"><a href="#名词解释-9" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="事件驱动-1"><a href="#事件驱动-1" class="headerlink" title="事件驱动"></a>事件驱动</h3><h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><p>页面对不同访问者的响应叫做事件，事件是用户可浏览器自身执行的某种动作，如click表示点击, mouseover表示鼠标停留等等。<br>对于事件，可以使用jQuery库来便捷处理。</p>
+<h4 id="事件处理程序"><a href="#事件处理程序" class="headerlink" title="事件处理程序"></a>事件处理程序</h4><p>指响应某个事件的函数。一般来说，对应的属性名on + 事件名（如：click ==&gt; onclick）。</p>
+<h3 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h3><p>在触发事件时会产生一个事件对象event，其包含与事件有关的各种信息，并作为参数传入事件处理程序。</p>
+<p>事件对象的常用属性和方法如下表所示。<br>属性/方法<br>类型<br>说明<br>bubbles<br>Boolean<br>事件是否冒泡<br>cancelable<br>Boolean<br>事件是否可以取消其默认行为<br>currentTarget<br>Element<br>事件处理程序正在处理事件的那个元素<br>detail<br>Integer<br>有关事件的详细信息<br>eventPhase<br>Integer<br>所处阶段：1捕获、2处于目标、3冒泡<br>preventDefault()<br>Function<br>取消事件的默认行为，cancelable必须是true<br>stopPropagation()<br>Function<br>取消事件的传播，bubbles必须是true<br>target<br>Element<br>事件的目标元素<br>type<br>String<br>被触发的事件类型（事件名）</p>
+<h3 id="表单-1"><a href="#表单-1" class="headerlink" title="表单"></a>表单</h3><p>HTMLFormElement</p>
+<h2 id="概念论述-9"><a href="#概念论述-9" class="headerlink" title="概念论述"></a>概念论述</h2><h3 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h3><h3 id="事件处理程序-1"><a href="#事件处理程序-1" class="headerlink" title="事件处理程序"></a>事件处理程序</h3><ol>
+<li>HTML内联绑定事件处理程序<input type="button" value="click me" onclick="alert('hi')" /></li>
+<li>DOM0级绑定事件处理程序(冒泡)<br>btn.onclick = 函数 ;<br>btn.onclick = null ;</li>
+<li>DOM2级绑定事件处理程序<br>btn.addEventListener//true捕获(“事件名”，函数，布尔值) btn.removeEventListener //false冒泡(“事件名”，函数，布尔值)</li>
+<li>事件处理程序中的this指的是当前元素<h3 id="表单操作（HTMLFormElement）"><a href="#表单操作（HTMLFormElement）" class="headerlink" title="表单操作（HTMLFormElement）"></a>表单操作（HTMLFormElement）</h3><h4 id="表单提交"><a href="#表单提交" class="headerlink" title="表单提交"></a>表单提交</h4><strong>&lt;input</strong> type=”submit” value=”Submit” <strong>/&gt;</strong> <strong>&lt;input</strong> type=”image” src=”submit.png” <strong>/&gt;</strong> <strong>&lt;button</strong> type=”submit”<strong>&gt;</strong>Submit<strong>&lt;/button&gt;</strong><br>拥有焦点的表单，如有提交按扭，按回车键会自动提交 可用代码提交表单(myForm.submit())，但这不会触发submit事件.<h4 id="重置表单"><a href="#重置表单" class="headerlink" title="重置表单"></a>重置表单</h4><strong>&lt;input</strong> type=”reset” value=”Reset” <strong>/&gt;</strong> <strong>&lt;button</strong> type=”reset”<strong>&gt;</strong>Reset<strong>&lt;/button&gt;</strong><br>可用代码重置表单(myForm.reset())，会触发reset事件<h4 id="表单元素"><a href="#表单元素" class="headerlink" title="表单元素"></a>表单元素</h4>每个表单有一个elements属性，作为元素的引用。<br><strong>var</strong> f1 = myForm.elements[n]  <strong>var</strong> f2 = myForm.elements[“textbox1”]<br>如多个元素使用同一个name(如单选按扭)，则返回的是NodeList 表单提交时会把元素的名值对(name=value&amp;name=value)发往服务器<br>表单元素的属性有：disabled、form、name、readonly、tabIndex、type、value;<br>方法有：focus()、blur()<br>事件有：focus、blur<br>和change(对于文本输入框，在它们失取焦点，且value值改变时，才会触发； 对于select元素，只要选了不同的选项，不失取焦点就触发)<h4 id="文本输入框"><a href="#文本输入框" class="headerlink" title="文本输入框"></a>文本输入框</h4></li>
+<li>value属性值：文本输入框中的内容。</li>
+<li>placeholder属性：可指定输入前的提示</li>
+<li>size：指定文本框显示的字符数</li>
+<li>maxlength：指定文本框可输入的字符数</li>
+<li>textarea：指定rows和cols属性</li>
+</ol>
+<ul>
+<li><em>如type=”password”，用户输入显示为星号</em></li>
+</ul>
+<ol>
+<li>select()、setSelectionRange()</li>
+<li>selectionStart/End属性<h4 id="复选按扭"><a href="#复选按扭" class="headerlink" title="复选按扭"></a>复选按扭</h4></li>
+<li>本身没有任何文本显示（value属性不起作用）</li>
+<li>checked属性与defaultChecked属性</li>
+<li>只是选中的name=value发送到服务器</li>
+<li>鼠标单击时会触发click事件</li>
+<li>如果由于单击改变了其状态，也会触发change<h4 id="单选按扭"><a href="#单选按扭" class="headerlink" title="单选按扭"></a>单选按扭</h4></li>
+<li>本身没有任何文本显示（value属性不起作用）</li>
+<li>checked属性与defaultChecked属性</li>
+<li>只是选中的name=value发送到服务器</li>
+<li>name属性相同的为一组</li>
+<li>鼠标单击时会触发click事件</li>
+<li>如果由于单击改变了其状态，也会触发change</li>
+<li>如果由于单击没有改变其状态，也不会触发 change，如果由于其它单选按扭的单击改变了 其状态，也不会触发change<h4 id="操作选择框"><a href="#操作选择框" class="headerlink" title="操作选择框"></a>操作选择框</h4></li>
+<li>由<select>和<option>标记创建<br>size属性大于1的话，显示为列表框；选择框的type属性决定了是单选还是可 以多选；type=“select-one/multiple”相当于单选按扭/复选按扭；text属性是选项的显示文本，value属性是发往服务器的值；可对<option>分组</li>
+<li>HTMLSelectElement还提供了以下属性与方法<br>multiple(布尔值)；<br>options；<br>add(newOpt, relOpt)；<br>remove(index)；<br>针对单选：selectedIndex指定了当前被选中的选项；<br>针对多选：要遍历options中的每元素，检查其selected属性；</li>
+<li>选择或取消一个选项时，触发change事件<h4 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h4></li>
+<li>input元素的type为file</li>
+<li>表单元素上要设置<br>enctype=”multipart/form-data”</li>
+<li>要想可以多选文件<br>input元素上要设置multiple=”multiple”</li>
+<li>选择文件后会触发change事件</li>
+<li>检验上传文件的类形<h4 id="客户端数据校验"><a href="#客户端数据校验" class="headerlink" title="客户端数据校验"></a>客户端数据校验</h4></li>
+<li>表单提交 oncommit</li>
+<li>文本框 onchange oninput onkeypress<h1 id="第12周课程-AJAX"><a href="#第12周课程-AJAX" class="headerlink" title="第12周课程 AJAX"></a>第12周课程 AJAX</h1><h2 id="名词解释-10"><a href="#名词解释-10" class="headerlink" title="名词解释"></a>名词解释</h2><h3 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h3>异步JavaScript和XML(Asynchronous JavaScript + XML).<br>它是创建动态网页应用的一种使用现有技术集合的‘新’方法， 包括: HTML or XHTML, Cascading Style Sheets, JavaScript, The Document Object Model, XML, XSLT, XMLHttpRequest object。Ajax能够快速地将增量更新呈现在用户界面上，无需重载网页，就能更新部分网页。<br>例如：谷歌搜索建议（Google Suggest） 使用 AJAX 创造出动态性极强的 web 界面：当用户在谷歌的搜索框中键入内容时，JavaScript 会把字符发送到服务器，服务器则会返回建议列表。<h3 id="XMLHttpRequest对象"><a href="#XMLHttpRequest对象" class="headerlink" title="XMLHttpRequest对象"></a>XMLHttpRequest对象</h3></li>
+</ol>
+<h2 id="概念论述-10"><a href="#概念论述-10" class="headerlink" title="概念论述"></a>概念论述</h2><h3 id="Ajax的工作过程和XMLHttpRequest对象的用法"><a href="#Ajax的工作过程和XMLHttpRequest对象的用法" class="headerlink" title="Ajax的工作过程和XMLHttpRequest对象的用法"></a>Ajax的工作过程和XMLHttpRequest对象的用法</h3><p>Ajax通过XmlHttpRequest对象来向服务器发异步请求，从服务器获得数据，然后用javascript来操作DOM而更新页面。这其中最关键的一步就是从服务器获得请求数据。<br>要清楚这个过程和原理，我们必须对 XMLHttpRequest有所了解。<br>XMLHttpRequest的属性有<br>onreadystatechange 每次状态改变所触发事件的事件处理程序。 　　responseText 从服务器进程返回数据的字符串形式。 　　responseXML 从服务器进程返回的DOM兼容的文档数据对象。 　　status 从服务器返回的数字代码，比如常见的404（未找到）和200（已就绪） 　　status Text 伴随状态码的字符串信息 　　readyState 对象状态值  　　　　0 (未初始化) 对象已建立，但是尚未初始化（尚未调用open方法） 　　　　1 (初始化) 对象已建立，尚未调用send方法 　　　　2 (发送数据) send方法已调用，但是当前的状态及http头未知 　　　　3 (数据传送中) 已接收部分数据，因为响应及http头不全，这时通过responseBody和responseText获取部分数据会出现错误， 　　　　4 (完成) 数据接收完毕,此时可以通过通过responseXml和responseText获取完整的回应数据<br>创建XMLHttpRequest对象的方法<br><strong>function</strong> CreateXmlHttp() {      <em>//非IE浏览器创建XmlHttpRequest对象</em>     <strong>if</strong> (window.XmlHttpRequest) {         xmlhttp = <strong>new</strong> XmlHttpRequest();     }      <em>//IE浏览器创建XmlHttpRequest对象</em>     <strong>if</strong> (window.ActiveXObject) {         <strong>try</strong> {             xmlhttp = <strong>new</strong> ActiveXObject(“Microsoft.XMLHTTP”);         }         <strong>catch</strong> (e) {             <strong>try</strong> {                 xmlhttp = <strong>new</strong> ActiveXObject(“msxml2.XMLHTTP”);             }             <strong>catch</strong> (ex) { }         }     } }  <strong>function</strong> Ustbwuyi() {      <strong>var</strong> data = document.getElementById(“username”).value;     CreateXmlHttp();     <strong>if</strong> (!xmlhttp) {         alert(“创建xmlhttp对象异常！”);         <strong>return</strong> <strong>false</strong>;     }      xmlhttp.open(“POST”, url, <strong>false</strong>);      xmlhttp.onreadystatechange = <strong>function</strong> () {         <strong>if</strong> (xmlhttp.readyState == 4) {             document.getElementById(“user1”).innerHTML = “数据正在加载…”;             <strong>if</strong> (xmlhttp.status == 200) {                 document.write(xmlhttp.responseText);             }         }     }     xmlhttp.send(); }<br>函数首先检查XMLHttpRequest的整体状态并且保证它已经完成（readyStatus=4），即数据已经发送完毕。然后根据服务器的设定询问请求状态，如果一切已经就绪（status=200），那么就执行下面需要的操作。<br>对于XmlHttpRequest的两个方法，open和send，其中open方法指定了：</p>
+<ol>
+<li>向服务器提交数据的类型，即post还是get。</li>
+<li>请求的url地址和传递的参数。</li>
+<li>传输方式，false为同步，true为异步。默认为true。如果是异步通信方式(true)，客户机就不等待服务器的响应；如果是同步方式(false)，客户机就要等到服务器返回消息后才去执行其他操作。我们需要根据实际需要来指定同步方式，在某些页面中，可能会发出多个请求，甚至是有组织有计划有队形大规模的高强度的request，而后一个是会覆盖前一个的，这个时候当然要指定同步方式。<br>Send方法用来发送请求。<br>(img)<br>对于Ajax，我们可以把服务器端看成一个数据接口，它返回的是一个纯文本流，当然，这个文本流可以是XML格式，可以是Html，可以是Javascript代码，也可以只是一个字符串。这时候，XMLHttpRequest向服务器端请求这个页面，服务器端将文本的结果写入页面，这和普通的web开发流程是一样的，不同的是，客户端在异步获取这个结果后，不是直接显示在页面，而是先由javascript来处理，然后再显示在页面。</li>
+</ol>
+<p>XMLHttpRequest对象使用的详细过程</p>
+<h4 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h4><p><strong>var</strong> xhr = <strong>new</strong> XMLHttpRequest();  xhr.open(“get”, “Url”, <strong>false</strong>); <em>//是否异步 </em> xhr.send(<strong>null</strong>);  <strong>if</strong> ((xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300) || xhr.status == 304) { alert(xhr.responseText); window.location.reload();  }  <strong>else</strong> { alert(“Request was unsuccessful: “ + xhr.status);  }</p>
+<h4 id="异步使用"><a href="#异步使用" class="headerlink" title="异步使用"></a>异步使用</h4><p><strong>var</strong> xhr = <strong>new</strong> XMLHttpRequest(); xhr.onreadystatechange=stateChange;  xhr.open(“post”, “Url”, <strong>true</strong>); <em>//是否异步 </em> xhr.send(<strong>null</strong>);  <strong>function</strong> stateChange() {  <strong>if</strong> (xhr.readyState==4) { <em>// 4 = “loaded” </em>   <strong>if</strong> ((xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300) || xhr.status == 304) {    alert(xhr.responseText);    window.location.reload(); } <strong>else</strong> {    alert(“Request was unsuccessful: “ + xhr.status);      }   } }</p>
+<h4 id="发送数据"><a href="#发送数据" class="headerlink" title="发送数据"></a>发送数据</h4><p><strong>var</strong> xhr = <strong>new</strong> XMLHttpRequest();  xhr.open(“post”, “Url”, <strong>false</strong>); <em>//是否异步 </em> <strong>var</strong> data = <strong>new</strong> FormData(); data.append(“bookId”, “1111”); data.append(“bookName”, “Web程序设计”);  <em>//var aForm = document.getElementById(“form1”); </em> <em>//var data = new FormData(aForm); </em> xhr.send(data); <strong>if</strong> ((xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300) || xhr.status == 304) { alert(xhr.responseText); window.location.reload(); } <strong>else</strong> { alert(“Request was unsuccessful: “ + xhr.status); }</p>
+<h4 id="Ajax帮助器"><a href="#Ajax帮助器" class="headerlink" title="Ajax帮助器"></a>Ajax帮助器</h4><ol>
+<li>安装。可以使用图形化介面安装</li>
+</ol>
+<ul>
+<li>Install-Package Microsoft.jQuery.Unobtrusive.Ajax –version 3.0.0</li>
+</ul>
+<ol>
+<li>在页面上包含库 </li>
+</ol>
+<ul>
+<li><script src="\~/Scripts/jquery.unobtrusive-ajax.js"></script><br>@Ajax.ActionLink()<br>@using(Ajax.BeginForm()) { }<h5 id="AjaxOptions类"><a href="#AjaxOptions类" class="headerlink" title="AjaxOptions类"></a>AjaxOptions类</h5>包含：UpdateTargetID、Url、HttpMethod、……<br>使用Ajax回调(OnBegin、OnComplete、OnFailure、OnSuccess)</li>
+</ul>
+
+  </div>
+</article>
+<!--  -->
+
+<br>
+<br>
+
+<script src="https://giscus.app/client.js"
+        data-repo="gitkeniwo/gitkeniwo.github.io"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkyNjk1NTA0ODE="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOEBEDkc4CgyF8"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="transparent_dark"   
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<div class="blog-post-comments">
+    <div id="giscus">
+
+    </div>
+</div>
+
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">index/</a></li>
+         
+          <li><a href="/archives/">dossiers/</a></li>
+         
+          <li><a href="/categories/">taxonomy/</a></li>
+         
+          <li><a href="/murmur/">murmurs/</a></li>
+         
+          <li><a href="/search/">retrieval/</a></li>
+         
+          <li><a href="/about/">about/</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC1%E5%91%A8%E8%AF%BE%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">第1周课程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A"><span class="toc-number">1.1.</span> <span class="toc-text">名词解释</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Web"><span class="toc-number">1.1.1.</span> <span class="toc-text">Web</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">1.1.2.</span> <span class="toc-text">Web服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8"><span class="toc-number">1.1.3.</span> <span class="toc-text">浏览器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E9%A1%B5"><span class="toc-number">1.1.4.</span> <span class="toc-text">网页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#URL"><span class="toc-number">1.1.5.</span> <span class="toc-text">URL</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%E8%AE%BA%E8%BF%B0"><span class="toc-number">1.2.</span> <span class="toc-text">概念论述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Web%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.1.</span> <span class="toc-text">Web工作原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E7%BD%91%E9%A1%B5%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">静态网页工作原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E7%BD%91%E9%A1%B5%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">动态网页工作原理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#URL%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.2.</span> <span class="toc-text">URL的工作原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Web%E8%AF%B7%E6%B1%82%E4%B8%8E%E5%93%8D%E5%BA%94"><span class="toc-number">1.2.3.</span> <span class="toc-text">Web请求与响应</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC2%E5%91%A8%E8%AF%BE%E7%A8%8B-MVC"><span class="toc-number">2.</span> <span class="toc-text">第2周课程 MVC</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A-1"><span class="toc-number">2.1.</span> <span class="toc-text">名词解释</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MVC"><span class="toc-number">2.1.1.</span> <span class="toc-text">MVC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Model-%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.1.2.</span> <span class="toc-text">Model 模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#View-%E8%A7%86%E5%9B%BE"><span class="toc-number">2.1.3.</span> <span class="toc-text">View 视图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Controller-%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-number">2.1.4.</span> <span class="toc-text">Controller 控制器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E5%9D%80%E8%B7%AF%E7%94%B1"><span class="toc-number">2.1.5.</span> <span class="toc-text">网址路由</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%E8%AE%BA%E8%BF%B0-1"><span class="toc-number">2.2.</span> <span class="toc-text">概念论述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MVC%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%A4%84%E7%90%86%E8%BF%87%E7%A8%8B"><span class="toc-number">2.2.1.</span> <span class="toc-text">MVC模型的处理过程</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC3%E5%91%A8%E8%AF%BE%E7%A8%8B-HTML"><span class="toc-number">3.</span> <span class="toc-text">第3周课程 HTML</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A-2"><span class="toc-number">3.1.</span> <span class="toc-text">名词解释</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML"><span class="toc-number">3.1.1.</span> <span class="toc-text">HTML</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XML-eXtensible-Markup-Language"><span class="toc-number">3.1.2.</span> <span class="toc-text">XML (eXtensible Markup Language)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XHTML"><span class="toc-number">3.1.3.</span> <span class="toc-text">XHTML</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DHTML"><span class="toc-number">3.1.4.</span> <span class="toc-text">DHTML</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%83%E7%B4%A0-Elements"><span class="toc-number">3.1.5.</span> <span class="toc-text">元素 Elements</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7"><span class="toc-number">3.1.5.1.</span> <span class="toc-text">属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#XHTML%E8%A7%84%E8%8C%83"><span class="toc-number">3.1.5.2.</span> <span class="toc-text">XHTML规范</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%E8%AE%BA%E8%BF%B0-2"><span class="toc-number">3.2.</span> <span class="toc-text">概念论述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E8%A7%A3%E6%9E%90HTML"><span class="toc-number">3.2.1.</span> <span class="toc-text">浏览器解析HTML</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">3.2.2.</span> <span class="toc-text">HTML的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E5%A4%B4%E4%B8%8E%E6%96%87%E6%A1%A3%E4%BD%93"><span class="toc-number">3.2.2.1.</span> <span class="toc-text">文档头与文档体</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://gitkeniwo.github.io/2020-06-15-ASP-NET-MVC5/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2020-06-15-ASP-NET-MVC5/&text=ASP.NET MVC5 课程小结"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2020-06-15-ASP-NET-MVC5/&title=ASP.NET MVC5 课程小结"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2020-06-15-ASP-NET-MVC5/&is_video=false&description=ASP.NET MVC5 课程小结"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=ASP.NET MVC5 课程小结&body=Check out this article: https://gitkeniwo.github.io/2020-06-15-ASP-NET-MVC5/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2020-06-15-ASP-NET-MVC5/&title=ASP.NET MVC5 课程小结"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2020-06-15-ASP-NET-MVC5/&title=ASP.NET MVC5 课程小结"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2020-06-15-ASP-NET-MVC5/&title=ASP.NET MVC5 课程小结"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2020-06-15-ASP-NET-MVC5/&title=ASP.NET MVC5 课程小结"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2020-06-15-ASP-NET-MVC5/&name=ASP.NET MVC5 课程小结&description=&lt;p&gt;本学期Web开发使用的MVC5框架，这是课程作业之课程知识点回顾，顺便拷贝一份在我的GP上。&lt;br&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2020-06-15-ASP-NET-MVC5/&t=ASP.NET MVC5 课程小结"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+
+  <!-- <div class="footer-top">
+    <div class="footer-left">
+      Copyright &copy;
+      
+      
+      2019-2025
+      ケニヲ
+    </div>
+  
+    <div class="footer-right">
+      <img src="/img/Written-By-Human-Not-By-AI-Badge-black.svg" /> 
+    </div>
+  </div> -->
+
+  <div class="footer-top">
+    <span class="footer-copyright">
+      Copyright &copy;
+      
+      
+      2019-2025
+      ケニヲ
+    </span>
+    <a target="_blank" rel="noopener" href="https://notbyai.fyi/hi/not-by-ai/" class="footer-badge">
+      <img src="/img/Written-By-Human-Not-By-AI-Badge-black.svg" alt="Written by Human, Not by AI" />
+    </a>
+  </div>
+
+
+  <div class="footer-bottom">
+    <nav>
+      <ul>
+        
+          <li><a href="/">index/</a></li>
+        
+          <li><a href="/archives/">dossiers/</a></li>
+        
+          <li><a href="/categories/">taxonomy/</a></li>
+        
+          <li><a href="/murmur/">murmurs/</a></li>
+        
+          <li><a href="/search/">retrieval/</a></li>
+        
+          <li><a href="/about/">about/</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+
+</footer>
+
+
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

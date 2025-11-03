@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Noto+Sans+TC&family=Syne+Mono&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/957afab140.js" crossorigin="anonymous"></script>
+    
+    <!--memos-->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <!-- <meta name="referrer" content="no-referrer">
+    <link rel="icon" href="/assets/img/logo.webp" type="image/*" />
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/APlayer.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/highlight.github.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css"> -->
+    <!--end memos-->
+
+
+    <meta name="description" content="Docker的工作原理: ContainerTo start with我们可以从 $docker run hello-world 的helloworld程序的流程看出。  当我们从Terminal输入语句执行的时候，docker client会take 我们的command，然后把command传递给docker server，在hello-world这条command中，我们实际想要传达的意思是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker 入门">
+<meta property="og:url" content="https://gitkeniwo.github.io/2020-07-02-docker-01/index.html">
+<meta property="og:site_name" content="사미즈다트">
+<meta property="og:description" content="Docker的工作原理: ContainerTo start with我们可以从 $docker run hello-world 的helloworld程序的流程看出。  当我们从Terminal输入语句执行的时候，docker client会take 我们的command，然后把command传递给docker server，在hello-world这条command中，我们实际想要传达的意思是">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/200702docker1.png">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/200702docker2.png">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/200702docker3.png">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/200702docker4.png">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/200702docker6.png">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/200702docker7.png">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/200702docker8.png">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/200702docker9.png">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/200702docker10.png">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/200702docker11.png">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/200702docker12.png">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/200703docker1.png">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/200703docker2.png">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/200703docker3.png">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/200703docker4.png">
+<meta property="article:published_time" content="2020-07-02T21:44:23.000Z">
+<meta property="article:modified_time" content="2025-11-03T02:33:27.122Z">
+<meta property="article:author" content="ケニヲ">
+<meta property="article:tag" content="docker">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitkeniwo.github.io/img/200702docker1.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/comedian-logo-100.png">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/comedian-logo-100.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/comedian-logo-100.png">
+        
+      
+    
+    <!-- title -->
+    <title>Docker 入门</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/true" title="사미즈다트" type="application/atom+xml" />
+    
+
+    
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body class="max-width mx-auto px3 ltr">    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">index/</a></li>
+         
+          <li><a href="/archives/">dossiers/</a></li>
+         
+          <li><a href="/categories/">taxonomy/</a></li>
+         
+          <li><a href="/murmur/">murmurs/</a></li>
+         
+          <li><a href="/search/">retrieval/</a></li>
+         
+          <li><a href="/about/">about/</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2020-07-12-ohmyzsh/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2020-06-15-ASP-NET-MVC5/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://gitkeniwo.github.io/2020-07-02-docker-01/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2020-07-02-docker-01/&text=Docker 入门"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2020-07-02-docker-01/&title=Docker 入门"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2020-07-02-docker-01/&is_video=false&description=Docker 入门"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Docker 入门&body=Check out this article: https://gitkeniwo.github.io/2020-07-02-docker-01/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2020-07-02-docker-01/&title=Docker 入门"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2020-07-02-docker-01/&title=Docker 入门"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2020-07-02-docker-01/&title=Docker 入门"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2020-07-02-docker-01/&title=Docker 入门"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2020-07-02-docker-01/&name=Docker 入门&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2020-07-02-docker-01/&t=Docker 入门"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86-Container"><span class="toc-number">1.</span> <span class="toc-text">Docker的工作原理: Container</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#To-start-with"><span class="toc-number">1.1.</span> <span class="toc-text">To start with</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Understanding-Container"><span class="toc-number">1.2.</span> <span class="toc-text">Understanding Container</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker-Basic-Usages"><span class="toc-number">2.</span> <span class="toc-text">Docker Basic Usages</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-run-lt-imageName-gt-command"><span class="toc-number">2.1.</span> <span class="toc-text">$docker run &lt;imageName&gt; command</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-ps"><span class="toc-number">2.2.</span> <span class="toc-text">docker ps</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Container-lifecycle"><span class="toc-number">2.3.</span> <span class="toc-text">Container lifecycle</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Remove-stopped-containers"><span class="toc-number">2.4.</span> <span class="toc-text">Remove stopped containers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Retrieving-log-outputs"><span class="toc-number">2.5.</span> <span class="toc-text">Retrieving log outputs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stopping-containers"><span class="toc-number">2.6.</span> <span class="toc-text">Stopping containers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Execute-commands-in-running-container"><span class="toc-number">2.7.</span> <span class="toc-text">Execute commands in running container.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#the-usage-of-the-it-Flag"><span class="toc-number">2.8.</span> <span class="toc-text">the usage of the -it Flag</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index pt4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Docker 入门
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a id='post-author' href="/">
+        <span itemprop="name">ケニヲ</span>
+        </a>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-07-02T21:44:23.000Z" itemprop="datePublished">2020-07-02</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Tech/">Tech</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/docker/" rel="tag">docker</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="Docker的工作原理-Container"><a href="#Docker的工作原理-Container" class="headerlink" title="Docker的工作原理: Container"></a>Docker的工作原理: Container</h1><h2 id="To-start-with"><a href="#To-start-with" class="headerlink" title="To start with"></a>To start with</h2><p>我们可以从 <code>$docker run hello-world</code> 的helloworld程序的流程看出。</p>
+<p><img src="/img/200702docker1.png" alt=""></p>
+<p>当我们从Terminal输入语句执行的时候，docker client会take 我们的command，然后把command传递给docker server，在hello-world这条command中，我们实际想要传达的意思是我们set up一个新的container，using the image hello-world。 hello-world image实际上包含着一个能打印如下info的小程序，是我们想要利用docker达到的运行的目的。 </p>
+<p><img src="/img/200702docker2.png" alt=""></p>
+<p>Docker server在接受到我们的指令之后，它首先会check 我们的image cache，that is，一个可以cache我们的docker image copy的文件库。当我们才刚刚装上docker的时候，image cache是空的，自然也就没有hello-world的copy，所以这时docker server就会向远程的docker hub发出pull请求，向我们本地的电脑上安装这个image。这里，docker hub is a repository of free docker images that you can freely download and run on your pc，就像是apt-get或者homebrew这样的包管理器一样。</p>
+<p><img src="/img/200702docker3.png" alt=""></p>
+<p>再之后，docker 会创建一个container，container是image的一个instance，他们之间的关系如上图所示。</p>
+<h2 id="Understanding-Container"><a href="#Understanding-Container" class="headerlink" title="Understanding Container"></a>Understanding Container</h2><p><img src="/img/200702docker4.png" alt=""></p>
+<p>Docker的核心理念就是模仿我们的OS，所以，我们要先理解自己PC上的OS的结构（参见csapp, cmu 15-213）。每一个运行在我们os里的application或者process，当它们要调用cpu或者hard disk的时候，它们是没有办法直接与硬件对话的，二是要借助kernel这个中间层，kernel会帮助我们intermediate机器内部的一些访问请求，进程与kernel交互又是依靠system call来完成的，它实际上是kernel的一些endpoint，或者说可以访问特定文件的函数。</p>
+<p>当我们PC上两个进程，let’s say chrome和Nodejs，它们分别需要使用不同的python version，比方说chrome到现在还在用python<br>2.版本，而我们的nodejs已经早早地进化到了python version3，这时我们的某个奇葩的操作系统上是不允许有两个不同version的python拷贝的，因为for some crazy reason这两个不同的py版本会产生冲突。<br>解决这个问题的一个方法是利用OS的一个feature叫做<strong>name spacing</strong>， 有了name spacing，我们可以直接在HD上划分不同的分区来分别处理这些资源。</p>
+<p>这个时候，kernel在处理进程调用的时候，就会先辨识是哪个进程作出的system call，之后根据不同进程的环境需求为进程分配相应的硬件资源。</p>
+<p><img src="/img/200702docker6.png" alt=""></p>
+<p>Name spacing将不同的进程所需的资源隔离开来(isolate)，使得它们之间互不干扰。</p>
+<p><img src="/img/200702docker7.png" alt=""></p>
+<p>Name Spcacing对应的还有一个概念叫做control group，它能够为每个进程分配有限的资源，比如Memory，CPU usage和bandwidth。</p>
+<p>所以，container实际上就是一组被逻辑上划分开来的进程组合，它们可以拥有os分配好的独立硬件资源，供进程使用。</p>
+<p><img src="/img/200702docker8.png" alt=""><br><img src="/img/200702docker9.png" alt=""></p>
+<p>When we talk about image, we’re really talking a <em>file system snapshot</em>, which is essentially kinda like a copy paste of a specific set of directoty or files. And image will also contain a specific startup command. 当我们创建容器的时候，docker会将image里面的文件快照拷贝到container的资源库中，然后执行startup命令，调用chrome或者其他进程，docker运行就开始了。</p>
+<p><img src="/img/200702docker10.png" alt=""></p>
+<p>实际上，namespacing 和 control group是linux系统下的一个特性。我们在win或者macos上安装docker的时候，同时安装了一个linux vm，所以我们的container也是在这个linux vm之中创建的，docker内部的系统调用也都是通过vm中的linux kernal来完成的，包括文件系统分区、进程之间的isolating和constraining等。</p>
+<p><img src="/img/200702docker11.png" alt=""></p>
+<p>Actually 我们可以打开terminal很直观的看到这个linux vm，只需要输入 <code>$docker version</code>，就可以看到 <code>OS/Arch</code> 一行中显示<code>linux/amd64</code>。</p>
+<p><img src="/img/200702docker12.png" alt=""></p>
+<h1 id="Docker-Basic-Usages"><a href="#Docker-Basic-Usages" class="headerlink" title="Docker Basic Usages"></a>Docker Basic Usages</h1><h2 id="docker-run-lt-imageName-gt-command"><a href="#docker-run-lt-imageName-gt-command" class="headerlink" title="$docker run &lt;imageName&gt; command"></a><code>$docker run &lt;imageName&gt; command</code></h2><p>Just like<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ docker run busybox echo hi there</span><br><span class="line">Unable to find image &#x27;busybox:latest&#x27; locally</span><br><span class="line">latest: Pulling from library/busybox</span><br><span class="line">91f30d776fb2: Pull complete </span><br><span class="line">Digest: sha256:9ddee63a712cea977267342e8750ecbc60d3aab25f04ceacfa795e6fce341793</span><br><span class="line">Status: Downloaded newer image for busybox:latest</span><br><span class="line">hi there</span><br></pre></td></tr></table></figure><br>Also, 我们也可以使用ls命令<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ docker run busybox ls</span><br><span class="line">bin</span><br><span class="line">dev</span><br><span class="line">etc</span><br><span class="line">home</span><br><span class="line">proc</span><br><span class="line">root</span><br><span class="line">sys</span><br><span class="line">tmp</span><br><span class="line">usr</span><br><span class="line">var</span><br></pre></td></tr></table></figure><br>但是在hello-world中使用ls和echo则会报错，这是因为ls和echo是只存在于busybox中的两个exec。</p>
+<p>在这里要特别介绍一下busybox，下面贴出其官方introduction</p>
+<blockquote>
+<p>Coming in somewhere between 1 and 5 Mb in on-disk size (depending on the variant), BusyBox is a very good ingredient to craft space-efficient distributions.</p>
+<p>BusyBox combines tiny versions of many common UNIX utilities into a single small executable. It provides replacements for most of the utilities you usually find in GNU fileutils, shellutils, etc. The utilities in BusyBox generally have fewer options than their full-featured GNU cousins; however, the options that are included provide the expected functionality and behave very much like their GNU counterparts. BusyBox provides a fairly complete environment for any small or embedded system.</p>
+</blockquote>
+<p>stackoverflow:</p>
+<blockquote>
+<p>A Busybox docker image is useful if one is building a container for which busybox can fulfill its dependency chain without needing a full Linux distro.</p>
+<p>Often, an embedded appliance can consist of nothing but a statically-linked copy of busybox, an init script that mounts procfs, sysfs, &amp;c. with busybox-provided tools, and then the actual application being invoked. With docker setting up the filesystem namespace, even that init script isn’t necessarily needed.</p>
+</blockquote>
+<h2 id="docker-ps"><a href="#docker-ps" class="headerlink" title="docker ps"></a><code>docker ps</code></h2><p>List all the running containers that are currently on your machine.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$docker ps</span><br></pre></td></tr></table></figure>
+<p>这条命令只会显示所有当前正在运行的container。如果要显示所有运行过的程序的话，我们需要<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$docker ps -all</span><br></pre></td></tr></table></figure></p>
+<h2 id="Container-lifecycle"><a href="#Container-lifecycle" class="headerlink" title="Container lifecycle"></a>Container lifecycle</h2><p>实际上, docker run = docker create + docker start，这两个语句是有区别的。</p>
+<p><code>docker create &lt;image name&gt;</code> 只是创建了container，将image里的文件快照拷贝到了container的文件系统里面。</p>
+<p><code>docker start &lt;container id&gt;</code><br>当我们使用container id来start container的时候，命令行不会输出container具体的运行结果（output），而是echo给我们同样的containerId，所以，如果我们要在start的时候看到输出的话，需要加上 -a 参数。</p>
+<p><code>docker start -a &lt;container id&gt;</code></p>
+<p>另外，每次start container id的时候，我们的容器都是默认使用create/run时候的default command，并执行default command。比如说，我们执行<code>$docker start -a &lt;cont id&gt;</code>的时候，命令行输出依然会显示hi there，实际上是又执行了一次我们的default command <code>echo hi there</code>.<br>所以start的时候是<em>不能重新指定命令</em>的。</p>
+<h2 id="Remove-stopped-containers"><a href="#Remove-stopped-containers" class="headerlink" title="Remove stopped containers"></a>Remove stopped containers</h2><p><code>$docker system prune</code><br>会清除所有运行完毕的container，也会清除所有docker cache里面的镜像，这样的话再次使用镜像就要重新向docker hub提出pull请求。</p>
+<h2 id="Retrieving-log-outputs"><a href="#Retrieving-log-outputs" class="headerlink" title="Retrieving log outputs"></a>Retrieving log outputs</h2><p><code>$docker logs &lt;container id&gt;</code> will get logs from a container.</p>
+<p>当我们执行docker logs的时候，我们不会重新运行该容器和其默认命令，而只是查看他的历史输出。</p>
+<h2 id="Stopping-containers"><a href="#Stopping-containers" class="headerlink" title="Stopping containers"></a>Stopping containers</h2><p>如果我们用docker start在后台运行container的时候，是没办法用ctr+c结束进程的，常见的有<code>ping google.com</code>这样的命令，这时候就需要其他的命令来结束容器进程，有以下两种方式。</p>
+<p><code>docker stop &lt;container id&gt;</code></p>
+<p><img src="/img/200703docker1.png" alt=""><br>从图中我们可以看到实际上<code>ping google.com</code> 是是隶属于busybox linux系统命令之下的不断loop的一个进程。<br>当我们使用docker stop的时候，实际上是向该进程发送了一个Terminate的Signal，进程收到signal之后就会shutdown，但在这之前还会留有一些短暂的准备时间，让container做做简单的清洁。</p>
+<p><code>docker kill &lt;container id&gt;</code><br><img src="/img/200703docker2.png" alt=""><br>同样的，docker kill也是发送一个kill的命令，这个kill的命令会立即shut down进程，而不做其他的考虑。<br>so usually we use stop command, and when using that, we re gonna wait a couple of seconds until the process shut itself down. Similiarly kill command will just kill the process instantly with no waiting time.</p>
+<h2 id="Execute-commands-in-running-container"><a href="#Execute-commands-in-running-container" class="headerlink" title="Execute commands in running container."></a>Execute commands in running container.</h2><p><img src="/img/200703docker3.png" alt=""></p>
+<p>有时候我们需要同时在一个container里面运行多个进程，比如说redis-server和redis-cli，这里就要用到执行命令。</p>
+<p><code>docker exec -it &lt;container id&gt; &lt;command&gt;</code></p>
+<p><img src="/img/200703docker4.png" alt=""></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$docker run redis</span><br><span class="line">..(redis info)...</span><br><span class="line">$docker ps</span><br><span class="line">...(to find the container id)...</span><br><span class="line">$docker exec -it &lt;container id&gt; redis-cli</span><br><span class="line">...then redis-cli REPL comes out...</span><br><span class="line">...you can set key-value and also get value from key...</span><br></pre></td></tr></table></figure>
+<h2 id="the-usage-of-the-it-Flag"><a href="#the-usage-of-the-it-Flag" class="headerlink" title="the usage of the -it Flag"></a>the usage of the <code>-it</code> Flag</h2><p>在上面例子中，如果我们leave out <code>-it</code> 的话，我们会被立刻kick out back to terminal，而不会显示redis-cli的交互界面。</p>
+
+  </div>
+</article>
+<!--  -->
+
+<br>
+<br>
+
+<script src="https://giscus.app/client.js"
+        data-repo="gitkeniwo/gitkeniwo.github.io"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkyNjk1NTA0ODE="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOEBEDkc4CgyF8"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="transparent_dark"   
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<div class="blog-post-comments">
+    <div id="giscus">
+
+    </div>
+</div>
+
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">index/</a></li>
+         
+          <li><a href="/archives/">dossiers/</a></li>
+         
+          <li><a href="/categories/">taxonomy/</a></li>
+         
+          <li><a href="/murmur/">murmurs/</a></li>
+         
+          <li><a href="/search/">retrieval/</a></li>
+         
+          <li><a href="/about/">about/</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86-Container"><span class="toc-number">1.</span> <span class="toc-text">Docker的工作原理: Container</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#To-start-with"><span class="toc-number">1.1.</span> <span class="toc-text">To start with</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Understanding-Container"><span class="toc-number">1.2.</span> <span class="toc-text">Understanding Container</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Docker-Basic-Usages"><span class="toc-number">2.</span> <span class="toc-text">Docker Basic Usages</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-run-lt-imageName-gt-command"><span class="toc-number">2.1.</span> <span class="toc-text">$docker run &lt;imageName&gt; command</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#docker-ps"><span class="toc-number">2.2.</span> <span class="toc-text">docker ps</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Container-lifecycle"><span class="toc-number">2.3.</span> <span class="toc-text">Container lifecycle</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Remove-stopped-containers"><span class="toc-number">2.4.</span> <span class="toc-text">Remove stopped containers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Retrieving-log-outputs"><span class="toc-number">2.5.</span> <span class="toc-text">Retrieving log outputs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stopping-containers"><span class="toc-number">2.6.</span> <span class="toc-text">Stopping containers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Execute-commands-in-running-container"><span class="toc-number">2.7.</span> <span class="toc-text">Execute commands in running container.</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#the-usage-of-the-it-Flag"><span class="toc-number">2.8.</span> <span class="toc-text">the usage of the -it Flag</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://gitkeniwo.github.io/2020-07-02-docker-01/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2020-07-02-docker-01/&text=Docker 入门"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2020-07-02-docker-01/&title=Docker 入门"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2020-07-02-docker-01/&is_video=false&description=Docker 入门"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Docker 入门&body=Check out this article: https://gitkeniwo.github.io/2020-07-02-docker-01/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2020-07-02-docker-01/&title=Docker 入门"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2020-07-02-docker-01/&title=Docker 入门"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2020-07-02-docker-01/&title=Docker 入门"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2020-07-02-docker-01/&title=Docker 入门"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2020-07-02-docker-01/&name=Docker 入门&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2020-07-02-docker-01/&t=Docker 入门"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+
+  <!-- <div class="footer-top">
+    <div class="footer-left">
+      Copyright &copy;
+      
+      
+      2019-2025
+      ケニヲ
+    </div>
+  
+    <div class="footer-right">
+      <img src="/img/Written-By-Human-Not-By-AI-Badge-black.svg" /> 
+    </div>
+  </div> -->
+
+  <div class="footer-top">
+    <span class="footer-copyright">
+      Copyright &copy;
+      
+      
+      2019-2025
+      ケニヲ
+    </span>
+    <a target="_blank" rel="noopener" href="https://notbyai.fyi/hi/not-by-ai/" class="footer-badge">
+      <img src="/img/Written-By-Human-Not-By-AI-Badge-black.svg" alt="Written by Human, Not by AI" />
+    </a>
+  </div>
+
+
+  <div class="footer-bottom">
+    <nav>
+      <ul>
+        
+          <li><a href="/">index/</a></li>
+        
+          <li><a href="/archives/">dossiers/</a></li>
+        
+          <li><a href="/categories/">taxonomy/</a></li>
+        
+          <li><a href="/murmur/">murmurs/</a></li>
+        
+          <li><a href="/search/">retrieval/</a></li>
+        
+          <li><a href="/about/">about/</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+
+</footer>
+
+
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

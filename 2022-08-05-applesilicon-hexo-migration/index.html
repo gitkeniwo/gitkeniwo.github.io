@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Noto+Sans+TC&family=Syne+Mono&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/957afab140.js" crossorigin="anonymous"></script>
+    
+    <!--memos-->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <!-- <meta name="referrer" content="no-referrer">
+    <link rel="icon" href="/assets/img/logo.webp" type="image/*" />
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/APlayer.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/highlight.github.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css"> -->
+    <!--end memos-->
+
+
+    <meta name="description" content="昨天14寸mbp(m1 pro)到了之后，欢天喜地的用time machine备份再还原了一下午，谁知道time machine连同intel上的环境一起给还原到了apple silicon这边来，光是要怎么卸载intel的brew我都搞了半小时，（brew官网提供的uninstall .sh脚本 狠起来连自己都报错！)，最后我就开机狂按cmd+R 抹盘重装了。 BTW，淘宝在激活的当天可以买Ap">
+<meta property="og:type" content="article">
+<meta property="og:title" content="将Hexo从2020 Intel MBP迁移到2021 MBP 14inch Apple Silicon">
+<meta property="og:url" content="https://gitkeniwo.github.io/2022-08-05-applesilicon-hexo-migration/index.html">
+<meta property="og:site_name" content="사미즈다트">
+<meta property="og:description" content="昨天14寸mbp(m1 pro)到了之后，欢天喜地的用time machine备份再还原了一下午，谁知道time machine连同intel上的环境一起给还原到了apple silicon这边来，光是要怎么卸载intel的brew我都搞了半小时，（brew官网提供的uninstall .sh脚本 狠起来连自己都报错！)，最后我就开机狂按cmd+R 抹盘重装了。 BTW，淘宝在激活的当天可以买Ap">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/Screen%20Shot%202022-08-05%20at%2001.33.22.png">
+<meta property="article:published_time" content="2022-08-04T23:02:04.000Z">
+<meta property="article:modified_time" content="2025-11-03T02:33:27.128Z">
+<meta property="article:author" content="ケニヲ">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="apple-silicon">
+<meta property="article:tag" content="mbp">
+<meta property="article:tag" content="apple">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/Screen%20Shot%202022-08-05%20at%2001.33.22.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/comedian-logo-100.png">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/comedian-logo-100.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/comedian-logo-100.png">
+        
+      
+    
+    <!-- title -->
+    <title>将Hexo从2020 Intel MBP迁移到2021 MBP 14inch Apple Silicon</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/true" title="사미즈다트" type="application/atom+xml" />
+    
+
+    
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body class="max-width mx-auto px3 ltr">    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">index/</a></li>
+         
+          <li><a href="/archives/">dossiers/</a></li>
+         
+          <li><a href="/categories/">taxonomy/</a></li>
+         
+          <li><a href="/murmur/">murmurs/</a></li>
+         
+          <li><a href="/search/">retrieval/</a></li>
+         
+          <li><a href="/about/">about/</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2022-08-20-Accessing-non-existent-property-lineno/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2022-06-21-dutch-grammar/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://gitkeniwo.github.io/2022-08-05-applesilicon-hexo-migration/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2022-08-05-applesilicon-hexo-migration/&text=将Hexo从2020 Intel MBP迁移到2021 MBP 14inch Apple Silicon"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2022-08-05-applesilicon-hexo-migration/&title=将Hexo从2020 Intel MBP迁移到2021 MBP 14inch Apple Silicon"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2022-08-05-applesilicon-hexo-migration/&is_video=false&description=将Hexo从2020 Intel MBP迁移到2021 MBP 14inch Apple Silicon"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=将Hexo从2020 Intel MBP迁移到2021 MBP 14inch Apple Silicon&body=Check out this article: https://gitkeniwo.github.io/2022-08-05-applesilicon-hexo-migration/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2022-08-05-applesilicon-hexo-migration/&title=将Hexo从2020 Intel MBP迁移到2021 MBP 14inch Apple Silicon"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2022-08-05-applesilicon-hexo-migration/&title=将Hexo从2020 Intel MBP迁移到2021 MBP 14inch Apple Silicon"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2022-08-05-applesilicon-hexo-migration/&title=将Hexo从2020 Intel MBP迁移到2021 MBP 14inch Apple Silicon"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2022-08-05-applesilicon-hexo-migration/&title=将Hexo从2020 Intel MBP迁移到2021 MBP 14inch Apple Silicon"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2022-08-05-applesilicon-hexo-migration/&name=将Hexo从2020 Intel MBP迁移到2021 MBP 14inch Apple Silicon&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2022-08-05-applesilicon-hexo-migration/&t=将Hexo从2020 Intel MBP迁移到2021 MBP 14inch Apple Silicon"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index pt4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        将Hexo从2020 Intel MBP迁移到2021 MBP 14inch Apple Silicon
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a id='post-author' href="/">
+        <span itemprop="name">ケニヲ</span>
+        </a>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2022-08-04T23:02:04.000Z" itemprop="datePublished">2022-08-05</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Blogging/">Blogging</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/apple/" rel="tag">apple</a>, <a class="tag-link-link" href="/tags/apple-silicon/" rel="tag">apple-silicon</a>, <a class="tag-link-link" href="/tags/hexo/" rel="tag">hexo</a>, <a class="tag-link-link" href="/tags/mbp/" rel="tag">mbp</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>昨天14寸mbp(m1 pro)到了之后，欢天喜地的用time machine备份再还原了一下午，谁知道time machine连同intel上的环境一起给还原到了apple silicon这边来，光是要怎么卸载intel的<a target="_blank" rel="noopener" href="https://brew.sh">brew</a>我都搞了半小时，（brew官网提供的<a target="_blank" rel="noopener" href="https://docs.brew.sh/FAQ#how-do-i-uninstall-homebrew">uninstall .sh脚本</a> 狠起来连自己都报错！)，最后我就开机狂按<code>cmd</code>+<code>R</code> 抹盘重装了。</p>
+<p>BTW，淘宝在激活的当天可以买AppleCare+，我是花了¥1385直接在杭州朗朗数码买的，Care就是可以保3年，然后全球联保（去🇳🇱就几乎不用担心了），所以毫不犹豫的就买了，毕竟贵MBP换主板换屏幕都是5000+软妹币吧……Apple Silicon一路下来体验就是：爽！！！作为16-20年mbp模具和intel的受害者，我的2020 intel mbp 13inch 今年在进入4月份以来只能用mac fan control调到all time满速才可使用，更别说16G的内存在最近连看个Safari都会闪退。与此同时，mbp 14寸开了满满一dock的app都安静如鸡，流畅丝滑，内存一路绿灯，这才叫<strong>优雅</strong>啊！！！</p>
+<p>进入正题，由于我在intel mbp 上的hexo是跑在node 12.x版本下的，今天去nodejs主页一看，稳定版都更新到16.x了（贵前端生态真的奇葩）。我依稀记得之前还专门写过因为兼容性问题从node 14.x版本<a href="https://gitkeniwo.github.io/2020-11-24-blog/">回滚的经历</a>（贵nodejs圈用什么管理环境？<a target="_blank" rel="noopener" href="https://github.com/nvm-sh/nvm">nvm</a>？）。怀着忐忑的心情，从GitHub上拉下来了hexo项目的最新提交，在新mac上配置好<a target="_blank" rel="noopener" href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">github token</a>。先安装<code>hexo-cli</code>:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>全局安装package时(<code>-g</code> flag)遇到了permission denied的问题（EACCES)，主要是<code>mkdir &#39;/usr/local/lib/node_modules/hexo-cli&#39; \ mkdir: /usr/local/lib/node_modules/hexo-cli: Permission denied</code>命令权限不够，参照<a target="_blank" rel="noopener" href="https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally">npm的官方文档</a>在 <code>～</code>目录下自建一个npm全局包目录解决。</p>
+<p>进入hexo folder，这时要根据你当时的package.json重新安装各种包<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure><br>装好后，npm会让你audit，可以看看，不过没什么用。这时就可以<code>hexo server</code>了，然后居然直接跑起来了，虽然还是会有一些warning，但都是一些dependency不支持了之类的。<br><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/Screen%20Shot%202022-08-05%20at%2001.33.22.png" alt=""></p>
+<p>最后，再根据以前写的<a href="https://gitkeniwo.github.io/2022-02-23-inline-math/">一些博文</a>，开启数学公式一类的插件就可以了($try \space some \space math \space here \space 89^{64}$)，由于包都是重装的，所以这些细枝末节的修改最好也重新走一遍。这样来看，hexo基本上可以很好地迁移到 #apple silicon 这边来。</p>
+
+  </div>
+</article>
+<!--  -->
+
+<br>
+<br>
+
+<script src="https://giscus.app/client.js"
+        data-repo="gitkeniwo/gitkeniwo.github.io"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkyNjk1NTA0ODE="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOEBEDkc4CgyF8"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="transparent_dark"   
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<div class="blog-post-comments">
+    <div id="giscus">
+
+    </div>
+</div>
+
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">index/</a></li>
+         
+          <li><a href="/archives/">dossiers/</a></li>
+         
+          <li><a href="/categories/">taxonomy/</a></li>
+         
+          <li><a href="/murmur/">murmurs/</a></li>
+         
+          <li><a href="/search/">retrieval/</a></li>
+         
+          <li><a href="/about/">about/</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://gitkeniwo.github.io/2022-08-05-applesilicon-hexo-migration/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2022-08-05-applesilicon-hexo-migration/&text=将Hexo从2020 Intel MBP迁移到2021 MBP 14inch Apple Silicon"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2022-08-05-applesilicon-hexo-migration/&title=将Hexo从2020 Intel MBP迁移到2021 MBP 14inch Apple Silicon"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2022-08-05-applesilicon-hexo-migration/&is_video=false&description=将Hexo从2020 Intel MBP迁移到2021 MBP 14inch Apple Silicon"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=将Hexo从2020 Intel MBP迁移到2021 MBP 14inch Apple Silicon&body=Check out this article: https://gitkeniwo.github.io/2022-08-05-applesilicon-hexo-migration/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2022-08-05-applesilicon-hexo-migration/&title=将Hexo从2020 Intel MBP迁移到2021 MBP 14inch Apple Silicon"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2022-08-05-applesilicon-hexo-migration/&title=将Hexo从2020 Intel MBP迁移到2021 MBP 14inch Apple Silicon"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2022-08-05-applesilicon-hexo-migration/&title=将Hexo从2020 Intel MBP迁移到2021 MBP 14inch Apple Silicon"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2022-08-05-applesilicon-hexo-migration/&title=将Hexo从2020 Intel MBP迁移到2021 MBP 14inch Apple Silicon"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2022-08-05-applesilicon-hexo-migration/&name=将Hexo从2020 Intel MBP迁移到2021 MBP 14inch Apple Silicon&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2022-08-05-applesilicon-hexo-migration/&t=将Hexo从2020 Intel MBP迁移到2021 MBP 14inch Apple Silicon"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+
+  <!-- <div class="footer-top">
+    <div class="footer-left">
+      Copyright &copy;
+      
+      
+      2019-2025
+      ケニヲ
+    </div>
+  
+    <div class="footer-right">
+      <img src="/img/Written-By-Human-Not-By-AI-Badge-black.svg" /> 
+    </div>
+  </div> -->
+
+  <div class="footer-top">
+    <span class="footer-copyright">
+      Copyright &copy;
+      
+      
+      2019-2025
+      ケニヲ
+    </span>
+    <a target="_blank" rel="noopener" href="https://notbyai.fyi/hi/not-by-ai/" class="footer-badge">
+      <img src="/img/Written-By-Human-Not-By-AI-Badge-black.svg" alt="Written by Human, Not by AI" />
+    </a>
+  </div>
+
+
+  <div class="footer-bottom">
+    <nav>
+      <ul>
+        
+          <li><a href="/">index/</a></li>
+        
+          <li><a href="/archives/">dossiers/</a></li>
+        
+          <li><a href="/categories/">taxonomy/</a></li>
+        
+          <li><a href="/murmur/">murmurs/</a></li>
+        
+          <li><a href="/search/">retrieval/</a></li>
+        
+          <li><a href="/about/">about/</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+
+</footer>
+
+
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

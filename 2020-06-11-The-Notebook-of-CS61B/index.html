@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Noto+Sans+TC&family=Syne+Mono&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/957afab140.js" crossorigin="anonymous"></script>
+    
+    <!--memos-->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <!-- <meta name="referrer" content="no-referrer">
+    <link rel="icon" href="/assets/img/logo.webp" type="image/*" />
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/APlayer.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/highlight.github.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css"> -->
+    <!--end memos-->
+
+
+    <meta name="description" content="Introduction to Java [x] 1 [ ] 2 [ ] 3 [ ] 4 [ ] 5 [ ] 6 [ ] 7  ListsMystery of Walrus123456Walrus a &#x3D; new Walrus(1000, 8.3);Walrus b;b &#x3D; a;b.weight &#x3D; 5;System.out.println(a);System.out.println(b); Th">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Notebook of CS61B">
+<meta property="og:url" content="https://gitkeniwo.github.io/2020-06-11-The-Notebook-of-CS61B/index.html">
+<meta property="og:site_name" content="사미즈다트">
+<meta property="og:description" content="Introduction to Java [x] 1 [ ] 2 [ ] 3 [ ] 4 [ ] 5 [ ] 6 [ ] 7  ListsMystery of Walrus123456Walrus a &#x3D; new Walrus(1000, 8.3);Walrus b;b &#x3D; a;b.weight &#x3D; 5;System.out.println(a);System.out.println(b); Th">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/20-06-someWalrus_simplified_bit_notation.png">
+<meta property="article:published_time" content="2020-06-11T20:56:54.000Z">
+<meta property="article:modified_time" content="2025-11-03T02:33:27.122Z">
+<meta property="article:author" content="ケニヲ">
+<meta property="article:tag" content="data-structure">
+<meta property="article:tag" content="notes">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitkeniwo.github.io/img/20-06-someWalrus_simplified_bit_notation.png">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/comedian-logo-100.png">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/comedian-logo-100.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/comedian-logo-100.png">
+        
+      
+    
+    <!-- title -->
+    <title>The Notebook of CS61B</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/true" title="사미즈다트" type="application/atom+xml" />
+    
+
+    
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body class="max-width mx-auto px3 ltr">    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">index/</a></li>
+         
+          <li><a href="/archives/">dossiers/</a></li>
+         
+          <li><a href="/categories/">taxonomy/</a></li>
+         
+          <li><a href="/murmur/">murmurs/</a></li>
+         
+          <li><a href="/search/">retrieval/</a></li>
+         
+          <li><a href="/about/">about/</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2020-06-15-ASP-NET-MVC5/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2020-06-11-Scientifically-Back-up/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://gitkeniwo.github.io/2020-06-11-The-Notebook-of-CS61B/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2020-06-11-The-Notebook-of-CS61B/&text=The Notebook of CS61B"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2020-06-11-The-Notebook-of-CS61B/&title=The Notebook of CS61B"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2020-06-11-The-Notebook-of-CS61B/&is_video=false&description=The Notebook of CS61B"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=The Notebook of CS61B&body=Check out this article: https://gitkeniwo.github.io/2020-06-11-The-Notebook-of-CS61B/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2020-06-11-The-Notebook-of-CS61B/&title=The Notebook of CS61B"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2020-06-11-The-Notebook-of-CS61B/&title=The Notebook of CS61B"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2020-06-11-The-Notebook-of-CS61B/&title=The Notebook of CS61B"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2020-06-11-The-Notebook-of-CS61B/&title=The Notebook of CS61B"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2020-06-11-The-Notebook-of-CS61B/&name=The Notebook of CS61B&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2020-06-11-The-Notebook-of-CS61B/&t=The Notebook of CS61B"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Introduction-to-Java"><span class="toc-number">1.</span> <span class="toc-text">Introduction to Java</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lists"><span class="toc-number">2.</span> <span class="toc-text">Lists</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mystery-of-Walrus"><span class="toc-number">2.1.</span> <span class="toc-text">Mystery of Walrus</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Golden-Rule-of-Equals-GRoE"><span class="toc-number">2.1.1.</span> <span class="toc-text">The Golden Rule of Equals (GRoE)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Object-Instantiation"><span class="toc-number">2.1.2.</span> <span class="toc-text">Object Instantiation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Reference-Variable-Declaration"><span class="toc-number">2.1.3.</span> <span class="toc-text">Reference Variable Declaration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Box-and-Pointer-Notation"><span class="toc-number">2.1.4.</span> <span class="toc-text">Box and Pointer Notation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Parameter-Passing-Pass-by-Value-VIP"><span class="toc-number">2.1.5.</span> <span class="toc-text">Parameter Passing: Pass by Value (VIP)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Instantiation-of-Arrays"><span class="toc-number">2.1.6.</span> <span class="toc-text">Instantiation of Arrays</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Law-of-the-Broken-Futon"><span class="toc-number">2.1.7.</span> <span class="toc-text">The Law of the Broken Futon</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index pt4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        The Notebook of CS61B
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a id='post-author' href="/">
+        <span itemprop="name">ケニヲ</span>
+        </a>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-06-11T20:56:54.000Z" itemprop="datePublished">2020-06-11</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Zen-and-the-Art-of-Computer-Maintenance/">Zen and the Art of Computer Maintenance</a> › <a class="category-link" href="/categories/Zen-and-the-Art-of-Computer-Maintenance/Algorithms/">Algorithms</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/data-structure/" rel="tag">data-structure</a>, <a class="tag-link-link" href="/tags/notes/" rel="tag">notes</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="Introduction-to-Java"><a href="#Introduction-to-Java" class="headerlink" title="Introduction to Java"></a>Introduction to Java</h1><ul>
+<li>[x] 1</li>
+<li>[ ] 2</li>
+<li>[ ] 3</li>
+<li>[ ] 4</li>
+<li>[ ] 5</li>
+<li>[ ] 6</li>
+<li>[ ] 7</li>
+</ul>
+<h1 id="Lists"><a href="#Lists" class="headerlink" title="Lists"></a>Lists</h1><h2 id="Mystery-of-Walrus"><a href="#Mystery-of-Walrus" class="headerlink" title="Mystery of Walrus"></a>Mystery of Walrus</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Walrus</span> <span class="variable">a</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Walrus</span>(<span class="number">1000</span>, <span class="number">8.3</span>);</span><br><span class="line">Walrus b;</span><br><span class="line">b = a;</span><br><span class="line">b.weight = <span class="number">5</span>;</span><br><span class="line">System.out.println(a);</span><br><span class="line">System.out.println(b);</span><br></pre></td></tr></table></figure>
+<h3 id="The-Golden-Rule-of-Equals-GRoE"><a href="#The-Golden-Rule-of-Equals-GRoE" class="headerlink" title="The Golden Rule of Equals (GRoE)"></a>The Golden Rule of Equals (GRoE)</h3><p>When you write <code>y = x</code>, you are telling the Java interpreter to copy the bits from x into y. This Golden Rule of Equals (GRoE) is the root of all truth when it comes to understanding our Walrus Mystery.</p>
+<h3 id="Object-Instantiation"><a href="#Object-Instantiation" class="headerlink" title="Object Instantiation"></a>Object Instantiation</h3><p>8 primitive types: byte, short, int, long, float, double, boolean, char.</p>
+<p>Everything else, including arrays, is not a primitive type but rather a <code>reference type</code>.</p>
+<p>When we <em>instantiate</em> an Object using <code>new</code>, java:</p>
+<ol>
+<li>allocates a box for each instance variable of the class, and fills them with a default value.</li>
+<li>The constructor then usually (but not always) fills every box with some other value.</li>
+</ol>
+<h3 id="Reference-Variable-Declaration"><a href="#Reference-Variable-Declaration" class="headerlink" title="Reference Variable Declaration"></a>Reference Variable Declaration</h3><p>When we <em>declare</em> a variable of any reference type (Walrus, Dog, Planet, array, etc.), Java allocates a box of 64 bits, no matter what type of object.</p>
+<p>The 64 bit box contains <em>not the data about the walrus, but instead the address of the Walrus in memory</em>.</p>
+<h3 id="Box-and-Pointer-Notation"><a href="#Box-and-Pointer-Notation" class="headerlink" title="Box and Pointer Notation"></a>Box and Pointer Notation</h3><p><img src="/img/20-06-someWalrus_simplified_bit_notation.png" alt=""></p>
+<h3 id="Parameter-Passing-Pass-by-Value-VIP"><a href="#Parameter-Passing-Pass-by-Value-VIP" class="headerlink" title="Parameter Passing: Pass by Value (VIP)"></a>Parameter Passing: Pass by Value (VIP)</h3><p>When you pass parameters to a function, you are also simply copying the bits. In other words, the GRoE also applies to parameter passing. Copying the bits is usually called “<strong>pass by value</strong>“. In Java, we <strong>always</strong> pass by value.</p>
+<p>so in this expression<code>Walrus b;</code>, b is undefined, not null.</p>
+<h3 id="Instantiation-of-Arrays"><a href="#Instantiation-of-Arrays" class="headerlink" title="Instantiation of Arrays"></a>Instantiation of Arrays</h3><p><code>Int[] a</code> -&gt; <strong>declaration</strong> </p>
+<p>Creates a 64 bit box (the size of its address) intended only for storing a reference to an int array.</p>
+<p>No Object is instantiated.</p>
+<p><code>new int[]&#123;1, 2, 4, 94&#125;</code> -&gt;instantiation </p>
+<p>new object, which is an int array,  is created by this expression and anonymous.</p>
+<p><code>Int[] a =new int[]&#123;1, 2, 4, 94&#125;</code> contains:<br>Declaration/ Instantiation/ Assignment: put the address of the new object into that 64 bit box. </p>
+<p>so if <code>a = [something new]</code> that address would be lost and never get that back.</p>
+<h3 id="The-Law-of-the-Broken-Futon"><a href="#The-Law-of-the-Broken-Futon" class="headerlink" title="The Law of the Broken Futon"></a>The Law of the Broken Futon</h3>
+  </div>
+</article>
+<!--  -->
+
+<br>
+<br>
+
+<script src="https://giscus.app/client.js"
+        data-repo="gitkeniwo/gitkeniwo.github.io"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkyNjk1NTA0ODE="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOEBEDkc4CgyF8"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="transparent_dark"   
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<div class="blog-post-comments">
+    <div id="giscus">
+
+    </div>
+</div>
+
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">index/</a></li>
+         
+          <li><a href="/archives/">dossiers/</a></li>
+         
+          <li><a href="/categories/">taxonomy/</a></li>
+         
+          <li><a href="/murmur/">murmurs/</a></li>
+         
+          <li><a href="/search/">retrieval/</a></li>
+         
+          <li><a href="/about/">about/</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Introduction-to-Java"><span class="toc-number">1.</span> <span class="toc-text">Introduction to Java</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lists"><span class="toc-number">2.</span> <span class="toc-text">Lists</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mystery-of-Walrus"><span class="toc-number">2.1.</span> <span class="toc-text">Mystery of Walrus</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Golden-Rule-of-Equals-GRoE"><span class="toc-number">2.1.1.</span> <span class="toc-text">The Golden Rule of Equals (GRoE)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Object-Instantiation"><span class="toc-number">2.1.2.</span> <span class="toc-text">Object Instantiation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Reference-Variable-Declaration"><span class="toc-number">2.1.3.</span> <span class="toc-text">Reference Variable Declaration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Box-and-Pointer-Notation"><span class="toc-number">2.1.4.</span> <span class="toc-text">Box and Pointer Notation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Parameter-Passing-Pass-by-Value-VIP"><span class="toc-number">2.1.5.</span> <span class="toc-text">Parameter Passing: Pass by Value (VIP)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Instantiation-of-Arrays"><span class="toc-number">2.1.6.</span> <span class="toc-text">Instantiation of Arrays</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Law-of-the-Broken-Futon"><span class="toc-number">2.1.7.</span> <span class="toc-text">The Law of the Broken Futon</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://gitkeniwo.github.io/2020-06-11-The-Notebook-of-CS61B/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2020-06-11-The-Notebook-of-CS61B/&text=The Notebook of CS61B"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2020-06-11-The-Notebook-of-CS61B/&title=The Notebook of CS61B"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2020-06-11-The-Notebook-of-CS61B/&is_video=false&description=The Notebook of CS61B"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=The Notebook of CS61B&body=Check out this article: https://gitkeniwo.github.io/2020-06-11-The-Notebook-of-CS61B/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2020-06-11-The-Notebook-of-CS61B/&title=The Notebook of CS61B"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2020-06-11-The-Notebook-of-CS61B/&title=The Notebook of CS61B"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2020-06-11-The-Notebook-of-CS61B/&title=The Notebook of CS61B"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2020-06-11-The-Notebook-of-CS61B/&title=The Notebook of CS61B"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2020-06-11-The-Notebook-of-CS61B/&name=The Notebook of CS61B&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2020-06-11-The-Notebook-of-CS61B/&t=The Notebook of CS61B"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+
+  <!-- <div class="footer-top">
+    <div class="footer-left">
+      Copyright &copy;
+      
+      
+      2019-2025
+      ケニヲ
+    </div>
+  
+    <div class="footer-right">
+      <img src="/img/Written-By-Human-Not-By-AI-Badge-black.svg" /> 
+    </div>
+  </div> -->
+
+  <div class="footer-top">
+    <span class="footer-copyright">
+      Copyright &copy;
+      
+      
+      2019-2025
+      ケニヲ
+    </span>
+    <a target="_blank" rel="noopener" href="https://notbyai.fyi/hi/not-by-ai/" class="footer-badge">
+      <img src="/img/Written-By-Human-Not-By-AI-Badge-black.svg" alt="Written by Human, Not by AI" />
+    </a>
+  </div>
+
+
+  <div class="footer-bottom">
+    <nav>
+      <ul>
+        
+          <li><a href="/">index/</a></li>
+        
+          <li><a href="/archives/">dossiers/</a></li>
+        
+          <li><a href="/categories/">taxonomy/</a></li>
+        
+          <li><a href="/murmur/">murmurs/</a></li>
+        
+          <li><a href="/search/">retrieval/</a></li>
+        
+          <li><a href="/about/">about/</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+
+</footer>
+
+
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Noto+Sans+TC&family=Syne+Mono&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/957afab140.js" crossorigin="anonymous"></script>
+    
+    <!--memos-->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <!-- <meta name="referrer" content="no-referrer">
+    <link rel="icon" href="/assets/img/logo.webp" type="image/*" />
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/APlayer.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/highlight.github.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css"> -->
+    <!--end memos-->
+
+
+    <meta name="description" content="fly.io 类似于heroku，能帮忙托管运行App，是一种PaaS服务。昨天我在尝试自搭(self host) 一款名为memos的基于web的zettelkasten笔记应用时，在官方推荐的部署方式中发现了这个平台。 简单来说，fly.io能帮你快速部署一款app。部署时，你需要安装它的cli工具flyctl，然后利用它生成(flyctl launch)一份部署的配置文件fly.toml。在">
+<meta property="og:type" content="article">
+<meta property="og:title" content="fly.io 的使用体验 &amp; Self-host Memos卡片笔记">
+<meta property="og:url" content="https://gitkeniwo.github.io/2023-02-08-fly-io-tutorial/index.html">
+<meta property="og:site_name" content="사미즈다트">
+<meta property="og:description" content="fly.io 类似于heroku，能帮忙托管运行App，是一种PaaS服务。昨天我在尝试自搭(self host) 一款名为memos的基于web的zettelkasten笔记应用时，在官方推荐的部署方式中发现了这个平台。 简单来说，fly.io能帮你快速部署一款app。部署时，你需要安装它的cli工具flyctl，然后利用它生成(flyctl launch)一份部署的配置文件fly.toml。在">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-02-08T21:27:59.000Z">
+<meta property="article:modified_time" content="2025-11-03T02:33:27.128Z">
+<meta property="article:author" content="ケニヲ">
+<meta property="article:tag" content="docker">
+<meta property="article:tag" content="cloud-computing">
+<meta property="article:tag" content="self-hosting">
+<meta property="article:tag" content="paas">
+<meta property="article:tag" content="sftp">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/comedian-logo-100.png">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/comedian-logo-100.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/comedian-logo-100.png">
+        
+      
+    
+    <!-- title -->
+    <title>fly.io 的使用体验 &amp; Self-host Memos卡片笔记</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/true" title="사미즈다트" type="application/atom+xml" />
+    
+
+    
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body class="max-width mx-auto px3 ltr">    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">index/</a></li>
+         
+          <li><a href="/archives/">dossiers/</a></li>
+         
+          <li><a href="/categories/">taxonomy/</a></li>
+         
+          <li><a href="/murmur/">murmurs/</a></li>
+         
+          <li><a href="/search/">retrieval/</a></li>
+         
+          <li><a href="/about/">about/</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2023-02-10-div-blocks-links/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2023-01-25-weibo-image-hosting/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://gitkeniwo.github.io/2023-02-08-fly-io-tutorial/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2023-02-08-fly-io-tutorial/&text=fly.io 的使用体验 &amp; Self-host Memos卡片笔记"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2023-02-08-fly-io-tutorial/&title=fly.io 的使用体验 &amp; Self-host Memos卡片笔记"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2023-02-08-fly-io-tutorial/&is_video=false&description=fly.io 的使用体验 &amp; Self-host Memos卡片笔记"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=fly.io 的使用体验 &amp; Self-host Memos卡片笔记&body=Check out this article: https://gitkeniwo.github.io/2023-02-08-fly-io-tutorial/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2023-02-08-fly-io-tutorial/&title=fly.io 的使用体验 &amp; Self-host Memos卡片笔记"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2023-02-08-fly-io-tutorial/&title=fly.io 的使用体验 &amp; Self-host Memos卡片笔记"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2023-02-08-fly-io-tutorial/&title=fly.io 的使用体验 &amp; Self-host Memos卡片笔记"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2023-02-08-fly-io-tutorial/&title=fly.io 的使用体验 &amp; Self-host Memos卡片笔记"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2023-02-08-fly-io-tutorial/&name=fly.io 的使用体验 &amp; Self-host Memos卡片笔记&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2023-02-08-fly-io-tutorial/&t=fly.io 的使用体验 &amp; Self-host Memos卡片笔记"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index pt4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        fly.io 的使用体验 &amp; Self-host Memos卡片笔记
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a id='post-author' href="/">
+        <span itemprop="name">ケニヲ</span>
+        </a>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-02-08T21:27:59.000Z" itemprop="datePublished">2023-02-08</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Tech/">Tech</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/cloud-computing/" rel="tag">cloud-computing</a>, <a class="tag-link-link" href="/tags/docker/" rel="tag">docker</a>, <a class="tag-link-link" href="/tags/paas/" rel="tag">paas</a>, <a class="tag-link-link" href="/tags/self-hosting/" rel="tag">self-hosting</a>, <a class="tag-link-link" href="/tags/sftp/" rel="tag">sftp</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>fly.io 类似于heroku，能帮忙托管运行App，是一种<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/平台即服务">PaaS</a>服务。昨天我在尝试自搭(<a target="_blank" rel="noopener" href="https://yunohost.org/oc/selfhosting">self host</a>) 一款名为<a target="_blank" rel="noopener" href="https://github.com/usememos/memos">memos</a>的基于web的<a target="_blank" rel="noopener" href="https://youtu.be/rOSZOCoqOo8">zettelkasten</a>笔记应用时，在<a target="_blank" rel="noopener" href="https://github.com/hu3rror/memos-on-fly">官方推荐的部署方式</a>中发现了这个平台。</p>
+<p>简单来说，fly.io能帮你快速部署一款app。部署时，你需要安装它的cli工具<code>flyctl</code>，然后利用它生成(<code>flyctl launch</code>)一份部署的配置文件<code>fly.toml</code>。在这份文件中，你只需填入docker image的地址(一般在<a target="_blank" rel="noopener" href="https://hub.docker.com/">docker hub</a>里)、litestream备份信息和fly volume的信息(storage，可以理解为划分储存空间？类似amazon S3)，就可以直接通过这份config指定的信息，将你的app从docker hub部署到fly.io上。</p>
+<p>按照我的理解，其中 docker image是你的app的代码，fly volume是你的硬盘/储存空间，<a target="_blank" rel="noopener" href="https://github.com/benbjohnson/litestream">litestream</a>会按秒级间隔同步拷贝memos的sqlite数据库的WAL数据流到<a target="_blank" rel="noopener" href="https://www.backblaze.com/b2/docs/">Backblaze B2</a>以实现数据备份。有了数据备份，就算memos的上游发布新版本，或是fly.io机房着火，你也能从B2获取当前最新的闪照(snapshot)，这应该也是为什么<a target="_blank" rel="noopener" href="https://github.com/hu3rror/memos-on-fly#:~:text=Verify%20the%20installation">memos部署指南</a>提到可以通过swap到一个新的fly volume来检验是否成功备份。</p>
+<p>因为memos算是高强度使用的应用了，后期数据量会暴涨，难免会有scalability和数据迁移的问题，根据<a target="_blank" rel="noopener" href="https://github.com/usememos/memos/issues/1178">Add export markdown files #1178</a> 和<a target="_blank" rel="noopener" href="https://github.com/usememos/memos/issues/778">Export memos to file #778</a>, Memos似乎不打算直接在用户界面实现导出(which I think is not justified, since not every user has access to the home directory after all)，应该只能把docker目录下的sqlite数据库定期拖下来备份。</p>
+<p>因为fly的app本质就是一个docker容器，这时候就需要使用fly的ssh工具<code>flyctl ssh</code>。查阅help手册后知道应该用sftp来拷贝vm上的文件。根据<a target="_blank" rel="noopener" href="https://github.com/pocketbase/pocketbase/discussions/537#discussioncomment-3914729">这则回复</a>，可以用<code>fly ssh sftp shell</code>进入sftp的shell，然后用get命令来下载特定文件。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">get var/opt/memos/memos_prod.db memos_prod.db</span><br></pre></td></tr></table></figure>
+<p>或者精简版的命令, 直接用<code>fly ssh sftp get</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fly ssh sftp get var/opt/memos/memos_prod.db memos_prod.db</span><br></pre></td></tr></table></figure>
+<p>注意，fly sftp应该不是标准的openSSH的sftp，而是一种 platform-independent solution，它在<code>get</code>文件时不会overwrite本地文件，如果同名local file存在会<code>get</code>失败，所以每次<code>get</code>前要删除local file.</p>
+
+  </div>
+</article>
+<!--  -->
+
+<br>
+<br>
+
+<script src="https://giscus.app/client.js"
+        data-repo="gitkeniwo/gitkeniwo.github.io"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkyNjk1NTA0ODE="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOEBEDkc4CgyF8"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="transparent_dark"   
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<div class="blog-post-comments">
+    <div id="giscus">
+
+    </div>
+</div>
+
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">index/</a></li>
+         
+          <li><a href="/archives/">dossiers/</a></li>
+         
+          <li><a href="/categories/">taxonomy/</a></li>
+         
+          <li><a href="/murmur/">murmurs/</a></li>
+         
+          <li><a href="/search/">retrieval/</a></li>
+         
+          <li><a href="/about/">about/</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://gitkeniwo.github.io/2023-02-08-fly-io-tutorial/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2023-02-08-fly-io-tutorial/&text=fly.io 的使用体验 &amp; Self-host Memos卡片笔记"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2023-02-08-fly-io-tutorial/&title=fly.io 的使用体验 &amp; Self-host Memos卡片笔记"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2023-02-08-fly-io-tutorial/&is_video=false&description=fly.io 的使用体验 &amp; Self-host Memos卡片笔记"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=fly.io 的使用体验 &amp; Self-host Memos卡片笔记&body=Check out this article: https://gitkeniwo.github.io/2023-02-08-fly-io-tutorial/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2023-02-08-fly-io-tutorial/&title=fly.io 的使用体验 &amp; Self-host Memos卡片笔记"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2023-02-08-fly-io-tutorial/&title=fly.io 的使用体验 &amp; Self-host Memos卡片笔记"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2023-02-08-fly-io-tutorial/&title=fly.io 的使用体验 &amp; Self-host Memos卡片笔记"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2023-02-08-fly-io-tutorial/&title=fly.io 的使用体验 &amp; Self-host Memos卡片笔记"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2023-02-08-fly-io-tutorial/&name=fly.io 的使用体验 &amp; Self-host Memos卡片笔记&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2023-02-08-fly-io-tutorial/&t=fly.io 的使用体验 &amp; Self-host Memos卡片笔记"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+
+  <!-- <div class="footer-top">
+    <div class="footer-left">
+      Copyright &copy;
+      
+      
+      2019-2025
+      ケニヲ
+    </div>
+  
+    <div class="footer-right">
+      <img src="/img/Written-By-Human-Not-By-AI-Badge-black.svg" /> 
+    </div>
+  </div> -->
+
+  <div class="footer-top">
+    <span class="footer-copyright">
+      Copyright &copy;
+      
+      
+      2019-2025
+      ケニヲ
+    </span>
+    <a target="_blank" rel="noopener" href="https://notbyai.fyi/hi/not-by-ai/" class="footer-badge">
+      <img src="/img/Written-By-Human-Not-By-AI-Badge-black.svg" alt="Written by Human, Not by AI" />
+    </a>
+  </div>
+
+
+  <div class="footer-bottom">
+    <nav>
+      <ul>
+        
+          <li><a href="/">index/</a></li>
+        
+          <li><a href="/archives/">dossiers/</a></li>
+        
+          <li><a href="/categories/">taxonomy/</a></li>
+        
+          <li><a href="/murmur/">murmurs/</a></li>
+        
+          <li><a href="/search/">retrieval/</a></li>
+        
+          <li><a href="/about/">about/</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+
+</footer>
+
+
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Noto+Sans+TC&family=Syne+Mono&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/957afab140.js" crossorigin="anonymous"></script>
+    
+    <!--memos-->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <!-- <meta name="referrer" content="no-referrer">
+    <link rel="icon" href="/assets/img/logo.webp" type="image/*" />
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/APlayer.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/highlight.github.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/custom.css" rel="stylesheet" type="text/css"> -->
+    <!--end memos-->
+
+
+    <meta name="description" content="本文分为两个部分，第一部分基本配置展示直接可以在themes&#x2F;next &gt; _config.yml中配置的元素，第二部分展示CSS等魔改。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NexTテーマをDIYしよう">
+<meta property="og:url" content="https://gitkeniwo.github.io/2020-06-05-NexT%E3%83%86%E3%83%BC%E3%83%9E%E3%82%92DIY%E3%81%97%E3%82%88%E3%81%86/index.html">
+<meta property="og:site_name" content="사미즈다트">
+<meta property="og:description" content="本文分为两个部分，第一部分基本配置展示直接可以在themes&#x2F;next &gt; _config.yml中配置的元素，第二部分展示CSS等魔改。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/20-06-06-darkmode.jpg">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/20-6-5-tags.png">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/20-06-06-tag3.png">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/20-06-06-tag1.png">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/20-06-06-tag2.png">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/20-06-06-tag.png">
+<meta property="og:image" content="https://gitkeniwo.github.io/img/20-06-06-pic.png">
+<meta property="article:published_time" content="2020-06-05T20:07:36.000Z">
+<meta property="article:modified_time" content="2025-11-03T02:33:27.121Z">
+<meta property="article:author" content="ケニヲ">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitkeniwo.github.io/img/20-06-06-darkmode.jpg">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/comedian-logo-100.png">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/comedian-logo-100.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/comedian-logo-100.png">
+        
+      
+    
+    <!-- title -->
+    <title>NexTテーマをDIYしよう</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+      <link rel="alternate" href="/true" title="사미즈다트" type="application/atom+xml" />
+    
+
+    
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body class="max-width mx-auto px3 ltr">    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">index/</a></li>
+         
+          <li><a href="/archives/">dossiers/</a></li>
+         
+          <li><a href="/categories/">taxonomy/</a></li>
+         
+          <li><a href="/murmur/">murmurs/</a></li>
+         
+          <li><a href="/search/">retrieval/</a></li>
+         
+          <li><a href="/about/">about/</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2020-06-08-Java-review/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2020-06-05-%E5%BC%80%E5%8D%9A%E7%A2%8E%E7%A2%8E%E5%BF%B5/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://gitkeniwo.github.io/2020-06-05-NexT%E3%83%86%E3%83%BC%E3%83%9E%E3%82%92DIY%E3%81%97%E3%82%88%E3%81%86/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2020-06-05-NexT%E3%83%86%E3%83%BC%E3%83%9E%E3%82%92DIY%E3%81%97%E3%82%88%E3%81%86/&text=NexTテーマをDIYしよう"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2020-06-05-NexT%E3%83%86%E3%83%BC%E3%83%9E%E3%82%92DIY%E3%81%97%E3%82%88%E3%81%86/&title=NexTテーマをDIYしよう"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2020-06-05-NexT%E3%83%86%E3%83%BC%E3%83%9E%E3%82%92DIY%E3%81%97%E3%82%88%E3%81%86/&is_video=false&description=NexTテーマをDIYしよう"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=NexTテーマをDIYしよう&body=Check out this article: https://gitkeniwo.github.io/2020-06-05-NexT%E3%83%86%E3%83%BC%E3%83%9E%E3%82%92DIY%E3%81%97%E3%82%88%E3%81%86/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2020-06-05-NexT%E3%83%86%E3%83%BC%E3%83%9E%E3%82%92DIY%E3%81%97%E3%82%88%E3%81%86/&title=NexTテーマをDIYしよう"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2020-06-05-NexT%E3%83%86%E3%83%BC%E3%83%9E%E3%82%92DIY%E3%81%97%E3%82%88%E3%81%86/&title=NexTテーマをDIYしよう"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2020-06-05-NexT%E3%83%86%E3%83%BC%E3%83%9E%E3%82%92DIY%E3%81%97%E3%82%88%E3%81%86/&title=NexTテーマをDIYしよう"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2020-06-05-NexT%E3%83%86%E3%83%BC%E3%83%9E%E3%82%92DIY%E3%81%97%E3%82%88%E3%81%86/&title=NexTテーマをDIYしよう"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2020-06-05-NexT%E3%83%86%E3%83%BC%E3%83%9E%E3%82%92DIY%E3%81%97%E3%82%88%E3%81%86/&name=NexTテーマをDIYしよう&description=&lt;p&gt;本文分为两个部分，第一部分基本配置展示直接可以在&lt;code&gt;themes/next &amp;gt; _config.yml&lt;/code&gt;中配置的元素，第二部分展示CSS等魔改。&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2020-06-05-NexT%E3%83%86%E3%83%BC%E3%83%9E%E3%82%92DIY%E3%81%97%E3%82%88%E3%81%86/&t=NexTテーマをDIYしよう"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">基本配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E8%AF%AD%E8%A8%80"><span class="toc-number">1.1.</span> <span class="toc-text">设置语言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E7%9A%84Scheme"><span class="toc-number">1.2.</span> <span class="toc-text">主题的Scheme</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dark-Mode"><span class="toc-number">1.2.1.</span> <span class="toc-text">Dark Mode</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8F%9C%E5%8D%95"><span class="toc-number">1.3.</span> <span class="toc-text">菜单</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E6%A0%87"><span class="toc-number">1.4.</span> <span class="toc-text">图标</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RSS"><span class="toc-number">1.4.1.</span> <span class="toc-text">RSS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HomePage"><span class="toc-number">1.5.</span> <span class="toc-text">HomePage</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-number">1.5.1.</span> <span class="toc-text">摘要</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E4%BD%93"><span class="toc-number">1.6.</span> <span class="toc-text">字体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Post"><span class="toc-number">1.7.</span> <span class="toc-text">Post</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#tag%E9%A2%9C%E8%89%B2%E9%97%AE%E9%A2%98"><span class="toc-number">1.7.1.</span> <span class="toc-text">tag颜色问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98"><span class="toc-number">1.7.2.</span> <span class="toc-text">图片上传问题</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index pt4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        NexTテーマをDIYしよう
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <a id='post-author' href="/">
+        <span itemprop="name">ケニヲ</span>
+        </a>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-06-05T20:07:36.000Z" itemprop="datePublished">2020-06-05</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/Blogging/">Blogging</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/hexo/" rel="tag">hexo</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>本文分为两个部分，第一部分基本配置展示直接可以在<code>themes/next &gt; _config.yml</code>中配置的元素，第二部分展示CSS等魔改。</p>
+<a id="more"></a>
+<h1 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h1><h2 id="设置语言"><a href="#设置语言" class="headerlink" title="设置语言"></a>设置语言</h2><p>位置：<code>_config.yml &gt; language</code></p>
+<h2 id="主题的Scheme"><a href="#主题的Scheme" class="headerlink" title="主题的Scheme"></a>主题的Scheme</h2><p><code>/themes/next &gt;  _config.yml &gt; scheme</code><br>主题默认有几个样式，可以自己更改。<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#scheme: Muse</span><br><span class="line">scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br><span class="line">#scheme: Gemini</span><br></pre></td></tr></table></figure></p>
+<h3 id="Dark-Mode"><a href="#Dark-Mode" class="headerlink" title="Dark Mode"></a>Dark Mode</h3><p>Dark Mode居然是依据设备的配置来的！！也就是说可怜的win10会一直遭受刺眼的强光，能不能改一改呢。<br><img src="/img/20-06-06-darkmode.jpg" alt=""></p>
+<h2 id="菜单"><a href="#菜单" class="headerlink" title="菜单"></a>菜单</h2><p>开启了Tags 之后依然是 <code>Cannot GET /tags/</code><br>需要在<code>/source/</code>里面创建一个tags文件夹来render tag页面<br><code>$hexo new page &quot;tags&quot;</code></p>
+<p>然后在<code>source/tags/index.md</code>中修改内容为<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &quot;Tags・タッグ・標籤&quot; </span><br><span class="line">type: tags</span><br><span class="line">layout: &quot;tags&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure><br>这样就可以正常显示了。<br><img src="/img/20-6-5-tags.png" alt=""></p>
+<p><em>200812补充</em><br>Categories的设置同理：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Categories</span><br><span class="line">date: 2020-08-12 14:21:08</span><br><span class="line">type: categories</span><br><span class="line">layout: &quot;categories&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
+<h2 id="图标"><a href="#图标" class="headerlink" title="图标"></a>图标</h2><h3 id="RSS"><a href="#RSS" class="headerlink" title="RSS"></a>RSS</h3><p>需要先安装插件 <code>npm install --save hexo-generator-feed</code><br>在hexo root dir 的<code>_config.yml</code>配置<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: http://hexo.io/plugins/</span><br><span class="line">#RSS订阅</span><br><span class="line">plugin:</span><br><span class="line">- hexo-generator-feed</span><br><span class="line">#Feed Atom</span><br><span class="line">feed:</span><br><span class="line">type: atom</span><br><span class="line">path: atom.xml</span><br><span class="line">limit: 20</span><br></pre></td></tr></table></figure><br>去掉RSS的注释 <code>RSS: /atom.xml || fa fa-rss</code> 就可以显示了。<br>也可以自己烧制feed，这时就要更改链接了。</p>
+<h2 id="HomePage"><a href="#HomePage" class="headerlink" title="HomePage"></a>HomePage</h2><h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>首先确保 <code>excerpt_description: true</code>处于开启状态，然后在自己的博文里面要断句的地方添加<code>&lt;!-- more --&gt;</code>就可以显示了。</p>
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><p>字体窝佬卡了好半天，网上的说法大都是要去改CSS，然而不知道那个<code>.swig</code>文件的语法究竟如何，窝佬最后发现可以直接在主题配置文件里面引用google fonts，并且英文字体都<del>很巧妙的支持了中文（就很有意思）</del><strong>更正：</strong> 后来发现在MAC上显示了中文显示了是因为窝佬配置了<code>base.styl</code>: <code>// Font families.
+$font-family-chinese      = &quot;YuppySC-Regular&quot; ,&quot;PingFang SC&quot;, &quot;STYuanti-SC-Regular&quot;, &quot;Microsoft YaHei&quot;;</code>。<em>BTW中文web font太过麻烦+龟速，窝佬目前Literally放弃。</em> 这样来看，想要添加日文字体也只用仿照中文的写法增加<code>font-family-japanese</code> 再在global merge的时候优先级读入 即可。<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">font:</span><br><span class="line">  enable: true</span><br><span class="line"></span><br><span class="line">  # Uri of fonts host, e.g. https://fonts.googleapis.com (Default).</span><br><span class="line">  host: https://fonts.googleapis.com/css2?family=Nunito:wght@600&amp;display=swap</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  # Font options:</span><br><span class="line">  # `external: true` will load this font family from `host` above.</span><br><span class="line">  # `family: Times New Roman`. Without any quotes.</span><br><span class="line">  # `size: x.x`. Use `em` as unit. Default: 1 (16px)</span><br><span class="line"></span><br><span class="line">  # Global font settings used for all elements inside &lt;body&gt;.</span><br><span class="line">  global:</span><br><span class="line">    external: true</span><br><span class="line">    family: Nunito</span><br><span class="line">    size:</span><br></pre></td></tr></table></figure><br>要注意的就是千万别用默认的api（那个就很迷，很多字体都不支持），而是用Google fonts选定字体后生成的特定CDN链接。</p>
+<h2 id="Post"><a href="#Post" class="headerlink" title="Post"></a>Post</h2><h3 id="tag颜色问题"><a href="#tag颜色问题" class="headerlink" title="tag颜色问题"></a>tag颜色问题</h3><p>看到Dark Mode下post底部的tag颜色对比度很低，无法辨别。<br><img src="/img/20-06-06-tag3.png" alt=""><br>可以直接F12看CSS设置<br><img src="/img/20-06-06-tag1.png" alt=""><br>发现是给颜色指定了名称的，那么就好找了，最后<code>_variables &gt; base.styl</code>中找到了相关设置。<br><img src="/img/20-06-06-tag2.png" alt=""><br>把dark mode下的颜色从<code>grey-dim</code>改到<code>grey-dark</code>应该就可以了，看颜色定义发现grey-dark用的是<code>#999</code>。要是还差点意思的话可以加深点，<code>#888</code>之类的。<br><img src="/img/20-06-06-tag.png" alt=""><br>最后效果。</p>
+<h3 id="图片上传问题"><a href="#图片上传问题" class="headerlink" title="图片上传问题"></a>图片上传问题</h3><p>经历了一次短暂的图片未显示的问题，是相对路径出了问题。<br>图片上传基本上是用md语法的<code>![](&lt;your pic path&gt;)</code>，可以为每一个post自动建立一个资料文件夹，也可以统一自定路径放置。<br>窝遇到的问题是Home可以显示图片，但post单独的页面显示不了，后来发现<code>/img/picture.jpg</code> 是需要在最前面加上<code>/</code>的。 而<code>~/</code>是表示系统用户的根目录。<br>这一点，在hexo生成的页面文件目录中也可以看到。<br><img src="/img/20-06-06-pic.png" alt=""><br>如果忘掉了<code>/</code>，post页面就会在自己的文件夹里面找img，也就无法显示了。</p>
+
+  </div>
+</article>
+<!--  -->
+
+<br>
+<br>
+
+<script src="https://giscus.app/client.js"
+        data-repo="gitkeniwo/gitkeniwo.github.io"
+        data-repo-id="MDEwOlJlcG9zaXRvcnkyNjk1NTA0ODE="
+        data-category="Announcements"
+        data-category-id="DIC_kwDOEBEDkc4CgyF8"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="transparent_dark"   
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<div class="blog-post-comments">
+    <div id="giscus">
+
+    </div>
+</div>
+
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">index/</a></li>
+         
+          <li><a href="/archives/">dossiers/</a></li>
+         
+          <li><a href="/categories/">taxonomy/</a></li>
+         
+          <li><a href="/murmur/">murmurs/</a></li>
+         
+          <li><a href="/search/">retrieval/</a></li>
+         
+          <li><a href="/about/">about/</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">基本配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E8%AF%AD%E8%A8%80"><span class="toc-number">1.1.</span> <span class="toc-text">设置语言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E7%9A%84Scheme"><span class="toc-number">1.2.</span> <span class="toc-text">主题的Scheme</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dark-Mode"><span class="toc-number">1.2.1.</span> <span class="toc-text">Dark Mode</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8F%9C%E5%8D%95"><span class="toc-number">1.3.</span> <span class="toc-text">菜单</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E6%A0%87"><span class="toc-number">1.4.</span> <span class="toc-text">图标</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RSS"><span class="toc-number">1.4.1.</span> <span class="toc-text">RSS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HomePage"><span class="toc-number">1.5.</span> <span class="toc-text">HomePage</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-number">1.5.1.</span> <span class="toc-text">摘要</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E4%BD%93"><span class="toc-number">1.6.</span> <span class="toc-text">字体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Post"><span class="toc-number">1.7.</span> <span class="toc-text">Post</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#tag%E9%A2%9C%E8%89%B2%E9%97%AE%E9%A2%98"><span class="toc-number">1.7.1.</span> <span class="toc-text">tag颜色问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98"><span class="toc-number">1.7.2.</span> <span class="toc-text">图片上传问题</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://gitkeniwo.github.io/2020-06-05-NexT%E3%83%86%E3%83%BC%E3%83%9E%E3%82%92DIY%E3%81%97%E3%82%88%E3%81%86/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://gitkeniwo.github.io/2020-06-05-NexT%E3%83%86%E3%83%BC%E3%83%9E%E3%82%92DIY%E3%81%97%E3%82%88%E3%81%86/&text=NexTテーマをDIYしよう"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://gitkeniwo.github.io/2020-06-05-NexT%E3%83%86%E3%83%BC%E3%83%9E%E3%82%92DIY%E3%81%97%E3%82%88%E3%81%86/&title=NexTテーマをDIYしよう"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://gitkeniwo.github.io/2020-06-05-NexT%E3%83%86%E3%83%BC%E3%83%9E%E3%82%92DIY%E3%81%97%E3%82%88%E3%81%86/&is_video=false&description=NexTテーマをDIYしよう"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=NexTテーマをDIYしよう&body=Check out this article: https://gitkeniwo.github.io/2020-06-05-NexT%E3%83%86%E3%83%BC%E3%83%9E%E3%82%92DIY%E3%81%97%E3%82%88%E3%81%86/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://gitkeniwo.github.io/2020-06-05-NexT%E3%83%86%E3%83%BC%E3%83%9E%E3%82%92DIY%E3%81%97%E3%82%88%E3%81%86/&title=NexTテーマをDIYしよう"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://gitkeniwo.github.io/2020-06-05-NexT%E3%83%86%E3%83%BC%E3%83%9E%E3%82%92DIY%E3%81%97%E3%82%88%E3%81%86/&title=NexTテーマをDIYしよう"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://gitkeniwo.github.io/2020-06-05-NexT%E3%83%86%E3%83%BC%E3%83%9E%E3%82%92DIY%E3%81%97%E3%82%88%E3%81%86/&title=NexTテーマをDIYしよう"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://gitkeniwo.github.io/2020-06-05-NexT%E3%83%86%E3%83%BC%E3%83%9E%E3%82%92DIY%E3%81%97%E3%82%88%E3%81%86/&title=NexTテーマをDIYしよう"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://gitkeniwo.github.io/2020-06-05-NexT%E3%83%86%E3%83%BC%E3%83%9E%E3%82%92DIY%E3%81%97%E3%82%88%E3%81%86/&name=NexTテーマをDIYしよう&description=&lt;p&gt;本文分为两个部分，第一部分基本配置展示直接可以在&lt;code&gt;themes/next &amp;gt; _config.yml&lt;/code&gt;中配置的元素，第二部分展示CSS等魔改。&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://gitkeniwo.github.io/2020-06-05-NexT%E3%83%86%E3%83%BC%E3%83%9E%E3%82%92DIY%E3%81%97%E3%82%88%E3%81%86/&t=NexTテーマをDIYしよう"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+
+  <!-- <div class="footer-top">
+    <div class="footer-left">
+      Copyright &copy;
+      
+      
+      2019-2025
+      ケニヲ
+    </div>
+  
+    <div class="footer-right">
+      <img src="/img/Written-By-Human-Not-By-AI-Badge-black.svg" /> 
+    </div>
+  </div> -->
+
+  <div class="footer-top">
+    <span class="footer-copyright">
+      Copyright &copy;
+      
+      
+      2019-2025
+      ケニヲ
+    </span>
+    <a target="_blank" rel="noopener" href="https://notbyai.fyi/hi/not-by-ai/" class="footer-badge">
+      <img src="/img/Written-By-Human-Not-By-AI-Badge-black.svg" alt="Written by Human, Not by AI" />
+    </a>
+  </div>
+
+
+  <div class="footer-bottom">
+    <nav>
+      <ul>
+        
+          <li><a href="/">index/</a></li>
+        
+          <li><a href="/archives/">dossiers/</a></li>
+        
+          <li><a href="/categories/">taxonomy/</a></li>
+        
+          <li><a href="/murmur/">murmurs/</a></li>
+        
+          <li><a href="/search/">retrieval/</a></li>
+        
+          <li><a href="/about/">about/</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+
+</footer>
+
+
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
