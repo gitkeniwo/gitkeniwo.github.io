@@ -1,0 +1,32 @@
+/**
+ * Pagination Component
+ * Converted from _partial/pagination.styl
+ */
+
+.pagination {
+  display: inline-block;
+  margin-top: 2rem;
+  width: 100%;
+  text-align: center;
+
+  .page-number {
+    color: var(--color-text);
+    font-size: .8rem;
+  }
+
+  a {
+    padding: 4px 6px;
+    border-radius: 5px;
+    background-image: none;
+    color: var(--color-text);
+    text-decoration: none;
+
+    &:hover {
+      background-image: none;
+
+      &:not(.active) {
+        color: var(--color-accent-2);
+      }
+    }
+  }
+}

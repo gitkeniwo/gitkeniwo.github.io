@@ -1,0 +1,68 @@
+/**
+ * Theme Toggle Button Styles
+ */
+
+.theme-toggle {
+  /* Temporarily disabled */
+  display: none !important;
+  /* display: flex; */
+
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--color-accent-1);
+  border: 2px solid var(--color-text);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--color-background);
+  box-shadow:
+    0 0 10px var(--color-glow-primary),
+    0 0 20px var(--color-glow-primary-md);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1) rotate(15deg);
+    box-shadow:
+      0 0 15px var(--color-glow-primary-hover),
+      0 0 30px var(--color-glow-primary-hover-md);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.theme-toggle-icon {
+  transition: transform 0.3s ease;
+}
+
+/* Rotate icon on theme change */
+.theme-toggle.rotating .theme-toggle-icon {
+  animation: rotate 0.5s ease;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 480px) {
+  .theme-toggle {
+    bottom: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
+  }
+}

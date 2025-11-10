@@ -1,0 +1,101 @@
+/**
+ * Archive & Post List Styles
+ */
+
+#archive .post-list,
+.post-list {
+  padding: 0;
+
+  .post-item {
+    margin-bottom: 0.5rem;
+    margin-left: 0;
+    list-style-type: none;
+
+    .meta {
+      display: block;
+      margin-right: 16px;
+      min-width: 100px;
+      color: var(--color-meta);
+      font-size: 14px;
+    }
+  }
+}
+
+@media (min-width: 480px) {
+  #archive .post-list .post-item,
+  .post-list .post-item {
+    display: flex;
+    margin-bottom: 5px;
+    margin-left: 1rem;
+
+    .meta {
+      text-align: left;
+    }
+  }
+}
+
+.project-list {
+  padding: 0;
+  list-style: none;
+
+  .project-item {
+    margin-bottom: 5px;
+
+    p {
+      display: inline;
+    }
+  }
+}
+
+blockquote {
+  margin: 0.5rem 10px;
+  padding: .5em 10px;
+  background: inherit;
+  color: var(--color-quote);
+  quotes: "\201C" "\201D" "\2018" "\2019";
+  font-weight: 600;
+
+  p {
+    margin: 0;
+  }
+
+  &:before {
+    margin-right: .25em;
+    color: var(--color-quote);
+    content: "\201C";
+    vertical-align: -.4em;
+    font-size: 2em;
+    line-height: .1em;
+  }
+
+  footer {
+    margin: var(--line-height-base) 0;
+    color: var(--color-meta);
+    font-size: 11px;
+
+    a {
+      background-image: linear-gradient(
+        transparent,
+        transparent 5px,
+        var(--color-meta) 5px,
+        var(--color-meta)
+      );
+      color: var(--color-meta);
+
+      &:hover {
+        background-image: linear-gradient(
+          transparent,
+          transparent 4px,
+          color-mix(in srgb, var(--color-meta) 80%, white 20%) 4px,
+          color-mix(in srgb, var(--color-meta) 80%, white 20%)
+        );
+        color: color-mix(in srgb, var(--color-meta) 80%, white 20%);
+      }
+    }
+
+    cite:before {
+      padding: 0 .5em;
+      content: "—";
+    }
+  }
+}

@@ -10,28 +10,21 @@
     <meta name="theme-color" content="#1d1f21">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Noto+Sans+TC&family=Syne+Mono&display=swap" rel="stylesheet">
+
     <script src="https://kit.fontawesome.com/957afab140.js" crossorigin="anonymous"></script>
-    
-    <!--memos-->
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <!-- <meta name="referrer" content="no-referrer">
-    <link rel="icon" href="/assets/img/logo.webp" type="image/*" />
-    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/APlayer.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/highlight.github.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/custom.css" rel="stylesheet" type="text/css"> -->
-    <!--end memos-->
 
+    <link href="https://db.onlinewebfonts.com/c/6d2ac8672f2eb25e2d0f0b52465f00f8?family=IBM+3270" rel="stylesheet">
+    <!-- Google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@200..900&family=Slabo+27px&family=Space+Grotesk:wght@300..700&family=Special+Elite&family=Syne+Mono&display=swap" rel="stylesheet">
 
-    <meta name="description" content="And ye shall know the truth, and the truth shall make you free. Jhn 8:32">
+    <meta name="description" content="VULNERANT OMNES ULTIMA NECAT">
 <meta property="og:type" content="website">
 <meta property="og:title" content="사미즈다트">
 <meta property="og:url" content="https://gitkeniwo.github.io/page/6/index.html">
 <meta property="og:site_name" content="사미즈다트">
-<meta property="og:description" content="And ye shall know the truth, and the truth shall make you free. Jhn 8:32">
+<meta property="og:description" content="VULNERANT OMNES ULTIMA NECAT">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="ケニヲ">
 <meta name="twitter:card" content="summary">
@@ -55,9 +48,16 @@
     
     <!-- title -->
     <title>사미즈다트</title>
-    <!-- styles -->
+
+    <!-- modern css styles -->
     
+<link rel="stylesheet" href="/css-modern/main.css">
+
+
+    <!-- legacy fallback: old stylus styles (can be removed once fully migrated) -->
+    <!-- 
 <link rel="stylesheet" href="/css/style.css">
+ -->
 
     <!-- persian styles -->
     
@@ -65,6 +65,12 @@
 <link rel="stylesheet" href="/css/rtl.css">
 
     
+
+    <!-- theme switcher script (loaded early to prevent flash) -->
+    
+<script src="/js/theme-switcher.js"></script>
+
+
     <!-- rss -->
     
     
@@ -82,9 +88,13 @@
   <a href="/">
   
     
-      <div id="logo" style="background-image: url(/images/comedian-logo.png);"></div>
+      <div id="logo"
+        data-light-logo="/images/comedian-logo-light-1000.png"
+        data-dark-logo="/images/comedian-logo-dark-1000.png">
+      </div>
     
   
+
     <div id="title">
       <h1>사미즈다트</h1>
     </div>
@@ -114,7 +124,7 @@
         
         <section id="about">
   
-    <p><em>And ye shall know the truth, and the truth shall make you free.</em> Jhn 8:32</p>
+    <p><em>VULNERANT OMNES ULTIMA NECAT</em></p>
 
 
     <!-- <audio controls id="myaudio" loop="true" autobuffer>
@@ -635,11 +645,6 @@
           <span class="tag-count">1</span>
         </a>
       
-        <a href="/tags/pdf/" class="tag-item" data-count="1" style="font-size: 0.80em;">
-          <span class="tag-name">pdf</span>
-          <span class="tag-count">1</span>
-        </a>
-      
         <a href="/tags/film/" class="tag-item" data-count="7" style="font-size: 0.91em;">
           <span class="tag-name">film</span>
           <span class="tag-count">7</span>
@@ -653,6 +658,11 @@
         <a href="/tags/zju/" class="tag-item" data-count="3" style="font-size: 0.84em;">
           <span class="tag-name">zju</span>
           <span class="tag-count">3</span>
+        </a>
+      
+        <a href="/tags/pdf/" class="tag-item" data-count="1" style="font-size: 0.80em;">
+          <span class="tag-name">pdf</span>
+          <span class="tag-count">1</span>
         </a>
       
         <a href="/tags/news/" class="tag-item" data-count="2" style="font-size: 0.82em;">
@@ -700,14 +710,14 @@
           <span class="tag-count">1</span>
         </a>
       
-        <a href="/tags/japanese/" class="tag-item" data-count="2" style="font-size: 0.82em;">
-          <span class="tag-name">japanese</span>
-          <span class="tag-count">2</span>
-        </a>
-      
         <a href="/tags/yofukashi/" class="tag-item" data-count="1" style="font-size: 0.80em;">
           <span class="tag-name">yofukashi</span>
           <span class="tag-count">1</span>
+        </a>
+      
+        <a href="/tags/japanese/" class="tag-item" data-count="2" style="font-size: 0.82em;">
+          <span class="tag-name">japanese</span>
+          <span class="tag-count">2</span>
         </a>
       
         <a href="/tags/film-history/" class="tag-item" data-count="1" style="font-size: 0.80em;">
@@ -745,14 +755,14 @@
           <span class="tag-count">1</span>
         </a>
       
-        <a href="/tags/image-hosting/" class="tag-item" data-count="3" style="font-size: 0.84em;">
-          <span class="tag-name">image-hosting</span>
-          <span class="tag-count">3</span>
-        </a>
-      
         <a href="/tags/mastodon/" class="tag-item" data-count="1" style="font-size: 0.80em;">
           <span class="tag-name">mastodon</span>
           <span class="tag-count">1</span>
+        </a>
+      
+        <a href="/tags/image-hosting/" class="tag-item" data-count="3" style="font-size: 0.84em;">
+          <span class="tag-name">image-hosting</span>
+          <span class="tag-count">3</span>
         </a>
       
         <a href="/tags/film-fantasy/" class="tag-item" data-count="1" style="font-size: 0.80em;">
@@ -825,11 +835,6 @@
           <span class="tag-count">2</span>
         </a>
       
-        <a href="/tags/grammar/" class="tag-item" data-count="1" style="font-size: 0.80em;">
-          <span class="tag-name">grammar</span>
-          <span class="tag-count">1</span>
-        </a>
-      
         <a href="/tags/apple-silicon/" class="tag-item" data-count="1" style="font-size: 0.80em;">
           <span class="tag-name">apple-silicon</span>
           <span class="tag-count">1</span>
@@ -842,6 +847,11 @@
       
         <a href="/tags/apple/" class="tag-item" data-count="1" style="font-size: 0.80em;">
           <span class="tag-name">apple</span>
+          <span class="tag-count">1</span>
+        </a>
+      
+        <a href="/tags/grammar/" class="tag-item" data-count="1" style="font-size: 0.80em;">
+          <span class="tag-name">grammar</span>
           <span class="tag-count">1</span>
         </a>
       
@@ -880,6 +890,16 @@
           <span class="tag-count">1</span>
         </a>
       
+        <a href="/tags/blogging/" class="tag-item" data-count="2" style="font-size: 0.82em;">
+          <span class="tag-name">blogging</span>
+          <span class="tag-count">2</span>
+        </a>
+      
+        <a href="/tags/css/" class="tag-item" data-count="1" style="font-size: 0.80em;">
+          <span class="tag-name">css</span>
+          <span class="tag-count">1</span>
+        </a>
+      
         <a href="/tags/cloud-computing/" class="tag-item" data-count="1" style="font-size: 0.80em;">
           <span class="tag-name">cloud-computing</span>
           <span class="tag-count">1</span>
@@ -897,16 +917,6 @@
       
         <a href="/tags/sftp/" class="tag-item" data-count="1" style="font-size: 0.80em;">
           <span class="tag-name">sftp</span>
-          <span class="tag-count">1</span>
-        </a>
-      
-        <a href="/tags/blogging/" class="tag-item" data-count="2" style="font-size: 0.82em;">
-          <span class="tag-name">blogging</span>
-          <span class="tag-count">2</span>
-        </a>
-      
-        <a href="/tags/css/" class="tag-item" data-count="1" style="font-size: 0.80em;">
-          <span class="tag-name">css</span>
           <span class="tag-count">1</span>
         </a>
       
@@ -965,18 +975,8 @@
           <span class="tag-count">1</span>
         </a>
       
-        <a href="/tags/cloudflare/" class="tag-item" data-count="1" style="font-size: 0.80em;">
-          <span class="tag-name">cloudflare</span>
-          <span class="tag-count">1</span>
-        </a>
-      
         <a href="/tags/de/" class="tag-item" data-count="1" style="font-size: 0.80em;">
           <span class="tag-name">de</span>
-          <span class="tag-count">1</span>
-        </a>
-      
-        <a href="/tags/gfw/" class="tag-item" data-count="1" style="font-size: 0.80em;">
-          <span class="tag-name">gfw</span>
           <span class="tag-count">1</span>
         </a>
       
@@ -987,6 +987,16 @@
       
         <a href="/tags/korea/" class="tag-item" data-count="1" style="font-size: 0.80em;">
           <span class="tag-name">korea</span>
+          <span class="tag-count">1</span>
+        </a>
+      
+        <a href="/tags/gfw/" class="tag-item" data-count="1" style="font-size: 0.80em;">
+          <span class="tag-name">gfw</span>
+          <span class="tag-count">1</span>
+        </a>
+      
+        <a href="/tags/cloudflare/" class="tag-item" data-count="1" style="font-size: 0.80em;">
+          <span class="tag-name">cloudflare</span>
           <span class="tag-count">1</span>
         </a>
       
@@ -1024,534 +1034,59 @@
 
 
 
- <!-- Murmurs  --> 
-	<section id="main" class="container">
-		<h1>Murmurs</h1>
+<!-- Memos Addon -->
 
-		<!-- <blockquote id="tag-filter" class="filter">
-			<div id="tags"></div>
-		</blockquote> -->
+  <!-- Memos Addon - Murmurs Component -->
+<section id="main" class="container">
+  <h1>Murmurs</h1>
 
-		<div id="memos" class="memos">
-			<!-- Memos Container -->
-		</div>
+  <!-- Optional tag filter (commented out by default) -->
+  <!-- <blockquote id="tag-filter" class="filter">
+    <div id="tags"></div>
+  </blockquote> -->
 
-	</section>
+  <div id="memos" class="memos">
+    <!-- Memos Container -->
+  </div>
+</section>
 
-<!-- 修改自己的 Memos 设置 -->
-	<script type="text/javascript">
-		var memos = {
-			host: 'https://samizdat.fly.dev/',  // Your Memos instance.
-			limit: '4',	// Pagination to show.
-			creatorId: '1',  // The old instance is 101, and the new instance is 1. 
-			domId: '#memos',	// Default #memos.
-			username: 'keniwo',	// You can customize the display ID that is not related to memos.
-			name: 'ケニヲ',	// You can customize the displayed full name, that is not related to memos.
-			language: 'en', // 'en' 'zh-CN' etc. Used by Relative Time.
-			APIVersion: 'new', // 'new' or 'legacy', Memos API Version, <v0.22.0: 'legacy', >=v0.22.0: 'new'.
-			total: true, // Display total memos. No interface is displayed in the new version.
-			doubanAPI: '', // Fill a API to render douban subject. `null` to disable. API self-hosted: https://github.com/eallion/douban-api-rs
-		}
-  </script>
-  
-  <script type="text/javascript" src="murmurs/marked.umd.min.js?v=14.0.0"></script>
-	<script type="text/javascript" src="murmurs/view-image.min.js"></script>
-	<script type="text/javascript" src="murmurs/APlayer.min.js"></script>
-	<script type="text/javascript" src="murmurs/Meting.min.js"></script>
-	<script type="text/javascript" src="murmurs/main.js"></script>
-	<script type="text/javascript" src="murmurs/custom.js"></script>
-
-  
-<style>
-/* @media (prefers-color-scheme: light) {
-  body:not(.dark-theme) {
-      --color-main: #222;
-      --color-background: #fff;
-      --color-text-bg: #eaeaea;
-      --color-text-hover: #eeeef1;
-      --color-memos-id: #536471;
-      --color-img-border: #cfd9de;
-      --color-tag: #2563eb;
-      --color-tag-hover: #54a3ff;
-      --color-fg-muted: #576061;
-      --color-border-default: #d0d7de;
-      --color-border-muted: #d8dee4;
-      --color-post-preview: #fff;
-      --color-memos-pre-bg: #f3f4f6;
+<!-- Memos Configuration -->
+<script type="text/javascript">
+  var memos = {
+    host: 'https://samizdat.fly.dev/',
+    limit: '4',
+    creatorId: '1',
+    domId: '#memos',
+    username: 'keniwo',
+    name: 'ケニヲ',
+    language: 'en',
+    APIVersion: 'new',
+    total: true,
+    doubanAPI: '',
   }
-} */
+</script>
 
-/* @media (prefers-color-scheme: dark) {
-  body:not(.light-theme) {
-      --color-main: #adbac7;
-      --color-background: #1c2128;
-      --color-text-bg: #22272e;
-      --color-text-hover: #272c32;
-      --color-memos-id: #71767b;
-      --color-img-border: #292a2d;
-      --color-tag: #539bf5;
-      --color-link: #539bf5;
-      --color-border-muted: #2d333b;
-      --color-post-preview: #4a4b50;
-      --color-memos-pre-bg: #2d333b;
-  }
-} */
+<!-- Memos JavaScript Dependencies -->
 
-body {
-  --color-main: #adbac7;
-  --color-background: #1c2526;
-  --color-text-bg: #212526;
-  --color-text-hover: #273132;
-  --color-memos-id: #71767b;
-  --color-img-border: #292d2c;
-  --color-tag: #42a65b;;
-  --color-link: #42a65b;;
-  --color-border-muted: #2d3b3b;
-  --color-post-preview: #4a5050;
-  --color-memos-pre-bg: #2e3a39;
-}
+<script src="/js/addons/memos/marked.umd.min.js?v=14.0.0.js"></script>
 
-#main {
-  padding-top: 40px;
-}
 
-.theme-toggle {
-  cursor: pointer;
-}
+<script src="/js/addons/memos/view-image.min.js"></script>
 
-.total {
-  text-align: left;
-}
 
-.memos {
-  min-height: 300px;
-  text-align: left;
-  width: 100%;
-  line-height: 2;
-  margin: 2rem 0;
-}
+<script src="/js/addons/memos/APlayer.min.js"></script>
 
-.memos a {
-  color: var(--color-link);
-  text-decoration: none;
-}
 
-.memos a:hover {
-  text-decoration: underline;
-}
+<script src="/js/addons/memos/Meting.min.js"></script>
 
-.memos ul {
-  margin-left: 0 !important;
-  padding-left: 0 !important;
-}
 
-.memos__content {
-  flex-grow: 1;
-  margin-left: 50px;
-  position: relative;
-  max-width: 100%;
-  width: 100%;
-}
+<script src="/js/addons/memos/main.js"></script>
 
-.memos__content:before {
-  content: '';
-  position: absolute;
-  background: url('/images/memos-avatar.jpeg') no-repeat;
-  background-size: contain;
-  width: 40px;
-  height: 40px;
-  border-radius: 40px;
-  left: -50px;
-  top: 10px;
-  border: 0;
-  object-fit: cover;
-}
 
-.memos__text {
-  position: relative;
-  background: var(--color-text-bg);
-  padding: 1rem;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  color: var(--color-main);
-}
+<script src="/js/addons/memos/custom.js"></script>
 
-.timeline {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  margin-bottom: 1.5rem;
-}
 
-.timeline:hover .memos__text:before {
-  background: var(--color-text-hover);
-  /* background: #5c5c5c; */
-  z-index: 1;
-}
 
-.timeline:hover .memos__text {
-  background: var(--color-text-hover);
-}
-
-.memos__text {
-  width: 100%;
-  overflow-wrap: break-word;
-  font-size: 1rem;
-  line-height: 1.75rem;
-}
-
-.memos__text ul li {
-  list-style: none;
-}
-
-.memos__text i {
-  margin: 0 0.25rem;
-}
-
-.memos__text:before {
-  content: "";
-  position: absolute;
-  top: 23px;
-  left: -7px;
-  width: 14px;
-  height: 14px;
-  transform: rotate(45deg);
-  border-radius: 3px;
-  background: var(--color-text-bg);
-  z-index: 1;
-}
-
-.memos__text pre {
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
-  max-width: 100%;
-  white-space: pre-wrap;
-  border-radius: 0.25rem;
-  background-color: var(--color-memos-pre-bg);
-  padding: 0.75rem;
-}
-
-.memos__text code {
-  display: inline-block;
-  border-radius: 0.25rem;
-  background-color: var(--color-memos-pre-bg);
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-  font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
-  font-size: .875rem;
-  line-height: 1.5rem;
-}
-
-.memos__text pre code {
-  display: block;
-}
-
-.memos__meta {
-  margin: 0;
-}
-
-.memos__meta small {
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: #8186a2;
-}
-
-.memos__userinfo {
-  display: flex;
-  font-weight: 700;
-  align-items: center;
-}
-
-.memos__verify {
-  margin-left: 2px;
-  max-width: 20px;
-  max-height: 20px;
-  /* color: #1d9bf0; */
-  color: #44bd62;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-  vertical-align: text-bottom;
-  position: relative;
-  height: 1.25rem;
-  fill: currentcolor;
-  display: inline-block;
-  flex-shrink: 1;
-  margin-left: 4px;
-}
-
-.memos__id {
-  font-size: 0.875rem;
-  overflow-wrap: break-word;
-  min-width: 0px;
-  box-sizing: border-box;
-  color: var(--color-memos-id);
-  display: inline;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  flex-shrink: 1;
-  font-weight: 400;
-  margin-left: 4px;
-}
-
-.timeline img {
-  display: block;
-  max-height: 50vh;
-  max-width: 100%;
-  margin: 10px 0;
-  border-radius: 16px;
-  border: 1px solid var(--color-img-border);
-}
-
-.tag-span {
-  color: var(--color-tag);
-}
-
-.tag-span:hover {
-  color: var(--color-tag-hover);
-}
-
-.load-btn {
-  color: var(--color-main);
-  background-color: var(--color-text-bg);
-  margin-left: 50px;
-  border-radius: 8px;
-  padding: 10px;
-  border: none;
-}
-
-.load-btn:hover {
-  background-color: var(--color-text-hover);
-}
-
-.post-preview {
-  max-width: 780px;
-  height: 210px;
-  margin: 1em auto;
-  position: relative;
-  display: flex;
-  background: var(--color-post-preview);
-  border-radius: 4px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, .25), 0 0 1px rgba(0, 0, 0, .25);
-}
-
-.post-preview--meta {
-  width: 75%;
-  padding: 25px;
-  overflow: hidden;
-}
-
-.post-preview--middle {
-  line-height: 28px;
-}
-
-.post-preview--title {
-  font-size: 18px;
-  margin: 0 !important;
-}
-
-.post-preview--title a {
-  text-decoration: none;
-}
-
-.post-preview--date {
-  font-size: 14px;
-  color: #999;
-}
-
-.post-preview--excerpt {
-  font-size: 14px;
-  line-height: 1.825;
-}
-
-.post-preview--excerpt p {
-  display: inline;
-  margin: 0;
-}
-
-.post-preview section {
-  max-height: 75px;
-  overflow: hidden;
-}
-
-.post-preview--image {
-  margin: 0 !important;
-  height: 210px !important;
-  width: auto;
-  float: right;
-  border-radius: 0 !important;
-  border-top-right-radius: 2px !important;
-  border-bottom-right-radius: 2px !important;
-  border-top-left-radius: 0 !important;
-  border-bottom-left-radius: 0 !important;
-}
-
-
-.rating {
-  display: block;
-  line-height: 15px;
-}
-
-.rating-star {
-  display: inline-block;
-  width: 75px;
-  height: 15px;
-  background-repeat: no-repeat;
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAClCAYAAAAUAAAYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA5xJREFUeNrs3T9rFEEcxvG7qEQIglaCICKkin9AUEtBKxU7wS61VlYivgWj70TtNFj5BqzE7qxEWwsxKIoYn4UtluFmbm8nczvzm+/BjxyuDwNzu3uXD0+46f7LC5PA45Hm+WTYw1x2LRDc0jzTXB+wqMlsaLPutz8fDFjYZHYauAz3NBvt83XNnyUWNpn1nVm3OsHmsb3EomazzZnVXKMPNcc0xzUnNKc0Rzv/77fms+Z7O3vt9b1eU7bZrNN68l5zcolX4ofmsuZXTdnmMvyi2dR86Bmcac62P6vKrnVubpc0bxYE32nOab45N8YqsvPeDfcD4SOav4HjprPuu+H5BTt9LXDMfNbdLPfT678Fx6vKupt1o/O8+R3pkOaJ5/iktqx7z/qp+aq5q/nY+fczmheaK03Gs7D5rLtZdzSvA6/Ebc2u55j57HQB0TzW7AzkjiKzny6+2hlKNE8juMNcFqKBaIZndRlCNBBNgmx7ZkE0fbLtZkE0EA1EM17WuQwhGogGooFoss6296y52cNO+J6HLJoPaFdbsvA9zGerIxrPh85eWYgGooFoDiQbuAxp0UA0EVmdWbRo+ma1WbRoIBqIZtzsnHdDWjQQDUQD0WSbde5ZS2UhmtqJJtSEiVkXooFoIJre2VATJmZdiKZ2ogk1YSb8oVMvDeUPnSAaiCaPJkzMuhANRAPRQDQpsqEmTMy6EI11oolpwkA0EA1EcyDZmCYMRAPR+LMxTZjqiCamCQPRQDQQzehNGIgGooFoIJpVZ2OaMBBN7USTqgkD0UA0EE3vbKomDERTO9GkasKYJJpUTRiIBqKBaEZvwkA0EA1EA9GkyKZqwkA01olmrCYMRAPRQDR9LkO+0QmiKbAJUyTRjNWEgWggGohm9CYMRAPRQDQQzZDsWE0YiMYC0eTYhIFoIJrKiCbHJgxEY4FocmzCZEs0OTZhIBqIpjKiybEJA9FANBANROPL5tiEgWhKIJoSmzAQDURjjGhKbMJANCUQTYlNmNGIpsQmDEQD0RgjmhKbMBANRAPR1Es0JTZhIJpciMZaEwaigWgKJBprTRiIJheisdaESUo01powEA1EUyDRWGvCQDQQDURjm2isNWEgmlURzWw2q4pZIBqIJkOiCVyGJpkFolkV0ejMMvel28mIRptl7ku3IRqIpjCimfNuaJpZIBqIBqIpm2ice5Z5ZonJupvVkMRu4JW4qXnrOWY++1+AAQBw9BJSCTeN9wAAAABJRU5ErkJggg==);
-  overflow: hidden;
-}
-
-.allstar10 {
-  background-position: 0px 0px;
-}
-
-.allstar9 {
-  background-position: 0px -15px;
-}
-
-.allstar8 {
-  background-position: 0px -30px;
-}
-
-.allstar7 {
-  background-position: 0px -45px;
-}
-
-.allstar6 {
-  background-position: 0px -60px;
-}
-
-.allstar5 {
-  background-position: 0px -75px;
-}
-
-.allstar4 {
-  background-position: 0px -90px;
-}
-
-.allstar3 {
-  background-position: 0px -105px;
-}
-
-.allstar2 {
-  background-position: 0px -120px;
-}
-
-.allstar1 {
-  background-position: 0px -135px;
-}
-
-.allstar0 {
-  background-position: 0px -150px;
-}
-
-.rating-average {
-  color: #777;
-  display: inline-block;
-  font-size: 13px;
-  margin-left: 10px;
-}
-
-.spotify-wrapper>iframe {
-  position: relative;
-  height: 152px;
-}
-
-@media (max-width: 683px) {
-
-  body {
-      padding: 45px 50px 45px 20px;
-  }
-
-  .menu,
-  .title {
-      font-size: 1rem;
-  }
-
-  .memos__content {
-      margin-left: 0;
-  }
-
-  .memos__text:before {
-      display: none;
-  }
-
-  .memos__userinfo {
-      margin-left: 30px;
-  }
-
-  .memos__content:before {
-      border-radius: 25px;
-      height: 25px;
-      width: 25px;
-      left: 15px;
-      top: 15px;
-      z-index: 2;
-  }
-
-  .load-btn {
-      margin-left: 0;
-  }
-
-  .timeline ul li {
-      margin-left: 0;
-  }
-
-  .timeline ul li div {
-      width: calc(100vw - 75px);
-      left: 30px;
-      max-width: 585px;
-  }
-
-  .post-preview {
-      width: 95%;
-  }
-
-  .post-preview--excerpt {
-      display: none;
-  }
-
-  .post-preview--middle {
-      line-height: 19px;
-  }
-
-  .load-btn {
-      margin-left: 0;
-  }
-}
-
-.video-wrapper {
-  height: 0;
-  overflow: hidden;
-  padding-bottom: 56.25%;
-  position: relative;
-  width: 100%;
-}
-
-.video-wrapper iframe {
-  border: 0;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-/* footer {
-  padding: 40px 0;
-  text-align: center;
-} */
-
-.hidden {
-  display: none !important;
-}
-
-.button-load {
-    font-size: 0.8em; 
-}
-
-</style>
 
 
 
@@ -1590,15 +1125,17 @@ body {
     </span>
     <span class="footer-separator">|</span>
     <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="footer-license" target="_blank" rel="noopener noreferrer">
-      <i class="fa-brands fa-creative-commons"></i> CC BY-NC-SA 4.0
+      <i class="fa-brands fa-creative-commons"></i> 
+      <i class="fa-brands fa-creative-commons-by"></i>-<i class="fa-brands fa-creative-commons-nc"></i>-<i class="fa-brands fa-creative-commons-sa"></i>
     </a>
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="footer-badge footer-cc-badge" target="_blank" rel="noopener noreferrer">
+    <!-- CC BY-NC-SA 4.0 -->
+    <!-- <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="footer-badge footer-cc-badge" target="_blank" rel="noopener noreferrer">
       <img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.svg" alt="CC BY-NC-SA 4.0" />
-    </a>
-    <span class="footer-separator">|</span>
+    </a> -->
+    <!-- <span class="footer-separator">|</span>
     <a target="_blank" rel="noopener" href="https://notbyai.fyi/hi/not-by-ai/" class="footer-badge">
       <img src="/img/Written-By-Human-Not-By-AI-Badge-black.svg" alt="Written by Human, Not by AI" />
-    </a>
+    </a> -->
   </div>
 
   <div class="footer-middle">
@@ -1634,6 +1171,58 @@ body {
 
 
     </div>
+    <button
+  class="theme-toggle"
+  id="theme-toggle"
+  aria-label="Toggle theme"
+  title="Toggle theme (Ctrl/Cmd + Shift + D)"
+>
+  <span class="theme-toggle-icon">
+    <i class="fas fa-adjust"></i>
+  </span>
+</button>
+
+<script>
+  // Theme toggle button handler
+  (function() {
+    const button = document.getElementById('theme-toggle');
+    if (!button) return;
+
+    button.addEventListener('click', function() {
+      button.classList.add('rotating');
+      setTimeout(() => button.classList.remove('rotating'), 500);
+
+      if (window.cactusTheme) {
+        window.cactusTheme.toggle();
+      }
+    });
+
+    // Update button icon based on theme
+    function updateButtonIcon() {
+      const theme = window.cactusTheme ? window.cactusTheme.get() : 'auto';
+      const icon = button.querySelector('i');
+
+      if (theme === 'dark') {
+        icon.className = 'fas fa-moon';
+      } else if (theme === 'light') {
+        icon.className = 'fas fa-sun';
+      } else {
+        icon.className = 'fas fa-adjust';
+      }
+    }
+
+    // Listen for theme changes
+    window.addEventListener('themechange', updateButtonIcon);
+
+    // Set initial icon
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateButtonIcon);
+    } else {
+      updateButtonIcon();
+    }
+  })();
+</script>
+
     <!-- styles -->
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">

@@ -1,0 +1,603 @@
+/**
+ * Memos Addon Styles
+ * Retro Terminal Theme
+ */
+
+/* Theme color variables for Memos */
+/* Light theme memos colors (default) */
+:root {
+  --color-memos-text: var(--color-accent-1);
+  --color-memos-bg: var(--color-background-code);
+  --color-memos-border: var(--color-accent-3);
+  --color-memos-shadow: var(--color-accent-4);
+  --color-memos-hover-bg: color-mix(in srgb, var(--color-background-code) 90%, white 10%);
+  --color-memos-id: var(--color-meta);
+  --color-memos-tag: var(--color-accent-2);
+  --color-memos-time: var(--color-meta);
+  --color-memos-corner: var(--color-background);
+}
+
+/* Explicit light theme */
+[data-theme="light"] {
+  --color-memos-text: var(--color-accent-1);
+  --color-memos-bg: var(--color-background-code);
+  --color-memos-border: var(--color-accent-3);
+  --color-memos-shadow: var(--color-accent-4);
+  --color-memos-hover-bg: color-mix(in srgb, var(--color-background-code) 90%, white 10%);
+  --color-memos-id: var(--color-meta);
+  --color-memos-tag: var(--color-accent-2);
+  --color-memos-time: var(--color-meta);
+  --color-memos-corner: var(--color-background);
+}
+
+/* Dark theme memos colors */
+[data-theme="dark"] {
+  --color-memos-text: var(--color-accent-1);
+  --color-memos-bg: var(--color-background-code);
+  --color-memos-border: var(--color-accent-3);
+  --color-memos-shadow: var(--color-accent-4);
+  --color-memos-hover-bg: color-mix(in srgb, var(--color-background-code) 90%, white 10%);
+  --color-memos-id: var(--color-meta);
+  --color-memos-tag: var(--color-accent-2);
+  --color-memos-time: var(--color-meta);
+  --color-memos-corner: var(--color-background);
+}
+
+/* Auto mode - follow system preference */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-memos-text: var(--color-accent-1);
+    --color-memos-bg: var(--color-background-code);
+    --color-memos-border: var(--color-accent-3);
+    --color-memos-shadow: var(--color-accent-4);
+    --color-memos-hover-bg: color-mix(in srgb, var(--color-background-code) 90%, white 10%);
+    --color-memos-id: var(--color-meta);
+    --color-memos-tag: var(--color-accent-2);
+    --color-memos-time: var(--color-meta);
+    --color-memos-corner: var(--color-background);
+  }
+}
+
+/* Memos container */
+#main {
+  padding-top: 40px;
+}
+
+.total {
+  text-align: left;
+  font-family: var(--font-family-mono);
+  color: var(--color-memos-text);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+
+.total:before {
+  content: ">> ";
+  color: var(--color-memos-tag);
+}
+
+.memos {
+  min-height: 300px;
+  text-align: left;
+  width: 100%;
+  line-height: 1.6;
+  margin: 2rem 0;
+}
+
+.memos a {
+  color: var(--color-link);
+  text-decoration: none;
+  transition: all 0.1s ease;
+}
+
+.memos a:hover {
+  color: var(--color-link-hover);
+}
+
+.memos ul {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Memos content */
+.memos__content {
+  flex-grow: 1;
+  margin-left: 0;
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+}
+
+/* Memos text - retro terminal style */
+.memos__text {
+  position: relative;
+  background: var(--color-memos-bg);
+  padding: 1rem;
+  border: 2px solid var(--color-memos-border);
+  font-size: 0.95rem;
+  color: var(--color-text);
+  width: 100%;
+  overflow-wrap: break-word;
+  line-height: 1.75rem;
+  box-shadow: 3px 3px 0 var(--color-memos-shadow);
+  transition: all 0.1s ease;
+  font-family: var(--font-family-body);
+}
+
+/* Pixelated corners for retro effect */
+.memos__text:before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 4px;
+  height: 4px;
+  background: var(--color-memos-corner);
+}
+
+.memos__text:after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 4px;
+  height: 4px;
+  background: var(--color-memos-corner);
+}
+
+.memos__text ul li {
+  list-style: none;
+}
+
+.memos__text i {
+  margin: 0 0.25rem;
+}
+
+.memos__text pre {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  max-width: 100%;
+  white-space: pre-wrap;
+  background-color: var(--color-background);
+  border: 1px dashed var(--color-memos-border);
+  padding: 0.75rem;
+  font-family: var(--font-family-mono);
+}
+
+.memos__text code {
+  display: inline-block;
+  background-color: var(--color-background);
+  border: 1px solid var(--color-memos-border);
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  font-family: var(--font-family-mono);
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  color: var(--color-memos-tag);
+}
+
+.memos__text pre code {
+  display: block;
+  border: none;
+  padding: 0;
+}
+
+/* Timeline - tree structure style */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin-bottom: 0;
+  padding-left: 2rem;
+  position: relative;
+}
+
+/* Vertical line connecting all memos */
+.timeline:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--color-memos-border) 0,
+    var(--color-memos-border) 4px,
+    transparent 4px,
+    transparent 8px
+  );
+}
+
+/* Ensure first rendered memo still connects upward after dynamic load */
+.timeline:first-child:before {
+  top: -1.5rem;
+  height: calc(100% + 1.5rem);
+}
+
+/* Horizontal branch line for each memo */
+.timeline:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 1.5rem;
+  width: 1.5rem;
+  height: 2px;
+  background: repeating-linear-gradient(
+    to right,
+    var(--color-memos-border) 0,
+    var(--color-memos-border) 4px,
+    transparent 4px,
+    transparent 8px
+  );
+}
+
+
+.timeline:hover .memos__text {
+  background: var(--color-memos-hover-bg);
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 var(--color-memos-shadow);
+}
+
+.timeline:active .memos__text {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 var(--color-memos-shadow);
+}
+
+.timeline img {
+  display: block;
+  max-height: 50vh;
+  max-width: 100%;
+  margin: 10px 0;
+  border: 3px solid var(--color-memos-border);
+  box-shadow: 4px 4px 0 var(--color-memos-shadow);
+  position: relative;
+}
+
+/* Pixelated image corners */
+.memos__text img:before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 6px;
+  height: 6px;
+  background: var(--color-memos-corner);
+  z-index: 1;
+}
+
+/* Memos meta info - terminal style */
+.memos__meta {
+  margin: 0.35rem 0 0;
+  padding: 0.25rem 0 0.6rem;
+  background: transparent;
+  border: none;
+  font-family: var(--font-family-mono);
+  font-size: 0.78rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-memos-time);
+  letter-spacing: 0.05em;
+}
+
+.memos__meta small {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-memos-time);
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.memos__meta small:before {
+  content: "[";
+  color: var(--color-memos-tag);
+  letter-spacing: 0;
+}
+
+.memos__meta small:after {
+  content: "]";
+  color: var(--color-memos-tag);
+  letter-spacing: 0;
+}
+
+.memos__userinfo {
+  display: flex;
+  font-weight: 700;
+  align-items: center;
+  color: var(--color-memos-tag);
+  font-family: var(--font-family-mono);
+}
+
+.memos__userinfo:before {
+  content: "$ ";
+  color: var(--color-memos-border);
+  margin-right: 4px;
+}
+
+.memos__verify {
+  margin-left: 4px;
+  max-width: 16px;
+  max-height: 16px;
+  color: var(--color-memos-tag);
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  vertical-align: text-bottom;
+  position: relative;
+  height: 1rem;
+  fill: currentcolor;
+  display: inline-block;
+  flex-shrink: 1;
+}
+
+.memos__id {
+  font-size: 0.75rem;
+  overflow-wrap: break-word;
+  min-width: 0px;
+  box-sizing: border-box;
+  color: var(--color-memos-id);
+  display: inline;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  flex-shrink: 1;
+  font-weight: 400;
+  margin-left: 4px;
+  font-family: var(--font-family-mono);
+}
+
+.memos__id:before {
+  content: "@";
+  color: var(--color-memos-tag);
+}
+
+/* Tags - retro bracket style */
+.tag-span {
+  display: inline-block;
+  margin: 0.2em 0.4em 0.2em 0;
+  padding: 0 0.3em;
+  font-family: var(--font-family-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-memos-tag);
+  background: transparent;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.1s ease;
+}
+
+.tag-span:before {
+  content: "[#";
+  margin-right: 0;
+  color: var(--color-memos-border);
+}
+
+.tag-span:after {
+  content: "]";
+  color: var(--color-memos-border);
+}
+
+.tag-span:hover {
+  color: var(--color-link-hover);
+  text-shadow: 0 0 8px currentColor;
+}
+
+.tag-span:hover:before,
+.tag-span:hover:after {
+  color: var(--color-link-hover);
+}
+
+/* Load more button - terminal style */
+.load-btn {
+  color: var(--color-memos-text);
+  background-color: var(--color-memos-bg);
+  margin-left: 0;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--color-memos-border);
+  box-shadow: 3px 3px 0 var(--color-memos-shadow);
+  font-family: var(--font-family-mono);
+  font-weight: bold;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.load-btn:before {
+  content: ">> ";
+  color: var(--color-memos-tag);
+}
+
+.load-btn:after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 4px;
+  height: 4px;
+  background: var(--color-memos-corner);
+}
+
+.load-btn:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0 var(--color-memos-shadow);
+  background-color: var(--color-memos-hover-bg);
+}
+
+.load-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 var(--color-memos-shadow);
+}
+
+/* Post preview (for Douban/link cards) */
+.post-preview {
+  max-width: 780px;
+  height: 210px;
+  margin: 1em auto;
+  position: relative;
+  display: flex;
+  background: var(--color-post-preview);
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .25), 0 0 1px rgba(0, 0, 0, .25);
+}
+
+.post-preview--meta {
+  width: 75%;
+  padding: 25px;
+  overflow: hidden;
+}
+
+.post-preview--middle {
+  line-height: 28px;
+}
+
+.post-preview--title {
+  font-size: 18px;
+  margin: 0 !important;
+}
+
+.post-preview--title a {
+  text-decoration: none;
+}
+
+.post-preview--date {
+  font-size: 14px;
+  color: #999;
+}
+
+.post-preview--excerpt {
+  font-size: 14px;
+  line-height: 1.825;
+}
+
+.post-preview--excerpt p {
+  display: inline;
+  margin: 0;
+}
+
+.post-preview section {
+  max-height: 75px;
+  overflow: hidden;
+}
+
+.post-preview--image {
+  margin: 0 !important;
+  height: 210px !important;
+  width: auto;
+  float: right;
+  border-radius: 0 !important;
+  border-top-right-radius: 2px !important;
+  border-bottom-right-radius: 2px !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+/* Rating stars (for Douban) */
+.rating {
+  display: block;
+  line-height: 15px;
+}
+
+.rating-star {
+  display: inline-block;
+  width: 75px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAClCAYAAAAUAAAYAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA5xJREFUeNrs3T9rFEEcxvG7qEQIglaCICKkin9AUEtBKxU7wS61VlYivgWj70TtNFj5BqzE7qxEWwsxKIoYn4UtluFmbm8nczvzm+/BjxyuDwNzu3uXD0+46f7LC5PA45Hm+WTYw1x2LRDc0jzTXB+wqMlsaLPutz8fDFjYZHYauAz3NBvt83XNnyUWNpn1nVm3OsHmsb3EomazzZnVXKMPNcc0xzUnNKc0Rzv/77fms+Z7O3vt9b1eU7bZrNN68l5zcolX4ofmsuZXTdnmMvyi2dR86Bmcac62P6vKrnVubpc0bxYE32nOab45N8YqsvPeDfcD4SOav4HjprPuu+H5BTt9LXDMfNbdLPfT678Fx6vKupt1o/O8+R3pkOaJ5/iktqx7z/qp+aq5q/nY+fczmheaK03Gs7D5rLtZdzSvA6/Ebc2u55j57HQB0TzW7AzkjiKzny6+2hlKNE8juMNcFqKBaIZndRlCNBBNgmx7ZkE0fbLtZkE0EA1EM17WuQwhGogGooFoss6296y52cNO+J6HLJoPaFdbsvA9zGerIxrPh85eWYgGooFoDiQbuAxp0UA0EVmdWbRo+ma1WbRoIBqIZtzsnHdDWjQQDUQD0WSbde5ZS2UhmtqJJtSEiVkXooFoIJre2VATJmZdiKZ2ogk1YSb8oVMvDeUPnSAaiCaPJkzMuhANRAPRQDQpsqEmTMy6EI11oolpwkA0EA1EcyDZmCYMRAPR+LMxTZjqiCamCQPRQDQQzehNGIgGooFoIJpVZ2OaMBBN7USTqgkD0UA0EE3vbKomDERTO9GkasKYJJpUTRiIBqKBaEZvwkA0EA1EA9GkyKZqwkA01olmrCYMRAPRQDR9LkO+0QmiKbAJUyTRjNWEgWggGohm9CYMRAPRQDQQzZDsWE0YiMYC0eTYhIFoIJrKiCbHJgxEY4FocmzCZEs0OTZhIBqIpjKiybEJA9FANBANROPL5tiEgWhKIJoSmzAQDURjjGhKbMJANCUQTYlNmNGIpsQmDEQD0RgjmhKbMBANRAPR1Es0JTZhIJpciMZaEwaigWgKJBprTRiIJheisdaESUo01powEA1EUyDRWGvCQDQQDURjm2isNWEgmlURzWw2q4pZIBqIJkOiCVyGJpkFolkV0ejMMvel28mIRptl7ku3IRqIpjCimfNuaJpZIBqIBqIpm2ice5Z5ZonJupvVkMRu4JW4qXnrOWY++1+AAQBw9BJSCTeN9wAAAABJRU5ErkJggg==);
+  overflow: hidden;
+}
+
+.allstar10 { background-position: 0px 0px; }
+.allstar9 { background-position: 0px -15px; }
+.allstar8 { background-position: 0px -30px; }
+.allstar7 { background-position: 0px -45px; }
+.allstar6 { background-position: 0px -60px; }
+.allstar5 { background-position: 0px -75px; }
+.allstar4 { background-position: 0px -90px; }
+.allstar3 { background-position: 0px -105px; }
+.allstar2 { background-position: 0px -120px; }
+.allstar1 { background-position: 0px -135px; }
+.allstar0 { background-position: 0px -150px; }
+
+.rating-average {
+  color: #777;
+  display: inline-block;
+  font-size: 13px;
+  margin-left: 10px;
+}
+
+/* Spotify embed */
+.spotify-wrapper > iframe {
+  position: relative;
+  height: 152px;
+}
+
+/* Video wrapper */
+.video-wrapper {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  width: 100%;
+}
+
+.video-wrapper iframe {
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.button-load {
+  font-size: 0.8em;
+}
+
+/* Mobile responsive */
+@media (max-width: 683px) {
+  .timeline {
+    padding-left: 1.5rem;
+  }
+
+  .timeline:after {
+    width: 1rem;
+  }
+
+  .memos__text {
+    font-size: 0.9rem;
+    padding: 0.75rem;
+  }
+
+  .memos__meta {
+    font-size: 0.7rem;
+  }
+
+  .load-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .post-preview {
+    width: 95%;
+  }
+
+  .post-preview--excerpt {
+    display: none;
+  }
+
+  .post-preview--middle {
+    line-height: 19px;
+  }
+}

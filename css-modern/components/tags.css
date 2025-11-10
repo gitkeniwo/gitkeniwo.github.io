@@ -1,0 +1,175 @@
+/**
+ * Tags Component - Count-binned Coloring
+ * Cleaned & Rewritten
+ */
+
+#tag-cloud .tag-cloud-title {
+  color: var(--color-accent-1);
+  font-size: 1.2em;
+  margin-bottom: 0.8em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-shadow: 2px 2px 0 var(--color-accent-4);
+}
+
+#tag-cloud .tag-cloud-tags {
+  clear: both;
+  text-align: left;
+  line-height: 1.6;
+}
+
+/* ===============================
+   Base style
+   =============================== */
+
+#tag-cloud .tag-cloud-tags a.tag-item,
+.widget.tagcloud a.tag-item {
+  display: inline-block;
+  margin: 0.2em;
+  padding: 0.2em 0.5em;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9em;
+  transition: all 0.1s ease;
+  position: relative;
+
+  background: var(--color-background-code);
+  border: 1px solid var(--tone, var(--color-meta));
+  color: var(--tone, var(--color-meta));
+
+  box-shadow: 2px 2px 0 color-mix(in srgb, var(--tone, var(--color-meta)) 85%, black 15%);
+}
+
+#tag-cloud .tag-cloud-tags a.tag-item:before,
+.widget.tagcloud a.tag-item:before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 3px;
+  height: 3px;
+  background: var(--color-background);
+}
+
+#tag-cloud .tag-cloud-tags a.tag-item:after,
+.widget.tagcloud a.tag-item:after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 3px;
+  height: 3px;
+  background: var(--color-background);
+}
+
+/* Badge / count */
+#tag-cloud .tag-cloud-tags a.tag-item .tag-count,
+.widget.tagcloud a.tag-item .tag-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 0.1em 0.3em;
+  font-size: 0.65em;
+  font-weight: bold;
+  min-width: 1.2em;
+  text-align: center;
+  font-family: var(--font-family-mono);
+
+  color: var(--color-background);
+  background: var(--tone, var(--color-meta));
+  border: 1px solid var(--tone, var(--color-meta));
+  border-radius: 2px;
+  z-index: 1;
+}
+
+/* Hover */
+#tag-cloud .tag-cloud-tags a.tag-item:hover,
+.widget.tagcloud a.tag-item:hover {
+  border-color: var(--tone, var(--color-meta));
+  color: var(--tone, var(--color-meta));
+  box-shadow: 1px 1px 0 var(--color-meta);
+  transform: translate(1px, 1px);
+  background: color-mix(in srgb, var(--color-background-code) 90%, white 10%);
+}
+
+/* Active press */
+#tag-cloud .tag-cloud-tags a.tag-item:active,
+.widget.tagcloud a.tag-item:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 var(--color-border);
+}
+
+/* ===============================
+   Count binning
+   =============================== */
+
+a.tag-item[data-count="1"]  { --tone: var(--color-tag-count1); }
+a.tag-item[data-count="2"]  { --tone: var(--color-tag-count2); }
+a.tag-item[data-count="3"]  { --tone: var(--color-tag-count3); }
+a.tag-item[data-count="4"]  { --tone: var(--color-tag-count4); }
+a.tag-item[data-count="5"]  { --tone: var(--color-tag-count5); }
+a.tag-item[data-count="6"]  { --tone: var(--color-tag-count6); }
+a.tag-item[data-count="7"]  { --tone: var(--color-tag-count7); }
+
+/* 8–10 */
+a.tag-item[data-count="8"],
+a.tag-item[data-count="9"],
+a.tag-item[data-count="10"] {
+  --tone: var(--color-tag-count10);
+}
+
+/* 11–15 */
+a.tag-item[data-count="11"],
+a.tag-item[data-count="12"],
+a.tag-item[data-count="13"],
+a.tag-item[data-count="14"],
+a.tag-item[data-count="15"] {
+  --tone: var(--color-tag-count15);
+}
+
+/* 15–20 */
+a.tag-item[data-count="16"],
+a.tag-item[data-count="17"],
+a.tag-item[data-count="18"],
+a.tag-item[data-count="19"],
+a.tag-item[data-count="20"] {
+  --tone: var(--color-tag-count20);
+}
+
+/* >20  */
+a.tag-item[data-count="21"],
+a.tag-item[data-count="22"],
+a.tag-item[data-count="23"],
+a.tag-item[data-count="24"],
+a.tag-item[data-count="25"],
+a-tag-item[data-count="26"],
+a.tag-item[data-count="27"],
+a.tag-item[data-count="28"],
+a.tag-item[data-count="29"],
+a.tag-item[data-count="30"],
+a-tag-item[data-count="31"],
+a-tag-item[data-count="32"],
+a-tag-item[data-count="33"],
+a-tag-item[data-count="34"],
+a-tag-item[data-count="35"],
+a-tag-item[data-count="36"],
+a-tag-item[data-count="37"],
+a-tag-item[data-count="38"],
+a-tag-item[data-count="39"],
+a-tag-item[data-count="40"] {
+  --tone: var(--color-tag-count-high);
+}
+
+/* ===============================
+   Widget minor adjustments
+   =============================== */
+.widget.tagcloud {
+  display: block;
+  line-height: 2;
+}
+
+.widget.tagcloud a.tag-item {
+  padding: 0.15em 0.4em;
+  font-size: 0.85em;
+}

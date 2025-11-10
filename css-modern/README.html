@@ -1,0 +1,67 @@
+<h1 id="Modern-CSS-System"><a href="#Modern-CSS-System" class="headerlink" title="Modern CSS System"></a>Modern CSS System</h1><p>这是 Hexo Cactus 主题的现代 CSS 实现，使用原生 CSS 特性替代 Stylus。</p>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
+<li>🎨 <strong>CSS 变量</strong>：所有颜色和主题通过 CSS Custom Properties 定义</li>
+<li>🌓 <strong>自动深色模式</strong>：使用 <code>@media (prefers-color-scheme)</code> 自动检测系统主题</li>
+<li>🔄 <strong>手动主题切换</strong>：支持 Light/Dark/Auto 三种模式</li>
+<li>📱 <strong>响应式设计</strong>：完全支持移动端和桌面端</li>
+<li>⚡ <strong>零构建</strong>：不需要预处理器，浏览器原生支持</li>
+<li>🎯 <strong>CSS 嵌套</strong>：使用现代 CSS 嵌套语法</li>
+</ul>
+<h2 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h2><pre><code>css-modern/
+├── base/
+│   ├── variables.css    # 主题变量和颜色
+│   ├── reset.css        # 基础重置样式
+│   └── typography.css   # 排版样式
+├── components/
+│   ├── header.css       # 页头
+│   ├── footer.css       # 页脚
+│   ├── article.css      # 文章
+│   ├── archive.css      # 归档
+│   └── theme-toggle.css # 主题切换按钮
+└── main.css             # 主入口
+</code></pre><h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="1-启用新系统"><a href="#1-启用新系统" class="headerlink" title="1. 启用新系统"></a>1. 启用新系统</h3><p>新系统已在 <code>layout/_partial/head.ejs</code> 中启用：</p>
+<pre><code class="lang-ejs">&lt;%- css(&#39;css-modern/main&#39;) %&gt;
+</code></pre>
+<h3 id="2-主题切换"><a href="#2-主题切换" class="headerlink" title="2. 主题切换"></a>2. 主题切换</h3><ul>
+<li><strong>点击右下角按钮</strong>切换主题</li>
+<li><strong>快捷键</strong> <code>Ctrl/Cmd + Shift + D</code></li>
+<li><strong>JavaScript API</strong>：<pre><code class="lang-javascript">window.cactusTheme.toggle();      // 切换
+window.cactusTheme.set(&#39;dark&#39;);   // 设置深色
+window.cactusTheme.set(&#39;light&#39;);  // 设置浅色
+window.cactusTheme.set(&#39;auto&#39;);   // 自动模式
+</code></pre>
+</li>
+</ul>
+<h3 id="3-自定义颜色"><a href="#3-自定义颜色" class="headerlink" title="3. 自定义颜色"></a>3. 自定义颜色</h3><p>编辑 <code>base/variables.css</code>：</p>
+<pre><code class="lang-css">:root {
+  --color-background: #your-color;
+  --color-text: #your-text-color;
+  /* ... */
+}
+
+[data-theme=&quot;dark&quot;] {
+  --color-background: #your-dark-color;
+  /* ... */
+}
+</code></pre>
+<h2 id="浏览器支持"><a href="#浏览器支持" class="headerlink" title="浏览器支持"></a>浏览器支持</h2><ul>
+<li>Chrome 112+</li>
+<li>Firefox 117+</li>
+<li>Safari 16.5+</li>
+<li>Edge 112+</li>
+</ul>
+<h2 id="迁移说明"><a href="#迁移说明" class="headerlink" title="迁移说明"></a>迁移说明</h2><p>查看根目录的 <a href="../../CSS_MIGRATION_GUIDE.md">CSS_MIGRATION_GUIDE.md</a> 了解完整的迁移指南。</p>
+<h2 id="扩展组件"><a href="#扩展组件" class="headerlink" title="扩展组件"></a>扩展组件</h2><p>创建新组件：</p>
+<ol>
+<li>在 <code>components/</code> 创建 <code>.css</code> 文件</li>
+<li>使用 CSS 变量和嵌套语法</li>
+<li>在 <code>main.css</code> 中导入：<pre><code class="lang-css">@import &#39;./components/your-component.css&#39;;
+</code></pre>
+</li>
+</ol>
+<h2 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h2><ul>
+<li>✅ 无构建步骤</li>
+<li>✅ 更小的文件大小</li>
+<li>✅ 浏览器原生解析</li>
+<li>✅ 防主题切换闪烁</li>
+</ul>

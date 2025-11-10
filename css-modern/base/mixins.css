@@ -1,0 +1,50 @@
+/**
+ * Mixins converted from Stylus
+ * Using CSS custom properties and modern features
+ */
+
+/* These mixins are now implemented as reusable CSS patterns */
+
+/* antialias() - applied globally in reset.css */
+.antialias {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* hyphens() - use directly in CSS */
+.hyphens-auto {
+  hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+.hyphens-manual {
+  hyphens: manual;
+  -moz-hyphens: manual;
+  -ms-hyphens: manual;
+  -webkit-hyphens: manual;
+}
+
+/* no-select() */
+.no-select {
+  user-select: none;
+  -khtml-user-select: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+/* underline() mixin - now a custom property pattern */
+/* Usage: add data-underline-size and data-underline-color attributes */
+[data-underline] {
+  background-image: linear-gradient(
+    transparent,
+    transparent calc(100% - var(--underline-size, 6px)),
+    var(--underline-color, var(--color-link)) calc(100% - var(--underline-size, 6px)),
+    var(--underline-color, var(--color-link))
+  );
+  background-position: bottom;
+  background-size: 100% 6px;
+  background-repeat: repeat-x;
+}

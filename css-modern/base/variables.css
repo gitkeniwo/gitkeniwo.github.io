@@ -1,0 +1,196 @@
+/**
+ * CSS Variables for Theme System
+ * Supports automatic dark mode via prefers-color-scheme
+ * and manual theme switching via data-theme attribute
+ */
+
+
+:root {
+  /* Typography */
+  --font-family-body: "Space Grotesk", 'Noto Sans TC', 'Noto Sans SC', monospace;
+  --font-family-mono:  "Syne Mono", "Menlo", monospace;
+  --font-family-heading: "Space Grotesk", 'Noto Sans TC', 'Noto Sans SC', monospace;
+  --font-family-nav: "Syne Mono", monospace;
+  --font-size-base: 1em;
+  --line-height-base: 1.725;
+
+  /* Layout */
+  --page-width: 48rem;
+  --logo-width: 50px;
+  --logo-height: 50px;
+
+  /* Light theme colors (default) */
+  --color-background: #e2e0de;
+  --color-background-code: #d5d3d1;
+  --color-footer-mobile-1: #dbd9d7;
+  --color-footer-mobile-2: #c8c6c4;
+  --color-text: #363533;
+  --color-border: #666;
+  --color-meta: #666;
+  --color-meta-code: #737373;
+  --color-link: #d44375;
+  --color-link-hover: #c73866;
+  --color-accent-1: #d44375;
+  --color-accent-2: #111111;
+  --color-accent-3: #cf6274;
+  --color-accent-4: #660014;
+  --color-accent-5: #e66973;
+  --color-accent-6: #893147;
+  --color-quote: #ab2251;
+  --color-del: rgb(136, 148, 141);
+  --color-em: #d0638c;
+  --color-strong: #d1889f;
+  --color-header-prefix: #c73866;
+  --color-markdown-marker: rgba(215, 49, 107, 0.779);
+  --color-code: #b73a5c;
+
+  --color-tag-count1: #b29d9d;
+  --color-tag-count2: #866969;
+
+  --color-tag-count3: #b88c9a;
+  --color-tag-count4: #c17995;
+  --color-tag-count5: #cf5a83;
+  --color-tag-count6: #c1426a;
+  --color-tag-count7: #8c2448;
+
+  --color-tag-count10: #c84b6a;  /* 8-10 */
+  --color-tag-count15: #8b1937;  /* 11-15 */
+  --color-tag-count20: #6e152c;  /* 15-20 */
+  --color-tag-count-high: #7c1f39; 
+
+
+  /* Light theme glow effects */
+  --color-glow-primary: rgba(212, 67, 117, 0.5);
+  --color-glow-primary-md: rgba(212, 67, 117, 0.3);
+  --color-glow-primary-sm: rgba(212, 67, 117, 0.2);
+  --color-glow-primary-hover: rgba(212, 67, 117, 0.8);
+  --color-glow-primary-hover-md: rgba(212, 67, 117, 0.5);
+  --color-glow-primary-hover-sm: rgba(212, 67, 117, 0.3);
+
+  --color-glow-gray: rgba(102, 102, 102, 0.6);
+  --color-glow-gray-md: rgba(102, 102, 102, 0.4);
+  --color-glow-gray-sm: rgba(102, 102, 102, 0.2);
+  --color-glow-gray-hover: rgba(153, 153, 153, 0.8);
+  --color-glow-gray-hover-md: rgba(153, 153, 153, 0.5);
+  --color-glow-gray-hover-sm: rgba(153, 153, 153, 0.3);
+}
+
+/* Dark theme - prefers-color-scheme */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-background: #1d1f21;
+    --color-background-code: #232527;
+    --color-footer-mobile-1: #242628;
+    --color-footer-mobile-2: #2d2f31;
+    --color-text: #c9cacc;
+    --color-border: #666;
+    --color-meta: #666;
+    --color-meta-code: #666;
+    --color-link: #2bbc8a;
+    --color-link-hover: #1ea978;
+    --color-accent-1: #2bbc8a;
+    --color-accent-2: #eeeeee;
+    --color-accent-3: #cccccc;
+    --color-accent-4: #006600;
+    --color-accent-5: #8dba8a;
+    --color-accent-6: #31895f;
+    --color-quote: #74897f;
+    --color-del: rgb(136, 148, 141);
+    --color-em: #b3d1c2;
+    --color-strong: #72b68b;
+    --color-header-prefix: #1ea978;
+    --color-markdown-marker: rgba(34, 191, 136, 0.626);
+    --color-code: #4ec19c;
+
+/* Dark mode tag count color bins — green scale */
+    --color-tag-count1:  #8fa39c;  /* 灰绿，最常见 minimal */
+    --color-tag-count2:  #a9c1b6;  /* 更浅灰绿 */
+
+    --color-tag-count3:  #69b599;  /* 开始带色 */
+    --color-tag-count4:  #4aa983;  /* 亮绿 */
+    --color-tag-count5:  #2bbc8a;  /* 主绿(主色) */
+    --color-tag-count6:  #1d9e75;  /* 稍深 */
+    --color-tag-count7:  #1d9f73;  /* 更深 */
+
+    --color-tag-count10: #309270;  /* 8–10 */
+    --color-tag-count15: #1e7b61;  /* 11–15 */
+    --color-tag-count20: #1c8267;  /* 16–20 */
+    --color-tag-count-high: #08a469; /* >20 深绿 */
+
+    /* Dark theme glow effects */
+    --color-glow-primary: rgba(0, 255, 255, 0.5);
+    --color-glow-primary-md: rgba(0, 255, 255, 0.3);
+    --color-glow-primary-sm: rgba(0, 255, 255, 0.2);
+    --color-glow-primary-hover: rgba(0, 255, 255, 0.8);
+    --color-glow-primary-hover-md: rgba(0, 255, 255, 0.5);
+    --color-glow-primary-hover-sm: rgba(0, 255, 255, 0.3);
+  }
+}
+
+/* Manual dark theme override */
+[data-theme="dark"] {
+  --color-background: #1d1f21;
+  --color-background-code: #232527;
+  --color-footer-mobile-1: #242628;
+  --color-footer-mobile-2: #2d2f31;
+  --color-text: #c9cacc;
+  --color-border: #666;
+  --color-meta: #666;
+  --color-meta-code: #666;
+  --color-link: #2bbc8a;
+  --color-link-hover: #1ea978;
+  --color-accent-1: #2bbc8a;
+  --color-accent-2: #eeeeee;
+  --color-accent-3: #cccccc;
+  --color-accent-4: #006600;
+  --color-accent-5: #8dba8a;
+  --color-accent-6: #31895f;
+  --color-quote: #74897f;
+  --color-del: rgb(136, 148, 141);
+  --color-em: #b3d1c2;
+  --color-strong: #d1deaf;
+  --color-header-prefix: #1ea978;
+  --color-markdown-marker: rgba(43, 188, 138, 0.3);
+
+  /* Dark theme glow effects */
+  --color-glow-primary: rgba(0, 255, 255, 0.5);
+  --color-glow-primary-md: rgba(0, 255, 255, 0.3);
+  --color-glow-primary-sm: rgba(0, 255, 255, 0.2);
+  --color-glow-primary-hover: rgba(0, 255, 255, 0.8);
+  --color-glow-primary-hover-md: rgba(0, 255, 255, 0.5);
+  --color-glow-primary-hover-sm: rgba(0, 255, 255, 0.3);
+}
+
+/* Manual light theme override */
+[data-theme="light"] {
+  --color-background: #e2e0de;
+  --color-background-code: #d5d3d1;
+  --color-footer-mobile-1: #dbd9d7;
+  --color-footer-mobile-2: #c8c6c4;
+  --color-text: #363533;
+  --color-border: #666;
+  --color-meta: #666;
+  --color-meta-code: #737373;
+  --color-link: #d44375;
+  --color-link-hover: #c73866;
+  --color-accent-1: #d44375;
+  --color-accent-2: #111111;
+  --color-accent-3: #666666;
+  --color-accent-4: #006600;
+  --color-accent-5: #8dba8a;
+  --color-accent-6: #31895f;
+  --color-quote: #ab2251;
+  --color-del: rgb(136, 148, 141);
+  --color-em: #e8a4be;
+  --color-strong: #d1889f;
+  --color-header-prefix: #c73866;
+  --color-markdown-marker: rgba(212, 67, 117, 0.35);
+
+  /* Light theme glow effects */
+  --color-glow-primary: rgba(212, 67, 117, 0.5);
+  --color-glow-primary-md: rgba(212, 67, 117, 0.3);
+  --color-glow-primary-sm: rgba(212, 67, 117, 0.2);
+  --color-glow-primary-hover: rgba(212, 67, 117, 0.8);
+  --color-glow-primary-hover-md: rgba(212, 67, 117, 0.5);
+  --color-glow-primary-hover-sm: rgba(212, 67, 117, 0.3);
+}

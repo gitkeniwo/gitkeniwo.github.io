@@ -10,21 +10,14 @@
     <meta name="theme-color" content="#1d1f21">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Noto+Sans+TC&family=Syne+Mono&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/957afab140.js" crossorigin="anonymous"></script>
-    
-    <!--memos-->
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <!-- <meta name="referrer" content="no-referrer">
-    <link rel="icon" href="/assets/img/logo.webp" type="image/*" />
-    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/APlayer.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/highlight.github.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/custom.css" rel="stylesheet" type="text/css"> -->
-    <!--end memos-->
 
+    <script src="https://kit.fontawesome.com/957afab140.js" crossorigin="anonymous"></script>
+
+    <link href="https://db.onlinewebfonts.com/c/6d2ac8672f2eb25e2d0f0b52465f00f8?family=IBM+3270" rel="stylesheet">
+    <!-- Google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@200..900&family=Slabo+27px&family=Space+Grotesk:wght@300..700&family=Special+Elite&family=Syne+Mono&display=swap" rel="stylesheet">
 
     <meta name="description" content="最近时常感觉有必要重学一遍python，故开此坑。《流畅的python》这本书也是经典必读了，就从第一章开始写笔记。这章是一个引言，主要介绍了python的special methods。 Special Methods Special Method是形如__methodName__的一类方法（也叫做”dunder method”，dunder是双下划线的略称），通过实现这类方法可以使得class">
 <meta property="og:type" content="article">
@@ -35,7 +28,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://files.mastodon.online/media_attachments/files/109/172/982/234/570/581/original/bbe8405151265044.png">
 <meta property="article:published_time" content="2022-10-15T14:44:06.000Z">
-<meta property="article:modified_time" content="2025-11-03T02:33:27.128Z">
+<meta property="article:modified_time" content="2025-11-10T21:38:26.534Z">
 <meta property="article:author" content="ケニヲ">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="fluent-python">
@@ -61,9 +54,16 @@
     
     <!-- title -->
     <title>Python Data Model @ 流畅的Python 01</title>
-    <!-- styles -->
+
+    <!-- modern css styles -->
     
+<link rel="stylesheet" href="/css-modern/main.css">
+
+
+    <!-- legacy fallback: old stylus styles (can be removed once fully migrated) -->
+    <!-- 
 <link rel="stylesheet" href="/css/style.css">
+ -->
 
     <!-- persian styles -->
     
@@ -71,6 +71,12 @@
 <link rel="stylesheet" href="/css/rtl.css">
 
     
+
+    <!-- theme switcher script (loaded early to prevent flash) -->
+    
+<script src="/js/theme-switcher.js"></script>
+
+
     <!-- rss -->
     
     
@@ -243,6 +249,10 @@
 <br>
 <br>
 
+<div class="blog-post-comments">
+    <div id="giscus"></div>
+</div>
+
 <script src="https://giscus.app/client.js"
         data-repo="gitkeniwo/gitkeniwo.github.io"
         data-repo-id="MDEwOlJlcG9zaXRvcnkyNjk1NTA0ODE="
@@ -253,17 +263,93 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="transparent_dark"   
+        data-theme="fro"   
         data-lang="en"
         crossorigin="anonymous"
         async>
 </script>
 
-<div class="blog-post-comments">
-    <div id="giscus">
+<!-- <script>
+  // Giscus theme mapping
+  const giscusThemes = {
+    light: 'fro',
+    dark: 'fro'
+  };
 
-    </div>
-</div>
+  // Get current effective theme (considering auto mode)
+  function getEffectiveTheme() {
+    const dataTheme = document.documentElement.getAttribute('data-theme');
+
+    if (dataTheme === 'light') {
+      return 'light';
+    } else if (dataTheme === 'dark') {
+      return 'dark';
+    } else {
+      // Auto mode - check system preference
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark';
+      }
+      return 'light';
+    }
+  }
+
+  // Load giscus with current theme
+  function loadGiscus() {
+    const effectiveTheme = getEffectiveTheme();
+    const giscusTheme = giscusThemes[effectiveTheme];
+
+    const script = document.createElement('script');
+    script.src = 'https://giscus.app/client.js';
+    script.setAttribute('data-repo', 'gitkeniwo/gitkeniwo.github.io');
+    script.setAttribute('data-repo-id', 'MDEwOlJlcG9zaXRvcnkyNjk1NTA0ODE=');
+    script.setAttribute('data-category', 'Announcements');
+    script.setAttribute('data-category-id', 'DIC_kwDOEBEDkc4CgyF8');
+    script.setAttribute('data-mapping', 'pathname');
+    script.setAttribute('data-strict', '0');
+    script.setAttribute('data-reactions-enabled', '1');
+    script.setAttribute('data-emit-metadata', '0');
+    script.setAttribute('data-input-position', 'top');
+    script.setAttribute('data-theme', giscusTheme);
+    script.setAttribute('data-lang', 'en');
+    script.setAttribute('crossorigin', 'anonymous');
+    script.async = true;
+
+    document.getElementById('giscus').appendChild(script);
+  }
+
+  // Update giscus theme when site theme changes
+  function updateGiscusTheme() {
+    const effectiveTheme = getEffectiveTheme();
+    const giscusTheme = giscusThemes[effectiveTheme];
+
+    const iframe = document.querySelector('iframe.giscus-frame');
+    if (iframe) {
+      iframe.contentWindow.postMessage(
+        { giscus: { setConfig: { theme: giscusTheme } } },
+        'https://giscus.app'
+      );
+    }
+  }
+
+  // Listen for theme changes
+  window.addEventListener('themechange', function() {
+    updateGiscusTheme();
+  });
+
+  // Listen for system theme changes when in auto mode
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      // Only update if in auto mode (no data-theme attribute)
+      if (!currentTheme) {
+        updateGiscusTheme();
+      }
+    });
+  }
+
+  // Load giscus on page load
+  loadGiscus();
+</script> -->
 
 
 
@@ -348,15 +434,17 @@
     </span>
     <span class="footer-separator">|</span>
     <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="footer-license" target="_blank" rel="noopener noreferrer">
-      <i class="fa-brands fa-creative-commons"></i> CC BY-NC-SA 4.0
+      <i class="fa-brands fa-creative-commons"></i> 
+      <i class="fa-brands fa-creative-commons-by"></i>-<i class="fa-brands fa-creative-commons-nc"></i>-<i class="fa-brands fa-creative-commons-sa"></i>
     </a>
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="footer-badge footer-cc-badge" target="_blank" rel="noopener noreferrer">
+    <!-- CC BY-NC-SA 4.0 -->
+    <!-- <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="footer-badge footer-cc-badge" target="_blank" rel="noopener noreferrer">
       <img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.svg" alt="CC BY-NC-SA 4.0" />
-    </a>
-    <span class="footer-separator">|</span>
+    </a> -->
+    <!-- <span class="footer-separator">|</span>
     <a target="_blank" rel="noopener" href="https://notbyai.fyi/hi/not-by-ai/" class="footer-badge">
       <img src="/img/Written-By-Human-Not-By-AI-Badge-black.svg" alt="Written by Human, Not by AI" />
-    </a>
+    </a> -->
   </div>
 
   <div class="footer-middle">
@@ -392,6 +480,58 @@
 
 
     </div>
+    <button
+  class="theme-toggle"
+  id="theme-toggle"
+  aria-label="Toggle theme"
+  title="Toggle theme (Ctrl/Cmd + Shift + D)"
+>
+  <span class="theme-toggle-icon">
+    <i class="fas fa-adjust"></i>
+  </span>
+</button>
+
+<script>
+  // Theme toggle button handler
+  (function() {
+    const button = document.getElementById('theme-toggle');
+    if (!button) return;
+
+    button.addEventListener('click', function() {
+      button.classList.add('rotating');
+      setTimeout(() => button.classList.remove('rotating'), 500);
+
+      if (window.cactusTheme) {
+        window.cactusTheme.toggle();
+      }
+    });
+
+    // Update button icon based on theme
+    function updateButtonIcon() {
+      const theme = window.cactusTheme ? window.cactusTheme.get() : 'auto';
+      const icon = button.querySelector('i');
+
+      if (theme === 'dark') {
+        icon.className = 'fas fa-moon';
+      } else if (theme === 'light') {
+        icon.className = 'fas fa-sun';
+      } else {
+        icon.className = 'fas fa-adjust';
+      }
+    }
+
+    // Listen for theme changes
+    window.addEventListener('themechange', updateButtonIcon);
+
+    // Set initial icon
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateButtonIcon);
+    } else {
+      updateButtonIcon();
+    }
+  })();
+</script>
+
     <!-- styles -->
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">

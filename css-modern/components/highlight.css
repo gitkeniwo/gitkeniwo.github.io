@@ -1,0 +1,132 @@
+/**
+ * Code Highlighting Styles - Monokai Theme
+ */
+
+/* Base highlight container */
+.highlight {
+  margin: 1.6em 0;
+  display: block;
+  overflow-x: auto;
+  padding: 15px 20px;
+  font-size: 0.9rem;
+  font-family: 'Courier New', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  line-height: 1.6;
+  background: #272822;
+  color: #f8f8f2;
+  border-radius: 4px;
+}
+
+.highlight table {
+  margin: 0;
+  width: auto;
+  border: none;
+}
+
+.highlight td {
+  border: none;
+  padding: 0;
+}
+
+.highlight td.gutter {
+  padding-right: 20px;
+}
+
+.highlight td.code {
+  padding-left: 10px;
+}
+
+/* Line numbers */
+.highlight .gutter pre {
+  color: #75715e;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.highlight .line {
+  height: 1.6em;
+}
+
+/* Syntax highlighting colors - Monokai theme */
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .literal,
+.highlight .section,
+.highlight .link {
+  color: #f92672;
+}
+
+.highlight .function .keyword,
+.highlight .class .keyword {
+  color: #66d9ef;
+}
+
+.highlight .string,
+.highlight .title,
+.highlight .section,
+.highlight .type,
+.highlight .attribute,
+.highlight .symbol,
+.highlight .bullet,
+.highlight .built_in,
+.highlight .addition,
+.highlight .variable,
+.highlight .template-tag,
+.highlight .template-variable {
+  color: #e6db74;
+}
+
+.highlight .comment,
+.highlight .quote,
+.highlight .deletion,
+.highlight .meta {
+  color: #75715e;
+}
+
+.highlight .keyword,
+.highlight .selector-tag,
+.highlight .literal,
+.highlight .doctag,
+.highlight .title,
+.highlight .section,
+.highlight .type,
+.highlight .name,
+.highlight .strong {
+  font-weight: normal;
+}
+
+.highlight .params,
+.highlight .variable.language_ {
+  color: #fd971f;
+}
+
+.highlight .class .title,
+.highlight .title.class_ {
+  color: #a6e22e;
+  font-weight: normal;
+}
+
+.highlight .title.function_,
+.highlight .function {
+  color: #a6e22e;
+}
+
+.highlight .number,
+.highlight .meta .keyword {
+  color: #ae81ff;
+}
+
+.highlight .attr {
+  color: #a6e22e;
+}
+
+.highlight .built_in {
+  color: #66d9ef;
+}
+
+.highlight .emphasis {
+  font-style: italic;
+}
+
+.highlight .strong {
+  font-weight: bold;
+}

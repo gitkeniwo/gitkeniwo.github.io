@@ -10,28 +10,21 @@
     <meta name="theme-color" content="#1d1f21">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Noto+Sans+TC&family=Syne+Mono&display=swap" rel="stylesheet">
+
     <script src="https://kit.fontawesome.com/957afab140.js" crossorigin="anonymous"></script>
-    
-    <!--memos-->
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-    <!-- <meta name="referrer" content="no-referrer">
-    <link rel="icon" href="/assets/img/logo.webp" type="image/*" />
-    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/APlayer.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/highlight.github.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/custom.css" rel="stylesheet" type="text/css"> -->
-    <!--end memos-->
 
+    <link href="https://db.onlinewebfonts.com/c/6d2ac8672f2eb25e2d0f0b52465f00f8?family=IBM+3270" rel="stylesheet">
+    <!-- Google fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@200..900&family=Slabo+27px&family=Space+Grotesk:wght@300..700&family=Special+Elite&family=Syne+Mono&display=swap" rel="stylesheet">
 
-    <meta name="description" content="And ye shall know the truth, and the truth shall make you free. Jhn 8:32">
+    <meta name="description" content="VULNERANT OMNES ULTIMA NECAT">
 <meta property="og:type" content="website">
 <meta property="og:title" content="사미즈다트">
 <meta property="og:url" content="https://gitkeniwo.github.io/archives/2020/index.html">
 <meta property="og:site_name" content="사미즈다트">
-<meta property="og:description" content="And ye shall know the truth, and the truth shall make you free. Jhn 8:32">
+<meta property="og:description" content="VULNERANT OMNES ULTIMA NECAT">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="ケニヲ">
 <meta name="twitter:card" content="summary">
@@ -55,9 +48,16 @@
     
     <!-- title -->
     <title>Archives: 2020</title>
-    <!-- styles -->
+
+    <!-- modern css styles -->
     
+<link rel="stylesheet" href="/css-modern/main.css">
+
+
+    <!-- legacy fallback: old stylus styles (can be removed once fully migrated) -->
+    <!-- 
 <link rel="stylesheet" href="/css/style.css">
+ -->
 
     <!-- persian styles -->
     
@@ -65,6 +65,12 @@
 <link rel="stylesheet" href="/css/rtl.css">
 
     
+
+    <!-- theme switcher script (loaded early to prevent flash) -->
+    
+<script src="/js/theme-switcher.js"></script>
+
+
     <!-- rss -->
     
     
@@ -82,9 +88,13 @@
   <a href="/">
   
     
-      <div id="logo" style="background-image: url(/images/comedian-logo.png);"></div>
+      <div id="logo"
+        data-light-logo="/images/comedian-logo-light-1000.png"
+        data-dark-logo="/images/comedian-logo-dark-1000.png">
+      </div>
     
   
+
     <div id="title">
       <h1>사미즈다트</h1>
     </div>
@@ -401,15 +411,17 @@
     </span>
     <span class="footer-separator">|</span>
     <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="footer-license" target="_blank" rel="noopener noreferrer">
-      <i class="fa-brands fa-creative-commons"></i> CC BY-NC-SA 4.0
+      <i class="fa-brands fa-creative-commons"></i> 
+      <i class="fa-brands fa-creative-commons-by"></i>-<i class="fa-brands fa-creative-commons-nc"></i>-<i class="fa-brands fa-creative-commons-sa"></i>
     </a>
-    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="footer-badge footer-cc-badge" target="_blank" rel="noopener noreferrer">
+    <!-- CC BY-NC-SA 4.0 -->
+    <!-- <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="footer-badge footer-cc-badge" target="_blank" rel="noopener noreferrer">
       <img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.svg" alt="CC BY-NC-SA 4.0" />
-    </a>
-    <span class="footer-separator">|</span>
+    </a> -->
+    <!-- <span class="footer-separator">|</span>
     <a target="_blank" rel="noopener" href="https://notbyai.fyi/hi/not-by-ai/" class="footer-badge">
       <img src="/img/Written-By-Human-Not-By-AI-Badge-black.svg" alt="Written by Human, Not by AI" />
-    </a>
+    </a> -->
   </div>
 
   <div class="footer-middle">
@@ -445,6 +457,58 @@
 
 
     </div>
+    <button
+  class="theme-toggle"
+  id="theme-toggle"
+  aria-label="Toggle theme"
+  title="Toggle theme (Ctrl/Cmd + Shift + D)"
+>
+  <span class="theme-toggle-icon">
+    <i class="fas fa-adjust"></i>
+  </span>
+</button>
+
+<script>
+  // Theme toggle button handler
+  (function() {
+    const button = document.getElementById('theme-toggle');
+    if (!button) return;
+
+    button.addEventListener('click', function() {
+      button.classList.add('rotating');
+      setTimeout(() => button.classList.remove('rotating'), 500);
+
+      if (window.cactusTheme) {
+        window.cactusTheme.toggle();
+      }
+    });
+
+    // Update button icon based on theme
+    function updateButtonIcon() {
+      const theme = window.cactusTheme ? window.cactusTheme.get() : 'auto';
+      const icon = button.querySelector('i');
+
+      if (theme === 'dark') {
+        icon.className = 'fas fa-moon';
+      } else if (theme === 'light') {
+        icon.className = 'fas fa-sun';
+      } else {
+        icon.className = 'fas fa-adjust';
+      }
+    }
+
+    // Listen for theme changes
+    window.addEventListener('themechange', updateButtonIcon);
+
+    // Set initial icon
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateButtonIcon);
+    } else {
+      updateButtonIcon();
+    }
+  })();
+</script>
+
     <!-- styles -->
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">

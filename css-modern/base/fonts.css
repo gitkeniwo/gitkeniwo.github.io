@@ -1,0 +1,40 @@
+/**
+ * Font Face Definitions
+ * Converted from _fonts.styl
+ */
+
+@font-face {
+  font-family: "Bigblueterm";
+  src: url("../lib/bigblueterm/BigBlue_TerminalPlus.ttf") format("truetype");
+} 
+
+/* @font-face {
+  font-style: normal;
+  font-family: "NexusSans-Regular";
+  src: url("../lib/nexussans-regular/NexusSans-Regular.otf") format("opentype");
+} */
+
+/* @font-face {
+  font-family: "Glow Sans TC";
+  src: url("../lib/GlowSansTC/GlowSansTC-Normal-Regular.otf") format("opentype");
+} */
+
+/* @font-face {
+  font-family: "CMU Sans Serif";
+  src: url("../lib/cmu-sansserif/cmunss.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "CMU Sans Serif Bold";
+  src: url("../lib/cmu-sansserif/cmunsx.ttf") format("truetype");
+} */
+
+/* @font-face {
+  font-family: "Glow Sans SC";
+  src: url("../lib/GlowSansTC/GlowSansSC-Normal-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Glow Sans SC Medium";
+  src: url("../lib/GlowSansTC/GlowSansSC-Normal-Medium.otf") format("opentype");
+} */
