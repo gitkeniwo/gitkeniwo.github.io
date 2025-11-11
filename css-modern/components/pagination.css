@@ -1,9 +1,132 @@
 /**
  * Pagination Component
- * Converted from _partial/pagination.styl
+ * CLI-style navigation
  */
 
-.pagination {
+/* CLI Style Pagination */
+.pagination.cli-style {
+  display: block;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.02);
+  font-family: var(--font-family-mono);
+}
+
+.pagination-prompt {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Prompt Symbol - $ */
+.prompt-symbol {
+  color: var(--color-accent-1);
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+/* Command - "page" */
+.prompt-command {
+  color: var(--color-text);
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+/* Navigation Links */
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 3px;
+  background: transparent;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.nav-link:not(.disabled) {
+  color: var(--color-text);
+}
+
+.nav-link:not(.disabled):hover {
+  background: var(--color-accent-1);
+  color: white;
+}
+
+.nav-link:not(.disabled):hover .link-bracket,
+.nav-link:not(.disabled):hover .link-arrow,
+.nav-link:not(.disabled):hover .link-text {
+  color: white;
+}
+
+.nav-link.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* Link Components */
+.link-bracket {
+  color: var(--color-meta);
+  font-weight: bold;
+}
+
+.link-arrow {
+  color: var(--color-accent-1);
+  font-weight: bold;
+}
+
+.link-text {
+  color: var(--color-text);
+  font-size: 0.9em;
+}
+
+/* Page Info */
+.page-info {
+  padding: 0.4rem 0.8rem;
+  color: var(--color-meta);
+  font-size: 0.95em;
+  border-left: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .pagination.cli-style {
+    padding: 0.8rem;
+  }
+
+  .pagination-prompt {
+    gap: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .nav-link {
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pagination-prompt {
+    justify-content: space-between;
+  }
+
+  .prompt-symbol,
+  .prompt-command {
+    flex-basis: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Old style (kept for backwards compatibility) */
+.pagination:not(.cli-style) {
   display: inline-block;
   margin-top: 2rem;
   width: 100%;
