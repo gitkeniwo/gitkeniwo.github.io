@@ -83,7 +83,7 @@
   text-align: left;
   width: 100%;
   line-height: 1.6;
-  margin: 2rem 0;
+  margin: 0rem 0;
 }
 
 .memos a {
@@ -190,7 +190,7 @@
   flex-direction: column;
   flex-wrap: nowrap;
   margin-bottom: 0;
-  padding-left: 2rem;
+  padding-left: 3rem;
   position: relative;
 }
 
@@ -198,22 +198,22 @@
 .timeline:before {
   content: "";
   position: absolute;
-  left: 0;
+  left: 1rem;
   top: 0;
   bottom: 0;
   width: 2px;
   background: repeating-linear-gradient(
     to bottom,
     var(--color-memos-border) 0,
-    var(--color-memos-border) 4px,
-    transparent 4px,
-    transparent 8px
+    var(--color-memos-border) 0.6rem,
+    transparent 0.6rem,
+    transparent 1.2rem
   );
 }
 
 /* Ensure first rendered memo still connects upward after dynamic load */
 .timeline:first-child:before {
-  top: -1.5rem;
+  top: -1rem;
   height: calc(100% + 1.5rem);
 }
 
@@ -221,16 +221,16 @@
 .timeline:after {
   content: "";
   position: absolute;
-  left: 0;
+  left: 1rem;
   top: 1.5rem;
   width: 1.5rem;
   height: 2px;
   background: repeating-linear-gradient(
     to right,
     var(--color-memos-border) 0,
-    var(--color-memos-border) 4px,
-    transparent 4px,
-    transparent 8px
+    var(--color-memos-border) 0.5rem,
+    transparent 0.5rem,
+    transparent 1rem
   );
 }
 
@@ -351,10 +351,10 @@
   font-family: var(--font-family-mono);
 }
 
-.memos__id:before {
+/* .memos__id:before {
   content: "@";
   color: var(--color-memos-tag);
-}
+} */
 
 /* Tags - retro bracket style */
 .tag-span {

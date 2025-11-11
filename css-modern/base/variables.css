@@ -79,7 +79,7 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --color-background: #1d1f21;
-    --color-background-code: #232527;
+    --color-background-code: #262b29;
     --color-footer-mobile-1: #242628;
     --color-footer-mobile-2: #2d2f31;
     --color-text: #c9cacc;
