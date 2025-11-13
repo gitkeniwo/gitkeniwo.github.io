@@ -26,21 +26,21 @@
 <meta property="og:site_name" content="사미즈다트">
 <meta property="og:description" content="问题描述：Search Page上的搜索模块，搜索关键词的时候可以加载出结果，但点击链接跳转的时候出现问题，404代表github pages找不到该页面。   再让我们仔细看一下，原来这里生成的链接是跳转到了&#x2F;search&#x2F;页面+文章标题的地址去了，根据我们贫乏的知识，hexo的文章都是放在post目录下的，并不会在任何&#x2F;search&#x2F;目录之下。  又去确认了一下，这篇文章本来应该是放在在根目录">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20210518153234.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20210518153017.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20210518161621.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20210518153943.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20210518154430.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20210518155125.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20210518155842.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20210518160112.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20210518161355.png">
+<meta property="og:image" content="https://img.gitkeniwo.tech/202511/12-92603d65030b4fa85e63d6dc84aaeb3c-1762984711.png">
+<meta property="og:image" content="https://img.gitkeniwo.tech/202511/12-22ac9a15d0dd62e3cdf971d7b2be2299-1762984711.png">
+<meta property="og:image" content="https://img.gitkeniwo.tech/202511/12-973181e1528bcc15aa86388f98b70b6a-1762984713.png">
+<meta property="og:image" content="https://img.gitkeniwo.tech/202511/12-00d863ed9fdc22444d15578d3425307b-1762984711.png">
+<meta property="og:image" content="https://img.gitkeniwo.tech/202511/12-b792ff9440737ac4d86060ec7105f149-1762984712.png">
+<meta property="og:image" content="https://img.gitkeniwo.tech/202511/12-4bc569f16493fca071d88c4163ff9488-1762984712.png">
+<meta property="og:image" content="https://img.gitkeniwo.tech/202511/12-1fc0dc54d1bbf552553ca095717ca71a-1762984712.png">
+<meta property="og:image" content="https://img.gitkeniwo.tech/202511/12-caffe8be8d404e493ac5463fd5ea74cf-1762984712.png">
+<meta property="og:image" content="https://img.gitkeniwo.tech/202511/12-a253703d283817fb099386aad961b764-1762984712.png">
 <meta property="article:published_time" content="2021-05-18T13:30:48.000Z">
-<meta property="article:modified_time" content="2025-11-03T02:33:27.127Z">
+<meta property="article:modified_time" content="2025-11-12T22:00:10.598Z">
 <meta property="article:author" content="ケニヲ">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20210518153234.png">
+<meta name="twitter:image" content="https://img.gitkeniwo.tech/202511/12-92603d65030b4fa85e63d6dc84aaeb3c-1762984711.png">
     
     
       
@@ -204,26 +204,26 @@
 
   <div class="content" itemprop="articleBody">
     <h1 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h1><p>Search Page上的搜索模块，搜索关键词的时候可以加载出结果，但点击链接跳转的时候出现问题，404代表github pages找不到该页面。</p>
-<p><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20210518153234.png" alt=""></p>
-<p><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20210518153017.png" alt=""></p>
+<p><img src="https://img.gitkeniwo.tech/202511/12-92603d65030b4fa85e63d6dc84aaeb3c-1762984711.png" alt=""></p>
+<p><img src="https://img.gitkeniwo.tech/202511/12-22ac9a15d0dd62e3cdf971d7b2be2299-1762984711.png" alt=""></p>
 <p>再让我们仔细看一下，原来这里生成的链接是跳转到了<code>/search/</code>页面+文章标题的地址去了，根据我们贫乏的知识，hexo的文章都是放在post目录下的，并不会在任何<code>/search/</code>目录之下。</p>
-<p><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20210518161621.png" alt=""></p>
+<p><img src="https://img.gitkeniwo.tech/202511/12-973181e1528bcc15aa86388f98b70b6a-1762984713.png" alt=""></p>
 <p>又去确认了一下，这篇文章本来应该是放在在根目录下，并没有那个<code>/search/</code>路径。</p>
-<p><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20210518153943.png" alt=""></p>
+<p><img src="https://img.gitkeniwo.tech/202511/12-00d863ed9fdc22444d15578d3425307b-1762984711.png" alt=""></p>
 <h1 id="解决："><a href="#解决：" class="headerlink" title="解决："></a>解决：</h1><p>参考了一下原主题repo下搜索问题的<a target="_blank" rel="noopener" href="https://github.com/probberechts/hexo-theme-cactus/issues/247">issue</a>。</p>
 <p>Hexo的search模块都是每个主题自己想办法实现的，有的直接用到了<code>hexo-generator-search</code>这个插件帮忙生成，有的是自己写的，search页面实现搜索功能靠的是js，按理说主题目录<code>/source/js</code>下会有<code>search.js</code>这个文件。打开它，我们可以看到cactus主题的search功能是复用了那个插件的代码。</p>
-<p><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20210518154430.png" alt=""></p>
+<p><img src="https://img.gitkeniwo.tech/202511/12-b792ff9440737ac4d86060ec7105f149-1762984712.png" alt=""></p>
 <p>然后我们逐行检视代码，找到生成url的那一行。</p>
-<p><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20210518155125.png" alt=""></p>
+<p><img src="https://img.gitkeniwo.tech/202511/12-4bc569f16493fca071d88c4163ff9488-1762984712.png" alt=""></p>
 <p>这一行大概就是把搜索结果放到一个列表里面，列表的元素是超链接，超链接的href <code>dataUrl</code>就是我们想改掉的url，这里就有点问题，好像并没有出现预想之内的字符串<code>&quot;/search/&quot;</code>与文章标题url的拼接这样的处理方式，这好像就需要我们直接在<code>dataUrl</code>上做文章。观察上面的代码，<code>dataUrl</code>实际上是<code>data.url</code>这样一个属性，data又是<code>forEach()</code>下遍历的元素，应该是一个对象，对<code>datas</code>这个数组里面的每个<code>data</code>执行花括号定义的<code>function(data)</code>(后面的代码全是function的内容)。观察function里面是没有循环的，所以它想展示所有的只能是对最开始的<code>datas</code>数组遍历（于是猜想<code>datas</code>应该就是文章列表的xml结构数据），这有点像<code>pandas.Columns.apply()</code>函数，这个函数接受另一个函数名的参数，对pandas数据表里该列每个元素执行接受的函数的操作。</p>
 <p>再往前看，这段涉及ajax什么的我就看不懂了，但大概是让datas接受某个xmlResponse，这个reponse我们可以想到应该就是所有文章的列表。</p>
-<p><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20210518155842.png" alt=""></p>
+<p><img src="https://img.gitkeniwo.tech/202511/12-1fc0dc54d1bbf552553ca095717ca71a-1762984712.png" alt=""></p>
 <p>这么说好像还是一个黑箱，于是我们直接<code>$hexo -s</code>启动服务器，在<code>localhost:4000/search/</code>本地调试一下，打开safari，⌥+⌘+I (I for inspect)召唤出调试界面，然后找到sources，在输入框里随便输点内容之后，下面就出现了一个<code>search.xml</code>文件，点开看一看，好像的确就是所有文章的feeds。</p>
 <p>xml文件的<code>&lt;title&gt;</code>, <code>&lt;url&gt;</code>, <code>&lt;content&gt;</code>几个tag刚好能对应上面赋值给<code>datas</code>的代码，那么，出问题的应该就是xml里面的url了。再仔细观察一下这个url，发现它直接就是这篇博文的md文件标题了，大概就是<code>post-title/</code>这样的形式，在前面没有任何斜杠表示其路径。</p>
-<p><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20210518160112.png" alt=""></p>
+<p><img src="https://img.gitkeniwo.tech/202511/12-caffe8be8d404e493ac5463fd5ea74cf-1762984712.png" alt=""></p>
 <p>到这里其实就明白了，因为在网页中直接点开<code>some-title.file/</code>这样的路径链接的话，重定向其实是直接在当前目录的后面加入这一段的路径作为整体的链接跳转。我们本来在search页面，也就是<code>githubpages.github.io/search/</code>这个路径之下，再点开一个首部没有斜杠的链接就会被定位到<code>githubpages.github.io/search/some_post</code>这里去，而这里什么都没有，所以GitHub pages就给出了404信息。</p>
 <p>那解决的办法也很简单。</p>
-<p><img src="https://raw.githubusercontent.com/gitkeniwo/image_hosting/main/img/20210518161355.png" alt=""></p>
+<p><img src="https://img.gitkeniwo.tech/202511/12-a253703d283817fb099386aad961b764-1762984712.png" alt=""></p>
 <p>只要在这里加个斜杠就好了。<del>吐血</del></p>
 
   </div>

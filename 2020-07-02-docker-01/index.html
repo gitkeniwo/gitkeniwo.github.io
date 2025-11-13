@@ -26,27 +26,27 @@
 <meta property="og:site_name" content="사미즈다트">
 <meta property="og:description" content="Docker的工作原理: ContainerTo start with我们可以从 $docker run hello-world 的helloworld程序的流程看出。  当我们从Terminal输入语句执行的时候，docker client会take 我们的command，然后把command传递给docker server，在hello-world这条command中，我们实际想要传达的意思是">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://gitkeniwo.github.io/img/200702docker1.png">
-<meta property="og:image" content="https://gitkeniwo.github.io/img/200702docker2.png">
-<meta property="og:image" content="https://gitkeniwo.github.io/img/200702docker3.png">
-<meta property="og:image" content="https://gitkeniwo.github.io/img/200702docker4.png">
-<meta property="og:image" content="https://gitkeniwo.github.io/img/200702docker6.png">
-<meta property="og:image" content="https://gitkeniwo.github.io/img/200702docker7.png">
-<meta property="og:image" content="https://gitkeniwo.github.io/img/200702docker8.png">
-<meta property="og:image" content="https://gitkeniwo.github.io/img/200702docker9.png">
-<meta property="og:image" content="https://gitkeniwo.github.io/img/200702docker10.png">
-<meta property="og:image" content="https://gitkeniwo.github.io/img/200702docker11.png">
-<meta property="og:image" content="https://gitkeniwo.github.io/img/200702docker12.png">
-<meta property="og:image" content="https://gitkeniwo.github.io/img/200703docker1.png">
-<meta property="og:image" content="https://gitkeniwo.github.io/img/200703docker2.png">
-<meta property="og:image" content="https://gitkeniwo.github.io/img/200703docker3.png">
-<meta property="og:image" content="https://gitkeniwo.github.io/img/200703docker4.png">
+<meta property="og:image" content="https://img.gitkeniwo.tech/202511/12-76bb5014bd5d5cabb8d29205596942a2-1762983694.png">
+<meta property="og:image" content="https://img.gitkeniwo.tech/202511/12-7e16e2a01795f18b192711669f1026ef-1762983695.png">
+<meta property="og:image" content="https://img.gitkeniwo.tech/202511/12-3180df68640c6b8ff1d5e18e82b9c32a-1762983695.png">
+<meta property="og:image" content="https://img.gitkeniwo.tech/202511/12-84d474d0c260ca59caf25e2a3249ec71-1762983695.png">
+<meta property="og:image" content="https://img.gitkeniwo.tech/202511/12-d874e986ac0f0bbf00b5c27899d99d28-1762983696.png">
+<meta property="og:image" content="https://img.gitkeniwo.tech/202511/12-1b6420f18a831d97745d773e90eb32dd-1762983696.png">
+<meta property="og:image" content="https://img.gitkeniwo.tech/202511/12-8771b50fd066dee120960d4442c24e84-1762983696.png">
+<meta property="og:image" content="https://img.gitkeniwo.tech/202511/12-1041fafc0fa376109f0ab91c008c3e6a-1762983696.png">
+<meta property="og:image" content="https://img.gitkeniwo.tech/202511/12-5a2744b770fe5a8ab39db7450c5732c1-1762983695.png">
+<meta property="og:image" content="https://img.gitkeniwo.tech/202511/12-d882164518eca19bc23a52ee3f165847-1762983695.png">
+<meta property="og:image" content="https://img.gitkeniwo.tech/202511/12-de0cfb975df868ab0950c3a19754d54a-1762983695.png">
+<meta property="og:image" content="https://img.gitkeniwo.tech/202511/12-ba353b38844c5a754366bdbbac535292-1762983696.png">
+<meta property="og:image" content="https://img.gitkeniwo.tech/202511/12-4b4dda352709fc542b655d88d34c256d-1762983697.png">
+<meta property="og:image" content="https://img.gitkeniwo.tech/202511/12-a484f313e378775490012cd6af35129a-1762983697.png">
+<meta property="og:image" content="https://img.gitkeniwo.tech/202511/12-1a367e7de95adff0631802477f78ec16-1762983697.png">
 <meta property="article:published_time" content="2020-07-02T21:44:23.000Z">
-<meta property="article:modified_time" content="2025-11-03T02:33:27.122Z">
+<meta property="article:modified_time" content="2025-11-12T21:42:29.350Z">
 <meta property="article:author" content="ケニヲ">
 <meta property="article:tag" content="docker">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitkeniwo.github.io/img/200702docker1.png">
+<meta name="twitter:image" content="https://img.gitkeniwo.tech/202511/12-76bb5014bd5d5cabb8d29205596942a2-1762983694.png">
     
     
       
@@ -210,28 +210,28 @@
 
   <div class="content" itemprop="articleBody">
     <h1 id="Docker的工作原理-Container"><a href="#Docker的工作原理-Container" class="headerlink" title="Docker的工作原理: Container"></a>Docker的工作原理: Container</h1><h2 id="To-start-with"><a href="#To-start-with" class="headerlink" title="To start with"></a>To start with</h2><p>我们可以从 <code>$docker run hello-world</code> 的helloworld程序的流程看出。</p>
-<p><img src="/img/200702docker1.png" alt=""></p>
+<p><img src="https://img.gitkeniwo.tech/202511/12-76bb5014bd5d5cabb8d29205596942a2-1762983694.png" alt=""></p>
 <p>当我们从Terminal输入语句执行的时候，docker client会take 我们的command，然后把command传递给docker server，在hello-world这条command中，我们实际想要传达的意思是我们set up一个新的container，using the image hello-world。 hello-world image实际上包含着一个能打印如下info的小程序，是我们想要利用docker达到的运行的目的。 </p>
-<p><img src="/img/200702docker2.png" alt=""></p>
+<p><img src="https://img.gitkeniwo.tech/202511/12-7e16e2a01795f18b192711669f1026ef-1762983695.png" alt=""></p>
 <p>Docker server在接受到我们的指令之后，它首先会check 我们的image cache，that is，一个可以cache我们的docker image copy的文件库。当我们才刚刚装上docker的时候，image cache是空的，自然也就没有hello-world的copy，所以这时docker server就会向远程的docker hub发出pull请求，向我们本地的电脑上安装这个image。这里，docker hub is a repository of free docker images that you can freely download and run on your pc，就像是apt-get或者homebrew这样的包管理器一样。</p>
-<p><img src="/img/200702docker3.png" alt=""></p>
+<p><img src="https://img.gitkeniwo.tech/202511/12-3180df68640c6b8ff1d5e18e82b9c32a-1762983695.png" alt=""></p>
 <p>再之后，docker 会创建一个container，container是image的一个instance，他们之间的关系如上图所示。</p>
-<h2 id="Understanding-Container"><a href="#Understanding-Container" class="headerlink" title="Understanding Container"></a>Understanding Container</h2><p><img src="/img/200702docker4.png" alt=""></p>
+<h2 id="Understanding-Container"><a href="#Understanding-Container" class="headerlink" title="Understanding Container"></a>Understanding Container</h2><p><img src="https://img.gitkeniwo.tech/202511/12-84d474d0c260ca59caf25e2a3249ec71-1762983695.png" alt=""></p>
 <p>Docker的核心理念就是模仿我们的OS，所以，我们要先理解自己PC上的OS的结构（参见csapp, cmu 15-213）。每一个运行在我们os里的application或者process，当它们要调用cpu或者hard disk的时候，它们是没有办法直接与硬件对话的，二是要借助kernel这个中间层，kernel会帮助我们intermediate机器内部的一些访问请求，进程与kernel交互又是依靠system call来完成的，它实际上是kernel的一些endpoint，或者说可以访问特定文件的函数。</p>
 <p>当我们PC上两个进程，let’s say chrome和Nodejs，它们分别需要使用不同的python version，比方说chrome到现在还在用python<br>2.版本，而我们的nodejs已经早早地进化到了python version3，这时我们的某个奇葩的操作系统上是不允许有两个不同version的python拷贝的，因为for some crazy reason这两个不同的py版本会产生冲突。<br>解决这个问题的一个方法是利用OS的一个feature叫做<strong>name spacing</strong>， 有了name spacing，我们可以直接在HD上划分不同的分区来分别处理这些资源。</p>
 <p>这个时候，kernel在处理进程调用的时候，就会先辨识是哪个进程作出的system call，之后根据不同进程的环境需求为进程分配相应的硬件资源。</p>
-<p><img src="/img/200702docker6.png" alt=""></p>
+<p><img src="https://img.gitkeniwo.tech/202511/12-d874e986ac0f0bbf00b5c27899d99d28-1762983696.png" alt=""></p>
 <p>Name spacing将不同的进程所需的资源隔离开来(isolate)，使得它们之间互不干扰。</p>
-<p><img src="/img/200702docker7.png" alt=""></p>
+<p><img src="https://img.gitkeniwo.tech/202511/12-1b6420f18a831d97745d773e90eb32dd-1762983696.png" alt=""></p>
 <p>Name Spcacing对应的还有一个概念叫做control group，它能够为每个进程分配有限的资源，比如Memory，CPU usage和bandwidth。</p>
 <p>所以，container实际上就是一组被逻辑上划分开来的进程组合，它们可以拥有os分配好的独立硬件资源，供进程使用。</p>
-<p><img src="/img/200702docker8.png" alt=""><br><img src="/img/200702docker9.png" alt=""></p>
+<p><img src="https://img.gitkeniwo.tech/202511/12-8771b50fd066dee120960d4442c24e84-1762983696.png" alt=""><br><img src="https://img.gitkeniwo.tech/202511/12-1041fafc0fa376109f0ab91c008c3e6a-1762983696.png" alt=""></p>
 <p>When we talk about image, we’re really talking a <em>file system snapshot</em>, which is essentially kinda like a copy paste of a specific set of directoty or files. And image will also contain a specific startup command. 当我们创建容器的时候，docker会将image里面的文件快照拷贝到container的资源库中，然后执行startup命令，调用chrome或者其他进程，docker运行就开始了。</p>
-<p><img src="/img/200702docker10.png" alt=""></p>
+<p><img src="https://img.gitkeniwo.tech/202511/12-5a2744b770fe5a8ab39db7450c5732c1-1762983695.png" alt=""></p>
 <p>实际上，namespacing 和 control group是linux系统下的一个特性。我们在win或者macos上安装docker的时候，同时安装了一个linux vm，所以我们的container也是在这个linux vm之中创建的，docker内部的系统调用也都是通过vm中的linux kernal来完成的，包括文件系统分区、进程之间的isolating和constraining等。</p>
-<p><img src="/img/200702docker11.png" alt=""></p>
+<p><img src="https://img.gitkeniwo.tech/202511/12-d882164518eca19bc23a52ee3f165847-1762983695.png" alt=""></p>
 <p>Actually 我们可以打开terminal很直观的看到这个linux vm，只需要输入 <code>$docker version</code>，就可以看到 <code>OS/Arch</code> 一行中显示<code>linux/amd64</code>。</p>
-<p><img src="/img/200702docker12.png" alt=""></p>
+<p><img src="https://img.gitkeniwo.tech/202511/12-de0cfb975df868ab0950c3a19754d54a-1762983695.png" alt=""></p>
 <h1 id="Docker-Basic-Usages"><a href="#Docker-Basic-Usages" class="headerlink" title="Docker Basic Usages"></a>Docker Basic Usages</h1><h2 id="docker-run-lt-imageName-gt-command"><a href="#docker-run-lt-imageName-gt-command" class="headerlink" title="$docker run &lt;imageName&gt; command"></a><code>$docker run &lt;imageName&gt; command</code></h2><p>Just like<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ docker run busybox echo hi there</span><br><span class="line">Unable to find image &#x27;busybox:latest&#x27; locally</span><br><span class="line">latest: Pulling from library/busybox</span><br><span class="line">91f30d776fb2: Pull complete </span><br><span class="line">Digest: sha256:9ddee63a712cea977267342e8750ecbc60d3aab25f04ceacfa795e6fce341793</span><br><span class="line">Status: Downloaded newer image for busybox:latest</span><br><span class="line">hi there</span><br></pre></td></tr></table></figure><br>Also, 我们也可以使用ls命令<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ docker run busybox ls</span><br><span class="line">bin</span><br><span class="line">dev</span><br><span class="line">etc</span><br><span class="line">home</span><br><span class="line">proc</span><br><span class="line">root</span><br><span class="line">sys</span><br><span class="line">tmp</span><br><span class="line">usr</span><br><span class="line">var</span><br></pre></td></tr></table></figure><br>但是在hello-world中使用ls和echo则会报错，这是因为ls和echo是只存在于busybox中的两个exec。</p>
 <p>在这里要特别介绍一下busybox，下面贴出其官方introduction</p>
 <blockquote>
@@ -256,12 +256,12 @@
 <p>当我们执行docker logs的时候，我们不会重新运行该容器和其默认命令，而只是查看他的历史输出。</p>
 <h2 id="Stopping-containers"><a href="#Stopping-containers" class="headerlink" title="Stopping containers"></a>Stopping containers</h2><p>如果我们用docker start在后台运行container的时候，是没办法用ctr+c结束进程的，常见的有<code>ping google.com</code>这样的命令，这时候就需要其他的命令来结束容器进程，有以下两种方式。</p>
 <p><code>docker stop &lt;container id&gt;</code></p>
-<p><img src="/img/200703docker1.png" alt=""><br>从图中我们可以看到实际上<code>ping google.com</code> 是是隶属于busybox linux系统命令之下的不断loop的一个进程。<br>当我们使用docker stop的时候，实际上是向该进程发送了一个Terminate的Signal，进程收到signal之后就会shutdown，但在这之前还会留有一些短暂的准备时间，让container做做简单的清洁。</p>
-<p><code>docker kill &lt;container id&gt;</code><br><img src="/img/200703docker2.png" alt=""><br>同样的，docker kill也是发送一个kill的命令，这个kill的命令会立即shut down进程，而不做其他的考虑。<br>so usually we use stop command, and when using that, we re gonna wait a couple of seconds until the process shut itself down. Similiarly kill command will just kill the process instantly with no waiting time.</p>
-<h2 id="Execute-commands-in-running-container"><a href="#Execute-commands-in-running-container" class="headerlink" title="Execute commands in running container."></a>Execute commands in running container.</h2><p><img src="/img/200703docker3.png" alt=""></p>
+<p><img src="https://img.gitkeniwo.tech/202511/12-ba353b38844c5a754366bdbbac535292-1762983696.png" alt=""><br>从图中我们可以看到实际上<code>ping google.com</code> 是是隶属于busybox linux系统命令之下的不断loop的一个进程。<br>当我们使用docker stop的时候，实际上是向该进程发送了一个Terminate的Signal，进程收到signal之后就会shutdown，但在这之前还会留有一些短暂的准备时间，让container做做简单的清洁。</p>
+<p><code>docker kill &lt;container id&gt;</code><br><img src="https://img.gitkeniwo.tech/202511/12-4b4dda352709fc542b655d88d34c256d-1762983697.png" alt=""><br>同样的，docker kill也是发送一个kill的命令，这个kill的命令会立即shut down进程，而不做其他的考虑。<br>so usually we use stop command, and when using that, we re gonna wait a couple of seconds until the process shut itself down. Similiarly kill command will just kill the process instantly with no waiting time.</p>
+<h2 id="Execute-commands-in-running-container"><a href="#Execute-commands-in-running-container" class="headerlink" title="Execute commands in running container."></a>Execute commands in running container.</h2><p><img src="https://img.gitkeniwo.tech/202511/12-a484f313e378775490012cd6af35129a-1762983697.png" alt=""></p>
 <p>有时候我们需要同时在一个container里面运行多个进程，比如说redis-server和redis-cli，这里就要用到执行命令。</p>
 <p><code>docker exec -it &lt;container id&gt; &lt;command&gt;</code></p>
-<p><img src="/img/200703docker4.png" alt=""></p>
+<p><img src="https://img.gitkeniwo.tech/202511/12-1a367e7de95adff0631802477f78ec16-1762983697.png" alt=""></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$docker run redis</span><br><span class="line">..(redis info)...</span><br><span class="line">$docker ps</span><br><span class="line">...(to find the container id)...</span><br><span class="line">$docker exec -it &lt;container id&gt; redis-cli</span><br><span class="line">...then redis-cli REPL comes out...</span><br><span class="line">...you can set key-value and also get value from key...</span><br></pre></td></tr></table></figure>
 <h2 id="the-usage-of-the-it-Flag"><a href="#the-usage-of-the-it-Flag" class="headerlink" title="the usage of the -it Flag"></a>the usage of the <code>-it</code> Flag</h2><p>在上面例子中，如果我们leave out <code>-it</code> 的话，我们会被立刻kick out back to terminal，而不会显示redis-cli的交互界面。</p>
 

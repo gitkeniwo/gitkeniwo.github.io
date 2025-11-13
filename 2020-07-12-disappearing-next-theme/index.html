@@ -26,15 +26,15 @@
 <meta property="og:site_name" content="사미즈다트">
 <meta property="og:description" content="写在前面昨晚经历了一次重大失误，直接导致了本博客的主题文件需要重新配置。 因为我使用的hexo Next主题是从它的github主页上直接git clone下来的，昨天为了抹盘重装系统，把整个hexo文件夹push到github作备份，后来装好之后把博客源码重新pull回来，重新写点东西并发布的时候，发现我整个github.io页面都白了，打开themes文件夹一看，发现我pull下来的文件里面并">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://gitkeniwo.github.io/img/image-20200711130319603.png">
+<meta property="og:image" content="https://img.gitkeniwo.tech/202511/12-3e3da3df0cb1a239c490f77831698519-1762983698.png">
 <meta property="article:published_time" content="2020-07-12T13:04:33.000Z">
-<meta property="article:modified_time" content="2025-11-03T02:33:27.122Z">
+<meta property="article:modified_time" content="2025-11-12T21:42:29.377Z">
 <meta property="article:author" content="ケニヲ">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="git">
 <meta property="article:tag" content="github">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitkeniwo.github.io/img/image-20200711130319603.png">
+<meta name="twitter:image" content="https://img.gitkeniwo.tech/202511/12-3e3da3df0cb1a239c490f77831698519-1762983698.png">
     
     
       
@@ -200,7 +200,7 @@
     <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>昨晚经历了一次<del>重大失误</del>，直接导致了本博客的主题文件需要重新配置。</p>
 <p>因为我使用的hexo Next主题是从它的github主页上直接git clone下来的，昨天为了抹盘重装系统，把整个hexo文件夹push到github作备份，后来装好之后把博客源码重新pull回来，重新写点东西并发布的时候，发现我整个github.io页面都白了，打开themes文件夹一看，发现我pull下来的文件里面并没有我之前已经配制好的next主题。</p>
 <p>我的猜想之一是，这个Next主题是由另外一个git管理的，独立于我整个hexo文件的模块，由于github对于别人的代码有一定的知识产权保护（？）和某种原因，可能某个子仓库在我把它上传为自己的repo的时候该子仓库并不会加入我们项目源码，而是仅仅作为一个引用。猜想二：如果不是github作祟的话，那就是git子仓库的问题。</p>
-<p><img src="/img/image-20200711130319603.png" alt="image-20200711130319603"></p>
+<p><img src="https://img.gitkeniwo.tech/202511/12-3e3da3df0cb1a239c490f77831698519-1762983698.png" alt="image-20200711130319603"></p>
 <p>我们观察此处有两个信息，一是Next主题的文件的comment还是”backup to github”，这是我昨天在push origin master的时候写的，意味着这个Next文件夹还是和其他文件在昨天backup的时候一起被git commit了的。二是next文件夹前方<strong>folder图标的右箭头</strong>，这个箭头是导致next文件夹有别于上面的landscape目录、无法被点开的原因。</p>
 <p>综合了以上point，我们开始做research。</p>
 <p><strong>fork和clone的区别</strong></p>
