@@ -1,89 +1,81 @@
 /**
  * Memos Addon Styles
- * Retro Terminal Theme
+ * IRC Chatroom Theme
  */
-
-/* Theme color variables for Memos */
-/* Light theme memos colors (default) */
-:root {
-  --color-memos-text: var(--color-accent-1);
-  --color-memos-bg: var(--color-background-code);
-  --color-memos-border: var(--color-accent-3);
-  --color-memos-shadow: var(--color-accent-4);
-  --color-memos-hover-bg: color-mix(in srgb, var(--color-background-code) 90%, white 10%);
-  --color-memos-id: var(--color-meta);
-  --color-memos-tag: var(--color-accent-2);
-  --color-memos-time: var(--color-meta);
-  --color-memos-corner: var(--color-background);
-}
-
-/* Explicit light theme */
-[data-theme="light"] {
-  --color-memos-text: var(--color-accent-1);
-  --color-memos-bg: var(--color-background-code);
-  --color-memos-border: var(--color-accent-3);
-  --color-memos-shadow: var(--color-accent-4);
-  --color-memos-hover-bg: color-mix(in srgb, var(--color-background-code) 90%, white 10%);
-  --color-memos-id: var(--color-meta);
-  --color-memos-tag: var(--color-accent-2);
-  --color-memos-time: var(--color-meta);
-  --color-memos-corner: var(--color-background);
-}
-
-/* Dark theme memos colors */
-[data-theme="dark"] {
-  --color-memos-text: var(--color-accent-1);
-  --color-memos-bg: var(--color-background-code);
-  --color-memos-border: var(--color-accent-3);
-  --color-memos-shadow: var(--color-accent-4);
-  --color-memos-hover-bg: color-mix(in srgb, var(--color-background-code) 90%, white 10%);
-  --color-memos-id: var(--color-meta);
-  --color-memos-tag: var(--color-accent-2);
-  --color-memos-time: var(--color-meta);
-  --color-memos-corner: var(--color-background);
-}
-
-/* Auto mode - follow system preference */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --color-memos-text: var(--color-accent-1);
-    --color-memos-bg: var(--color-background-code);
-    --color-memos-border: var(--color-accent-3);
-    --color-memos-shadow: var(--color-accent-4);
-    --color-memos-hover-bg: color-mix(in srgb, var(--color-background-code) 90%, white 10%);
-    --color-memos-id: var(--color-meta);
-    --color-memos-tag: var(--color-accent-2);
-    --color-memos-time: var(--color-meta);
-    --color-memos-corner: var(--color-background);
-  }
-}
 
 /* Memos container */
 #main {
-  padding-top: 40px;
+  padding-top: 0;
 }
 
+/* Wrapper to contain banner and messages - uses shared terminal-container class */
+.memos-wrapper {
+  /* Terminal container styles are inherited from terminal-container.css */
+}
+
+/* IRC Server Header */
+.irc-header {
+  font-family: var(--font-family-mono);
+  font-size: 0.85rem;
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-accent-5);
+  user-select: none;
+}
+
+.irc-ascii-art {
+  color: var(--color-accent-1);
+  font-size: 0.65rem;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+  white-space: pre;
+  font-weight: bold;
+}
+
+.irc-status {
+  color: var(--color-accent-5);
+  opacity: 0.8;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.irc-user-name {
+  color: var(--color-accent-1);
+  font-weight: bold;
+}
+
+.irc-divider {
+  color: var(--color-accent-5);
+  opacity: 0.6;
+  margin-top: 0.5rem;
+}
+
+/* Total count display */
 .total {
   text-align: left;
   font-family: var(--font-family-mono);
-  color: var(--color-memos-text);
+  color: var(--color-accent-2);
   font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  opacity: 0.7;
 }
 
 .total:before {
-  content: ">> ";
-  color: var(--color-memos-tag);
+  content: "- ";
+  color: var(--color-accent-5);
 }
 
+/* IRC Messages Container */
 .memos {
-  min-height: 300px;
-  text-align: left;
-  width: 100%;
-  line-height: 1.6;
-  margin: 0rem 0;
+  padding: 0;
+  font-family: var(--font-family-mono);
+  line-height: 1.5;
+  font-size: 0.85rem;
+  list-style: none;
+  margin: 0;
 }
 
 .memos a {
@@ -99,264 +91,252 @@
 .memos ul {
   margin-left: 0 !important;
   padding-left: 0 !important;
-}
-
-/* Memos content */
-.memos__content {
-  flex-grow: 1;
-  margin-left: 0;
-  position: relative;
-  max-width: 100%;
-  width: 100%;
-}
-
-/* Memos text - retro terminal style */
-.memos__text {
-  position: relative;
-  background: var(--color-memos-bg);
-  padding: 1rem;
-  border: 2px solid var(--color-memos-border);
-  font-size: 0.95rem;
-  color: var(--color-text);
-  width: 100%;
-  overflow-wrap: break-word;
-  line-height: 1.75rem;
-  box-shadow: 3px 3px 0 var(--color-memos-shadow);
-  transition: all 0.1s ease;
-  font-family: var(--font-family-body);
-}
-
-/* Pixelated corners for retro effect */
-.memos__text:before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  width: 4px;
-  height: 4px;
-  background: var(--color-memos-corner);
-}
-
-.memos__text:after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  right: -2px;
-  width: 4px;
-  height: 4px;
-  background: var(--color-memos-corner);
-}
-
-.memos__text ul li {
   list-style: none;
 }
 
-.memos__text i {
-  margin: 0 0.25rem;
-}
-
-.memos__text pre {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  max-width: 100%;
-  white-space: pre-wrap;
-  background-color: var(--color-background);
-  border: 1px dashed var(--color-memos-border);
-  padding: 0.75rem;
-  font-family: var(--font-family-mono);
-}
-
-.memos__text code {
-  display: inline-block;
-  background-color: var(--color-background);
-  border: 1px solid var(--color-memos-border);
-  padding-left: 0.4rem;
-  padding-right: 0.4rem;
-  font-family: var(--font-family-mono);
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-  color: var(--color-memos-tag);
-}
-
-.memos__text pre code {
-  display: block;
-  border: none;
-  padding: 0;
-}
-
-/* Timeline - tree structure style */
-.timeline {
+/* IRC Message Line */
+.irc-memo-line {
   display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
+  align-items: flex-start;
+  margin-bottom: 0.1rem;
+  padding: 0.3rem 0.5rem;
+  list-style-type: none;
+  gap: 0.3rem;
+  transition: all 0.15s ease;
+  border-radius: 2px;
+}
+
+.irc-memo-line:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+/* IRC Time - Bold and Highlighted */
+.irc-time {
+  flex-shrink: 0;
+  color: var(--color-accent-1);
+  font-weight: bold;
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
+/* IRC Nickname */
+.irc-nick {
+  flex-shrink: 0;
+  color: var(--color-accent-3);
+  font-weight: bold;
+  font-size: 0.95em;
+  white-space: nowrap;
+}
+
+/* IRC Separators */
+.irc-separator-1 {
+  flex-shrink: 0;
+  color: var(--color-meta);
+  opacity: 0.6;
+  font-weight: normal;
+  user-select: none;
+}
+
+.irc-separator-2 {
+  flex-shrink: 0;
+  color: var(--color-body);
+  opacity: 1;
+  font-weight: normal;
+  user-select: none;
+}
+
+/* IRC Date */
+.irc-date {
+  flex-shrink: 0;
+  color: var(--color-meta);
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
+/* IRC Message Content */
+.irc-message {
+  flex: 1;
+  min-width: 0;
+  color: var(--color-text);
+  font-family: var(--font-family-body);
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+
+.irc-message p {
+  margin: 0.5em 0;
+}
+
+.irc-message p:first-child {
+  margin-top: 0;
+}
+
+.irc-message p:last-child {
   margin-bottom: 0;
-  padding-left: 3rem;
-  position: relative;
 }
 
-/* Vertical line connecting all memos */
-.timeline:before {
-  content: "";
-  position: absolute;
-  left: 1rem;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: repeating-linear-gradient(
-    to bottom,
-    var(--color-memos-border) 0,
-    var(--color-memos-border) 0.6rem,
-    transparent 0.6rem,
-    transparent 1.2rem
-  );
+/* IRC Message Meta (permalink) */
+.irc-meta {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--color-meta);
+  opacity: 0.7;
 }
 
-/* Ensure first rendered memo still connects upward after dynamic load */
-.timeline:first-child:before {
-  top: -1rem;
-  height: calc(100% + 1.5rem);
+.irc-meta a {
+  color: var(--color-meta);
+  text-decoration: none;
 }
 
-/* Horizontal branch line for each memo */
-.timeline:after {
-  content: "";
-  position: absolute;
-  left: 1rem;
-  top: 1.5rem;
-  width: 1.5rem;
-  height: 2px;
-  background: repeating-linear-gradient(
-    to right,
-    var(--color-memos-border) 0,
-    var(--color-memos-border) 0.5rem,
-    transparent 0.5rem,
-    transparent 1rem
-  );
+.irc-meta a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
 }
 
-
-.timeline:hover .memos__text {
-  background: var(--color-memos-hover-bg);
-  transform: translate(1px, 1px);
-  box-shadow: 2px 2px 0 var(--color-memos-shadow);
+.irc-meta:before {
+  content: "[";
+  color: var(--color-accent-5);
+  margin-right: 0.2em;
 }
 
-.timeline:active .memos__text {
-  transform: translate(3px, 3px);
-  box-shadow: 0 0 0 var(--color-memos-shadow);
+.irc-meta:after {
+  content: "]";
+  color: var(--color-accent-5);
+  margin-left: 0.2em;
 }
 
-.timeline img {
-  display: block;
-  max-height: 50vh;
-  max-width: 100%;
-  margin: 10px 0;
-  border: 3px solid var(--color-memos-border);
-  box-shadow: 4px 4px 0 var(--color-memos-shadow);
-  position: relative;
+/* Code blocks in messages */
+.irc-message pre {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background-color: var(--color-background-code);
+  border: 1px solid var(--color-border);
+  border-radius: 2px;
+  overflow-x: auto;
+  font-family: var(--font-family-mono);
+  font-size: 0.85em;
 }
 
-/* Pixelated image corners */
-.memos__text img:before {
-  content: "";
-  position: absolute;
-  top: -3px;
-  left: -3px;
-  width: 6px;
-  height: 6px;
-  background: var(--color-memos-corner);
-  z-index: 1;
+.irc-message code {
+  background-color: var(--color-background-code);
+  border: 1px solid var(--color-border);
+  padding: 0.1em 0.3em;
+  font-family: var(--font-family-mono);
+  font-size: 0.875em;
+  border-radius: 2px;
 }
 
-/* Memos meta info - terminal style */
-.memos__meta {
-  margin: 0.35rem 0 0;
-  padding: 0.25rem 0 0.6rem;
+.irc-message pre code {
   background: transparent;
   border: none;
-  font-family: var(--font-family-mono);
-  font-size: 0.78rem;
+  padding: 0;
+  font-size: 1em;
+}
+
+/* Inline elements */
+.irc-message i {
+  margin: 0 0.1rem;
+}
+
+.irc-message ul,
+.irc-message ol {
+  margin: 0.5em 0;
+  padding-left: 2.5em;
+  list-style-position: outside;
+}
+
+.irc-message ul li {
+  list-style: disc;
+  margin-left: 0;
+  padding-left: 0.5em;
+}
+
+.irc-message ol li {
+  list-style: decimal;
+  margin-left: 0;
+  padding-left: 0.5em;
+}
+
+.irc-message ul ul,
+.irc-message ol ol,
+.irc-message ul ol,
+.irc-message ol ul {
+  margin: 0.25em 0;
+  padding-left: 2em;
+}
+
+/* Images in messages */
+.resource-wrapper {
+  margin: 0.75rem 0;
+}
+
+.images-wrapper {
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  color: var(--color-memos-time);
-  letter-spacing: 0.05em;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
 }
 
-.memos__meta small {
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--color-memos-time);
-  text-transform: uppercase;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-}
-
-.memos__meta small:before {
-  content: "[";
-  color: var(--color-memos-tag);
-  letter-spacing: 0;
-}
-
-.memos__meta small:after {
-  content: "]";
-  color: var(--color-memos-tag);
-  letter-spacing: 0;
-}
-
-.memos__userinfo {
-  display: flex;
-  font-weight: 700;
-  align-items: center;
-  color: var(--color-memos-tag);
-  font-family: var(--font-family-mono);
-}
-
-.memos__userinfo:before {
-  content: "$ ";
-  color: var(--color-memos-border);
-  margin-right: 4px;
-}
-
-.memos__verify {
-  margin-left: 4px;
-  max-width: 16px;
-  max-height: 16px;
-  color: var(--color-memos-tag);
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-  vertical-align: text-bottom;
+.resimg {
+  flex: 1 1 calc(33.33% - 0.5rem);
+  overflow: hidden;
   position: relative;
-  height: 1rem;
-  fill: currentcolor;
-  display: inline-block;
-  flex-shrink: 1;
+  min-height: 150px;
+  max-height: 300px;
+  border: 2px solid var(--color-border);
+  box-shadow: 2px 2px 0 var(--color-accent-5);
+  background: var(--color-background);
+  border-radius: 2px;
 }
 
-.memos__id {
-  font-size: 0.75rem;
-  overflow-wrap: break-word;
-  min-width: 0px;
-  box-sizing: border-box;
-  color: var(--color-memos-id);
-  display: inline;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  flex-shrink: 1;
-  font-weight: 400;
-  margin-left: 4px;
+.resimg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Single image takes full width */
+.images-wrapper .resimg:only-child {
+  flex: 1 1 100%;
+  max-height: 500px;
+}
+
+/* Two images split evenly */
+.images-wrapper .resimg:first-child:nth-last-child(2),
+.images-wrapper .resimg:first-child:nth-last-child(2) ~ .resimg {
+  flex: 1 1 calc(50% - 0.5rem);
+}
+
+.irc-message img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* File attachments */
+.datasource {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border: 1px dashed var(--color-border);
   font-family: var(--font-family-mono);
+  font-size: 0.85rem;
+  background: var(--color-background-code);
+  border-radius: 2px;
 }
 
-/* .memos__id:before {
-  content: "@";
-  color: var(--color-memos-tag);
-} */
+.datasource a {
+  color: var(--color-accent-3);
+  text-decoration: none;
+  margin-right: 1rem;
+}
 
-/* Tags - retro bracket style */
+.datasource a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+}
+
+/* Tags - IRC style */
 .tag-span {
   display: inline-block;
   margin: 0.2em 0.4em 0.2em 0;
@@ -364,7 +344,7 @@
   font-family: var(--font-family-mono);
   font-size: 0.75rem;
   font-weight: 600;
-  color: var(--color-memos-tag);
+  color: var(--color-accent-3);
   background: transparent;
   text-decoration: none;
   position: relative;
@@ -372,19 +352,18 @@
 }
 
 .tag-span:before {
-  content: "[#";
+  content: "[";
   margin-right: 0;
-  color: var(--color-memos-border);
+  color: var(--color-accent-5);
 }
 
 .tag-span:after {
   content: "]";
-  color: var(--color-memos-border);
+  color: var(--color-accent-5);
 }
 
 .tag-span:hover {
   color: var(--color-link-hover);
-  text-shadow: 0 0 8px currentColor;
 }
 
 .tag-span:hover:before,
@@ -392,89 +371,112 @@
   color: var(--color-link-hover);
 }
 
-/* Load more button - terminal style */
-.load-btn {
-  color: var(--color-memos-text);
-  background-color: var(--color-memos-bg);
-  margin-left: 0;
+/* Load more button - Terminal CLI style */
+.load-btn,
+.button-load {
+  color: var(--color-accent-1);
+  background-color: transparent;
+  margin: 1.5rem 0 0 0;
   padding: 0.75rem 1.5rem;
-  border: 2px solid var(--color-memos-border);
-  box-shadow: 3px 3px 0 var(--color-memos-shadow);
+  border: 1px solid var(--color-accent-2);
   font-family: var(--font-family-mono);
   font-weight: bold;
   font-size: 0.9rem;
   cursor: pointer;
-  transition: all 0.1s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  transition: all 0.15s ease;
+  letter-spacing: 0.5px;
   position: relative;
+  display: block;
+  width: 100%;
+  text-align: left;
+  box-shadow: none;
 }
 
-.load-btn:before {
-  content: ">> ";
-  color: var(--color-memos-tag);
+.load-btn:before,
+.button-load:before {
+  content: "$ ";
+  color: var(--color-accent-3);
+  margin-right: 0.5rem;
+  font-weight: bold;
 }
 
-.load-btn:after {
-  content: "";
-  position: absolute;
-  bottom: -2px;
-  right: -2px;
-  width: 4px;
-  height: 4px;
-  background: var(--color-memos-corner);
+.load-btn:after,
+.button-load:after {
+  content: " _";
+  animation: blink 1s infinite;
+  color: var(--color-accent-1);
+  font-weight: normal;
 }
 
-.load-btn:hover {
-  transform: translate(1px, 1px);
-  box-shadow: 2px 2px 0 var(--color-memos-shadow);
-  background-color: var(--color-memos-hover-bg);
+@keyframes blink {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
 }
 
-.load-btn:active {
-  transform: translate(3px, 3px);
-  box-shadow: 0 0 0 var(--color-memos-shadow);
+.load-btn:hover,
+.button-load:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  border-color: var(--color-accent-1);
+  color: var(--color-accent-1);
+}
+
+.load-btn:active,
+.button-load:active {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 /* Post preview (for Douban/link cards) */
 .post-preview {
-  max-width: 780px;
-  height: 210px;
-  margin: 1em auto;
+  max-width: 100%;
+  margin: 0.75rem 0;
   position: relative;
   display: flex;
-  background: var(--color-post-preview);
+  background: var(--color-background-code);
+  border: 1px solid var(--color-border);
   border-radius: 4px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, .25), 0 0 1px rgba(0, 0, 0, .25);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .post-preview--meta {
   width: 75%;
-  padding: 25px;
+  padding: 1rem;
   overflow: hidden;
 }
 
 .post-preview--middle {
-  line-height: 28px;
+  line-height: 1.6;
 }
 
 .post-preview--title {
-  font-size: 18px;
-  margin: 0 !important;
+  font-size: 1rem;
+  margin: 0 0 0.5rem 0 !important;
+  font-weight: bold;
 }
 
 .post-preview--title a {
   text-decoration: none;
+  color: var(--color-text);
+}
+
+.post-preview--title a:hover {
+  color: var(--color-link-hover);
 }
 
 .post-preview--date {
-  font-size: 14px;
-  color: #999;
+  font-size: 0.8rem;
+  color: var(--color-meta);
+  margin-bottom: 0.5rem;
 }
 
 .post-preview--excerpt {
-  font-size: 14px;
-  line-height: 1.825;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--color-body);
 }
 
 .post-preview--excerpt p {
@@ -489,20 +491,17 @@
 
 .post-preview--image {
   margin: 0 !important;
-  height: 210px !important;
-  width: auto;
-  float: right;
+  height: 100% !important;
+  width: 25%;
+  object-fit: cover;
   border-radius: 0 !important;
-  border-top-right-radius: 2px !important;
-  border-bottom-right-radius: 2px !important;
-  border-top-left-radius: 0 !important;
-  border-bottom-left-radius: 0 !important;
 }
 
 /* Rating stars (for Douban) */
 .rating {
   display: block;
   line-height: 15px;
+  margin: 0.5rem 0;
 }
 
 .rating-star {
@@ -527,9 +526,9 @@
 .allstar0 { background-position: 0px -150px; }
 
 .rating-average {
-  color: #777;
+  color: var(--color-meta);
   display: inline-block;
-  font-size: 13px;
+  font-size: 0.8rem;
   margin-left: 10px;
 }
 
@@ -546,6 +545,8 @@
   padding-bottom: 56.25%;
   position: relative;
   width: 100%;
+  margin: 0.75rem 0;
+  border: 1px solid var(--color-border);
 }
 
 .video-wrapper iframe {
@@ -557,47 +558,93 @@
   width: 100%;
 }
 
+/* Utility classes */
 .hidden {
   display: none !important;
 }
 
-.button-load {
-  font-size: 0.8em;
-}
-
 /* Mobile responsive */
-@media (max-width: 683px) {
-  .timeline {
-    padding-left: 1.5rem;
+@media (max-width: 768px) {
+  .irc-ascii-art {
+    font-size: 0.5rem;
   }
 
-  .timeline:after {
-    width: 1rem;
+  .irc-header {
+    font-size: 0.75rem;
   }
 
-  .memos__text {
-    font-size: 0.9rem;
-    padding: 0.75rem;
+  .irc-status {
+    font-size: 0.75rem;
   }
 
-  .memos__meta {
-    font-size: 0.7rem;
+  .memos {
+    font-size: 0.8rem;
+    line-height: 1.5;
   }
 
-  .load-btn {
-    padding: 0.6rem 1rem;
-    font-size: 0.85rem;
+  .irc-memo-line {
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.4rem 0.3rem;
+    align-items: flex-start;
+  }
+
+  .irc-time,
+  .irc-date,
+  .irc-nick,
+  .irc-separator-1,
+  .irc-separator-2 {
+    font-size: 0.8em;
+  }
+
+  .irc-message {
+    font-size: 0.85em;
+    width: 100%;
+    margin-top: 0.25rem;
+  }
+
+  .load-btn,
+  .button-load {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
   }
 
   .post-preview {
-    width: 95%;
+    flex-direction: column;
+  }
+
+  .post-preview--meta {
+    width: 100%;
+    padding: 0.75rem;
+  }
+
+  .post-preview--image {
+    width: 100%;
+    height: 150px !important;
   }
 
   .post-preview--excerpt {
     display: none;
   }
 
-  .post-preview--middle {
-    line-height: 19px;
+  .resimg {
+    flex: 1 1 calc(50% - 0.5rem);
+    min-height: 120px;
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .irc-ascii-art {
+    font-size: 0.45rem;
+  }
+
+  .irc-memo-line {
+    gap: 0.2rem;
+    padding: 0.3rem 0.2rem;
+  }
+
+  .resimg {
+    flex: 1 1 100%;
   }
 }

@@ -12,6 +12,7 @@
 @import './base/extends.css';
 @import './base/reset.css';
 @import './base/typography.css';
+@import './base/terminal-container.css';
 
 /* Components */
 @import './components/header.css';

@@ -7,37 +7,7 @@
 }
 
 .category-tree {
-  font-family: var(--font-family-mono);
-  font-size: 0.95rem;
-  line-height: 1.5;
-  padding: 1.5rem;
-  border: 1px solid var(--color-border);
-  border-radius: 4px;
-  background: rgba(0, 0, 0, 0.02);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-/* Tree command prompt header */
-.tree-header {
-  margin-bottom: 0.8rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid var(--color-border);
-  color: var(--color-meta);
-}
-
-.tree-prompt {
-  font-weight: normal;
-}
-
-.tree-prompt::before {
-  content: "";
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  background: var(--color-accent-1);
-  border-radius: 50%;
-  margin-right: 0.5rem;
-  vertical-align: middle;
+  /* Terminal container styles are inherited from terminal-container.css */
 }
 
 /* Tree output */
@@ -78,7 +48,11 @@
   color: var(--color-accent-1);
   text-decoration: none;
   transition: all 0.15s ease;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  max-width: 100%;
 }
 
 .tree-link:hover {
@@ -118,16 +92,17 @@
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
-  .category-tree {
-    font-size: 0.85rem;
-    padding: 1rem;
-  }
-
   .tree-item {
     flex-wrap: wrap;
+    align-items: flex-start;
   }
 
   .tree-link {
-    max-width: calc(100% - 4rem);
+    flex: 1;
+    min-width: 0;
+  }
+
+  .tree-count {
+    flex-shrink: 0;
   }
 }

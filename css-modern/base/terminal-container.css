@@ -1,0 +1,53 @@
+/**
+ * Shared Terminal Container Styles
+ * Used by: Archive, Categories, Memos
+ */
+
+/* Base terminal container */
+.terminal-container {
+  font-family: var(--font-family-mono);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.02);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Terminal prompt header */
+.terminal-prompt-header {
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-meta);
+}
+
+.terminal-prompt {
+  font-weight: normal;
+  font-family: var(--font-family-mono);
+  font-size: 0.95rem;
+}
+
+.terminal-prompt::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--color-accent-1);
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .terminal-container {
+    font-size: 0.85rem;
+    padding: 1rem;
+  }
+
+  .terminal-prompt {
+    font-size: 0.85rem;
+  }
+}
