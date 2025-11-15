@@ -7,6 +7,40 @@
   /* Terminal container styles are inherited from terminal-container.css */
 }
 
+/* Archive IRC Banner */
+.archive-banner {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-accent-5);
+  user-select: none;
+}
+
+.archive-ascii-art {
+  font-family: var(--font-family-mono);
+  color: var(--color-accent-1);
+  font-size: 0.65rem;
+  line-height: 1.1;
+  margin: 0 0 0.5rem 0;
+  white-space: pre;
+  font-weight: bold;
+}
+
+.archive-status {
+  font-family: var(--font-family-mono);
+  color: var(--color-accent-5);
+  opacity: 0.8;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.archive-divider {
+  font-family: var(--font-family-mono);
+  color: var(--color-accent-5);
+  opacity: 0.6;
+  margin-top: 0.5rem;
+}
+
 .archive-pre {
   font-family: var(--font-family-mono);
   font-size: 0.95rem;
@@ -116,6 +150,14 @@
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
+  .archive-ascii-art {
+    font-size: 0.5rem;
+  }
+
+  .archive-status {
+    font-size: 0.75rem;
+  }
+
   .irc-line {
     flex-wrap: wrap;
     gap: 0.3rem;
@@ -135,6 +177,10 @@
 }
 
 @media (max-width: 480px) {
+  .archive-ascii-art {
+    font-size: 0.45rem;
+  }
+
   .irc-line {
     gap: 0.25rem;
   }
