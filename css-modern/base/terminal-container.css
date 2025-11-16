@@ -1,5 +1,6 @@
 /**
- * Shared Terminal Container Styles
+ * 终端风格容器样式。不包含可复用的自定义终端组件（见 components/terminal-content-block.css）
+ * Shared Terminal Container Styles 
  * Used by: Archive, Categories, Memos
  */
 
@@ -7,8 +8,11 @@
 .terminal-container {
   font-family: var(--font-family-mono);
   font-size: 0.95rem;
-  line-height: 1.5;
-  padding: 1.5rem;
+
+  line-height: 1.2;
+
+  padding: 0.8rem 1rem;
+
   border: 1px solid var(--color-border);
   border-radius: 4px;
   background: rgba(0, 0, 0, 0.02);
@@ -17,8 +21,9 @@
 
 /* Terminal prompt header */
 .terminal-prompt-header {
+
   margin-bottom: 0.8rem;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.8rem;
   border-bottom: 1px solid var(--color-border);
   color: var(--color-meta);
 }

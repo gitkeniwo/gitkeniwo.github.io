@@ -33,7 +33,8 @@ body {
 
   h3 {
     color: var(--color-accent-1);
-    text-decoration: underline;
+    /* text-decoration: underline;
+    text-underline-offset: 0.1rem; */
     font-weight: bold;
     font-size: .9rem;
   }

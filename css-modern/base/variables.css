@@ -7,9 +7,9 @@
 
 :root {
   /* Typography */
-  --font-family-body: "Space Grotesk", 'Noto Sans TC', 'Noto Sans SC', monospace;
+  --font-family-body: "Google Sans Code", "Space Grotesk", 'Noto Sans TC', 'Noto Sans SC', monospace;
   --font-family-mono:  "Syne Mono", "Menlo", monospace;
-  --font-family-heading: "Space Grotesk", 'Noto Sans TC', 'Noto Sans SC', monospace;
+  --font-family-heading: "Google Sans Code", "Space Grotesk", 'Noto Sans TC', 'Noto Sans SC', monospace;
   --font-family-nav: "Syne Mono", monospace;
   --font-size-base: 1em;
   --line-height-base: 1.725;
@@ -40,8 +40,8 @@
   --color-del: rgb(136, 148, 141);
   --color-em: #d0638c;
   --color-strong: #d1889f;
-  --color-header-prefix: #c73866;
-  --color-markdown-marker: rgba(215, 49, 107, 0.779);
+  --color-header-prefix: rgb(183, 90, 120);
+  --color-markdown-marker: rgb(183, 90, 120);
   --color-code: #b73a5c;
 
   --color-tag-count1: #b29d9d;
@@ -99,7 +99,7 @@
     --color-em: #b3d1c2;
     --color-strong: #72b68b;
     --color-header-prefix: #1ea978;
-    --color-markdown-marker: rgba(34, 191, 136, 0.626);
+    --color-markdown-marker: #1ea978;
     --color-code: #4ec19c;
 
 /* Dark mode tag count color bins — green scale */

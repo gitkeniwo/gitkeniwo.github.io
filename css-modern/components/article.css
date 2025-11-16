@@ -39,9 +39,19 @@ article {
       font-family: var(--font-family-heading);
     }
 
-    h1:before {
-      position: absolute;
-      left: -1.5rem;
+    h1::before {
+      position: relative;
+      content: "# ";
+      color: var(--color-header-prefix);
+      font-weight: 600;
+      font-size: 1em;
+      opacity: 0.8;
+    }
+
+    h1::after {
+      position: relative;
+      left: 0.25rem;
+      top: -0.5rem;
       color: var(--color-header-prefix);
       content: "H1";
       font-weight: 600;
@@ -51,8 +61,18 @@ article {
     }
 
     h2:before {
-      position: absolute;
-      left: -1.5rem;
+      position: relative;
+      content: "## ";
+      color: var(--color-header-prefix);
+      font-weight: 600;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    h2::after {
+      position: relative;
+      left: 0.25rem;
+      top: -0.4rem;
       color: var(--color-header-prefix);
       content: "H2";
       font-weight: 600;
@@ -62,12 +82,43 @@ article {
     }
 
     h3:before {
-      position: absolute;
-      left: -1.5rem;
+      position: relative;
+      content: "### ";
+      color: var(--color-header-prefix);
+      font-weight: 600;
+      font-size: 0.75rem;
+      opacity: 0.8;
+    }
+
+    h3::after {
+      position: relative;
+      left: 0.25rem;
+      top: -0.3rem;
       color: var(--color-header-prefix);
       content: "H3";
       font-weight: 600;
       font-size: 0.65rem;
+      opacity: 0.7;
+      font-family: var(--font-family-heading);
+    }
+
+    h4::before {
+      position: relative;
+      content: "#### ";
+      color: var(--color-header-prefix);
+      font-weight: 600;
+      font-size: 0.7rem;
+      opacity: 0.8;
+    }
+
+    h4::after {
+      position: relative;
+      left: 0.25rem;
+      top: -0.3rem;
+      color: var(--color-header-prefix);
+      content: "H4";
+      font-weight: 600;
+      font-size: 0.6rem;
       opacity: 0.7;
       font-family: var(--font-family-heading);
     }

@@ -73,21 +73,23 @@
 }
 
 .year-label::before {
-  content: "- posts from [";
+  content: "-!- posts from [";
   color: var(--color-accent-2);
   font-weight: bold;
 }
 
 .year-label::after {
-  content: "] @ <gitkeniwo.github.io> -!-";
+  content: "] @ <gitkeniwo>";
   color: var(--color-accent-2);
 }
+
+
 
 /* IRC Line for Each Post */
 .irc-line {
   display: flex;
   align-items: baseline;
-  margin-bottom: 0.1rem;
+  /* margin-bottom: 0.1rem; */
   padding: 0.2rem 0;
   list-style-type: none;
   gap: 0.2rem;

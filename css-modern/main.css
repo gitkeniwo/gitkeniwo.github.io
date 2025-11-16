@@ -23,6 +23,7 @@
 @import './components/search.css';
 @import './components/tags.css';
 @import './components/categories.css';
+@import './components/terminal-content-block.css';
 @import './components/comments.css';
 @import './components/post-actions-desktop.css';
 @import './components/post-actions-mobile.css';

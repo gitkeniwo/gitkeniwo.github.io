@@ -1,0 +1,172 @@
+/**
+ * 可复用的终端风格组件
+ * 外框，prompt等见 见 base/terminal-container.css
+ * Terminal Content Block Component
+ * Reusable terminal-style blocks for **custom** content sections
+ * Mainly used in index.ejs 
+ * Matches memos/murmurs styling exactly
+ */
+
+/* Terminal content block - keeps terminal-container's padding */
+.terminal-content-block {
+  margin-bottom: 1.5rem;
+}
+
+.terminal-content-block + .terminal-content-block {
+  margin-top: var(--line-height-base);
+}
+
+/* Section Banner - matches .irc-header from memos.css */
+.section-banner {
+  font-family: var(--font-family-mono);
+  font-size: 0.85rem;
+  line-height: 1.3;
+  /* margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem; */
+
+  /* 黑线 */
+  /* border-bottom: 1px solid var(--color-border); */
+
+  color: var(--color-accent-5);
+  user-select: none;
+}
+
+/* Section ASCII Art - matches .irc-ascii-art from memos.css */
+.section-ascii-art {
+  color: var(--color-accent-1);
+  font-size: 0.65rem;
+  line-height: 1.1;
+  /* margin-bottom: 0.5rem; */
+  white-space: pre;
+  font-weight: bold;
+}
+
+/* Section Banner Label - matches .irc-status from memos.css */
+.section-banner-label {
+  color: var(--color-accent-5);
+  opacity: 0.8;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+/* Post list wrapper */
+.post-list-wrapper {
+  padding: 0;
+  margin: 0;
+}
+
+/* Content body */
+.content-body {
+  padding: 0;
+  margin: 0;
+}
+
+/* Typography inside terminal content blocks */
+.terminal-content-block .content-body h1,
+.terminal-content-block .content-body h2 {
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: 0.8rem;
+  color: var(--color-accent-1);
+  font-weight: bold;
+}
+
+.terminal-content-block .content-body h1 {
+  font-size: 1.3rem;
+}
+
+.terminal-content-block .content-body h2 {
+  font-size: 1.1rem;
+}
+
+.terminal-content-block .content-body p {
+  margin: 0.5rem 0;
+  line-height: var(--line-height-base);
+}
+
+.terminal-content-block .content-body em {
+  color: var(--color-em);
+  font-style: italic;
+}
+
+.terminal-content-block .content-body blockquote {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  border-left: 3px solid var(--color-accent-1);
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--color-quote);
+  font-style: italic;
+}
+
+.terminal-content-block .content-body blockquote p {
+  margin: 0.5rem 0;
+}
+
+.terminal-content-block .content-body a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+.terminal-content-block .content-body a:hover {
+  color: var(--color-link-hover);
+}
+
+/* Social links inside terminal blocks */
+.terminal-content-block .social-links {
+  padding: 0;
+}
+
+.terminal-content-block .social-links p {
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.terminal-content-block .social-links a.icon {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.terminal-content-block .social-links a.icon:hover {
+  color: var(--color-accent-1);
+  transform: scale(1.2);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .section-ascii-art {
+    font-size: 0.5rem;
+  }
+
+  .section-banner-label {
+    font-size: 0.75rem;
+  }
+
+  .terminal-content-block .content-body h1 {
+    font-size: 1.1rem;
+  }
+
+  .terminal-content-block .content-body h2 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-ascii-art {
+    font-size: 0.45rem;
+  }
+
+  .section-banner-label {
+    font-size: 0.7rem;
+  }
+
+  .terminal-content-block .content-body h1 {
+    font-size: 1rem;
+  }
+
+  .terminal-content-block .content-body h2 {
+    font-size: 0.95rem;
+  }
+}
