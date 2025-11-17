@@ -90,20 +90,22 @@
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <!-- Disabled: Original nav and toc are now replaced by #toc-terminal-box -->
+  <!--
   <span id="menu">
     <span id="nav">
       <ul>
-         
+        
           <li><a href="/">index/</a></li>
-         
+        
           <li><a href="/archives/">dossiers/</a></li>
-         
+        
           <li><a href="/categories/">taxonomy/</a></li>
-         
+        
           <li><a href="/murmur/">murmurs/</a></li>
-         
+        
           <li><a href="/search/">retrieval/</a></li>
-         
+        
           <li><a href="/about/">about/</a></li>
         
       </ul>
@@ -146,32 +148,46 @@
       
     </div>
   </span>
+  -->
 </div>
 
     
     <div class="content index pt4">
         
-        <section class="terminal-content-block terminal-container">
-  <div class="terminal-prompt-header">
-    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-12-29-Untitled-23/</span>
-  </div>
-
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
+        <div id="neovim-wrapper">
+  <!-- TOC Terminal Box -->
+  <aside id="toc-terminal-box" class="terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">TOC</span>
+      <a id="toc-close-btn" href="#" class="toc-close-icon"><i class="fas fa-times"></i></a>
+    </div>
+    <div id="toc-content">
       
+    </div>
+  </aside>
+
+  <!-- Post Terminal Box -->
+  <section id="post-terminal-box" class="terminal-content-block terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-12-29-Untitled-23/</span>
+    </div>
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        
     <h1 class="posttitle" itemprop="name headline">
         Untitled
     </h1>
 
 
 
-      <div class="meta">
-        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <a id='post-author' href="/">
-          <span itemprop="name">ケニヲ</span>
-          </a>
-        </span>
-        
+        <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a id='post-author' href="/">
+            <span itemprop="name">ケニヲ</span>
+            </a>
+          </span>
+          
     <div class="postdate">
       
         <time datetime="2020-12-29T00:08:53.000Z" itemprop="datePublished">2020-12-29</time>
@@ -180,26 +196,26 @@
     </div>
 
 
-        
+          
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Tweets/">Tweets</a>
     </div>
 
 
-        
+          
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/daily/" rel="tag">daily</a>, <a class="tag-link-link" href="/tags/%E5%B0%8F%E5%B9%B6%E6%84%9F/" rel="tag">小并感</a>
     </div>
 
 
-      </div>
-    </header>
-    
+        </div>
+      </header>
+      
 
-    <div class="content" itemprop="articleBody">
-      <p>禮拜一，又是滑水的禮拜一，從睜眼就開始的焦慮，壓倒性的緊張情緒，外化為不停的做無意義的事情，試圖麻痹自己的所有感官，讓思維滯留在機械性地重複裡面，簡而言之，不停的玩手機，直到下午與導師面見的時間逼近，最後才確定今天是匯報不了什麼東西了，膽戰心驚的寫訊息，順便還問了下學院搬遷到大西區的問題嘗試緩解一再拖延的尷尬。</p>
+      <div class="content" itemprop="articleBody">
+        <p>禮拜一，又是滑水的禮拜一，從睜眼就開始的焦慮，壓倒性的緊張情緒，外化為不停的做無意義的事情，試圖麻痹自己的所有感官，讓思維滯留在機械性地重複裡面，簡而言之，不停的玩手機，直到下午與導師面見的時間逼近，最後才確定今天是匯報不了什麼東西了，膽戰心驚的寫訊息，順便還問了下學院搬遷到大西區的問題嘗試緩解一再拖延的尷尬。</p>
 <p>然後又幹了什麼————我自己也說不清了，總之一定是某種機械性的重複，徒勞的消遣，對自己人生的無責任。更糟糕的是我不僅能在滑水後重新審視的過程中理解到這種罪惡的人生浪費，更讓人暴跳如雷的是我在滑水的過程中是完全清醒且明白的。也就是說，我知道自己正在做無聊的事情，可我就是不想停下來。從精神分析的角度講，這種知曉全局情勢的不作為更讓人憤懣—或者說，更傷人自尊。於是乎，這件事好像走進了黑洞一般，焦慮讓我的機體有滑水傾向，而越滑水我是越焦慮的。</p>
 <p>倘若我能夠認識到人生的無意義性，那麼在滑水這個本應緩解焦慮的動作中，我才能把自己從惡性循環裡解放出來。比如說，我知道自己就是個垃圾，那又怎麼樣啦？我人生的意義就是在不斷的消遣中安穩度過。我就是喜歡低俗的奶頭樂，喜歡迷人的時間陷阱。諸如此類的自我暗示，將摸魚這件事正當化。想想Nanami說過的話，<strong>労働はクソです</strong>。即便是父母提供經濟資助的大學期間，只要做好本分的學習工作，其他比如桂枝強加於人的傻逼東西通通見鬼去吧，不摸魚才是傻逼呢。</p>
 <p>這麼想，好像心裏面好受了很多。畢竟，在這個世界活下去真的很難了。<strong>跑路</strong>才是我當下的人生意義。</p>
@@ -207,9 +223,10 @@
 <p>今晚還看了<em>《頤和園》</em>。然後去單曲循環了郝蕾的<em>《氧氣》</em>。</p>
 <p>院線好評如潮的<em>Soul（心靈奇旅）</em>，我在NHD上找到資源看了，有一點後悔沒去電影院，畢竟冬天+一個人，還有本月支出有點過高了，預算不夠。以為跟COCO一樣我會哭的稀裏嘩啦，結果沒有，儘管我還是很想哭的。我們這樣的小鎮做題家，是牧草，是螺絲釘，就是受不了這種談夢想的vibe。你問我有什麼夢想？出生在瓷器國，這問題依然淪為了一個笑話。還有友鄰吐槽：22最後好像跳到了中國去。迪士尼可太狠了。</p>
 
-    </div>
-  </article>
-</section>
+      </div>
+    </article>
+  </section>
+</div>
 
 <!--  -->
 
@@ -230,7 +247,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
+        data-theme="https://gitkeniwo.tech/giscus-themes/mono-theme.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

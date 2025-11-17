@@ -91,20 +91,22 @@
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <!-- Disabled: Original nav and toc are now replaced by #toc-terminal-box -->
+  <!--
   <span id="menu">
     <span id="nav">
       <ul>
-         
+        
           <li><a href="/">index/</a></li>
-         
+        
           <li><a href="/archives/">dossiers/</a></li>
-         
+        
           <li><a href="/categories/">taxonomy/</a></li>
-         
+        
           <li><a href="/murmur/">murmurs/</a></li>
-         
+        
           <li><a href="/search/">retrieval/</a></li>
-         
+        
           <li><a href="/about/">about/</a></li>
         
       </ul>
@@ -147,32 +149,46 @@
       
     </div>
   </span>
+  -->
 </div>
 
     
     <div class="content index pt4">
         
-        <section class="terminal-content-block terminal-container">
-  <div class="terminal-prompt-header">
-    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-08-08-Untitled/</span>
-  </div>
-
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
+        <div id="neovim-wrapper">
+  <!-- TOC Terminal Box -->
+  <aside id="toc-terminal-box" class="terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">TOC</span>
+      <a id="toc-close-btn" href="#" class="toc-close-icon"><i class="fas fa-times"></i></a>
+    </div>
+    <div id="toc-content">
       
+    </div>
+  </aside>
+
+  <!-- Post Terminal Box -->
+  <section id="post-terminal-box" class="terminal-content-block terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-08-08-Untitled/</span>
+    </div>
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        
     <h1 class="posttitle" itemprop="name headline">
         Untitled
     </h1>
 
 
 
-      <div class="meta">
-        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <a id='post-author' href="/">
-          <span itemprop="name">ケニヲ</span>
-          </a>
-        </span>
-        
+        <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a id='post-author' href="/">
+            <span itemprop="name">ケニヲ</span>
+            </a>
+          </span>
+          
     <div class="postdate">
       
         <time datetime="2020-08-08T20:39:02.000Z" itemprop="datePublished">2020-08-08</time>
@@ -181,26 +197,26 @@
     </div>
 
 
-        
+          
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Tweets/">Tweets</a> › <a class="category-link" href="/categories/Tweets/News-Comments/">News Comments</a>
     </div>
 
 
-        
+          
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/hk/" rel="tag">hk</a>, <a class="tag-link-link" href="/tags/tweets/" rel="tag">tweets</a>, <a class="tag-link-link" href="/tags/%E6%AF%92%E5%8A%9B%E6%92%95%E7%83%A4/" rel="tag">毒力撕烤</a>
     </div>
 
 
-      </div>
-    </header>
-    
+        </div>
+      </header>
+      
 
-    <div class="content" itemprop="articleBody">
-      <p>Toooo many things these days.</p>
+      <div class="content" itemprop="articleBody">
+        <p>Toooo many things these days.</p>
 <p>某恶名昭彰的法案的通过，世界各地的抗议者，川普禁掉TikTok，Beirut大爆炸。</p>
 <p>辽阔的中国大地上，汹涌的洪水、隐匿的新冠病毒与复工的人群。</p>
 <p>对大多数人而言，breaking and bad news已经成为生活的常态，人们期许着一个历法上的新时期会给当下的社会生活带来好运，但实际上，它已经糟糕到了大家可以一再地降低自己心理预期的地步。或许，第二次更大规模的对峙的严冬就在明日，又或许，它只存在于一些悲观主义者哀怨的布道之中。</p>
@@ -212,9 +228,10 @@
 <p>我很羡慕她，因为我做不到。</p>
 <p>以后还需要思考很多，还需要探索很多，关于生命的痛苦与无聊，关于生命的意义。</p>
 
-    </div>
-  </article>
-</section>
+      </div>
+    </article>
+  </section>
+</div>
 
 <!--  -->
 
@@ -235,7 +252,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
+        data-theme="https://gitkeniwo.tech/giscus-themes/mono-theme.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

@@ -96,20 +96,22 @@
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <!-- Disabled: Original nav and toc are now replaced by #toc-terminal-box -->
+  <!--
   <span id="menu">
     <span id="nav">
       <ul>
-         
+        
           <li><a href="/">index/</a></li>
-         
+        
           <li><a href="/archives/">dossiers/</a></li>
-         
+        
           <li><a href="/categories/">taxonomy/</a></li>
-         
+        
           <li><a href="/murmur/">murmurs/</a></li>
-         
+        
           <li><a href="/search/">retrieval/</a></li>
-         
+        
           <li><a href="/about/">about/</a></li>
         
       </ul>
@@ -152,32 +154,46 @@
       <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Change-to-zsh"><span class="toc-number">1.</span> <span class="toc-text">Change to zsh</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">更换主题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Customise-colours-in-agnoster-theme"><span class="toc-number">3.</span> <span class="toc-text">Customise colours in agnoster theme</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#apjanke-commented-on-Jan-3"><span class="toc-number">3.0.1.</span> <span class="toc-text">apjanke commented on Jan 3</span></a></li></ol></li></ol></li></ol>
     </div>
   </span>
+  -->
 </div>
 
     
     <div class="content index pt4">
         
-        <section class="terminal-content-block terminal-container">
-  <div class="terminal-prompt-header">
-    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-07-12-ohmyzsh/</span>
-  </div>
+        <div id="neovim-wrapper">
+  <!-- TOC Terminal Box -->
+  <aside id="toc-terminal-box" class="terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">TOC</span>
+      <a id="toc-close-btn" href="#" class="toc-close-icon"><i class="fas fa-times"></i></a>
+    </div>
+    <div id="toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Change-to-zsh"><span class="toc-number">1.</span> <span class="toc-text">Change to zsh</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">更换主题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Customise-colours-in-agnoster-theme"><span class="toc-number">3.</span> <span class="toc-text">Customise colours in agnoster theme</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#apjanke-commented-on-Jan-3"><span class="toc-number">3.0.1.</span> <span class="toc-text">apjanke commented on Jan 3</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </aside>
 
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      
+  <!-- Post Terminal Box -->
+  <section id="post-terminal-box" class="terminal-content-block terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-07-12-ohmyzsh/</span>
+    </div>
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        
     <h1 class="posttitle" itemprop="name headline">
         ohmyzsh 基本配置和使用
     </h1>
 
 
 
-      <div class="meta">
-        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <a id='post-author' href="/">
-          <span itemprop="name">ケニヲ</span>
-          </a>
-        </span>
-        
+        <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a id='post-author' href="/">
+            <span itemprop="name">ケニヲ</span>
+            </a>
+          </span>
+          
     <div class="postdate">
       
         <time datetime="2020-07-12T12:56:28.000Z" itemprop="datePublished">2020-07-12</time>
@@ -186,26 +202,26 @@
     </div>
 
 
-        
+          
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Tech/">Tech</a>
     </div>
 
 
-        
+          
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/ohmyzsh/" rel="tag">ohmyzsh</a>, <a class="tag-link-link" href="/tags/shell/" rel="tag">shell</a>
     </div>
 
 
-      </div>
-    </header>
-    
+        </div>
+      </header>
+      
 
-    <div class="content" itemprop="articleBody">
-      <p>终端也要精致一点，虽然iterms2我个人不是很喜欢，但是ohmyzsh的确是神器，所以还是来倒腾一下。</p>
+      <div class="content" itemprop="articleBody">
+        <p>终端也要精致一点，虽然iterms2我个人不是很喜欢，但是ohmyzsh的确是神器，所以还是来倒腾一下。</p>
 <h1 id="Change-to-zsh"><a href="#Change-to-zsh" class="headerlink" title="Change to zsh"></a>Change to zsh</h1><p><a target="_blank" rel="noopener" href="https://ohmyz.sh/">https://ohmyz.sh/</a></p>
 <p>mac下直接终端里用curl 安装就可以了。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sh -c &quot;$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)&quot;</span><br></pre></td></tr></table></figure>
@@ -236,9 +252,10 @@
 <h3 id="apjanke-commented-on-Jan-3"><a href="#apjanke-commented-on-Jan-3" class="headerlink" title="apjanke commented on Jan 3"></a><strong><a target="_blank" rel="noopener" href="https://github.com/apjanke">apjanke</a></strong> commented <a target="_blank" rel="noopener" href="https://github.com/agnoster/agnoster-zsh-theme/issues/30#issuecomment-570432500">on Jan 3</a></h3></blockquote>
 <p>所以，agnoster的好像会自动适配，这个好像又是根据terminal 的solarized color palette 来的（就是太阳光配色），大概可以理解为几原色之类的东西，然后各种颜色映射都是通过这些solarized color来的，会设计和UI的可以看看，咱普通老百姓能稍微简单改改就不错了的说。</p>
 
-    </div>
-  </article>
-</section>
+      </div>
+    </article>
+  </section>
+</div>
 
 <!--  -->
 
@@ -259,7 +276,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
+        data-theme="https://gitkeniwo.tech/giscus-themes/mono-theme.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

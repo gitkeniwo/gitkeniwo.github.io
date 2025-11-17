@@ -97,20 +97,22 @@
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <!-- Disabled: Original nav and toc are now replaced by #toc-terminal-box -->
+  <!--
   <span id="menu">
     <span id="nav">
       <ul>
-         
+        
           <li><a href="/">index/</a></li>
-         
+        
           <li><a href="/archives/">dossiers/</a></li>
-         
+        
           <li><a href="/categories/">taxonomy/</a></li>
-         
+        
           <li><a href="/murmur/">murmurs/</a></li>
-         
+        
           <li><a href="/search/">retrieval/</a></li>
-         
+        
           <li><a href="/about/">about/</a></li>
         
       </ul>
@@ -153,32 +155,46 @@
       <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">基本配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E8%AF%AD%E8%A8%80"><span class="toc-number">1.1.</span> <span class="toc-text">设置语言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E7%9A%84Scheme"><span class="toc-number">1.2.</span> <span class="toc-text">主题的Scheme</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dark-Mode"><span class="toc-number">1.2.1.</span> <span class="toc-text">Dark Mode</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8F%9C%E5%8D%95"><span class="toc-number">1.3.</span> <span class="toc-text">菜单</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E6%A0%87"><span class="toc-number">1.4.</span> <span class="toc-text">图标</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RSS"><span class="toc-number">1.4.1.</span> <span class="toc-text">RSS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HomePage"><span class="toc-number">1.5.</span> <span class="toc-text">HomePage</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-number">1.5.1.</span> <span class="toc-text">摘要</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E4%BD%93"><span class="toc-number">1.6.</span> <span class="toc-text">字体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Post"><span class="toc-number">1.7.</span> <span class="toc-text">Post</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#tag%E9%A2%9C%E8%89%B2%E9%97%AE%E9%A2%98"><span class="toc-number">1.7.1.</span> <span class="toc-text">tag颜色问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98"><span class="toc-number">1.7.2.</span> <span class="toc-text">图片上传问题</span></a></li></ol></li></ol></li></ol>
     </div>
   </span>
+  -->
 </div>
 
     
     <div class="content index pt4">
         
-        <section class="terminal-content-block terminal-container">
-  <div class="terminal-prompt-header">
-    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-06-05-NexTテーマをDIYしよう/</span>
-  </div>
+        <div id="neovim-wrapper">
+  <!-- TOC Terminal Box -->
+  <aside id="toc-terminal-box" class="terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">TOC</span>
+      <a id="toc-close-btn" href="#" class="toc-close-icon"><i class="fas fa-times"></i></a>
+    </div>
+    <div id="toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="toc-number">1.</span> <span class="toc-text">基本配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E8%AF%AD%E8%A8%80"><span class="toc-number">1.1.</span> <span class="toc-text">设置语言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E9%A2%98%E7%9A%84Scheme"><span class="toc-number">1.2.</span> <span class="toc-text">主题的Scheme</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Dark-Mode"><span class="toc-number">1.2.1.</span> <span class="toc-text">Dark Mode</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8F%9C%E5%8D%95"><span class="toc-number">1.3.</span> <span class="toc-text">菜单</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E6%A0%87"><span class="toc-number">1.4.</span> <span class="toc-text">图标</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RSS"><span class="toc-number">1.4.1.</span> <span class="toc-text">RSS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HomePage"><span class="toc-number">1.5.</span> <span class="toc-text">HomePage</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-number">1.5.1.</span> <span class="toc-text">摘要</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E4%BD%93"><span class="toc-number">1.6.</span> <span class="toc-text">字体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Post"><span class="toc-number">1.7.</span> <span class="toc-text">Post</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#tag%E9%A2%9C%E8%89%B2%E9%97%AE%E9%A2%98"><span class="toc-number">1.7.1.</span> <span class="toc-text">tag颜色问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0%E9%97%AE%E9%A2%98"><span class="toc-number">1.7.2.</span> <span class="toc-text">图片上传问题</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </aside>
 
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      
+  <!-- Post Terminal Box -->
+  <section id="post-terminal-box" class="terminal-content-block terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-06-05-NexTテーマをDIYしよう/</span>
+    </div>
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        
     <h1 class="posttitle" itemprop="name headline">
         NexTテーマをDIYしよう
     </h1>
 
 
 
-      <div class="meta">
-        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <a id='post-author' href="/">
-          <span itemprop="name">ケニヲ</span>
-          </a>
-        </span>
-        
+        <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a id='post-author' href="/">
+            <span itemprop="name">ケニヲ</span>
+            </a>
+          </span>
+          
     <div class="postdate">
       
         <time datetime="2020-06-05T20:07:36.000Z" itemprop="datePublished">2020-06-05</time>
@@ -187,26 +203,26 @@
     </div>
 
 
-        
+          
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Blogging/">Blogging</a>
     </div>
 
 
-        
+          
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/hexo/" rel="tag">hexo</a>
     </div>
 
 
-      </div>
-    </header>
-    
+        </div>
+      </header>
+      
 
-    <div class="content" itemprop="articleBody">
-      <p>本文分为两个部分，第一部分基本配置展示直接可以在<code>themes/next &gt; _config.yml</code>中配置的元素，第二部分展示CSS等魔改。</p>
+      <div class="content" itemprop="articleBody">
+        <p>本文分为两个部分，第一部分基本配置展示直接可以在<code>themes/next &gt; _config.yml</code>中配置的元素，第二部分展示CSS等魔改。</p>
 <a id="more"></a>
 <h1 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h1><h2 id="设置语言"><a href="#设置语言" class="headerlink" title="设置语言"></a>设置语言</h2><p>位置：<code>_config.yml &gt; language</code></p>
 <h2 id="主题的Scheme"><a href="#主题的Scheme" class="headerlink" title="主题的Scheme"></a>主题的Scheme</h2><p><code>/themes/next &gt;  _config.yml &gt; scheme</code><br>主题默认有几个样式，可以自己更改。<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#scheme: Muse</span><br><span class="line">scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br><span class="line">#scheme: Gemini</span><br></pre></td></tr></table></figure></p>
@@ -221,9 +237,10 @@ $font-family-chinese      = &quot;YuppySC-Regular&quot; ,&quot;PingFang SC&quot;
 <h2 id="Post"><a href="#Post" class="headerlink" title="Post"></a>Post</h2><h3 id="tag颜色问题"><a href="#tag颜色问题" class="headerlink" title="tag颜色问题"></a>tag颜色问题</h3><p>看到Dark Mode下post底部的tag颜色对比度很低，无法辨别。<br><img src="https://img.gitkeniwo.tech/202511/12-d72758ac0775bbfb31d1cf6338f4a514-1762983693.png" alt=""><br>可以直接F12看CSS设置<br><img src="https://img.gitkeniwo.tech/202511/12-05c24c6098b5ad8ad7c436c3461ee501-1762983693.png" alt=""><br>发现是给颜色指定了名称的，那么就好找了，最后<code>_variables &gt; base.styl</code>中找到了相关设置。<br><img src="https://img.gitkeniwo.tech/202511/12-a64c50b60c3db8308dbb9f60cd2eb1eb-1762983693.png" alt=""><br>把dark mode下的颜色从<code>grey-dim</code>改到<code>grey-dark</code>应该就可以了，看颜色定义发现grey-dark用的是<code>#999</code>。要是还差点意思的话可以加深点，<code>#888</code>之类的。<br><img src="https://img.gitkeniwo.tech/202511/12-8bcc261b74c3a1d3b6cc6f887786f45a-1762983693.png" alt=""><br>最后效果。</p>
 <h3 id="图片上传问题"><a href="#图片上传问题" class="headerlink" title="图片上传问题"></a>图片上传问题</h3><p>经历了一次短暂的图片未显示的问题，是相对路径出了问题。<br>图片上传基本上是用md语法的<code>![](&lt;your pic path&gt;)</code>，可以为每一个post自动建立一个资料文件夹，也可以统一自定路径放置。<br>窝遇到的问题是Home可以显示图片，但post单独的页面显示不了，后来发现<code>https://img.gitkeniwo.tech/202511/12-1d343fa8effd0e5e29f2a0856791a027-1762983701.jpg</code> 是需要在最前面加上<code>/</code>的。 而<code>~/</code>是表示系统用户的根目录。<br>这一点，在hexo生成的页面文件目录中也可以看到。<br><img src="https://img.gitkeniwo.tech/202511/12-b79797dbee4a060941f666e896f077a4-1762983693.png" alt=""><br>如果忘掉了<code>/</code>，post页面就会在自己的文件夹里面找img，也就无法显示了。</p>
 
-    </div>
-  </article>
-</section>
+      </div>
+    </article>
+  </section>
+</div>
 
 <!--  -->
 
@@ -244,7 +261,7 @@ $font-family-chinese      = &quot;YuppySC-Regular&quot; ,&quot;PingFang SC&quot;
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
+        data-theme="https://gitkeniwo.tech/giscus-themes/mono-theme.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

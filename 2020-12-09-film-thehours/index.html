@@ -95,20 +95,22 @@
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <!-- Disabled: Original nav and toc are now replaced by #toc-terminal-box -->
+  <!--
   <span id="menu">
     <span id="nav">
       <ul>
-         
+        
           <li><a href="/">index/</a></li>
-         
+        
           <li><a href="/archives/">dossiers/</a></li>
-         
+        
           <li><a href="/categories/">taxonomy/</a></li>
-         
+        
           <li><a href="/murmur/">murmurs/</a></li>
-         
+        
           <li><a href="/search/">retrieval/</a></li>
-         
+        
           <li><a href="/about/">about/</a></li>
         
       </ul>
@@ -151,32 +153,46 @@
       
     </div>
   </span>
+  -->
 </div>
 
     
     <div class="content index pt4">
         
-        <section class="terminal-content-block terminal-container">
-  <div class="terminal-prompt-header">
-    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-12-09-film-thehours/</span>
-  </div>
-
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
+        <div id="neovim-wrapper">
+  <!-- TOC Terminal Box -->
+  <aside id="toc-terminal-box" class="terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">TOC</span>
+      <a id="toc-close-btn" href="#" class="toc-close-icon"><i class="fas fa-times"></i></a>
+    </div>
+    <div id="toc-content">
       
+    </div>
+  </aside>
+
+  <!-- Post Terminal Box -->
+  <section id="post-terminal-box" class="terminal-content-block terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-12-09-film-thehours/</span>
+    </div>
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        
     <h1 class="posttitle" itemprop="name headline">
         时时刻刻
     </h1>
 
 
 
-      <div class="meta">
-        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <a id='post-author' href="/">
-          <span itemprop="name">ケニヲ</span>
-          </a>
-        </span>
-        
+        <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a id='post-author' href="/">
+            <span itemprop="name">ケニヲ</span>
+            </a>
+          </span>
+          
     <div class="postdate">
       
         <time datetime="2020-12-09T20:32:26.000Z" itemprop="datePublished">2020-12-09</time>
@@ -185,26 +201,26 @@
     </div>
 
 
-        
+          
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/The-Library-of-Babel/">The Library of Babel</a> › <a class="category-link" href="/categories/The-Library-of-Babel/Films/">Films</a>
     </div>
 
 
-        
+          
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/feminism/" rel="tag">feminism</a>, <a class="tag-link-link" href="/tags/film-drama/" rel="tag">film-drama</a>
     </div>
 
 
-      </div>
-    </header>
-    
+        </div>
+      </header>
+      
 
-    <div class="content" itemprop="articleBody">
-      <p><em>Virginia Woolf</em>, 她的语言，她的文字，闪烁，飘忽，飞快的变幻，急剧的更替。她是一位女性作家，意识流(Stream of Consciousness)派的代表人物。她跟「尤利西斯」的作者<em>James Joyce</em>同年出生，又同年离世。她在自己的口袋里装满了石头之后，投入了她家附近的河中。</p>
+      <div class="content" itemprop="articleBody">
+        <p><em>Virginia Woolf</em>, 她的语言，她的文字，闪烁，飘忽，飞快的变幻，急剧的更替。她是一位女性作家，意识流(Stream of Consciousness)派的代表人物。她跟「尤利西斯」的作者<em>James Joyce</em>同年出生，又同年离世。她在自己的口袋里装满了石头之后，投入了她家附近的河中。</p>
 <p>影片中三个女人，她们都痛苦着，迷失着。闭上眼是虚幻的希望，睁开眼是庸俗的生活。Virginia有一个爱她的Leonard，愿意为她放弃一切搬到small town里过平静的日子，这却并不能让她快乐。她觉得自己没办法从这令人泄气的困境中逃脱，她觉得自己不会再恢复神志了，the voices，躲在她背后，她耳边的voices，不停地叨嚷着折磨着她，但她确信那是她自己的心声，所以她奋不顾身地冲向即将发车的站台，像要失控一般对着Leonard怒吼着：”it’s my voice.” 可是，在Woolf的年代，她别无选择，男性在社会中占据很高的地位，为了不成为Leonard的负担，她结束了自己的生命。</p>
 <p><img src="https://tva1.sinaimg.cn/large/0081Kckwly1gli3fsok7aj31ev0u0qv8.jpg" alt="image-20201210004831589"></p>
 <p>50年代LA的中年主妇Lora，她的生活完全被丈夫和孩子占据，她作为女性丧失了存在的价值，甚至说只能在男人过生日的时候为他做一个蛋糕来让他体会到爱，这个蛋糕甚至也被扔进了垃圾堆。在酒店的床上半醒半睡地哭过之后，她做出了一个比死亡更勇敢地决定，她放弃了既有的生活框架，在社会中的地位，母亲的身份，无论如何也要探寻自己的独特的生存方式。</p>
@@ -223,9 +239,10 @@
 </blockquote>
 <p>诗人是会逝去的，诗人在这个庸俗的世界里用死亡来警示世人。</p>
 
-    </div>
-  </article>
-</section>
+      </div>
+    </article>
+  </section>
+</div>
 
 <!--  -->
 
@@ -246,7 +263,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
+        data-theme="https://gitkeniwo.tech/giscus-themes/mono-theme.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

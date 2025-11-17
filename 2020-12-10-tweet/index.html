@@ -89,20 +89,22 @@
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <!-- Disabled: Original nav and toc are now replaced by #toc-terminal-box -->
+  <!--
   <span id="menu">
     <span id="nav">
       <ul>
-         
+        
           <li><a href="/">index/</a></li>
-         
+        
           <li><a href="/archives/">dossiers/</a></li>
-         
+        
           <li><a href="/categories/">taxonomy/</a></li>
-         
+        
           <li><a href="/murmur/">murmurs/</a></li>
-         
+        
           <li><a href="/search/">retrieval/</a></li>
-         
+        
           <li><a href="/about/">about/</a></li>
         
       </ul>
@@ -145,32 +147,46 @@
       <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Love-amp-Peace"><span class="toc-number">1.</span> <span class="toc-text">Love &amp; Peace.</span></a></li></ol>
     </div>
   </span>
+  -->
 </div>
 
     
     <div class="content index pt4">
         
-        <section class="terminal-content-block terminal-container">
-  <div class="terminal-prompt-header">
-    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-12-10-tweet/</span>
-  </div>
+        <div id="neovim-wrapper">
+  <!-- TOC Terminal Box -->
+  <aside id="toc-terminal-box" class="terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">TOC</span>
+      <a id="toc-close-btn" href="#" class="toc-close-icon"><i class="fas fa-times"></i></a>
+    </div>
+    <div id="toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Love-amp-Peace"><span class="toc-number">1.</span> <span class="toc-text">Love &amp; Peace.</span></a></li></ol>
+    </div>
+  </aside>
 
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      
+  <!-- Post Terminal Box -->
+  <section id="post-terminal-box" class="terminal-content-block terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-12-10-tweet/</span>
+    </div>
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        
     <h1 class="posttitle" itemprop="name headline">
         关于繁体字
     </h1>
 
 
 
-      <div class="meta">
-        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <a id='post-author' href="/">
-          <span itemprop="name">ケニヲ</span>
-          </a>
-        </span>
-        
+        <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a id='post-author' href="/">
+            <span itemprop="name">ケニヲ</span>
+            </a>
+          </span>
+          
     <div class="postdate">
       
         <time datetime="2020-12-10T21:40:33.000Z" itemprop="datePublished">2020-12-10</time>
@@ -179,35 +195,36 @@
     </div>
 
 
-        
+          
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Tweets/">Tweets</a>
     </div>
 
 
-        
+          
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/chinese/" rel="tag">chinese</a>
     </div>
 
 
-      </div>
-    </header>
-    
+        </div>
+      </header>
+      
 
-    <div class="content" itemprop="articleBody">
-      <p>今天浏览98的时候意外的发现了一位华裔留学生写的自己在ZJU的经历，絮絮叨叨了好几页，以美本和国外的经历来吐槽贵校种种非人道的设计和制度，看下来还算有趣，但是他本人由于在加拿大呆了很久，学中文的时候就是学的繁体字，所以整篇文章也都是繁体字。不出我的意料，下面的回复里也充满了对繁体字的偏见。有人评论因为繁体字再加上这篇文章太长，他的阅读速度降低到了龟速，看到1/3的时候就想吐血，还有人直接就从动机和意识形态的角度质疑文章的作者，毕竟这篇回忆录里也没说几句浙大的好话，可能戳痛了他们内心里面的某种价值。在豆瓣八组看到因为使用了繁体字而被炎上的现象我大概不会诧异——毕竟Ta们代表了真实的贵国人文化水平。但是在<del>你</del>我校也看到这样的现象足够让我灰心了——即便我在大一的时候就不断的提醒自己降低对贵校的期望值，每当这样残酷的现实向我袭来，我心中也还是有种说不出来的滋味。</p>
+      <div class="content" itemprop="articleBody">
+        <p>今天浏览98的时候意外的发现了一位华裔留学生写的自己在ZJU的经历，絮絮叨叨了好几页，以美本和国外的经历来吐槽贵校种种非人道的设计和制度，看下来还算有趣，但是他本人由于在加拿大呆了很久，学中文的时候就是学的繁体字，所以整篇文章也都是繁体字。不出我的意料，下面的回复里也充满了对繁体字的偏见。有人评论因为繁体字再加上这篇文章太长，他的阅读速度降低到了龟速，看到1/3的时候就想吐血，还有人直接就从动机和意识形态的角度质疑文章的作者，毕竟这篇回忆录里也没说几句浙大的好话，可能戳痛了他们内心里面的某种价值。在豆瓣八组看到因为使用了繁体字而被炎上的现象我大概不会诧异——毕竟Ta们代表了真实的贵国人文化水平。但是在<del>你</del>我校也看到这样的现象足够让我灰心了——即便我在大一的时候就不断的提醒自己降低对贵校的期望值，每当这样残酷的现实向我袭来，我心中也还是有种说不出来的滋味。</p>
 <p>其实我心里面是清楚的，每次看到留学生/海归/台湾HK人/外籍华裔人士在中文论坛分享自己的经历，帖子后面的纯种<strong>中国人</strong>的评论总是绕不开这几个话题：繁体字，意识形态，洋大人。</p>
 <p>也会有通情达理的人，视野开阔的人，但只要人气一上去，或者小众论坛里的内容被拎到一个含中国人浓度更大的地方等待路过的吃瓜群众来品头论足，这些让人感到恶心回帖总是会出现。他们好像非常精明，但对我来说有点过于精明了，他们似乎能够瞬间定位到文章里面可能引起某个群体不适的地方，然后以市侩而老练的句式指出，以求获得更多同伴的支持。</p>
 <p>所以，繁体字，在这样的文化环境下，已经与「台独」「民主自由」这样的字眼绑定起来了。只要不用简体字，你就是不尊重我们的阅读习惯，你就是居心叵测，台湾间谍——我已经倦于看到这些缺乏逻辑感的话术了。It’s deranged and repulsive. 经历了十二年的衡水、毛坦厂式教育，再gone through所谓的思修、毛概这些洗脑课程，圈养在封闭的国门和局域网里面，从统计学的角度上讲，很难不诞生这样仇外的文化现象。「警惕」、「别被公知、恨国党带了节奏」……OK, I hate repeating these shit words, and this is the last time. 所以活在红色高压之下的人们，高中生、大学生、职业技术学院的学生、打工人，他们总是在留意着某些看不见摸不着的事物，就像是病毒，或者恶魔。他们活在这样的语境中，活在一段「屈辱」的历史之下——虽然我不知到底有什么正当性可以让我们直接继承「大清」的「灾难」。他们的一举一动都是被嵌进潜意识里的集体叙事所影响着的，this disproposition to protect this intangible group,  the nation. 可是最讽刺的是在这里面又有多少人能够说得清自己为何与这个集体是息息相关的呢？少的可怜。或者说，意识到应该去探索这种link的人，也都意识到了原来一直以来都是这个「集体」do them the most harm. 所以，人们为什么不能产生这样的意识呢？意识，要么得靠自己figure out，要么是从别人那里获得的。今天看到北师大的统计说中国有9亿人月收入在2k CNY以下。Surely  appalling number. 是生活的压力阿，是overpopulation，家庭的供养，无论如何也要抚养的子嗣，房屋与教育的费用，是户籍制度，是多变的政策，是城管，是法律——这要细说的话就是一部当代“共产”中国史了。生活的压力让人们没有时间去思考，家庭和传统礼教让人们疲于奔命、疲于应付一种虚幻的人际关系。最近<strong>蛋壳公寓</strong>暴雷的话题下，一边被扫地出门，一边支持HK Police的pinky们就是一个特别好的例子。这可还不够，通往世界的网络出口被掐断，知识分子的大声疾呼被删除，网络警察一丝不苟的清除掉人们的记忆，受过高等教育的程序员、研究者，他们当然有能力探索更广阔的网络空间，所以在程序员群体中，「不爱国」的人的比例也大大提升了，但是一般人呢？那9亿月收入不足2k的中国人呢？所以，这种意识，在自己身上很难开花结果，也没有渠道从别人那里获得，其结果就是，可以任由他人来糊弄。于是教科书可以篡改，思想可以被植入，人人都是vigilante，想到台湾人拍了一部电影来揭露当年戒严时期的检举匪谍的口号，并在全国上映了，海峡对岸却一直检举到了2020年，甚至还会继续。</p>
 <p>所以啊，跳出自己的舒适圈来看，我们身边的环境已经这么坏了，那个说因为是繁体字所以阅读困难的评论也就不足为奇了。我们国家花了20年简化了汉字，又花了20年简化了人心。繁体字消逝的年代，我还没有出生，但是在很多80年代的照片里面看到过，电影票据，市场商店招牌，街头的口号，早年的麦当劳门店……人心消逝的年代，我亲身感受到了，就发生在我的身边，我的同龄人，同学，朋友，同一个城市的大学生，在知乎上豪言壮语的青年。中共用教育抹杀掉了一代人，五六十年前，它用无教育抹杀掉了另一代人，虽然两者本质上是一样的。它不停的制造对立，所以才会有“洋大人”，“台蛙”和“废青”。所以才会有“蝈蝻”和“女拳”。这些话题都涉及了太多的东西，今晚是没办法写下去了。一方面，我理解为什么贵校同学对留学生有如此大的恶意，但问题的核心在于这并不是留学生他们主动造成的，they don’t mean it, EITHER. 就像98上这篇文章的作者自己也说了，他们也要承担3倍于local中国学生的学费，这还不包含其他生活费用，再加上人家大学以后都是自己cover学费开销的，这就更困难了。另一方面，就像我之前说的，他们太过“精明”了，这也是在如此「内卷」的环境中自然进化出的生存之道吧，结合别人的背景来看，贵校的条件的确是一坨shit了，相关的抱怨还会有国外的举证对比来印证，但有的人就是能从这里面读出condescending的语气给予反驳，气急败坏的，还会加上传统艺能请别人去国外发帖。所谓的包容与多元在当前的政治环境下已经是一个大家心知肚明的笑话了，直接说我们不欢迎外国人，玻璃心护校，虽然小气了点，不浪费大家时间岂不是更好。</p>
 <p>因此，我可以在这直言我讨厌中国人，I hate Chinese. 但是要加限定条件，我讨厌<strong>上述</strong>的中国人，讨厌<strong>那些</strong>人。有人会说，这也不是他们的错，他们也是一个个活生生的个体，也饱受tg的洗脑与荼毒。Sigh，我真的不是<em>圣人</em>，我也是个暂时在桂枝国内浮沉的普通人，我没有博爱的精神，我从小就跟他们一起长大，活在他们的掌控之下，<strong>so sick</strong> of all the shit. TLDR管不了那么多了。我只希望余生永远不要再跟他们有交集。 </p>
 <h2 id="Love-amp-Peace"><a href="#Love-amp-Peace" class="headerlink" title="Love &amp; Peace."></a>Love &amp; Peace.</h2>
-    </div>
-  </article>
-</section>
+      </div>
+    </article>
+  </section>
+</div>
 
 <!--  -->
 
@@ -228,7 +245,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
+        data-theme="https://gitkeniwo.tech/giscus-themes/mono-theme.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

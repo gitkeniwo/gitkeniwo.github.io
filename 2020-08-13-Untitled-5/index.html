@@ -90,20 +90,22 @@
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <!-- Disabled: Original nav and toc are now replaced by #toc-terminal-box -->
+  <!--
   <span id="menu">
     <span id="nav">
       <ul>
-         
+        
           <li><a href="/">index/</a></li>
-         
+        
           <li><a href="/archives/">dossiers/</a></li>
-         
+        
           <li><a href="/categories/">taxonomy/</a></li>
-         
+        
           <li><a href="/murmur/">murmurs/</a></li>
-         
+        
           <li><a href="/search/">retrieval/</a></li>
-         
+        
           <li><a href="/about/">about/</a></li>
         
       </ul>
@@ -146,32 +148,46 @@
       
     </div>
   </span>
+  -->
 </div>
 
     
     <div class="content index pt4">
         
-        <section class="terminal-content-block terminal-container">
-  <div class="terminal-prompt-header">
-    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-08-13-Untitled-5/</span>
-  </div>
-
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
+        <div id="neovim-wrapper">
+  <!-- TOC Terminal Box -->
+  <aside id="toc-terminal-box" class="terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">TOC</span>
+      <a id="toc-close-btn" href="#" class="toc-close-icon"><i class="fas fa-times"></i></a>
+    </div>
+    <div id="toc-content">
       
+    </div>
+  </aside>
+
+  <!-- Post Terminal Box -->
+  <section id="post-terminal-box" class="terminal-content-block terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-08-13-Untitled-5/</span>
+    </div>
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        
     <h1 class="posttitle" itemprop="name headline">
         Untitled
     </h1>
 
 
 
-      <div class="meta">
-        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <a id='post-author' href="/">
-          <span itemprop="name">ケニヲ</span>
-          </a>
-        </span>
-        
+        <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a id='post-author' href="/">
+            <span itemprop="name">ケニヲ</span>
+            </a>
+          </span>
+          
     <div class="postdate">
       
         <time datetime="2020-08-12T22:28:18.000Z" itemprop="datePublished">2020-08-13</time>
@@ -180,26 +196,26 @@
     </div>
 
 
-        
+          
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Tweets/">Tweets</a>
     </div>
 
 
-        
+          
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/daily/" rel="tag">daily</a>, <a class="tag-link-link" href="/tags/%E6%AF%92%E5%8A%9B%E6%92%95%E7%83%A4/" rel="tag">毒力撕烤</a>
     </div>
 
 
-      </div>
-    </header>
-    
+        </div>
+      </header>
+      
 
-    <div class="content" itemprop="articleBody">
-      <p>四川豪雨（しせんごうう）だ。</p>
+      <div class="content" itemprop="articleBody">
+        <p>四川豪雨（しせんごうう）だ。</p>
 <p>從下午四點開始就像是已經黑天了一樣，家裡停水，具體停多久未知，晚飯過後我媽就一直在樓下提水上來，看來她對於事態的預想不太樂觀 &gt; &lt;|||</p>
 <p>在微博上，看到成都某地鐵站都被淹水了，大概是北門上那邊，泥土色的雨水夾雜著路面的塵屑和盛夏的哀怨嘩啦啦地從地鐵入口奔瀉而下。</p>
 <p>天津還是遼寧還是某地，又有張獻忠事件發生，這次提刀的是67歲的老翁，他無差別地襲擊過路的人群，殺死了一位女性，重傷了一位女性。我個人很難想像是怎麼樣複雜的情緒，讓他在如此花甲之年不顧麻煩對陌路的女性產生這樣的敵意，不惜剝奪對方的生命，我的關注點有可能在“女性”身上，有可能在“67歲”這個刻板印象身上。但不管怎樣，根據朋友圈的動態來看，微博已經完全屏蔽了這次案情相關的posts。那我雖然不敢出聲，但心裡還是把責任推到了那個企圖關掉房間裡唯一光亮的傢伙身上。</p>
@@ -211,9 +227,10 @@
 <p>Kiss me, melatonin. </p>
 <p>Do not ever leave.</p>
 
-    </div>
-  </article>
-</section>
+      </div>
+    </article>
+  </section>
+</div>
 
 <!--  -->
 
@@ -234,7 +251,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
+        data-theme="https://gitkeniwo.tech/giscus-themes/mono-theme.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

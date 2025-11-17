@@ -1,8 +1,10 @@
 /**
- * Code Highlighting Styles - Monokai Theme
+ * Code Highlighting Styles
+ * Light mode: Monokai Light
+ * Dark mode: Everforest
  */
 
-/* Base highlight container */
+/* Base highlight container - Monokai Light (default) */
 .highlight {
   margin: 1.6em 0;
   display: block;
@@ -11,9 +13,22 @@
   font-size: 0.9rem;
   font-family: 'Courier New', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
   line-height: 1.6;
-  background: #272822;
-  color: #f8f8f2;
+  background: #f5f5f5;
+  color: #49483e;
   border-radius: 4px;
+}
+
+/* Dark mode - Everforest theme */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .highlight {
+    background: #2d353b;
+    color: #d3c6aa;
+  }
+}
+
+[data-theme="dark"] .highlight {
+  background: #2d353b;
+  color: #d3c6aa;
 }
 
 .highlight table {
@@ -28,51 +43,66 @@
 }
 
 .highlight td.gutter {
-  padding-right: 20px;
+  padding-right: 0;
 }
 
 .highlight td.code {
   padding-left: 10px;
 }
 
-/* Line numbers */
+/* Line numbers - Monokai Light */
 .highlight .gutter pre {
-  color: #75715e;
+  color: #909090;
   text-align: right;
-  padding-right: 20px;
+  padding-right: 0;
+}
+
+/* Dark mode line numbers - Everforest */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .highlight .gutter pre {
+    color: #7a8478;
+  }
+}
+
+[data-theme="dark"] .highlight .gutter pre {
+  color: #7a8478;
 }
 
 .highlight .line {
   height: 1.6em;
 }
 
-/* Syntax highlighting colors - Monokai theme */
+/* Syntax highlighting colors - Monokai Light theme (desaturated) */
 .highlight .keyword,
 .highlight .selector-tag,
-.highlight .literal,
-.highlight .section,
-.highlight .link {
-  color: #f92672;
+.highlight .literal {
+  color: #c25566;
 }
 
 .highlight .function .keyword,
 .highlight .class .keyword {
-  color: #66d9ef;
+  color: #5b8a9f;
 }
 
 .highlight .string,
+.highlight .template-tag,
+.highlight .template-variable {
+  color: #8b7f4d;
+}
+
 .highlight .title,
 .highlight .section,
 .highlight .type,
 .highlight .attribute,
 .highlight .symbol,
 .highlight .bullet,
-.highlight .built_in,
 .highlight .addition,
-.highlight .variable,
-.highlight .template-tag,
-.highlight .template-variable {
-  color: #e6db74;
+.highlight .variable {
+  color: #996b3a;
+}
+
+.highlight .built_in {
+  color: #5b8a9f;
 }
 
 .highlight .comment,
@@ -80,6 +110,7 @@
 .highlight .deletion,
 .highlight .meta {
   color: #75715e;
+  font-style: italic;
 }
 
 .highlight .keyword,
@@ -96,31 +127,32 @@
 
 .highlight .params,
 .highlight .variable.language_ {
-  color: #fd971f;
+  color: #996b3a;
 }
 
 .highlight .class .title,
 .highlight .title.class_ {
-  color: #a6e22e;
+  color: #6b8757;
   font-weight: normal;
 }
 
 .highlight .title.function_,
 .highlight .function {
-  color: #a6e22e;
+  color: #6b8757;
 }
 
 .highlight .number,
 .highlight .meta .keyword {
-  color: #ae81ff;
+  color: #8b6b9f;
 }
 
 .highlight .attr {
-  color: #a6e22e;
+  color: #6b8757;
 }
 
-.highlight .built_in {
-  color: #66d9ef;
+.highlight .link {
+  color: #5b8a9f;
+  text-decoration: underline;
 }
 
 .highlight .emphasis {
@@ -129,4 +161,148 @@
 
 .highlight .strong {
   font-weight: bold;
+}
+
+/* Dark mode - Everforest theme */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .highlight .keyword,
+  :root:not([data-theme="light"]) .highlight .selector-tag,
+  :root:not([data-theme="light"]) .highlight .literal {
+    color: #e67e80;
+  }
+
+  :root:not([data-theme="light"]) .highlight .function .keyword,
+  :root:not([data-theme="light"]) .highlight .class .keyword {
+    color: #7fbbb3;
+  }
+
+  :root:not([data-theme="light"]) .highlight .string,
+  :root:not([data-theme="light"]) .highlight .template-tag,
+  :root:not([data-theme="light"]) .highlight .template-variable {
+    color: #dbbc7f;
+  }
+
+  :root:not([data-theme="light"]) .highlight .title,
+  :root:not([data-theme="light"]) .highlight .section,
+  :root:not([data-theme="light"]) .highlight .type,
+  :root:not([data-theme="light"]) .highlight .attribute,
+  :root:not([data-theme="light"]) .highlight .symbol,
+  :root:not([data-theme="light"]) .highlight .bullet,
+  :root:not([data-theme="light"]) .highlight .addition,
+  :root:not([data-theme="light"]) .highlight .variable {
+    color: #e69875;
+  }
+
+  :root:not([data-theme="light"]) .highlight .built_in {
+    color: #83c092;
+  }
+
+  :root:not([data-theme="light"]) .highlight .comment,
+  :root:not([data-theme="light"]) .highlight .quote,
+  :root:not([data-theme="light"]) .highlight .deletion,
+  :root:not([data-theme="light"]) .highlight .meta {
+    color: #859289;
+    font-style: italic;
+  }
+
+  :root:not([data-theme="light"]) .highlight .params,
+  :root:not([data-theme="light"]) .highlight .variable.language_ {
+    color: #e69875;
+  }
+
+  :root:not([data-theme="light"]) .highlight .class .title,
+  :root:not([data-theme="light"]) .highlight .title.class_ {
+    color: #a7c080;
+    font-weight: normal;
+  }
+
+  :root:not([data-theme="light"]) .highlight .title.function_,
+  :root:not([data-theme="light"]) .highlight .function {
+    color: #a7c080;
+  }
+
+  :root:not([data-theme="light"]) .highlight .number,
+  :root:not([data-theme="light"]) .highlight .meta .keyword {
+    color: #d699b6;
+  }
+
+  :root:not([data-theme="light"]) .highlight .attr {
+    color: #a7c080;
+  }
+
+  :root:not([data-theme="light"]) .highlight .link {
+    color: #7fbbb3;
+    text-decoration: underline;
+  }
+}
+
+/* Manual dark theme override - Everforest */
+[data-theme="dark"] .highlight .keyword,
+[data-theme="dark"] .highlight .selector-tag,
+[data-theme="dark"] .highlight .literal {
+  color: #e67e80;
+}
+
+[data-theme="dark"] .highlight .function .keyword,
+[data-theme="dark"] .highlight .class .keyword {
+  color: #7fbbb3;
+}
+
+[data-theme="dark"] .highlight .string,
+[data-theme="dark"] .highlight .template-tag,
+[data-theme="dark"] .highlight .template-variable {
+  color: #dbbc7f;
+}
+
+[data-theme="dark"] .highlight .title,
+[data-theme="dark"] .highlight .section,
+[data-theme="dark"] .highlight .type,
+[data-theme="dark"] .highlight .attribute,
+[data-theme="dark"] .highlight .symbol,
+[data-theme="dark"] .highlight .bullet,
+[data-theme="dark"] .highlight .addition,
+[data-theme="dark"] .highlight .variable {
+  color: #e69875;
+}
+
+[data-theme="dark"] .highlight .built_in {
+  color: #83c092;
+}
+
+[data-theme="dark"] .highlight .comment,
+[data-theme="dark"] .highlight .quote,
+[data-theme="dark"] .highlight .deletion,
+[data-theme="dark"] .highlight .meta {
+  color: #859289;
+  font-style: italic;
+}
+
+[data-theme="dark"] .highlight .params,
+[data-theme="dark"] .highlight .variable.language_ {
+  color: #e69875;
+}
+
+[data-theme="dark"] .highlight .class .title,
+[data-theme="dark"] .highlight .title.class_ {
+  color: #a7c080;
+  font-weight: normal;
+}
+
+[data-theme="dark"] .highlight .title.function_,
+[data-theme="dark"] .highlight .function {
+  color: #a7c080;
+}
+
+[data-theme="dark"] .highlight .number,
+[data-theme="dark"] .highlight .meta .keyword {
+  color: #d699b6;
+}
+
+[data-theme="dark"] .highlight .attr {
+  color: #a7c080;
+}
+
+[data-theme="dark"] .highlight .link {
+  color: #7fbbb3;
+  text-decoration: underline;
 }

@@ -90,20 +90,22 @@
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <!-- Disabled: Original nav and toc are now replaced by #toc-terminal-box -->
+  <!--
   <span id="menu">
     <span id="nav">
       <ul>
-         
+        
           <li><a href="/">index/</a></li>
-         
+        
           <li><a href="/archives/">dossiers/</a></li>
-         
+        
           <li><a href="/categories/">taxonomy/</a></li>
-         
+        
           <li><a href="/murmur/">murmurs/</a></li>
-         
+        
           <li><a href="/search/">retrieval/</a></li>
-         
+        
           <li><a href="/about/">about/</a></li>
         
       </ul>
@@ -146,32 +148,46 @@
       
     </div>
   </span>
+  -->
 </div>
 
     
     <div class="content index pt4">
         
-        <section class="terminal-content-block terminal-container">
-  <div class="terminal-prompt-header">
-    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-09-12-Untitled-11/</span>
-  </div>
-
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
+        <div id="neovim-wrapper">
+  <!-- TOC Terminal Box -->
+  <aside id="toc-terminal-box" class="terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">TOC</span>
+      <a id="toc-close-btn" href="#" class="toc-close-icon"><i class="fas fa-times"></i></a>
+    </div>
+    <div id="toc-content">
       
+    </div>
+  </aside>
+
+  <!-- Post Terminal Box -->
+  <section id="post-terminal-box" class="terminal-content-block terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-09-12-Untitled-11/</span>
+    </div>
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        
     <h1 class="posttitle" itemprop="name headline">
         Untitled
     </h1>
 
 
 
-      <div class="meta">
-        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <a id='post-author' href="/">
-          <span itemprop="name">ケニヲ</span>
-          </a>
-        </span>
-        
+        <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a id='post-author' href="/">
+            <span itemprop="name">ケニヲ</span>
+            </a>
+          </span>
+          
     <div class="postdate">
       
         <time datetime="2020-09-12T17:48:10.000Z" itemprop="datePublished">2020-09-12</time>
@@ -180,32 +196,33 @@
     </div>
 
 
-        
+          
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Tweets/">Tweets</a>
     </div>
 
 
-        
+          
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/daily/" rel="tag">daily</a>, <a class="tag-link-link" href="/tags/%E5%B0%8F%E5%B9%B6%E6%84%9F/" rel="tag">小并感</a>
     </div>
 
 
-      </div>
-    </header>
-    
+        </div>
+      </header>
+      
 
-    <div class="content" itemprop="articleBody">
-      <p>忧郁情绪来得快，去得不一定快。有时陷进去了头脑就不能思考，只能不断地复现各种令人愤懑的往事。这时候要想快速驱散这片忧愁的阴霾，只需要投身进入另一件事情，当下未完成的作业、对未来的规划、提升自己多个方面技能的备考，也可以是非常具体的事情，比如整理自己的notion、打开终端更新本博客等等。只要自己开始做事情了，内心一方面会暂时将恼人的情绪抛到脑后，另一方面潜意识里也会觉得自己是还有点价值的，这价值来源于当下手头的工作，不管它价值几分，总之是有个东西将本属于self-esteem的空缺给填上了。</p>
+      <div class="content" itemprop="articleBody">
+        <p>忧郁情绪来得快，去得不一定快。有时陷进去了头脑就不能思考，只能不断地复现各种令人愤懑的往事。这时候要想快速驱散这片忧愁的阴霾，只需要投身进入另一件事情，当下未完成的作业、对未来的规划、提升自己多个方面技能的备考，也可以是非常具体的事情，比如整理自己的notion、打开终端更新本博客等等。只要自己开始做事情了，内心一方面会暂时将恼人的情绪抛到脑后，另一方面潜意识里也会觉得自己是还有点价值的，这价值来源于当下手头的工作，不管它价值几分，总之是有个东西将本属于self-esteem的空缺给填上了。</p>
 <p>最大的忌讳，同时也是最大的陷阱，就是人处于抑郁状态的时候，甚至连「找点什么事情做做吧」这种想法都难以涌上心头，只能一再地生闷气，越想越气，越想越无助。</p>
 <p>当然，这里的「事情」也是有一些不能触碰的，对于我来说，就是不能「打游戏」，因为我的潜意识里把「打游戏」与「浪费生命」联系起来了，所以如果用打游戏来抵御或者说是逃避现实的话，我也是会越陷越深的。所以第一件事是关掉游戏，卸载，放进柜子，不管当天游戏里的任务还有多少没有做完。</p>
 
-    </div>
-  </article>
-</section>
+      </div>
+    </article>
+  </section>
+</div>
 
 <!--  -->
 
@@ -226,7 +243,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
+        data-theme="https://gitkeniwo.tech/giscus-themes/mono-theme.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

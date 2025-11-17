@@ -92,20 +92,22 @@
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <!-- Disabled: Original nav and toc are now replaced by #toc-terminal-box -->
+  <!--
   <span id="menu">
     <span id="nav">
       <ul>
-         
+        
           <li><a href="/">index/</a></li>
-         
+        
           <li><a href="/archives/">dossiers/</a></li>
-         
+        
           <li><a href="/categories/">taxonomy/</a></li>
-         
+        
           <li><a href="/murmur/">murmurs/</a></li>
-         
+        
           <li><a href="/search/">retrieval/</a></li>
-         
+        
           <li><a href="/about/">about/</a></li>
         
       </ul>
@@ -148,32 +150,46 @@
       
     </div>
   </span>
+  -->
 </div>
 
     
     <div class="content index pt4">
         
-        <section class="terminal-content-block terminal-container">
-  <div class="terminal-prompt-header">
-    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-12-31-Untitled-25/</span>
-  </div>
-
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
+        <div id="neovim-wrapper">
+  <!-- TOC Terminal Box -->
+  <aside id="toc-terminal-box" class="terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">TOC</span>
+      <a id="toc-close-btn" href="#" class="toc-close-icon"><i class="fas fa-times"></i></a>
+    </div>
+    <div id="toc-content">
       
+    </div>
+  </aside>
+
+  <!-- Post Terminal Box -->
+  <section id="post-terminal-box" class="terminal-content-block terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-12-31-Untitled-25/</span>
+    </div>
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        
     <h1 class="posttitle" itemprop="name headline">
         紀念
     </h1>
 
 
 
-      <div class="meta">
-        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <a id='post-author' href="/">
-          <span itemprop="name">ケニヲ</span>
-          </a>
-        </span>
-        
+        <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a id='post-author' href="/">
+            <span itemprop="name">ケニヲ</span>
+            </a>
+          </span>
+          
     <div class="postdate">
       
         <time datetime="2020-12-31T15:47:21.000Z" itemprop="datePublished">2020-12-31</time>
@@ -182,26 +198,26 @@
     </div>
 
 
-        
+          
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Tweets/">Tweets</a> › <a class="category-link" href="/categories/Tweets/Milestones/">Milestones</a>
     </div>
 
 
-        
+          
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/daily/" rel="tag">daily</a>, <a class="tag-link-link" href="/tags/%E6%AF%92%E5%8A%9B%E6%92%95%E7%83%A4/" rel="tag">毒力撕烤</a>
     </div>
 
 
-      </div>
-    </header>
-    
+        </div>
+      </header>
+      
 
-    <div class="content" itemprop="articleBody">
-      <p>我一直在思考，怎麼度過糟糕的2020年的最後一天。這簡直太讓人心煩了。我應該出去看一場電影？我應該去西湖、去西溪濕地閒逛一天？我應該找幾個朋友出去大搓一頓？還是應該上Coursera好好學習，以表示接下來的時間我將努力準備跑路？</p>
+      <div class="content" itemprop="articleBody">
+        <p>我一直在思考，怎麼度過糟糕的2020年的最後一天。這簡直太讓人心煩了。我應該出去看一場電影？我應該去西湖、去西溪濕地閒逛一天？我應該找幾個朋友出去大搓一頓？還是應該上Coursera好好學習，以表示接下來的時間我將努力準備跑路？</p>
 <p>這種無謂的尋求紀念的想法本身就讓這一天變得很糟糕了。我焦灼不安，有一股巨大的美好事物將要逝去的感傷和無可奈何，儘管2020不能稱得上叫人懷念，但對於我來說這意味著我20歲的開端。我一定要做點什麼。事實上，我並沒有那種可以在12月31日做出什麼讓人大跌眼鏡的事情的能力。我是那麼的普通和平庸。從睜開眼起就伴隨著我的那股惴惴不安的焦慮其實是我內心對自身的mediocrity的震怒。</p>
 <p>回過頭來看自己的人生，又何嘗不是充滿了這種刻意的紀念符號呢？坦率來講，我是個非常乏味的人。我缺少一些能讓我像打了雞血一樣主動去狂熱擁抱的愛好。從小到大我最擅長做的事就是fitting-in，強迫著自己去融入與周圍的環境，不停的洗刷心目中自己的形象，讓他顯得不那麼weird，不那麼在別人眼前抬不起頭。《進擊的巨人》裡面的ライナー和ベルトルト不也是這樣才潛伏進調查兵團的嗎？不斷的給自己的靈魂灌輸虛假的幻想，直到誕生多個人格，分不清自己到底是へいし還是せんし。所以，我這樣ダメな人間，也就是依賴於如此的紀念符號而存活至今的。它們是我的假面，是我人格的支柱，就像程式設計裡面一個類的屬性和方法一樣。</p>
 <p>說了這麼多，我現在，只是有點厭倦這種無謂的假裝了。劉瑜說，她並不是在交友方面有什麼障礙，大多數時候她只是懶，懶得去經營一段關係。我現在也不是得了什麼抑鬱症才對周圍缺乏興趣，只是懶得去發現那些可做可不做的事情，懶得去打卡，去花費功夫去消耗機體的能量，去搜羅一筐標籤貼在自己身上，然後靠他人的目光來定義自己。</p>
@@ -211,9 +227,10 @@
 <p><img src="https://img.gitkeniwo.tech/202511/12-023b0157ef1a9b4b6ce0b5c74f037cdc-1762984715.png" alt=""></p>
 <p><em>by iPhone 12 mini, NOMO 135Ti</em></p>
 
-    </div>
-  </article>
-</section>
+      </div>
+    </article>
+  </section>
+</div>
 
 <!--  -->
 
@@ -234,7 +251,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
+        data-theme="https://gitkeniwo.tech/giscus-themes/mono-theme.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

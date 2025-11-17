@@ -91,20 +91,22 @@
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <!-- Disabled: Original nav and toc are now replaced by #toc-terminal-box -->
+  <!--
   <span id="menu">
     <span id="nav">
       <ul>
-         
+        
           <li><a href="/">index/</a></li>
-         
+        
           <li><a href="/archives/">dossiers/</a></li>
-         
+        
           <li><a href="/categories/">taxonomy/</a></li>
-         
+        
           <li><a href="/murmur/">murmurs/</a></li>
-         
+        
           <li><a href="/search/">retrieval/</a></li>
-         
+        
           <li><a href="/about/">about/</a></li>
         
       </ul>
@@ -147,32 +149,46 @@
       
     </div>
   </span>
+  -->
 </div>
 
     
     <div class="content index pt4">
         
-        <section class="terminal-content-block terminal-container">
-  <div class="terminal-prompt-header">
-    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2023-03-12-Internets-Richest-Fitness-Resource/</span>
-  </div>
-
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
+        <div id="neovim-wrapper">
+  <!-- TOC Terminal Box -->
+  <aside id="toc-terminal-box" class="terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">TOC</span>
+      <a id="toc-close-btn" href="#" class="toc-close-icon"><i class="fas fa-times"></i></a>
+    </div>
+    <div id="toc-content">
       
+    </div>
+  </aside>
+
+  <!-- Post Terminal Box -->
+  <section id="post-terminal-box" class="terminal-content-block terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2023-03-12-Internets-Richest-Fitness-Resource/</span>
+    </div>
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        
     <h1 class="posttitle" itemprop="name headline">
         The Internet’s Richest Fitness Resource Is a Site from 1999
     </h1>
 
 
 
-      <div class="meta">
-        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <a id='post-author' href="/">
-          <span itemprop="name">ケニヲ</span>
-          </a>
-        </span>
-        
+        <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a id='post-author' href="/">
+            <span itemprop="name">ケニヲ</span>
+            </a>
+          </span>
+          
     <div class="postdate">
       
         <time datetime="2023-03-12T00:29:08.000Z" itemprop="datePublished">2023-03-12</time>
@@ -181,26 +197,26 @@
     </div>
 
 
-        
+          
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Tech/">Tech</a>
     </div>
 
 
-        
+          
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/blogging/" rel="tag">blogging</a>, <a class="tag-link-link" href="/tags/hn/" rel="tag">hn</a>, <a class="tag-link-link" href="/tags/newyorker/" rel="tag">newyorker</a>
     </div>
 
 
-      </div>
-    </header>
-    
+        </div>
+      </header>
+      
 
-    <div class="content" itemprop="articleBody">
-      <p>逛HN时偶然看见了这篇<a target="_blank" rel="noopener" href="https://news.ycombinator.com/item?id=35080836">The Internet’s Richest Fitness Resource Is a Site from 1999</a>，讲<a target="_blank" rel="noopener" href="https://www.newyorker.com/culture/rabbit-holes/the-internets-richest-fitness-resource-is-a-site-from-1999">New Yorker 推荐了</a>一个fitness网站: <a href="exrx.net">exrx.net</a></p>
+      <div class="content" itemprop="articleBody">
+        <p>逛HN时偶然看见了这篇<a target="_blank" rel="noopener" href="https://news.ycombinator.com/item?id=35080836">The Internet’s Richest Fitness Resource Is a Site from 1999</a>，讲<a target="_blank" rel="noopener" href="https://www.newyorker.com/culture/rabbit-holes/the-internets-richest-fitness-resource-is-a-site-from-1999">New Yorker 推荐了</a>一个fitness网站: <a href="exrx.net">exrx.net</a></p>
 <p>这网站神奇的是，它不仅从1999年建站后就没怎么变过，而且拥有巨量的fitness信息——new yorker文章里用的是”physiological compendium”一词.</p>
 <p>ExRx网站是没有javascript的。文章作者大赞了其简洁而不失内容排布的风格. </p>
 <blockquote>
@@ -219,9 +235,10 @@
 <p>像<a target="_blank" rel="noopener" href="https://terrytao.wordpress.com/">Terence Tao这种</a>接近复古 (但实际是wordpress，应该是伪复古) 的主页也是一看就很学术，没话说了.</p>
 <p>窝这种抖机灵 + horribly buggy 的 Node.js blog想必位于鄙视链最底端……</p>
 
-    </div>
-  </article>
-</section>
+      </div>
+    </article>
+  </section>
+</div>
 
 <!--  -->
 
@@ -242,7 +259,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
+        data-theme="https://gitkeniwo.tech/giscus-themes/mono-theme.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

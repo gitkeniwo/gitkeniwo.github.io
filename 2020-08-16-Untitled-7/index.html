@@ -90,20 +90,22 @@
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <!-- Disabled: Original nav and toc are now replaced by #toc-terminal-box -->
+  <!--
   <span id="menu">
     <span id="nav">
       <ul>
-         
+        
           <li><a href="/">index/</a></li>
-         
+        
           <li><a href="/archives/">dossiers/</a></li>
-         
+        
           <li><a href="/categories/">taxonomy/</a></li>
-         
+        
           <li><a href="/murmur/">murmurs/</a></li>
-         
+        
           <li><a href="/search/">retrieval/</a></li>
-         
+        
           <li><a href="/about/">about/</a></li>
         
       </ul>
@@ -146,32 +148,46 @@
       <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%81%9A%E6%A2%A6"><span class="toc-number">1.</span> <span class="toc-text">做梦</span></a></li></ol>
     </div>
   </span>
+  -->
 </div>
 
     
     <div class="content index pt4">
         
-        <section class="terminal-content-block terminal-container">
-  <div class="terminal-prompt-header">
-    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-08-16-Untitled-7/</span>
-  </div>
+        <div id="neovim-wrapper">
+  <!-- TOC Terminal Box -->
+  <aside id="toc-terminal-box" class="terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">TOC</span>
+      <a id="toc-close-btn" href="#" class="toc-close-icon"><i class="fas fa-times"></i></a>
+    </div>
+    <div id="toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%81%9A%E6%A2%A6"><span class="toc-number">1.</span> <span class="toc-text">做梦</span></a></li></ol>
+    </div>
+  </aside>
 
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      
+  <!-- Post Terminal Box -->
+  <section id="post-terminal-box" class="terminal-content-block terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-08-16-Untitled-7/</span>
+    </div>
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        
     <h1 class="posttitle" itemprop="name headline">
         Untitled
     </h1>
 
 
 
-      <div class="meta">
-        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <a id='post-author' href="/">
-          <span itemprop="name">ケニヲ</span>
-          </a>
-        </span>
-        
+        <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a id='post-author' href="/">
+            <span itemprop="name">ケニヲ</span>
+            </a>
+          </span>
+          
     <div class="postdate">
       
         <time datetime="2020-08-15T23:38:00.000Z" itemprop="datePublished">2020-08-16</time>
@@ -180,26 +196,26 @@
     </div>
 
 
-        
+          
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Tweets/">Tweets</a>
     </div>
 
 
-        
+          
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/daily/" rel="tag">daily</a>, <a class="tag-link-link" href="/tags/thoughts/" rel="tag">thoughts</a>
     </div>
 
 
-      </div>
-    </header>
-    
+        </div>
+      </header>
+      
 
-    <div class="content" itemprop="articleBody">
-      <h1 id="做梦"><a href="#做梦" class="headerlink" title="做梦"></a>做梦</h1><p>做梦总是伤感的，不断重复的意象，内心深处涌动着的渴求，在梦里你是满足又害怕失去的。</p>
+      <div class="content" itemprop="articleBody">
+        <h1 id="做梦"><a href="#做梦" class="headerlink" title="做梦"></a>做梦</h1><p>做梦总是伤感的，不断重复的意象，内心深处涌动着的渴求，在梦里你是满足又害怕失去的。</p>
 <p>类似的思考太多的话，就有点像是村上春树笔下的主角，把自己和周围的事情都想得太透彻，太清晰，像是哲学家，或是自然科学建立之前的各种理学家，在未知的虚无面前企图做某种总结与归纳。<br><em>(Mar 2023 update: “村上春树笔下的主角” wtf? 太尴尬了吧这句; “把自己和周围的事情都想得太透彻，太清晰” OK 你真的看得太透彻了呢。。。 真的笑死 literally 文盲，只会说村上春树blabla。。。。)</em></p>
 <p>长长的一场梦，实际上是很累的。与所念之人在梦中重逢难免按耐不住的内心的喜悦，大脑飞速转动，想要把这些年来欠下的相聚时光以其他方式弥补回来。醒来之后，更加精疲力竭了，还有一种伤感。常常有人说下午睡醒的时候已近黄昏，看着窗外西斜的落日，下班的邻人，偶有狗叫声与楼梯脚步声，再过一会儿路灯就要亮起来了，而自己的房间是这么地安静与孤单，有种像是末世之后的心灵的空虚感</p>
 <p>这样醒来之后，有点像是前面说的下午睡醒之后的感觉，明明睡了十几个小时，但要重拾之前的记忆还需费点功夫，所以有时候居然不知道这是清晨、傍晚还是夜初。特别在这样短暂的时光里又经历过了一次别离，这样的别离有可能是多年以前，给自己的心灵造成了很大创伤的一次事件，所以这样的梦绝对是消耗人的精力的。</p>
@@ -214,9 +230,10 @@
 <p>真希望快点遇到生命中下一个比N<br>更重要的人和事。</p>
 <p>もう一度言うだけで、ずるいね、Nさん。<br><em>(Mar 2023 update: 真的笑死，这种初中生小女生情感日记我以前也真敢push到github上，展示出来图一乐吧就)</em></p>
 
-    </div>
-  </article>
-</section>
+      </div>
+    </article>
+  </section>
+</div>
 
 <!--  -->
 
@@ -237,7 +254,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
+        data-theme="https://gitkeniwo.tech/giscus-themes/mono-theme.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

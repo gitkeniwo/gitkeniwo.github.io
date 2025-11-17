@@ -91,20 +91,22 @@
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <!-- Disabled: Original nav and toc are now replaced by #toc-terminal-box -->
+  <!--
   <span id="menu">
     <span id="nav">
       <ul>
-         
+        
           <li><a href="/">index/</a></li>
-         
+        
           <li><a href="/archives/">dossiers/</a></li>
-         
+        
           <li><a href="/categories/">taxonomy/</a></li>
-         
+        
           <li><a href="/murmur/">murmurs/</a></li>
-         
+        
           <li><a href="/search/">retrieval/</a></li>
-         
+        
           <li><a href="/about/">about/</a></li>
         
       </ul>
@@ -147,32 +149,46 @@
       <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2020"><span class="toc-number">1.</span> <span class="toc-text">2020</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Update-juin"><span class="toc-number">1.1.</span> <span class="toc-text">Update juin</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#juillet-aout-L%E2%80%99etymologie-des-noms-du-mois"><span class="toc-number">1.1.1.</span> <span class="toc-text">juillet&#x2F; août: L’étymologie des noms du mois.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pret-a-porter-les-variants"><span class="toc-number">1.1.2.</span> <span class="toc-text">prêt-à-porter: les variants</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2022"><span class="toc-number">2.</span> <span class="toc-text">2022</span></a></li></ol>
     </div>
   </span>
+  -->
 </div>
 
     
     <div class="content index pt4">
         
-        <section class="terminal-content-block terminal-container">
-  <div class="terminal-prompt-header">
-    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-06-09-Francais-Renconte/</span>
-  </div>
+        <div id="neovim-wrapper">
+  <!-- TOC Terminal Box -->
+  <aside id="toc-terminal-box" class="terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">TOC</span>
+      <a id="toc-close-btn" href="#" class="toc-close-icon"><i class="fas fa-times"></i></a>
+    </div>
+    <div id="toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2020"><span class="toc-number">1.</span> <span class="toc-text">2020</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Update-juin"><span class="toc-number">1.1.</span> <span class="toc-text">Update juin</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#juillet-aout-L%E2%80%99etymologie-des-noms-du-mois"><span class="toc-number">1.1.1.</span> <span class="toc-text">juillet&#x2F; août: L’étymologie des noms du mois.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pret-a-porter-les-variants"><span class="toc-number">1.1.2.</span> <span class="toc-text">prêt-à-porter: les variants</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2022"><span class="toc-number">2.</span> <span class="toc-text">2022</span></a></li></ol>
+    </div>
+  </aside>
 
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      
+  <!-- Post Terminal Box -->
+  <section id="post-terminal-box" class="terminal-content-block terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-06-09-Francais-Renconte/</span>
+    </div>
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        
     <h1 class="posttitle" itemprop="name headline">
         Francais Renconté
     </h1>
 
 
 
-      <div class="meta">
-        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <a id='post-author' href="/">
-          <span itemprop="name">ケニヲ</span>
-          </a>
-        </span>
-        
+        <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a id='post-author' href="/">
+            <span itemprop="name">ケニヲ</span>
+            </a>
+          </span>
+          
     <div class="postdate">
       
         <time datetime="2020-06-09T21:14:48.000Z" itemprop="datePublished">2020-06-09</time>
@@ -181,26 +197,26 @@
     </div>
 
 
-        
+          
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Academical-Hack/">Academical Hack</a> › <a class="category-link" href="/categories/Academical-Hack/Languages/">Languages</a>
     </div>
 
 
-        
+          
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/french/" rel="tag">french</a>
     </div>
 
 
-      </div>
-    </header>
-    
+        </div>
+      </header>
+      
 
-    <div class="content" itemprop="articleBody">
-      <p>本帖就主要用来记录一下学法语碰见的一些有趣东西吧。</p>
+      <div class="content" itemprop="articleBody">
+        <p>本帖就主要用来记录一下学法语碰见的一些有趣东西吧。</p>
 <!-- qmore -->
 <h1 id="2020"><a href="#2020" class="headerlink" title="2020"></a>2020</h1><h2 id="Update-juin"><a href="#Update-juin" class="headerlink" title="Update juin"></a>Update juin</h2><h3 id="juillet-aout-L’etymologie-des-noms-du-mois"><a href="#juillet-aout-L’etymologie-des-noms-du-mois" class="headerlink" title="juillet/ août: L’étymologie des noms du mois."></a>juillet/ août: L’étymologie des noms du mois.</h3><p>首先默写法语的月份：<code>janvier février mars avril mai juin juillet août septembre octobre novembre décembre.</code></p>
 <p>其中從6-9月之間的7、8 juillet 和 août 兩個月，其實是為了紀念凱撒和奧古斯都而插進去的。因為septembre -&gt; sept(法語7) , octobre -&gt;octo- (8), novembre -&gt; neuf, décembre -&gt; dix/ dec(10的詞根，如decade, decimal), 可以看到剛好9之後的月份都被順延了兩個月。 </p>
@@ -222,9 +238,10 @@
 <p><img src="https://img.gitkeniwo.tech/202511/12-815ec62576a3f36211e9c2d5c9e4a491-1762983694.jpg" alt=""> </p>
 <h1 id="2022"><a href="#2022" class="headerlink" title="2022"></a>2022</h1><p>来到巴黎之后才知道不用会讲髪文也能在法国玩的很开心。<br>13e arrondisement初来觉得很第三世界感，走了之后又会怀念它附近的Quatier Chinois。<br>巴黎Métro并没有传闻中的那么脏，报站十分简洁。<br>坐RER B线去CDG路过93省给人惊吓。<br>普阿蓝大区是一长串连绵不绝的海岸线。<br>Escargots没有那么恶心。</p>
 
-    </div>
-  </article>
-</section>
+      </div>
+    </article>
+  </section>
+</div>
 
 <!--  -->
 
@@ -245,7 +262,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
+        data-theme="https://gitkeniwo.tech/giscus-themes/mono-theme.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

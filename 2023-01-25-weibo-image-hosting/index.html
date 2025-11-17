@@ -91,20 +91,22 @@
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <!-- Disabled: Original nav and toc are now replaced by #toc-terminal-box -->
+  <!--
   <span id="menu">
     <span id="nav">
       <ul>
-         
+        
           <li><a href="/">index/</a></li>
-         
+        
           <li><a href="/archives/">dossiers/</a></li>
-         
+        
           <li><a href="/categories/">taxonomy/</a></li>
-         
+        
           <li><a href="/murmur/">murmurs/</a></li>
-         
+        
           <li><a href="/search/">retrieval/</a></li>
-         
+        
           <li><a href="/about/">about/</a></li>
         
       </ul>
@@ -147,32 +149,46 @@
       
     </div>
   </span>
+  -->
 </div>
 
     
     <div class="content index pt4">
         
-        <section class="terminal-content-block terminal-container">
-  <div class="terminal-prompt-header">
-    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2023-01-25-weibo-image-hosting/</span>
-  </div>
-
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
+        <div id="neovim-wrapper">
+  <!-- TOC Terminal Box -->
+  <aside id="toc-terminal-box" class="terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">TOC</span>
+      <a id="toc-close-btn" href="#" class="toc-close-icon"><i class="fas fa-times"></i></a>
+    </div>
+    <div id="toc-content">
       
+    </div>
+  </aside>
+
+  <!-- Post Terminal Box -->
+  <section id="post-terminal-box" class="terminal-content-block terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2023-01-25-weibo-image-hosting/</span>
+    </div>
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        
     <h1 class="posttitle" itemprop="name headline">
         放在微博图床的图片全挂了。
     </h1>
 
 
 
-      <div class="meta">
-        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <a id='post-author' href="/">
-          <span itemprop="name">ケニヲ</span>
-          </a>
-        </span>
-        
+        <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a id='post-author' href="/">
+            <span itemprop="name">ケニヲ</span>
+            </a>
+          </span>
+          
     <div class="postdate">
       
         <time datetime="2023-01-25T13:25:55.000Z" itemprop="datePublished">2023-01-25</time>
@@ -181,26 +197,26 @@
     </div>
 
 
-        
+          
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Blogging/">Blogging</a>
     </div>
 
 
-        
+          
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/image-hosting/" rel="tag">image-hosting</a>
     </div>
 
 
-      </div>
-    </header>
-    
+        </div>
+      </header>
+      
 
-    <div class="content" itemprop="articleBody">
-      <p>微博图床，爷真是当初信了iPic的邪了。</p>
+      <div class="content" itemprop="articleBody">
+        <p>微博图床，爷真是当初信了iPic的邪了。</p>
 <p><em>注：ipic是少数几个支持无token上传微博图床的图床工具</em></p>
 <p><img src="https://img.gitkeniwo.tech/202511/12-1b8a3198198b38f4731becb562cf96a5-1762984714.png" alt=""></p>
 <p>想到之前看到有人说web2.0系的平台，因为是freemium模式，平台的用户本身就是他们的盈利点。用户的digital property自然也不由用户自己掌控。<br>现在即便是想补图，也无从知晓这里究竟放的是什么图片了。以后图片要么放可以信赖的渠道(Github)，要么还是放在本地吧。不氪金的东西不可能长久。</p>
@@ -208,9 +224,10 @@
 <p>似乎在原链前加入一个 <code>cdn.cdnjson.com/</code> 就能通过这个cdn访问到原图. 原图没有被删掉, 而是做了防盗链, 然后赶紧都换成别的源吧。。。</p>
 <p>根据<a target="_blank" rel="noopener" href="https://juejin.cn/post/7189651446306963514">这篇文章</a>，这tva1～4挂掉不只是我一个，是大规模事件. 这个人还写了如何全部替换图链的操作，具体可以去他文章里看。重点他说不推荐用github作为图床，因为官方建议仓库维持在1G内，然后他推荐了<a target="_blank" rel="noopener" href="https://www.qiniu.com/">七牛云</a>免费10G空间，不过我对墙内公司的freemium商业模式深表怀疑(Heroku的免费档都做不下去，🀄️人一来不得把它薅空？)，另外就是你不能存维尼熊不爱看的图。我去下载了一下GitHub图床的repo，现在都121M了，还是非常担心这个repo被GitHub官方橄榄掉的。</p>
 
-    </div>
-  </article>
-</section>
+      </div>
+    </article>
+  </section>
+</div>
 
 <!--  -->
 
@@ -231,7 +248,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
+        data-theme="https://gitkeniwo.tech/giscus-themes/mono-theme.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

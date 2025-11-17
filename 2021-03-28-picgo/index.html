@@ -93,20 +93,22 @@
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <!-- Disabled: Original nav and toc are now replaced by #toc-terminal-box -->
+  <!--
   <span id="menu">
     <span id="nav">
       <ul>
-         
+        
           <li><a href="/">index/</a></li>
-         
+        
           <li><a href="/archives/">dossiers/</a></li>
-         
+        
           <li><a href="/categories/">taxonomy/</a></li>
-         
+        
           <li><a href="/murmur/">murmurs/</a></li>
-         
+        
           <li><a href="/search/">retrieval/</a></li>
-         
+        
           <li><a href="/about/">about/</a></li>
         
       </ul>
@@ -149,32 +151,46 @@
       
     </div>
   </span>
+  -->
 </div>
 
     
     <div class="content index pt4">
         
-        <section class="terminal-content-block terminal-container">
-  <div class="terminal-prompt-header">
-    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2021-03-28-picgo/</span>
-  </div>
-
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
+        <div id="neovim-wrapper">
+  <!-- TOC Terminal Box -->
+  <aside id="toc-terminal-box" class="terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">TOC</span>
+      <a id="toc-close-btn" href="#" class="toc-close-icon"><i class="fas fa-times"></i></a>
+    </div>
+    <div id="toc-content">
       
+    </div>
+  </aside>
+
+  <!-- Post Terminal Box -->
+  <section id="post-terminal-box" class="terminal-content-block terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2021-03-28-picgo/</span>
+    </div>
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        
     <h1 class="posttitle" itemprop="name headline">
         PicGo - 折腾一下新图床
     </h1>
 
 
 
-      <div class="meta">
-        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <a id='post-author' href="/">
-          <span itemprop="name">ケニヲ</span>
-          </a>
-        </span>
-        
+        <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a id='post-author' href="/">
+            <span itemprop="name">ケニヲ</span>
+            </a>
+          </span>
+          
     <div class="postdate">
       
         <time datetime="2021-03-27T23:34:09.000Z" itemprop="datePublished">2021-03-28</time>
@@ -183,26 +199,26 @@
     </div>
 
 
-        
+          
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Tech/">Tech</a>
     </div>
 
 
-        
+          
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/image-hosting/" rel="tag">image-hosting</a>
     </div>
 
 
-      </div>
-    </header>
-    
+        </div>
+      </header>
+      
 
-    <div class="content" itemprop="articleBody">
-      <p>寫博客的時候總是很擔心圖片的問題：存在本地不方便，直接用圖床md鏈接省事且現代化。但隨之而來的又一個問題是：放在外面的cdn上的東西，怎麼保證他不會跑路？舉例來說就是現在ipic免費版支持的微博圖床，匿名上傳，接受範圍內的壓縮，但，萬一微博垮了怎麼辦？且不說夾總還維護著CCP的內容審查，就算微博自己鋪天蓋地的放廣告、壓榨用戶體驗，死亡也是早晚的事情。微博如果垮掉了，我博客里的圖片都會被清光，只會在原處剩下html找不到資源的破碎畫板小圖標——現在去看12年以前的百度貼吧的古董貼，所有的圖片都隨風而逝了，僅留下一道賽博疤痕。<em>（update: 截至 23/01/2023 weibo 图床的图片<a href="/2023-01-25-weibo-image-hosting">已被清空</a>）</em></p>
+      <div class="content" itemprop="articleBody">
+        <p>寫博客的時候總是很擔心圖片的問題：存在本地不方便，直接用圖床md鏈接省事且現代化。但隨之而來的又一個問題是：放在外面的cdn上的東西，怎麼保證他不會跑路？舉例來說就是現在ipic免費版支持的微博圖床，匿名上傳，接受範圍內的壓縮，但，萬一微博垮了怎麼辦？且不說夾總還維護著CCP的內容審查，就算微博自己鋪天蓋地的放廣告、壓榨用戶體驗，死亡也是早晚的事情。微博如果垮掉了，我博客里的圖片都會被清光，只會在原處剩下html找不到資源的破碎畫板小圖標——現在去看12年以前的百度貼吧的古董貼，所有的圖片都隨風而逝了，僅留下一道賽博疤痕。<em>（update: 截至 23/01/2023 weibo 图床的图片<a href="/2023-01-25-weibo-image-hosting">已被清空</a>）</em></p>
 <p>所以，現在就得考慮一個圖床時效性的問題，因為大多數圖片是沒有備份的，倘若圖床跑路，圖片是無論如何也無法輓回了。雖然這樣與時間、歷史、歲月對抗的行為總體上來說是徒勞無功的——我們無法預知我們死後的變化，誇張點說甚至無法預知我們下一秒的變化，指不定ISIS明天恐襲Twitter總部，億萬條推文都毀於一旦，而背後的理由僅僅是因為Twitter對阿拉伯世界宣稱支持<strong>La liberté d’expression</strong>——但我還是盡可能的希望延續這種存在。那麼通覽全球，我覺得能活的最久的service provider，一個是Apple/Goole，另一個就是Github了。所以，我也盡可能希望自己的一切網絡遊戲都能依靠在GitHub周圍——比方說我的Blog。Github是最不可能垮掉的服務商了，所以，GitHub如果提供Image Hosting Service的話我付費支持，但很可惜沒有。</p>
 <p>於是我又找啊找，發現了一個叫<a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo">PicGo</a>的東西。</p>
 <p><img src="https://img.gitkeniwo.tech/202511/12-7186e27552610481ceb7e06e480e578c-1762984709.png" alt=""></p>
@@ -216,9 +232,10 @@
 <p>好像墙内加载<code>raw.githubusercontent.com</code>域名的图片也很慢，直接把该域名添加到ss user PAC里面。</p>
 <p>另外，在typora或者Mark text里面引用md链接的加载速度也差不多，这俩编辑器本质还是html，查找链接引用的资源还是走https，所以需要一直挂着ss。</p>
 
-    </div>
-  </article>
-</section>
+      </div>
+    </article>
+  </section>
+</div>
 
 <!--  -->
 
@@ -239,7 +256,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
+        data-theme="https://gitkeniwo.tech/giscus-themes/mono-theme.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

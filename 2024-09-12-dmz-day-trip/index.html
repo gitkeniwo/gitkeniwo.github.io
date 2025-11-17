@@ -98,20 +98,22 @@
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <!-- Disabled: Original nav and toc are now replaced by #toc-terminal-box -->
+  <!--
   <span id="menu">
     <span id="nav">
       <ul>
-         
+        
           <li><a href="/">index/</a></li>
-         
+        
           <li><a href="/archives/">dossiers/</a></li>
-         
+        
           <li><a href="/categories/">taxonomy/</a></li>
-         
+        
           <li><a href="/murmur/">murmurs/</a></li>
-         
+        
           <li><a href="/search/">retrieval/</a></li>
-         
+        
           <li><a href="/about/">about/</a></li>
         
       </ul>
@@ -154,32 +156,46 @@
       <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A6%96%E5%B0%94%E5%B8%82%E5%86%85%E4%BD%8F%E5%AE%BF%C2%B7%E4%BA%A4%E9%80%9A"><span class="toc-number">1.</span> <span class="toc-text">首尔市内住宿·交通</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DMZ-%E5%8E%BB%E7%A8%8B%E4%BA%A4%E9%80%9A"><span class="toc-number">2.</span> <span class="toc-text">DMZ 去程交通</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B9%B3%E5%92%8C%E8%A7%82%E5%85%89"><span class="toc-number">3.</span> <span class="toc-text">平和观光</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DMZ-%E5%9B%9E%E7%A8%8B%E3%83%BB%E6%96%B0%E6%9D%91%EC%8B%A0%EC%86%90-%E6%A2%A8%E5%A4%A7%EC%9D%B4%EB%8C%80%E3%83%BB%E6%A2%A8%E6%B3%B0%E9%99%A2-%E6%B1%89%E5%8D%97%E6%B4%9E"><span class="toc-number">4.</span> <span class="toc-text">DMZ 回程・新村신손&#x2F;梨大이대・梨泰院&#x2F;汉南洞</span></a></li></ol>
     </div>
   </span>
+  -->
 </div>
 
     
     <div class="content index pt4">
         
-        <section class="terminal-content-block terminal-container">
-  <div class="terminal-prompt-header">
-    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2024-09-12-dmz-day-trip/</span>
-  </div>
+        <div id="neovim-wrapper">
+  <!-- TOC Terminal Box -->
+  <aside id="toc-terminal-box" class="terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">TOC</span>
+      <a id="toc-close-btn" href="#" class="toc-close-icon"><i class="fas fa-times"></i></a>
+    </div>
+    <div id="toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A6%96%E5%B0%94%E5%B8%82%E5%86%85%E4%BD%8F%E5%AE%BF%C2%B7%E4%BA%A4%E9%80%9A"><span class="toc-number">1.</span> <span class="toc-text">首尔市内住宿·交通</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DMZ-%E5%8E%BB%E7%A8%8B%E4%BA%A4%E9%80%9A"><span class="toc-number">2.</span> <span class="toc-text">DMZ 去程交通</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B9%B3%E5%92%8C%E8%A7%82%E5%85%89"><span class="toc-number">3.</span> <span class="toc-text">平和观光</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DMZ-%E5%9B%9E%E7%A8%8B%E3%83%BB%E6%96%B0%E6%9D%91%EC%8B%A0%EC%86%90-%E6%A2%A8%E5%A4%A7%EC%9D%B4%EB%8C%80%E3%83%BB%E6%A2%A8%E6%B3%B0%E9%99%A2-%E6%B1%89%E5%8D%97%E6%B4%9E"><span class="toc-number">4.</span> <span class="toc-text">DMZ 回程・新村신손&#x2F;梨大이대・梨泰院&#x2F;汉南洞</span></a></li></ol>
+    </div>
+  </aside>
 
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      
+  <!-- Post Terminal Box -->
+  <section id="post-terminal-box" class="terminal-content-block terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2024-09-12-dmz-day-trip/</span>
+    </div>
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        
     <h1 class="posttitle" itemprop="name headline">
         南北韩非军事区 Demilitarized Zone (DMZ) 一日游
     </h1>
 
 
 
-      <div class="meta">
-        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <a id='post-author' href="/">
-          <span itemprop="name">ケニヲ</span>
-          </a>
-        </span>
-        
+        <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a id='post-author' href="/">
+            <span itemprop="name">ケニヲ</span>
+            </a>
+          </span>
+          
     <div class="postdate">
       
         <time datetime="2024-09-12T16:47:21.000Z" itemprop="datePublished">2024-09-12</time>
@@ -188,26 +204,26 @@
     </div>
 
 
-        
+          
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Tweets/">Tweets</a> › <a class="category-link" href="/categories/Tweets/Itinerary/">Itinerary</a>
     </div>
 
 
-        
+          
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/asia/" rel="tag">asia</a>, <a class="tag-link-link" href="/tags/korea/" rel="tag">korea</a>
     </div>
 
 
-      </div>
-    </header>
-    
+        </div>
+      </header>
+      
 
-    <div class="content" itemprop="articleBody">
-      <p>（未写完待续）</p>
+      <div class="content" itemprop="articleBody">
+        <p>（未写完待续）</p>
 <p>本次去首尔的第四天起意去了南北韩非军事区(DMZ)。</p>
 <p>一般来说不少人在5～7日的行程里都会安排一天釜山 day trip，但我们考虑到如果不从金海机场飞走的话，来回釜山的路费不太划算，再加上接近韩国中秋节，可能订票会有局限性。再次，因为大家基本上都是五年多次的C-3-9签证，釜山总是可以再来的对吧！秉持着如此信念我们安排了北上的行程。</p>
 <h1 id="首尔市内住宿·交通"><a href="#首尔市内住宿·交通" class="headerlink" title="首尔市内住宿·交通"></a>首尔市内住宿·交通</h1><p>我们住在永登浦 영등포 的 Fairfield 万枫酒店，是万豪旗下的中档线，几乎就在永登浦车站门口，除了会有铁路噪音以外没有太多可以挑剔的。</p>
@@ -246,9 +262,10 @@
 <p style="text-align:center">Fig. 착한곱창 直译为「善良的烤肥肠」</p>
 
 
-    </div>
-  </article>
-</section>
+      </div>
+    </article>
+  </section>
+</div>
 
 <!--  -->
 
@@ -269,7 +286,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
+        data-theme="https://gitkeniwo.tech/giscus-themes/mono-theme.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

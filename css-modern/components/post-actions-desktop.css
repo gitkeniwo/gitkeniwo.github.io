@@ -3,6 +3,80 @@
  * Converted from _partial/post/actions_desktop.styl
  */
 
+/* Neovim-style wrapper for two independent terminal boxes */
+#neovim-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* TOC Terminal Box */
+#toc-terminal-box {
+  width: 0;
+  min-width: 0;
+  max-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: width 0.3s ease, min-width 0.3s ease, max-width 0.3s ease, opacity 0.3s ease, margin 0.3s ease;
+  flex-shrink: 0;
+  position: sticky;
+  top: 2rem;
+  align-self: flex-start;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+#toc-terminal-box.active {
+  width: 280px;
+  min-width: 280px;
+  max-width: 280px;
+  opacity: 1;
+  margin-right: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--color-border);
+}
+
+#toc-terminal-box .terminal-prompt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#toc-terminal-box .toc-close-icon {
+  color: var(--color-accent-1);
+  text-decoration: none;
+  background: none;
+  padding: 0 0.5rem;
+  font-size: 0.9rem;
+}
+
+#toc-terminal-box .toc-close-icon:hover {
+  color: var(--color-link);
+}
+
+#toc-content {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0;
+  max-height: calc(100vh - 6rem);
+}
+
+/* Post Terminal Box */
+#post-terminal-box {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  flex-shrink: 1;
+  flex-grow: 1;
+  transition: all 0.3s ease;
+}
+
 #header-post {
   position: fixed;
   top: 2rem;
@@ -233,9 +307,115 @@
   display: none;
 }
 
+/* TOC Tree Structure Styles (for #toc-terminal-box) - Following tree command style */
+#toc-content .toc {
+  font-family: var(--font-family-mono);
+  font-size: 0.85rem;
+  line-height: 1.8;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#toc-content .toc-child {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+#toc-content .toc-item {
+  display: block;
+  padding: 0.2rem 0;
+  margin: 0;
+  list-style: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Use ::before to add tree connectors like categories page */
+#toc-content .toc-item::before {
+  content: "├─";
+  color: var(--color-meta);
+  margin-right: 0.3rem;
+  user-select: none;
+}
+
+#toc-content .toc-item:last-child::before {
+  content: "└─";
+}
+
+/* Nested items need proper indentation prefix */
+#toc-content .toc-child .toc-item::before {
+  content: "│   ├─";
+}
+
+#toc-content .toc-child .toc-item:last-child::before {
+  content: "│   └─";
+}
+
+#toc-content .toc-child .toc-child .toc-item::before {
+  content: "│   │   ├─";
+}
+
+#toc-content .toc-child .toc-child .toc-item:last-child::before {
+  content: "│   │   └─";
+}
+
+#toc-content .toc-child .toc-child .toc-child .toc-item::before {
+  content: "│   │   │   ├─";
+}
+
+#toc-content .toc-child .toc-child .toc-child .toc-item:last-child::before {
+  content: "│   │   │   └─";
+}
+
+#toc-content .toc-link {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: all 0.15s ease;
+  display: inline;
+  max-width: 100%;
+}
+
+#toc-content .toc-link:hover {
+  color: var(--color-link);
+  text-decoration: underline;
+}
+
+#toc-content .toc-level-1 > .toc-link {
+  color: var(--color-accent-1);
+  font-weight: bold;
+}
+
+#toc-content .toc-level-2 > .toc-link {
+  color: var(--color-text);
+}
+
+#toc-content .toc-level-3 > .toc-link {
+  color: var(--color-meta);
+  font-size: 0.85rem;
+}
+
+#toc-content .toc-level-4 > .toc-link,
+#toc-content .toc-level-5 > .toc-link,
+#toc-content .toc-level-6 > .toc-link {
+  color: var(--color-meta);
+  font-size: 0.8rem;
+}
+
+/* Hide TOC numbers completely */
+#toc-content .toc-number {
+  display: none !important;
+}
+
 /* Media queries */
 @media screen and (max-width: 500px) {
   #header-post {
+    display: none;
+  }
+
+  #toc-terminal-box {
     display: none;
   }
 }

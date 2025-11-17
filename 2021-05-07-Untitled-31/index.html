@@ -94,20 +94,22 @@
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <!-- Disabled: Original nav and toc are now replaced by #toc-terminal-box -->
+  <!--
   <span id="menu">
     <span id="nav">
       <ul>
-         
+        
           <li><a href="/">index/</a></li>
-         
+        
           <li><a href="/archives/">dossiers/</a></li>
-         
+        
           <li><a href="/categories/">taxonomy/</a></li>
-         
+        
           <li><a href="/murmur/">murmurs/</a></li>
-         
+        
           <li><a href="/search/">retrieval/</a></li>
-         
+        
           <li><a href="/about/">about/</a></li>
         
       </ul>
@@ -150,32 +152,46 @@
       
     </div>
   </span>
+  -->
 </div>
 
     
     <div class="content index pt4">
         
-        <section class="terminal-content-block terminal-container">
-  <div class="terminal-prompt-header">
-    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2021-05-07-Untitled-31/</span>
-  </div>
-
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
+        <div id="neovim-wrapper">
+  <!-- TOC Terminal Box -->
+  <aside id="toc-terminal-box" class="terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">TOC</span>
+      <a id="toc-close-btn" href="#" class="toc-close-icon"><i class="fas fa-times"></i></a>
+    </div>
+    <div id="toc-content">
       
+    </div>
+  </aside>
+
+  <!-- Post Terminal Box -->
+  <section id="post-terminal-box" class="terminal-content-block terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2021-05-07-Untitled-31/</span>
+    </div>
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        
     <h1 class="posttitle" itemprop="name headline">
         Untitled
     </h1>
 
 
 
-      <div class="meta">
-        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <a id='post-author' href="/">
-          <span itemprop="name">ケニヲ</span>
-          </a>
-        </span>
-        
+        <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a id='post-author' href="/">
+            <span itemprop="name">ケニヲ</span>
+            </a>
+          </span>
+          
     <div class="postdate">
       
         <time datetime="2021-05-07T21:46:47.000Z" itemprop="datePublished">2021-05-07</time>
@@ -184,26 +200,26 @@
     </div>
 
 
-        
+          
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Tweets/">Tweets</a>
     </div>
 
 
-        
+          
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/daily/" rel="tag">daily</a>, <a class="tag-link-link" href="/tags/zju/" rel="tag">zju</a>, <a class="tag-link-link" href="/tags/%E5%B0%8F%E5%B9%B6%E6%84%9F/" rel="tag">小并感</a>
     </div>
 
 
-      </div>
-    </header>
-    
+        </div>
+      </header>
+      
 
-    <div class="content" itemprop="articleBody">
-      <p>一個好消息，朋友們，今天窩終於從<strong>畢業設計的陰霾</strong>之中走出來了。前幾天窩佬真的萬念俱灰，已經做好了延畢的準備正想找老師坦白，又突然發現這個模型的數據並不是沒有可操作性。總之，初稿現在已經交上去了，然而這並不代表已經結束，只能說最近一段時間不會那麼pushy，可以稍微緩和一點做事情了。11號還有離散的期中考試，再之後修改意見下來又要忙一陣子了，可不敢怠慢。</p>
+      <div class="content" itemprop="articleBody">
+        <p>一個好消息，朋友們，今天窩終於從<strong>畢業設計的陰霾</strong>之中走出來了。前幾天窩佬真的萬念俱灰，已經做好了延畢的準備正想找老師坦白，又突然發現這個模型的數據並不是沒有可操作性。總之，初稿現在已經交上去了，然而這並不代表已經結束，只能說最近一段時間不會那麼pushy，可以稍微緩和一點做事情了。11號還有離散的期中考試，再之後修改意見下來又要忙一陣子了，可不敢怠慢。</p>
 <p>今天去看了<em>「魔戒」</em> 第一部，這居然是<em>2001年</em>  <u>(划重點)</u>的東西，看完又想感嘆只有<del>窩永遠喜歡但移民不過去的</del>腐國才能拍出這種史詩，裡面的每個角色都很難不成為經典。<!-- 並且窩佬在阿拉貢出場~~露臉~~的十秒之內就被圈粉 （/掩面）。 -->另外，丹麥人真的有種特殊的氣質，以至於我的pattern recognition一瞬間就聯想到了詹姆蘭尼斯特和拔叔<br><!-- （wait，難道不是偶然得知V父母有一方是丹麥人之後才突然想到嗎）。
 氮素——unfortunately Viggo Mortensen本人今年已經63歲了(*what actual fuck*) ，也就是說他演阿拉貢的時候都四十多了⋯⋯~~但這並不妨礙我🥺~~ --></p>
 <p>最近其他事情也發生了好多好多，平時走路都會在腦海裡翻來覆去想問題，一坐到電腦面前就感覺想說的話overwhelmingly湧到心頭，但是今天已經很累了，就暫且不談了。從NHD上leech了魔戒的加長版(<em>Extended version</em>)，這部居然還能更長，電影院裡就有三個小時，藍光壓制版居然能到3:42，然後我看第三部好像有四個半小時⋯⋯然而這當然是好事情，給窩拍到十小時也不為過haha。</p>
@@ -213,9 +229,10 @@
 <p><img src="https://img.gitkeniwo.tech/202511/12-405417db9a85bbc654baa45c19d6655c-1762984718.jpeg" alt=""></p>
 <p>還是希望有人陪我一起看電影。</p>
 
-    </div>
-  </article>
-</section>
+      </div>
+    </article>
+  </section>
+</div>
 
 <!--  -->
 
@@ -236,7 +253,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
+        data-theme="https://gitkeniwo.tech/giscus-themes/mono-theme.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

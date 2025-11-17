@@ -92,20 +92,22 @@
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <!-- Disabled: Original nav and toc are now replaced by #toc-terminal-box -->
+  <!--
   <span id="menu">
     <span id="nav">
       <ul>
-         
+        
           <li><a href="/">index/</a></li>
-         
+        
           <li><a href="/archives/">dossiers/</a></li>
-         
+        
           <li><a href="/categories/">taxonomy/</a></li>
-         
+        
           <li><a href="/murmur/">murmurs/</a></li>
-         
+        
           <li><a href="/search/">retrieval/</a></li>
-         
+        
           <li><a href="/about/">about/</a></li>
         
       </ul>
@@ -148,32 +150,46 @@
       <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Introduction-to-Java"><span class="toc-number">1.</span> <span class="toc-text">Introduction to Java</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lists"><span class="toc-number">2.</span> <span class="toc-text">Lists</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mystery-of-Walrus"><span class="toc-number">2.1.</span> <span class="toc-text">Mystery of Walrus</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Golden-Rule-of-Equals-GRoE"><span class="toc-number">2.1.1.</span> <span class="toc-text">The Golden Rule of Equals (GRoE)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Object-Instantiation"><span class="toc-number">2.1.2.</span> <span class="toc-text">Object Instantiation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Reference-Variable-Declaration"><span class="toc-number">2.1.3.</span> <span class="toc-text">Reference Variable Declaration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Box-and-Pointer-Notation"><span class="toc-number">2.1.4.</span> <span class="toc-text">Box and Pointer Notation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Parameter-Passing-Pass-by-Value-VIP"><span class="toc-number">2.1.5.</span> <span class="toc-text">Parameter Passing: Pass by Value (VIP)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Instantiation-of-Arrays"><span class="toc-number">2.1.6.</span> <span class="toc-text">Instantiation of Arrays</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Law-of-the-Broken-Futon"><span class="toc-number">2.1.7.</span> <span class="toc-text">The Law of the Broken Futon</span></a></li></ol></li></ol></li></ol>
     </div>
   </span>
+  -->
 </div>
 
     
     <div class="content index pt4">
         
-        <section class="terminal-content-block terminal-container">
-  <div class="terminal-prompt-header">
-    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-06-11-The-Notebook-of-CS61B/</span>
-  </div>
+        <div id="neovim-wrapper">
+  <!-- TOC Terminal Box -->
+  <aside id="toc-terminal-box" class="terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">TOC</span>
+      <a id="toc-close-btn" href="#" class="toc-close-icon"><i class="fas fa-times"></i></a>
+    </div>
+    <div id="toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Introduction-to-Java"><span class="toc-number">1.</span> <span class="toc-text">Introduction to Java</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Lists"><span class="toc-number">2.</span> <span class="toc-text">Lists</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mystery-of-Walrus"><span class="toc-number">2.1.</span> <span class="toc-text">Mystery of Walrus</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Golden-Rule-of-Equals-GRoE"><span class="toc-number">2.1.1.</span> <span class="toc-text">The Golden Rule of Equals (GRoE)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Object-Instantiation"><span class="toc-number">2.1.2.</span> <span class="toc-text">Object Instantiation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Reference-Variable-Declaration"><span class="toc-number">2.1.3.</span> <span class="toc-text">Reference Variable Declaration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Box-and-Pointer-Notation"><span class="toc-number">2.1.4.</span> <span class="toc-text">Box and Pointer Notation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Parameter-Passing-Pass-by-Value-VIP"><span class="toc-number">2.1.5.</span> <span class="toc-text">Parameter Passing: Pass by Value (VIP)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Instantiation-of-Arrays"><span class="toc-number">2.1.6.</span> <span class="toc-text">Instantiation of Arrays</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-Law-of-the-Broken-Futon"><span class="toc-number">2.1.7.</span> <span class="toc-text">The Law of the Broken Futon</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </aside>
 
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      
+  <!-- Post Terminal Box -->
+  <section id="post-terminal-box" class="terminal-content-block terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-06-11-The-Notebook-of-CS61B/</span>
+    </div>
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        
     <h1 class="posttitle" itemprop="name headline">
         The Notebook of CS61B
     </h1>
 
 
 
-      <div class="meta">
-        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <a id='post-author' href="/">
-          <span itemprop="name">ケニヲ</span>
-          </a>
-        </span>
-        
+        <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a id='post-author' href="/">
+            <span itemprop="name">ケニヲ</span>
+            </a>
+          </span>
+          
     <div class="postdate">
       
         <time datetime="2020-06-11T20:56:54.000Z" itemprop="datePublished">2020-06-11</time>
@@ -182,26 +198,26 @@
     </div>
 
 
-        
+          
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Zen-and-the-Art-of-Computer-Maintenance/">Zen and the Art of Computer Maintenance</a> › <a class="category-link" href="/categories/Zen-and-the-Art-of-Computer-Maintenance/Algorithms/">Algorithms</a>
     </div>
 
 
-        
+          
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/data-structure/" rel="tag">data-structure</a>, <a class="tag-link-link" href="/tags/notes/" rel="tag">notes</a>
     </div>
 
 
-      </div>
-    </header>
-    
+        </div>
+      </header>
+      
 
-    <div class="content" itemprop="articleBody">
-      <h1 id="Introduction-to-Java"><a href="#Introduction-to-Java" class="headerlink" title="Introduction to Java"></a>Introduction to Java</h1><ul>
+      <div class="content" itemprop="articleBody">
+        <h1 id="Introduction-to-Java"><a href="#Introduction-to-Java" class="headerlink" title="Introduction to Java"></a>Introduction to Java</h1><ul>
 <li>[x] 1</li>
 <li>[ ] 2</li>
 <li>[ ] 3</li>
@@ -232,9 +248,10 @@
 <p><code>Int[] a =new int[]&#123;1, 2, 4, 94&#125;</code> contains:<br>Declaration/ Instantiation/ Assignment: put the address of the new object into that 64 bit box. </p>
 <p>so if <code>a = [something new]</code> that address would be lost and never get that back.</p>
 <h3 id="The-Law-of-the-Broken-Futon"><a href="#The-Law-of-the-Broken-Futon" class="headerlink" title="The Law of the Broken Futon"></a>The Law of the Broken Futon</h3>
-    </div>
-  </article>
-</section>
+      </div>
+    </article>
+  </section>
+</div>
 
 <!--  -->
 
@@ -255,7 +272,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
+        data-theme="https://gitkeniwo.tech/giscus-themes/mono-theme.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

@@ -89,20 +89,22 @@
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <!-- Disabled: Original nav and toc are now replaced by #toc-terminal-box -->
+  <!--
   <span id="menu">
     <span id="nav">
       <ul>
-         
+        
           <li><a href="/">index/</a></li>
-         
+        
           <li><a href="/archives/">dossiers/</a></li>
-         
+        
           <li><a href="/categories/">taxonomy/</a></li>
-         
+        
           <li><a href="/murmur/">murmurs/</a></li>
-         
+        
           <li><a href="/search/">retrieval/</a></li>
-         
+        
           <li><a href="/about/">about/</a></li>
         
       </ul>
@@ -145,32 +147,46 @@
       <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Primitive-Data-Types"><span class="toc-number">1.</span> <span class="toc-text">Primitive Data Types</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#String"><span class="toc-number">1.1.</span> <span class="toc-text">String</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#String-Operation"><span class="toc-number">1.1.1.</span> <span class="toc-text">String Operation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#String-Method"><span class="toc-number">1.1.2.</span> <span class="toc-text">String Method</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ternary-Operator"><span class="toc-number">1.2.</span> <span class="toc-text">Ternary Operator</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-method"><span class="toc-number">2.</span> <span class="toc-text">方法 method</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#DiffMerge-Tool"><span class="toc-number">2.1.</span> <span class="toc-text">DiffMerge Tool</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Parse-values-from-Strings"><span class="toc-number">2.2.</span> <span class="toc-text">Parse values from Strings</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#OOP"><span class="toc-number">3.</span> <span class="toc-text">OOP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Classes-Constructors"><span class="toc-number">3.1.</span> <span class="toc-text">Classes, Constructors</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Inheritage"><span class="toc-number">3.1.1.</span> <span class="toc-text">Inheritage</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#keyword-this-super"><span class="toc-number">3.1.1.1.</span> <span class="toc-text">keyword this&#x2F; super</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#this-call-super-call"><span class="toc-number">3.1.1.2.</span> <span class="toc-text">this() call &#x2F; super() call</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Static-Instance-methods-variables"><span class="toc-number">3.2.</span> <span class="toc-text">Static &#x2F; Instance methods &#x2F; variables</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#static-methods"><span class="toc-number">3.2.1.</span> <span class="toc-text">static methods</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Calling"><span class="toc-number">3.2.2.</span> <span class="toc-text">Calling</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Declaration"><span class="toc-number">3.2.3.</span> <span class="toc-text">Declaration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#static-variables"><span class="toc-number">3.2.4.</span> <span class="toc-text">static variables</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Class-Features"><span class="toc-number">3.3.</span> <span class="toc-text">Class Features</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Compositions"><span class="toc-number">3.3.1.</span> <span class="toc-text">Compositions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Encapsulation"><span class="toc-number">3.3.2.</span> <span class="toc-text">Encapsulation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Polymorphism"><span class="toc-number">3.3.3.</span> <span class="toc-text">Polymorphism</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Inner-and-Abstract-Classes"><span class="toc-number">3.4.</span> <span class="toc-text">Inner and Abstract Classes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Interfaces"><span class="toc-number">3.5.</span> <span class="toc-text">Interfaces</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Array-Lists-Autoboxing-and-Unboxing"><span class="toc-number">4.</span> <span class="toc-text">Array, Lists, Autoboxing and Unboxing</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Array"><span class="toc-number">4.1.</span> <span class="toc-text">Array</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Array-methods"><span class="toc-number">4.1.1.</span> <span class="toc-text">Array methods</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#List-and-ArrayList"><span class="toc-number">4.2.</span> <span class="toc-text">List and ArrayList</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ArrayList"><span class="toc-number">4.3.</span> <span class="toc-text">ArrayList</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ArrayList%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">4.3.1.</span> <span class="toc-text">ArrayList常用方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Packages-and-Naming-Conventions"><span class="toc-number">5.</span> <span class="toc-text">Packages and Naming  Conventions</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java-Collections"><span class="toc-number">6.</span> <span class="toc-text">Java Collections</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java-FX"><span class="toc-number">7.</span> <span class="toc-text">Java FX</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Networking-Programming"><span class="toc-number">8.</span> <span class="toc-text">Networking Programming</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Databases"><span class="toc-number">9.</span> <span class="toc-text">Databases</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Debugging"><span class="toc-number">10.</span> <span class="toc-text">Debugging</span></a></li></ol>
     </div>
   </span>
+  -->
 </div>
 
     
     <div class="content index pt4">
         
-        <section class="terminal-content-block terminal-container">
-  <div class="terminal-prompt-header">
-    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-06-08-Java-review/</span>
-  </div>
+        <div id="neovim-wrapper">
+  <!-- TOC Terminal Box -->
+  <aside id="toc-terminal-box" class="terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">TOC</span>
+      <a id="toc-close-btn" href="#" class="toc-close-icon"><i class="fas fa-times"></i></a>
+    </div>
+    <div id="toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Primitive-Data-Types"><span class="toc-number">1.</span> <span class="toc-text">Primitive Data Types</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#String"><span class="toc-number">1.1.</span> <span class="toc-text">String</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#String-Operation"><span class="toc-number">1.1.1.</span> <span class="toc-text">String Operation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#String-Method"><span class="toc-number">1.1.2.</span> <span class="toc-text">String Method</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ternary-Operator"><span class="toc-number">1.2.</span> <span class="toc-text">Ternary Operator</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-method"><span class="toc-number">2.</span> <span class="toc-text">方法 method</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#DiffMerge-Tool"><span class="toc-number">2.1.</span> <span class="toc-text">DiffMerge Tool</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Parse-values-from-Strings"><span class="toc-number">2.2.</span> <span class="toc-text">Parse values from Strings</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#OOP"><span class="toc-number">3.</span> <span class="toc-text">OOP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Classes-Constructors"><span class="toc-number">3.1.</span> <span class="toc-text">Classes, Constructors</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Inheritage"><span class="toc-number">3.1.1.</span> <span class="toc-text">Inheritage</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#keyword-this-super"><span class="toc-number">3.1.1.1.</span> <span class="toc-text">keyword this&#x2F; super</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#this-call-super-call"><span class="toc-number">3.1.1.2.</span> <span class="toc-text">this() call &#x2F; super() call</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Static-Instance-methods-variables"><span class="toc-number">3.2.</span> <span class="toc-text">Static &#x2F; Instance methods &#x2F; variables</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#static-methods"><span class="toc-number">3.2.1.</span> <span class="toc-text">static methods</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Calling"><span class="toc-number">3.2.2.</span> <span class="toc-text">Calling</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Declaration"><span class="toc-number">3.2.3.</span> <span class="toc-text">Declaration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#static-variables"><span class="toc-number">3.2.4.</span> <span class="toc-text">static variables</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Class-Features"><span class="toc-number">3.3.</span> <span class="toc-text">Class Features</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Compositions"><span class="toc-number">3.3.1.</span> <span class="toc-text">Compositions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Encapsulation"><span class="toc-number">3.3.2.</span> <span class="toc-text">Encapsulation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Polymorphism"><span class="toc-number">3.3.3.</span> <span class="toc-text">Polymorphism</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Inner-and-Abstract-Classes"><span class="toc-number">3.4.</span> <span class="toc-text">Inner and Abstract Classes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Interfaces"><span class="toc-number">3.5.</span> <span class="toc-text">Interfaces</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Array-Lists-Autoboxing-and-Unboxing"><span class="toc-number">4.</span> <span class="toc-text">Array, Lists, Autoboxing and Unboxing</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Array"><span class="toc-number">4.1.</span> <span class="toc-text">Array</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Array-methods"><span class="toc-number">4.1.1.</span> <span class="toc-text">Array methods</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#List-and-ArrayList"><span class="toc-number">4.2.</span> <span class="toc-text">List and ArrayList</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ArrayList"><span class="toc-number">4.3.</span> <span class="toc-text">ArrayList</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ArrayList%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">4.3.1.</span> <span class="toc-text">ArrayList常用方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Packages-and-Naming-Conventions"><span class="toc-number">5.</span> <span class="toc-text">Packages and Naming  Conventions</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java-Collections"><span class="toc-number">6.</span> <span class="toc-text">Java Collections</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java-FX"><span class="toc-number">7.</span> <span class="toc-text">Java FX</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Networking-Programming"><span class="toc-number">8.</span> <span class="toc-text">Networking Programming</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Databases"><span class="toc-number">9.</span> <span class="toc-text">Databases</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Debugging"><span class="toc-number">10.</span> <span class="toc-text">Debugging</span></a></li></ol>
+    </div>
+  </aside>
 
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      
+  <!-- Post Terminal Box -->
+  <section id="post-terminal-box" class="terminal-content-block terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-06-08-Java-review/</span>
+    </div>
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        
     <h1 class="posttitle" itemprop="name headline">
         Java review
     </h1>
 
 
 
-      <div class="meta">
-        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <a id='post-author' href="/">
-          <span itemprop="name">ケニヲ</span>
-          </a>
-        </span>
-        
+        <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a id='post-author' href="/">
+            <span itemprop="name">ケニヲ</span>
+            </a>
+          </span>
+          
     <div class="postdate">
       
         <time datetime="2020-06-08T09:37:19.000Z" itemprop="datePublished">2020-06-08</time>
@@ -179,26 +195,26 @@
     </div>
 
 
-        
+          
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Tech/">Tech</a>
     </div>
 
 
-        
+          
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/java/" rel="tag">java</a>
     </div>
 
 
-      </div>
-    </header>
-    
+        </div>
+      </header>
+      
 
-    <div class="content" itemprop="articleBody">
-      <p>java basic knowledge review.</p>
+      <div class="content" itemprop="articleBody">
+        <p>java basic knowledge review.</p>
 <a id="more"></a>
 <h1 id="Primitive-Data-Types"><a href="#Primitive-Data-Types" class="headerlink" title="Primitive Data Types"></a>Primitive Data Types</h1><p>byte, short, int, long, float, double, char, boolean</p>
 <h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><p>Actually a class.</p>
@@ -318,9 +334,10 @@
 </li>
 </ul>
 <h1 id="Packages-and-Naming-Conventions"><a href="#Packages-and-Naming-Conventions" class="headerlink" title="Packages and Naming  Conventions"></a>Packages and Naming  Conventions</h1><h1 id="Java-Collections"><a href="#Java-Collections" class="headerlink" title="Java Collections"></a>Java Collections</h1><h1 id="Java-FX"><a href="#Java-FX" class="headerlink" title="Java FX"></a>Java FX</h1><h1 id="Networking-Programming"><a href="#Networking-Programming" class="headerlink" title="Networking Programming"></a>Networking Programming</h1><h1 id="Databases"><a href="#Databases" class="headerlink" title="Databases"></a>Databases</h1><h1 id="Debugging"><a href="#Debugging" class="headerlink" title="Debugging"></a>Debugging</h1>
-    </div>
-  </article>
-</section>
+      </div>
+    </article>
+  </section>
+</div>
 
 <!--  -->
 
@@ -341,7 +358,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
+        data-theme="https://gitkeniwo.tech/giscus-themes/mono-theme.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

@@ -93,20 +93,22 @@
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <!-- Disabled: Original nav and toc are now replaced by #toc-terminal-box -->
+  <!--
   <span id="menu">
     <span id="nav">
       <ul>
-         
+        
           <li><a href="/">index/</a></li>
-         
+        
           <li><a href="/archives/">dossiers/</a></li>
-         
+        
           <li><a href="/categories/">taxonomy/</a></li>
-         
+        
           <li><a href="/murmur/">murmurs/</a></li>
-         
+        
           <li><a href="/search/">retrieval/</a></li>
-         
+        
           <li><a href="/about/">about/</a></li>
         
       </ul>
@@ -149,32 +151,46 @@
       <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%E4%B8%8D%E8%A6%81%E6%BA%AB%E5%92%8C%E5%9C%B0%E8%B5%B0%E9%80%B2%E9%82%A3%E5%80%8B%E8%89%AF%E5%A4%9C"><span class="toc-number">1.</span> <span class="toc-text">1不要溫和地走進那個良夜</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%E5%85%A8%E9%83%A8%E9%81%87%E9%9B%A3"><span class="toc-number">2.</span> <span class="toc-text">2全部遇難</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%E6%AD%BB%E7%9A%84%E5%85%A9%E9%9D%A2%E6%80%A7"><span class="toc-number">3.</span> <span class="toc-text">3死的兩面性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E5%A3%B9"><span class="toc-number">3.1.</span> <span class="toc-text">其壹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E8%B4%B0"><span class="toc-number">3.2.</span> <span class="toc-text">其贰</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4%E6%B3%95%E8%98%AD%E8%A5%BF"><span class="toc-number">4.</span> <span class="toc-text">4法蘭西</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5%E5%85%A7%E8%87%9F"><span class="toc-number">5.</span> <span class="toc-text">5內臟</span></a></li></ol>
     </div>
   </span>
+  -->
 </div>
 
     
     <div class="content index pt4">
         
-        <section class="terminal-content-block terminal-container">
-  <div class="terminal-prompt-header">
-    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2021-05-11-Untitled-32/</span>
-  </div>
+        <div id="neovim-wrapper">
+  <!-- TOC Terminal Box -->
+  <aside id="toc-terminal-box" class="terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">TOC</span>
+      <a id="toc-close-btn" href="#" class="toc-close-icon"><i class="fas fa-times"></i></a>
+    </div>
+    <div id="toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1%E4%B8%8D%E8%A6%81%E6%BA%AB%E5%92%8C%E5%9C%B0%E8%B5%B0%E9%80%B2%E9%82%A3%E5%80%8B%E8%89%AF%E5%A4%9C"><span class="toc-number">1.</span> <span class="toc-text">1不要溫和地走進那個良夜</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2%E5%85%A8%E9%83%A8%E9%81%87%E9%9B%A3"><span class="toc-number">2.</span> <span class="toc-text">2全部遇難</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3%E6%AD%BB%E7%9A%84%E5%85%A9%E9%9D%A2%E6%80%A7"><span class="toc-number">3.</span> <span class="toc-text">3死的兩面性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E5%A3%B9"><span class="toc-number">3.1.</span> <span class="toc-text">其壹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B6%E8%B4%B0"><span class="toc-number">3.2.</span> <span class="toc-text">其贰</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4%E6%B3%95%E8%98%AD%E8%A5%BF"><span class="toc-number">4.</span> <span class="toc-text">4法蘭西</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5%E5%85%A7%E8%87%9F"><span class="toc-number">5.</span> <span class="toc-text">5內臟</span></a></li></ol>
+    </div>
+  </aside>
 
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      
+  <!-- Post Terminal Box -->
+  <section id="post-terminal-box" class="terminal-content-block terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2021-05-11-Untitled-32/</span>
+    </div>
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        
     <h1 class="posttitle" itemprop="name headline">
         不要溫和地走進那個良夜
     </h1>
 
 
 
-      <div class="meta">
-        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <a id='post-author' href="/">
-          <span itemprop="name">ケニヲ</span>
-          </a>
-        </span>
-        
+        <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a id='post-author' href="/">
+            <span itemprop="name">ケニヲ</span>
+            </a>
+          </span>
+          
     <div class="postdate">
       
         <time datetime="2021-05-11T21:43:16.000Z" itemprop="datePublished">2021-05-11</time>
@@ -183,26 +199,26 @@
     </div>
 
 
-        
+          
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Tweets/">Tweets</a>
     </div>
 
 
-        
+          
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/poem/" rel="tag">poem</a>, <a class="tag-link-link" href="/tags/politics/" rel="tag">politics</a>
     </div>
 
 
-      </div>
-    </header>
-    
+        </div>
+      </header>
+      
 
-    <div class="content" itemprop="articleBody">
-      <h1 id="1不要溫和地走進那個良夜"><a href="#1不要溫和地走進那個良夜" class="headerlink" title="1不要溫和地走進那個良夜"></a>1不要溫和地走進那個良夜</h1><p>詩/迪蘭·托馬斯<br>譯/巫寧坤</p>
+      <div class="content" itemprop="articleBody">
+        <h1 id="1不要溫和地走進那個良夜"><a href="#1不要溫和地走進那個良夜" class="headerlink" title="1不要溫和地走進那個良夜"></a>1不要溫和地走進那個良夜</h1><p>詩/迪蘭·托馬斯<br>譯/巫寧坤</p>
 <p>不要溫和地走進那個良夜，<br>老年應當在日暮時燃燒咆哮；<br>怒斥，怒斥光明的消逝。</p>
 <p>雖然智慧的人臨終時懂得黑暗有理，<br>因為他們的話沒有進發出閃電，他們<br>也並不溫和地走進那個良夜。</p>
 <p>善良的人，當最後一浪過去，高呼他們脆弱的善行<br>可能曾會多麼光輝地在綠色的海灣里舞蹈，<br>怒斥，怒斥光明的消逝。</p>
@@ -234,9 +250,10 @@
 <p> —Khet Thi</p>
 </blockquote>
 
-    </div>
-  </article>
-</section>
+      </div>
+    </article>
+  </section>
+</div>
 
 <!--  -->
 
@@ -257,7 +274,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
+        data-theme="https://gitkeniwo.tech/giscus-themes/mono-theme.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

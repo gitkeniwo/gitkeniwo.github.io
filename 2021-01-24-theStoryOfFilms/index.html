@@ -93,20 +93,22 @@
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <!-- Disabled: Original nav and toc are now replaced by #toc-terminal-box -->
+  <!--
   <span id="menu">
     <span id="nav">
       <ul>
-         
+        
           <li><a href="/">index/</a></li>
-         
+        
           <li><a href="/archives/">dossiers/</a></li>
-         
+        
           <li><a href="/categories/">taxonomy/</a></li>
-         
+        
           <li><a href="/murmur/">murmurs/</a></li>
-         
+        
           <li><a href="/search/">retrieval/</a></li>
-         
+        
           <li><a href="/about/">about/</a></li>
         
       </ul>
@@ -149,32 +151,46 @@
       <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#E01"><span class="toc-number">1.</span> <span class="toc-text">E01</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Phantom-Ride"><span class="toc-number">1.1.</span> <span class="toc-text">The Phantom Ride</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Meanwhile-Editing"><span class="toc-number">1.2.</span> <span class="toc-text">Meanwhile Editing</span></a></li></ol></li></ol>
     </div>
   </span>
+  -->
 </div>
 
     
     <div class="content index pt4">
         
-        <section class="terminal-content-block terminal-container">
-  <div class="terminal-prompt-header">
-    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2021-01-24-theStoryOfFilms/</span>
-  </div>
+        <div id="neovim-wrapper">
+  <!-- TOC Terminal Box -->
+  <aside id="toc-terminal-box" class="terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">TOC</span>
+      <a id="toc-close-btn" href="#" class="toc-close-icon"><i class="fas fa-times"></i></a>
+    </div>
+    <div id="toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#E01"><span class="toc-number">1.</span> <span class="toc-text">E01</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Phantom-Ride"><span class="toc-number">1.1.</span> <span class="toc-text">The Phantom Ride</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Meanwhile-Editing"><span class="toc-number">1.2.</span> <span class="toc-text">Meanwhile Editing</span></a></li></ol></li></ol>
+    </div>
+  </aside>
 
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      
+  <!-- Post Terminal Box -->
+  <section id="post-terminal-box" class="terminal-content-block terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2021-01-24-theStoryOfFilms/</span>
+    </div>
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        
     <h1 class="posttitle" itemprop="name headline">
         「电影史话」的一点小笔记（更新中）
     </h1>
 
 
 
-      <div class="meta">
-        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <a id='post-author' href="/">
-          <span itemprop="name">ケニヲ</span>
-          </a>
-        </span>
-        
+        <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a id='post-author' href="/">
+            <span itemprop="name">ケニヲ</span>
+            </a>
+          </span>
+          
     <div class="postdate">
       
         <time datetime="2021-01-24T15:40:58.000Z" itemprop="datePublished">2021-01-24</time>
@@ -183,26 +199,26 @@
     </div>
 
 
-        
+          
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/The-Library-of-Babel/">The Library of Babel</a> › <a class="category-link" href="/categories/The-Library-of-Babel/Films/">Films</a>
     </div>
 
 
-        
+          
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/film-history/" rel="tag">film-history</a>
     </div>
 
 
-      </div>
-    </header>
-    
+        </div>
+      </header>
+      
 
-    <div class="content" itemprop="articleBody">
-      <p>「电影史话」的一点小笔记（更新中）</p>
+      <div class="content" itemprop="articleBody">
+        <p>「电影史话」的一点小笔记（更新中）</p>
 <h1 id="E01"><a href="#E01" class="headerlink" title="E01"></a>E01</h1><h2 id="The-Phantom-Ride"><a href="#The-Phantom-Ride" class="headerlink" title="The Phantom Ride"></a>The Phantom Ride</h2><p>first shot by George Albert Smith in <em>A Kiss in the Tunnel</em>. Filmed from the front of the train.</p>
 <p><strong>Claude Lanzmann</strong>: <em>Shoah</em> (1985) </p>
 <p>The shots about lines that took the Jews to the gas chamber.</p>
@@ -214,9 +230,10 @@
 <h2 id="Meanwhile-Editing"><a href="#Meanwhile-Editing" class="headerlink" title="Meanwhile Editing"></a>Meanwhile Editing</h2><p>from what happens then to what happen meanwhile.</p>
 <p>test <img src="https://tva1.sinaimg.cn/large/008eGmZEly1gmzsf088y4g300z00r741.gif"></img>  and this is it. </p>
 
-    </div>
-  </article>
-</section>
+      </div>
+    </article>
+  </section>
+</div>
 
 <!--  -->
 
@@ -237,7 +254,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
+        data-theme="https://gitkeniwo.tech/giscus-themes/mono-theme.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

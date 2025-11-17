@@ -93,20 +93,22 @@
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <!-- Disabled: Original nav and toc are now replaced by #toc-terminal-box -->
+  <!--
   <span id="menu">
     <span id="nav">
       <ul>
-         
+        
           <li><a href="/">index/</a></li>
-         
+        
           <li><a href="/archives/">dossiers/</a></li>
-         
+        
           <li><a href="/categories/">taxonomy/</a></li>
-         
+        
           <li><a href="/murmur/">murmurs/</a></li>
-         
+        
           <li><a href="/search/">retrieval/</a></li>
-         
+        
           <li><a href="/about/">about/</a></li>
         
       </ul>
@@ -149,32 +151,46 @@
       
     </div>
   </span>
+  -->
 </div>
 
     
     <div class="content index pt4">
         
-        <section class="terminal-content-block terminal-container">
-  <div class="terminal-prompt-header">
-    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2023-02-08-fly-io-tutorial/</span>
-  </div>
-
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
+        <div id="neovim-wrapper">
+  <!-- TOC Terminal Box -->
+  <aside id="toc-terminal-box" class="terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">TOC</span>
+      <a id="toc-close-btn" href="#" class="toc-close-icon"><i class="fas fa-times"></i></a>
+    </div>
+    <div id="toc-content">
       
+    </div>
+  </aside>
+
+  <!-- Post Terminal Box -->
+  <section id="post-terminal-box" class="terminal-content-block terminal-container">
+    <div class="terminal-prompt-header">
+      <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2023-02-08-fly-io-tutorial/</span>
+    </div>
+
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        
     <h1 class="posttitle" itemprop="name headline">
         fly.io 的使用体验 &amp; Self-host Memos卡片笔记
     </h1>
 
 
 
-      <div class="meta">
-        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <a id='post-author' href="/">
-          <span itemprop="name">ケニヲ</span>
-          </a>
-        </span>
-        
+        <div class="meta">
+          <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <a id='post-author' href="/">
+            <span itemprop="name">ケニヲ</span>
+            </a>
+          </span>
+          
     <div class="postdate">
       
         <time datetime="2023-02-08T21:27:59.000Z" itemprop="datePublished">2023-02-08</time>
@@ -183,26 +199,26 @@
     </div>
 
 
-        
+          
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Tech/">Tech</a>
     </div>
 
 
-        
+          
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/cloud-computing/" rel="tag">cloud-computing</a>, <a class="tag-link-link" href="/tags/docker/" rel="tag">docker</a>, <a class="tag-link-link" href="/tags/paas/" rel="tag">paas</a>, <a class="tag-link-link" href="/tags/self-hosting/" rel="tag">self-hosting</a>, <a class="tag-link-link" href="/tags/sftp/" rel="tag">sftp</a>
     </div>
 
 
-      </div>
-    </header>
-    
+        </div>
+      </header>
+      
 
-    <div class="content" itemprop="articleBody">
-      <p>fly.io 类似于heroku，能帮忙托管运行App，是一种<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/平台即服务">PaaS</a>服务。昨天我在尝试自搭(<a target="_blank" rel="noopener" href="https://yunohost.org/oc/selfhosting">self host</a>) 一款名为<a target="_blank" rel="noopener" href="https://github.com/usememos/memos">memos</a>的基于web的<a target="_blank" rel="noopener" href="https://youtu.be/rOSZOCoqOo8">zettelkasten</a>笔记应用时，在<a target="_blank" rel="noopener" href="https://github.com/hu3rror/memos-on-fly">官方推荐的部署方式</a>中发现了这个平台。</p>
+      <div class="content" itemprop="articleBody">
+        <p>fly.io 类似于heroku，能帮忙托管运行App，是一种<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/平台即服务">PaaS</a>服务。昨天我在尝试自搭(<a target="_blank" rel="noopener" href="https://yunohost.org/oc/selfhosting">self host</a>) 一款名为<a target="_blank" rel="noopener" href="https://github.com/usememos/memos">memos</a>的基于web的<a target="_blank" rel="noopener" href="https://youtu.be/rOSZOCoqOo8">zettelkasten</a>笔记应用时，在<a target="_blank" rel="noopener" href="https://github.com/hu3rror/memos-on-fly">官方推荐的部署方式</a>中发现了这个平台。</p>
 <p>简单来说，fly.io能帮你快速部署一款app。部署时，你需要安装它的cli工具<code>flyctl</code>，然后利用它生成(<code>flyctl launch</code>)一份部署的配置文件<code>fly.toml</code>。在这份文件中，你只需填入docker image的地址(一般在<a target="_blank" rel="noopener" href="https://hub.docker.com/">docker hub</a>里)、litestream备份信息和fly volume的信息(storage，可以理解为划分储存空间？类似amazon S3)，就可以直接通过这份config指定的信息，将你的app从docker hub部署到fly.io上。</p>
 <p>按照我的理解，其中 docker image是你的app的代码，fly volume是你的硬盘/储存空间，<a target="_blank" rel="noopener" href="https://github.com/benbjohnson/litestream">litestream</a>会按秒级间隔同步拷贝memos的sqlite数据库的WAL数据流到<a target="_blank" rel="noopener" href="https://www.backblaze.com/b2/docs/">Backblaze B2</a>以实现数据备份。有了数据备份，就算memos的上游发布新版本，或是fly.io机房着火，你也能从B2获取当前最新的闪照(snapshot)，这应该也是为什么<a target="_blank" rel="noopener" href="https://github.com/hu3rror/memos-on-fly#:~:text=Verify%20the%20installation">memos部署指南</a>提到可以通过swap到一个新的fly volume来检验是否成功备份。</p>
 <p>因为memos算是高强度使用的应用了，后期数据量会暴涨，难免会有scalability和数据迁移的问题，根据<a target="_blank" rel="noopener" href="https://github.com/usememos/memos/issues/1178">Add export markdown files #1178</a> 和<a target="_blank" rel="noopener" href="https://github.com/usememos/memos/issues/778">Export memos to file #778</a>, Memos似乎不打算直接在用户界面实现导出(which I think is not justified, since not every user has access to the home directory after all)，应该只能把docker目录下的sqlite数据库定期拖下来备份。</p>
@@ -212,9 +228,10 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fly ssh sftp get var/opt/memos/memos_prod.db memos_prod.db</span><br></pre></td></tr></table></figure>
 <p>注意，fly sftp应该不是标准的openSSH的sftp，而是一种 platform-independent solution，它在<code>get</code>文件时不会overwrite本地文件，如果同名local file存在会<code>get</code>失败，所以每次<code>get</code>前要删除local file.</p>
 
-    </div>
-  </article>
-</section>
+      </div>
+    </article>
+  </section>
+</div>
 
 <!--  -->
 
@@ -235,7 +252,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
+        data-theme="https://gitkeniwo.tech/giscus-themes/mono-theme.css"
         data-lang="en"
         crossorigin="anonymous"
         async>
