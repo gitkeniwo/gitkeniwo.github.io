@@ -371,20 +371,19 @@
   color: var(--color-link-hover);
 }
 
-/* Load more button - Terminal CLI style */
+/* Load more button - NPX CLI interactive style */
 .load-btn,
 .button-load {
-  color: var(--color-accent-1);
+  color: var(--color-meta);
   background-color: transparent;
   margin: 1.5rem 0 0 0;
-  padding: 0.75rem 1.5rem;
-  border: 1px solid var(--color-accent-2);
+  padding: 0.75rem 1rem;
+  border: none;
   font-family: var(--font-family-mono);
-  font-weight: bold;
-  font-size: 0.9rem;
+  font-weight: normal;
+  font-size: 0.95rem;
   cursor: pointer;
   transition: all 0.15s ease;
-  letter-spacing: 0.5px;
   position: relative;
   display: block;
   width: 100%;
@@ -392,20 +391,34 @@
   box-shadow: none;
 }
 
+/* Spinning braille dots before the text */
 .load-btn:before,
 .button-load:before {
-  content: "$ ";
-  color: var(--color-accent-3);
+  content: "⠋";
+  color: var(--color-accent-1);
   margin-right: 0.5rem;
-  font-weight: bold;
+  font-weight: normal;
+  animation: spin-braille 1s infinite;
+  display: inline-block;
 }
 
+/* Remove the blinking cursor after */
 .load-btn:after,
 .button-load:after {
-  content: " _";
-  animation: blink 1s infinite;
-  color: var(--color-accent-1);
-  font-weight: normal;
+  content: "";
+}
+
+/* Spinning braille dots animation (like npx interactive CLI) */
+@keyframes spin-braille {
+  0% { content: "⠋"; }
+  12.5% { content: "⠙"; }
+  25% { content: "⠹"; }
+  37.5% { content: "⠸"; }
+  50% { content: "⠼"; }
+  62.5% { content: "⠴"; }
+  75% { content: "⠦"; }
+  87.5% { content: "⠧"; }
+  100% { content: "⠇"; }
 }
 
 @keyframes blink {
@@ -419,14 +432,14 @@
 
 .load-btn:hover,
 .button-load:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-  border-color: var(--color-accent-1);
-  color: var(--color-accent-1);
+  background-color: rgba(0, 0, 0, 0.02);
+  color: var(--color-meta);
 }
 
 .load-btn:active,
 .button-load:active {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--color-meta);
 }
 
 /* Post preview (for Douban/link cards) */
@@ -583,7 +596,7 @@
   }
 
   .irc-memo-line {
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 0.25rem;
     padding: 0.4rem 0.3rem;
     align-items: flex-start;
@@ -597,10 +610,38 @@
     font-size: 0.8em;
   }
 
+  /* First line: [time] › date › */
+  .irc-time,
+  .irc-date,
+  .irc-separator-1 {
+    flex-shrink: 0;
+  }
+
+  /* Force line break after the second separator (after date) */
+  .irc-date + .irc-separator-1::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0;
+  }
+
+  /* Second line: nickname : - take full width to push message to next line */
+  .irc-nick {
+    flex-shrink: 0;
+  }
+
+  .irc-separator-2 {
+    flex-shrink: 0;
+    /* Force line break after colon */
+    flex-basis: 100%;
+  }
+
+  /* Third line: message content */
   .irc-message {
     font-size: 0.85em;
     width: 100%;
-    margin-top: 0.25rem;
+    flex-basis: 100%;
+    margin-top: 0;
   }
 
   .load-btn,
