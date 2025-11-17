@@ -85,8 +85,7 @@
 
 <body class="max-width mx-auto px3 ltr">    
     <div class="content index pt4">
-        
-          <header id="header">
+        <header id="header">
   <a href="/">
   
     
@@ -124,17 +123,40 @@
 </header>
 
         
-        
 
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
   
 
   <div class="content" itemprop="articleBody">
       
-        <section id="search">
-  <p class="search-quote">Seek, and ye shall receive results — not answers.</p>
-  <form>
-    <input type="text" class="search-input" id="search-input" placeholder="">
+        <section id="search" class="terminal-container">
+  <div class="terminal-prompt-header">
+    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> fzf /var/log/articles/</span>
+  </div>
+
+  <div class="search-banner">
+    <pre class="section-ascii-art">
+ ██▀███  ▓█████▄▄▄█████▓ ██▀███   ██▓▓█████ ██▒   █▓▓█████ 
+▓██ ▒ ██▒▓█   ▀▓  ██▒ ▓▒▓██ ▒ ██▒▓██▒▓█   ▀▓██░   █▒▓█   ▀ 
+▓██ ░▄█ ▒▒███  ▒ ▓██░ ▒░▓██ ░▄█ ▒▒██▒▒███   ▓██  █▒░▒███   
+▒██▀▀█▄  ▒▓█  ▄░ ▓██▓ ░ ▒██▀▀█▄  ░██░▒▓█  ▄  ▒██ █░░▒▓█  ▄ 
+░██▓ ▒██▒░▒████▒ ▒██▒ ░ ░██▓ ▒██▒░██░░▒████▒  ▒▀█░  ░▒████▒
+░ ▒▓ ░▒▓░░░ ▒░ ░ ▒ ░░   ░ ▒▓ ░▒▓░░▓  ░░ ▒░ ░  ░ ▐░  ░░ ▒░ ░
+  ░▒ ░ ▒░ ░ ░  ░   ░      ░▒ ░ ▒░ ▒ ░ ░ ░  ░  ░ ░░   ░ ░  ░
+  ░░   ░    ░    ░        ░░   ░  ▒ ░   ░       ░░     ░   
+   ░        ░  ░           ░      ░     ░  ░     ░     ░  ░
+                                                ░          
+    </pre>
+    <div class="section-banner-label">Seek, and ye shall receive results — not answers.</div>
+  </div>
+
+  <form class="fzf-search-form">
+    <div class="fzf-input-wrapper">
+      <span class="fzf-prompt">&gt;</span>
+      <input type="text" class="search-input fzf-input" id="search-input" placeholder="Type to search articles...">
+      <span class="fzf-cursor"></span>
+    </div>
+    <div class="fzf-separator"></div>
   </form>
   <div id="search-result"></div>
   <p class="search-no-result">No results found.</p>

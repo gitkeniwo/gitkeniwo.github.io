@@ -19,6 +19,16 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
+/* Set consistent line-height for lists inside terminal containers */
+.terminal-container ul,
+.terminal-container ol {
+  line-height: 1.2;
+}
+
+.terminal-container li {
+  line-height: 1.2;
+}
+
 /* Terminal prompt header */
 .terminal-prompt-header {
 

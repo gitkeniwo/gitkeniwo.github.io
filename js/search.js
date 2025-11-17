@@ -24,6 +24,33 @@
 /*exported searchFunc*/
 var searchFunc = function(path, searchId, contentId) {
 
+  // FZF-style cursor positioning
+  function updateCursorPosition() {
+    var input = document.getElementById(searchId);
+    var cursor = document.querySelector('.fzf-cursor');
+    if (!input || !cursor) return;
+
+    // Create a temporary span to measure text width
+    var span = document.createElement('span');
+    span.style.font = window.getComputedStyle(input).font;
+    span.style.visibility = 'hidden';
+    span.style.position = 'absolute';
+    span.style.whiteSpace = 'pre';
+    span.textContent = input.value;
+    document.body.appendChild(span);
+
+    var textWidth = span.offsetWidth;
+    document.body.removeChild(span);
+
+    // Calculate cursor position (after > prompt and margin)
+    var promptWidth = 1.2; // rem
+    var margin = 0.3; // rem
+    var fontSize = parseFloat(window.getComputedStyle(input).fontSize);
+    var baseLeft = (promptWidth + margin) * fontSize;
+
+    cursor.style.left = (baseLeft + textWidth) + 'px';
+  }
+
   function stripHtml(html) {
     html = html.replace(/<style([\s\S]*?)<\/style>/gi, "");
     html = html.replace(/<script([\s\S]*?)<\/script>/gi, "");
@@ -67,6 +94,9 @@ var searchFunc = function(path, searchId, contentId) {
       var $resultContent = document.getElementById(contentId);
 
       $input.addEventListener("input", function(){
+        // Update cursor position as user types
+        updateCursorPosition();
+
         var resultList = [];
         var keywords = getAllCombinations(this.value.trim().toLowerCase().split(" "))
           .sort(function(a,b) { return b.split(" ").length - a.split(" ").length; });
@@ -152,6 +182,29 @@ var searchFunc = function(path, searchId, contentId) {
           result += "</ul>";
           $resultContent.innerHTML = result;
         }
+      });
+
+      // Add focus/blur event listeners for cursor behavior
+      $input.addEventListener("focus", function(){
+        updateCursorPosition();
+      });
+
+      $input.addEventListener("blur", function(){
+        // Reset cursor to initial position when not focused
+        var cursor = document.querySelector('.fzf-cursor');
+        if (cursor) {
+          cursor.style.left = '';
+        }
+      });
+
+      // Add keyup listener to update cursor position during navigation
+      $input.addEventListener("keyup", function(){
+        updateCursorPosition();
+      });
+
+      // Add click listener to update cursor position
+      $input.addEventListener("click", function(){
+        updateCursorPosition();
       });
     }
   });
