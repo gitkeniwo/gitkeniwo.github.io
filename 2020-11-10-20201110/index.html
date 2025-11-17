@@ -153,22 +153,27 @@
     
     <div class="content index pt4">
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    
+        <section class="terminal-content-block terminal-container">
+  <div class="terminal-prompt-header">
+    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-11-10-20201110/</span>
+  </div>
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      
     <h1 class="posttitle" itemprop="name headline">
         Github大文件上传办法
     </h1>
 
 
 
-    <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <a id='post-author' href="/">
-        <span itemprop="name">ケニヲ</span>
-        </a>
-      </span>
-      
+      <div class="meta">
+        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a id='post-author' href="/">
+          <span itemprop="name">ケニヲ</span>
+          </a>
+        </span>
+        
     <div class="postdate">
       
         <time datetime="2020-11-10T17:58:02.000Z" itemprop="datePublished">2020-11-10</time>
@@ -177,29 +182,31 @@
     </div>
 
 
-      
+        
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Tech/">Tech</a>
     </div>
 
 
-      
+        
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/git/" rel="tag">git</a>, <a class="tag-link-link" href="/tags/github/" rel="tag">github</a>
     </div>
 
 
+      </div>
+    </header>
+    
+
+    <div class="content" itemprop="articleBody">
+      <p>总之，最近我也开始做毕设了，然后需要阅读大量的文献，并做好标注。首选当然是notion，但是notion有个问题就是免费版本的文件上传是有5MB限制的，这就注定了大部分稍微有些图片的论文pdf都越过了notion的限制，所以我需要一个host在web上的网页来展示对应的pdf文件，在notion那边只需要放URL就可以了。Google Drive很不错，但是我目前依旧使用的乞丐版，容量也许不够，所以我想到了github，也不需要翻墙，对导师和其他人来说都还算比较方便。<br>但是Github有个问题是它也对文件大小做了限制，貌似是单个文件不能超过100MB，再加上墙国的网络因素，我放了一个27MB的pdf做试验第一次提交就没push上去。报错是<code>error: RPC failed; curl 55 SSL_write() returned SYSCALL, errno = 32</code>，之后就hang在这里了27MB的文件上传到24.5MB就戛然而止。然后上<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/2702731/git-fails-when-pushing-commit-to-github">stackoverflow查了下</a>，改了git本地的文件限制<code>git config http.postBuffer 524288000</code>，依旧问题复现。<br>最后想到是不是有什么办法能够破除其大文件限制，毕竟以前看到那么多分享电子书的repo。最后果然找到了，是一个项目叫做<a target="_blank" rel="noopener" href="https://git-lfs.github.com/"><strong>git-lfs*</strong> (large file system)*。</a>，总之安装方便，使用简便，就两行命令，十分省心。<br>使用git-lfs之后立马就push成功了。<br><img src="https://img.gitkeniwo.tech/202511/12-45598c9020b772e1deac0356b10ddd00-1762983694.png" alt=""><br>虽然不清楚git-lfs最大能够支持多大的文件，但是一般的电子书和文献备份应该也是够用了，推荐给各位。</p>
+
     </div>
-  </header>
-  
+  </article>
+</section>
 
-  <div class="content" itemprop="articleBody">
-    <p>总之，最近我也开始做毕设了，然后需要阅读大量的文献，并做好标注。首选当然是notion，但是notion有个问题就是免费版本的文件上传是有5MB限制的，这就注定了大部分稍微有些图片的论文pdf都越过了notion的限制，所以我需要一个host在web上的网页来展示对应的pdf文件，在notion那边只需要放URL就可以了。Google Drive很不错，但是我目前依旧使用的乞丐版，容量也许不够，所以我想到了github，也不需要翻墙，对导师和其他人来说都还算比较方便。<br>但是Github有个问题是它也对文件大小做了限制，貌似是单个文件不能超过100MB，再加上墙国的网络因素，我放了一个27MB的pdf做试验第一次提交就没push上去。报错是<code>error: RPC failed; curl 55 SSL_write() returned SYSCALL, errno = 32</code>，之后就hang在这里了27MB的文件上传到24.5MB就戛然而止。然后上<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/2702731/git-fails-when-pushing-commit-to-github">stackoverflow查了下</a>，改了git本地的文件限制<code>git config http.postBuffer 524288000</code>，依旧问题复现。<br>最后想到是不是有什么办法能够破除其大文件限制，毕竟以前看到那么多分享电子书的repo。最后果然找到了，是一个项目叫做<a target="_blank" rel="noopener" href="https://git-lfs.github.com/"><strong>git-lfs*</strong> (large file system)*。</a>，总之安装方便，使用简便，就两行命令，十分省心。<br>使用git-lfs之后立马就push成功了。<br><img src="https://img.gitkeniwo.tech/202511/12-45598c9020b772e1deac0356b10ddd00-1762983694.png" alt=""><br>虽然不清楚git-lfs最大能够支持多大的文件，但是一般的电子书和文献备份应该也是够用了，推荐给各位。</p>
-
-  </div>
-</article>
 <!--  -->
 
 <br>
@@ -219,7 +226,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gist.githubusercontent.com/gitkeniwo/f46b8469c917c8d6ba0ae8c0852df38b/raw/711eb7c66f483188f99d9ddc192b22526c2a4255/fro-sans-serif.css"
+        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

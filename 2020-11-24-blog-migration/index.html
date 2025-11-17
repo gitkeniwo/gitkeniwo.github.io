@@ -154,22 +154,27 @@
     
     <div class="content index pt4">
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    
+        <section class="terminal-content-block terminal-container">
+  <div class="terminal-prompt-header">
+    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-11-24-blog-migration/</span>
+  </div>
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      
     <h1 class="posttitle" itemprop="name headline">
         本次hexo项目从老mac迁移到新mac上遇到的问题种种
     </h1>
 
 
 
-    <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <a id='post-author' href="/">
-        <span itemprop="name">ケニヲ</span>
-        </a>
-      </span>
-      
+      <div class="meta">
+        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a id='post-author' href="/">
+          <span itemprop="name">ケニヲ</span>
+          </a>
+        </span>
+        
     <div class="postdate">
       
         <time datetime="2020-11-24T15:56:06.000Z" itemprop="datePublished">2020-11-24</time>
@@ -178,26 +183,26 @@
     </div>
 
 
-      
+        
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Blogging/">Blogging</a>
     </div>
 
 
-      
+        
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/git/" rel="tag">git</a>, <a class="tag-link-link" href="/tags/hexo/" rel="tag">hexo</a>
     </div>
 
 
-    </div>
-  </header>
-  
+      </div>
+    </header>
+    
 
-  <div class="content" itemprop="articleBody">
-    <h1 id="git子模块的相关问题"><a href="#git子模块的相关问题" class="headerlink" title="git子模块的相关问题"></a>git子模块的相关问题</h1><p>主要是<code>/hexo/themes/</code>下的主题dir的git提交问题。由于我最开始是直接从主题的github repo页面上拉下来的，当时对git的理解还不够深入， </p>
+    <div class="content" itemprop="articleBody">
+      <h1 id="git子模块的相关问题"><a href="#git子模块的相关问题" class="headerlink" title="git子模块的相关问题"></a>git子模块的相关问题</h1><p>主要是<code>/hexo/themes/</code>下的主题dir的git提交问题。由于我最开始是直接从主题的github repo页面上拉下来的，当时对git的理解还不够深入， </p>
 <p><a target="_blank" rel="noopener" href="https://www.hozen.site/archives/23/">https://www.hozen.site/archives/23/</a></p>
 <p>我的做法：<br>· 重新fork了一下 hexo-theme-next<br>· 把它添加到了我的子模块<br>· 直接mv -d 了原有的next模块<br>· 从mbp2015上拷贝了config.yml，并更改主题名为hexo-theme-next<br>（此处复习一下vim前后段尾是<code>&#123;</code> , <code>&#125;</code>两个键  ）</p>
 <p>但在我做完以上步骤之后，git submodule</p>
@@ -223,8 +228,10 @@
 <h1 id="4-one-more-thing-post的最后编辑时间。"><a href="#4-one-more-thing-post的最后编辑时间。" class="headerlink" title="4.one more thing: post的最后编辑时间。"></a>4.one more thing: post的最后编辑时间。</h1><p>还有一个很让人头疼的事，每次迁移hexo项目之后，所有博文的最后编辑时间都会变成迁移的时间，尽管你并未做任何修改，这就又让人迷惑，又让真实的最后编辑时间消失了。这个问题我还没去解决，大概搜索了一下，<a target="_blank" rel="noopener" href="https://blog.vanxnf.top/2018/09/03/Hexo-博客-Hiker-主题增加文章最后编辑时间，并按照最后编辑时间排序/">贴个链接 </a>。</p>
 <p>ps. 目前（2020.12.3）使用的主题cactus好像并没有贴出博文的最后编辑时间，所以可以先不用管这个问题……</p>
 
-  </div>
-</article>
+    </div>
+  </article>
+</section>
+
 <!--  -->
 
 <br>
@@ -244,7 +251,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gist.githubusercontent.com/gitkeniwo/f46b8469c917c8d6ba0ae8c0852df38b/raw/711eb7c66f483188f99d9ddc192b22526c2a4255/fro-sans-serif.css"
+        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

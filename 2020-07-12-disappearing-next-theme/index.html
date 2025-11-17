@@ -154,22 +154,27 @@
     
     <div class="content index pt4">
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    
+        <section class="terminal-content-block terminal-container">
+  <div class="terminal-prompt-header">
+    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-07-12-disappearing-next-theme/</span>
+  </div>
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      
     <h1 class="posttitle" itemprop="name headline">
         disappearing next theme
     </h1>
 
 
 
-    <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <a id='post-author' href="/">
-        <span itemprop="name">ケニヲ</span>
-        </a>
-      </span>
-      
+      <div class="meta">
+        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a id='post-author' href="/">
+          <span itemprop="name">ケニヲ</span>
+          </a>
+        </span>
+        
     <div class="postdate">
       
         <time datetime="2020-07-12T13:04:33.000Z" itemprop="datePublished">2020-07-12</time>
@@ -178,26 +183,26 @@
     </div>
 
 
-      
+        
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Blogging/">Blogging</a>
     </div>
 
 
-      
+        
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/git/" rel="tag">git</a>, <a class="tag-link-link" href="/tags/github/" rel="tag">github</a>, <a class="tag-link-link" href="/tags/hexo/" rel="tag">hexo</a>
     </div>
 
 
-    </div>
-  </header>
-  
+      </div>
+    </header>
+    
 
-  <div class="content" itemprop="articleBody">
-    <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>昨晚经历了一次<del>重大失误</del>，直接导致了本博客的主题文件需要重新配置。</p>
+    <div class="content" itemprop="articleBody">
+      <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>昨晚经历了一次<del>重大失误</del>，直接导致了本博客的主题文件需要重新配置。</p>
 <p>因为我使用的hexo Next主题是从它的github主页上直接git clone下来的，昨天为了抹盘重装系统，把整个hexo文件夹push到github作备份，后来装好之后把博客源码重新pull回来，重新写点东西并发布的时候，发现我整个github.io页面都白了，打开themes文件夹一看，发现我pull下来的文件里面并没有我之前已经配制好的next主题。</p>
 <p>我的猜想之一是，这个Next主题是由另外一个git管理的，独立于我整个hexo文件的模块，由于github对于别人的代码有一定的知识产权保护（？）和某种原因，可能某个子仓库在我把它上传为自己的repo的时候该子仓库并不会加入我们项目源码，而是仅仅作为一个引用。猜想二：如果不是github作祟的话，那就是git子仓库的问题。</p>
 <p><img src="https://img.gitkeniwo.tech/202511/12-3e3da3df0cb1a239c490f77831698519-1762983698.png" alt="image-20200711130319603"></p>
@@ -207,8 +212,10 @@
 <p>clone是把远程的代码库下载到本地计算机上，而fork则是把远程的是别人的代码复制到远程的自己的Github上，成为一个<strong>副本</strong>，而这个副本就是你的了。</p>
 <p>—（未完待续）</p>
 
-  </div>
-</article>
+    </div>
+  </article>
+</section>
+
 <!--  -->
 
 <br>
@@ -228,7 +235,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gist.githubusercontent.com/gitkeniwo/f46b8469c917c8d6ba0ae8c0852df38b/raw/711eb7c66f483188f99d9ddc192b22526c2a4255/fro-sans-serif.css"
+        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

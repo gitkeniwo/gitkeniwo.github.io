@@ -4,5 +4,10 @@
  */
 
 .blog-post-comments {
-  margin-top: 7rem;
+  margin-top: 3rem;
+  font-family: var(--font-family-mono) !important;
+}
+
+.blog-post-comments * {
+  font-family: var(--font-family-mono) !important;
 }

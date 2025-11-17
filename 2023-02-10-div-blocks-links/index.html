@@ -156,22 +156,27 @@
     
     <div class="content index pt4">
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    
+        <section class="terminal-content-block terminal-container">
+  <div class="terminal-prompt-header">
+    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2023-02-10-div-blocks-links/</span>
+  </div>
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      
     <h1 class="posttitle" itemprop="name headline">
         &lt;div&gt; 挡住链接的处理方式，z-index属性
     </h1>
 
 
 
-    <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <a id='post-author' href="/">
-        <span itemprop="name">ケニヲ</span>
-        </a>
-      </span>
-      
+      <div class="meta">
+        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a id='post-author' href="/">
+          <span itemprop="name">ケニヲ</span>
+          </a>
+        </span>
+        
     <div class="postdate">
       
         <time datetime="2023-02-09T23:48:03.000Z" itemprop="datePublished">2023-02-10</time>
@@ -180,26 +185,26 @@
     </div>
 
 
-      
+        
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Blogging/">Blogging</a>
     </div>
 
 
-      
+        
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/blogging/" rel="tag">blogging</a>, <a class="tag-link-link" href="/tags/css/" rel="tag">css</a>
     </div>
 
 
-    </div>
-  </header>
-  
+      </div>
+    </header>
+    
 
-  <div class="content" itemprop="articleBody">
-    <p>突然发现<a href="http://gitkeniwo.github.io/2022-06-21-dutch-grammar/">有篇博文</a>中的一个链接无法点击，inspect之后发现是被一个id为<code>header-post</code>的div挡住了。参见下图中「弗拉芒大区」右侧的「Vlaams Gewest」，因为被挡住了点不到。<code>header-post</code>应该是存放导航栏nav和目录toc的容器，在页面顶端nav自动出现时适应为nav的宽和目录的高，挡住一大片东西。<br><img src="https://img.gitkeniwo.tech/202511/12-67f0b4fc3696263c1bef93dd2cf9304b-1762984728.jpg" alt=""></p>
+    <div class="content" itemprop="articleBody">
+      <p>突然发现<a href="http://gitkeniwo.github.io/2022-06-21-dutch-grammar/">有篇博文</a>中的一个链接无法点击，inspect之后发现是被一个id为<code>header-post</code>的div挡住了。参见下图中「弗拉芒大区」右侧的「Vlaams Gewest」，因为被挡住了点不到。<code>header-post</code>应该是存放导航栏nav和目录toc的容器，在页面顶端nav自动出现时适应为nav的宽和目录的高，挡住一大片东西。<br><img src="https://img.gitkeniwo.tech/202511/12-67f0b4fc3696263c1bef93dd2cf9304b-1762984728.jpg" alt=""></p>
 <p>去原主题的repo搜索了一圈issue关键词，没看到有人提。然后去原作者的<a target="_blank" rel="noopener" href="https://probberechts.github.io/hexo-theme-cactus/cactus-dark/public/2016/11/01/An-overview-of-all-Markdown-elements/">demo网页</a>发现他的这个网页也有同样的问题+_+||, 只是因为他要么因为nav放的链接少，要么nav与目录不共存，所以这个问题不明显。<del>这个主题毛病真的好多</del><br><img src="https://img.gitkeniwo.tech/202511/12-b6e014d3b971eadd930ce824a3b7302e-1762984728.jpg" alt=""></p>
 <p>最后自己在<code>#header-post</code>这个selector下探索出来的解决方式是将<code>action_desktop.styl</code>中对应id<code>#header-post</code>的<code>z-index</code>改为<code>auto</code>。关于<code>z-index</code>属性，可参见<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/z-index">mdn官网的展示小组件</a>，大概类似于置于顶层/底层，直观来说，这样改了后那个div就缩到底层去了，你自然就能点得到位于文章主干的link了。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#header-post</span></span><br><span class="line">  <span class="attribute">position</span>: fixed</span><br><span class="line">  top: <span class="number">2rem</span></span><br><span class="line">  right: <span class="number">0</span></span><br><span class="line">  display: inline-block</span><br><span class="line">  float: right</span><br><span class="line">  z-index: auto</span><br></pre></td></tr></table></figure>
@@ -217,8 +222,10 @@
 <p><strong>P.S.</strong> 注意这个cactus主题md的metadata里categories要统一大小写，不然会导致分类的categories page解析错误出现混乱。</p>
 <p><img src='https://img.gitkeniwo.tech/202511/12-d064c3512750bc887088b4650f801da8-1762984728.jpg' width='300'></img></p>
 
-  </div>
-</article>
+    </div>
+  </article>
+</section>
+
 <!--  -->
 
 <br>
@@ -238,7 +245,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gist.githubusercontent.com/gitkeniwo/f46b8469c917c8d6ba0ae8c0852df38b/raw/711eb7c66f483188f99d9ddc192b22526c2a4255/fro-sans-serif.css"
+        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

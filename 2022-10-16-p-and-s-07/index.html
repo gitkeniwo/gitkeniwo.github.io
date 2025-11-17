@@ -154,22 +154,27 @@
     
     <div class="content index pt4">
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    
+        <section class="terminal-content-block terminal-container">
+  <div class="terminal-prompt-header">
+    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2022-10-16-p-and-s-07/</span>
+  </div>
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      
     <h1 class="posttitle" itemprop="name headline">
         统计推断 @ Probability &amp; Statistics Chapter 7
     </h1>
 
 
 
-    <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <a id='post-author' href="/">
-        <span itemprop="name">ケニヲ</span>
-        </a>
-      </span>
-      
+      <div class="meta">
+        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a id='post-author' href="/">
+          <span itemprop="name">ケニヲ</span>
+          </a>
+        </span>
+        
     <div class="postdate">
       
         <time datetime="2022-10-16T21:45:14.000Z" itemprop="datePublished">2022-10-16</time>
@@ -178,26 +183,26 @@
     </div>
 
 
-      
+        
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Academical-Hack/">Academical Hack</a> › <a class="category-link" href="/categories/Academical-Hack/Statistics/">Statistics</a>
     </div>
 
 
-      
+        
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/inference/" rel="tag">inference</a>, <a class="tag-link-link" href="/tags/statistics/" rel="tag">statistics</a>, <a class="tag-link-link" href="/tags/undergraduate-course/" rel="tag">undergraduate-course</a>
     </div>
 
 
-    </div>
-  </header>
-  
+      </div>
+    </header>
+    
 
-  <div class="content" itemprop="articleBody">
-    <p>这是 <a target="_blank" rel="noopener" href="https://lib.hpu.edu.vn/handle/123456789/28621">DeGroot, M. H., &amp; Schervish, M. J. (2012). <em>Probability and statistics</em>. Pearson Education.</a> 一书的笔记。 </p>
+    <div class="content" itemprop="articleBody">
+      <p>这是 <a target="_blank" rel="noopener" href="https://lib.hpu.edu.vn/handle/123456789/28621">DeGroot, M. H., &amp; Schervish, M. J. (2012). <em>Probability and statistics</em>. Pearson Education.</a> 一书的笔记。 </p>
 <h1 id="7-1-Statistical-Inference-统计推断"><a href="#7-1-Statistical-Inference-统计推断" class="headerlink" title="7.1 Statistical Inference 统计推断"></a>7.1 Statistical Inference 统计推断</h1><p>这一章首首先介绍了灯泡寿命问题。公司想要估计电子元件的failure rate，用未知的参数$\theta$表示，它服从指数分布（gamma分布）。根据大数定律6.2 我们知道独立同分布的样本均值 $\bar{X_i} \xrightarrow{p} \frac{1}{\theta}$   (依概率收敛)。根据Theorem 6.2.5 我们知道给这个式子套一层连续函数也是成立的，即 $1/ \bar{X_i} \xrightarrow{p} \theta$. 所以，我们可以用样本均值的倒数来近似failure rate。<br>因为我们不可能测量所有元件的寿命，参数$\theta$只能是hypothetically observable的。<br>接下来定义了统计模型和统计推断(statistical inference)。统计推断的例子：</p>
 <ul>
 <li>构造一个随机变量$\mathbf{Y}$  使得 $\text{Pr}(\mathbf{Y} \ge \theta | \theta)=0.9$。 这个RV $\mathbf{Y}$ 可以是观测到的一系列样本$X_1,…,X_m$的函数。</li>
@@ -217,8 +222,10 @@
 <li></li>
 </ul>
 
-  </div>
-</article>
+    </div>
+  </article>
+</section>
+
 <!--  -->
 
 <br>
@@ -238,7 +245,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gist.githubusercontent.com/gitkeniwo/f46b8469c917c8d6ba0ae8c0852df38b/raw/711eb7c66f483188f99d9ddc192b22526c2a4255/fro-sans-serif.css"
+        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

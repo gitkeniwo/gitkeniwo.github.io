@@ -151,22 +151,27 @@
     
     <div class="content index pt4">
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    
+        <section class="terminal-content-block terminal-container">
+  <div class="terminal-prompt-header">
+    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-08-22-vim-delete-problem/</span>
+  </div>
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      
     <h1 class="posttitle" itemprop="name headline">
         mac vim中有时delete键在insert模式下无法向左删除
     </h1>
 
 
 
-    <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <a id='post-author' href="/">
-        <span itemprop="name">ケニヲ</span>
-        </a>
-      </span>
-      
+      <div class="meta">
+        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a id='post-author' href="/">
+          <span itemprop="name">ケニヲ</span>
+          </a>
+        </span>
+        
     <div class="postdate">
       
         <time datetime="2020-08-21T22:41:26.000Z" itemprop="datePublished">2020-08-22</time>
@@ -175,32 +180,34 @@
     </div>
 
 
-      
+        
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Tech/">Tech</a>
     </div>
 
 
-      
+        
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/shell/" rel="tag">shell</a>, <a class="tag-link-link" href="/tags/vim/" rel="tag">vim</a>
     </div>
 
 
-    </div>
-  </header>
-  
+      </div>
+    </header>
+    
 
-  <div class="content" itemprop="articleBody">
-    <p>mac vim中启动了某种compatible模式，为了与vi兼容，而无法删去某些特定字符。</p>
+    <div class="content" itemprop="articleBody">
+      <p>mac vim中启动了某种compatible模式，为了与vi兼容，而无法删去某些特定字符。</p>
 <p>只需在<code>~/.vimrc</code> 中加入一行 <code>set backspace=2</code> 即可</p>
 <p>实测完美解决，目前没出问题。</p>
 <p>参考：<a herf="https://www.smslit.top/2016/11/27/vim-backspace-invalid/">https://www.smslit.top/2016/11/27/vim-backspace-invalid/</a></p>
 
-  </div>
-</article>
+    </div>
+  </article>
+</section>
+
 <!--  -->
 
 <br>
@@ -220,7 +227,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gist.githubusercontent.com/gitkeniwo/f46b8469c917c8d6ba0ae8c0852df38b/raw/711eb7c66f483188f99d9ddc192b22526c2a4255/fro-sans-serif.css"
+        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

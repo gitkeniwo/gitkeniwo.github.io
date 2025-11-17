@@ -150,22 +150,27 @@
     
     <div class="content index pt4">
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    
+        <section class="terminal-content-block terminal-container">
+  <div class="terminal-prompt-header">
+    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2024-09-01-ssh-proxy-settings/</span>
+  </div>
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      
     <h1 class="posttitle" itemprop="name headline">
         回国 SSH 代理设置 / SSH Proxy Settings
     </h1>
 
 
 
-    <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <a id='post-author' href="/">
-        <span itemprop="name">ケニヲ</span>
-        </a>
-      </span>
-      
+      <div class="meta">
+        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a id='post-author' href="/">
+          <span itemprop="name">ケニヲ</span>
+          </a>
+        </span>
+        
     <div class="postdate">
       
         <time datetime="2024-09-01T19:59:04.000Z" itemprop="datePublished">2024-09-01</time>
@@ -174,26 +179,26 @@
     </div>
 
 
-      
+        
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Zen-and-the-Art-of-Computer-Maintenance/">Zen and the Art of Computer Maintenance</a> › <a class="category-link" href="/categories/Zen-and-the-Art-of-Computer-Maintenance/Anti-Censorship/">Anti-Censorship</a>
     </div>
 
 
-      
+        
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/gfw/" rel="tag">gfw</a>
     </div>
 
 
-    </div>
-  </header>
-  
+      </div>
+    </header>
+    
 
-  <div class="content" itemprop="articleBody">
-    <p>本次回🀄️发现虽然挂机场代理后外部访问问题不大，但GCP机器的ssh connection卡成翔，此贴记录一下macOS上ssh代理设置相关问题。</p>
+    <div class="content" itemprop="articleBody">
+      <p>本次回🀄️发现虽然挂机场代理后外部访问问题不大，但GCP机器的ssh connection卡成翔，此贴记录一下macOS上ssh代理设置相关问题。</p>
 <h1 id="Command-Interpretation"><a href="#Command-Interpretation" class="headerlink" title="Command Interpretation"></a>Command Interpretation</h1><p>为ssh命令设置代理的通用模版是</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh -o ProxyCommand=<span class="string">&quot;nc -X 5 -x 127.0.0.1:1080 %h %p&quot;</span> \</span><br><span class="line">    root@server</span><br></pre></td></tr></table></figure>
 <p>其中<code>-o</code> flag代表option, 用以唤起<code>ProxyCommand</code>这个选项，具体man page里描述为：</p>
@@ -212,8 +217,10 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$which</span> corkscrew</span><br><span class="line">/opt/homebrew/bin/corkscrew</span><br></pre></td></tr></table></figure>
 <p>再向<code>~/.ssh/config</code>写入<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ProxyCommand /opt/homebrew/bin/corkscrew 127.0.0.1 7890 %h %p</span><br></pre></td></tr></table></figure></p>
 
-  </div>
-</article>
+    </div>
+  </article>
+</section>
+
 <!--  -->
 
 <br>
@@ -233,7 +240,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gist.githubusercontent.com/gitkeniwo/f46b8469c917c8d6ba0ae8c0852df38b/raw/711eb7c66f483188f99d9ddc192b22526c2a4255/fro-sans-serif.css"
+        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

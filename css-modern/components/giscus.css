@@ -1,0 +1,189 @@
+/**
+ * Giscus Comments Component
+ * Mono font styling for giscus comment system
+ */
+
+/* Color scheme variables */
+main {
+  --color-prettylights-syntax-comment: #66707b;
+  --color-prettylights-syntax-constant: #0550ae;
+  --color-prettylights-syntax-entity: #622cbc;
+  --color-prettylights-syntax-storage-modifier-import: #24292f;
+  --color-prettylights-syntax-entity-tag: #024c1a;
+  --color-prettylights-syntax-keyword: #bc1258;
+  --color-prettylights-syntax-string: #032563;
+  --color-prettylights-syntax-variable: #9a4c03;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #9a2c2c;
+  --color-prettylights-syntax-invalid-illegal-text: #f6f8fa;
+  --color-prettylights-syntax-invalid-illegal-bg: #9a2c2c;
+  --color-prettylights-syntax-carriage-return-text: #f6f8fa;
+  --color-prettylights-syntax-carriage-return-bg: #bc1258;
+  --color-prettylights-syntax-string-regexp: #024c1a;
+  --color-prettylights-syntax-markup-list: #3b2300;
+  --color-prettylights-syntax-markup-heading: #0550ae;
+  --color-prettylights-syntax-markup-italic: #24292f;
+  --color-prettylights-syntax-markup-bold: #24292f;
+  --color-prettylights-syntax-markup-deleted-text: #9a2c2c;
+  --color-prettylights-syntax-markup-deleted-bg: #ffd5d5;
+  --color-prettylights-syntax-markup-inserted-text: #024c1a;
+  --color-prettylights-syntax-markup-inserted-bg: #d4f8d4;
+  --color-prettylights-syntax-markup-changed-text: #9a4c03;
+  --color-prettylights-syntax-markup-changed-bg: #ffddb0;
+  --color-prettylights-syntax-markup-ignored-text: #e7ecf0;
+  --color-prettylights-syntax-markup-ignored-bg: #0550ae;
+  --color-prettylights-syntax-meta-diff-range: #622cbc;
+  --color-prettylights-syntax-brackethighlighter-angle: #66707b;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #8a8d91;
+  --color-prettylights-syntax-constant-other-reference-link: #032563;
+  --color-fg-default: #1f2328;
+  --color-fg-muted: #66707b;
+  --color-fg-subtle: #8a8d91;
+  --color-canvas-default: #fff;
+  --color-canvas-subtle: #f6f8fa;
+  --color-border-default: #d1d9e0;
+  --color-border-muted: #d1d9e0b3;
+  --color-neutral-muted: #afb8c133;
+  --color-accent-fg: #0550ae;
+  --color-accent-emphasis: #0550ae;
+  --color-success-fg: #024c1a;
+  --color-success-emphasis: #1a7f37;
+  --color-attention-fg: #744500;
+  --color-attention-emphasis: #bf8700;
+  --color-attention-subtle: #fff8c5;
+  --color-danger-fg: #cf222e;
+  --color-danger-emphasis: #cf222e;
+  --color-done-fg: #622cbc;
+  --color-done-emphasis: #622cbc;
+}
+
+@media (prefers-color-scheme: dark) {
+  main {
+    --color-prettylights-syntax-comment: #bdc4cc;
+    --color-prettylights-syntax-constant: #83b7ff;
+    --color-prettylights-syntax-entity: #dbb7ff;
+    --color-prettylights-syntax-storage-modifier-import: #e7ecf0;
+    --color-prettylights-syntax-entity-tag: #7ce38b;
+    --color-prettylights-syntax-keyword: #ff87ab;
+    --color-prettylights-syntax-string: #a5d6ff;
+    --color-prettylights-syntax-variable: #ffb757;
+    --color-prettylights-syntax-brackethighlighter-unmatched: #ff6a69;
+    --color-prettylights-syntax-invalid-illegal-text: #f0f3f6;
+    --color-prettylights-syntax-invalid-illegal-bg: #e82a2f;
+    --color-prettylights-syntax-carriage-return-text: #f0f3f6;
+    --color-prettylights-syntax-carriage-return-bg: #ff87ab;
+    --color-prettylights-syntax-string-regexp: #7ce38b;
+    --color-prettylights-syntax-markup-list: #eac55f;
+    --color-prettylights-syntax-markup-heading: #1f6feb;
+    --color-prettylights-syntax-markup-italic: #e7ecf0;
+    --color-prettylights-syntax-markup-bold: #e7ecf0;
+    --color-prettylights-syntax-markup-deleted-text: #ffb8b8;
+    --color-prettylights-syntax-markup-deleted-bg: #67060c;
+    --color-prettylights-syntax-markup-inserted-text: #acf7b6;
+    --color-prettylights-syntax-markup-inserted-bg: #024c1a;
+    --color-prettylights-syntax-markup-changed-text: #ffb757;
+    --color-prettylights-syntax-markup-changed-bg: #682d0f;
+    --color-prettylights-syntax-markup-ignored-text: #e7ecf0;
+    --color-prettylights-syntax-markup-ignored-bg: #1158c7;
+    --color-prettylights-syntax-meta-diff-range: #dbb7ff;
+    --color-prettylights-syntax-brackethighlighter-angle: #bdc4cc;
+    --color-prettylights-syntax-sublimelinter-gutter-mark: #3d444d;
+    --color-prettylights-syntax-constant-other-reference-link: #a5d6ff;
+    --color-fg-default: #e7ecf0;
+    --color-fg-muted: #bdc4cc;
+    --color-fg-subtle: #9198a1;
+    --color-canvas-default: #0d1117;
+    --color-canvas-subtle: #161b22;
+    --color-border-default: #3d444d;
+    --color-border-muted: #3d444d66;
+    --color-neutral-muted: #66707b66;
+    --color-accent-fg: #2f81f7;
+    --color-accent-emphasis: #1f6feb;
+    --color-success-fg: #4ac26b;
+    --color-success-emphasis: #238636;
+    --color-attention-fg: #dbb676;
+    --color-attention-emphasis: #9e6a03;
+    --color-attention-subtle: #4d291533;
+    --color-danger-fg: #ff6a69;
+    --color-danger-emphasis: #da3633;
+    --color-done-fg: #dbb7ff;
+    --color-done-emphasis: #a371f7;
+  }
+}
+
+/* Force mono font on ALL elements within giscus iframe */
+*,
+*::before,
+*::after {
+  font-family: var(--font-family-mono) !important;
+}
+
+main {
+  font-family: var(--font-family-mono) !important;
+}
+
+/* Specific targeting for input elements */
+input,
+textarea,
+button,
+select,
+.gsc-comment,
+.gsc-comment-content,
+.gsc-comment-header,
+.gsc-comment-author,
+.gsc-reactions,
+.gsc-reply,
+.gsc-comment-box,
+.gsc-comment-box-textarea,
+.gsc-timeline,
+.markdown {
+  font-family: var(--font-family-mono) !important;
+}
+
+.gsc-comment-header {
+  transition: color .15s ease-in-out;
+}
+
+.gsc-comment-header:hover {
+  color: var(--color-fg-default) !important;
+}
+
+.gsc-right-header button {
+  background-color: transparent;
+  transition: color .15s ease-in-out;
+}
+
+.gsc-right-header button:hover {
+  color: var(--color-fg-default) !important;
+}
+
+.gsc-comment-box-tabs {
+  display: none;
+}
+
+.gsc-comment-box-main,
+.gsc-comment-box-preview-tabs,
+.gsc-comment-box-bottom,
+.gsc-comment-box-preview {
+  border-radius: 0;
+}
+
+.gsc-comment-box-textarea {
+  border-radius: 0;
+}
+
+.gsc-comment-box-md-toolbar {
+  border-radius: 0;
+}
+
+.gsc-comment-box-write-button,
+.gsc-comment-box-preview-button {
+  border-radius: 0;
+}
+
+.gsc-comment-box-button-group button:disabled {
+  color: var(--color-fg-muted);
+}
+
+.gsc-comment-box-button-group button:disabled:hover {
+  color: var(--color-fg-muted);
+}

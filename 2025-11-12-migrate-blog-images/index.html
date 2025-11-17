@@ -151,22 +151,27 @@
     
     <div class="content index pt4">
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    
+        <section class="terminal-content-block terminal-container">
+  <div class="terminal-prompt-header">
+    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2025-11-12-migrate-blog-images/</span>
+  </div>
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      
     <h1 class="posttitle" itemprop="name headline">
         Migrate Blog Images to New Domain Name
     </h1>
 
 
 
-    <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <a id='post-author' href="/">
-        <span itemprop="name">ケニヲ</span>
-        </a>
-      </span>
-      
+      <div class="meta">
+        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a id='post-author' href="/">
+          <span itemprop="name">ケニヲ</span>
+          </a>
+        </span>
+        
     <div class="postdate">
       
         <time datetime="2025-11-12T15:07:18.000Z" itemprop="datePublished">2025-11-12</time>
@@ -175,26 +180,26 @@
     </div>
 
 
-      
+        
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Blogging/">Blogging</a>
     </div>
 
 
-      
+        
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/cli/" rel="tag">cli</a>, <a class="tag-link-link" href="/tags/image-hosting/" rel="tag">image-hosting</a>, <a class="tag-link-link" href="/tags/migration/" rel="tag">migration</a>, <a class="tag-link-link" href="/tags/script/" rel="tag">script</a>
     </div>
 
 
-    </div>
-  </header>
-  
+      </div>
+    </header>
+    
 
-  <div class="content" itemprop="articleBody">
-    <p>Image hosting can be a pain in your arse, especially when you have a legacy blog with legacy posts from when you were young and didn’t know stuff about maintenance and cloud storage, CLI tools, all that jazz. Thankfully now i’m a bit more experienced than before. With the new domain name i got for free in my <a target="_blank" rel="noopener" href="https://education.github.com/pack">Github student pack</a>, let’s destroy all these hideous image links once and for all.</p>
+    <div class="content" itemprop="articleBody">
+      <p>Image hosting can be a pain in your arse, especially when you have a legacy blog with legacy posts from when you were young and didn’t know stuff about maintenance and cloud storage, CLI tools, all that jazz. Thankfully now i’m a bit more experienced than before. With the new domain name i got for free in my <a target="_blank" rel="noopener" href="https://education.github.com/pack">Github student pack</a>, let’s destroy all these hideous image links once and for all.</p>
 <p>Let’s begin by Ripgreping all the image links and output to a text file:</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">rg -io -N -I \</span><br><span class="line">  -g <span class="string">&#x27;!2025-11-12-migrate-blog-images.md&#x27;</span> \</span><br><span class="line">  -g <span class="string">&#x27;!2020-11-24-blog-migration.md&#x27;</span> \</span><br><span class="line">  -e <span class="string">&#x27;(https?://[^&quot;) &gt;]+?\.(jpe?g|png|gif|webp))&#x27;</span> \</span><br><span class="line">  -e <span class="string">&#x27;((\.?/|/)[^&quot;) &gt;]+\.(jpe?g|png|gif|webp))&#x27;</span> \</span><br><span class="line">  <span class="built_in">source</span>/_posts/ | <span class="built_in">sort</span> -u &gt; all_image_links.txt</span><br></pre></td></tr></table></figure>
 <p>This will give you something like:<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">───────┬───────────────────────────────────────────────────────────────────────────────────</span><br><span class="line">       │ File: all_image_links.txt</span><br><span class="line">───────┼───────────────────────────────────────────────────────────────────────────────────</span><br><span class="line">   1   │ ./img/b674-iufmpmp1256471.png</span><br><span class="line">   2   │ /440px-Charles_Gleyre_-_Daphnis_et_Chloe_revenant_de_la_montagne.jpg</span><br><span class="line">   3   │ /img/20-06-06-darkmode.jpg</span><br><span class="line">   4   │ /img/20-06-06-pic.png</span><br><span class="line">   5   │ /img/20-06-06-tag.png</span><br><span class="line">   6   │ /img/20-06-06-tag1.png</span><br><span class="line">   7   │ /img/20-06-06-tag2.png</span><br><span class="line">   8   │ /img/20-06-06-tag3.png</span><br><span class="line">   9   │ /img/20-06-09-pretapork.jpg</span><br><span class="line">  10   │ /img/20-06-09-siri.jpg</span><br><span class="line">  11   │ /img/20-06-someWalrus_simplified_bit_notation.png</span><br><span class="line">  12   │ /img/20-11-10.png</span><br></pre></td></tr></table></figure></p>
@@ -218,8 +223,10 @@
 <p>And generate corresponding sed commands as before.</p>
 <p>Of course, if it’s a imgur link, you could get <code>502</code> when uploading with picgo cli. This needs to be manually done and i am lucky enough to have only a handful of imgur links.</p>
 
-  </div>
-</article>
+    </div>
+  </article>
+</section>
+
 <!--  -->
 
 <br>
@@ -239,7 +246,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gist.githubusercontent.com/gitkeniwo/f46b8469c917c8d6ba0ae8c0852df38b/raw/711eb7c66f483188f99d9ddc192b22526c2a4255/fro-sans-serif.css"
+        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

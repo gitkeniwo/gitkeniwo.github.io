@@ -152,22 +152,27 @@
     
     <div class="content index pt4">
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    
+        <section class="terminal-content-block terminal-container">
+  <div class="terminal-prompt-header">
+    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-06-11-Scientifically-Back-up/</span>
+  </div>
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      
     <h1 class="posttitle" itemprop="name headline">
         科学的バックアップ：ドライブの選択とバックアッププラン
     </h1>
 
 
 
-    <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <a id='post-author' href="/">
-        <span itemprop="name">ケニヲ</span>
-        </a>
-      </span>
-      
+      <div class="meta">
+        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a id='post-author' href="/">
+          <span itemprop="name">ケニヲ</span>
+          </a>
+        </span>
+        
     <div class="postdate">
       
         <time datetime="2020-06-10T22:17:19.000Z" itemprop="datePublished">2020-06-11</time>
@@ -176,31 +181,33 @@
     </div>
 
 
-      
+        
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Tech/">Tech</a>
     </div>
 
 
-      
+        
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/drive/" rel="tag">drive</a>, <a class="tag-link-link" href="/tags/hardware/" rel="tag">hardware</a>, <a class="tag-link-link" href="/tags/iCloud/" rel="tag">iCloud</a>
     </div>
 
 
-    </div>
-  </header>
-  
+      </div>
+    </header>
+    
 
-  <div class="content" itemprop="articleBody">
-    <p>随着要处理的文件和工作越来越多，一个网盘。在此之前，我使用的是iCloud中国大陆50GB·¥6月付的套餐，主要的用途是备份相册、存放课程教材资料和iOS应用的数据储存，但是50G的容量看来已经略显不足：光是我从2014年turn-to-iPhone之后积累的相片和视频就占去了一半的空间（24G），且在我去年从iPhone 7升级到iPhone 8之后，新存储的相片也因为容量不足停止了iCloud更新（也就是说如果突发事件我手机坏掉了的话，这半年来的图片将会完全丢失）。其次，大量的课程资料和Goodnotes文件也占用了将近20GB的空间，中文扫描版PDF最可怕，因为其本质是相片，几乎一本中等规格的书就60-80MB，像那些巨无霸型的中译本如《数据库系统原理》、《离散数学及其应用》和《深入理解计算机系统》更是动辄上百MB，虽说现在全英文阅读已经不再苦手，但中译资源寻得已经很不易了，不珍惜地收藏起来说不定之后就找不到了。再者就是漫画，AppleBooks上堆积了大量的书目，虽然epub格式非常便利，但这么多的东西真的是我们所需要的吗？在复杂的当下，各种各样的硬件软件问题都有可能发生，我们的工作项目也应该找到合理的方式来抵抗损耗，如果云盘只是用来堆叠书影音资源和文件的话，那就真的是太暴殄天物了。</p>
+    <div class="content" itemprop="articleBody">
+      <p>随着要处理的文件和工作越来越多，一个网盘。在此之前，我使用的是iCloud中国大陆50GB·¥6月付的套餐，主要的用途是备份相册、存放课程教材资料和iOS应用的数据储存，但是50G的容量看来已经略显不足：光是我从2014年turn-to-iPhone之后积累的相片和视频就占去了一半的空间（24G），且在我去年从iPhone 7升级到iPhone 8之后，新存储的相片也因为容量不足停止了iCloud更新（也就是说如果突发事件我手机坏掉了的话，这半年来的图片将会完全丢失）。其次，大量的课程资料和Goodnotes文件也占用了将近20GB的空间，中文扫描版PDF最可怕，因为其本质是相片，几乎一本中等规格的书就60-80MB，像那些巨无霸型的中译本如《数据库系统原理》、《离散数学及其应用》和《深入理解计算机系统》更是动辄上百MB，虽说现在全英文阅读已经不再苦手，但中译资源寻得已经很不易了，不珍惜地收藏起来说不定之后就找不到了。再者就是漫画，AppleBooks上堆积了大量的书目，虽然epub格式非常便利，但这么多的东西真的是我们所需要的吗？在复杂的当下，各种各样的硬件软件问题都有可能发生，我们的工作项目也应该找到合理的方式来抵抗损耗，如果云盘只是用来堆叠书影音资源和文件的话，那就真的是太暴殄天物了。</p>
 <p>本文将从以下几个角度来讨论关于科学备份和网盘有关的这些问题。</p>
 <h1 id="网盘的选择"><a href="#网盘的选择" class="headerlink" title="网盘的选择"></a>网盘的选择</h1><h1 id="鸡蛋不一定要放到一个篮子里"><a href="#鸡蛋不一定要放到一个篮子里" class="headerlink" title="鸡蛋不一定要放到一个篮子里"></a>鸡蛋不一定要放到一个篮子里</h1><h1 id="Git-Blog-Project：直接复制粘贴就算迁移了吗"><a href="#Git-Blog-Project：直接复制粘贴就算迁移了吗" class="headerlink" title="Git, Blog, Project：直接复制粘贴就算迁移了吗"></a>Git, Blog, Project：直接复制粘贴就算迁移了吗</h1><h1 id="Optimization-of-iCloud-Storage-ln-Command"><a href="#Optimization-of-iCloud-Storage-ln-Command" class="headerlink" title="Optimization of iCloud Storage, ln Command"></a>Optimization of iCloud Storage, <code>ln</code> Command</h1><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/jiuyueguang/p/3174296.html">https://www.cnblogs.com/jiuyueguang/p/3174296.html</a></p>
 <h1 id="时光机器与硬盘选择：MacOS"><a href="#时光机器与硬盘选择：MacOS" class="headerlink" title="时光机器与硬盘选择：MacOS"></a>时光机器与硬盘选择：MacOS</h1>
-  </div>
-</article>
+    </div>
+  </article>
+</section>
+
 <!--  -->
 
 <br>
@@ -220,7 +227,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gist.githubusercontent.com/gitkeniwo/f46b8469c917c8d6ba0ae8c0852df38b/raw/711eb7c66f483188f99d9ddc192b22526c2a4255/fro-sans-serif.css"
+        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

@@ -166,22 +166,27 @@
     
     <div class="content index pt4">
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    
+        <section class="terminal-content-block terminal-container">
+  <div class="terminal-prompt-header">
+    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2020-07-02-docker-01/</span>
+  </div>
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      
     <h1 class="posttitle" itemprop="name headline">
         Docker 入门
     </h1>
 
 
 
-    <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <a id='post-author' href="/">
-        <span itemprop="name">ケニヲ</span>
-        </a>
-      </span>
-      
+      <div class="meta">
+        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a id='post-author' href="/">
+          <span itemprop="name">ケニヲ</span>
+          </a>
+        </span>
+        
     <div class="postdate">
       
         <time datetime="2020-07-02T21:44:23.000Z" itemprop="datePublished">2020-07-02</time>
@@ -190,26 +195,26 @@
     </div>
 
 
-      
+        
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Tech/">Tech</a>
     </div>
 
 
-      
+        
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/docker/" rel="tag">docker</a>
     </div>
 
 
-    </div>
-  </header>
-  
+      </div>
+    </header>
+    
 
-  <div class="content" itemprop="articleBody">
-    <h1 id="Docker的工作原理-Container"><a href="#Docker的工作原理-Container" class="headerlink" title="Docker的工作原理: Container"></a>Docker的工作原理: Container</h1><h2 id="To-start-with"><a href="#To-start-with" class="headerlink" title="To start with"></a>To start with</h2><p>我们可以从 <code>$docker run hello-world</code> 的helloworld程序的流程看出。</p>
+    <div class="content" itemprop="articleBody">
+      <h1 id="Docker的工作原理-Container"><a href="#Docker的工作原理-Container" class="headerlink" title="Docker的工作原理: Container"></a>Docker的工作原理: Container</h1><h2 id="To-start-with"><a href="#To-start-with" class="headerlink" title="To start with"></a>To start with</h2><p>我们可以从 <code>$docker run hello-world</code> 的helloworld程序的流程看出。</p>
 <p><img src="https://img.gitkeniwo.tech/202511/12-76bb5014bd5d5cabb8d29205596942a2-1762983694.png" alt=""></p>
 <p>当我们从Terminal输入语句执行的时候，docker client会take 我们的command，然后把command传递给docker server，在hello-world这条command中，我们实际想要传达的意思是我们set up一个新的container，using the image hello-world。 hello-world image实际上包含着一个能打印如下info的小程序，是我们想要利用docker达到的运行的目的。 </p>
 <p><img src="https://img.gitkeniwo.tech/202511/12-7e16e2a01795f18b192711669f1026ef-1762983695.png" alt=""></p>
@@ -265,8 +270,10 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$docker run redis</span><br><span class="line">..(redis info)...</span><br><span class="line">$docker ps</span><br><span class="line">...(to find the container id)...</span><br><span class="line">$docker exec -it &lt;container id&gt; redis-cli</span><br><span class="line">...then redis-cli REPL comes out...</span><br><span class="line">...you can set key-value and also get value from key...</span><br></pre></td></tr></table></figure>
 <h2 id="the-usage-of-the-it-Flag"><a href="#the-usage-of-the-it-Flag" class="headerlink" title="the usage of the -it Flag"></a>the usage of the <code>-it</code> Flag</h2><p>在上面例子中，如果我们leave out <code>-it</code> 的话，我们会被立刻kick out back to terminal，而不会显示redis-cli的交互界面。</p>
 
-  </div>
-</article>
+    </div>
+  </article>
+</section>
+
 <!--  -->
 
 <br>
@@ -286,7 +293,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gist.githubusercontent.com/gitkeniwo/f46b8469c917c8d6ba0ae8c0852df38b/raw/711eb7c66f483188f99d9ddc192b22526c2a4255/fro-sans-serif.css"
+        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

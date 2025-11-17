@@ -155,22 +155,27 @@
     
     <div class="content index pt4">
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    
+        <section class="terminal-content-block terminal-container">
+  <div class="terminal-prompt-header">
+    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2022-08-05-applesilicon-hexo-migration/</span>
+  </div>
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      
     <h1 class="posttitle" itemprop="name headline">
         将Hexo从2020 Intel MBP迁移到2021 MBP 14inch Apple Silicon
     </h1>
 
 
 
-    <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <a id='post-author' href="/">
-        <span itemprop="name">ケニヲ</span>
-        </a>
-      </span>
-      
+      <div class="meta">
+        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a id='post-author' href="/">
+          <span itemprop="name">ケニヲ</span>
+          </a>
+        </span>
+        
     <div class="postdate">
       
         <time datetime="2022-08-04T23:02:04.000Z" itemprop="datePublished">2022-08-05</time>
@@ -179,26 +184,26 @@
     </div>
 
 
-      
+        
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Blogging/">Blogging</a>
     </div>
 
 
-      
+        
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/apple/" rel="tag">apple</a>, <a class="tag-link-link" href="/tags/apple-silicon/" rel="tag">apple-silicon</a>, <a class="tag-link-link" href="/tags/hexo/" rel="tag">hexo</a>, <a class="tag-link-link" href="/tags/mbp/" rel="tag">mbp</a>
     </div>
 
 
-    </div>
-  </header>
-  
+      </div>
+    </header>
+    
 
-  <div class="content" itemprop="articleBody">
-    <p>昨天14寸mbp(m1 pro)到了之后，欢天喜地的用time machine备份再还原了一下午，谁知道time machine连同intel上的环境一起给还原到了apple silicon这边来，光是要怎么卸载intel的<a target="_blank" rel="noopener" href="https://brew.sh">brew</a>我都搞了半小时，（brew官网提供的<a target="_blank" rel="noopener" href="https://docs.brew.sh/FAQ#how-do-i-uninstall-homebrew">uninstall .sh脚本</a> 狠起来连自己都报错！)，最后我就开机狂按<code>cmd</code>+<code>R</code> 抹盘重装了。</p>
+    <div class="content" itemprop="articleBody">
+      <p>昨天14寸mbp(m1 pro)到了之后，欢天喜地的用time machine备份再还原了一下午，谁知道time machine连同intel上的环境一起给还原到了apple silicon这边来，光是要怎么卸载intel的<a target="_blank" rel="noopener" href="https://brew.sh">brew</a>我都搞了半小时，（brew官网提供的<a target="_blank" rel="noopener" href="https://docs.brew.sh/FAQ#how-do-i-uninstall-homebrew">uninstall .sh脚本</a> 狠起来连自己都报错！)，最后我就开机狂按<code>cmd</code>+<code>R</code> 抹盘重装了。</p>
 <p>BTW，淘宝在激活的当天可以买AppleCare+，我是花了¥1385直接在杭州朗朗数码买的，Care就是可以保3年，然后全球联保（去🇳🇱就几乎不用担心了），所以毫不犹豫的就买了，毕竟贵MBP换主板换屏幕都是5000+软妹币吧……Apple Silicon一路下来体验就是：爽！！！作为16-20年mbp模具和intel的受害者，我的2020 intel mbp 13inch 今年在进入4月份以来只能用mac fan control调到all time满速才可使用，更别说16G的内存在最近连看个Safari都会闪退。与此同时，mbp 14寸开了满满一dock的app都安静如鸡，流畅丝滑，内存一路绿灯，这才叫<strong>优雅</strong>啊！！！</p>
 <p>进入正题，由于我在intel mbp 上的hexo是跑在node 12.x版本下的，今天去nodejs主页一看，稳定版都更新到16.x了（贵前端生态真的奇葩）。我依稀记得之前还专门写过因为兼容性问题从node 14.x版本<a href="https://gitkeniwo.github.io/2020-11-24-blog/">回滚的经历</a>（贵nodejs圈用什么管理环境？<a target="_blank" rel="noopener" href="https://github.com/nvm-sh/nvm">nvm</a>？）。怀着忐忑的心情，从GitHub上拉下来了hexo项目的最新提交，在新mac上配置好<a target="_blank" rel="noopener" href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">github token</a>。先安装<code>hexo-cli</code>:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
@@ -206,8 +211,10 @@
 <p>进入hexo folder，这时要根据你当时的package.json重新安装各种包<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure><br>装好后，npm会让你audit，可以看看，不过没什么用。这时就可以<code>hexo server</code>了，然后居然直接跑起来了，虽然还是会有一些warning，但都是一些dependency不支持了之类的。<br><img src="https://img.gitkeniwo.tech/202511/12-762f57ca8ac7be639e787e98f3fb2248-1762984728.png" alt=""></p>
 <p>最后，再根据以前写的<a href="https://gitkeniwo.github.io/2022-02-23-inline-math/">一些博文</a>，开启数学公式一类的插件就可以了($try \space some \space math \space here \space 89^{64}$)，由于包都是重装的，所以这些细枝末节的修改最好也重新走一遍。这样来看，hexo基本上可以很好地迁移到 #apple silicon 这边来。</p>
 
-  </div>
-</article>
+    </div>
+  </article>
+</section>
+
 <!--  -->
 
 <br>
@@ -227,7 +234,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gist.githubusercontent.com/gitkeniwo/f46b8469c917c8d6ba0ae8c0852df38b/raw/711eb7c66f483188f99d9ddc192b22526c2a4255/fro-sans-serif.css"
+        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
         data-lang="en"
         crossorigin="anonymous"
         async>

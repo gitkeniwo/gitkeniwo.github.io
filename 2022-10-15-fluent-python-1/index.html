@@ -153,22 +153,27 @@
     
     <div class="content index pt4">
         
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    
+        <section class="terminal-content-block terminal-container">
+  <div class="terminal-prompt-header">
+    <span class="terminal-prompt">guest@gitkeniwo.github.io ~> cat 2022-10-15-fluent-python-1/</span>
+  </div>
+
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+      
     <h1 class="posttitle" itemprop="name headline">
         Python Data Model @ 流畅的Python 01
     </h1>
 
 
 
-    <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <a id='post-author' href="/">
-        <span itemprop="name">ケニヲ</span>
-        </a>
-      </span>
-      
+      <div class="meta">
+        <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a id='post-author' href="/">
+          <span itemprop="name">ケニヲ</span>
+          </a>
+        </span>
+        
     <div class="postdate">
       
         <time datetime="2022-10-15T14:44:06.000Z" itemprop="datePublished">2022-10-15</time>
@@ -177,26 +182,26 @@
     </div>
 
 
-      
+        
     <div class="article-category">
         <i class="fas fa-archive"></i>
         <a class="category-link" href="/categories/Zen-and-the-Art-of-Computer-Maintenance/">Zen and the Art of Computer Maintenance</a> › <a class="category-link" href="/categories/Zen-and-the-Art-of-Computer-Maintenance/Python/">Python</a>
     </div>
 
 
-      
+        
     <div class="article-tag">
         <i class="fas fa-tag"></i>
         <a class="tag-link-link" href="/tags/fluent-python/" rel="tag">fluent-python</a>, <a class="tag-link-link" href="/tags/python/" rel="tag">python</a>
     </div>
 
 
-    </div>
-  </header>
-  
+      </div>
+    </header>
+    
 
-  <div class="content" itemprop="articleBody">
-    <p>最近时常感觉有必要重学一遍python，故开此坑。<br>《流畅的python》这本书也是经典必读了，就从第一章开始写笔记。这章是一个引言，主要介绍了python的special methods。</p>
+    <div class="content" itemprop="articleBody">
+      <p>最近时常感觉有必要重学一遍python，故开此坑。<br>《流畅的python》这本书也是经典必读了，就从第一章开始写笔记。这章是一个引言，主要介绍了python的special methods。</p>
 <h1 id="Special-Methods"><a href="#Special-Methods" class="headerlink" title="Special Methods"></a>Special Methods</h1><ul>
 <li>Special Method是形如<code>__methodName__</code>的一类方法（也叫做”dunder method”，dunder是双下划线的略称），通过实现这类方法可以使得class以一些python通用的语法来调用一些特殊函数，使得代码语法更连贯，避免在用户编写的类里同样功能的函数有多种不同名称的情况。(Meant to be called by the python interpreter, not user (the only exception being <code>__init__()</code> which is for invoking the initializer for user superclass))<ul>
 <li><strong>e.g.</strong> 通过实现 <code>__getitem__()</code>方法，可以直接通过 <code>className[0], className[1]</code>这样类名加方括号的形式来获取类中按照某种顺序的第N个元素(get item by index)</li>
@@ -242,8 +247,10 @@
 </ul>
 <h1 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h1><p>BTW,  在CPython里，builtin types的<code>len()</code>其实不是一个method，它只是从C struct里面读取了一个field的值，所以len()效率很高；因为builtin需要高效的实现。现在，用户可以通过实现<code>__len__</code>使得len()同样能用在自己的类上。</p>
 
-  </div>
-</article>
+    </div>
+  </article>
+</section>
+
 <!--  -->
 
 <br>
@@ -263,7 +270,7 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://gist.githubusercontent.com/gitkeniwo/f46b8469c917c8d6ba0ae8c0852df38b/raw/711eb7c66f483188f99d9ddc192b22526c2a4255/fro-sans-serif.css"
+        data-theme="https://gitkeniwo.github.io/css-modern/main.css"
         data-lang="en"
         crossorigin="anonymous"
         async>
