@@ -36,7 +36,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-flow: column;
-  grid-template-rows: repeat(29, auto); /* 115 tags / 4 columns = ~29 rows */
+  grid-template-rows: repeat(32, auto); /* 128 tags / 4 columns = 32 rows */
   gap: 0.1rem 1rem;
   padding: 0;
   margin: 0;
@@ -103,7 +103,9 @@
   }
 
   .ls-output {
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: column;
+    grid-template-rows: repeat(43, auto); /* 128 tags / 3 columns = 43 rows */
     gap: 0.1rem 0.8rem;
     font-size: 0.75rem;
   }
@@ -119,7 +121,9 @@
   }
 
   .ls-output {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: column;
+    grid-template-rows: repeat(43, auto); /* 128 tags / 3 columns = 43 rows */
     gap: 0.05rem 0.5rem;
     font-size: 0.7rem;
   }
