@@ -346,6 +346,7 @@
 }
 
 /* Nested items need proper indentation prefix */
+/* Level 2 (H2 under H1) - default case */
 #toc-content .toc-child .toc-item::before {
   content: "│   ├─";
 }
@@ -354,6 +355,16 @@
   content: "│   └─";
 }
 
+/* Level 2 under last H1 - use spaces instead of │ */
+#toc-content .toc-item:last-child > .toc-child .toc-item::before {
+  content: "\00a0\00a0├─";
+}
+
+#toc-content .toc-item:last-child > .toc-child .toc-item:last-child::before {
+  content: "\00a0\00a0└─";
+}
+
+/* Level 3 (H3 under H2) - default case */
 #toc-content .toc-child .toc-child .toc-item::before {
   content: "│   │   ├─";
 }
@@ -362,6 +373,25 @@
   content: "│   │   └─";
 }
 
+/* Level 3 under last H2 (which is under non-last H1) */
+#toc-content .toc-child .toc-item:last-child > .toc-child .toc-item::before {
+  content: "│\00a0\00a0\00a0\00a0\00a0\00a0\00a0├─";
+}
+
+#toc-content .toc-child .toc-item:last-child > .toc-child .toc-item:last-child::before {
+  content: "│\00a0\00a0\00a0\00a0\00a0\00a0\00a0└─";
+}
+
+/* Level 3 under last H2 which is under last H1 */
+#toc-content .toc-item:last-child > .toc-child .toc-item:last-child > .toc-child .toc-item::before {
+  content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0├─";
+}
+
+#toc-content .toc-item:last-child > .toc-child .toc-item:last-child > .toc-child .toc-item:last-child::before {
+  content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0└─";
+}
+
+/* Level 4 (H4) - default case */
 #toc-content .toc-child .toc-child .toc-child .toc-item::before {
   content: "│   │   │   ├─";
 }
