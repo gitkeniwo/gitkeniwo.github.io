@@ -4,8 +4,8 @@
 
 .theme-toggle {
   /* Temporarily disabled */
-  display: none !important;
-  /* display: flex; */
+  /* display: none !important; */
+  display: flex;
 
   position: fixed;
   bottom: 2rem;
