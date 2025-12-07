@@ -33,6 +33,7 @@
 
 /* Section ASCII Art - matches .irc-ascii-art from memos.css */
 .section-ascii-art {
+  font-family: var(--font-family-ascii-art);
   color: var(--color-accent-1);
   font-size: 0.65rem;
   line-height: 1.1;
