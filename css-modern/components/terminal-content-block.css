@@ -40,6 +40,9 @@
   /* margin-bottom: 0.5rem; */
   white-space: pre;
   font-weight: bold;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
 }
 
 /* Section Banner Label - matches .irc-status from memos.css */
@@ -144,6 +147,8 @@
 @media (max-width: 768px) {
   .section-ascii-art {
     font-size: 0.5rem;
+    /* Enable smooth touch scrolling on mobile */
+    -webkit-overflow-scrolling: touch;
   }
 
   .section-banner-label {
@@ -162,6 +167,8 @@
 @media (max-width: 480px) {
   .section-ascii-art {
     font-size: 0.45rem;
+    /* Enable smooth touch scrolling on mobile */
+    -webkit-overflow-scrolling: touch;
   }
 
   .section-banner-label {

@@ -8,7 +8,8 @@
   position: relative;
   min-height: var(--logo-height);
 
-  h1, .h1 {
+  h1,
+  .h1 {
     margin-top: 0;
     margin-bottom: 0;
     color: var(--color-text);
@@ -27,7 +28,7 @@
     text-decoration: none;
   }
 
-  > a {
+  >a {
     display: flex;
     align-items: flex-start;
   }
@@ -128,7 +129,7 @@
     display: flex;
     flex-direction: column;
 
-    > a {
+    >a {
       display: flex;
       flex-direction: row;
     }
@@ -149,20 +150,56 @@
       position: static;
       left: 0;
       right: 0;
-      margin-top: 0;
+      margin-top: 0.5rem;
       order: 2;
+      position: relative;
+
+      /* Fade gradient on right edge to hint scrollability */
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 2rem;
+        background: linear-gradient(to right,
+            transparent,
+            var(--color-background));
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.9;
+        transition: opacity 0.2s ease;
+      }
+
+      /* Hide fade when scrolled to end */
+      &.scrolled-end::after {
+        opacity: 0;
+      }
 
       ul {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         width: 100%;
-        gap: 0;
+        gap: 0.75rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        /* Firefox */
+        -ms-overflow-style: none;
+        /* IE/Edge */
+        padding-bottom: 0.25rem;
+
+        /* Hide scrollbar for Chrome/Safari */
+        &::-webkit-scrollbar {
+          display: none;
+        }
 
         a {
           display: block;
           text-align: left;
-          padding: 0.75rem 0;
+          padding: 0.5rem 0;
+          white-space: nowrap;
 
           &:hover {
             background: none;
@@ -170,46 +207,14 @@
         }
 
         li {
-          display: none;
+          display: inline-block;
           border-right: 0;
-          width: 100%;
+          width: auto;
+          flex-shrink: 0;
 
+          /* Hide hamburger icon on mobile */
           &.icon {
-            position: static;
-            display: block;
-            width: auto;
-            text-align: left;
-            padding: 0.5rem 0;
-          }
-        }
-
-        &.responsive {
-          display: flex;
-          flex-direction: column;
-          margin-top: 0.5rem;
-
-          li {
-            display: block;
-            text-align: left;
-            margin-left: 0;
-            width: 100%;
-
-            &.icon {
-              text-align: left;
-              width: auto;
-              order: -1;
-            }
-
-            &:not(:first-child) {
-              padding-top: 0;
-              padding-left: 0;
-              font-size: 1rem;
-            }
-          }
-
-          a {
-            display: block;
-            width: 100%;
+            display: none;
           }
         }
       }
