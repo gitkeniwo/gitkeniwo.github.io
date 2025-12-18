@@ -41,8 +41,8 @@
   --color-del: rgb(136, 148, 141);
   --color-em: #d0638c;
   --color-strong: #d1889f;
-  --color-header-prefix: rgb(183, 90, 120);
-  --color-markdown-marker: rgb(183, 90, 120);
+  --color-header-prefix: #d44375;
+  --color-markdown-marker: #d44375;
   --color-code: #b73a5c;
 
   --color-tag-count1: #b29d9d;
@@ -128,8 +128,8 @@
   }
 }
 
-/* Manual dark theme override */
-[data-theme="dark"] {
+/* Manual dark theme override - :root prefix for consistency */
+:root[data-theme="dark"] {
   --color-background: #1d1f21;
   --color-background-code: #232527;
   --color-footer-mobile-1: #242628;
@@ -162,8 +162,8 @@
   --color-glow-primary-hover-sm: rgba(0, 255, 255, 0.3);
 }
 
-/* Manual light theme override */
-[data-theme="light"] {
+/* Manual light theme override - :root prefix needed for specificity over media query dark mode */
+:root[data-theme="light"] {
   --color-background: #e2e0de;
   --color-background-code: #d5d3d1;
   --color-footer-mobile-1: #dbd9d7;
@@ -177,15 +177,16 @@
   --color-accent-1: #d44375;
   --color-accent-2: #111111;
   --color-accent-3: #666666;
-  --color-accent-4: #006600;
-  --color-accent-5: #8dba8a;
-  --color-accent-6: #31895f;
+  --color-accent-4: #660014;
+  --color-accent-5: #e66973;
+  --color-accent-6: #893147;
   --color-quote: #ab2251;
   --color-del: rgb(136, 148, 141);
-  --color-em: #e8a4be;
+  --color-em: #d0638c;
   --color-strong: #d1889f;
   --color-header-prefix: #c73866;
   --color-markdown-marker: rgba(212, 67, 117, 0.35);
+  --color-code: #b73a5c;
 
   /* Light theme glow effects */
   --color-glow-primary: rgba(212, 67, 117, 0.5);

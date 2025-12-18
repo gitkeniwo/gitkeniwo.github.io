@@ -40,6 +40,11 @@
   opacity: 0.8;
   font-size: 0.85rem;
   line-height: 1.4;
+  
+  /* Hanging indent for wrapped lines */
+  display: block;
+  padding-left: 2.5em;
+  text-indent: -2.5em;
 }
 
 .irc-user-name {
@@ -89,43 +94,66 @@
   color: var(--color-link-hover);
 }
 
-.memos ul {
-  margin-left: 0 !important;
-  padding-left: 0 !important;
+.memos > ul {
+  /* Only reset direct child ul (memo list container), not ul inside .irc-message */
+  margin-left: 0;
+  padding-left: 0;
   list-style: none;
 }
 
 /* IRC Message Line */
 .irc-memo-line {
   display: flex;
-  align-items: flex-start;
+  align-items: baseline;  /* Align all elements on text baseline */
   margin-bottom: 0.1rem;
-  padding: 0.3rem 0.5rem;
+  padding: 0rem 0rem;
   list-style-type: none;
   gap: 0.3rem;
   transition: all 0.15s ease;
   border-radius: 2px;
+  font-size: 0.85rem;  /* Unified font size for all elements */
 }
 
 .irc-memo-line:hover {
   background: rgba(0, 0, 0, 0.03);
 }
 
-/* IRC Time - Bold and Highlighted */
-.irc-time {
+/* IRC Prefix (-!-) */
+.irc-memo-line .irc-prefix {
+  flex-shrink: 0;
+  color: var(--color-accent-5);
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+/* IRC Time (HH:mm) */
+.irc-memo-line .irc-time {
   flex-shrink: 0;
   color: var(--color-accent-1);
-  font-weight: bold;
-  font-size: 0.9em;
+  font-weight: normal;
   white-space: nowrap;
+}
+
+/* Date color classes - matching index.ejs */
+.irc-memo-line .date-yy {
+  color: var(--color-accent-1);
+  font-weight: bold;
+}
+
+.irc-memo-line .date-mm {
+  color: var(--color-meta);
+}
+
+.irc-memo-line .date-dd {
+  color: var(--color-accent-5);
 }
 
 /* IRC Nickname */
 .irc-nick {
   flex-shrink: 0;
-  color: var(--color-accent-3);
-  font-weight: bold;
-  font-size: 0.95em;
+  color: var(--color-accent-4);
+  font-weight: normal;  /* Changed from bold for consistent sizing */
+  /* No font-size - inherit from parent */
   white-space: nowrap;
 }
 
@@ -150,7 +178,7 @@
 .irc-date {
   flex-shrink: 0;
   color: var(--color-meta);
-  font-size: 0.9em;
+  /* No font-size - inherit from parent */
   white-space: nowrap;
 }
 
@@ -196,14 +224,14 @@
 
 .irc-meta:before {
   content: "[";
-  color: var(--color-accent-5);
-  margin-right: 0.2em;
+  color: var(--color-meta);
+  margin-right: 0.1em;
 }
 
 .irc-meta:after {
   content: "]";
-  color: var(--color-accent-5);
-  margin-left: 0.2em;
+  color: var(--color-meta);
+  margin-left: 0.1em;
 }
 
 /* Code blocks in messages */
@@ -242,20 +270,21 @@
 .irc-message ul,
 .irc-message ol {
   margin: 0.5em 0;
-  padding-left: 2.5em;
-  list-style-position: outside;
+  margin-left: 1.5em;  /* Push list right so bullets stay inside container */
+  padding-left: 0;
+  list-style-position: outside;  /* Bullets outside text flow for proper alignment */
 }
 
 .irc-message ul li {
   list-style: disc;
   margin-left: 0;
-  padding-left: 0.5em;
+  padding-left: 0.3em;
 }
 
 .irc-message ol li {
   list-style: decimal;
   margin-left: 0;
-  padding-left: 0.5em;
+  padding-left: 0.3em;
 }
 
 .irc-message ul ul,
@@ -263,7 +292,7 @@
 .irc-message ul ol,
 .irc-message ol ul {
   margin: 0.25em 0;
-  padding-left: 2em;
+  margin-left: 1.2em;
 }
 
 /* Images in messages */
@@ -340,8 +369,8 @@
 /* Tags - IRC style */
 .tag-span {
   display: inline-block;
-  margin: 0.2em 0.4em 0.2em 0;
-  padding: 0 0.3em;
+  margin: 0.1em 0 0.1em 0;
+  padding: 0;
   font-family: var(--font-family-mono);
   font-size: 0.75rem;
   font-weight: 600;
@@ -377,12 +406,12 @@
 .button-load {
   color: var(--color-meta);
   background-color: transparent;
-  margin: 1.5rem 0 0 0;
-  padding: 0.75rem 1rem;
+  margin: 1rem 0 0 0;
+  padding: 0.5rem 0.25rem;
   border: none;
   font-family: var(--font-family-mono);
   font-weight: normal;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   cursor: pointer;
   transition: all 0.15s ease;
   position: relative;
@@ -589,6 +618,8 @@
 
   .irc-status {
     font-size: 0.75rem;
+    padding-left: 2.2em;
+    text-indent: -2.2em;
   }
 
   .memos {
@@ -599,50 +630,27 @@
   .irc-memo-line {
     flex-wrap: wrap;
     gap: 0.25rem;
-    padding: 0.4rem 0.3rem;
-    align-items: flex-start;
+    padding: 0rem 0rem;
+    align-items: baseline;
   }
 
-  .irc-time,
-  .irc-date,
-  .irc-nick,
-  .irc-separator-1,
-  .irc-separator-2 {
+  /* All header elements stay on same line */
+  .irc-memo-line .irc-prefix,
+  .irc-memo-line .irc-time,
+  .irc-memo-line .irc-date,
+  .irc-memo-line .irc-nick,
+  .irc-memo-line .irc-separator-1,
+  .irc-memo-line .irc-separator-2 {
+    flex-shrink: 0;
     font-size: 0.8em;
   }
 
-  /* First line: [time] › date › */
-  .irc-time,
-  .irc-date,
-  .irc-separator-1 {
-    flex-shrink: 0;
-  }
-
-  /* Force line break after the second separator (after date) */
-  .irc-date + .irc-separator-1::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 0;
-  }
-
-  /* Second line: nickname : - take full width to push message to next line */
-  .irc-nick {
-    flex-shrink: 0;
-  }
-
-  .irc-separator-2 {
-    flex-shrink: 0;
-    /* Force line break after colon */
-    flex-basis: 100%;
-  }
-
-  /* Third line: message content */
+  /* Message content wraps to new line */
   .irc-message {
     font-size: 0.85em;
     width: 100%;
     flex-basis: 100%;
-    margin-top: 0;
+    margin-top: 0.3rem;
   }
 
   .load-btn,
@@ -683,7 +691,7 @@
 
   .irc-memo-line {
     gap: 0.2rem;
-    padding: 0.3rem 0.2rem;
+    padding: 0rem 0rem;
   }
 
   .resimg {

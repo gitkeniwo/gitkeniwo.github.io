@@ -1,7 +1,3 @@
-/*
-* 这是从非常早期的 Memos 版本，慢慢增加功能，变成这一坨的。如果从现在版本重构，至少可以减少 2/3 的代码。如果集成到自己的博客或者网页上，只需要取其中一部分就可以，现在 GPT 很方便，可直接从头生成优雅简洁的代码。
-*/
-
 // Memos Start
 var memo = {
     host: 'https://samizdat.fly.dev/',
@@ -48,8 +44,7 @@ var memoDom = document.querySelector(memo.domId);
 var load = '<button class="load-btn button-load">Continue loading more murmurs. Ok to proceed? (y/n)</button>'
 if (memoDom) {
     memoDom.insertAdjacentHTML('afterend', load);
-    getFirstList() // 首次加载数据
-    // 添加 button 事件监听器
+    getFirstList() 
     btnRemove = 0;
     var btn = document.querySelector("button.button-load");
     btn.addEventListener("click", function () {
@@ -72,7 +67,7 @@ function getFirstList() {
             updateHTMl(resdata)
             nextPageToken = resdata.nextPageToken;
             var nowLength = resdata.length
-            if (nowLength < limit) { // 返回数据条数小于 limit 则直接移除“加载更多”按钮，中断预加载
+            if (nowLength < limit) { // 返回数据条数小于 limit 则直接移除加载更多按钮，中断预加载
                 document.querySelector("button.button-load").remove()
                 btnRemove = 1
                 return
@@ -85,7 +80,7 @@ function getFirstList() {
         fetch(memoUrl_first).then(res => res.json()).then(resdata => {
             updateHTMl(resdata)
             var nowLength = resdata.length
-            if (nowLength < limit) { // 返回数据条数小于 limit 则直接移除“加载更多”按钮，中断预加载
+            if (nowLength < limit) { // 返回数据条数小于 limit 则直接移除加载更多按钮，中断预加载
                 document.querySelector("button.button-load").remove()
                 btnRemove = 1
                 return
@@ -246,7 +241,7 @@ function updateHTMl(data) {
             .replace(TAG_REG, "<span class='tag-span'><a rel='noopener noreferrer' href='#$1'>#$1</a></span> ")
 
         marked.setOptions({
-            breaks: true // 这就是关键！
+            breaks: true 
         });
 
         memoContREG = marked.parse(memoContREG)
@@ -348,16 +343,17 @@ function updateHTMl(data) {
         var ircDate = getIRCDate(memoDate);
         var memoLink = memo.host + data[i].name;
 
-        // Generate IRC message format HTML
+        // Generate IRC message format HTML (matching index.ejs style)
         memoResult += '<li class="irc-memo-line">' +
-            '<span class="irc-time">[' + ircTime + ']</span>' +
+            '<span class="irc-prefix">-!-</span>' +
+            '<span class="irc-date"><span class="date-yy">' + getYY(memoDate) + '</span><span class="date-mm">' + getMM(memoDate) + '</span><span class="date-dd">' + getDD(memoDate) + '</span></span>' +
             '<span class="irc-separator-1">›</span>' +
-            '<span class="irc-date">' + ircDate + '</span>' +
-            '<span class="irc-separator-1">›</span>' +
+            '<span class="irc-time">' + getIRCTime(memoDate) + '</span>' +
+            '<span class="irc-separator-2">:</span>' +
             '<span class="irc-nick">' + memo.name + '</span>' +
             '<span class="irc-separator-2">:</span>' +
             '<div class="irc-message">' + memoContREG +
-            '<div class="irc-meta"><a href="' + memoLink + '" target="_blank" rel="noopener noreferrer">permalink</a></div>' +
+            '<div class="irc-meta"><a href="' + memoLink + '" target="_blank" rel="noopener noreferrer">[permalink]</a></div>' +
             '</div>' +
             '</li>';
     }
@@ -370,7 +366,7 @@ function updateHTMl(data) {
         fetchDB();
     }
 
-    document.querySelector('button.button-load').textContent = 'Continue loading more murmurs. Ok to proceed? (y/n)';
+    document.querySelector('button.button-load').textContent = 'Loading more murmurs. Ok to proceed? (y/n)';
 }
 // Memos End
 
@@ -523,8 +519,19 @@ if (memo.total === true) {
 function getIRCTime(date) {
     const hours = String(date.getHours()).padStart(2, '0');
     const minutes = String(date.getMinutes()).padStart(2, '0');
-    const seconds = String(date.getSeconds()).padStart(2, '0');
-    return `${hours}:${minutes}:${seconds}`;
+    return `${hours}:${minutes}`;
+}
+
+function getYY(date) {
+    return String(date.getFullYear()).slice(-2);
+}
+
+function getMM(date) {
+    return String(date.getMonth() + 1).padStart(2, '0');
+}
+
+function getDD(date) {
+    return String(date.getDate()).padStart(2, '0');
 }
 
 function getIRCDate(date) {

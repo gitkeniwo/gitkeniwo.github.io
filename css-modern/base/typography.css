@@ -109,11 +109,11 @@ pre {
 }
 
 code {
-  padding: 0.1rem 0;
+  padding: 0.1rem 0.2rem;
   margin: 0 0.2rem;
   border: 0.08rem hidden #122e24;
-  border-radius: 0;
-  -webkit-border-radius: 2px;
+  border-radius: 0.3rem;
+  /* -webkit-border-radius: 2px; */
   color: var(--color-code);
   background-color: var(--color-background-code);
   font-size: 0.9rem;

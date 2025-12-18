@@ -7,7 +7,7 @@
 /* Base terminal container */
 .terminal-container {
   font-family: var(--font-family-mono);
-  font-size: 0.95rem;
+  font-size: 0.85rem;
 
   line-height: 1.2;
 

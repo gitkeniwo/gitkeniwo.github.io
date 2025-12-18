@@ -109,7 +109,7 @@
   flex-shrink: 0;
   color: var(--color-accent-1);
   font-weight: bold;
-  font-size: 0.9em;
+  font-size: 0.85em;
   white-space: nowrap;
 }
 
@@ -131,11 +131,21 @@
   user-select: none;
 }
 
+/* IRC Prefix (-!-) */
+.irc-prefix {
+  flex-shrink: 0;
+  color: var(--color-accent-5);
+  font-weight: normal;
+  /* No font-size - inherit from parent for consistency */
+  white-space: nowrap;
+  user-select: none;
+}
+
 /* IRC Date */
 .irc-date {
   flex-shrink: 0;
   color: var(--color-meta);
-  font-size: 0.9em;
+  font-size: 0.85em;  /* Normalized to match other IRC components */
   white-space: nowrap;
 }
 
@@ -148,6 +158,52 @@
 
 .irc-title a:hover {
   color: var(--color-accent-1);
+}
+
+/* Date color coding - YY/MM/DD */
+.date-yy {
+  color: var(--color-accent-1);
+  font-weight: bold;
+}
+
+.date-mm {
+  color: var(--color-accent-5);
+}
+
+.date-dd {
+  color: var(--color-meta);
+}
+
+/* Social links line */
+.social-links-line {
+  display: flex;
+  align-items: baseline;
+  padding: 0.2rem 0;
+  font-size: 0.85rem;  /* Use rem to match .section-banner-label */
+  font-family: var(--font-family-mono);
+  line-height: 1.4;
+}
+
+.social-links-line .irc-prefix {
+  margin-right: 0.4em;  /* Match the space in '-!- ' from section-banner-label::before */
+}
+
+.social-links-content {
+  color: var(--color-accent-5);
+  opacity: 0.8;
+}
+
+.social-links-content .icon {
+  display: inline-block;
+  margin: 0 0.15rem;
+  font-size: 1rem;
+  color: var(--color-accent-1);
+  transition: all 0.2s ease;
+}
+
+.social-links-content .icon:hover {
+  color: var(--color-link-hover);
+  transform: scale(1.15);
 }
 
 /* Mobile adjustments */
