@@ -35,14 +35,18 @@
 .section-ascii-art {
   font-family: var(--font-family-ascii-art);
   color: var(--color-accent-1);
-  font-size: 0.65rem;
-  line-height: 1.1;
+  font-size: 0.7rem;
+  line-height: 1.2;
   /* margin-bottom: 0.5rem; */
   white-space: pre;
-  font-weight: bold;
+  font-weight: 500;
   overflow-x: auto;
   overflow-y: hidden;
   max-width: 100%;
+  /* Fix Android Chrome rendering issues */
+  letter-spacing: 0;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 /* Section Banner Label - matches .irc-status from memos.css */

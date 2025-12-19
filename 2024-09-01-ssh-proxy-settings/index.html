@@ -18,6 +18,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=JetBrains+Mono:wght@400;700&family=Noto+Sans+SC:wght@100..900&family=Noto+Serif+SC:wght@200..900&family=Slabo+27px&family=Space+Grotesk:wght@300..700&family=Special+Elite&family=Syne+Mono&display=swap" rel="stylesheet">
+<!-- Adobe Source Code Pro for ASCII art (better cross-platform support) -->
+<link href="https://adobe-fonts.github.io/source-code-pro/source-code-pro.css" rel="stylesheet">
 
     <meta name="description" content="本次回🀄️发现虽然挂机场代理后外部访问问题不大，但GCP机器的ssh connection卡成翔，此贴记录一下macOS上ssh代理设置相关问题。 Command Interpretation为ssh命令设置代理的通用模版是 12ssh -o ProxyCommand&#x3D;&quot;nc -X 5 -x 127.0.0.1:1080 %h %p&quot; \    root@server 其中-">
 <meta property="og:type" content="article">
@@ -27,7 +29,7 @@
 <meta property="og:description" content="本次回🀄️发现虽然挂机场代理后外部访问问题不大，但GCP机器的ssh connection卡成翔，此贴记录一下macOS上ssh代理设置相关问题。 Command Interpretation为ssh命令设置代理的通用模版是 12ssh -o ProxyCommand&#x3D;&quot;nc -X 5 -x 127.0.0.1:1080 %h %p&quot; \    root@server 其中-">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-09-01T19:59:04.000Z">
-<meta property="article:modified_time" content="2025-12-18T22:57:13.329Z">
+<meta property="article:modified_time" content="2025-12-19T13:36:33.898Z">
 <meta property="article:author" content="ケニヲ">
 <meta property="article:tag" content="gfw">
 <meta name="twitter:card" content="summary">
