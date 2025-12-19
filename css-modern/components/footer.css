@@ -92,15 +92,12 @@
     gap: 0.3rem;
 
     i {
-      margin-left: 0.2em;
-      vertical-align: middle;
-      line-height: 1;
+      display: inline;
     }
   }
 
   .footer-powered-item {
-    display: inline-flex;
-    align-items: center;
+    display: inline;
     white-space: nowrap;
   }
 
