@@ -656,8 +656,8 @@
 
   .load-btn,
   .button-load {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.8rem;
+    padding: 0.5rem 0.25rem;
+    font-size: 0.7rem;
   }
 
   .post-preview {
@@ -697,5 +697,11 @@
 
   .resimg {
     flex: 1 1 100%;
+  }
+
+  .load-btn,
+  .button-load {
+    padding: 0.5rem 0.25rem;
+    font-size: 0.7rem;
   }
 }
