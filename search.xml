@@ -1294,9 +1294,9 @@
             
             <tag> news </tag>
             
-            <tag> emotions </tag>
-            
             <tag> modernity </tag>
+            
+            <tag> emotions </tag>
             
         </tags>
       
@@ -1400,13 +1400,13 @@
       
         <tags>
             
-            <tag> modernity </tag>
-            
             <tag> film-fantasy </tag>
             
             <tag> lotr </tag>
             
             <tag> director-peterjackson </tag>
+            
+            <tag> modernity </tag>
             
         </tags>
       
@@ -2640,9 +2640,9 @@
       
         <tags>
             
-            <tag> thoughts </tag>
-            
             <tag> daily </tag>
+            
+            <tag> thoughts </tag>
             
         </tags>
       
