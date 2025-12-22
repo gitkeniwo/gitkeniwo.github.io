@@ -64,7 +64,7 @@ body {
   }
 
   a {
-    color: var(--color-link);
+    color: var(--color-text);
     text-decoration: none;
 
     &:hover {
