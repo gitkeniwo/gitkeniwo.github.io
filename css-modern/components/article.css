@@ -6,6 +6,14 @@ article {
 
   font-family: var(--font-family-body);
 
+  #post-author {
+    &:hover {
+      color: var(--color-link-hover);
+      text-decoration: solid;
+      background-image: none;
+    }
+  }
+
   header {
     .posttitle {
       margin-top: 0;

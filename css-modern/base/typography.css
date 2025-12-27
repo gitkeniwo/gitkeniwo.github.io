@@ -1,39 +1,31 @@
 /**
  * Typography Styles
+ * Markdown element styling (strong, em, del, code)
  */
-
-#post-author {
-  &:hover {
-    color: var(--color-link-hover);
-    text-decoration: solid;
-    background-image: none;
-  }
-}
 
 strong {
   color: var(--color-strong);
-  /* font-family: "CMU Sans Serif Bold", "Glow Sans SC Medium"; */
 
   &:before {
     position: relative;
     left: 0rem;
-    content: "＊＊";
+    content: "**";
     color: var(--color-markdown-marker);
     font-weight: 500;
     font-size: 0.6rem;
     opacity: 0.8;
-    font-family: var(--font-family-mono);
+    font-family: var(--font-family-body);
   }
 
   &:after {
     position: relative;
     right: 0rem;
-    content: "＊＊";
+    content: "**";
     color: var(--color-markdown-marker);
     font-weight: 500;
     font-size: 0.6rem;
     opacity: 0.8;
-    font-family: var(--font-family-mono);
+    font-family: var(--font-family-body);
   }
 }
 
@@ -44,23 +36,23 @@ em {
   &:before {
     position: relative;
     left: -0.1rem;
-    content: "＊";
+    content: "*";
     color: var(--color-markdown-marker);
     font-weight: 800;
     font-size: 0.6rem;
     opacity: 0.8;
-    font-family: var(--font-family-mono);
+    font-family: var(--font-family-body);
   }
 
   &:after {
     position: relative;
     right: -0.1rem;
-    content: "＊";
+    content: "*";
     color: var(--color-markdown-marker);
     font-weight: 500;
     font-size: 0.6rem;
     opacity: 0.8;
-    font-family: var(--font-family-mono);
+    font-family: var(--font-family-body);
   }
 }
 
@@ -90,8 +82,6 @@ del {
 
 /* Code blocks */
 pre {
-
-
   code {
     overflow-x: auto;
     padding: 10px 15px;
@@ -113,99 +103,8 @@ code {
   margin: 0 0.2rem;
   border: 0.08rem hidden #122e24;
   border-radius: 0.3rem;
-  /* -webkit-border-radius: 2px; */
   color: var(--color-code);
   background-color: var(--color-background-code);
   font-size: 0.9rem;
   font-family: var(--font-family-mono);
-}
-
-.highlight {
-  overflow-x: auto;
-  margin: 1rem 0;
-  padding: 10px 15px;
-  border-radius: 4px;
-  background: var(--color-background-code);
-  font-family: var(--font-family-mono);
-  -webkit-border-radius: 4px;
-  position: relative;
-
-  figcaption {
-    margin: -5px 0 5px;
-    color: var(--color-meta-code);
-    font-size: .9em;
-    zoom: 1;
-
-    a {
-      float: right;
-      color: var(--color-meta-code);
-      font-style: italic;
-      font-size: .8em;
-      text-decoration: underline;
-      text-decoration-color: var(--color-link);
-      text-decoration-thickness: 2px;
-      text-underline-offset: 2px;
-
-      &:hover {
-        color: color-mix(in srgb, var(--color-meta-code) 80%, white 20%);
-      }
-    }
-
-    &:before {
-      content: "";
-      display: table;
-    }
-
-    &:after {
-      clear: both;
-    }
-  }
-
-  &:hover .btn-copy {
-    opacity: 1;
-  }
-
-  .btn-copy {
-    font-size: 1.2rem;
-    position: absolute;
-    right: 20px;
-    opacity: 0;
-    transition: opacity 0.2s ease-in;
-
-    &:hover {
-      color: var(--color-accent-1);
-    }
-  }
-
-  pre {
-    margin: 0;
-    padding: 0;
-    border: none;
-    background: none;
-  }
-
-  table {
-    width: auto;
-  }
-
-  td.gutter {
-    text-align: right;
-    opacity: .2;
-  }
-
-  .line {
-    height: 22px;
-  }
-}
-
-.gallery-list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: flex-start;
-}
-
-.gallery-column {
-  display: flex;
-  flex-direction: column-reverse;
 }

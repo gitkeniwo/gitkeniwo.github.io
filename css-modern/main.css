@@ -1,20 +1,27 @@
 /**
  * Main CSS Entry File
  * Modern CSS with theme switching support
- * Pixel-perfect conversion from Stylus
  */
 
-/* Base styles */
-@import './base/fonts.css';
+/* 1. Design Tokens */
 @import './base/variables.css';
+@import './base/fonts.css';
+
+/* 2. CSS Reset */
+@import './base/reset.css';
+
+/* 3. Base Styles */
+@import './base/layout.css';
+@import './base/headings.css';
+@import './base/typography.css';
+@import './base/links.css';
 @import './base/mixins.css';
 @import './base/utilities.css';
-@import './base/extends.css';
-@import './base/reset.css';
-@import './base/typography.css';
+
+/* 4. Layout Containers */
 @import './base/terminal-container.css';
 
-/* Components */
+/* 5. Components */
 @import './components/header.css';
 @import './components/footer.css';
 @import './components/article.css';
@@ -30,5 +37,5 @@
 @import './components/theme-toggle.css';
 @import './components/highlight.css';
 
-/* Addons */
+/* 6. Addons */
 @import './addons/memos.css';

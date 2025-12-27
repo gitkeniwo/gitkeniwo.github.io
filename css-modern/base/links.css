@@ -1,0 +1,49 @@
+/**
+ * Link Styles
+ * Global and contextual link styling
+ */
+
+/* Base link styles in content areas */
+.content a {
+  color: var(--color-text);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--color-link-hover);
+    text-decoration: none;
+    background-image: linear-gradient(transparent, transparent 90%, var(--color-link) 90%, var(--color-link));
+  }
+
+  &.icon {
+    background: none;
+
+    &:hover {
+      color: var(--color-link);
+    }
+  }
+}
+
+/* Links inside paragraphs get link color */
+.content p a {
+  color: var(--color-link);
+}
+
+/* Heading links - inherit color, special hover effect */
+.content h1 a,
+.content .h1 a,
+.content h2 a,
+.content h3 a,
+.content h4 a,
+.content h5 a,
+.content h6 a {
+  background: none;
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--color-link);
+    text-decoration-thickness: 6px;
+    text-underline-offset: 6px;
+  }
+}
