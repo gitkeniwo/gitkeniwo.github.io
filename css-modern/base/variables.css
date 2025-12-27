@@ -8,9 +8,9 @@
 :root {
   /* Typography */
   --font-family-body: "Google Sans Code", "Space Grotesk", 'Noto Sans TC', 'Noto Sans SC', monospace;
-  --font-family-mono:  "Syne Mono", "Menlo", monospace;
+  --font-family-mono:  "Google Sans Code", "Syne Mono", "Menlo", monospace;
   --font-family-heading: "Google Sans Code", "Space Grotesk", 'Noto Sans TC', 'Noto Sans SC', monospace;
-  --font-family-nav: "Syne Mono", monospace;
+  --font-family-nav: "Google Sans Code", "Syne Mono", monospace;
   --font-family-ascii-art: "Source Code Pro", "Menlo", "Consolas", monospace;
   --font-size-base: 1em;
   --line-height-base: 1.725;
@@ -35,7 +35,7 @@
   --color-accent-2: #111111;
   --color-accent-3: #cf6274;
   --color-accent-4: #660014;
-  --color-accent-5: #e66973;
+  --color-accent-5: #c04059;
   --color-accent-6: #893147;
   --color-quote: #ab2251;
   --color-del: rgb(136, 148, 141);
@@ -178,7 +178,7 @@
   --color-accent-2: #111111;
   --color-accent-3: #666666;
   --color-accent-4: #660014;
-  --color-accent-5: #e66973;
+  --color-accent-5: #c04059;
   --color-accent-6: #893147;
   --color-quote: #ab2251;
   --color-del: rgb(136, 148, 141);

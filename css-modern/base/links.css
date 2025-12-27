@@ -23,10 +23,13 @@
   }
 }
 
-/* Links inside paragraphs get link color */
-.content p a {
+/* Links inside paragraphs and list items get link color */
+.content p a,
+.content ul li a {
   color: var(--color-link);
+  text-decoration: underline;
 }
+
 
 /* Heading links - inherit color, special hover effect */
 .content h1 a,

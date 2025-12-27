@@ -12,7 +12,7 @@ strong {
     content: "**";
     color: var(--color-markdown-marker);
     font-weight: 500;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     opacity: 0.8;
     font-family: var(--font-family-body);
   }
@@ -23,7 +23,7 @@ strong {
     content: "**";
     color: var(--color-markdown-marker);
     font-weight: 500;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     opacity: 0.8;
     font-family: var(--font-family-body);
   }
@@ -38,8 +38,8 @@ em {
     left: -0.1rem;
     content: "*";
     color: var(--color-markdown-marker);
-    font-weight: 800;
-    font-size: 0.6rem;
+    font-weight: 500;
+    font-size: 0.8rem;
     opacity: 0.8;
     font-family: var(--font-family-body);
   }
@@ -50,7 +50,7 @@ em {
     content: "*";
     color: var(--color-markdown-marker);
     font-weight: 500;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     opacity: 0.8;
     font-family: var(--font-family-body);
   }
@@ -65,7 +65,7 @@ del {
     content: "~~";
     text-decoration: none;
     display: inline-block;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 0.9rem;
   }
 
@@ -75,7 +75,7 @@ del {
     content: "~~";
     text-decoration: none;
     display: inline-block;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 0.9rem;
   }
 }

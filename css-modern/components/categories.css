@@ -63,11 +63,21 @@
 /* Level 0 - root categories: bold and primary color */
 .tree-level-0 .tree-link {
   font-weight: bold;
-  color: var(--color-accent-1);
+  color: var(--color-accent-1) !important;
 }
 
 .tree-level-0 .tree-link:hover {
-  color: var(--color-accent-2);
+  color: var(--color-accent-2) !important;
+}
+
+.tree-level-1 .tree-link {
+  font-weight: normal;
+  color: var(--color-text) !important;
+}
+
+.tree-level-1 .tree-link:hover {
+  font-weight: normal;
+  color: var(--color-text) !important;
 }
 
 .tree-count {

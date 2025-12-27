@@ -62,6 +62,11 @@
   text-indent: -2.5em;
 }
 
+.section-banner-label a {
+  color: var(--color-link);
+  text-decoration: underline;
+}
+
 /* irssi-style prefix for status labels */
 .section-banner-label::before {
   content: "-!- ";
