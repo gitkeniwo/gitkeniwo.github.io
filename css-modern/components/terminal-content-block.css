@@ -56,10 +56,10 @@
   font-size: 0.85rem;  /* Normalized to match .irc-status */
   line-height: 1.4;
   
-  /* Hanging indent technique to keep wrapped lines aligned */
+  /* Preserve whitespace and enable horizontal scroll */
   display: block;
-  padding-left: 2.5em;
-  text-indent: -2.5em;
+  white-space: pre;
+  overflow-x: auto;
 }
 
 .section-banner-label a {
@@ -72,6 +72,7 @@
   content: "-!- ";
   /* Ensure prefix doesn't break to next line */
   white-space: nowrap;
+  color: var(--color-accent-1);
 }
 
 /* Post list wrapper */
