@@ -83,8 +83,6 @@
   color: var(--color-accent-2);
 }
 
-
-
 /* IRC Line for Each Post */
 .irc-line {
   display: flex;
@@ -122,7 +120,6 @@
   user-select: none;
 }
 
-
 .irc-separator-2 {
   flex-shrink: 0;
   color: var(--color-body);
@@ -145,7 +142,7 @@
 .irc-date {
   flex-shrink: 0;
   color: var(--color-meta);
-  font-size: 0.85em;  /* Normalized to match other IRC components */
+  font-size: 0.85em; /* Normalized to match other IRC components */
   white-space: nowrap;
 }
 
@@ -179,18 +176,19 @@
   display: flex;
   align-items: baseline;
   padding: 0.2rem 0;
-  font-size: 0.85rem;  /* Use rem to match .section-banner-label */
+  font-size: 0.85rem; /* Use rem to match .section-banner-label */
   font-family: var(--font-family-mono);
   line-height: 1.4;
 }
 
 .social-links-line .irc-prefix {
-  margin-right: 0.4em;  /* Match the space in '-!- ' from section-banner-label::before */
+  margin-right: 0.4em; /* Match the space in '-!- ' from section-banner-label::before */
 }
 
 .social-links-content {
   color: var(--color-accent-5);
   opacity: 0.8;
+  white-space: normal; /* Override white-space: pre to allow wrapping */
 }
 
 .social-links-content .icon {
@@ -246,7 +244,6 @@
   .irc-separator {
     display: none;
   }
-
 }
 
 /* Old style (kept for backwards compatibility) */
@@ -297,10 +294,10 @@
 
 blockquote {
   margin: 0.5rem 10px;
-  padding: .5em 10px;
+  padding: 0.5em 10px;
   background: inherit;
   color: var(--color-quote);
-  quotes: "\201C" "\201D" "\2018" "\2019";
+  quotes: "\201C""\201D""\2018""\2019";
   font-weight: 600;
 
   p {
@@ -308,12 +305,12 @@ blockquote {
   }
 
   &:before {
-    margin-right: .25em;
+    margin-right: 0.25em;
     color: var(--color-quote);
     content: "\201C";
-    vertical-align: -.4em;
+    vertical-align: -0.4em;
     font-size: 2em;
-    line-height: .1em;
+    line-height: 0.1em;
   }
 
   footer {
@@ -342,7 +339,7 @@ blockquote {
     }
 
     cite:before {
-      padding: 0 .5em;
+      padding: 0 0.5em;
       content: "—";
     }
   }

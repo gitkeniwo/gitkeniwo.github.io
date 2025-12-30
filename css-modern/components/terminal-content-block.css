@@ -49,6 +49,12 @@
   text-size-adjust: 100%;
 }
 
+/* Section Banner - scrollable container for all labels */
+.section-banner {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
 /* Section Banner Label - matches .irc-status from memos.css */
 .section-banner-label {
   color: var(--color-accent-5);
@@ -56,10 +62,9 @@
   font-size: 0.85rem;  /* Normalized to match .irc-status */
   line-height: 1.4;
   
-  /* Preserve whitespace and enable horizontal scroll */
+  /* Preserve whitespace, no individual overflow (parent handles it) */
   display: block;
   white-space: pre;
-  overflow-x: auto;
 }
 
 .section-banner-label a {
@@ -73,6 +78,33 @@
   /* Ensure prefix doesn't break to next line */
   white-space: nowrap;
   color: var(--color-accent-1);
+}
+
+/* Social links wrapper - override all section-banner-label styles */
+.social-links-wrapper {
+  white-space: normal !important;
+  overflow-x: visible !important;
+  text-indent: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Social links text wrapper */
+.social-links-text {
+  display: inline;
+}
+
+.social-icon {
+  display: inline;
+  margin: 0 0.2em;
+}
+
+.social-icon a {
+  color: var(--color-accent-1);
+  text-decoration: none;
+}
+
+.social-icon a:hover {
+  color: var(--color-link-hover);
 }
 
 /* Post list wrapper */
