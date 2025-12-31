@@ -9,6 +9,7 @@
   /* Typography */
   --font-family-body: "Google Sans Code", "Space Grotesk", 'Noto Sans TC', 'Noto Sans SC', monospace;
   --font-family-mono:  "Google Sans Code", "Syne Mono", "Menlo", monospace;
+  --font-family-codeblock: "Syne Mono", "Menlo", "Consolas", monospace;
   --font-family-heading: "Google Sans Code", "Space Grotesk", 'Noto Sans TC', 'Noto Sans SC', monospace;
   --font-family-nav: "Google Sans Code", "Syne Mono", monospace;
   --font-family-ascii-art: "Source Code Pro", "Menlo", "Consolas", monospace;

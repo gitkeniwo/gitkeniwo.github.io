@@ -89,7 +89,7 @@ pre {
     border: 1px dotted var(--color-border);
     border-radius: 4px;
     font-size: 13px;
-    font-family: var(--font-family-mono);
+    font-family: var(--font-family-codeblock);
     line-height: 22px;
     -webkit-border-radius: 4px;
     display: block;
@@ -99,12 +99,12 @@ pre {
 }
 
 code {
-  padding: 0.1rem 0.2rem;
-  margin: 0 0.2rem;
-  border: 0.08rem hidden #122e24;
+  padding: 0rem 0.21em;
+  margin: 0 0.1rem;
+  border: 0.01rem hidden #122e24;
   border-radius: 0.3rem;
   color: var(--color-code);
   background-color: var(--color-background-code);
-  font-size: 0.9rem;
-  font-family: var(--font-family-mono);
+  font-size: 0.8rem;
+  font-family: var(--font-family-codeblock);
 }

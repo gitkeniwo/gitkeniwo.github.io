@@ -167,7 +167,7 @@ article {
     code,
     .code,
     td.code {
-      font-family: var(--font-family-mono);
+      font-family: var(--font-family-codeblock);
     }
 
     blockquote {
@@ -247,6 +247,14 @@ article {
       text-align: center;
       font-size: .9em;
     }
+  }
+
+  .img-caption {
+    color: var(--color-meta);
+    text-align: center;
+    max-width: 75%;
+    margin: 0.5em auto;
+    font-size: 0.7rem;
   }
 }
 
