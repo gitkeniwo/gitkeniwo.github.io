@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.imgur.com/uwDy0Ib.png">
 <meta property="article:published_time" content="2024-06-21T22:19:42.000Z">
-<meta property="article:modified_time" content="2025-11-12T21:34:21.707Z">
+<meta property="article:modified_time" content="2026-01-08T01:26:13.069Z">
 <meta property="article:author" content="ケニヲ">
 <meta property="article:tag" content="小并感">
 <meta property="article:tag" content="ai">
@@ -262,7 +262,7 @@
 <p>这正是因为你意欲说出的事情与你的言辞所表达的事情之间总是存在着某些差异，同时这也是一个语言哲学上的鸿沟（gap）。此鸿沟的存在将使通过学舌的语言模型来构建具有推理能力的AGI的尝试变得困难重重。</p>
 <p>可以将语言看作人思维的一个子集，或者人思维活动的结果，但语言绝不仅仅是思维的ontology的唯一表现形式。目前的LLM都是通过sampling语言的潜在概率分布来构建<em>AI</em>。也许，耗费马斯克所言的<a target="_blank" rel="noopener" href="https://x.com/elonmusk/status/1807643760584708363">数十万张Nvidia H100 GPU</a>，配合庞大的语料库，能构造出一个十分复杂的语言模型，但它终究只能是对人类思维活动的一种异构的逼近 (approximation)。按照统计学习观点，我们不断增加算力也只能尽力缩小估计误差 (estimation error)，而逼近误差 (approximation)取决于模型族是否能很好地拟合潜在的目标分布 (underlying probability distribution) 。问题的核心也就是探究语言模型族对AGI的充分性，而这个用来逼近的模型族，与真实的思维模型之间的approximation error的大小，现在还尚无定论。</p>
 <p><img src="https://i.imgur.com/uwDy0Ib.png" width="70%"></p>
-<p style="text-align:center">Figure 1. The tradeoffs between Approximation Error & Estimation Error. In figure (b), the empirical risk of the empirical risk minimizer (ERM), which is also our optimization objective, converges to zero as model complexity increases. The true risk, on the other hands, rebounds. The ERM fails to be a good surrogate for the true risk, leaving a large estimation gap that is hard to bridge.</p>
+<p class="img-caption">Fig 1. The tradeoffs between Approximation Error & Estimation Error. In figure (b), the empirical risk of the empirical risk minimizer (ERM), which is also our optimization objective, converges to zero as model complexity increases. The true risk, on the other hands, rebounds. The ERM fails to be a good surrogate for the true risk, leaving a large estimation gap that is hard to bridge.</p>
 
 <p>就好像<a target="_blank" rel="noopener" href="https://doi.org/10.1017/S0140525X00005756">Searle提出的中文房间</a>里的单词书 [1]，即便它进化出十分复杂的匹配规则，它的内核依然不是我们所理解的智能，而只是十分复杂的词类映射。一类我觉得noticeable的反对意见是「虽然单词书非智能、但房间整体拥有智能」。Searle已经在原论文的objection部分中对此给予反驳，这里不再赘述。（将房间reduce为仅剩下单词书，或者小人已经记住了单词书所有规则，但依旧不理解中文的意思）</p>
 <p>另一方面，因为拉康所说「言辞所表达的事情总是比想要说出的事情更多」（这是由能指自身的特性决定的），即便是单纯的语言模型，它输出的话语所蕴含的所指意向的丰富程度，也会让人产生幻觉，就好像它已然拥有了智能。</p>
@@ -449,7 +449,7 @@
 
   <!-- <div class="footer-top">
     <div class="footer-left">
-      Copyright &copy;
+      Copyleft &copy;
       
       
       2019-2026
@@ -463,7 +463,7 @@
 
   <div class="footer-top">
     <span class="footer-copyright">
-      Copyright &copy;
+      Copyleft &copy;
         
           
             2019-2026
