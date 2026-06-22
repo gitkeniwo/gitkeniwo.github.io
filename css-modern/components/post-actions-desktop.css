@@ -137,9 +137,14 @@
   margin-left: 15px;
 }
 
-#header-post #menu-icon-tablet:hover {
-  color: var(--color-accent-1);
-}
+/* No :hover color rule here on purpose: the mobile circular button (see
+   post-actions-mobile.css) fills itself with --color-accent-1, so a hover
+   rule that recolors the icon to --color-accent-1 makes the glyph match its
+   own background and vanish. On iOS Safari a tap leaves the element stuck in
+   :hover (touchscreens fire hover but never reliably clear it), which made
+   this permanent rather than a quick flash. The button already has its own
+   tap feedback (:active scale + glow) so it doesn't need a separate hover
+   color. */
 
 #header-post #top-icon-tablet {
   position: fixed;

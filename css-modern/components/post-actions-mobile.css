@@ -167,6 +167,34 @@
   display: none;
 }
 
+/* Stack open/close glyphs on top of each other and crossfade via opacity
+   instead of toggling `display`. iOS Safari sometimes fails to repaint a
+   FontAwesome glyph that goes from display:none to inline (the icon
+   disappears until something else forces a repaint); opacity transitions
+   on a GPU layer don't hit that WebKit repaint bug.
+   Single-ID selectors here on purpose: a `#header-post #menu-icon-tablet ...`
+   double-ID selector would outrank the `.active` toggle rules below (which
+   only have one ID), permanently hiding the "×". */
+#menu-icon-tablet .toc-icon-open,
+#menu-icon-tablet .toc-icon-close {
+  /* Same specificity as the `#header-post .toc-icon-close` rule above; wins
+     because it's declared later, re-enabling display for this button's icons
+     so the opacity crossfade actually has something to fade. */
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+  transition: opacity 0.15s ease;
+  transform: translate(-50%, -50%) translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+#menu-icon-tablet .toc-icon-close {
+  opacity: 0;
+}
+
 /* Mobile & tablet TOC Terminal Box - Fullscreen Overlay.
    Below 900px the desktop neovim-split (280px sidebar + article) crushes
    the article into an unreadable column, so the TOC overlays instead. */
@@ -191,6 +219,7 @@
   /* #header-post prefix outranks `#header-post a { background:none; color:inherit }`. */
   #header-post #menu-icon-tablet {
     display: flex;
+    position: relative; /* containing block for the absolutely-centred glyphs */
     align-items: center;
     justify-content: center;
     float: none;
@@ -220,11 +249,11 @@
 
   /* Morph the toggle: hamburger when closed, "×" when the overlay is open. */
   #menu-icon-tablet.active .toc-icon-open {
-    display: none;
+    opacity: 0;
   }
 
   #menu-icon-tablet.active .toc-icon-close {
-    display: inline;
+    opacity: 1;
   }
 
   /* The morphed "×" is the closer, so hide the panel's in-header close icon
@@ -239,9 +268,17 @@
     top: 0;
     left: 0;
     width: calc(100vw - 2rem);
-    height: calc(100vh - 2rem);
+    /* iOS Safari's address/toolbar can be expanded or collapsed; 100vh is the
+       *largest* possible viewport (toolbar collapsed), so a box sized off it
+       can sit partly behind the toolbar when it's expanded. 100dvh tracks the
+       toolbar's current state; the safe-area-inset-bottom term keeps content
+       clear of the home-indicator gesture bar on notched phones. Both
+       fallback lines keep older browsers on the vh-only behaviour. */
+    height: calc(100vh - 2rem - env(safe-area-inset-bottom, 0px));
+    height: calc(100dvh - 2rem - env(safe-area-inset-bottom, 0px));
     max-width: calc(100vw - 2rem);
-    max-height: calc(100vh - 2rem);
+    max-height: calc(100vh - 2rem - env(safe-area-inset-bottom, 0px));
+    max-height: calc(100dvh - 2rem - env(safe-area-inset-bottom, 0px));
     min-width: calc(100vw - 2rem);
     z-index: 9999;
     opacity: 1;
@@ -265,7 +302,8 @@
   }
 
   #toc-terminal-box.active #toc-content {
-    max-height: calc(100vh - 6rem);
+    max-height: calc(100vh - 6rem - env(safe-area-inset-bottom, 0px));
+    max-height: calc(100dvh - 6rem - env(safe-area-inset-bottom, 0px));
     padding: 1.5rem 0;
     font-size: 1rem;
   }
