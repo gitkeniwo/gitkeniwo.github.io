@@ -55,6 +55,21 @@
   overflow-y: hidden;
 }
 
+/* Hide the horizontal scrollbar on scrollable terminal blocks
+   while keeping them scrollable */
+.section-ascii-art,
+.section-banner {
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* IE/Edge */
+}
+
+.section-ascii-art::-webkit-scrollbar,
+.section-banner::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
 /* Section Banner Label - matches .irc-status from memos.css */
 .section-banner-label {
   color: var(--color-accent-5);
@@ -78,6 +93,26 @@
   /* Ensure prefix doesn't break to next line */
   white-space: nowrap;
   color: var(--color-accent-1);
+}
+
+/* Section headers that sit directly above an IRC-style list
+   (e.g. "[Articles] Most recent", "==> tags").
+   Match the font-size, prefix spacing and tone of the .irc-line rows
+   beneath them so the "-!-" column lines up. */
+.section-banner-label.is-section-header {
+  font-size: 0.85rem;            /* match .irc-line, don't shrink on mobile */
+  line-height: 1.2;              /* match .irc-line so it doesn't read as larger */
+  font-weight: bold;             /* IRC system-notice weight */
+  color: var(--color-accent-5);  /* match the "-!-" prefix color */
+  opacity: 1;
+  padding-left: 0;
+  text-indent: 0;
+}
+
+.section-banner-label.is-section-header::before {
+  content: "-!-";                /* drop trailing space... */
+  margin-right: 0.2rem;          /* ...and use the same gap as .irc-line */
+  color: var(--color-accent-5);  /* match the "-!-" color of .irc-prefix below */
 }
 
 /* Social links wrapper - override all section-banner-label styles */

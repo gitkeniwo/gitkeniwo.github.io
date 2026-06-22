@@ -67,3 +67,16 @@
     font-size: 1.2rem;
   }
 }
+
+/* Very small phones: shrink proportionally while keeping the circle's centre
+   fixed (offset 1.25rem + half of 2rem = same 2.25rem from the corner),
+   mirroring the TOC button. */
+@media (max-width: 400px) {
+  .theme-toggle {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+}

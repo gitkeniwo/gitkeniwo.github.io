@@ -160,11 +160,77 @@
   display: none;
 }
 
-/* Mobile TOC Terminal Box - Fullscreen Overlay */
-@media screen and (max-width: 500px) {
+/* The "×" half of the morphing toggle is hidden everywhere by default,
+   so the desktop icon (≥900px) only ever shows the list/hamburger glyph.
+   Scoped to #header-post so it outranks FontAwesome's `.fas { display }`. */
+#header-post .toc-icon-close {
+  display: none;
+}
+
+/* Mobile & tablet TOC Terminal Box - Fullscreen Overlay.
+   Below 900px the desktop neovim-split (280px sidebar + article) crushes
+   the article into an unreadable column, so the TOC overlays instead. */
+@media screen and (max-width: 900px) {
   /* Only show if it was already active (opened in desktop view) */
   #toc-terminal-box:not(.active) {
     display: none !important;
+  }
+
+  /* Turn the toggle into a circular floating button (mirrors .theme-toggle
+     in the opposite corner) so it reads as a deliberate control instead of
+     bare glyphs bleeding into the article text. Sits above the overlay
+     (z 9999) so the morphed "×" stays tappable. */
+  #header-post {
+    z-index: 10000;
+    top: 2rem;
+    right: 2rem;
+    bottom: auto;
+    left: auto;
+  }
+
+  /* #header-post prefix outranks `#header-post a { background:none; color:inherit }`. */
+  #header-post #menu-icon-tablet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: none;
+    margin: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: var(--color-accent-1);
+    border: 1px solid var(--color-text);
+    color: var(--color-background);
+    font-size: 1rem;
+    box-shadow:
+      0 0 3px var(--color-glow-primary),
+      0 0 6px var(--color-glow-primary-md);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  }
+
+  /* Neutralise fa-lg so the glyph fits the circle at every size. */
+  #menu-icon-tablet i {
+    font-size: 1em;
+    line-height: 1;
+  }
+
+  #menu-icon-tablet:active {
+    transform: scale(0.92);
+  }
+
+  /* Morph the toggle: hamburger when closed, "×" when the overlay is open. */
+  #menu-icon-tablet.active .toc-icon-open {
+    display: none;
+  }
+
+  #menu-icon-tablet.active .toc-icon-close {
+    display: inline;
+  }
+
+  /* The morphed "×" is the closer, so hide the panel's in-header close icon
+     to avoid a duplicate ×. The "TOC" prompt label stays. */
+  #toc-terminal-box .toc-close-icon {
+    display: none;
   }
 
   #toc-terminal-box.active {
@@ -180,15 +246,21 @@
     z-index: 9999;
     opacity: 1;
     margin: 1rem;
-    padding: 0.8rem 1rem;
+    /* No top padding: the header band owns the top edge so its "TOC" label can
+       be vertically centred against the floating "×" (see header rule below). */
+    padding: 0 1rem 0.8rem;
     border: 1px solid var(--color-border);
     background: var(--color-background);
     overflow: hidden;
     transition: opacity 0.3s ease;
   }
 
+  /* Give the header a band as tall as the "×" button is from the box top, so the
+     "TOC" label lines up with the floating "×" instead of sitting below it.
+     3.5rem ≈ 2rem (button top offset) + 1.5rem (tablet button height). */
   #toc-terminal-box.active .terminal-prompt-header {
-    padding: 1rem 0;
+    min-height: 3.5rem;
+    padding: 0;
     font-size: 1.1rem;
   }
 
@@ -201,9 +273,42 @@
   #toc-terminal-box.active #toc-content .toc {
     font-size: 0.95rem;
   }
+}
 
-  #toc-terminal-box.active #toc-content .toc-child {
-    padding-left: 1.5rem;
+/* Phone: enlarge the floating TOC button and tighten its offset to mirror
+   .theme-toggle (bottom-right) in the opposite corner. */
+@media screen and (max-width: 480px) {
+  #header-post {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  #header-post #menu-icon-tablet {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
+  }
+
+  /* Phone button is 2.5rem tall at top:1rem, so its centre sits 2.25rem down;
+     a 2.5rem header band (box top = 1rem) centres "TOC" on the same line. */
+  #toc-terminal-box.active .terminal-prompt-header {
+    min-height: 2.5rem;
+  }
+}
+
+/* Very small phones: shrink the button but keep its centre fixed at 2.25rem
+   from the corner (offset 1.25rem + half of 2rem), so the layout — and the
+   "TOC"/× alignment, which is keyed to that centre — stays put. */
+@media screen and (max-width: 400px) {
+  #header-post {
+    top: 1.25rem;
+    right: 1.25rem;
+  }
+
+  #header-post #menu-icon-tablet {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1rem;
   }
 }
 

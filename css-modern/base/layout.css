@@ -9,7 +9,9 @@
   flex-direction: column;
   min-height: 100%;
   overflow-wrap: break-word;
-  justify-content: space-between;
+  /* Footer is pushed to the bottom via #footer { margin-top: auto },
+     so short pages flow from the top instead of floating to the center. */
+  justify-content: flex-start;
 
   p {
     margin-block-start: .5em;

@@ -441,10 +441,9 @@
 
 /* Media queries */
 @media screen and (max-width: 500px) {
-  #header-post {
-    display: none;
-  }
-
+  /* #header-post stays visible on phones so the TOC toggle (#menu-icon-tablet)
+     can open the fullscreen overlay. The closed TOC box is hidden by the
+     :not(.active) rule in post-actions-mobile.css. */
   #toc-terminal-box {
     display: none;
   }

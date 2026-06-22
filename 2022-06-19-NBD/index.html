@@ -91,8 +91,11 @@
 
 <body class="max-width mx-auto px3 ltr">    
       <div id="header-post">
-  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon" href="#" title="Table of contents"><i class="fas fa-list-ul fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" title="Table of contents">
+    <i class="fas fa-list-ul fa-lg toc-icon-open" aria-hidden="true"></i>
+    <i class="fas fa-times fa-lg toc-icon-close" aria-hidden="true"></i>
+  </a>
   <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
   <!-- Disabled: Original nav and toc are now replaced by #toc-terminal-box -->
   <!--
@@ -243,7 +246,7 @@
           
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link-link" href="/tags/europe/" rel="tag">europe</a>, <a class="tag-link-link" href="/tags/nederlands/" rel="tag">nederlands</a>
+        <a class="tag-link-link" href="/tags/belgium/" rel="tag">belgium</a>, <a class="tag-link-link" href="/tags/europe/" rel="tag">europe</a>, <a class="tag-link-link" href="/tags/nederlands/" rel="tag">nederlands</a>
     </div>
 
 

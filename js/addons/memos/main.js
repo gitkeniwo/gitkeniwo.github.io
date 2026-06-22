@@ -2,7 +2,7 @@
 var memo = {
     host: 'https://samizdat.fly.dev/',
     limit: '5',
-    creatorId: '1',
+    creatorId: 'gitkeniwo',
     domId: '#memos',
     username: 'Admin',
     name: 'Administrator',
@@ -24,7 +24,7 @@ var memos = memo.host.replace(/\/$/, '')
 
 let memoUrl;
 if (memo.APIVersion === 'new') {
-    const filter = `creator=='users/${memo.creatorId}'&&visibilities==['PUBLIC']`;
+    const filter = `creator == 'users/${memo.creatorId}' && visibility == 'PUBLIC'`;
     // memoUrl = `${memos}/api/v1/memos?filter=${encodeURIComponent(filter)}&view=MEMO_VIEW_FULL`;
     memoUrl = `${memos}/api/v1/memos`;
 } else if (memo.APIVersion === 'legacy') {
@@ -446,44 +446,58 @@ window.ViewImage && ViewImage.init('.container img');
 // Memos Total Start
 // Get Memos total count
 function getTotal() {
-    let pageUrl;
     let totalUrl;
     if (memo.APIVersion === 'new') {
-        const filter = `creator=='users/${memo.creatorId}'&&visibilities==['PUBLIC']`;
-        // const filter = `visibilities==['PUBLIC']`;
-        pageUrl = `${memos}/api/v1/memos?pageSize=1&pageToken=&&filter=${encodeURIComponent(filter)}`;
-        // pageUrl = `${memos}/api/v1/memos?pageSize=1`;
-        fetch(pageUrl)
-            .then(res => res.json())
-            .then(resdata => {
-                if (resdata && resdata.memos) {
-                    var pageSize = resdata.memos.map(memo => {
-                        const match = memo.name.match(/\d+/);
-                        return match ? parseInt(match[0], 10) : null;
-                    }).filter(num => num !== null)[0]; // 取第一个匹配到的数字
+        const filter = `creator == 'users/${memo.creatorId}' && visibility == 'PUBLIC'`;
+        const memosCount = document.getElementById('total');
+        if (!memosCount) {
+            return;
+        }
 
-                    if (pageSize) {
-                        // 第二次请求：使用获取到的 pageSize
-                        totalUrl = `${memos}/api/v1/memos?pageSize=${pageSize}&filter=${encodeURIComponent(filter)}`;
-                        return fetch(totalUrl);
-                    } else {
-                        throw new Error('No valid pageSize found');
+        // memos 0.29+ uses random nanoid names instead of numeric IDs, so the
+        // old "read the latest memo's ID as the count" trick no longer works,
+        // and GetUserStats is auth-gated (404 for an anonymous client). The
+        // only way left to count is to paginate the whole list, which is a
+        // heavy payload — so cache the result for a day to avoid paying it on
+        // every page load.
+        const CACHE_KEY = 'memos_total';
+        const CACHE_TS_KEY = 'memos_total_ts';
+        const CACHE_TTL = 24 * 60 * 60 * 1000; // 1 day
+
+        var cached = window.localStorage && localStorage.getItem(CACHE_KEY);
+        var cachedTs = window.localStorage && localStorage.getItem(CACHE_TS_KEY);
+        if (cached && cachedTs && (Date.now() - parseInt(cachedTs, 10) < CACHE_TTL)) {
+            memosCount.innerHTML = cached;
+            return;
+        }
+
+        var countSoFar = 0;
+        function countPage(token) {
+            var url = `${memos}/api/v1/memos?pageSize=1000&pageToken=${encodeURIComponent(token)}&filter=${encodeURIComponent(filter)}`;
+            return fetch(url)
+                .then(res => res.json())
+                .then(resdata => {
+                    if (!resdata || !resdata.memos) {
+                        throw new Error('Unexpected memos response');
                     }
-                }
-            })
-            .then(res => res.json())
-            .then(resdata => {
-                if (resdata && resdata.memos) {
-                    var allnums = resdata.memos.length;
-                    var memosCount = document.getElementById('total');
-                    if (memosCount) {
-                        memosCount.innerHTML = allnums;
+                    countSoFar += resdata.memos.length;
+                    if (resdata.nextPageToken) {
+                        return countPage(resdata.nextPageToken);
                     }
-                }
-            })
-            .catch(err => {
-                console.error('Error fetching memos:', err);
-            });
+                    memosCount.innerHTML = countSoFar;
+                    if (window.localStorage) {
+                        localStorage.setItem(CACHE_KEY, countSoFar);
+                        localStorage.setItem(CACHE_TS_KEY, Date.now());
+                    }
+                });
+        }
+        countPage('').catch(err => {
+            console.error('Error counting memos:', err);
+            // Fall back to a stale cached value if we have one.
+            if (cached) {
+                memosCount.innerHTML = cached;
+            }
+        });
     } else if (memo.APIVersion === 'legacy') {
         totalUrl = `${memos}/api/v1/memo/stats?creatorId=${memo.creatorId}`;
         fetch(totalUrl)

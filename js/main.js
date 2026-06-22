@@ -124,6 +124,17 @@ $(document).ready(function () {
       return false;
     });
 
+    /**
+     * On mobile/tablet the TOC is a fullscreen overlay, so tapping an entry
+     * should jump to the section and dismiss the overlay.
+     */
+    $("#toc-content a").on("click", function () {
+      if (window.matchMedia("(max-width: 900px)").matches) {
+        tocBox.removeClass("active");
+        menuIcon.removeClass("active");
+      }
+    });
+
 
 
 
