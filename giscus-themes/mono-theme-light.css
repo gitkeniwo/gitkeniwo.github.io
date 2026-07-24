@@ -1,0 +1,134 @@
+/* Import Google Fonts - Syne Mono */
+@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');
+
+/* Color scheme variables — light, forced (site data-theme="light") */
+main {
+  --color-prettylights-syntax-comment: #66707b;
+  --color-prettylights-syntax-constant: #0550ae;
+  --color-prettylights-syntax-entity: #622cbc;
+  --color-prettylights-syntax-storage-modifier-import: #24292f;
+  --color-prettylights-syntax-entity-tag: #024c1a;
+  --color-prettylights-syntax-keyword: #bc1258;
+  --color-prettylights-syntax-string: #032563;
+  --color-prettylights-syntax-variable: #9a4c03;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #9a2c2c;
+  --color-prettylights-syntax-invalid-illegal-text: #f6f8fa;
+  --color-prettylights-syntax-invalid-illegal-bg: #9a2c2c;
+  --color-prettylights-syntax-carriage-return-text: #f6f8fa;
+  --color-prettylights-syntax-carriage-return-bg: #bc1258;
+  --color-prettylights-syntax-string-regexp: #024c1a;
+  --color-prettylights-syntax-markup-list: #3b2300;
+  --color-prettylights-syntax-markup-heading: #0550ae;
+  --color-prettylights-syntax-markup-italic: #24292f;
+  --color-prettylights-syntax-markup-bold: #24292f;
+  --color-prettylights-syntax-markup-deleted-text: #9a2c2c;
+  --color-prettylights-syntax-markup-deleted-bg: #ffd5d5;
+  --color-prettylights-syntax-markup-inserted-text: #024c1a;
+  --color-prettylights-syntax-markup-inserted-bg: #d4f8d4;
+  --color-prettylights-syntax-markup-changed-text: #9a4c03;
+  --color-prettylights-syntax-markup-changed-bg: #ffddb0;
+  --color-prettylights-syntax-markup-ignored-text: #e7ecf0;
+  --color-prettylights-syntax-markup-ignored-bg: #0550ae;
+  --color-prettylights-syntax-meta-diff-range: #622cbc;
+  --color-prettylights-syntax-brackethighlighter-angle: #66707b;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #8a8d91;
+  --color-prettylights-syntax-constant-other-reference-link: #032563;
+  --color-fg-default: #1f2328;
+  --color-fg-muted: #66707b;
+  --color-fg-subtle: #8a8d91;
+  --color-canvas-default: #fff;
+  --color-canvas-subtle: #f6f8fa;
+  --color-border-default: #d1d9e0;
+  --color-border-muted: #d1d9e0b3;
+  --color-neutral-muted: #afb8c133;
+  --color-accent-fg: #0550ae;
+  --color-accent-emphasis: #0550ae;
+  --color-success-fg: #024c1a;
+  --color-success-emphasis: #1a7f37;
+  --color-attention-fg: #744500;
+  --color-attention-emphasis: #bf8700;
+  --color-attention-subtle: #fff8c5;
+  --color-danger-fg: #cf222e;
+  --color-danger-emphasis: #cf222e;
+  --color-done-fg: #622cbc;
+  --color-done-emphasis: #622cbc;
+}
+
+
+/* Force mono font on ALL elements */
+*,
+*::before,
+*::after {
+  font-family: 'Syne Mono', 'Menlo', 'Monaco', 'Courier New', monospace !important;
+}
+
+main {
+  font-family: 'Syne Mono', 'Menlo', 'Monaco', 'Courier New', monospace !important;
+}
+
+/* Specific targeting for input elements */
+input,
+textarea,
+button,
+select,
+.gsc-comment,
+.gsc-comment-content,
+.gsc-comment-header,
+.gsc-comment-author,
+.gsc-reactions,
+.gsc-reply,
+.gsc-comment-box,
+.gsc-comment-box-textarea,
+.gsc-timeline,
+.markdown {
+  font-family: 'Syne Mono', 'Menlo', 'Monaco', 'Courier New', monospace !important;
+}
+
+.gsc-comment-header {
+  transition: color .15s ease-in-out;
+}
+
+.gsc-comment-header:hover {
+  color: var(--color-fg-default) !important;
+}
+
+.gsc-right-header button {
+  background-color: transparent;
+  transition: color .15s ease-in-out;
+}
+
+.gsc-right-header button:hover {
+  color: var(--color-fg-default) !important;
+}
+
+.gsc-comment-box-tabs {
+  display: none;
+}
+
+.gsc-comment-box-main,
+.gsc-comment-box-preview-tabs,
+.gsc-comment-box-bottom,
+.gsc-comment-box-preview {
+  border-radius: 0;
+}
+
+.gsc-comment-box-textarea {
+  border-radius: 0;
+}
+
+.gsc-comment-box-md-toolbar {
+  border-radius: 0;
+}
+
+.gsc-comment-box-write-button,
+.gsc-comment-box-preview-button {
+  border-radius: 0;
+}
+
+.gsc-comment-box-button-group button:disabled {
+  color: var(--color-fg-muted);
+}
+
+.gsc-comment-box-button-group button:disabled:hover {
+  color: var(--color-fg-muted);
+}

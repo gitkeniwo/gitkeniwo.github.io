@@ -11,6 +11,10 @@
   const THEME_LIGHT = 'light';
   const THEME_DARK = 'dark';
 
+  // Keep in sync with --color-background in css-modern/base/variables.css
+  const COLOR_LIGHT = '#e2e0de';
+  const COLOR_DARK = '#1d1f21';
+
   /**
    * Get the preferred theme based on system settings
    */
@@ -45,10 +49,7 @@
     if (theme === THEME_AUTO) {
       // Remove data-theme attribute to let prefers-color-scheme take over
       root.removeAttribute('data-theme');
-
-      // Update meta theme-color based on system preference
-      const systemTheme = getSystemTheme();
-      updateMetaThemeColor(systemTheme);
+      updateMetaThemeColor(null);
     } else {
       // Set explicit theme
       root.setAttribute('data-theme', theme);
@@ -57,14 +58,29 @@
   }
 
   /**
-   * Update meta theme-color tag
+   * Update the meta theme-color tags.
+   *
+   * The markup ships one tag per prefers-color-scheme so the browser picks the
+   * right one before any script runs. A manual theme has to beat that media
+   * query, so both tags are forced to the same colour; passing null restores
+   * the per-scheme defaults.
    */
   function updateMetaThemeColor(theme) {
-    const metaThemeColor = document.querySelector('meta[name="theme-color"]');
-    if (metaThemeColor) {
-      const color = theme === THEME_DARK ? '#1d1f21' : '#e2e0de';
-      metaThemeColor.setAttribute('content', color);
+    const lightMeta = document.querySelector('meta[name="theme-color"][media*="light"]');
+    const darkMeta = document.querySelector('meta[name="theme-color"][media*="dark"]');
+    if (!lightMeta || !darkMeta) {
+      return;
     }
+
+    if (theme === null) {
+      lightMeta.setAttribute('content', COLOR_LIGHT);
+      darkMeta.setAttribute('content', COLOR_DARK);
+      return;
+    }
+
+    const color = theme === THEME_DARK ? COLOR_DARK : COLOR_LIGHT;
+    lightMeta.setAttribute('content', color);
+    darkMeta.setAttribute('content', color);
   }
 
   /**
