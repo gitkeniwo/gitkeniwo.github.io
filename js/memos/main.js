@@ -338,7 +338,7 @@ function updateHTMl(data) {
         var memoLink = memo.host + data[i].name;
 
         // Generate IRC message format HTML (matching index.ejs style)
-        memoResult += '<li class="irc-memo-line">' +
+        memoResult += '<li class="irc-line irc-memo-line">' +
             '<span class="irc-prefix">-!-</span>' +
             '<span class="irc-date"><span class="date-yy">' + getYY(memoDate) + '</span><span class="date-mm">' + getMM(memoDate) + '</span><span class="date-dd">' + getDD(memoDate) + '</span></span>' +
             '<span class="irc-separator-1">›</span>' +

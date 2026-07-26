@@ -11,9 +11,14 @@
   const THEME_LIGHT = 'light';
   const THEME_DARK = 'dark';
 
-  // Keep in sync with --color-background in css-modern/base/variables.css
-  const COLOR_LIGHT = '#e2e0de';
-  const COLOR_DARK = '#1d1f21';
+  // The two background colours, read from the theme-color meta tags that
+  // BaseLayout.astro renders, rather than hard-coded a third time here. This
+  // script is blocking and runs before the stylesheet loads, so the CSS custom
+  // properties are not readable yet — the meta tags are the earliest source.
+  const metaLight = document.querySelector('meta[name="theme-color"][media*="light"]');
+  const metaDark = document.querySelector('meta[name="theme-color"][media*="dark"]');
+  const COLOR_LIGHT = (metaLight && metaLight.getAttribute('content')) || '#e2e0de';
+  const COLOR_DARK = (metaDark && metaDark.getAttribute('content')) || '#1d1f21';
 
   /**
    * Get the preferred theme based on system settings
