@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://gitkeniwo.tech/2026-08-08-color-system-rebuild/</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://gitkeniwo.tech/2026-08-08-color-system-rebuild/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://gitkeniwo.tech/2026-08-08-color-system-rebuild/en/" />
+  </url>
   <url>
     <loc>https://gitkeniwo.tech/2026-05-09-brussels-day-trip/</loc>
     <lastmod>2026-05-09</lastmod>
@@ -716,45 +725,69 @@
   </url>
   <url>
     <loc>https://gitkeniwo.tech/about/</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://gitkeniwo.tech/irc/</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://gitkeniwo.tech/irc/mrmrs/</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://gitkeniwo.tech/irc/lbxd/</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://gitkeniwo.tech/search/</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://gitkeniwo.tech/categories/</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://gitkeniwo.tech/</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gitkeniwo.tech/tags/design/</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://gitkeniwo.tech/tags/css/</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://gitkeniwo.tech/tags/color/</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://gitkeniwo.tech/tags/notes/</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
   </url>
   <url>
     <loc>https://gitkeniwo.tech/tags/belgium/</loc>
@@ -999,12 +1032,6 @@
   <url>
     <loc>https://gitkeniwo.tech/tags/travel/</loc>
     <lastmod>2023-02-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  <url>
-    <loc>https://gitkeniwo.tech/tags/css/</loc>
-    <lastmod>2023-02-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -1357,12 +1384,6 @@
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://gitkeniwo.tech/tags/notes/</loc>
-    <lastmod>2020-06-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  <url>
     <loc>https://gitkeniwo.tech/tags/french/</loc>
     <lastmod>2020-06-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -1484,7 +1505,7 @@
   </url>
   <url>
     <loc>https://gitkeniwo.tech/categories/Zen-and-the-Art-of-Computer-Maintenance/</loc>
-    <lastmod>2025-03-17</lastmod>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -1514,7 +1535,7 @@
   </url>
   <url>
     <loc>https://gitkeniwo.tech/categories/Zen-and-the-Art-of-Computer-Maintenance/Programming-Languages/</loc>
-    <lastmod>2023-12-24</lastmod>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

@@ -1,0 +1,244 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="HandheldFriendly" content="True"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover"><meta name="theme-color" content="#e2e0de" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1d1f21" media="(prefers-color-scheme: dark)"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><!-- icons (self-hosted; woff2 only) --><link rel="stylesheet" href="/lib/font-awesome/css/all.min.css"><!-- KaTeX styles (self-hosted; only on pages that render math) --><meta name="description" content="This site has two themes: pink in light, terminal green in dark. This is the record of moving them from a pile of hand-tuned hex codes to a ramp that can be computed — the trigger, the measurements, t"><meta property="og:type" content="article"><meta property="og:title" content="Rebuilding the colour system: from hand-tuned hex to a ramp you can solve for"><meta property="og:url" content="https://gitkeniwo.tech/2026-08-08-color-system-rebuild/en/"><meta property="og:site_name" content="사미즈다트"><meta property="og:description" content="This site has two themes: pink in light, terminal green in dark. This is the record of moving them from a pile of hand-tuned hex codes to a ramp that can be computed — the trigger, the measurements, t"><meta property="og:locale" content="en_US"><meta name="twitter:card" content="summary"><link rel="canonical" href="https://gitkeniwo.tech/2026-08-08-color-system-rebuild/en/"><link rel="shortcut icon" href="/images/comedian-logo-100.png"><link rel="icon" type="image/png" href="/images/comedian-logo-100.png" sizes="192x192"><link rel="apple-touch-icon" sizes="180x180" href="/images/comedian-logo-100.png"><title>Rebuilding the colour system: from hand-tuned hex to a ramp you can solve for</title><!-- theme switcher script (blocking on purpose: runs before paint to prevent FOUC) --><script src="/js/theme-switcher.js"></script><!-- rss --><link rel="alternate" href="/atom.xml" title="사미즈다트" type="application/atom+xml"><link rel="alternate" hreflang="zh" href="/2026-08-08-color-system-rebuild/"><link rel="alternate" hreflang="en" href="/2026-08-08-color-system-rebuild/en/"><link rel="stylesheet" href="/_astro/_slug_.v4rR_-wp.css"></head> <body id="top" class="page"> <div id="header-post"> <a id="menu-icon" href="#" title="Table of contents" aria-label="Table of contents"><i class="fas fa-list-ul fa-lg" aria-hidden="true"></i></a> <a id="menu-icon-tablet" href="#" title="Table of contents" aria-label="Table of contents" aria-expanded="false"> <i class="fas fa-list-ul toc-icon-open" aria-hidden="true"></i> <i class="fas fa-times toc-icon-close" aria-hidden="true"></i> </a> <a id="top-icon-tablet" href="#top" title="Back to top" aria-label="Back to top" style="display:none;"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i></a> </div> <div class="content page__body"> <header id="header"> <a href="/"> <div id="logo" data-light-logo="/images/comedian-logo-light-1000.png" data-dark-logo="/images/comedian-logo-dark-1000.png"></div> <div id="title"> <h1>사미즈다트</h1> </div> </a> <div id="nav"> <ul> <li><a href="/">index/</a></li><li><a href="/archives/">dossiers/</a></li><li><a href="/categories/">taxonomy/</a></li><li><a href="/irc/">irc/</a></li><li><a href="/search/">retrieval/</a></li><li><a href="/about/">about/</a></li> </ul> </div> </header>   <div class="reading-progress" aria-hidden="true"></div> <div id="neovim-wrapper"> <aside id="toc-terminal-box" class="irc-box"> <div class="irc-box__header"> <span class="irc-box__prompt">TOC</span> <a id="toc-close-btn" href="#" class="toc-close-icon" aria-label="Close table of contents"><i class="fas fa-times"></i></a> </div> <div id="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-the-trigger-it-was-never-the-page"><span class="toc-number">1.</span> 1. The trigger: it was never the page</a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-four-things-we-measured"><span class="toc-number">2.</span> 2. Four things we measured</a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-the-hue-locked-ladder"><span class="toc-number">3.</span> 3. The hue-locked ladder</a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-the-second-voice-four-candidates-one-rule"><span class="toc-number">4.</span> 4. The second voice: four candidates, one rule</a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-one-rung-is-not-enough--you-need-a-ramp"><span class="toc-number">5.</span> 5. One rung is not enough — you need a ramp</a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-roles-reshuffled"><span class="toc-number">6.</span> 6. Roles reshuffled</a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-swatches-lie"><span class="toc-number">7.</span> 7. Swatches lie</a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-how-this-takes-another-theme"><span class="toc-number">8.</span> 8. How this takes another theme</a></li></ol></div> </aside> <script type="module">const c=[...document.querySelectorAll("#toc-content a.toc-link")];if(c.length){const r=new Map(c.map(e=>[decodeURIComponent(e.getAttribute("href").slice(1)),e]));let i=null;const s=e=>{!e||e===i||(i?.classList.remove("active"),i?.removeAttribute("aria-current"),i=e,e.classList.add("active"),e.setAttribute("aria-current","true"))},n=[...document.querySelectorAll("article.post .content :is(h1,h2,h3,h4,h5,h6)[id]")].filter(e=>r.has(e.id)),o=new Set,l=new IntersectionObserver(e=>{for(const t of e)t.isIntersecting?o.add(t.target):o.delete(t.target);if(o.size)s(r.get(n.find(t=>o.has(t)).id));else{const t=n.filter(a=>a.getBoundingClientRect().top<0).pop();s(r.get((t??n[0]).id))}},{rootMargin:"0px 0px -75% 0px"});n.forEach(e=>l.observe(e))}</script> <!-- Post Terminal Box --> <section id="post-terminal-box" class="irc-box irc-box--section"> <div class="irc-box__header"> <span class="irc-box__prompt">guest@gitkeniwo.github.io ~&gt; cat 2026-08-08-color-system-rebuild/en/</span> </div> <article class="post" itemscope itemtype="http://schema.org/BlogPosting"> <header> <h1 class="posttitle" itemprop="name headline">Rebuilding the colour system: from hand-tuned hex to a ramp you can solve for</h1> <nav class="post-langs" aria-label="Language"> <a class="post-langs__item" href="/2026-08-08-color-system-rebuild/" hreflang="zh" lang="zh"> <span>[ </span>中文<span> ]</span> </a><a class="post-langs__item is-active" href="/2026-08-08-color-system-rebuild/en/" hreflang="en" lang="en" aria-current="page"> <span>[ </span>English<span> ]</span> </a> </nav> <div class="meta"> <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person"> <a id="post-author" href="/"> <span itemprop="name">ケニヲ</span> </a> </span> <div class="postdate"> <time datetime="2026-08-08T01:21:00.000Z" itemprop="datePublished">2026-08-08</time> </div> <div class="article-category"> <i class="fas fa-archive"></i> <a class="category-link" href="/categories/Zen-and-the-Art-of-Computer-Maintenance/">Zen and the Art of Computer Maintenance</a>  › <a class="category-link" href="/categories/Zen-and-the-Art-of-Computer-Maintenance/Programming-Languages/">Programming Languages</a>  </div> <div class="article-tag"> <i class="fas fa-tag"></i> <a class="tag-link" href="/tags/design/" rel="tag">design</a> , <a class="tag-link" href="/tags/css/" rel="tag">css</a> , <a class="tag-link" href="/tags/color/" rel="tag">color</a> , <a class="tag-link" href="/tags/notes/" rel="tag">notes</a>  </div> </div> </header> <div class="content" itemprop="articleBody">  <p>This site has two themes: pink in light, terminal green in dark. This is the record of moving them from a pile of hand-tuned hex codes to a ramp that can be computed — the trigger, the measurements, the options that got rejected, and the structure that shipped.</p>
+<p>Every swatch, ladder and contrast table lives on <a href="/design/colors/en/">/design/colors/en/</a>, which resolves them at build time in OKLCH and parses the “today” column straight out of <code>variables.css</code>. The numbers here are quoted for the argument; that page is the authority. I deliberately did not copy the tables into this post — copy them once and there will be a first day they disagree.</p>
+<!-- more -->
+<h2 id="1-the-trigger-it-was-never-the-page">1. The trigger: it was never the page</h2>
+<p>The original complaint was specific: the <code>/irc/</code> channel page looked cluttered and misaligned.</p>
+<p>But the cause was not that page’s layout — it was the variable layer. The channel page just happened to be where the palette’s defects were most visible. So the palette got fixed first, and the typography after.</p>
+<h2 id="2-four-things-we-measured">2. Four things we measured</h2>
+<p>Every decision below rests on a measurement rather than on “that looks off”. Backgrounds are <code>#e2e0de</code> light and <code>#1d1f21</code> dark; cr is the WCAG contrast ratio (1 = invisible, 21 = black on white, body text needs ≥ 4.5).</p>
+<p><strong>1. The light theme was under-contrast across the board.</strong> link 3.28, strong 2.06, em 2.73, toc-active 2.39 — nearly everything below the AA floor of 4.5, while the dark side sat steadily around 7. The two themes were not stylistically different; one was readable and one was not.</p>
+<p><strong>2. Three nearly identical pinks were fighting.</strong> <code>#d44375</code> (23 uses), <code>#c04059</code> (11), <code>#c73866</code> (3): 0.04 apart in lightness, 0.02 in chroma, 10° in hue. Close enough that the eye insists they should be the same colour, not close enough that they are. “Almost the same” reads messier than plainly different — that was the channel page’s clutter.</p>
+<p><strong>3. The muted layer really was brown.</strong> <code>#8dba8a</code>, the dark theme’s secondary, is not a quiet green: its hue is 21° yellower than the family and it uses a third of the chroma available at that lightness. Olive next to terminal green was never going to sit right.</p>
+<p><strong>4. The bright pink was not using its gamut.</strong> <code>#d44375</code> spends only 76% of the chroma available at its lightness. Pushed to the edge it gets more saturated <em>and</em> more legible at once — meaning <strong>readability never required trading the pink for a wine red.</strong></p>
+<h2 id="3-the-hue-locked-ladder">3. The hue-locked ladder</h2>
+<p>The fourth measurement is the foundation for everything after it: <strong>lock the hue, keep the chroma, move only lightness.</strong></p>
+<p>Desaturating to make a “quiet layer” had already been rejected on sight — low-chroma pink and green read as brown and khaki, and they leave a hole between themselves and the accent. On a hue-locked ladder, every stop is still pink, still green, with no discontinuity in between.</p>
+<!-- screenshot: the two hue-locked ladders on /design/colors/en/ -->
+<p>One thing that comes up repeatedly below: “receding” points in opposite directions per theme. On a dark ground, darker means less contrast, which recedes; on a light ground, darker means more contrast, which advances. That is the background’s doing and there is no way around it.</p>
+<h2 id="4-the-second-voice-four-candidates-one-rule">4. The second voice: four candidates, one rule</h2>
+<p>The first round moved exactly one role — the “second voice” (banner status, <code>[#chan]</code>, the day-change date, the active tab mark) — leaving the primary untouched so the variable was isolated. All four candidates come off the ladder:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Candidate</th><th>ΔL</th><th>Direction</th><th>cr ×</th><th>Verdict</th></tr></thead><tbody><tr><td>F light <code>#c51963</code></td><td>−0.06</td><td>away from bg</td><td>×1.32</td><td>✓ chosen</td></tr><tr><td>E dark <code>#2ad69c</code></td><td>+0.07</td><td>away from bg</td><td>×1.29</td><td>✓ chosen</td></tr><tr><td>E light <code>#fb6e9a</code></td><td>+0.12</td><td>toward bg</td><td>×0.63</td><td>fades out</td></tr><tr><td>D dark <code>#17825d</code></td><td>−0.17</td><td>toward bg</td><td>×0.51</td><td>fades out</td></tr><tr><td>D light <code>#a81454</code></td><td>−0.12</td><td>away from bg</td><td>×1.68</td><td>right way, too big a jump</td></tr><tr><td>G neutral grey</td><td>—</td><td>leaves the family</td><td>—</td><td>no jump, but no family either</td></tr></tbody></table>
+<p>(Primaries: <code>#d44375</code> light, cr 3.28 · <code>#2bbc8a</code> dark, cr 6.82)</p>
+<p>The two that won are not “one nice colour picked per theme”. They are the same rule executed twice: <strong>the second voice is the primary, moved one rung away from the background.</strong> The step sizes are near-identical (×1.32 vs ×1.29). What is conserved is the relationship inside each theme, not the numbers across them — <strong>the light theme is not an inversion of the dark one.</strong></p>
+<p>The two rejects are the same mistake. E light gets brighter and D dark gets darker, which looks like opposite moves, but in the coordinate that actually matters — distance from the background — they are the same move: both toward the background, both about two rungs, both washing out.</p>
+<p>D light’s wine red had the right direction and the wrong step size: two rungs in one jump, with nothing in between. It was not discarded; see the next section.</p>
+<h2 id="5-one-rung-is-not-enough--you-need-a-ramp">5. One rung is not enough — you need a ramp</h2>
+<p>Choosing F for light exposed a contradiction. Solve for “the first pink on this hue that clears AA 4.5” and the answer is F itself. Which means the second voice is now more legible than the lead — the premise that the primary stays put no longer holds.</p>
+<p>The fix is to stop assigning roles by importance and assign them by <strong>text size</strong> instead: large text needs 3.0, body text needs 4.5.</p>
+<p>The loud pink keeps “what you notice first” on the headings and ASCII art, where the area is largest and the bar is lowest; legibility lives in the body rung. The two requirements stop fighting over one token. The wine red lands on hover, a full rung below body, so the jump problem dissolves on its own.</p>
+<p>Every rung is solved backwards from a target contrast ratio, no hex hand-tuned — and the two themes’ targets are <strong>deliberately unequal</strong>: in the dark theme the loudest rung has <em>more</em> contrast than the body rung, and in the light theme it has less. That inversion is not a slip. On a light ground the loudest pink is the one closest to the background; on a dark ground the brightest green is the one furthest from it. Loudness costs something different in each.</p>
+<!-- screenshot: the rung table on /design/colors/en/ -->
+<p>Incidentally, the light theme’s loudest pink is <code>#e21e73</code>. The closest conventional colour name is <strong>Razzmatazz</strong> (<code>#e3256b</code>, Crayola 1993) — 0.015 apart in OKLab, effectively indistinguishable — followed by Rosa Mexicano <code>#e4007c</code> and Ruby <code>#e0115f</code>. Its chroma of 0.228 beats the shipped <code>#d44375</code> (0.184): more saturated <strong>and</strong> more legible.</p>
+<h2 id="6-roles-reshuffled">6. Roles reshuffled</h2>
+<p>The semantic layer contains no numbers at all, only rung references:</p>
+<pre class="astro-code astro-code-themes everforest-light everforest-dark" style="--shiki-light:#5c6a72;--shiki-dark:#d3c6aa;--shiki-light-bg:#fdf6e3;--shiki-dark-bg:#2d353b; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="--shiki-light:#DF69BA;--shiki-dark:#D699B6">--color-link:       var(--a-base</span><span style="--shiki-light:#5C6A72;--shiki-dark:#D3C6AA">);   </span><span style="--shiki-light:#939F91;--shiki-light-font-style:italic;--shiki-dark:#859289;--shiki-dark-font-style:italic">/* body size → the AA rung */</span></span>
+<span class="line"><span style="--shiki-light:#DF69BA;--shiki-dark:#D699B6">--color-link-hover: var(--a-deep</span><span style="--shiki-light:#5C6A72;--shiki-dark:#D3C6AA">);</span></span>
+<span class="line"><span style="--shiki-light:#DF69BA;--shiki-dark:#D699B6">--color-accent-1:   var(--a-vivid</span><span style="--shiki-light:#5C6A72;--shiki-dark:#D3C6AA">);  </span><span style="--shiki-light:#939F91;--shiki-light-font-style:italic;--shiki-dark:#859289;--shiki-dark-font-style:italic">/* headings, ASCII → the loud rung */</span></span>
+<span class="line"><span style="--shiki-light:#DF69BA;--shiki-dark:#D699B6">--color-meta:       var(--n-quiet</span><span style="--shiki-light:#5C6A72;--shiki-dark:#D3C6AA">);  </span><span style="--shiki-light:#939F91;--shiki-light-font-style:italic;--shiki-dark:#859289;--shiki-dark-font-style:italic">/* today a theme-blind #666 */</span></span></code></pre>
+<p>Because the semantic names do not change, most of the 289 <code>var(--color-*)</code> call sites across the site need no edit. The real cost is re-reading every page in the light theme.</p>
+<p>Three historical defects got fixed on the way past:</p>
+<ul role="list">
+<li><code>--color-meta</code> and <code>--color-border</code> were a theme-blind <code>#666</code> (4.36 on light, 2.88 on dark) — which is why the IRC prefix column behaves oppositely per theme.</li>
+<li><code>--color-quote</code> differed by 6× in chroma between themes.</li>
+<li>The dark theme’s glow was cyan, <code>rgba(0,255,255,…)</code>, a different family from the site’s green entirely.</li>
+</ul>
+<p>The full token table is on <a href="/design/colors/en/">/design/colors/en/</a>; red marks body-size tokens below 4.5, and today’s light column is almost entirely red.</p>
+<h2 id="7-swatches-lie">7. Swatches lie</h2>
+<p>The same colour in 12px meta text and across a block of ASCII art are not the same experience. So the last step is putting the candidates back onto real interfaces: the IRC channel, the home page, a post body — each rendered with real components and real data, today stacked directly above the proposal.</p>
+<!-- screenshot: specimen panels, IRC channel today vs proposed -->
+<p>Stacked rather than side by side, because two half-width columns force the IRC prefix column and the <code>ls tags/</code> grid to wrap at widths the real site never sees, which makes the comparison about reflow instead of about colour.</p>
+<h2 id="8-how-this-takes-another-theme">8. How this takes another theme</h2>
+<p>The whole thing has two data sources, both pure functions with no dependencies:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>File</th><th>Contents</th></tr></thead><tbody><tr><td><code>scripts/oklch.mjs</code></td><td>OKLCH ↔ sRGB, gamut ceiling, WCAG contrast, <code>solveAgainst(target, hue, bg)</code></td></tr><tr><td><code>scripts/theme.mjs</code></td><td><code>THEMES</code> (a theme = background + hue + contrast targets), <code>ROLES</code> (token → rung)</td></tr></tbody></table>
+<p><strong>Adding a theme is one entry in <code>THEMES</code></strong> — a background, a hue and a set of target ratios, no hex codes. The ladder, the rungs, the swatches, the comparison table and every specimen gain a copy automatically.</p>
+<p><code>solveAgainst</code> picks its search direction from the <strong>background’s luminance</strong> rather than from a theme name, so two dark themes on different surfaces resolve to different ramps instead of sharing one.</p>
+<p><code>node scripts/palette.mjs rungs</code> prints the same data in a terminal.</p>
+<hr>
+<p>The method reduces to one sentence: <strong>measure first, then change.</strong> “That looks off” is a real signal, but it does not tell you what is off — “these three pinks are 0.04 apart in lightness” does.</p>  </div> </article> </section> </div> <br> <br> <div class="blog-post-comments"> <div id="giscus" class="giscus"></div> </div> <script>
+  // Giscus loader with theme sync + lazy injection: the client script (and the
+  // comment iframe's third-party request) only loads once the comments area is
+  // about to enter the viewport.
+  (function () {
+    var giscusThemes = {
+      auto: 'https://gitkeniwo.tech/giscus-themes/mono-theme.css',
+      light: 'https://gitkeniwo.tech/giscus-themes/mono-theme-light.css',
+      dark: 'https://gitkeniwo.tech/giscus-themes/mono-theme-dark.css',
+    };
+
+    function currentGiscusTheme() {
+      var t = window.cactusTheme ? window.cactusTheme.get() : 'auto';
+      return giscusThemes[t] || giscusThemes.auto;
+    }
+
+    // Registered up front so a theme switch before/after injection both work.
+    // (before: no iframe yet, guarded; the eventual data-theme picks up the
+    // current theme at injection time. after: postMessage syncs the iframe.)
+    window.addEventListener('themechange', function () {
+      var iframe = document.querySelector('iframe.giscus-frame');
+      if (!iframe) return;
+      iframe.contentWindow.postMessage(
+        { giscus: { setConfig: { theme: currentGiscusTheme() } } },
+        'https://giscus.app',
+      );
+    });
+
+    var injected = false;
+    function injectGiscus() {
+      if (injected) return;
+      injected = true;
+
+      var attrs = {
+        'data-repo': 'gitkeniwo/gitkeniwo.github.io',
+        'data-repo-id': 'MDEwOlJlcG9zaXRvcnkyNjk1NTA0ODE=',
+        'data-category': 'Announcements',
+        'data-category-id': 'DIC_kwDOEBEDkc4CgyF8',
+        'data-mapping': 'pathname',
+        'data-strict': '0',
+        'data-reactions-enabled': '1',
+        'data-emit-metadata': '0',
+        'data-input-position': 'top',
+        'data-theme': currentGiscusTheme(),
+        'data-lang': 'en',
+      };
+      var script = document.createElement('script');
+      script.src = 'https://giscus.app/client.js';
+      for (var key in attrs) script.setAttribute(key, attrs[key]);
+      script.crossOrigin = 'anonymous';
+      script.async = true;
+      // giscus mounts its iframe into the .giscus element; append there.
+      var mount = document.querySelector('.giscus') || document.body;
+      mount.appendChild(script);
+    }
+
+    var target = document.querySelector('.blog-post-comments');
+    if (!target || !('IntersectionObserver' in window)) {
+      injectGiscus();
+      return;
+    }
+
+    var io = new IntersectionObserver(
+      function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+          if (entries[i].isIntersecting) {
+            io.disconnect();
+            injectGiscus();
+            break;
+          }
+        }
+      },
+      { rootMargin: '400px 0px' },
+    );
+    io.observe(target);
+  })();
+</script> <script type="module">const r="Copy to clipboard!";document.querySelectorAll("article.post .content pre.astro-code").forEach(t=>{const a=document.createElement("div");a.className="code-block",t.parentNode?.insertBefore(a,t);const e=document.createElement("span");e.className="btn-copy tooltipped",e.setAttribute("aria-label",r),e.innerHTML='<i class="far fa-clone"></i>',a.append(t,e);let o;e.addEventListener("click",()=>{navigator.clipboard.writeText(t.innerText).then(()=>e.setAttribute("aria-label","Copied!"),()=>e.setAttribute("aria-label","Copy failed")),clearTimeout(o),o=setTimeout(()=>e.setAttribute("aria-label",r),2e3)})});</script>  <footer id="footer"> <div class="footer-top"> <span class="footer-copyright">
+Copyleft &copy; 2019-2026 ケニヲ </span> <span class="footer-separator">|</span> <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="footer-license" target="_blank" rel="noopener noreferrer"> <i class="fa-brands fa-creative-commons"></i> <i class="fa-brands fa-creative-commons-by"></i>-<i class="fa-brands fa-creative-commons-nc"></i>-<i class="fa-brands fa-creative-commons-sa"></i> </a> </div> <div class="footer-middle"> <span class="footer-powered"> <span class="footer-powered-item">Powered by <a href="https://astro.build"><i class="fa-solid fa-rocket"></i> Astro</a></span> <span class="footer-powered-sep">|</span> <span class="footer-powered-item">Hosted on <a href="https://pages.github.com/"><i class="fab fa-github-alt"></i> GitHub Pages</a></span> </span> </div> <div class="footer-bottom"> <nav> <ul> <li><a href="/">index/</a></li><li><a href="/archives/">dossiers/</a></li><li><a href="/categories/">taxonomy/</a></li><li><a href="/irc/">irc/</a></li><li><a href="/search/">retrieval/</a></li><li><a href="/about/">about/</a></li> </ul> </nav> </div> </footer> </div> <dialog class="image-viewer" data-image-viewer-dialog aria-label="Image viewer"> <div class="image-viewer__stage" data-image-viewer-stage> <img class="image-viewer__image" data-image-viewer-image alt=""> </div> <div class="image-viewer__toolbar"> <output class="image-viewer__count" data-image-viewer-count aria-live="polite"></output> <div class="image-viewer__navigation"> <button type="button" class="image-viewer__button" data-image-viewer-prev aria-label="Previous image">‹</button> <button type="button" class="image-viewer__button" data-image-viewer-next aria-label="Next image">›</button> </div> <button type="button" class="image-viewer__button" data-image-viewer-close aria-label="Close image viewer">×</button> </div> </dialog> <script type="module">const t=document.querySelector("[data-image-viewer-dialog]"),l=t?.querySelector("[data-image-viewer-image]"),g=t?.querySelector("[data-image-viewer-count]"),u=t?.querySelector("[data-image-viewer-stage]");if(t&&l&&g&&u){let a=[],r=0;const c=e=>{r=(e+a.length)%a.length;const i=a[r];i&&(l.src=i.src,l.alt=i.alt,g.value=`${r+1}/${a.length}`)},o=()=>t.close();document.addEventListener("click",e=>{if(!(e.target instanceof Element)||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;const i=e.target.closest("[data-image-viewer-item]"),s=i?.closest("[data-image-viewer]");if(!i||!s)return;const n=[...s.querySelectorAll("[data-image-viewer-item]")];a=n.map(d=>({src:d.href,alt:d.querySelector("img")?.alt??""})),r=n.indexOf(i),!(r<0||a.length===0)&&(e.preventDefault(),c(r),t.showModal())}),t.querySelector("[data-image-viewer-close]")?.addEventListener("click",o),t.querySelector("[data-image-viewer-prev]")?.addEventListener("click",()=>c(r-1)),t.querySelector("[data-image-viewer-next]")?.addEventListener("click",()=>c(r+1)),t.addEventListener("click",e=>{(e.target===t||e.target===u)&&o()}),t.addEventListener("keydown",e=>{e.key==="ArrowLeft"&&c(r-1),e.key==="ArrowRight"&&c(r+1)}),t.addEventListener("close",()=>{l.removeAttribute("src"),a=[]})}</script> <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme (Ctrl/Cmd + Shift + D)"> <span class="theme-toggle-icon"> <i class="fas fa-adjust"></i> </span> </button> <script>
+  // Theme toggle button handler
+  (function () {
+    const button = document.getElementById('theme-toggle');
+    if (!button) return;
+
+    button.addEventListener('click', function () {
+      button.classList.add('rotating');
+      setTimeout(() => button.classList.remove('rotating'), 500);
+
+      if (window.cactusTheme) {
+        window.cactusTheme.toggle();
+      }
+    });
+
+    // Update button icon based on theme
+    function updateButtonIcon() {
+      const theme = window.cactusTheme ? window.cactusTheme.get() : 'auto';
+      const icon = button.querySelector('i');
+
+      if (theme === 'dark') {
+        icon.className = 'fas fa-moon';
+      } else if (theme === 'light') {
+        icon.className = 'fas fa-sun';
+      } else {
+        icon.className = 'fas fa-adjust';
+      }
+    }
+
+    // Listen for theme changes
+    window.addEventListener('themechange', updateButtonIcon);
+
+    // Set initial icon
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', updateButtonIcon);
+    } else {
+      updateButtonIcon();
+    }
+  })();
+</script> <script type="module">if(document.querySelector(".post")){const a=[...document.querySelectorAll("#menu-icon, #menu-icon-tablet")],o=document.getElementById("toc-terminal-box"),d=document.getElementById("post-terminal-box"),l=document.querySelector("article.post .content"),E=window.matchMedia("(min-width: 901px)");let c;const m=()=>{if(c?.(),c=void 0,!E.matches||!o||!d||!l)return;const t=24,e=[...l.children].find(n=>{const h=n.getBoundingClientRect();return h.bottom>t&&h.top<window.innerHeight});if(!(e instanceof HTMLElement))return;const w=e.getBoundingClientRect().top;let p=0,g=0;const s=()=>{const n=e.getBoundingClientRect().top-w;Math.abs(n)>.5&&window.scrollBy({top:n,behavior:"instant"})},i=()=>{s(),f.disconnect(),o.removeEventListener("transitionend",v),cancelAnimationFrame(p),clearTimeout(g),c===i&&(c=void 0)},v=n=>{n.target===o&&n.propertyName==="width"&&i()},f=new ResizeObserver(s);f.observe(d),o.addEventListener("transitionend",v),p=requestAnimationFrame(s),g=window.setTimeout(i,500),c=i},r=t=>{o?.classList.toggle("active",t),a.forEach(e=>{e.classList.toggle("active",t),e.setAttribute("aria-expanded",String(t))})};a.forEach(t=>{t.addEventListener("click",m,{capture:!0}),t.addEventListener("click",e=>{e.preventDefault(),r(!o?.classList.contains("active"))})});const u=document.getElementById("toc-close-btn");u?.addEventListener("click",m,{capture:!0}),u?.addEventListener("click",t=>{t.preventDefault(),r(!1)}),document.querySelectorAll("#toc-content a").forEach(t=>t.addEventListener("click",()=>{window.matchMedia("(max-width: 900px)").matches&&r(!1)}))}</script> </body> </html>
