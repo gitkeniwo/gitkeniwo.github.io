@@ -50,9 +50,9 @@ OP住的h2s的CT的bikeshed在负一楼，只有两条路通向该bikeshed：1�
 <p>准备以下工具。由于荷兰至少还是名义上的「自行车王国」，所以修车工具都非常成体系和标准化，相对容易购买：</p>
 <img src="https://img.gitkeniwo.tech/202512/31-84ceafacb4d9c2c13503d333cf205983-1767217098.jpeg" width="50%">
 <p class="img-caption">fig. 所有工具</p>
-<ul>
+<ul role="list">
 <li>开口扳手，用来卸下固定车胎的六角螺丝。
-<ul>
+<ul role="list">
 <li>英文叫Spanner或者Open-end Wrench，荷兰语为<strong>Steeksleutel</strong></li>
 <li>我买的Action的Werckmann这个牌子的Adjustable Joint Pliers，荷兰语商品名为Werckmann <strong>waterpomptang</strong> 245mm，€3.99</li>
 <li>按理说也可以买外六角螺丝刀（梅花扳手, ring wrench），我也买了Action的Werckmann ringsteeksleutelset 6-delig，€3.99 但没用上。</li>
@@ -60,7 +60,7 @@ OP住的h2s的CT的bikeshed在负一楼，只有两条路通向该bikeshed：1�
 </li>
 <li>Action的Tyre Repair Kit，重点是里面的<strong>撬胎棒</strong>，<strong>Bandafnemer</strong> (荷兰语 af+nemen = remove) 或 <strong>Bandenlichter</strong> 如果不急的，可以去Temu/Aliexpress自己凑单买个便宜的。</li>
 <li>内胎英文叫Inner Tube，荷兰语为<strong>Binnenband</strong>。 买内胎需要选对<code>气嘴型号</code>+<code>内胎型号</code>。
-<ul>
+<ul role="list">
 <li>观察自己的轮胎，如果实在不明显可以打手电筒反光，拍照拉曲线拉对比度等，一般会标注轮胎的型号，荷兰的外胎一般会标注 <code>[ETRTO] [British] [French]</code> 三种规格，最简单易懂的是 British 英制规格, <code>outer diameter x height x width</code>，一般如同 <code>26 x 1 ⅜</code>这样，意思就是26”(英寸) + 胎宽胎高。我的胎是 <code>[26 x 1 ⅜] [37-590] [650 x 35A]</code>，其中37-590是ETRTO 标准，是EU制定的最准确的标准，650 x 35A是法制。</li>
 <li>轮胎还需要注意自己气门(Valve)的型号，荷兰老款车常用英式/荷式的Dunlop，此外著名的还有法嘴Presc，和美嘴Schräder。</li>
 <li>大众款山地车可以直接迪卡侬买，其他老式车如Omafiets就去著名荷兰建材超市Praxis买，可以网上下单然后预约取货，取货48小时内都可以。</li>
@@ -152,14 +152,14 @@ OP住的h2s的CT的bikeshed在负一楼，只有两条路通向该bikeshed：1�
 <p><img src="https://pub-2fc18c59b6b142f0a477a14c8186cbb9.r2.dev/new-memos/2025-12/21-22-41-24-IMG_4242.jpeg" alt="" loading="lazy" decoding="async"></p>
 <p class="img-caption">fig. Kino散场</p>
 <p>下面简单记录一些观感：</p>
-<ul>
+<ul role="list">
 <li>本片最大的直感就是欧陆现代主义碰上<strong>新好莱坞</strong>。虽然是安老师对白最多的电影之一，但依然是反类型的（类型片的话，身份冒用后的剧情动机都比较有目的性，大概就是阿兰德龙《Plein Soleil》这样）。</li>
 <li>好莱坞的制片与资本，加上不同于冷冰冰的欧洲男主角（如安东尼奥尼疏离三部曲的阿兰德龙、马斯楚安尼）的带有反叛玩世不恭气质的尼科尔森、反类型片、反英雄主人公、自由的delusion。这些都是新好莱坞的标志。</li>
 <li>70年代的安东尼奥尼三部曲《放大》、《扎布勒斯角》和《过客》与60年疏离三部曲在形式上咋一看天壤之别（黑白-彩色、弱情节-情节较多，etc），但细品的话内核又是其精神延续。N年前OP已经写过《<a href="/2021-05-16-film-lavventura/">奇遇</a>》，之后有空的话会一再写写OP更喜欢的《<a href="https://letterboxd.com/dareinu/film/la-notte/">夜</a>》。</li>
 <li>电影从头到尾就不是想拍一个thriller，而是给你展示尼克尔森的主角精神崩溃走向毁灭的过程，此处精神崩溃的核心症结，类似克尔凯郭尔所描述的「<strong>致死的疾病</strong>」。</li>
 </ul>
 <blockquote class="irc-greentext"><span class="irc-greentext__line">绝望是「精神」中、「自我」中的疾病，以这样一种方式，可以是一种三重性：绝望地不自觉到具有一个自我（不真正的绝望）；绝望地不想要「是自己」；绝望地想要「是自己」</span><span class="irc-greentext__line">——《畏惧与颤栗 恐惧的概念 <a href="https://www.goodreads.com/book/show/24972.The_Sickness_Unto_Death">致死的疾病</a>》 Søren Kierkegaard</span></blockquote>
-<ul>
+<ul role="list">
 <li>简单来说克氏认为致死的疾病是绝望。绝望的第二层是意识到了深层次自我的存在，但不愿意成为理想的、应该成为的、深层次的自我。</li>
 <li>本篇中，尼克尔森的角色Locke厌倦身为战地记者的自我，拼命逃离自我但不得，所以深陷绝望。</li>
 <li>克氏继续说：「致死的疾病」中的「死」是<strong>最严重的精神上的糟糕状态</strong>。想死却死不了。</li>
@@ -402,7 +402,7 @@ OP住的h2s的CT的bikeshed在负一楼，只有两条路通向该bikeshed：1�
     <published>2025-07-03T01:49:09.000Z</published>
     <updated>2025-07-03T01:49:09.000Z</updated>
     <content type="html"><![CDATA[<p>对于长居在墙外的CN护照持有者来说，港户是必不可少的金融工具。它的好处有：</p>
-<ul>
+<ul role="list">
 <li>内地-香港-欧洲低损耗转账路线</li>
 <li>香港券商无损出入金</li>
 <li>欧洲税务居民身份资产隔离</li>
@@ -412,12 +412,11 @@ OP住的h2s的CT的bikeshed在负一楼，只有两条路通向该bikeshed：1�
 <p>所以这次回国顺路去香港的主要目的就是办理港户开户，防止未来大门被焊死，顺便也记录下旅程。</p>
 <h1 id="ams---pkx---szx">AMS -> PKX -> SZX</h1>]]></content>
     <summary type="html">&lt;p&gt;对于长居在墙外的CN护照持有者来说，港户是必不可少的金融工具。它的好处有：&lt;/p&gt;
-&lt;ul&gt;
+&lt;ul role=&quot;list&quot;&gt;
 &lt;li&gt;内地-香港-欧洲低损耗转账路线&lt;/li&gt;
 &lt;li&gt;香港券商无损出入金&lt;/li&gt;
 &lt;li&gt;欧洲税务居民身份资产隔离&lt;/li&gt;
-&lt;li&gt;海外出U转移回国链条&lt;br&gt;
-更重要的是</summary>
+&lt;li&gt;海外出U转移回国</summary>
     <category term="The Library of Babel" scheme="https://gitkeniwo.tech/categories/The-Library-of-Babel/"/>
     <category term="Itineraries" scheme="https://gitkeniwo.tech/categories/The-Library-of-Babel/Itineraries/"/>
     <category term="guide" scheme="https://gitkeniwo.tech/tags/guide/"/>
@@ -551,12 +550,12 @@ OP住的h2s的CT的bikeshed在负一楼，只有两条路通向该bikeshed：1�
 <h1 id="amsterdam">Amsterdam</h1>
 <p>阿姆的cineville影院是全荷兰独一档的多，但大多数都交通不是很方便，对于不住在阿姆(Centrum, Amstel, Zuid, Bijlmer, Diemen, Sloterdijk, Amstelveen etc)的人来说很不友好，如果不愿走路，大多都得掏来回共四欧的电车钱。</p>
 <p>阿姆的影院可以大致分为下面几个group：</p>
-<ul>
+<ul role="list">
 <li>Leidseplein(莱顿广场)派：Uitkijk(警哨), Cinecenter(中心), De Balie(吧台), Melkweg(银河)</li>
 <li>Eye Filmmuseum (独一档)</li>
 <li>Oud West (老西区)派：Lab111, Filmhallen(大堂), Het Documentaire Paviljoen(纪录片亭)</li>
 <li>Westerpark (西区公园)派: The Movie, Het Ketelhuis, Filmhuis Cavia
-<ul>
+<ul role="list">
 <li>老西区Oud West是指Vondelpark北边的区域，同理老南区Oud Zuid是Vondelpark以南的区域</li>
 </ul>
 </li>
@@ -629,7 +628,7 @@ Kriterion也是UvA的学生运营的，对门就是UvA的校园。整个影院�
 <p><strong>停车</strong> 由于位于centrum，热门时段经常没有自行车停车位，可以把车靠在影院门口绿化带上。</p>
 <p><strong>取票</strong> 进门右手边人工取票，只需要给他扫你的cinevillepas。无cineville自助取票。可以迟到，迟到5min取票没问题。因为是人工取票，热门时段需要排队，但一般不超过10min。</p>
 <p><strong>选座</strong> 订票时可以提前选座，不选座会给你分配座位，不能随便坐。一共有5个Zaal：</p>
-<ul>
+<ul role="list">
 <li>
 <p>Zaal 1: 大宽屏，但只有二楼有座位，所以真实视角下屏幕也不是很大。不放映时用作活动举办场地。想看大屏推荐选第一排（一横排）。</p>
 </li>
@@ -655,7 +654,7 @@ Kriterion也是UvA的学生运营的，对门就是UvA的校园。整个影院�
 <h1 id="maastricht">Maastricht</h1>
 <h2 id="lumière-cinema">Lumière Cinema</h2>
 <p>坐落在马斯河西岸的Lumière是马城最大的艺术影院，门口是一个人工湖或者码头，vibe很好。</p>
-<ul>
+<ul role="list">
 <li>交通：坐到Maastricht NS车站。走路亲测18-20min。如果是白天的话，有非常美丽的马城江景可看。</li>
 <li>取票：Ticket Office在一楼。如果是Cineville网上订票的话，是不需要取票的。可以直接走到二楼影厅门口的检票处刷Cineville卡。</li>
 </ul>
@@ -1071,9 +1070,9 @@ Big W?</p>
     <published>2024-07-14T20:10:25.000Z</published>
     <updated>2024-07-14T20:10:25.000Z</updated>
     <content type="html"><![CDATA[<p>I did an overhaul on my blog this July, including:</p>
-<ul>
+<ul role="list">
 <li>Switched to the free domain name (gitkeniwo.me) I got from GitHub Student Pack
-<ul>
+<ul role="list">
 <li>Registered/Transferred the domain name to Cloudflare, nameserver of the domain fully set up on Cloudflare DNS</li>
 <li>Added CNAME records to gitkeniwo.github.io on GitHub Pages (redirection)</li>
 <li>Added A records to gitkeniwo.me, parsing it to the IP Address of GitHub Pages.</li>
@@ -1083,24 +1082,24 @@ Big W?</p>
 </li>
 </ul>
 <pre class="astro-code astro-code-themes everforest-light everforest-dark" style="--shiki-light:#5c6a72;--shiki-dark:#d3c6aa;--shiki-light-bg:#fdf6e3;--shiki-dark-bg:#2d353b; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>gitkeniwo.me</span></span></code></pre>
-<ul>
+<ul role="list">
 <li>Added cloudflare-R2-based image hosting
-<ul>
+<ul role="list">
 <li>Added <del>img.gitkeniwo.me</del> as the public domain for the image hosting bucket. <em>new domain name is img.gitkeniwo.tech as of 11-2025</em></li>
 <li>Setup <del>picgo</del>. <em>Switched to piclist 11-2025</em></li>
 </ul>
 </li>
 </ul>
 <p>Todo List:</p>
-<ul class="contains-task-list">
+<ul class="contains-task-list" role="list">
 <li class="task-list-item"><input type="checkbox" disabled> Reduce javascript usage</li>
 <li class="task-list-item"><input type="checkbox" checked disabled> <del>Refactor stylus css and switch to native CSS with new features.</del> <em>Done 11-2025</em></li>
 <li class="task-list-item"><input type="checkbox" checked disabled> <del>Support auto dark mode based on system preference.</del> <em>Done 11-2025</em></li>
 <li class="task-list-item"><input type="checkbox" checked disabled> <del>Refactor default archive page and category page UI.</del> <em>Done 11-2025</em></li>
 </ul>]]></content>
     <summary type="html">&lt;p&gt;I did an overhaul on my blog this July, including:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Switched to the free domain name (gitkeniwo.me) I got from GitHub Student</summary>
+&lt;ul role=&quot;list&quot;&gt;
+&lt;li&gt;Switched to the free domain name (gitkeniwo.me) I got from Gi</summary>
     <category term="Blogging" scheme="https://gitkeniwo.tech/categories/Blogging/"/>
   </entry>
   <entry>
