@@ -4,155 +4,12 @@
   <subtitle>10s Recollection</subtitle>
   <link href="https://gitkeniwo.tech/atom.xml" rel="self"/>
   <link href="https://gitkeniwo.tech/"/>
-  <updated>2026-08-08T01:20:00.000Z</updated>
+  <updated>2026-05-09T01:35:01.000Z</updated>
   <id>https://gitkeniwo.tech/</id>
   <author>
     <name>ケニヲ</name>
   </author>
   <generator uri="https://astro.build/">Astro</generator>
-  <entry>
-    <title>配色系统重做：从手调十六进制到能算出来的色阶</title>
-    <link href="https://gitkeniwo.tech/2026-08-08-color-system-rebuild/"/>
-    <id>https://gitkeniwo.tech/2026-08-08-color-system-rebuild/</id>
-    <published>2026-08-08T01:20:00.000Z</published>
-    <updated>2026-08-08T01:20:00.000Z</updated>
-    <content type="html"><![CDATA[<p>这个站有两套主题：浅色是粉，深色是终端绿。这篇记录把它们从「一堆手调的十六进制」改成「一条可以算出来的色阶」的全过程 —— 起因、量到的数字、否掉的方案，以及最后落地的结构。</p>
-<p>所有色卡、梯子、对比度表都在 <a href="/design/colors/">/design/colors/</a> 上，那一页是构建时用 OKLCH 现算的，「今天」那一列直接解析 <code>variables.css</code>。这篇里的数字是论证用的引用，那一页才是权威 —— 我特意没有把表格抄到这里，抄一次就会有第一次对不上的那天。</p>
-<!-- more -->
-<h2 id="一起因不是页面的问题">一、起因：不是页面的问题</h2>
-<p>最早的抱怨很具体：<code>/irc/</code> 频道页看起来「凌乱、不像对齐」。</p>
-<p>但排查下去，问题不在那个页面的布局，而在变量层 —— 频道页只是把配色的毛病放大到了最容易看见的地方。于是先修配色系统，再谈排版。</p>
-<h2 id="二量到的四件事">二、量到的四件事</h2>
-<p>所有判断都建立在测量上，而不是「看着不太对」。背景是浅 <code>#e2e0de</code>、深 <code>#1d1f21</code>；cr 指 WCAG 对比度（1 = 看不见，21 = 纯黑配纯白，正文需要 ≥ 4.5）。</p>
-<p><strong>1. 浅色主题整体欠对比。</strong> link 3.28、strong 2.06、em 2.73、toc-active 2.39 —— 几乎全线低于 AA 的 4.5，而深色一侧稳定在 7 附近。两个主题不是风格不同，是一个能读一个不能读。</p>
-<p><strong>2. 三个几乎一样的粉在打架。</strong> <code>#d44375</code>（23 处）、<code>#c04059</code>（11 处）、<code>#c73866</code>（3 处）：明度差 0.04、饱和差 0.02、色相差 10°。近到眼睛认为「应该是同一个色」，又不够近到真的是。这种「差一点」比明显不同更乱 —— 这就是频道页凌乱的直接原因。</p>
-<p><strong>3.「安静层」发棕不是错觉。</strong> 深色里当次要色用的 <code>#8dba8a</code> 不是「安静版的绿」：它色相偏黄 21°，而且只用了该明度下三分之一的饱和度。橄榄绿配终端绿，当然不协调。</p>
-<p><strong>4. 今天的亮粉没用满色域。</strong> <code>#d44375</code> 在它的明度上只用了 76% 的可用饱和度。推到边缘可以同时更艳、更清楚。也就是说：<strong>不需要用酒红换可读性。</strong></p>
-<h2 id="三锁色相梯子">三、锁色相梯子</h2>
-<p>第四点是后面所有方案的地基：<strong>锁死色相、保住饱和度、只动明暗。</strong></p>
-<p>用降饱和度做「安静层」已经被否决了 —— 试看之后很明确，低饱和的粉和绿读作棕色和卡其，而且离主色跳跃太大、中间没有过渡。而在锁色相的梯子上，每一站都还是粉／还是绿，中间没有断层。</p>
-<!-- 截图：/design/colors/ 的两条锁色相梯子 -->
-<p>注意一件后面反复要用到的事：「后退」的方向在两个主题里是相反的。深底上变暗 = 对比降低 = 后退；浅底上变暗 = 对比升高 = 加重。这是背景决定的，躲不掉。</p>
-<h2 id="四第二声部四个候选一条规则">四、第二声部：四个候选，一条规则</h2>
-<p>第一轮只动一个角色 —— 「第二声部」（banner status、<code>[#chan]</code>、日期分隔、tab 星号），主色不动，好把变量隔离出来。四个候选都取自梯子：</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>候选</th><th>位移 ΔL</th><th>方向</th><th>cr 倍数</th><th>判定</th></tr></thead><tbody><tr><td>F 浅 <code>#c51963</code></td><td>−0.06</td><td>远离背景</td><td>×1.32</td><td>✓ 选中</td></tr><tr><td>E 深 <code>#2ad69c</code></td><td>+0.07</td><td>远离背景</td><td>×1.29</td><td>✓ 选中</td></tr><tr><td>E 浅 <code>#fb6e9a</code></td><td>+0.12</td><td>朝向背景</td><td>×0.63</td><td>褪进背景</td></tr><tr><td>D 深 <code>#17825d</code></td><td>−0.17</td><td>朝向背景</td><td>×0.51</td><td>褪进背景</td></tr><tr><td>D 浅 <code>#a81454</code></td><td>−0.12</td><td>远离背景</td><td>×1.68</td><td>方向对，跳跃太大</td></tr><tr><td>G 中性灰</td><td>—</td><td>退出家族</td><td>—</td><td>没有 jump，也没有色彩联系</td></tr></tbody></table>
-<p>（主色：浅 <code>#d44375</code> cr 3.28 · 深 <code>#2bbc8a</code> cr 6.82）</p>
-<p>选中的两个不是「各挑各的好看」，而是同一条规则的两次执行：<strong>第二声部 = 主色沿梯子朝远离背景的方向走一档。</strong> 步长几乎相等（×1.32 vs ×1.29）。要守恒的是每个主题内部的关系，不是跨主题的数值 —— <strong>浅色主题不是深色主题的反相。</strong></p>
-<p>被否的两个是同一个错误。E 浅变亮、D 深变暗，看起来完全相反，但在「相对背景」这个真正起作用的坐标里是同一个动作：都朝背景方向走，都走了约两档，都褪掉。</p>
-<p>D 浅的酒红方向是对的，问题在步长 —— 一步跨了两档，中间没有过渡，所以显得突兀。它没有被丢掉，见下一节。</p>
-<h2 id="五三档不够需要一条-ramp">五、三档不够，需要一条 ramp</h2>
-<p>定下 F 浅之后暴露出一个矛盾：解一下「这个色相上第一个过 AA 4.5 的粉是哪个」，答案就是 F 浅本身。也就是说第二声部比主角更清楚 —— 「主色不动」这个前提守不住了。</p>
-<p>解法是不再按「主次」分配角色，改按<strong>字号</strong>：大字的 AA 门槛是 3.0，正文是 4.5。</p>
-<p>于是「一眼扫过去是亮粉」靠面积最大的标题和 ASCII 保住，可读性靠正文那一档保住，两者不再抢同一个 token。酒红落在 hover 那一档，中间隔着正文档，跳跃问题自己就没了。</p>
-<p>每一档由目标对比度反解出来，不手调十六进制，而且两个主题的目标值<strong>故意不相等</strong>：深色一侧最响的那档对比度高于正文档，浅色一侧反过来。这不是失误 —— 浅底上最响的粉离背景最近，深底上最亮的绿离背景最远。「响」在两种背景上的代价不同。</p>
-<!-- 截图：/design/colors/ 的档位表 -->
-<p>顺带一提，浅色那个最响的粉是 <code>#e21e73</code>。标准色名里最近的是 <strong>Razzmatazz</strong>（<code>#e3256b</code>，Crayola 1993），OKLab 距离 0.015，基本看不出差别；再往下是 Rosa Mexicano <code>#e4007c</code> 和 Ruby <code>#e0115f</code>，中文传统色里最近的是品红。它的色度 0.228 比今天的 <code>#d44375</code>（0.184）更满 —— 更艳<strong>且</strong>更清楚。</p>
-<h2 id="六角色重排">六、角色重排</h2>
-<p>语义层不出现任何数字，只引用档位：</p>
-<pre class="astro-code astro-code-themes everforest-light everforest-dark" style="--shiki-light:#5c6a72;--shiki-dark:#d3c6aa;--shiki-light-bg:#fdf6e3;--shiki-dark-bg:#2d353b; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="--shiki-light:#DF69BA;--shiki-dark:#D699B6">--color-link:       var(--a-base</span><span style="--shiki-light:#5C6A72;--shiki-dark:#D3C6AA">);   </span><span style="--shiki-light:#939F91;--shiki-light-font-style:italic;--shiki-dark:#859289;--shiki-dark-font-style:italic">/* 正文级 → AA 那一档 */</span></span>
-<span class="line"><span style="--shiki-light:#DF69BA;--shiki-dark:#D699B6">--color-link-hover: var(--a-deep</span><span style="--shiki-light:#5C6A72;--shiki-dark:#D3C6AA">);</span></span>
-<span class="line"><span style="--shiki-light:#DF69BA;--shiki-dark:#D699B6">--color-accent-1:   var(--a-vivid</span><span style="--shiki-light:#5C6A72;--shiki-dark:#D3C6AA">);  </span><span style="--shiki-light:#939F91;--shiki-light-font-style:italic;--shiki-dark:#859289;--shiki-dark-font-style:italic">/* 标题、ASCII → 最响那一档 */</span></span>
-<span class="line"><span style="--shiki-light:#DF69BA;--shiki-dark:#D699B6">--color-meta:       var(--n-quiet</span><span style="--shiki-light:#5C6A72;--shiki-dark:#D3C6AA">);  </span><span style="--shiki-light:#939F91;--shiki-light-font-style:italic;--shiki-dark:#859289;--shiki-dark-font-style:italic">/* 今天是不分主题的死 #666 */</span></span></code></pre>
-<p>因为语义名不变，全站 289 处 <code>var(--color-*)</code> 大部分一行都不用改。真正的成本是浅色主题每个页面重新过一眼。</p>
-<p>顺带修掉的三个历史遗留：</p>
-<ul role="list">
-<li><code>--color-meta</code> 与 <code>--color-border</code> 是不分主题的死 <code>#666</code>（浅底 4.36、深底 2.88）—— 这是 IRC 前缀区的灰色在两个主题下表现相反的原因。</li>
-<li><code>--color-quote</code> 两个主题饱和度差 6 倍。</li>
-<li>glow token 在深色用的是青色 <code>rgba(0,255,255,…)</code>，跟全站的绿根本不同族，是历史遗留。</li>
-</ul>
-<p>完整的 token 对照表在 <a href="/design/colors/">/design/colors/</a>，红色标的是低于 4.5 的正文级 token —— 今天浅色那一列基本是一片红。</p>
-<h2 id="七色卡是骗人的">七、色卡是骗人的</h2>
-<p>同一个颜色在 12px 的 meta 小字和在一整块 ASCII 图上完全是两回事。所以最后一步是把候选放回真实界面：IRC 频道、首页、正文 markdown，每个都用真实组件和真实数据渲染，现状与提案上下对照。</p>
-<!-- 截图：试色面板，IRC 频道的现状 vs 提案 -->
-<p>上下堆叠而不是左右并排，是因为两栏各占一半宽度时，IRC 前缀列和 <code>ls tags/</code> 网格会在真实站点里根本不会遇到的宽度上换行 —— 对照就从「比颜色」变成了「比 reflow」。</p>
-<h2 id="八这套东西怎么加主题">八、这套东西怎么加主题</h2>
-<p>整套东西只有两个数据源，都是纯函数、无依赖：</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<table><thead><tr><th>文件</th><th>装什么</th></tr></thead><tbody><tr><td><code>scripts/oklch.mjs</code></td><td>OKLCH ↔ sRGB、色域上限、WCAG 对比度、<code>solveAgainst(目标对比度, 色相, 背景)</code></td></tr><tr><td><code>scripts/theme.mjs</code></td><td><code>THEMES</code>（主题 = 背景 + 色相 + 一组目标对比度）、<code>ROLES</code>（token → 档位）</td></tr></tbody></table>
-<p><strong>加一个主题就是往 <code>THEMES</code> 里加一条</strong>，只写背景、色相和目标对比度，不写十六进制。梯子、档位、色卡、对照表和所有试色面板都会自动多出一份。</p>
-<p><code>solveAgainst</code> 按<strong>背景亮度</strong>决定搜索方向，而不是按主题名 —— 所以两个背景不同的深色主题会解出不同的色阶，而不是共用一条。</p>
-<p>终端里 <code>node scripts/palette.mjs rungs</code> 打印的是同一份数据。</p>
-<hr>
-<p>整件事的方法论其实只有一句：<strong>先量，再改。</strong> 「看着不太对」是个真实的信号，但它不告诉你哪里不对 —— 「三个粉的明度差 0.04」才告诉你。</p>]]></content>
-    <summary type="html">&lt;p&gt;这个站有两套主题：浅色是粉，深色是终端绿。这篇记录把它们从「一堆手调的十六进制」改成「一条可以算出来的色阶」的全过程 —— 起因、量到的数字、否掉的方案，以及最后落地的结构。&lt;/p&gt;
-&lt;p&gt;所有色卡、梯子、对比度表都在 &lt;a href=&quot;/design/colors/&quot;&gt;/design/colors/&lt;/a&gt; 上，那一页是构建时用 OKLCH 现算的，「今天」那一列直接解析 &lt;code&gt;variables.css&lt;/code&gt;。这篇里的数字是论证用的引用，那一页才是权威 —— 我特意没有把表格抄到这里，抄一次就会有第一次对不上的那天。&lt;/p&gt;</summary>
-    <category term="Zen and the Art of Computer Maintenance" scheme="https://gitkeniwo.tech/categories/Zen-and-the-Art-of-Computer-Maintenance/"/>
-    <category term="Programming Languages" scheme="https://gitkeniwo.tech/categories/Zen-and-the-Art-of-Computer-Maintenance/Programming-Languages/"/>
-    <category term="design" scheme="https://gitkeniwo.tech/tags/design/"/>
-    <category term="css" scheme="https://gitkeniwo.tech/tags/css/"/>
-    <category term="color" scheme="https://gitkeniwo.tech/tags/color/"/>
-    <category term="notes" scheme="https://gitkeniwo.tech/tags/notes/"/>
-  </entry>
   <entry>
     <title>布鲁塞尔（一回目）</title>
     <link href="https://gitkeniwo.tech/2026-05-09-brussels-day-trip/"/>
@@ -169,6 +26,7 @@
     <category term="The Library of Babel" scheme="https://gitkeniwo.tech/categories/The-Library-of-Babel/"/>
     <category term="Itineraries" scheme="https://gitkeniwo.tech/categories/The-Library-of-Babel/Itineraries/"/>
     <category term="belgium" scheme="https://gitkeniwo.tech/tags/belgium/"/>
+    <category term="daytrip" scheme="https://gitkeniwo.tech/tags/daytrip/"/>
   </entry>
   <entry>
     <title>禅与自行车维修艺术 - 在尼德兰给自行车前轮换内胎</title>
@@ -1247,5 +1105,34 @@ Big W?</p>
 &lt;ul role=&quot;list&quot;&gt;
 &lt;li&gt;Switched to the free domain name (gitkeniwo.me) I got from Gi</summary>
     <category term="Blogging" scheme="https://gitkeniwo.tech/categories/Blogging/"/>
+  </entry>
+  <entry>
+    <title>窝小思考Transformer的推理能力</title>
+    <link href="https://gitkeniwo.tech/2024-06-22-transformer-agi/"/>
+    <id>https://gitkeniwo.tech/2024-06-22-transformer-agi/</id>
+    <published>2024-06-22T00:19:42.000Z</published>
+    <updated>2024-06-22T00:19:42.000Z</updated>
+    <content type="html"><![CDATA[<p><em>Copypasted from <a href="https://samizdat.fly.dev/m/2Wqv9BTTuv5d69C25VbhWV">memos</a></em></p>
+<p>如果说语言文字/模型产生的输出，就是能指 <em>signifier</em>；而按照大多数人的观点人的conscious mind更接近所指 <em>signified</em>（你的言辞所想要展示给别人的，你真正想表达的东西），那么人的语言的构造并非人的思维过程，或许它是人的思维的一个子集，但绝不能完全represent人的意识活动。</p>
+<p>这正是因为你意欲说出的事情与你的言辞所表达的事情之间总是存在着某些差异，同时这也是一个语言哲学上的鸿沟（gap）。此鸿沟的存在将使通过学舌的语言模型来构建具有推理能力的AGI的尝试变得困难重重。</p>
+<p>可以将语言看作人思维的一个子集，或者人思维活动的结果，但语言绝不仅仅是思维的ontology的唯一表现形式。目前的LLM都是通过sampling语言的潜在概率分布来构建<em>AI</em>。也许，耗费马斯克所言的<a href="https://x.com/elonmusk/status/1807643760584708363">数十万张Nvidia H100 GPU</a>，配合庞大的语料库，能构造出一个十分复杂的语言模型，但它终究只能是对人类思维活动的一种异构的逼近 (approximation)。按照统计学习观点，我们不断增加算力也只能尽力缩小估计误差 (estimation error)，而逼近误差 (approximation)取决于模型族是否能很好地拟合潜在的目标分布 (underlying probability distribution) 。问题的核心也就是探究语言模型族对AGI的充分性，而这个用来逼近的模型族，与真实的思维模型之间的approximation error的大小，现在还尚无定论。</p>
+<img src="https://i.imgur.com/uwDy0Ib.png" width="70%">
+<p class="img-caption">Fig 1. The tradeoffs between Approximation Error &#x26; Estimation Error. In figure (b), the empirical risk of the empirical risk minimizer (ERM), which is also our optimization objective, converges to zero as model complexity increases. The true risk, on the other hands, rebounds. The ERM fails to be a good surrogate for the true risk, leaving a large estimation gap that is hard to bridge.</p>
+<p>就好像<a href="https://doi.org/10.1017/S0140525X00005756">Searle提出的中文房间</a>里的单词书 [1]，即便它进化出十分复杂的匹配规则，它的内核依然不是我们所理解的智能，而只是十分复杂的词类映射。一类我觉得noticeable的反对意见是「虽然单词书非智能、但房间整体拥有智能」。Searle已经在原论文的objection部分中对此给予反驳，这里不再赘述。（将房间reduce为仅剩下单词书，或者小人已经记住了单词书所有规则，但依旧不理解中文的意思）</p>
+<p>另一方面，因为拉康所说「言辞所表达的事情总是比想要说出的事情更多」（这是由能指自身的特性决定的），即便是单纯的语言模型，它输出的话语所蕴含的所指意向的丰富程度，也会让人产生幻觉，就好像它已然拥有了智能。</p>
+<p>图灵测试还是未能考虑到这些问题，图灵测试是一个behavioral criterion, 在图灵的年代也确实难以想象Expert System与Physical Symbol System这些早期AI尝试的失败和连接主义 (connectionism) 的崛起。图灵测试对AI的认识论approach、类似心理测试的行为判定条件，似乎也是对现象学意义上的人类意识 (phenomenal consciousness) 的不可验证性的一个妥协的结果，暗示了我们永远无法跨越心灵哲学所言的解释鸿沟 (explanatory gap)。</p>
+<p>在这个意味中看图灵测试，我甚至看到了图灵对整个AGI未来发展所持的悲观态度😂 即便是如今通过表征学习 (representation learning) 算法、由算力堆砌而成的成百上千Gigabytes参数的大语言模型，也未能动摇图灵在70年前提出的这个行为判定准则的地位。</p>
+<p>我对能否建造AGI也持同样悲观的态度。The current AI boom is no more than wishful thinking and massive copium. 除非对人类consciousness、对心灵哲学的研究有了新的breakthrough（2019年火遍豆瓣的来自2060的<a href="https://acikacik.pixnet.net/blog/post/69086580">未来人Kafka</a>，就预言了未来人类将在50/60年代在此领域产生突破性的进展），这种盲人摸象式炼丹造就的大模型，更像是一个在符号界不断徘徊盘旋着的幽灵，而不是把守着通往意识世界的入口的卡戎。</p>
+<p>Panpsychism或许是关于意识问题的一种安慰剂。如果我们的意识，本身与史前地球的一块石头说拥有的静止的意识是同质的 (homogeneous)，那么这个意识也就失去了一些特殊性。</p>
+<p>类似<a href="https://www.mit.edu/people/dpolicar/writing/prose/text/thinkingMeat.html">They are made out of meat</a>一文讽刺的外星人的想法，人类的意识本身不具备特殊性，而是大脑内生物化学变化的作用结果，那么通过模拟脑内环境的方法就能以很小的逼近误差构建出这个思维模型，behavioral criterion获得胜利。Searle其实也对此提出过一些异议，参见The brain simulator reply [1].</p>
+<p>又或许，直接倒戈失败主义。承认即便是石头的意识，也不存在于我们这个表象世界，而位于另一个我们无法探索的意识世界，那么AGI问题可以直接宣判死刑。因为现象学意义上的解释鸿沟，我们永远无法构建出能从本质上逼近人类意识的AGI。</p>
+<p>[1] Searle, J. R. (1980). Minds, brains, and programs. <em>Behavioral and Brain Sciences</em>, <em>3</em>(3), 417–424. <a href="https://doi.org/10.1017/S0140525X00005756">https://doi.org/10.1017/S0140525X00005756</a></p>]]></content>
+    <summary type="html">&lt;p&gt;&lt;em&gt;Copypasted from &lt;a href=&quot;https://samizdat.fly.dev/m/2Wqv9BTTuv5d69C25VbhWV&quot;&gt;memos&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;如果说语言文字/模型产生的输出，就是能指 &lt;em&gt;signifier&lt;</summary>
+    <category term="Tweets" scheme="https://gitkeniwo.tech/categories/Tweets/"/>
+    <category term="Spouting Off" scheme="https://gitkeniwo.tech/categories/Tweets/Spouting-Off/"/>
+    <category term="ai" scheme="https://gitkeniwo.tech/tags/ai/"/>
+    <category term="philosophy" scheme="https://gitkeniwo.tech/tags/philosophy/"/>
+    <category term="小并感" scheme="https://gitkeniwo.tech/tags/%E5%B0%8F%E5%B9%B6%E6%84%9F/"/>
   </entry>
 </feed>
