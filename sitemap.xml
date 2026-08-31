@@ -745,7 +745,7 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://gitkeniwo.tech/categories/</loc>
+    <loc>https://gitkeniwo.tech/taxonomy/</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -1381,145 +1381,145 @@
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://gitkeniwo.tech/categories/Academical-Hack/</loc>
+    <loc>https://gitkeniwo.tech/taxonomy/Academical-Hack/</loc>
     <lastmod>2022-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://gitkeniwo.tech/categories/Academical-Hack/Languages/</loc>
+    <loc>https://gitkeniwo.tech/taxonomy/Academical-Hack/Languages/</loc>
     <lastmod>2022-06-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://gitkeniwo.tech/categories/Academical-Hack/Maths/</loc>
+    <loc>https://gitkeniwo.tech/taxonomy/Academical-Hack/Maths/</loc>
     <lastmod>2021-03-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://gitkeniwo.tech/categories/Academical-Hack/Statistics/</loc>
+    <loc>https://gitkeniwo.tech/taxonomy/Academical-Hack/Statistics/</loc>
     <lastmod>2022-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://gitkeniwo.tech/categories/Blogging/</loc>
+    <loc>https://gitkeniwo.tech/taxonomy/Blogging/</loc>
     <lastmod>2025-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://gitkeniwo.tech/categories/Protruding-Tentacles/</loc>
+    <loc>https://gitkeniwo.tech/taxonomy/Protruding-Tentacles/</loc>
     <lastmod>2021-01-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://gitkeniwo.tech/categories/Tech/</loc>
+    <loc>https://gitkeniwo.tech/taxonomy/Tech/</loc>
     <lastmod>2023-03-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://gitkeniwo.tech/categories/The-Library-of-Babel/</loc>
+    <loc>https://gitkeniwo.tech/taxonomy/The-Library-of-Babel/</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://gitkeniwo.tech/categories/The-Library-of-Babel/Books/</loc>
+    <loc>https://gitkeniwo.tech/taxonomy/The-Library-of-Babel/Books/</loc>
     <lastmod>2025-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://gitkeniwo.tech/categories/The-Library-of-Babel/Films/</loc>
+    <loc>https://gitkeniwo.tech/taxonomy/The-Library-of-Babel/Films/</loc>
     <lastmod>2025-12-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://gitkeniwo.tech/categories/The-Library-of-Babel/Itineraries/</loc>
+    <loc>https://gitkeniwo.tech/taxonomy/The-Library-of-Babel/Itineraries/</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://gitkeniwo.tech/categories/The-Library-of-Babel/Music/</loc>
+    <loc>https://gitkeniwo.tech/taxonomy/The-Library-of-Babel/Music/</loc>
     <lastmod>2025-06-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://gitkeniwo.tech/categories/Tweets/</loc>
+    <loc>https://gitkeniwo.tech/taxonomy/Tweets/</loc>
     <lastmod>2025-12-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://gitkeniwo.tech/categories/Tweets/Life-Events/</loc>
+    <loc>https://gitkeniwo.tech/taxonomy/Tweets/Life-Events/</loc>
     <lastmod>2022-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://gitkeniwo.tech/categories/Tweets/Lifehacks/</loc>
+    <loc>https://gitkeniwo.tech/taxonomy/Tweets/Lifehacks/</loc>
     <lastmod>2025-12-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://gitkeniwo.tech/categories/Tweets/Milestones/</loc>
+    <loc>https://gitkeniwo.tech/taxonomy/Tweets/Milestones/</loc>
     <lastmod>2023-03-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://gitkeniwo.tech/categories/Tweets/News-Comments/</loc>
+    <loc>https://gitkeniwo.tech/taxonomy/Tweets/News-Comments/</loc>
     <lastmod>2020-12-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://gitkeniwo.tech/categories/Tweets/Spouting-Off/</loc>
+    <loc>https://gitkeniwo.tech/taxonomy/Tweets/Spouting-Off/</loc>
     <lastmod>2024-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://gitkeniwo.tech/categories/Zen-and-the-Art-of-Computer-Maintenance/</loc>
+    <loc>https://gitkeniwo.tech/taxonomy/Zen-and-the-Art-of-Computer-Maintenance/</loc>
     <lastmod>2025-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://gitkeniwo.tech/categories/Zen-and-the-Art-of-Computer-Maintenance/Algorithms/</loc>
+    <loc>https://gitkeniwo.tech/taxonomy/Zen-and-the-Art-of-Computer-Maintenance/Algorithms/</loc>
     <lastmod>2020-06-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://gitkeniwo.tech/categories/Zen-and-the-Art-of-Computer-Maintenance/Anti-Censorship/</loc>
+    <loc>https://gitkeniwo.tech/taxonomy/Zen-and-the-Art-of-Computer-Maintenance/Anti-Censorship/</loc>
     <lastmod>2024-09-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://gitkeniwo.tech/categories/Zen-and-the-Art-of-Computer-Maintenance/Linux/</loc>
+    <loc>https://gitkeniwo.tech/taxonomy/Zen-and-the-Art-of-Computer-Maintenance/Linux/</loc>
     <lastmod>2025-03-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://gitkeniwo.tech/categories/Zen-and-the-Art-of-Computer-Maintenance/Network/</loc>
+    <loc>https://gitkeniwo.tech/taxonomy/Zen-and-the-Art-of-Computer-Maintenance/Network/</loc>
     <lastmod>2020-11-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://gitkeniwo.tech/categories/Zen-and-the-Art-of-Computer-Maintenance/Programming-Languages/</loc>
+    <loc>https://gitkeniwo.tech/taxonomy/Zen-and-the-Art-of-Computer-Maintenance/Programming-Languages/</loc>
     <lastmod>2023-12-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
