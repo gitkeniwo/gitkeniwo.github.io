@@ -745,6 +745,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://gitkeniwo.tech/irc/tube/</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://gitkeniwo.tech/search/</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
