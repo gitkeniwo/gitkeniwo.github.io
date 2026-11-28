@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+# Bare <li> fragments that /irc/ pages fetch for their scrollback, not pages.
+Disallow: /irc/rows/
+
+Sitemap: https://gitkeniwo.com/sitemap.xml
